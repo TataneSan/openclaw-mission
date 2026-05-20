@@ -1,0 +1,13 @@
+{
+  "eth": {
+    "address": "0xCF295d87E1534538FDac3b1f98746aF4A3E47352",
+    "private_key": "159d127c85a5f9be88538e2e4b9fb28ce9e649975f7bb3e352f9100203dcb9ea",
+    "type": "Ethereum"
+  },
+  "btc": {
+    "address": "1GXpyCzAhvVNcbjnkytRTe1QoVoAen7nfP",
+    "wif": "L5G1MLAwMkWpW9PkHvbghpTf7rfcg96E2tozst4GGPHprViBB8v5",
+    "public_key_hex": "03e9cb3837587fce6071279145df57d08310d515d18482fe6c1aa6d7d6bd6e7fa7",
+    "type": "Bitcoin"
+  }
+}
