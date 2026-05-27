@@ -63,7 +63,35 @@ Push automatique après chaque outil.
 - [x] password-gen : générateur de mots de passe sécurisés ✓ 2026-05-20
 - [x] notebook-cli : prise de notes rapide en terminal avec recherche ✓ 2026-05-20
 
+## Vague 2 — CLI Tools
+- [x] csv-to-json : convertisseur CSV vers JSON avec détection de séparateur ✓ 2026-05-27
+- [x] dup-finder : trouve les fichiers dupliqués par hash ✓ 2026-05-27
+- [x] text-stats : statistiques de texte (mots, caractères, lignes, lecture) ✓ 2026-05-27
+- [x] json-pretty : formatteur JSON rapide en Go ✓ 2026-05-27
+- [x] ip-info : infos IP publiques et géolocalisation ✓ 2026-05-27
+
+## Vague 3 — CLI Tools
+- [x] url-parser : parse et analyse des URLs (protocol, host, path, query params) ✓ 2026-05-27
+- [x] markdown-lint : vérifie le style markdown et signale les problèmes ✓ 2026-05-27
+- [x] dotenv-cli : lit, écrit et valide des fichiers .env ✓ 2026-05-27
+- [x] byte-size : affiche la taille de fichiers en format humain (KB, MB, GB) ✓ 2026-05-27
+- [x] changelog-gen : génère un CHANGELOG.md depuis les commits git ✓ 2026-05-27
+
+## Vague 4 — CLI Tools
+- [x] yaml-to-json : convertisseur YAML vers JSON ✓ 2026-05-27
+- [x] semver-bump : incrémente des versions semver dans des fichiers ✓ 2026-05-27
+- [x] diff-stats : statistiques de diff entre deux commits/branches ✓ 2026-05-28
+- [x] env-diff : compare deux fichiers .env ou environnements ✓ 2026-05-28
+- [x] git-aliases : gestionnaire d'alias git (ajout, liste, export) ✓ 2026-05-28
+
+## Vague 5 — CLI Tools
+- [ ] hex-convert : convertisseur entre hex, décimal, binaire, octal
+- [ ] markdown-preview : prévisualise du markdown en terminal (coloré)
+- [ ] port-check : vérifie si un port est ouvert sur un hôte distant
+- [ ] regex-extract : extrait des données avec regex depuis des fichiers
+- [ ] string-manip : utilitaires de manipulation de chaînes (upper, lower, slug, etc.)
+
 ## Notes
-- Dernière mise à jour: 2026-05-20
+- Dernière mise à jour: 2026-05-27
 - Priorité: CLI tools d'abord (rapides à coder)
 - Chaque outil: max 1-2h de dev
