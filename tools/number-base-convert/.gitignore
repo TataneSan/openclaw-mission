@@ -1,0 +1,27 @@
+# Binaries
+number-base-convert
+
+# Go build cache
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Output directory
+/obj
+/bin
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db

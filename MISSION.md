@@ -445,5 +445,31 @@ Push automatique après chaque outil.
 - [x] ini-to-yaml : convertisseur INI vers YAML ✓ 2026-05-28
 - [x] json-to-csv-nested : convertisseur JSON imbriqué vers CSV (aplatissement) ✓ 2026-05-28
 - [x] git-log-summary : résumé du historique git (commits, fichiers, auteurs) ✓ 2026-05-28
-- [ ] xml-validate : valide la syntaxe XML d'un fichier
-- [ ] env-to-tsv : convertit un fichier .env en TSV
+- [x] xml-validate : valide la syntaxe XML d'un fichier ✓ 2026-05-28
+- [x] env-to-tsv : convertit un fichier .env en TSV ✓ 2026-05-28
+
+## Vague 36 — CLI Tools
+- [x] csv-to-sqlite : importe des fichiers CSV dans une base SQLite ✓ 2026-05-28
+- [x] sqlite-query : interroge des bases SQLite en CLI (table, CSV, JSON) ✓ 2026-05-28
+- [x] markdown-to-html : convertit du Markdown en HTML (GFM, standalone) ✓ 2026-05-28
+
+## Vague 37 — CLI Tools
+- [x] markdown-to-text : supprime le formatage markdown et affiche du texte brut ✓ 2026-05-28
+- [x] file-integrity-check : calcule et vérifie les checksums de fichiers (sha256, md5, sha512) ✓ 2026-05-28
+- [x] kv-store : stockage clé-valeur simple avec persistance SQLite ✓ 2026-05-28
+- [x] json-to-sqlite : importe des données JSON dans des bases SQLite ✓ 2026-05-28
+- [x] http-load-test : outil de load testing HTTP avec concurrence et rapports de latence ✓ 2026-05-28
+
+## Vague 38 — CLI Tools
+- [x] hex-view : visualiseur hexadécimal pour fichiers binaires ✓ 2026-05-28
+- [x] html-minify : minifie du code HTML ✓ 2026-05-28
+- [x] json-pointer : extrait des valeurs JSON via JSON Pointer (RFC 6901) ✓ 2026-05-28
+- [x] git-find-repo : trouve les repos git dans un arbre de répertoires ✓ 2026-05-28
+- [x] file-checksum : calcule les checksums de fichiers (sha256, md5, sha1, crc32) ✓ 2026-05-28
+
+## Vague 39 — CLI Tools
+- [x] json-to-tsv : convertisseur JSON vers TSV ✓ 2026-05-28
+- [x] csv-to-markdown : convertisseur CSV vers tableau Markdown ✓ 2026-05-28
+- [x] git-commit-msg : affiche les messages de commits récents formatés ✓ 2026-05-28
+- [x] env-list-keys : liste uniquement les clés d'un fichier .env ✓ 2026-05-28
+- [x] file-line-count : compte les lignes de fichiers en batch ✓ 2026-05-28
