@@ -621,6 +621,12 @@ Push automatique après chaque outil.
 ## Vague 62 — CLI Tools
 - [x] csv-to-chart : genere des graphiques en barres terminaux depuis un CSV ✓ 2026-05-28
 - [x] env-to-kubernetes : convertit un .env en ConfigMap/Secret Kubernetes ✓ 2026-05-28
+
+## Vague 70 — CLI Tools
+- [x] http-response-diff : compare les réponses HTTP de deux URLs (status, headers, body) ✓ 2026-05-28
+
+## Vague 71 — CLI Tools
+- [x] http-websocket-cli : client WebSocket simple pour tester des endpoints WS/WSS ✓ 2026-05-28
 - [x] json-to-avro : genere un schema Avro depuis du JSON ✓ 2026-05-28
 - [x] csv-to-delta : exporte un CSV en format Delta Lake ✓ 2026-05-28
 - [x] git-branch-coverage : affiche la couverture de tests par branche ✓ 2026-05-28
@@ -637,3 +643,76 @@ Push automatique après chaque outil.
 - [x] markdown-to-csv : extrait des tableaux Markdown et exporte en CSV ✓ 2026-05-28
 - [x] yaml-to-sql-schema : génère des CREATE TABLE SQL depuis du YAML ✓ 2026-05-28
 - [x] git-commit-template : gestionnaire de templates de messages git ✓ 2026-05-28
+
+## Vague 65 — CLI Tools
+- [x] parquet-to-json : convertisseur Parquet vers JSON/JSONL ✓ 2026-05-28
+- [x] tsv-to-json : convertisseur TSV vers JSON ✓ 2026-05-28
+- [x] ini-to-toml : convertisseur INI vers TOML ✓ 2026-05-28
+- [x] xml-to-csv : convertisseur XML vers CSV ✓ 2026-05-28
+- [x] git-merge-driver : configure et gère des merge drivers git ✓ 2026-05-28
+
+## Vague 66 — CLI Tools
+- [x] ssl-cert-info : affiche les infos d'un certificat SSL/TLS (host, URL, fichier PEM) ✓ 2026-05-28
+- [x] dns-propagation : vérifie la propagation DNS sur 7 serveurs publics ✓ 2026-05-28
+- [x] whois-lookup : requête WHOIS pour des domaines avec parsing structuré ✓ 2026-05-28
+- [x] http-retry : client HTTP avec retry automatique et exponential backoff ✓ 2026-05-28
+
+## Vague 67 — CLI Tools
+- [x] conn-monitor : affiche les connexions TCP actives depuis /proc/net/tcp ✓ 2026-05-28
+- [x] http-redirect-trace : trace les chaînes de redirection HTTP avec timing ✓ 2026-05-28
+- [x] json-to-csv : convertisseur JSON arrays vers CSV ✓ 2026-05-28
+- [x] csv-to-yaml : convertisseur CSV vers YAML ✓ 2026-05-28
+- [x] file-du : affiche l'utilisation disque des fichiers triée par taille ✓ 2026-05-28
+
+## Vague 68 — CLI Tools
+- [x] html-to-markdown : convertit des fichiers HTML ou URLs en Markdown ✓ 2026-05-28
+- [x] file-encoding-detect : detecte l'encodage de fichiers (UTF-8, Latin-1, etc.) ✓ 2026-05-28
+- [x] markdown-link-extract : extrait tous les liens de fichiers Markdown ✓ 2026-05-28
+- [x] git-blame-heatmap : affiche un heatmap de modifications par ligne ✓ 2026-05-28
+- [x] http-compression-check : verifie le support de la compression HTTP (gzip, brotli, zstd) ✓ 2026-05-28
+- [x] http-cache-check : analyse les headers de cache HTTP (Cache-Control, ETag, Last-Modified, Expires) ✓ 2026-05-28
+- [x] http-security-headers : analyse les headers de sécurité HTTP (CSP, HSTS, X-Frame-Options, etc.) ✓ 2026-05-28
+- [x] http-cookie-analyzer : analyse les cookies HTTP (SameSite, Secure, HttpOnly, expiration) ✓ 2026-05-28
+- [x] http-protocol-check : detecte la version HTTP et les capabilities (HTTP/1.1, HTTP/2, HTTP/3) ✓ 2026-05-28
+
+## Vague 69 — CLI Tools
+- [x] http-content-type : verifie le Content-Type et l'encodage de réponses HTTP ✓ 2026-05-28
+- [x] json-to-avro : genere un schema Avro depuis du JSON ✓ 2026-05-28
+- [x] git-remote-branches : liste les branches remote avec dernier commit ✓ 2026-05-28
+- [x] csv-to-parquet : convertisseur CSV vers Apache Parquet ✓ 2026-05-28
+- [x] env-to-kubernetes : convertit un .env en ConfigMap/Secret Kubernetes ✓ 2026-05-28
+
+## Vague 70 — CLI Tools
+- [x] http-response-diff : compare les réponses HTTP de deux URLs (status, headers, body) ✓ 2026-05-28
+
+## Vague 71 — CLI Tools
+- [x] http-websocket-cli : client WebSocket simple pour tester des endpoints WS/WSS ✓ 2026-05-28
+
+## Vague 72 — CLI Tools
+- [x] markdown-word-count : compteur de mots/caractères/paragraphes pour fichiers Markdown ✓ 2026-05-28
+- [x] yaml-to-sql : genere des requêtes SQL (CREATE TABLE + INSERT) depuis du YAML ✓ 2026-05-28
+- [x] csv-to-protobuf : convertisseur CSV vers définitions Protocol Buffers ✓ 2026-05-28
+
+## Vague 73 — CLI Tools
+- [x] proc-kill : trouve et termine des processus par nom ou pattern ✓ 2026-05-28
+- [x] env-to-sysctl : convertit .env en commandes sysctl Linux ✓ 2026-05-28
+
+## Vague 74 — CLI Tools
+- [x] file-sync : synchronise deux répertoires avec comparaison SHA-256 ✓ 2026-05-28
+- [x] port-listener : affiche les ports TCP/UDP écoutants avec infos processus ✓ 2026-05-28
+- [x] mem-usage : affiche l'utilisation mémoire des processus triée par RSS ✓ 2026-05-28
+- [x] cpu-top : moniteur d'utilisation CPU en temps réel ✓ 2026-05-28
+- [x] inode-list : liste l'utilisation d'inodes par répertoire ✓ 2026-05-28
+
+## Vague 75 — CLI Tools
+- [x] markdown-stats : analyse de statistiques de fichiers Markdown (mots, lignes, code, liens, temps de lecture) ✓ 2026-05-28
+- [x] http-proxy-cli : proxy HTTP/HTTPS local configurable en CLI ✓ 2026-05-28
+- [x] json-to-dhall : convertisseur JSON vers Dhall ✓ 2026-05-28
+- [x] csv-to-sqlite-schema : génère un CREATE TABLE SQL depuis un CSV ✓ 2026-05-28
+
+## Vague 76 — CLI Tools
+- [x] yaml-to-env : convertisseur YAML vers .env ✓ 2026-05-28
+- [ ] git-merge-base : trouve le dernier ancêtre commun entre deux branches
+- [ ] json-to-shell : exporte du JSON en variables shell
+- [ ] csv-to-graph : génère un graphe terminal depuis un CSV
+- [ ] http-timeout-test : teste les timeouts HTTP avec timing détaillé
