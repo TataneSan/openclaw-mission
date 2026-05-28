@@ -712,7 +712,36 @@ Push automatique après chaque outil.
 
 ## Vague 76 — CLI Tools
 - [x] yaml-to-env : convertisseur YAML vers .env ✓ 2026-05-28
-- [ ] git-merge-base : trouve le dernier ancêtre commun entre deux branches
-- [ ] json-to-shell : exporte du JSON en variables shell
-- [ ] csv-to-graph : génère un graphe terminal depuis un CSV
-- [ ] http-timeout-test : teste les timeouts HTTP avec timing détaillé
+- [x] git-merge-base : trouve le dernier ancêtre commun entre deux branches ✓ 2026-05-28
+- [x] json-to-shell : exporte du JSON en variables shell ✓ 2026-05-28
+- [x] csv-to-graph : génère un graphe terminal depuis un CSV ✓ 2026-05-28
+- [x] http-timeout-test : teste les timeouts HTTP avec timing détaillé ✓ 2026-05-28
+
+## Vague 77 — CLI Tools
+- [x] robots-checker : fetch et parse les fichiers robots.txt de sites web ✓ 2026-05-29
+- [x] cookie-parser : parse les headers Set-Cookie HTTP et strings de cookies ✓ 2026-05-29
+- [x] git-churn : affiche le churn de fichiers (lignes ajoutées/supprimées) dans un repo git ✓ 2026-05-29
+- [x] env-to-helm : convertit des fichiers .env en format Helm values.yaml ✓ 2026-05-29
+- [x] http-retry : client HTTP avec retry automatique et exponential backoff ✓ 2026-05-29
+
+## Vague 78 — CLI Tools
+- [x] http-rate-limit : mesure le rate limiting d'une API (headers, 429 responses) ✓ 2026-05-29
+- [x] json-to-toml : convertisseur JSON vers TOML ✓ 2026-05-29
+- [x] csv-to-sql : genere des requetes SQL INSERT depuis un CSV ✓ 2026-05-29
+- [x] git-commit-size : affiche la taille des commits (fichiers touches, LOC) ✓ 2026-05-29
+- [x] env-to-varnish : convertit un .env en config Varnish VCL ✓ 2026-05-29
+
+## Vague 79 — CLI Tools
+- [x] sysctl-tune : gestionnaire de paramètres kernel Linux via sysctl (list, get, set, backup, restore) ✓ 2026-05-29
+- [x] net-speed-cli : moniteur de vitesse réseau en temps réel via /proc/net/dev ✓ 2026-05-29
+- [x] route-table : gestionnaire de tables de routage Linux (list, add, delete, flush) ✓ 2026-05-29
+
+## Vague 80 — CLI Tools
+- [x] access-log-parser : parse et affiche les logs d'accès Apache/Nginx avec stats ✓ 2026-05-29
+
+## Vague 81 — CLI Tools
+- [ ] ssh-audit : audite la config SSH d'un serveur distant (ciphers, MACs, key exchange)
+- [ ] json-to-dhall : convertisseur JSON vers Dhall
+- [ ] csv-to-sqlite : importe des fichiers CSV dans une base SQLite
+- [ ] git-commit-lint : linter de messages de commits (Conventional Commits)
+- [ ] http-sni-check : vérifie le SNI (Server Name Indication) d'un serveur HTTPS

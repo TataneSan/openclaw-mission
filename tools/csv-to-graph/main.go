@@ -2,274 +2,286 @@ package main
 
 import (
 	"encoding/csv"
+	"flag"
 	"fmt"
+	"io"
+	"math"
 	"os"
 	"sort"
+	"strconv"
 	"strings"
-
-	"github.com/spf13/cobra"
 )
 
-func sortedKeys(m map[string]any) []string {
-	keys := make([]string, 0, len(m))
-	for k := range m {
-		keys = append(keys, k)
-	}
-	sort.Strings(keys)
-	return keys
+type barData struct {
+	label string
+	value float64
 }
 
-func toYAMLValue(v any, indent string) string {
-	next := indent + "  "
-	switch val := v.(type) {
-	case nil:
-		return "null"
-	case bool:
-		return fmt.Sprintf("%v", val)
-	case float64:
-		if val == float64(int64(val)) {
-			return fmt.Sprintf("%d", int64(val))
-		}
-		return fmt.Sprintf("%g", val)
-	case string:
-		if strings.ContainsAny(val, ":#{}[]|>&*!%@`\"'") || strings.HasPrefix(val, " ") || strings.HasSuffix(val, " ") {
-			escaped := strings.ReplaceAll(val, `"`, `\"`)
-			return fmt.Sprintf(`"%s"`, escaped)
-		}
-		return val
-	case map[string]any:
-		var lines []string
-		for _, k := range sortedKeys(val) {
-			lines = append(lines, fmt.Sprintf("%s%s: %s", indent, k, toYAMLValue(val[k], next)))
-		}
-		return strings.Join(lines, "\n")
-	case []any:
-		var lines []string
-		for _, item := range val {
-			switch iv := item.(type) {
-			case map[string]any:
-				lines = append(lines, fmt.Sprintf("%s- %s", indent, toYAMLValue(iv, next+"  ")))
-			default:
-				lines = append(lines, fmt.Sprintf("%s- %s", indent, toYAMLValue(item, next)))
-			}
-		}
-		return strings.Join(lines, "\n")
-	default:
-		return fmt.Sprintf("%v", v)
-	}
-}
+func printUsage() {
+	fmt.Fprintf(os.Stderr, `Usage: csv-to-graph [options] < input.csv
+       csv-to-graph [options] -f file.csv
 
-func readCSV(path string) ([][]string, error) {
-	f, err := os.Open(path)
-	if err != nil {
-		return nil, err
-	}
-	defer f.Close()
+Generate terminal bar charts from CSV data.
 
-	reader := csv.NewReader(f)
-	return reader.ReadAll()
-}
-
-func csvToK8sYAML(rows [][]string, kind string) ([]string, error) {
-	if len(rows) < 2 {
-		return nil, fmt.Errorf("CSV must have a header row and at least one data row")
-	}
-
-	headers := rows[0]
-	var outputs []string
-
-	for _, row := range rows[1:] {
-		if len(row) != len(headers) {
-			continue
-		}
-
-		meta := make(map[string]any)
-		spec := make(map[string]any)
-
-		for i, h := range headers {
-			val := row[i]
-			switch h {
-			case "name", "namespace", "labels", "annotations":
-				meta[h] = val
-			default:
-				spec[h] = val
-			}
-		}
-
-		if _, ok := meta["name"]; !ok {
-			if len(spec) > 0 {
-				firstKey := sortedKeys(spec)[0]
-				meta["name"] = spec[firstKey]
-			} else {
-				meta["name"] = "resource"
-			}
-		}
-
-		var sb strings.Builder
-		sb.WriteString("apiVersion: v1\n")
-		sb.WriteString(fmt.Sprintf("kind: %s\n", kind))
-		sb.WriteString("metadata:\n")
-		for _, k := range sortedKeys(meta) {
-			sb.WriteString(fmt.Sprintf("  %s: %s\n", k, toYAMLValue(meta[k], "    ")))
-		}
-		if len(spec) > 0 {
-			sb.WriteString("spec:\n")
-			for _, k := range sortedKeys(spec) {
-				sb.WriteString(fmt.Sprintf("  %s: %s\n", k, toYAMLValue(spec[k], "    ")))
-			}
-		}
-		outputs = append(outputs, sb.String())
-	}
-
-	return outputs, nil
-}
-
-var rootCmd = &cobra.Command{
-	Use:   "csv-to-graph",
-	Short: "Generate a graph representation from CSV data",
-	Long: `csv-to-graph reads a CSV file with source and target columns and generates
-a graph representation in various formats (DOT, JSON, adjacency list).
+Options:
+  -f string    Path to CSV file (default: stdin)
+  -col int     Column index for values (0-based, default: 1)
+  -label int   Column index for labels (0-based, default: 0)
+  -width int   Maximum bar width in characters (default: 50)
+  -vertical    Render bars vertically instead of horizontally
+  -sort string Sort order: none, asc, desc (default: none)
+  -top int     Show only top N bars (0 = all, default: 0)
+  -title string Chart title
+  -char string Bar character (default: "█")
+  -empty string Empty character (default: "░")
+  -h, --help   Show this help message
 
 Examples:
-  csv-to-graph edges.csv
-  csv-to-graph -f dot -o graph.dot edges.csv
-  csv-to-graph -s source -t target edges.csv`,
-	RunE: func(cmd *cobra.Command, args []string) error {
-		if len(args) != 1 {
-			return fmt.Errorf("exactly one CSV file path required")
-		}
-
-		format, _ := cmd.Flags().GetString("format")
-		sourceCol, _ := cmd.Flags().GetString("source")
-		targetCol, _ := cmd.Flags().GetString("target")
-		outputFile, _ := cmd.Flags().GetString("output")
-
-		rows, err := readCSV(args[0])
-		if err != nil {
-			return fmt.Errorf("error reading CSV: %w", err)
-		}
-
-		if len(rows) < 2 {
-			return fmt.Errorf("CSV must have a header row and at least one data row")
-		}
-
-		headers := rows[0]
-		srcIdx, tgtIdx := 0, 1
-
-		if sourceCol != "" {
-			for i, h := range headers {
-				if h == sourceCol {
-					srcIdx = i
-					break
-				}
-			}
-		}
-		if targetCol != "" {
-			for i, h := range headers {
-				if h == targetCol {
-					tgtIdx = i
-					break
-				}
-			}
-		}
-
-		type Edge struct {
-			Source string `json:"source"`
-			Target string `json:"target"`
-		}
-
-		edges := make([]Edge, 0, len(rows)-1)
-		nodes := make(map[string]struct{})
-
-		for _, row := range rows[1:] {
-			if len(row) <= srcIdx || len(row) <= tgtIdx {
-				continue
-			}
-			src, tgt := row[srcIdx], row[tgtIdx]
-			if src != "" && tgt != "" {
-				edges = append(edges, Edge{Source: src, Target: tgt})
-				nodes[src] = struct{}{}
-				nodes[tgt] = struct{}{}
-			}
-		}
-
-		var result string
-		switch format {
-		case "json":
-			result = "{\"nodes\": ["
-			nodeList := make([]string, 0, len(nodes))
-			for n := range nodes {
-				nodeList = append(nodeList, n)
-			}
-			sort.Strings(nodeList)
-			for i, n := range nodeList {
-				if i > 0 {
-					result += ", "
-				}
-				result += fmt.Sprintf("\"%s\"", n)
-			}
-			result += "], \"edges\": ["
-			for i, e := range edges {
-				if i > 0 {
-					result += ", "
-				}
-				result += fmt.Sprintf("{\"source\": \"%s\", \"target\": \"%s\"}", e.Source, e.Target)
-			}
-			result += "]}"
-
-		case "dot":
-			var sb strings.Builder
-			sb.WriteString("digraph G {\n")
-			sb.WriteString("  rankdir=LR;\n")
-			for _, e := range edges {
-				sb.WriteString(fmt.Sprintf("  \"%s\" -> \"%s\";\n", e.Source, e.Target))
-			}
-			sb.WriteString("}\n")
-			result = sb.String()
-
-		default:
-			var sb strings.Builder
-			sb.WriteString("Adjacency List:\n")
-			sb.WriteString(strings.Repeat("-", 40) + "\n")
-			adj := make(map[string][]string)
-			for _, e := range edges {
-				adj[e.Source] = append(adj[e.Source], e.Target)
-			}
-			srcs := make([]string, 0, len(adj))
-			for s := range adj {
-				srcs = append(srcs, s)
-			}
-			sort.Strings(srcs)
-			for _, s := range srcs {
-				sb.WriteString(fmt.Sprintf("%s -> %s\n", s, strings.Join(adj[s], ", ")))
-			}
-			sb.WriteString(strings.Repeat("-", 40) + "\n")
-			sb.WriteString(fmt.Sprintf("Nodes: %d, Edges: %d\n", len(nodes), len(edges)))
-			result = sb.String()
-		}
-
-		if outputFile != "" {
-			if err := os.WriteFile(outputFile, []byte(result), 0644); err != nil {
-				return fmt.Errorf("error writing output: %w", err)
-			}
-			fmt.Printf("Written to %s\n", outputFile)
-		} else {
-			fmt.Print(result)
-		}
-
-		return nil
-	},
-}
-
-func init() {
-	rootCmd.Flags().StringP("format", "f", "adjacency", "Output format: adjacency, dot, json")
-	rootCmd.Flags().StringP("source", "s", "", "Source column name (default: first column)")
-	rootCmd.Flags().StringP("target", "t", "", "Target column name (default: second column)")
-	rootCmd.Flags().StringP("output", "o", "", "Output file (default: stdout)")
+  csv-to-graph < data.csv
+  csv-to-graph -f sales.csv -col 2 -width 60
+  csv-to-graph -f data.csv -sort desc -top 10
+  csv-to-graph -f data.csv -vertical -title "Monthly Revenue"
+`)
 }
 
 func main() {
-	if err := rootCmd.Execute(); err != nil {
+	var (
+		inputPath = flag.String("f", "", "path to CSV file (default: stdin)")
+		valCol    = flag.Int("col", 1, "column index for values (0-based)")
+		labelCol  = flag.Int("label", 0, "column index for labels (0-based)")
+		barWidth  = flag.Int("width", 50, "maximum bar width in characters")
+		vertical  = flag.Bool("vertical", false, "render bars vertically")
+		sortOrder = flag.String("sort", "none", "sort order: none, asc, desc")
+		topN      = flag.Int("top", 0, "show only top N bars (0 = all)")
+		title     = flag.String("title", "", "chart title")
+		barChar   = flag.String("char", "█", "bar character")
+		emptyChar = flag.String("empty", "░", "empty bar character")
+	)
+	flag.Parse()
+
+	var reader *csv.Reader
+
+	if *inputPath != "" {
+		f, err := os.Open(*inputPath)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error opening file: %v\n", err)
+			os.Exit(1)
+		}
+		defer f.Close()
+		reader = csv.NewReader(f)
+	} else {
+		stat, _ := os.Stdin.Stat()
+		if (stat.Mode() & os.ModeCharDevice) != 0 {
+			fmt.Fprintf(os.Stderr, "No input: provide a file with -f or pipe CSV to stdin\n")
+			os.Exit(1)
+		}
+		reader = csv.NewReader(os.Stdin)
+	}
+
+	reader.FieldsPerRecord = -1 // allow variable fields
+
+	var records [][]string
+	for {
+		record, err := reader.Read()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error reading CSV: %v\n", err)
+			os.Exit(1)
+		}
+		records = append(records, record)
+	}
+
+	if len(records) == 0 {
+		fmt.Fprintf(os.Stderr, "Error: empty CSV\n")
 		os.Exit(1)
 	}
+
+	// Skip header row if it looks like a header
+	startIdx := 0
+	if len(records) > 0 {
+		_, err := strconv.ParseFloat(strings.TrimSpace(records[0][*valCol]), 64)
+		if err != nil {
+			startIdx = 1 // skip header
+		}
+	}
+
+	var data []barData
+	for i := startIdx; i < len(records); i++ {
+		rec := records[i]
+		if *valCol >= len(rec) || *labelCol >= len(rec) {
+			continue
+		}
+
+		valStr := strings.TrimSpace(rec[*valCol])
+		label := strings.TrimSpace(rec[*labelCol])
+
+		// Strip common prefixes/suffixes
+		valStr = strings.TrimPrefix(valStr, "$")
+		valStr = strings.TrimSuffix(valStr, "%")
+		valStr = strings.ReplaceAll(valStr, ",", "")
+
+		val, err := strconv.ParseFloat(valStr, 64)
+		if err != nil {
+			continue // skip non-numeric rows
+		}
+
+		if label == "" {
+			label = fmt.Sprintf("Row %d", i-startIdx+1)
+		}
+
+		data = append(data, barData{label: label, value: val})
+	}
+
+	if len(data) == 0 {
+		fmt.Fprintf(os.Stderr, "Error: no valid numeric data found in column %d\n", *valCol)
+		os.Exit(1)
+	}
+
+	// Sort
+	switch *sortOrder {
+	case "asc":
+		sort.Slice(data, func(i, j int) bool { return data[i].value < data[j].value })
+	case "desc":
+		sort.Slice(data, func(i, j int) bool { return data[i].value > data[j].value })
+	}
+
+	// Top N
+	if *topN > 0 && *topN < len(data) {
+		if *sortOrder == "asc" {
+			data = data[:*topN]
+		} else {
+			data = data[len(data)-*topN:]
+			if *sortOrder == "desc" {
+				// keep desc order
+			} else {
+				// reverse to show largest first
+				for i, j := 0, len(data)-1; i < j; i, j = i+1, j-1 {
+					data[i], data[j] = data[j], data[i]
+				}
+			}
+		}
+	}
+
+	// Find max value and max label length
+	var maxValue float64
+	maxLabelLen := 0
+	for _, d := range data {
+		if d.value > maxValue {
+			maxValue = d.value
+		}
+		if len(d.label) > maxLabelLen {
+			maxLabelLen = len(d.label)
+		}
+	}
+
+	if maxValue == 0 {
+		maxValue = 1
+	}
+
+	// Title
+	if *title != "" {
+		fmt.Printf("\n  %s\n\n", *title)
+	}
+
+	if *vertical {
+		renderVertical(data, maxValue, maxLabelLen, *barWidth, *barChar, *emptyChar)
+	} else {
+		renderHorizontal(data, maxValue, maxLabelLen, *barWidth, *barChar, *emptyChar)
+	}
+}
+
+func renderHorizontal(data []barData, maxValue float64, maxLabelLen, barWidth int, barChar, emptyChar string) {
+	for _, d := range data {
+		ratio := d.value / maxValue
+		filledLen := int(math.Round(ratio * float64(barWidth)))
+		if d.value > 0 && filledLen == 0 {
+			filledLen = 1
+		}
+		emptyLen := barWidth - filledLen
+
+		label := d.label
+		if len(label) > maxLabelLen {
+			label = label[:maxLabelLen]
+		} else {
+			label = fmt.Sprintf("%-*s", maxLabelLen, label)
+		}
+
+		filled := strings.Repeat(barChar, filledLen)
+		empty := strings.Repeat(emptyChar, emptyLen)
+		valStr := formatValue(d.value)
+
+		fmt.Printf("  %s │%s%s %s\n", label, filled, empty, valStr)
+	}
+}
+
+func renderVertical(data []barData, maxValue float64, maxLabelLen, barWidth int, barChar, emptyChar string) {
+	if len(data) == 0 {
+		return
+	}
+
+	// Scale: use barWidth as height, but cap for readability
+	height := barWidth
+	if height > len(data)*2+5 {
+		height = len(data)*2 + 5
+	}
+
+	// Print bars top to bottom
+	for row := height; row >= 1; row-- {
+		threshold := (float64(row) / float64(height)) * maxValue
+		for _, d := range data {
+			space := "  "
+			if d.value >= threshold {
+				fmt.Printf("%s%s", space, barChar)
+			} else {
+				fmt.Printf("%s%s", space, emptyChar)
+			}
+		}
+		fmt.Println()
+	}
+
+	// Separator
+	fmt.Printf("  %s\n", strings.Repeat("─", len(data)*2))
+
+	// Labels
+	for i, d := range data {
+		label := d.label
+		if len(label) > 8 {
+			label = label[:8]
+		}
+		if i == 0 {
+			fmt.Printf("  %-8s", label)
+		} else {
+			fmt.Printf("  %-8s", label)
+		}
+	}
+	fmt.Println()
+
+	// Values
+	for _, d := range data {
+		valStr := formatValue(d.value)
+		fmt.Printf("  %-8s", valStr)
+	}
+	fmt.Println()
+}
+
+func formatValue(v float64) string {
+	if v == float64(int64(v)) && abs(v) < 1e15 {
+		return fmt.Sprintf("%d", int64(v))
+	}
+	if abs(v) < 0.01 {
+		return fmt.Sprintf("%.4g", v)
+	}
+	if abs(v) < 1000 {
+		return fmt.Sprintf("%.2f", v)
+	}
+	return fmt.Sprintf("%.2f", v)
+}
+
+func abs(v float64) float64 {
+	if v < 0 {
+		return -v
+	}
+	return v
 }

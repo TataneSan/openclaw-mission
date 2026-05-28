@@ -36,10 +36,8 @@ func listBranches(all bool) ([]string, error) {
 		if line == "" {
 			continue
 		}
-		// Remove leading "* " or "  "
 		line = strings.TrimPrefix(line, "* ")
 		line = strings.TrimPrefix(line, "  ")
-		// Remove remote prefix
 		if strings.HasPrefix(line, "remotes/") {
 			line = strings.TrimPrefix(line, "remotes/")
 		}
@@ -54,7 +52,6 @@ func getMergeBase(branch1, branch2 string) (string, error) {
 
 func printCommit(sha string) {
 	fmt.Printf("  Commit: %s\n", sha[:12])
-
 	oneline, _ := runGit("log", "-1", "--format=%an <%ae> %as %s", sha)
 	fmt.Printf("  %s\n", oneline)
 }
