@@ -1,121 +1,162 @@
 # git-hooks
 
-Install pre-configured git hooks for better development workflow. Includes pre-commit checks, commit message validation, pre-push tests, and more.
+Install pre-configured Git hooks into any repository with a single command.
 
 ## Features
 
-- **pre-commit**: Linting, tests, trailing whitespace detection, large file warnings, TODO/FIXME detection
-- **commit-msg**: Conventional Commits format validation with helpful error messages
-- **pre-push**: Test and build verification before pushing to remote
-- **prepare-commit-msg**: Automatic branch name metadata in commit messages
-- **post-merge**: Auto-run package install after merging (npm, pip, go)
-- **post-checkout**: Auto-update dependencies when switching branches
+- **pre-commit**: Run linters, formatters, and checks before each commit
+  - Trailing whitespace detection
+  - Large file detection (>10MB)
+  - Custom commands from config
+- **commit-msg**: Enforce [Conventional Commits](https://www.conventionalcommits.org/) format
+- **pre-push**: Run tests before pushing to remote
+- **pre-rebase**: Warn before rebasing shared branches
+- **post-merge**: Run commands after a successful merge (e.g., `npm install`)
 
-## Installation
+All hooks are configured via a single `.git-hooks.json` file in your repo root.
+
+## Install
 
 ```bash
-# Clone and link globally
-git clone https://github.com/TataneSan/git-hooks.git
-cd git-hooks
-npm link
-
-# Or install from source
-npm install -g path/to/git-hooks
+go install github.com/TataneSan/git-hooks@latest
 ```
+
+Or download a release from [GitHub Releases](https://github.com/TataneSan/git-hooks/releases).
 
 ## Usage
 
 ```bash
-# Install all hooks
+# Install all hooks into the current repo
 git-hooks install
 
-# Install a specific hook
-git-hooks install pre-commit
+# Install specific hooks
+git-hooks install -hooks pre-commit,commit-msg
 
-# Remove all hooks
-git-hooks uninstall
-
-# Remove a specific hook
-git-hooks uninstall pre-commit
+# Install into a different directory
+git-hooks install -dir ../my-project
 
 # List available hooks
 git-hooks list
 
-# Check installation status
-git-hooks status
+# Show a hook's content
+git-hooks show pre-commit
+
+# Remove hooks
+git-hooks remove
+git-hooks remove -hooks pre-commit
+
+# Create default config
+git-hooks init
 ```
 
-## Available Hooks
+## Configuration
 
-| Hook | Description |
-|------|-------------|
-| `pre-commit` | Run linting and tests before committing |
-| `commit-msg` | Validate commit message format (Conventional Commits) |
-| `pre-push` | Run checks before pushing to remote |
-| `prepare-commit-msg` | Add commit metadata to commit message |
-| `post-merge` | Run package install after merge |
-| `post-checkout` | Update dependencies when switching branches |
+Run `git-hooks init` to create a default `.git-hooks.json`:
+
+```json
+{
+  "pre-commit": {
+    "commands": ["npm run lint", "npm run format"],
+    "trailing-whitespace": true,
+    "large-files": true
+  },
+  "commit-msg": {
+    "conventional": true
+  },
+  "pre-push": {
+    "enabled": true,
+    "commands": ["npm test"]
+  },
+  "post-merge": {
+    "commands": ["npm install"]
+  }
+}
+```
+
+### pre-commit
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `commands` | `string[]` | `[]` | Shell commands to run before commit |
+| `trailing-whitespace` | `bool` | `true` | Check for trailing whitespace |
+| `large-files` | `bool` | `true` | Check for files >10MB |
+
+### commit-msg
+
+Enforces the format: `<type>(<scope>): <description>`
+
+Valid types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
+
+### pre-push
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `enabled` | `bool` | `true` | Enable/disable the hook |
+| `commands` | `string[]` | `[]` | Shell commands to run before push |
+
+### post-merge
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| `commands` | `string[]` | `[]` | Shell commands to run after merge |
 
 ## Examples
 
-### Install all hooks in your project
+### JavaScript project
 
-```bash
-cd your-project
-git-hooks install
+```json
+{
+  "pre-commit": {
+    "commands": ["npx eslint .", "npx prettier --check ."],
+    "trailing-whitespace": true,
+    "large-files": true
+  },
+  "commit-msg": { "conventional": true },
+  "pre-push": {
+    "enabled": true,
+    "commands": ["npm test"]
+  },
+  "post-merge": {
+    "commands": ["npm install"]
+  }
+}
 ```
 
-### Only use commit message validation
+### Go project
 
-```bash
-git-hooks install commit-msg
+```json
+{
+  "pre-commit": {
+    "commands": ["go fmt ./...", "go vet ./..."],
+    "trailing-whitespace": true,
+    "large-files": true
+  },
+  "commit-msg": { "conventional": true },
+  "pre-push": {
+    "enabled": true,
+    "commands": ["go test ./..."]
+  },
+  "post-merge": { "commands": [] }
+}
 ```
 
-### Check what's installed
+### Python project
 
-```bash
-git-hooks status
+```json
+{
+  "pre-commit": {
+    "commands": ["flake8", "black --check ."],
+    "trailing-whitespace": true,
+    "large-files": true
+  },
+  "commit-msg": { "conventional": true },
+  "pre-push": {
+    "enabled": true,
+    "commands": ["pytest"]
+  },
+  "post-merge": { "commands": ["pip install -r requirements.txt"] }
+}
 ```
-
-```
-Available git hooks:
-
-  [✓] pre-commit             Run linting and tests before committing
-  [✓] commit-msg             Validate commit message format
-  [ ] pre-push               Run checks before pushing to remote
-  [ ] prepare-commit-msg     Add commit metadata to commit message
-  [ ] post-merge             Run package install after merge
-  [ ] post-checkout          Update dependencies when switching branches
-
-2/6 hooks installed.
-```
-
-## Conventional Commits
-
-The `commit-msg` hook enforces [Conventional Commits](https://www.conventionalcommits.org/) format:
-
-```
-type(scope): description
-```
-
-**Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`
-
-**Examples**:
-```
-feat: add user authentication
-fix(api): handle null response
-docs: update README
-refactor(core): simplify data processing
-test(utils): add edge case tests
-```
-
-## Package Manager Support
-
-The `post-merge` and `post-checkout` hooks auto-detect and support:
-
-- **npm** (`package.json`)
-- **pip** (`requirements.txt`)
-- **Go** (`go.mod`)
 
 ## License
 

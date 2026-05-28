@@ -1,2 +1,12 @@
-node_modules/
-*.log
+# Binaries
+git-hooks
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo

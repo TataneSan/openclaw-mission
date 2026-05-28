@@ -9,7 +9,7 @@ Push automatique après chaque outil.
 (mettre à jour ici chaque outil fini)
 
 ## En cours
-- git-hooks (Vague 13)
+- log-level-filter (Vague 17)
 
 ## File d'attente — CLI Tools
 - [x] snippet-cli : gestionnaire de snippets de commandes shell (sauvegarde, recherche, exécution) ✓ 2026-05-28
@@ -237,18 +237,65 @@ Push automatique après chaque outil.
 - [x] status-api : API de statut de service configurable ✓ 2026-05-28
 
 ## Vague 13 — DevOps
-- [ ] git-hooks : installe des hooks git pré-configurés
-- [ ] log-compress : compresse et archive des fichiers de logs
-- [ ] env-backup : sauvegarde et restaure des environnements .env
-- [ ] docker-stats-cli : affiche les stats Docker en temps réel
-- [ ] uptime-check : vérifie l'uptime de services et affiche un rapport
+- [x] git-hooks : installe des hooks git pré-configurés ✓ 2026-05-28
+- [x] log-compress : compresse et archive des fichiers de logs ✓ 2026-05-28
+- [x] env-backup : sauvegarde et restaure des environnements .env ✓ 2026-05-28
+- [x] docker-stats-cli : affiche les stats Docker en temps réel ✓ 2026-05-28
+- [x] uptime-check : vérifie l'uptime de services et affiche un rapport ✓ 2026-05-28
 
 ## Vague 13 — Productivité
-- [ ] cli-biography : notes biographiques rapides sur des personnes
-- [ ] project-log : journal de projet avec milestones
-- [ ] idea-box : boîte à idées avec tags et vote
-- [ ] reading-notes : notes de lecture par livre/chapitre
-- [ ] skill-tracker : suivi de compétences avec niveaux et progression
+- [x] cli-biography : notes biographiques rapides sur des personnes ✓ 2026-05-28
+- [x] project-log : journal de projet avec milestones ✓ 2026-05-28
+- [x] idea-box : boîte à idées avec tags et vote ✓ 2026-05-28
+- [x] reading-notes : notes de lecture par livre/chapitre ✓ 2026-05-28
+- [x] skill-tracker : suivi de compétences avec niveaux et progression ✓ 2026-05-28
 - Dernière mise à jour: 2026-05-28
 - Priorité: CLI tools d'abord (rapides à coder)
 - Chaque outil: max 1-2h de dev
+
+## Vague 14 — CLI Tools
+- [x] github-trending-cli : affiche les repos tendance GitHub en terminal ✓ 2026-05-28
+- [x] markdown-table : convertit CSV/TSV/data en tableaux Markdown ✓ 2026-05-28
+- [x] json-flatten : aplatit du JSON imbriqué en paires clé-valeur ✓ 2026-05-28
+- [x] ssh-key-gen : générateur de clés SSH avec options ✓ 2026-05-28
+- [x] git-ignore : génère des .gitignore depuis des templates ✓ 2026-05-28
+
+## Vague 15 — CLI Tools
+- [x] markdown-checklist : gestionnaire de checklists dans des fichiers Markdown ✓ 2026-05-28
+- [x] color-convert : convertisseur de couleurs (hex, rgb, hsl, cmyk) ✓ 2026-05-28
+- [x] http-file-server : serveur HTTP statique simple en Go ✓ 2026-05-28
+- [x] pdf-text-extract : extrait le texte de fichiers PDF ✓ 2026-05-28
+- [x] git-merge-conflict-finder : détecte les conflits de merge dans un repo git ✓ 2026-05-28
+
+## Vague 16 — CLI Tools
+- [x] docker-compose-validator : valide la syntaxe des fichiers docker-compose.yml ✓ 2026-05-28
+- [x] git-submodule-list : liste et affiche les infos des submodules git ✓ 2026-05-28
+- [x] env-to-json : convertit un fichier .env en JSON ✓ 2026-05-28
+
+## Vague 17 — CLI Tools
+- [x] json-sort : trie les clés d'un fichier JSON de manière récursive ✓ 2026-05-28
+- [x] toml-to-json : convertisseur TOML vers JSON ✓ 2026-05-28
+- [x] file-count : compte les fichiers par type/extension dans un dossier ✓ 2026-05-28
+- [x] git-last-commit : affiche les infos du dernier commit de manière formatée ✓ 2026-05-28
+- [x] path-join : outil de manipulation de chemins de fichiers (join, dirname, basename, etc.) ✓ 2026-05-28
+
+## Vague 17 — APIs & Services
+- [x] cors-proxy : proxy CORS simple pour contourner les restrictions ✓ 2026-05-28
+- [x] timestamp-api : API qui retourne le timestamp actuel dans différents formats ✓ 2026-05-28
+- [x] uuid-api : API de génération de UUIDs (v4, v7) ✓ 2026-05-28
+- [x] hash-api : API de hachage (sha256, md5, blake2) de texte ou fichiers ✓ 2026-05-28
+- [x] paginate-api : API de pagination pour données JSON ✓ 2026-05-28
+
+## Vague 17 — DevOps
+- [x] log-level-filter : filtre des logs par niveau de sévérité ✓ 2026-05-28
+- [x] env-docs : génère la documentation d'un .env en Markdown ✓ 2026-05-28
+- [ ] git-tag-manager : gestionnaire de tags git (création, liste, suppression)
+- [ ] docker-image-size : affiche la taille des images Docker triées
+- [ ] crontab-lint : vérifie la syntaxe et signale les problèmes dans un crontab
+
+## Vague 17 — Productivité
+- [ ] cli-contacts : carnet d'adresses simple en CLI
+- [ ] recipe-cli : gestionnaire de recettes de cuisine en CLI
+- [ ] cli-bingo : générateur de cartes Bingo en terminal
+- [ ] word-counter : compteur de mots avec historique par fichier
+- [ ] cli-trivia : quiz de culture générale en terminal
