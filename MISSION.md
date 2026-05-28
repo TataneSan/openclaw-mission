@@ -9,7 +9,34 @@ Push automatique après chaque outil.
 (mettre à jour ici chaque outil fini)
 
 ## En cours
-- text-frequency-cli (Vague 24)
+
+## Vague 28 — CLI Tools
+- [x] csv-header : affiche, ajoute, supprime ou renomme les headers CSV ✓ 2026-05-28
+- [x] json-to-markdown : convertisseur JSON vers tableau Markdown ✓ 2026-05-28
+- [x] csv-head : affiche les N premières lignes d'un CSV ✓ 2026-05-28
+- [x] git-diff-files : liste les fichiers modifiés entre deux commits ✓ 2026-05-28
+- [x] toml-lint : vérifie la syntaxe et le style TOML ✓ 2026-05-28
+
+## Vague 29 — CLI Tools
+- [x] env-list : liste les variables d'environnement triées ✓ 2026-05-28
+- [x] file-age : affiche l'âge des fichiers (création, modification) ✓ 2026-05-28
+- [x] json-schema-gen : génère un JSON Schema depuis un fichier JSON ✓ 2026-05-28
+- [x] http-headers : affiche les headers HTTP d'une URL ✓ 2026-05-28
+- [x] ini-to-json : convertisseur INI vers JSON ✓ 2026-05-28
+
+## Vague 30 — CLI Tools
+- [x] yaml-to-toml : convertisseur YAML vers TOML ✓ 2026-05-28
+- [ ] json-validate : valide la syntaxe JSON d'un fichier
+- [ ] csv-to-tsv : convertisseur CSV vers TSV
+- [ ] git-branch-list : liste les branches git avec dernier commit
+- [ ] url-encode : encode/decode des chaînes URL
+
+## Vague 26 — CLI Tools
+- [x] ncat-lite : client/serveur TCP léger pour le debug réseau ✓ 2026-05-28
+- [x] csv-cut : extrait des colonnes spécifiques depuis des fichiers CSV ✓ 2026-05-28
+- [x] git-repo-size : affiche la répartition de la taille d'un repo git ✓ 2026-05-28
+- [x] json-to-tsv : convertit des tableaux JSON en format TSV ✓ 2026-05-28
+- [x] file-touch : crée/mise à jour des timestamps de fichiers en batch ✓ 2026-05-28
 
 ## File d'attente — CLI Tools
 - [x] snippet-cli : gestionnaire de snippets de commandes shell (sauvegarde, recherche, exécution) ✓ 2026-05-28
@@ -250,11 +277,18 @@ Push automatique après chaque outil.
 - [x] reading-notes : notes de lecture par livre/chapitre ✓ 2026-05-28
 - [x] skill-tracker : suivi de compétences avec niveaux et progression ✓ 2026-05-28
 ## Vague 24 — CLI Tools
-- [x] text-frequency-cli : analyseur de fréquence de mots dans un texte/fichier ✓ 2026-05-28
+- [x] file-rename-batch : renommage massif de fichiers (regex, case, remplacement) ✓ 2026-05-28
 - [x] json-compact : minifie du JSON en une seule ligne ✓ 2026-05-28
-- [x] csv-header : affiche, renomme ou supprime des colonnes CSV ✓ 2026-05-28
-- [x] git-remote-info : affiche les URLs des remotes git configurées ✓ 2026-05-28
-- [x] env-to-csv : convertit un fichier .env en CSV ✓ 2026-05-28
+- [x] csv-header : affiche, ajoute, supprime ou renomme les headers CSV ✓ 2026-05-28
+- [x] ini-to-json : convertisseur INI vers JSON ✓ 2026-05-28
+- [x] toml-to-csv : convertisseur TOML vers CSV ✓ 2026-05-28
+- [x] json-to-toml : convertisseur JSON vers TOML ✓ 2026-05-28
+
+## Vague 25 — CLI Tools
+- [x] csv-sort : trie des fichiers CSV par une ou plusieurs colonnes ✓ 2026-05-28
+- [x] csv-merge : fusionne plusieurs fichiers CSV avec la même structure ✓ 2026-05-28
+- [x] csv-count : compte les lignes dans des fichiers CSV ✓ 2026-05-28
+- [x] json-unique : supprime les doublons dans un tableau JSON ✓ 2026-05-28
 - Dernière mise à jour: 2026-05-28
 - Priorité: CLI tools d'abord (rapides à coder)
 - Chaque outil: max 1-2h de dev
@@ -367,3 +401,14 @@ Push automatique après chaque outil.
 - [x] csv-transpose : transpose les lignes et colonnes d'un CSV ✓ 2026-05-28
 - [x] git-commit-count : compte les commits par période (jour, semaine, mois) ✓ 2026-05-28
 - [x] env-to-markdown : génère un tableau Markdown depuis un .env ✓ 2026-05-28
+
+## Vague 27 — CLI Tools
+- [x] stopwatch-cli : chronomètre terminal avec laps et historique ✓ 2026-05-28
+- [x] json-to-ini : convertisseur JSON vers INI ✓ 2026-05-28
+- [x] csv-pivot : pivote un CSV (lignes↔colonnes agrégées) ✓ 2026-05-28
+- [x] git-remote-info : affiche les URLs et statuts des remotes git ✓ 2026-05-28
+- [x] env-to-csv : convertit un fichier .env en CSV ✓ 2026-05-28
+- [x] json-to-xml : convertisseur JSON vers XML ✓ 2026-05-28
+- [x] csv-validate : valide la structure d'un CSV (colonnes, types, nulls) ✓ 2026-05-28
+- [x] git-tag-info : affiche les infos détaillées d'un tag git ✓ 2026-05-28
+- [x] toml-to-ini : convertisseur TOML vers INI ✓ 2026-05-28
