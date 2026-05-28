@@ -145,12 +145,12 @@ Push automatique après chaque outil.
 - [x] validate-api : API de validation d'email, téléphone, CPF/CNPJ ✓ 2026-05-28
 - [x] notify-api : API de notifications multi-canaux (email, webhook, Slack) ✓ 2026-05-28
 - [x] queue-api : API de file d'attente simple avec priorité ✓ 2026-05-28
-- [ ] auth-api : API d'authentification JWT avec refresh tokens
-- [ ] file-upload-api : API d'upload de fichiers avec validation
+- [x] auth-api : API d'authentification JWT avec refresh tokens ✓ 2026-05-28
+- [x] file-upload-api : API d'upload de fichiers avec validation ✓ 2026-05-28
 
 ## Vague 9 — DevOps
-- [ ] nginx-gen : génère des configs Nginx depuis un fichier YAML
-- [ ] log-analyzer : analyse de logs Apache/Nginx avec stats
+- [x] nginx-gen : génère des configs Nginx depuis un fichier YAML ✓ 2026-05-28
+- [x] log-analyzer : analyse de logs Apache/Nginx avec stats ✓ 2026-05-28
 - [ ] vm-stats : collecte et affiche les stats système (CPU, RAM, disk, net)
 - [ ] docker-logs-cli : agrège et filtre les logs de containers Docker
 - [ ] release-notes : génère des release notes depuis git tags

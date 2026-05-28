@@ -1,0 +1,4 @@
+vm-stats
+*.exe
+*.test
+*.out
