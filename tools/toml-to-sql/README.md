@@ -1,119 +1,103 @@
 # toml-to-sql
 
-Converts TOML files to SQL `CREATE TABLE` and `INSERT` statements.
+Convert TOML files to SQL INSERT statements.
 
-Supports PostgreSQL and MySQL dialects, automatic type inference, and reads from files or stdin.
-
-## Installation
+## Install
 
 ```bash
-# From source
 go install github.com/TataneSan/toml-to-sql@latest
+```
 
-# Or download the binary from Releases
+Or build from source:
+
+```bash
+git clone https://github.com/TataneSan/toml-to-sql.git
+cd toml-to-sql
+go build -o toml-to-sql .
 ```
 
 ## Usage
 
 ```
-toml-to-sql [OPTIONS] [FILE]
+toml-to-sql [options] <file.toml>
 ```
 
 ### Options
 
-| Flag | Description | Default |
-|------|-------------|---------|
-| `-f, --format FORMAT` | Output format: `text`, `json` | `text` |
-| `-t, --table NAME` | Override table name | TOML table name |
-| `-d, --dialect DIALECT` | SQL dialect: `postgres`, `mysql` | `postgres` |
-| `--file FILE` | Input file path | stdin |
-| `-h, --help` | Show help message | — |
+| Flag       | Description                                      |
+|------------|--------------------------------------------------|
+| `-create`  | Generate CREATE TABLE statements before INSERTs  |
 
-## Examples
+### Examples
 
-### Basic usage from stdin
+Basic conversion:
 
 ```bash
-cat data.toml | toml-to-sql
+toml-to-sql config.toml
 ```
 
-Given `data.toml`:
+With CREATE TABLE statements:
+
+```bash
+toml-to-sql -create config.toml
+```
+
+Pipe to a SQL file:
+
+```bash
+toml-to-sql -create config.toml > output.sql
+```
+
+## Input / Output
+
+Given this `config.toml`:
+
 ```toml
-[[products]]
-name = "Widget"
-price = 9.99
-in_stock = true
+[server]
+host = "localhost"
+port = 8080
+debug = true
 
-[[products]]
-name = "Gadget"
-price = 24.99
-in_stock = false
+[[users]]
+name = "alice"
+age = 30
+
+[[users]]
+name = "bob"
+age = 25
 ```
 
-Output:
+Running `toml-to-sql -create config.toml` outputs:
+
 ```sql
--- Table: products
-CREATE TABLE "products" (
-    "in_stock" BOOLEAN,
-    "name" TEXT,
-    "price" REAL
+CREATE TABLE IF NOT EXISTS `server` (
+  `debug` INTEGER,
+  `host` TEXT,
+  `port` INTEGER
 );
-
-INSERT INTO "products" ("in_stock", "name", "price") VALUES (TRUE, 'Widget', 9.99);
-INSERT INTO "products" ("in_stock", "name", "price") VALUES (FALSE, 'Gadget', 24.99);
-```
-
-### From a file
-
-```bash
-toml-to-sql data.toml
-```
-
-### MySQL dialect
-
-```bash
-toml-to-sql --dialect mysql data.toml
-```
-
-Output:
-```sql
--- Table: products
-CREATE TABLE `products` (
-    `in_stock` TINYINT(1),
-    `name` TEXT,
-    `price` REAL
+INSERT INTO `server` (`debug`, `host`, `port`)
+VALUES (1, 'localhost', 8080);
+CREATE TABLE IF NOT EXISTS `users` (
+  `age` INTEGER,
+  `name` TEXT
 );
-
-INSERT INTO `products` (`in_stock`, `name`, `price`) VALUES (1, 'Widget', 9.99);
-INSERT INTO `products` (`in_stock`, `name`, `price`) VALUES (0, 'Gadget', 24.99);
-```
-
-### Override table name
-
-```bash
-toml-to-sql --table inventory data.toml
+INSERT INTO `users` (`age`, `name`)
+VALUES (30, 'alice');
+INSERT INTO `users` (`age`, `name`)
+VALUES (25, 'bob');
 ```
 
 ## Features
 
-- **Auto type inference**: Detects `BOOLEAN`, `INTEGER`, `REAL`, and `TEXT` types
-- **Multiple dialects**: PostgreSQL (default) and MySQL
-- **Array of tables**: Supports `[[array]]` TOML syntax
-- **Single tables**: Supports `[table]` TOML syntax
-- **stdin support**: Pipe TOML data directly
-- **Sorted columns**: Output columns in alphabetical order for consistency
-
-## Type Inference Rules
-
-| TOML Type | PostgreSQL | MySQL |
-|-----------|-----------|-------|
-| boolean | BOOLEAN | TINYINT(1) |
-| integer | INTEGER | INTEGER |
-| float | REAL | REAL |
-| string | TEXT | TEXT |
-
-If any value in a column is a string, the entire column is typed as `TEXT`.
+- Converts TOML tables to SQL INSERT statements
+- Optional CREATE TABLE generation with type inference
+- Handles nested tables (flattened with dot notation)
+- Handles arrays of tables (each element becomes a row)
+- Arrays and inline tables are serialized as JSON
+- Boolean values are converted to 1/0
+- SQL string escaping (single quotes doubled)
+- Sorted column output for deterministic results
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for details.
+MIT

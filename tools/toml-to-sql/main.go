@@ -1,326 +1,221 @@
 // toml-to-sql converts TOML files to SQL INSERT statements.
 //
-// It reads TOML data from a file or stdin and generates CREATE TABLE
-// and INSERT statements for PostgreSQL or MySQL.
+// Each TOML table becomes a table name, and its key-value pairs
+// become columns in INSERT statements. Sub-tables are flattened
+// with dot notation by default.
 package main
 
 import (
-	"bufio"
 	"encoding/json"
+	"flag"
 	"fmt"
-	"io"
 	"os"
+	"reflect"
 	"sort"
 	"strings"
 
 	"github.com/BurntSushi/toml"
 )
 
-type config struct {
-	file    string
-	table   string
-	format  string
-	dialect string
+func escape(s string) string {
+	return strings.ReplaceAll(s, "'", "''")
 }
 
-func main() {
-	cfg := parseFlags()
-
-	data := loadData(cfg.file)
-
-	var tables map[string]interface{}
-	if _, err := toml.Decode(string(data), &tables); err != nil {
-		fmt.Fprintf(os.Stderr, "error: failed to parse TOML: %v\n", err)
-		os.Exit(1)
-	}
-
-	if len(tables) == 0 {
-		fmt.Fprintf(os.Stderr, "error: TOML file is empty or contains no tables\n")
-		os.Exit(1)
-	}
-
-	for tableName, tableData := range tables {
-		if cfg.table != "" {
-			tableName = cfg.table
+func toSQLValue(v any) string {
+	switch val := v.(type) {
+	case nil:
+		return "NULL"
+	case bool:
+		if val {
+			return "1"
 		}
-		rows, err := extractRows(tableData)
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "error: failed to extract rows from table '%s': %v\n", tableName, err)
-			continue
-		}
-		if len(rows) == 0 {
-			continue
-		}
-		printTable(tableName, rows, cfg.dialect)
+		return "0"
+	case int64:
+		return fmt.Sprintf("%d", val)
+	case float64:
+		return fmt.Sprintf("%g", val)
+	case string:
+		return "'" + escape(val) + "'"
+	case []any:
+		b, _ := json.Marshal(val)
+		return "'" + escape(string(b)) + "'"
+	case map[string]any:
+		b, _ := json.Marshal(val)
+		return "'" + escape(string(b)) + "'"
+	default:
+		return "'" + escape(fmt.Sprintf("%v", v)) + "'"
 	}
 }
 
-func parseFlags() config {
-	cfg := config{table: "", format: "text", dialect: "postgres"}
-	args := os.Args[1:]
-	i := 0
-	for i < len(args) {
-		switch args[i] {
-		case "--table", "-t":
-			if i+1 < len(args) {
-				cfg.table = args[i+1]
-				i += 2
-			} else {
-				fmt.Fprintf(os.Stderr, "error: --table requires a value\n")
-				os.Exit(1)
+func flattenMap(prefix string, m map[string]any) map[string]any {
+	result := make(map[string]any)
+	for k, v := range m {
+		key := k
+		if prefix != "" {
+			key = prefix + "." + k
+		}
+		switch val := v.(type) {
+		case map[string]any:
+			sub := flattenMap(key, val)
+			for sk, sv := range sub {
+				result[sk] = sv
 			}
-		case "--format", "-f":
-			if i+1 < len(args) {
-				cfg.format = args[i+1]
-				i += 2
-			} else {
-				fmt.Fprintf(os.Stderr, "error: --format requires a value\n")
-				os.Exit(1)
+		case map[any]any:
+			flat := make(map[string]any)
+			for mk, mv := range val {
+				flat[fmt.Sprintf("%v", mk)] = mv
 			}
-		case "--dialect", "-d":
-			if i+1 < len(args) {
-				cfg.dialect = args[i+1]
-				i += 2
-			} else {
-				fmt.Fprintf(os.Stderr, "error: --dialect requires a value\n")
-				os.Exit(1)
+			sub := flattenMap(key, flat)
+			for sk, sv := range sub {
+				result[sk] = sv
 			}
-		case "--file", "--":
-			if i+1 < len(args) {
-				cfg.file = args[i+1]
-				i += 2
-			} else {
-				fmt.Fprintf(os.Stderr, "error: --file requires a value\n")
-				os.Exit(1)
-			}
-		case "--help", "-h":
-			printUsage()
-			os.Exit(0)
 		default:
-			if args[i][0] != '-' {
-				cfg.file = args[i]
-			}
-			i++
+			result[key] = v
 		}
 	}
-	return cfg
+	return result
 }
 
-func printUsage() {
-	fmt.Println("Usage: toml-to-sql [OPTIONS] [FILE]")
-	fmt.Println()
-	fmt.Println("Converts TOML files to SQL INSERT statements.")
-	fmt.Println()
-	fmt.Println("Options:")
-	fmt.Println("  -f, --format FORMAT   Output format: text, json (default: text)")
-	fmt.Println("  -t, --table NAME      Table name (default: TOML table name)")
-	fmt.Println("  -d, --dialect DIALECT SQL dialect: postgres, mysql (default: postgres)")
-	fmt.Println("      --file FILE       Input file (default: stdin)")
-	fmt.Println("  -h, --help            Show this help message")
-	fmt.Println()
-	fmt.Println("Examples:")
-	fmt.Println("  toml-to-sql data.toml")
-	fmt.Println("  cat data.toml | toml-to-sql")
-	fmt.Println("  toml-to-sql --dialect mysql --table users data.toml")
-}
-
-func loadData(file string) []byte {
-	var reader io.Reader
-	if file != "" {
-		f, err := os.Open(file)
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "error: failed to open file '%s': %v\n", file, err)
-			os.Exit(1)
+// asMapStringAny converts a map[any]any to map[string]any
+func asMapStringAny(v any) (map[string]any, bool) {
+	if m, ok := v.(map[string]any); ok {
+		return m, true
+	}
+	if m, ok := v.(map[any]any); ok {
+		flat := make(map[string]any)
+		for mk, mv := range m {
+			flat[fmt.Sprintf("%v", mk)] = mv
 		}
-		defer f.Close()
-		reader = f
-	} else {
-		reader = os.Stdin
+		return flat, true
 	}
-	buf := bufio.NewReader(reader)
-	data, err := io.ReadAll(buf)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "error: failed to read input: %v\n", err)
-		os.Exit(1)
-	}
-	return data
+	return nil, false
 }
 
-func extractRows(data interface{}) ([]map[string]interface{}, error) {
-	switch v := data.(type) {
-	case map[string]interface{}:
-		return []map[string]interface{}{v}, nil
-	case []interface{}:
-		var rows []map[string]interface{}
-		for _, item := range v {
-			m, ok := item.(map[string]interface{})
-			if !ok {
-				return nil, fmt.Errorf("array items must be tables")
-			}
+// extractRows uses reflection to get rows from any slice type containing maps
+func extractRows(v any) []map[string]any {
+	rv := reflect.ValueOf(v)
+	if rv.Kind() != reflect.Slice {
+		return nil
+	}
+	rows := make([]map[string]any, 0, rv.Len())
+	for i := 0; i < rv.Len(); i++ {
+		item := rv.Index(i).Interface()
+		if m, ok := asMapStringAny(item); ok {
 			rows = append(rows, m)
 		}
-		return rows, nil
-	case []map[string]interface{}:
-		return v, nil
-	default:
-		return nil, fmt.Errorf("unsupported type: %T", data)
 	}
+	return rows
 }
 
-func printTable(tableName string, rows []map[string]interface{}, dialect string) {
-	if len(rows) == 0 {
-		return
-	}
-
-	keys := getAllKeys(rows)
-	sort.Strings(keys)
-	types := inferTypes(rows, keys)
-
-	escapedName := escapeIdentifier(tableName, dialect)
-
-	fmt.Printf("-- Table: %s\n", tableName)
-	fmt.Printf("CREATE TABLE %s (\n", escapedName)
-	for i, k := range keys {
-		escaped := escapeIdentifier(k, dialect)
-		sqlType := goTypeToSQL(types[i], dialect)
-		comma := ","
-		if i == len(keys)-1 {
-			comma = ""
-		}
-		fmt.Printf("    %s %s%s\n", escaped, sqlType, comma)
-	}
-	fmt.Println(");")
-	fmt.Println()
-
-	for _, row := range rows {
-		values := make([]string, len(keys))
-		for i, k := range keys {
-			values[i] = formatValue(row[k], types[i], dialect)
-		}
-		escapedKeys := make([]string, len(keys))
-		for i, k := range keys {
-			escapedKeys[i] = escapeIdentifier(k, dialect)
-		}
-		fmt.Printf("INSERT INTO %s (%s) VALUES (%s);\n",
-			escapedName,
-			strings.Join(escapedKeys, ", "),
-			strings.Join(values, ", "))
-	}
-	fmt.Println()
-}
-
-func getAllKeys(rows []map[string]interface{}) []string {
-	keySet := make(map[string]bool)
-	for _, row := range rows {
-		for k := range row {
-			keySet[k] = true
-		}
-	}
-	keys := make([]string, 0, len(keySet))
-	for k := range keySet {
+func columnNames(m map[string]any) []string {
+	keys := make([]string, 0, len(m))
+	for k := range m {
 		keys = append(keys, k)
 	}
+	sort.Strings(keys)
 	return keys
 }
 
-func inferTypes(rows []map[string]interface{}, keys []string) []string {
-	types := make([]string, len(keys))
-	for i, k := range keys {
-		types[i] = "text"
-		allBool := true
-		allInt := true
-		allFloat := true
-		for _, row := range rows {
-			v, ok := row[k]
-			if !ok || v == nil {
-				continue
-			}
-			switch val := v.(type) {
-			case bool:
-				allInt = false
-				allFloat = false
-			case int64, int32, int, uint64, uint32, uint:
-				allBool = false
-			case float64:
-				allBool = false
-				if float64(int64(val)) != val {
-					allInt = false
+func generateInsert(table string, data map[string]any, sep string) string {
+	keys := columnNames(data)
+	cols := make([]string, 0, len(keys))
+	vals := make([]string, 0, len(keys))
+	for _, k := range keys {
+		cols = append(cols, "`"+k+"`")
+		vals = append(vals, toSQLValue(data[k]))
+	}
+	return fmt.Sprintf("INSERT INTO %s (%s)%sVALUES (%s);",
+		tableName(table), strings.Join(cols, ", "), sep, strings.Join(vals, ", "))
+}
+
+func generateCreateTable(table string, data map[string]any, sep string) string {
+	keys := columnNames(data)
+	cols := make([]string, 0, len(keys))
+	for _, k := range keys {
+		colType := "TEXT"
+		switch data[k].(type) {
+		case int64:
+			colType = "INTEGER"
+		case float64:
+			colType = "REAL"
+		case bool:
+			colType = "INTEGER"
+		}
+		cols = append(cols, "  `"+k+"` "+colType)
+	}
+	return fmt.Sprintf("CREATE TABLE IF NOT EXISTS %s (%s);%s",
+		tableName(table), strings.Join(cols, ",\n"), sep)
+}
+
+func tableName(name string) string {
+	return "`" + name + "`"
+}
+
+func processTOML(data map[string]any, output *strings.Builder, createTables bool) {
+	tables := make([]string, 0, len(data))
+	for k := range data {
+		tables = append(tables, k)
+	}
+	sort.Strings(tables)
+
+	sep := "\n"
+	for _, table := range tables {
+		val := data[table]
+
+		// Check if it's a slice (array of tables like [[foo]])
+		if rows := extractRows(val); len(rows) > 0 {
+			for _, row := range rows {
+				flat := flattenMap("", row)
+				if createTables {
+					output.WriteString(generateCreateTable(table, flat, sep))
 				}
-			case string:
-				allBool = false
-				allInt = false
-				allFloat = false
-			default:
-				allBool = false
-				allInt = false
-				allFloat = false
+				output.WriteString(generateInsert(table, flat, sep))
 			}
+			continue
 		}
-		if allBool {
-			types[i] = "bool"
-		} else if allInt {
-			types[i] = "int"
-		} else if allFloat {
-			types[i] = "float"
-		}
-	}
-	return types
-}
 
-func goTypeToSQL(gotype string, dialect string) string {
-	switch gotype {
-	case "bool":
-		if dialect == "mysql" {
-			return "TINYINT(1)"
-		}
-		return "BOOLEAN"
-	case "int":
-		return "INTEGER"
-	case "float":
-		return "REAL"
-	default:
-		return "TEXT"
-	}
-}
-
-func formatValue(v interface{}, gotype string, dialect string) string {
-	if v == nil {
-		return "NULL"
-	}
-	switch val := v.(type) {
-	case bool:
-		if dialect == "mysql" {
-			if val {
-				return "1"
+		// Single map (regular table like [foo])
+		if m, ok := asMapStringAny(val); ok {
+			flat := flattenMap("", m)
+			if createTables {
+				output.WriteString(generateCreateTable(table, flat, sep))
 			}
-			return "0"
+			output.WriteString(generateInsert(table, flat, sep))
 		}
-		if val {
-			return "TRUE"
-		}
-		return "FALSE"
-	case int64, int32, int, uint64, uint32, uint:
-		return fmt.Sprintf("%d", val)
-	case float64:
-		if float64(int64(val)) == val {
-			return fmt.Sprintf("%d", int64(val))
-		}
-		return fmt.Sprintf("%g", val)
-	case string:
-		escaped := strings.ReplaceAll(val, "'", "''")
-		return fmt.Sprintf("'%s'", escaped)
-	default:
-		data, _ := json.Marshal(val)
-		escaped := strings.ReplaceAll(string(data), "'", "''")
-		return fmt.Sprintf("'%s'", escaped)
 	}
 }
 
-func escapeIdentifier(name string, dialect string) string {
-	if dialect == "mysql" {
-		escaped := strings.ReplaceAll(name, "`", "``")
-		return fmt.Sprintf("`%s`", escaped)
+func main() {
+	createFlag := flag.Bool("create", false, "Generate CREATE TABLE statements before INSERTs")
+	flag.Usage = func() {
+		fmt.Fprintf(flag.CommandLine.Output(), "Usage: toml-to-sql [options] <file.toml>\n\n")
+		fmt.Fprintf(flag.CommandLine.Output(), "Convert TOML files to SQL INSERT statements.\n\n")
+		fmt.Fprintf(flag.CommandLine.Output(), "Options:\n")
+		flag.PrintDefaults()
 	}
-	escaped := strings.ReplaceAll(name, "\"", "\"\"")
-	return fmt.Sprintf("\"%s\"", escaped)
+	flag.Parse()
+
+	if flag.NArg() == 0 {
+		flag.Usage()
+		os.Exit(1)
+	}
+
+	filename := flag.Arg(0)
+	content, err := os.ReadFile(filename)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error reading file: %v\n", err)
+		os.Exit(1)
+	}
+
+	var data map[string]any
+	_, err = toml.Decode(string(content), &data)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error parsing TOML: %v\n", err)
+		os.Exit(1)
+	}
+
+	var output strings.Builder
+	processTOML(data, &output, *createFlag)
+
+	fmt.Print(output.String())
 }

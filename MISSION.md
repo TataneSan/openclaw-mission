@@ -544,6 +544,6 @@ Push automatique après chaque outil.
 ## Vague 50 — CLI Tools
 - [x] yaml-to-sql : génère des requêtes SQL depuis du YAML ✓ 2026-05-28
 - [x] csv-to-env : convertisseur CSV vers .env ✓ 2026-05-28
-- [ ] git-branch-rename : renomme des branches git en batch
-- [ ] json-to-tsv-nested : convertisseur JSON imbriqué vers TSV
-- [ ] toml-to-sql : génère des requêtes SQL depuis un TOML
+- [x] git-branch-rename : renomme des branches git en batch ✓ 2026-05-28
+- [x] json-to-tsv-nested : convertisseur JSON imbriqué vers TSV ✓ 2026-05-28
+- [x] toml-to-sql : génère des requêtes SQL depuis un TOML ✓ 2026-05-28
