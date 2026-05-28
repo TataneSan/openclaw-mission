@@ -80,6 +80,9 @@ func getTagInfo(name string) (*TagInfo, error) {
 			if strings.HasPrefix(line, "type ") {
 				continue
 			}
+			if strings.HasPrefix(line, "tag ") {
+				continue // tag name in object, not needed
+			}
 			if strings.HasPrefix(line, "tagger ") {
 				info.Tagger = strings.TrimPrefix(line, "tagger ")
 			}

@@ -84058,3 +84058,17 @@ a//root/openclaw/tools/git-tag-manager/main.go → b//root/openclaw/tools/git-ta
  
  // TagInfo holds metadata about a git tag.
   ┊ 💻 $         cd /root/openclaw/tools/git-tag-manager && go mod init git-tag-manager && go build -o git-tag-manager . && echo "BUILD OK"  1.8s
+  ┊ 💻 $         cd /root/openclaw/tools/git-tag-manager && git add -A && git commit -m "feat: initial commit" && ./git-tag-manager list && ./git-tag-manager create v0.1.0 -m "First release" && ./git-tag-manager create v0.2.0 -m "Second release" && ./git-tag-manager list  1.4s
+  ┊ 🔧 patch     /root/openclaw/tools/git-tag-manager/main.go  0.5s
+  ┊ review diff
+a//root/openclaw/tools/git-tag-manager/main.go → b//root/openclaw/tools/git-tag-manager/main.go
+@@ -79,6 +79,9 @@
+ 			}
+ 			if strings.HasPrefix(line, "type ") {
+ 				continue
++			}
++			if strings.HasPrefix(line, "tag ") {
++				continue // tag name in object, not needed
+ 			}
+ 			if strings.HasPrefix(line, "tagger ") {
+ 				info.Tagger = strings.TrimPrefix(line, "tagger ")
