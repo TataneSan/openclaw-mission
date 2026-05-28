@@ -740,8 +740,22 @@ Push automatique après chaque outil.
 - [x] access-log-parser : parse et affiche les logs d'accès Apache/Nginx avec stats ✓ 2026-05-29
 
 ## Vague 81 — CLI Tools
-- [ ] ssh-audit : audite la config SSH d'un serveur distant (ciphers, MACs, key exchange)
-- [ ] json-to-dhall : convertisseur JSON vers Dhall
-- [ ] csv-to-sqlite : importe des fichiers CSV dans une base SQLite
-- [ ] git-commit-lint : linter de messages de commits (Conventional Commits)
-- [ ] http-sni-check : vérifie le SNI (Server Name Indication) d'un serveur HTTPS
+- [x] ssh-audit : audite la config SSH d'un serveur distant (ciphers, MACs, key exchange) ✓ 2026-05-29
+- [x] json-to-dhall : convertisseur JSON vers Dhall ✓ 2026-05-29
+- [x] csv-to-sqlite : importe des fichiers CSV dans une base SQLite ✓ 2026-05-29 (dup Vague 36)
+- [x] git-commit-lint : linter de messages de commits (Conventional Commits) ✓ 2026-05-29 (dup Vague 49)
+- [x] http-sni-check : vérifie le SNI (Server Name Indication) d'un serveur HTTPS ✓ 2026-05-29
+
+## Vague 82 — CLI Tools
+- [x] ipcalc-cli : calculateur de sous-réseaux IP (CIDR, broadcast, masque, hosts) ✓ 2026-05-29
+- [x] dns-txt : récupère et affiche les enregistrements TXT DNS d'un domaine ✓ 2026-05-29
+- [x] json-to-toml : convertisseur JSON vers TOML ✓ 2026-05-29 (dup Vague 78)
+- [x] csv-to-sql : génère des requêtes SQL INSERT depuis un CSV ✓ 2026-05-29 (dup Vague 78)
+- [x] git-commit-size : affiche la taille des commits (fichiers touchés, LOC) ✓ 2026-05-29 (dup Vague 78)
+
+## Vague 83 — CLI Tools
+- [x] netstat-filter : filtre les connexions réseau par état/hôte/port depuis /proc/net ✓ 2026-05-29
+- [x] json-to-xml : convertisseur JSON vers XML ✓ 2026-05-29
+- [x] csv-to-ini : convertisseur CSV vers INI avec regroupement par section ✓ 2026-05-29
+- [ ] git-branch-depth : affiche la profondeur d'historique par branche
+- [ ] env-to-nginx : convertit un .env en variables Nginx config
