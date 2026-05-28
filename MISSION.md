@@ -500,8 +500,15 @@ Push automatique après chaque outil.
 - [x] go-mod-tidy-check : vérifie si go.mod est à jour ✓ 2026-05-28
 
 ## Vague 44 — CLI Tools
-- [ ] go-vet-check : lance go vet et formate le rapport
-- [ ] json-to-toml-nested : convertisseur JSON profond vers TOML
-- [ ] csv-to-sql : génère CREATE TABLE + INSERT SQL depuis un CSV
-- [ ] git-untracked : liste les fichiers untracked avec tailles
-- [ ] env-to-jsonl : convertit un fichier .env en JSONL
+- [x] go-vet-check : lance go vet et formate le rapport ✓ 2026-05-28
+- [x] json-to-toml-nested : convertisseur JSON profond vers TOML ✓ 2026-05-28
+- [x] csv-to-sql : génère CREATE TABLE + INSERT SQL depuis un CSV ✓ 2026-05-28
+- [x] git-untracked : liste les fichiers untracked avec tailles ✓ 2026-05-28
+- [x] env-to-jsonl : convertit un fichier .env en JSONL ✓ 2026-05-28
+
+## Vague 45 — CLI Tools
+- [x] json-to-sqlite : importe des données JSON dans une base SQLite ✓ 2026-05-28
+- [ ] csv-column-stats : statistiques par colonne d'un CSV (min, max, mean, count)
+- [ ] git-commit-frequency : histogramme des commits par heure/jour de la semaine
+- [ ] env-sanitize : remplace les valeurs sensibles d'un .env par des placeholders
+- [ ] toml-to-markdown : convertit un fichier TOML en tableau Markdown
