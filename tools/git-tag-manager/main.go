@@ -72,32 +72,30 @@ func getTagInfo(name string) (*TagInfo, error) {
 		// Parse annotated tag object
 		tagObj, _ := runGit("cat-file", "-p", name)
 		scanner := bufio.NewScanner(strings.NewReader(tagObj))
+		pastHeaders := false
 		for scanner.Scan() {
 			line := scanner.Text()
-			if strings.HasPrefix(line, "object ") {
-				continue // already have SHA from rev-list
-			}
-			if strings.HasPrefix(line, "type ") {
+			if strings.HasPrefix(line, "object ") ||
+				strings.HasPrefix(line, "type ") ||
+				strings.HasPrefix(line, "tag ") ||
+				strings.HasPrefix(line, "tagger ") ||
+				strings.HasPrefix(line, "date ") {
+				if strings.HasPrefix(line, "tagger ") {
+					info.Tagger = strings.TrimPrefix(line, "tagger ")
+				}
+				if strings.HasPrefix(line, "date ") {
+					info.Date = strings.TrimPrefix(line, "date ")
+				}
 				continue
 			}
-			if strings.HasPrefix(line, "tag ") {
-				continue // tag name in object, not needed
+			pastHeaders = true
+			if line == "" {
+				continue
 			}
-			if strings.HasPrefix(line, "tagger ") {
-				info.Tagger = strings.TrimPrefix(line, "tagger ")
-			}
-			if strings.HasPrefix(line, "date ") {
-				info.Date = strings.TrimPrefix(line, "date ")
-			}
-			// Subject line (first non-empty line after headers)
-			if info.Subject == "" && !strings.HasPrefix(line, " ") && line != "" {
+			if !strings.HasPrefix(line, " ") && info.Subject == "" {
 				info.Subject = line
-			}
-			// Message lines (indented after blank line)
-			if line == "" || strings.HasPrefix(line, " ") {
-				if line != "" {
-					info.Message += strings.TrimPrefix(line, " ") + "\n"
-				}
+			} else if pastHeaders {
+				info.Message += strings.TrimPrefix(line, " ") + "\n"
 			}
 		}
 		info.Message = strings.TrimSuffix(info.Message, "\n")
