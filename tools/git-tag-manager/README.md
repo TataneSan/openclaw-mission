@@ -44,11 +44,11 @@ git-tag-manager list
 ```
 
 ```
-TAG                       TYPE     DATE    SUBJECT
+TAG                       TYPE     DATE         SUBJECT
 ------------------------------------------------------------------------------------------
-v1.2.0                    annotated 2026-05-28 Release v1.2.0
-v1.1.0                    annotated 2026-05-27 Release v1.1.0
-v1.0.0                    light     2026-05-20 Initial release
+v1.2.0                    annotated 2026-05-28   Release v1.2.0
+v1.1.0                    annotated 2026-05-27   Release v1.1.0
+v1.0.0                    light     2026-05-20   Initial release
 
 3 tag(s)
 ```

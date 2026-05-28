@@ -9,7 +9,7 @@ Push automatique après chaque outil.
 (mettre à jour ici chaque outil fini)
 
 ## En cours
-- log-level-filter (Vague 17)
+- text-frequency-cli (Vague 24)
 
 ## File d'attente — CLI Tools
 - [x] snippet-cli : gestionnaire de snippets de commandes shell (sauvegarde, recherche, exécution) ✓ 2026-05-28
@@ -249,6 +249,12 @@ Push automatique après chaque outil.
 - [x] idea-box : boîte à idées avec tags et vote ✓ 2026-05-28
 - [x] reading-notes : notes de lecture par livre/chapitre ✓ 2026-05-28
 - [x] skill-tracker : suivi de compétences avec niveaux et progression ✓ 2026-05-28
+## Vague 24 — CLI Tools
+- [x] text-frequency-cli : analyseur de fréquence de mots dans un texte/fichier ✓ 2026-05-28
+- [x] json-compact : minifie du JSON en une seule ligne ✓ 2026-05-28
+- [x] csv-header : affiche, renomme ou supprime des colonnes CSV ✓ 2026-05-28
+- [x] git-remote-info : affiche les URLs des remotes git configurées ✓ 2026-05-28
+- [x] env-to-csv : convertit un fichier .env en CSV ✓ 2026-05-28
 - Dernière mise à jour: 2026-05-28
 - Priorité: CLI tools d'abord (rapides à coder)
 - Chaque outil: max 1-2h de dev
@@ -289,13 +295,75 @@ Push automatique après chaque outil.
 ## Vague 17 — DevOps
 - [x] log-level-filter : filtre des logs par niveau de sévérité ✓ 2026-05-28
 - [x] env-docs : génère la documentation d'un .env en Markdown ✓ 2026-05-28
-- [ ] git-tag-manager : gestionnaire de tags git (création, liste, suppression)
-- [ ] docker-image-size : affiche la taille des images Docker triées
-- [ ] crontab-lint : vérifie la syntaxe et signale les problèmes dans un crontab
+- [x] git-tag-manager : gestionnaire de tags git (création, liste, suppression) ✓ 2026-05-28
+- [x] docker-image-size : affiche la taille des images Docker triées ✓ 2026-05-28
+- [x] crontab-lint : vérifie la syntaxe et signale les problèmes dans un crontab ✓ 2026-05-28
 
 ## Vague 17 — Productivité
-- [ ] cli-contacts : carnet d'adresses simple en CLI
-- [ ] recipe-cli : gestionnaire de recettes de cuisine en CLI
-- [ ] cli-bingo : générateur de cartes Bingo en terminal
-- [ ] word-counter : compteur de mots avec historique par fichier
-- [ ] cli-trivia : quiz de culture générale en terminal
+- [x] cli-contacts : carnet d'adresses simple en CLI ✓ 2026-05-28
+- [x] recipe-cli : gestionnaire de recettes de cuisine en CLI ✓ 2026-05-28
+- [x] cli-bingo : générateur de cartes Bingo en terminal ✓ 2026-05-28
+- [x] word-counter : compteur de mots avec historique par fichier ✓ 2026-05-28
+- [x] cli-trivia : quiz de culture générale en terminal ✓ 2026-05-28
+
+## Vague 18 — CLI Tools
+- [x] json-minify : minifie des fichiers JSON (retire espaces, newlines) ✓ 2026-05-28
+- [x] csv-split : divise un gros CSV en plusieurs fichiers plus petits ✓ 2026-05-28
+- [x] git-stash-cleanup : liste et nettoie les stashes git obsolètes ✓ 2026-05-28
+- [x] env-to-toml : convertit un fichier .env en TOML ✓ 2026-05-28
+- [x] line-count : compte les lignes de code par langage dans un projet ✓ 2026-05-28
+
+## Vague 18 — APIs & Services
+- [x] captcha-api : API de génération de CAPTCHAs simples (math, texte) ✓ 2026-05-28
+- [x] seed-api : API de seed/random reproductible avec seed ✓ 2026-05-28
+- [x] batch-api : API qui exécute des requêtes HTTP en batch ✓ 2026-05-28
+- [x] transform-api : API de transformation de données (map, filter, sort) ✓ 2026-05-28
+- [x] merge-api : API de merge de fichiers JSON/YAML ✓ 2026-05-28
+
+## Vague 18 — DevOps
+- [x] log-sampler : échantillonne des logs pour analyse (1%, 10%, etc.) ✓ 2026-05-28
+- [x] env-to-yaml : convertit un fichier .env en YAML ✓ 2026-05-28
+- [x] git-reflog-clean : nettoie le reflog git pour réduire la taille ✓ 2026-05-28
+- [x] docker-rename : renomme des containers Docker en batch ✓ 2026-05-28
+- [x] symlink-manager : gestionnaire de symlinks (création, vérification, nettoyage) ✓ 2026-05-28
+
+## Vague 18 — Productivité
+- [x] cli-bookmarks : gestionnaire de favoris/shortcuts en CLI ✓ 2026-05-28
+- [x] cli-dice : lanceur de dés (d4, d6, d8, d10, d12, d20) en terminal ✓ 2026-05-28
+- [x] cli-cookbook : recettes de cuisine rapides en CLI ✓ 2026-05-28
+- [x] cli-meditation : timer de méditation avec instructions en terminal ✓ 2026-05-28
+- [x] cli-joke : générateur de blagues en CLI ✓ 2026-05-28
+
+## Vague 19 — CLI Tools
+- [x] json-rename-keys : renomme les clés JSON de manière récursive ✓ 2026-05-28
+- [x] csv-join : jointure de deux fichiers CSV (inner, left, right) ✓ 2026-05-28
+- [x] git-file-tree : affiche les fichiers modifiés dans un commit en arbre ✓ 2026-05-28
+- [x] csv-statistics : statistiques basiques sur chaque colonne d'un CSV ✓ 2026-05-28
+
+## Vague 20 — CLI Tools
+- [x] dedup-lines : supprime les lignes dupliquées dans des fichiers ✓ 2026-05-28
+- [x] json-subset : extrait un sous-ensemble de clés depuis un JSON ✓ 2026-05-28
+- [x] git-history : affiche l'historique git formaté avec stats ✓ 2026-05-28
+- [x] env-sanitize : sanitize un fichier .env (retire valeurs sensibles) ✓ 2026-05-28
+- [x] dir-compare : compare le contenu de deux dossiers ✓ 2026-05-28
+
+## Vague 21 — CLI Tools
+- [x] glob-match : teste si des chemins matchent un pattern glob ✓ 2026-05-28
+- [x] json-group-by : regroupe des objets JSON par une clé ✓ 2026-05-28
+- [x] csv-append : ajoute des lignes à un fichier CSV existant ✓ 2026-05-28
+- [x] git-author-stats : stats par auteur (commits, fichiers touchés, LOC) ✓ 2026-05-28
+- [x] env-to-ini : convertit un fichier .env en format INI ✓ 2026-05-28
+
+## Vague 22 — CLI Tools
+- [x] json-flatten-keys : aplatit des clés JSON imbriquées en une seule couche ✓ 2026-05-28
+- [x] csv-dedup : supprime les lignes dupliquées dans un CSV ✓ 2026-05-28
+- [x] git-branch-age : affiche l'âge de chaque branche git ✓ 2026-05-28
+- [x] json-to-yaml : convertisseur JSON vers YAML ✓ 2026-05-28
+- [x] path-exists : vérifie l'existence de chemins fichiers/dossiers ✓ 2026-05-28
+
+## Vague 23 — CLI Tools
+- [x] yaml-to-csv : convertisseur YAML vers CSV ✓ 2026-05-28
+- [x] json-filter : filtre des objets JSON par conditions ✓ 2026-05-28
+- [x] csv-transpose : transpose les lignes et colonnes d'un CSV ✓ 2026-05-28
+- [x] git-commit-count : compte les commits par période (jour, semaine, mois) ✓ 2026-05-28
+- [x] env-to-markdown : génère un tableau Markdown depuis un .env ✓ 2026-05-28

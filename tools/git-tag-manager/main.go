@@ -12,13 +12,13 @@ import (
 
 // TagInfo holds metadata about a git tag.
 type TagInfo struct {
-	Name       string `json:"name"`
-	Sha        string `json:"sha"`
-	Subject    string `json:"subject,omitempty"`
-	Message    string `json:"message,omitempty"`
-	Tagger     string `json:"tagger,omitempty"`
-	Date       string `json:"date,omitempty"`
-	IsAnnotated bool  `json:"annotated"`
+	Name        string `json:"name"`
+	Sha         string `json:"sha"`
+	Subject     string `json:"subject,omitempty"`
+	Message     string `json:"message,omitempty"`
+	Tagger      string `json:"tagger,omitempty"`
+	Date        string `json:"date,omitempty"`
+	IsAnnotated bool   `json:"annotated"`
 }
 
 func runGit(args ...string) (string, error) {
@@ -56,51 +56,45 @@ func listTags() ([]TagInfo, error) {
 func getTagInfo(name string) (*TagInfo, error) {
 	info := &TagInfo{Name: name}
 
-	// Get the commit SHA
 	sha, err := runGit("rev-list", "-n", "1", name)
 	if err != nil {
 		return nil, fmt.Errorf("tag %s not found", name)
 	}
 	info.Sha = sha
 
-	// Check if annotated
 	fmtOut, _ := runGit("cat-file", "-t", name)
 	isAnnotated := strings.TrimSpace(fmtOut) == "tag"
 	info.IsAnnotated = isAnnotated
 
 	if isAnnotated {
-		// Parse annotated tag object
 		tagObj, _ := runGit("cat-file", "-p", name)
 		scanner := bufio.NewScanner(strings.NewReader(tagObj))
-		pastHeaders := false
 		for scanner.Scan() {
 			line := scanner.Text()
 			if strings.HasPrefix(line, "object ") ||
 				strings.HasPrefix(line, "type ") ||
-				strings.HasPrefix(line, "tag ") ||
-				strings.HasPrefix(line, "tagger ") ||
-				strings.HasPrefix(line, "date ") {
-				if strings.HasPrefix(line, "tagger ") {
-					info.Tagger = strings.TrimPrefix(line, "tagger ")
-				}
-				if strings.HasPrefix(line, "date ") {
-					info.Date = strings.TrimPrefix(line, "date ")
-				}
+				strings.HasPrefix(line, "tag ") {
 				continue
 			}
-			pastHeaders = true
+			if strings.HasPrefix(line, "tagger ") {
+				info.Tagger = strings.TrimPrefix(line, "tagger ")
+				continue
+			}
+			if strings.HasPrefix(line, "date ") {
+				info.Date = strings.TrimPrefix(line, "date ")
+				continue
+			}
 			if line == "" {
 				continue
 			}
-			if !strings.HasPrefix(line, " ") && info.Subject == "" {
-				info.Subject = line
-			} else if pastHeaders {
+			if info.Subject == "" {
+				info.Subject = strings.TrimPrefix(line, " ")
+			} else {
 				info.Message += strings.TrimPrefix(line, " ") + "\n"
 			}
 		}
 		info.Message = strings.TrimSuffix(info.Message, "\n")
 	} else {
-		// For lightweight tags, get commit date
 		date, _ := runGit("log", "-1", "--format=%ai", name)
 		info.Date = date
 		subj, _ := runGit("log", "-1", "--format=%s", name)
@@ -111,7 +105,6 @@ func getTagInfo(name string) (*TagInfo, error) {
 }
 
 func createTag(name, message string, annotated bool, sign bool) error {
-	// Check if tag already exists
 	_, err := runGit("rev-parse", name)
 	if err == nil {
 		return fmt.Errorf("tag '%s' already exists", name)
@@ -138,7 +131,6 @@ func createTag(name, message string, annotated bool, sign bool) error {
 }
 
 func deleteTag(name string) error {
-	// Check if tag exists
 	_, err := runGit("rev-parse", name)
 	if err != nil {
 		return fmt.Errorf("tag '%s' does not exist", name)
@@ -177,7 +169,7 @@ func renderTable(tags []TagInfo) {
 		return
 	}
 
-	fmt.Printf("%-25s %-8s %-7s %s\n", "TAG", "TYPE", "DATE", "SUBJECT")
+	fmt.Printf("%-25s %-8s %-12s %s\n", "TAG", "TYPE", "DATE", "SUBJECT")
 	fmt.Println(strings.Repeat("-", 90))
 	for _, t := range tags {
 		tagType := "light"
@@ -185,14 +177,14 @@ func renderTable(tags []TagInfo) {
 			tagType = "annotated"
 		}
 		date := t.Date
-		if len(date) > 7 {
-			date = date[:7]
+		if len(date) > 10 {
+			date = date[:10]
 		}
 		subj := t.Subject
 		if len(subj) > 40 {
 			subj = subj[:38] + ".."
 		}
-		fmt.Printf("%-25s %-8s %-7s %s\n", t.Name, tagType, date, subj)
+		fmt.Printf("%-25s %-8s %-12s %s\n", t.Name, tagType, date, subj)
 	}
 	fmt.Printf("\n%d tag(s)\n", len(tags))
 }
@@ -264,12 +256,13 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Parse global flags
 	annotated := false
-	message := ""
 	sign := false
 	force := false
-	for _, arg := range os.Args[2:] {
+	message := ""
+
+	for i := 2; i < len(os.Args); i++ {
+		arg := os.Args[i]
 		switch arg {
 		case "-a", "--annotated":
 			annotated = true
@@ -278,25 +271,21 @@ func main() {
 		case "-f", "--force":
 			force = true
 		case "-m", "--message":
-			if len(os.Args) > 2 {
-				// message is next arg - handled below
+			if i+1 < len(os.Args) {
+				message = os.Args[i+1]
+				i++
 			}
-		}
-	}
-
-	// Check for -m flag and extract message
-	for i, arg := range os.Args {
-		if (arg == "-m" || arg == "--message") && i+1 < len(os.Args) {
-			message = os.Args[i+1]
-			break
 		}
 	}
 
 	switch os.Args[1] {
 	case "list", "ls":
 		format := "table"
-		if len(os.Args) >= 3 && os.Args[2] != "-h" {
-			format = os.Args[2]
+		if len(os.Args) >= 3 {
+			candidate := os.Args[2]
+			if candidate != "-a" && candidate != "--annotated" && candidate != "-s" && candidate != "--sign" && candidate != "-f" && candidate != "--force" && candidate != "-m" && candidate != "--message" {
+				format = candidate
+			}
 		}
 		tags, err := listTags()
 		if err != nil {
@@ -320,7 +309,6 @@ func main() {
 		name := os.Args[2]
 		if err := createTag(name, message, annotated, sign); err != nil {
 			if force {
-				// Force: delete and recreate
 				_ = deleteTag(name)
 				if err := createTag(name, message, annotated, sign); err != nil {
 					fmt.Fprintf(os.Stderr, "Error: %v\n", err)
@@ -345,7 +333,7 @@ func main() {
 
 	case "move":
 		if len(os.Args) < 4 {
-			fmt.Fprintf(os.Stderr, "Error: git-tag-manager move <name> <ref>\n")
+			fmt.Fprintf(os.Stderr, "Usage: git-tag-manager move <name> <ref>\n")
 			os.Exit(1)
 		}
 		name := os.Args[2]
@@ -371,7 +359,7 @@ func main() {
 			fmt.Println("No tags found.")
 			os.Exit(0)
 		}
-		t := tags[0] // already sorted by date descending
+		t := tags[0]
 		fmt.Printf("%s (%s)\n", t.Name, t.Sha[:8])
 		if t.Subject != "" {
 			fmt.Printf("  %s\n", t.Subject)
