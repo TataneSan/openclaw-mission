@@ -9,7 +9,7 @@ Push automatique après chaque outil.
 (mettre à jour ici chaque outil fini)
 
 ## En cours
-- echo-webhook (Vague 12)
+- git-hooks (Vague 13)
 
 ## File d'attente — CLI Tools
 - [x] snippet-cli : gestionnaire de snippets de commandes shell (sauvegarde, recherche, exécution) ✓ 2026-05-28
@@ -220,10 +220,35 @@ Push automatique après chaque outil.
 - [x] cli-pomodoro : timer pomodoro avec notifications sonores ✓ 2026-05-28
 - [x] expense-report : génère des rapports de dépenses depuis un CSV ✓ 2026-05-28
 - [x] cli-wishlist : liste de souhaits avec priorités et liens ✓ 2026-05-28
-- [x] daily-brief : résumé quotidien des tâches et événements ✓ 2026-05-28
-- [ ] quote-collect : collectionne et organise des citations
+- [x] quote-collect : collectionne et organise des citations ✓ 2026-05-28
 
-## Notes
+## Vague 13 — CLI Tools
+- [x] ini-parser : lit et écrit des fichiers de config INI ✓ 2026-05-28
+- [x] json-to-csv : convertisseur JSON vers CSV ✓ 2026-05-28
+- [x] net-latency : mesure la latence réseau vers des hôtes ✓ 2026-05-28
+- [x] git-repo-info : affiche des infos sur un repo git (taille, commits, branches) ✓ 2026-05-28
+- [x] env-validate : valide un .env contre une liste de clés requises ✓ 2026-05-28
+
+## Vague 13 — APIs & Services
+- [x] ip-api : API qui retourne des infos sur l'IP du client ✓ 2026-05-28
+- [x] random-api : API de génération de nombres/textes aléatoires ✓ 2026-05-28
+- [x] ping-api : API de ping HTTP vers des URLs configurées ✓ 2026-05-28
+- [x] log-api : API de journalisation simple avec filtrage ✓ 2026-05-28
+- [x] status-api : API de statut de service configurable ✓ 2026-05-28
+
+## Vague 13 — DevOps
+- [ ] git-hooks : installe des hooks git pré-configurés
+- [ ] log-compress : compresse et archive des fichiers de logs
+- [ ] env-backup : sauvegarde et restaure des environnements .env
+- [ ] docker-stats-cli : affiche les stats Docker en temps réel
+- [ ] uptime-check : vérifie l'uptime de services et affiche un rapport
+
+## Vague 13 — Productivité
+- [ ] cli-biography : notes biographiques rapides sur des personnes
+- [ ] project-log : journal de projet avec milestones
+- [ ] idea-box : boîte à idées avec tags et vote
+- [ ] reading-notes : notes de lecture par livre/chapitre
+- [ ] skill-tracker : suivi de compétences avec niveaux et progression
 - Dernière mise à jour: 2026-05-28
 - Priorité: CLI tools d'abord (rapides à coder)
 - Chaque outil: max 1-2h de dev
