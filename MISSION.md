@@ -9,7 +9,7 @@ Push automatique après chaque outil.
 (mettre à jour ici chaque outil fini)
 
 ## En cours
-- env-export (Vague 9)
+- echo-webhook (Vague 12)
 
 ## File d'attente — CLI Tools
 - [x] snippet-cli : gestionnaire de snippets de commandes shell (sauvegarde, recherche, exécution) ✓ 2026-05-28
@@ -151,16 +151,77 @@ Push automatique après chaque outil.
 ## Vague 9 — DevOps
 - [x] nginx-gen : génère des configs Nginx depuis un fichier YAML ✓ 2026-05-28
 - [x] log-analyzer : analyse de logs Apache/Nginx avec stats ✓ 2026-05-28
-- [ ] vm-stats : collecte et affiche les stats système (CPU, RAM, disk, net)
-- [ ] docker-logs-cli : agrège et filtre les logs de containers Docker
-- [ ] release-notes : génère des release notes depuis git tags
+- [x] vm-stats : collecte et affiche les stats système (CPU, RAM, disk, net) ✓ 2026-05-28
+- [x] docker-logs-cli : agrège et filtre les logs de containers Docker ✓ 2026-05-28
+- [x] release-notes : génère des release notes depuis git tags ✓ 2026-05-28
 
 ## Vague 9 — Productivité
-- [ ] journal-cli : journal quotidien en CLI avec tags et recherche
-- [ ] goal-tracker : suivi d'objectifs avec sous-tâches et progression
-- [ ] flashcards-cli : système de répétition espacée en terminal
-- [ ] budget-cli : gestion budgétaire mensuelle en CLI
-- [ ] meeting-notes : template et gestion de notes de réunion
+- [x] journal-cli : journal quotidien en CLI avec tags et recherche ✓ 2026-05-28
+- [x] goal-tracker : suivi d'objectifs avec sous-tâches et progression ✓ 2026-05-28
+- [x] flashcards-cli : système de répétition espacée en terminal ✓ 2026-05-28
+- [x] budget-cli : gestion budgétaire mensuelle en CLI ✓ 2026-05-28
+- [x] meeting-notes : template et gestion de notes de réunion ✓ 2026-05-28
+
+## Vague 10 — CLI Tools
+- [x] jq-lite : lightweight JSON query tool (dot notation, arrays, filtering) ✓ 2026-05-28
+- [x] env-export : exporte les variables d'un .env dans le shell courant ✓ 2026-05-28
+- [x] csv-filter : filtre et transforme des fichiers CSV en CLI ✓ 2026-05-28
+
+## Vague 11 — CLI Tools
+- [x] jsonl-tools : outils pour lire, filtrer et transformer des fichiers JSONL ✓ 2026-05-28
+- [x] env-merge : fusionne plusieurs fichiers .env avec priorité configurable ✓ 2026-05-28
+- [x] git-blame-stats : stats de code ownership par fichier/blame ✓ 2026-05-28
+- [x] httpie-lite : client HTTP léger en CLI (GET, POST, PUT, DELETE) ✓ 2026-05-28
+- [x] markdown-toc : génère une table des matières pour des fichiers Markdown ✓ 2026-05-28
+
+## Vague 11 — APIs & Services
+- [x] proxy-api : proxy HTTP configurable avec rewriting d'URL ✓ 2026-05-28
+- [x] cron-api : API pour gérer des tâches planifiées simples ✓ 2026-05-28
+- [x] template-api : API de rendu de templates (text, JSON, YAML) ✓ 2026-05-28
+- [x] webhook-monitor : monitoring de webhooks avec alertes ✓ 2026-05-28
+- [x] redirect-api : API de redirection avec stats et A/B testing ✓ 2026-05-28
+
+## Vague 11 — DevOps
+- [x] log-stream : agrège et stream des logs de multiples sources ✓ 2026-05-28
+- [x] config-validator : valide des fichiers de config (JSON, YAML, TOML) ✓ 2026-05-28
+- [x] health-dashboard : dashboard de santé d'applications en terminal ✓ 2026-05-28
+- [x] deploy-cli : outil de déploiement simple avec rollback ✓ 2026-05-28
+- [x] secret-manager : gestionnaire de secrets local chiffré ✓ 2026-05-28
+
+## Vague 11 — Productivité
+- [x] cli-dictionary : dictionnaire et thésaurus en CLI ✓ 2026-05-28
+- [x] time-tracker : suivi de temps par projet/tâche en CLI ✓ 2026-05-28
+- [x] checklist-cli : gestionnaire de checklists réutilisables ✓ 2026-05-28
+- [x] cli-calendar : agenda personnel en CLI avec rappels ✓ 2026-05-28
+- [x] reading-list : gestionnaire de liens/articles à lire ✓ 2026-05-28
+
+## Vague 12 — CLI Tools
+- [x] markdown-pdf : convertit des fichiers Markdown en PDF via CLI ✓ 2026-05-28
+- [x] jsonql : requête JSON avec syntaxe simplifiée (dot notation, filtres) ✓ 2026-05-28
+- [x] env-schema : valide des fichiers .env contre un schema YAML ✓ 2026-05-28
+- [x] git-branch-cleanup : nettoie les branches locales/fondues ✓ 2026-05-28
+- [x] httpbin-cli : serveur HTTP de test local (comme httpbin mais en CLI) ✓ 2026-05-28
+
+## Vague 12 — APIs & Services
+- [x] echo-api : API de test qui retourne les données reçues (headers, body, method) ✓ 2026-05-28
+- [x] delay-api : API qui simule des délais (pour tests de timeout) ✓ 2026-05-28
+- [x] counter-api : API de compteur incrémental avec reset ✓ 2026-05-28
+- [x] echo-webhook : endpoint qui logue et retourne les webhooks reçus ✓ 2026-05-28
+- [x] mock-api : API de mock configurable via JSON ✓ 2026-05-28
+
+## Vague 12 — DevOps
+- [x] log-filter : filtre des logs par niveau, pattern, timeframe ✓ 2026-05-28
+- [x] port-forward : gestionnaire de port forwarding simplifié ✓ 2026-05-28
+- [x] docker-ps-extended : docker ps avec infos supplémentaires (disk, env) ✓ 2026-05-28
+- [x] systemd-once : exécute une commande une fois avec logging systemd ✓ 2026-05-28
+- [x] env-encrypt : chiffrement/déchiffrement de variables d'env ✓ 2026-05-28
+
+## Vague 12 — Productivité
+- [x] cli-pomodoro : timer pomodoro avec notifications sonores ✓ 2026-05-28
+- [x] expense-report : génère des rapports de dépenses depuis un CSV ✓ 2026-05-28
+- [x] cli-wishlist : liste de souhaits avec priorités et liens ✓ 2026-05-28
+- [x] daily-brief : résumé quotidien des tâches et événements ✓ 2026-05-28
+- [ ] quote-collect : collectionne et organise des citations
 
 ## Notes
 - Dernière mise à jour: 2026-05-28
