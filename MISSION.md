@@ -9,10 +9,11 @@ Push automatique après chaque outil.
 (mettre à jour ici chaque outil fini)
 
 ## En cours
-(aucun)
+- env-export (Vague 9)
 
 ## File d'attente — CLI Tools
-- [x] json-dive : CLI pour explorer/query du JSON avec des chemins type jq mais plus intuitif ✓ 2026-05-20
+- [x] snippet-cli : gestionnaire de snippets de commandes shell (sauvegarde, recherche, exécution) ✓ 2026-05-28
+- [x] tcp-dump-lite : capture et analyse simplifiée de trafic réseau ✓ 2026-05-28
 - [x] curl-format : formateur de requêtes curl avec coloration syntaxique ✓ 2026-05-20
 - [x] port-scanner : scanner de ports TCP rapide en Go ✓ 2026-05-20
 - [x] env-check : vérifie les variables d'env manquantes pour un projet ✓ 2026-05-20
@@ -85,13 +86,83 @@ Push automatique après chaque outil.
 - [x] git-aliases : gestionnaire d'alias git (ajout, liste, export) ✓ 2026-05-28
 
 ## Vague 5 — CLI Tools
-- [ ] hex-convert : convertisseur entre hex, décimal, binaire, octal
-- [ ] markdown-preview : prévisualise du markdown en terminal (coloré)
-- [ ] port-check : vérifie si un port est ouvert sur un hôte distant
-- [ ] regex-extract : extrait des données avec regex depuis des fichiers
-- [ ] string-manip : utilitaires de manipulation de chaînes (upper, lower, slug, etc.)
+- [x] hex-convert : convertisseur entre hex, décimal, binaire, octal ✓ 2026-05-28
+- [x] markdown-preview : prévisualise du markdown en terminal (coloré) ✓ 2026-05-28
+- [x] port-check : vérifie si un port est ouvert sur un hôte distant ✓ 2026-05-28
+- [x] regex-extract : extrait des données avec regex depuis des fichiers ✓ 2026-05-28
+- [x] string-manip : utilitaires de manipulation de chaînes (upper, lower, slug, etc.) ✓ 2026-05-28
+
+## Vague 6 — CLI Tools
+- [x] json-merge : fusionne plusieurs fichiers JSON ✓ 2026-05-28
+- [x] yaml-lint : vérifie la syntaxe et le style YAML ✓ 2026-05-28
+- [x] http-status : vérifie le code HTTP d'une URL ✓ 2026-05-28
+- [x] file-type : détecte le type de fichier par magic bytes ✓ 2026-05-28
+- [x] time-format : convertit entre formats de date/heure ✓ 2026-05-28
+
+## Vague 7 — CLI Tools
+- [x] uuid-gen : générateur de UUID v4 et v7 en Go ✓ 2026-05-28
+- [x] json-schema-validate : valide du JSON contre un schema JSON Schema ✓ 2026-05-28
+- [x] tree-cli : affiche un arbre de répertoires en terminal ✓ 2026-05-28
+- [x] slugify : génère des slugs URL-friendly depuis du texte ✓ 2026-05-28
+- [x] json-path : extrait des valeurs JSON via des expressions path ✓ 2026-05-28
+
+## Vague 8 — CLI Tools
+- [x] xml-to-json : convertisseur XML vers JSON ✓ 2026-05-28
+- [x] json-diff : compare deux fichiers JSON et affiche les différences ✓ 2026-05-28
+- [x] env-template : remplit des templates avec des variables d'environnement ✓ 2026-05-28
+- [x] netstat-cli : affiche les connexions réseau actives filtrées ✓ 2026-05-28
+- [x] chmod-cli : visualise et convertit les permissions Unix (symbolique/octal) ✓ 2026-05-28
+
+## Vague 8 — APIs & Services
+- [x] healthcheck-api : API de monitoring qui vérifie une liste d'URLs ✓ 2026-05-28
+- [x] webhook-relay : proxy de webhooks avec retry et logs ✓ 2026-05-28
+- [x] rate-limiter-api : API de rate limiting en mémoire ✓ 2026-05-28
+- [x] cache-api : mini API de cache key/value avec TTL ✓ 2026-05-28
+- [x] diff-api : API qui compare deux textes et retourne un diff unifié ✓ 2026-05-28
+
+## Vague 8 — DevOps
+- [x] log-rotate : outil de rotation de logs configurable ✓ 2026-05-28
+- [x] service-check : vérifie l'état de processus/services système ✓ 2026-05-28
+- [x] backup-cli : sauvegarde incrémentale de dossiers avec compression ✓ 2026-05-28
+- [x] deploy-hook : exécute des commandes post-deploy avec rollback ✓ 2026-05-28
+- [x] systemd-gen : génère des unit files systemd depuis un template ✓ 2026-05-28
+
+## Vague 8 — Productivité
+- [x] calc-cli : calculatrice scientifique en CLI ✓ 2026-05-28
+- [x] unit-convert : convertisseur d'unités (longueur, poids, température, etc.) ✓ 2026-05-28
+- [x] calendar-cli : affiche un calendrier mensuel en terminal ✓ 2026-05-28
+- [x] habit-tracker : suivi d'habitudes en CLI avec streaks ✓ 2026-05-28
+- [x] quick-survey : crée et analyse des sondages rapides en CLI ✓ 2026-05-28
+
+## Vague 9 — CLI Tools
+- [x] snippet-cli : gestionnaire de snippets de commandes shell (sauvegarde, recherche, exécution) ✓ 2026-05-28
+- [x] tcp-dump-lite : capture et analyse simplifiée de trafic réseau ✓ 2026-05-28
+- [x] process-tree : affiche l'arbre des processus en terminal ✓ 2026-05-28
+- [x] git-log-visual : visualisation du historique git en ASCII art ✓ 2026-05-28
+- [x] env-export : exporte les variables d'un .env dans le shell courant ✓ 2026-05-28
+
+## Vague 9 — APIs & Services
+- [x] validate-api : API de validation d'email, téléphone, CPF/CNPJ ✓ 2026-05-28
+- [x] notify-api : API de notifications multi-canaux (email, webhook, Slack) ✓ 2026-05-28
+- [x] queue-api : API de file d'attente simple avec priorité ✓ 2026-05-28
+- [ ] auth-api : API d'authentification JWT avec refresh tokens
+- [ ] file-upload-api : API d'upload de fichiers avec validation
+
+## Vague 9 — DevOps
+- [ ] nginx-gen : génère des configs Nginx depuis un fichier YAML
+- [ ] log-analyzer : analyse de logs Apache/Nginx avec stats
+- [ ] vm-stats : collecte et affiche les stats système (CPU, RAM, disk, net)
+- [ ] docker-logs-cli : agrège et filtre les logs de containers Docker
+- [ ] release-notes : génère des release notes depuis git tags
+
+## Vague 9 — Productivité
+- [ ] journal-cli : journal quotidien en CLI avec tags et recherche
+- [ ] goal-tracker : suivi d'objectifs avec sous-tâches et progression
+- [ ] flashcards-cli : système de répétition espacée en terminal
+- [ ] budget-cli : gestion budgétaire mensuelle en CLI
+- [ ] meeting-notes : template et gestion de notes de réunion
 
 ## Notes
-- Dernière mise à jour: 2026-05-27
+- Dernière mise à jour: 2026-05-28
 - Priorité: CLI tools d'abord (rapides à coder)
 - Chaque outil: max 1-2h de dev
