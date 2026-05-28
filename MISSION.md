@@ -515,7 +515,35 @@ Push automatique après chaque outil.
 
 ## Vague 46 — CLI Tools
 - [x] json-to-yaml : convertisseur JSON vers YAML ✓ 2026-05-28
-- [ ] csv-to-toml : convertisseur CSV vers TOML
-- [ ] git-merge-base : trouve le dernier ancêtre commun entre deux branches
-- [ ] env-to-sql : génère des requêtes SQL INSERT depuis un fichier .env
-- [ ] markdown-lint : vérifie le style markdown et signale les problèmes
+- [x] csv-to-toml : convertisseur CSV vers TOML ✓ 2026-05-28
+- [x] git-merge-base : trouve le dernier ancêtre commun entre deux branches ✓ 2026-05-28
+- [x] env-to-sql : génère des requêtes SQL INSERT depuis un fichier .env ✓ 2026-05-28
+- [x] markdown-lint : vérifie le style markdown et signale les problèmes ✓ 2026-05-28
+
+## Vague 47 — CLI Tools
+- [x] json-to-tsv : convertisseur JSON vers TSV ✓ 2026-05-28
+- [x] csv-to-sql : génère des requêtes SQL depuis un CSV ✓ 2026-05-28
+- [x] git-unpushed : liste les commits non pushés sur le remote ✓ 2026-05-28
+- [x] env-to-yaml : convertit un fichier .env en YAML ✓ 2026-05-28
+- [x] xml-to-json : convertisseur XML vers JSON ✓ 2026-05-28
+
+## Vague 48 — CLI Tools
+- [x] sql-from-json : génère des requêtes SQL (CREATE + INSERT) depuis du JSON ✓ 2026-05-28
+- [x] csv-to-xml : convertisseur CSV vers XML ✓ 2026-05-28
+- [x] git-branch-delete : supprime les branches locales et/ou remote fusionnées ✓ 2026-05-28
+- [x] env-to-sqlite : importe un fichier .env dans une base SQLite ✓ 2026-05-28
+- [x] json-to-sql-schema : génère un schéma SQL (CREATE TABLE) depuis du JSON ✓ 2026-05-28
+
+## Vague 49 — CLI Tools
+- [x] git-commit-lint : linter de messages de commits (Conventional Commits) ✓ 2026-05-28
+- [x] env-to-toml : convertit un fichier .env en TOML ✓ 2026-05-28
+- [x] csv-to-json-nested : convertisseur CSV vers JSON imbriqué ✓ 2026-05-28
+- [x] git-rebase-helper : assistant de rebase interactif en CLI ✓ 2026-05-28
+- [x] json-to-protobuf : génère des fichiers .proto depuis du JSON ✓ 2026-05-28
+
+## Vague 50 — CLI Tools
+- [x] yaml-to-sql : génère des requêtes SQL depuis du YAML ✓ 2026-05-28
+- [x] csv-to-env : convertisseur CSV vers .env ✓ 2026-05-28
+- [ ] git-branch-rename : renomme des branches git en batch
+- [ ] json-to-tsv-nested : convertisseur JSON imbriqué vers TSV
+- [ ] toml-to-sql : génère des requêtes SQL depuis un TOML
