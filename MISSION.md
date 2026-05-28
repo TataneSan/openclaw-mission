@@ -473,3 +473,35 @@ Push automatique après chaque outil.
 - [x] git-commit-msg : affiche les messages de commits récents formatés ✓ 2026-05-28
 - [x] env-list-keys : liste uniquement les clés d'un fichier .env ✓ 2026-05-28
 - [x] file-line-count : compte les lignes de fichiers en batch ✓ 2026-05-28
+
+## Vague 40 — CLI Tools
+- [x] csv-to-ini : convertisseur CSV vers INI avec regroupement par section ✓ 2026-05-28
+- [x] yaml-flatten : aplatit du YAML imbriqué en paires clé-valeur ✓ 2026-05-28
+- [x] git-tag-list : liste les tags git avec détails (date, type, auteur, message) ✓ 2026-05-28
+- [x] json-to-html : convertit des tableaux JSON en tableaux HTML ✓ 2026-05-28
+- [x] yaml-validate : valide la syntaxe YAML avec mode strict ✓ 2026-05-28
+
+## Vague 41 — CLI Tools
+- [x] file-watcher : surveille les fichiers et lance des commandes automatiquement (style nodemon) ✓ 2026-05-28
+- [x] color-convert : convertisseur de couleurs (hex, RGB, HSL, CMYK) ✓ 2026-05-28
+- [x] markdown-toc : génère une table des matières pour des fichiers Markdown ✓ 2026-05-28
+
+## Vague 42 — CLI Tools
+- [x] go-struct-gen : génère des structs Go depuis du JSON ✓ 2026-05-28
+- [x] jsonl-to-csv : convertisseur JSONL vers CSV ✓ 2026-05-28
+- [x] sql-from-csv : génère des requêtes SQL (CREATE + INSERT) depuis un CSV ✓ 2026-05-28
+- [x] toml-to-env : convertisseur TOML vers .env ✓ 2026-05-28
+
+## Vague 43 — CLI Tools
+- [x] go-struct-gen : génère des structs Go depuis du JSON ✓ 2026-05-28
+- [x] json-to-go : génère des structs Go depuis du JSON (avec type hints) ✓ 2026-05-28
+- [x] yaml-to-go : génère des structs Go depuis du YAML ✓ 2026-05-28
+- [x] sql-migrate : système de migrations SQL simple (up/down) ✓ 2026-05-28
+- [x] go-mod-tidy-check : vérifie si go.mod est à jour ✓ 2026-05-28
+
+## Vague 44 — CLI Tools
+- [ ] go-vet-check : lance go vet et formate le rapport
+- [ ] json-to-toml-nested : convertisseur JSON profond vers TOML
+- [ ] csv-to-sql : génère CREATE TABLE + INSERT SQL depuis un CSV
+- [ ] git-untracked : liste les fichiers untracked avec tailles
+- [ ] env-to-jsonl : convertit un fichier .env en JSONL
