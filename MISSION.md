@@ -508,7 +508,14 @@ Push automatique après chaque outil.
 
 ## Vague 45 — CLI Tools
 - [x] json-to-sqlite : importe des données JSON dans une base SQLite ✓ 2026-05-28
-- [ ] csv-column-stats : statistiques par colonne d'un CSV (min, max, mean, count)
-- [ ] git-commit-frequency : histogramme des commits par heure/jour de la semaine
-- [ ] env-sanitize : remplace les valeurs sensibles d'un .env par des placeholders
-- [ ] toml-to-markdown : convertit un fichier TOML en tableau Markdown
+- [x] csv-column-stats : statistiques par colonne d'un CSV (min, max, mean, count) ✓ 2026-05-28
+- [x] git-commit-frequency : histogramme des commits par heure/jour de la semaine ✓ 2026-05-28
+- [x] env-sanitize : remplace les valeurs sensibles d'un .env par des placeholders ✓ 2026-05-28
+- [x] toml-to-markdown : convertit un fichier TOML en tableau Markdown ✓ 2026-05-28
+
+## Vague 46 — CLI Tools
+- [x] json-to-yaml : convertisseur JSON vers YAML ✓ 2026-05-28
+- [ ] csv-to-toml : convertisseur CSV vers TOML
+- [ ] git-merge-base : trouve le dernier ancêtre commun entre deux branches
+- [ ] env-to-sql : génère des requêtes SQL INSERT depuis un fichier .env
+- [ ] markdown-lint : vérifie le style markdown et signale les problèmes
