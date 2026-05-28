@@ -547,3 +547,58 @@ Push automatique après chaque outil.
 - [x] git-branch-rename : renomme des branches git en batch ✓ 2026-05-28
 - [x] json-to-tsv-nested : convertisseur JSON imbriqué vers TSV ✓ 2026-05-28
 - [x] toml-to-sql : génère des requêtes SQL depuis un TOML ✓ 2026-05-28
+
+## Vague 51 — CLI Tools
+- [x] go-fmt-check : vérifie si les fichiers Go sont bien formatés avec un rapport clair ✓ 2026-05-28
+- [x] markdown-count : compte les éléments dans des fichiers Markdown (headings, links, images, etc.) ✓ 2026-05-28
+- [x] git-ignored : liste les fichiers ignorés par .gitignore ✓ 2026-05-28
+- [x] tsv-to-json : convertisseur TSV vers JSON ✓ 2026-05-28
+- [x] env-to-protobuf : convertit un fichier .env en définition Protocol Buffers ✓ 2026-05-28
+
+## Vague 52 — CLI Tools
+- [x] go-test-coverage : affiche la couverture de tests Go de manière formatée ✓ 2026-05-28
+- [x] go-imports-check : détecte les imports inutilisés dans un projet Go ✓ 2026-05-28
+- [x] json-to-sqlite : importe des données JSON dans une base SQLite ✓ 2026-05-28
+- [x] csv-to-sqlite : importe des fichiers CSV dans une base SQLite ✓ 2026-05-28
+- [x] git-worktree-manager : gestionnaire de worktrees git en CLI ✓ 2026-05-28
+
+## Vague 53 — CLI Tools
+- [x] http-range : vérifie le support des requêtes HTTP Range (contenu partiel) ✓ 2026-05-28
+- [x] dns-overview : affiche un aperçu complet des enregistrements DNS d'un domaine ✓ 2026-05-28
+
+## Vague 54 — CLI Tools
+- [x] csv-dedup-cli : supprime les doublons dans un CSV par colonnes spécifiées ✓ 2026-05-28
+- [x] git-reflog-analyzer : analyse le reflog git avec stats (actions, branches, timeline) ✓ 2026-05-28
+
+## Vague 55 — CLI Tools
+- [x] json-to-typescript : convertisseur JSON vers types TypeScript ✓ 2026-05-28
+- [x] csv-to-protobuf : convertisseur CSV vers définitions Protocol Buffers ✓ 2026-05-28
+- [x] yaml-to-protobuf : convertisseur YAML vers définitions Protocol Buffers ✓ 2026-05-28
+
+## Vague 56 — CLI Tools
+- [x] go-exported-api : liste la surface API exportée d'un package Go ✓ 2026-05-28
+- [x] csv-to-html : convertisseur CSV vers tableau HTML ✓ 2026-05-28
+- [x] git-first-commit : affiche le premier commit d'un repo git ✓ 2026-05-28
+- [x] http-method-check : vérifie les méthodes HTTP supportées par une URL ✓ 2026-05-28
+- [x] markdown-to-json : extrait des données structurées depuis du Markdown ✓ 2026-05-28
+
+## Vague 57 — CLI Tools
+- [x] go-staticcheck : lance staticcheck et formate le rapport ✓ 2026-05-28
+- [x] json-to-graphql : génère un schema GraphQL depuis du JSON ✓ 2026-05-28
+- [x] csv-to-sql-schema : génère un CREATE TABLE SQL depuis un CSV ✓ 2026-05-28
+- [x] git-submodule-status : affiche le statut des submodules git ✓ 2026-05-28
+- [x] env-to-graphql : convertit un fichier .env en schema GraphQL ✓ 2026-05-28
+
+## Vague 58 — CLI Tools
+- [x] go-deadcode-check : detecte le code mort dans un projet Go ✓ 2026-05-28
+- [x] json-to-rust : genere des structs Rust depuis du JSON ✓ 2026-05-28
+- [x] csv-to-graphviz : genere un graphe Graphviz depuis un CSV (nœuds/arêtes) ✓ 2026-05-28
+- [x] git-lfs-status : affiche le statut des fichiers suivis par Git LFS ✓ 2026-05-28
+- [x] env-to-openapi : convertit un fichier .env en spec OpenAPI/Swagger ✓ 2026-05-28
+
+## Vague 59 — CLI Tools
+- [x] go-cycle-check : detecte les import cycles dans un projet Go ✓ 2026-05-28
+- [x] json-to-java : genere des classes Java depuis du JSON ✓ 2026-05-28
+- [x] csv-to-mermaid : genere un diagramme Mermaid depuis un CSV ✓ 2026-05-28
+- [x] git-squash-helper : assistant de squash de commits interactif ✓ 2026-05-28
+- [x] env-to-jsonschema : convertit un fichier .env en JSON Schema ✓ 2026-05-28
