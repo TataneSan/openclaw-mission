@@ -602,3 +602,38 @@ Push automatique après chaque outil.
 - [x] csv-to-mermaid : genere un diagramme Mermaid depuis un CSV ✓ 2026-05-28
 - [x] git-squash-helper : assistant de squash de commits interactif ✓ 2026-05-28
 - [x] env-to-jsonschema : convertit un fichier .env en JSON Schema ✓ 2026-05-28
+
+## Vague 60 — CLI Tools
+- [x] csv-to-latex : convertisseur CSV vers tableau LaTeX (tabular, longtable, tabularx) ✓ 2026-05-28
+- [x] json-to-python : genere des dataclasses Python depuis du JSON ✓ 2026-05-28
+- [x] git-cherry-pick-helper : assistant de cherry-pick interactif ✓ 2026-05-28
+- [x] env-to-docker-compose : convertit un .env en docker-compose.yml ✓ 2026-05-28
+- [x] go-golint-check : lance golint/staticcheck avec rapport formate ✓ 2026-05-28
+
+## Vague 61 — CLI Tools
+- [x] toml-diff : compare deux fichiers TOML et affiche les différences ✓ 2026-05-28
+- [x] json-to-terraform : genere des blocs Terraform HCL depuis du JSON ✓ 2026-05-28
+- [x] yaml-to-terraform : genere des blocs Terraform HCL depuis du YAML ✓ 2026-05-28
+- [x] toml-to-terraform : genere des blocs Terraform HCL depuis du TOML ✓ 2026-05-28
+- [x] git-merge-stats : statistiques sur les merge commits d'un repo git ✓ 2026-05-28
+- [x] env-to-hcl : convertit un fichier .env en variables Terraform HCL ✓ 2026-05-28
+
+## Vague 62 — CLI Tools
+- [x] csv-to-chart : genere des graphiques en barres terminaux depuis un CSV ✓ 2026-05-28
+- [x] env-to-kubernetes : convertit un .env en ConfigMap/Secret Kubernetes ✓ 2026-05-28
+- [x] json-to-avro : genere un schema Avro depuis du JSON ✓ 2026-05-28
+- [x] csv-to-delta : exporte un CSV en format Delta Lake ✓ 2026-05-28
+- [x] git-branch-coverage : affiche la couverture de tests par branche ✓ 2026-05-28
+## Vague 63 — CLI Tools
+- [x] robots-checker : fetch et parse les fichiers robots.txt de sites web ✓ 2026-05-28
+- [x] cookie-parser : parse les headers Set-Cookie HTTP et strings de cookies ✓ 2026-05-28
+- [x] git-churn : affiche le churn de fichiers (lignes ajoutées/supprimées) dans un repo git ✓ 2026-05-28
+- [x] env-to-helm : convertit des fichiers .env en format Helm values.yaml ✓ 2026-05-28
+- [x] http-retry : client HTTP avec retry automatique et exponential backoff ✓ 2026-05-28
+
+## Vague 64 — CLI Tools
+- [x] json-to-parquet : convertisseur JSON/JSONL vers Apache Parquet ✓ 2026-05-28
+- [x] csv-to-parquet : convertisseur CSV vers Apache Parquet ✓ 2026-05-28
+- [x] markdown-to-csv : extrait des tableaux Markdown et exporte en CSV ✓ 2026-05-28
+- [x] yaml-to-sql-schema : génère des CREATE TABLE SQL depuis du YAML ✓ 2026-05-28
+- [x] git-commit-template : gestionnaire de templates de messages git ✓ 2026-05-28
