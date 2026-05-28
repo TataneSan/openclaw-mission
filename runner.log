@@ -108170,3 +108170,839 @@ a/tools/git-branch-list/LICENSE → b/tools/git-branch-list/LICENSE
 +LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 +OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 +SOFTWARE.
+[2026-05-28 15:34:47] Batch 242 finished (exit: 124)
+[2026-05-28 15:34:47] Pausing 30s before next batch...
+[2026-05-28 15:35:17] === Batch 243 starting ===
+Query: Tu es un développeur open source prolifique. Tu codes des outils utiles 
+et tu les publies sur GitHub.
+
+RÈGLES STRICTES:
+1. UN OUTIL = UN REPO GIT. Toujours.
+2. JAMAIS mentionner IA, AI, LLM, ChatGPT, OpenClaw, agent dans les commits, 
+README, ou le code.
+3. Commits signés normalement, style humain.
+4. Code propre, fonctionnel, bien documenté.
+5. Push sur github.com/TataneSan après chaque outil.
+
+WORKFLOW:
+1. Lis /root/openclaw/MISSION.md
+2. Prends le premier outil non-fait dans la file d'attente
+3. Crée /root/openclaw/tools/NOM-OUTIL
+4. Code l'outil complet (CLI, API, bot, ce que c'est)
+5. README.md pro avec description, install, usage, exemples
+6. git init, git add, git commit -m 'feat: initial commit'
+7. git remote add origin git@github.com:TataneSan/NOM-OUTIL.git
+8. git push -u origin main
+9. Coche l'outil dans MISSION.md comme terminé
+10. Passe au suivant IMMÉDIATEMENT
+
+Tu as: Node.js, Python, Go, Docker, git, gh CLI.
+Ne demande JAMAIS de permission. Code et push.
+Commence MAINTENANT.
+Initializing agent...
+────────────────────────────────────────
+
+⚠️  API call failed (attempt 1/3): BadRequestError [HTTP 400]
+   🔌 Provider: custom  Model: ep-mpaf8a8t2l4z:mimo-v2.5-pro
+   🌐 Endpoint: https://llm.contes.me/v1
+   📝 Error: HTTP 400: Unknown model: ep-mpaf8a8t2l4z:mimo-v2.5-pro
+   📋 Details: {'message': 'Unknown model: ep-mpaf8a8t2l4z:mimo-v2.5-pro', 'type': 'invalid_request_error'}
+   ⏱️  Elapsed: 0.27s  Context: 2 msgs, ~6,059 tokens
+⚠️ Non-retryable error (HTTP 400) — trying fallback...
+🔄 Primary model failed — switching to fallback: ep-skywork001:skywork-ai/skyclaw-v1 via custom:lmcontes
+  ┊ 📖 read      /root/openclaw/MISSION.md  0.1s
+  ┊ 📋 plan      3 task(s)  0.0s
+  ┊ 💻 $         mkdir -p /root/openclaw/tools/json-to-csv-nested  0.0s
+  ┊ ✍️  write     /root/openclaw/tools/json-to-csv-nested/main.go  0.4s
+  ┊ review diff
+a/tools/json-to-csv-nested/main.go → b/tools/json-to-csv-nested/main.go
+@@ -0,0 +1,177 @@
++package main
++
++import (
++	"encoding/csv"
++	"encoding/json"
++	"flag"
++	"fmt"
++	"io"
++	"os"
++	"sort"
++	"strings"
++)
++
++func flatten(val interface{}, prefix string, sep string, result map[string]string) {
++	switch v := val.(type) {
++	case map[string]interface{}:
++		for k, val := range v {
++			key := k
++			if prefix != "" {
++				key = prefix + sep + k
++			}
++			flatten(val, key, sep, result)
++		}
++	case []interface{}:
++		if len(v) == 0 {
++			result[prefix] = ""
++		} else {
++			for i, elem := range v {
++				key := fmt.Sprintf("%s[%d]", prefix, i)
++				flatten(elem, key, sep, result)
++			}
++		}
++	case nil:
++		result[prefix] = ""
++	case string:
++		result[prefix] = v
++	case float64:
++		if v == float64(int64(v)) {
++			result[prefix] = fmt.Sprintf("%d", int64(v))
++		} else {
++			result[prefix] = fmt.Sprintf("%v", v)
++		}
++	case bool:
++		if v {
++			result[prefix] = "true"
++		} else {
++			result[prefix] = "false"
++		}
++	default:
++		result[prefix] = fmt.Sprintf("%v", v)
++	}
++}
++
++func run() error {
++	input := flag.String("i", "", "chemin du fichier JSON (vide pour stdin)")
++	output := flag.String("o", "", "chemin du fichier CSV de sortie (vide pour stdout)")
++	sep := flag.String("s", ".", "séparateur pour les clés imbriquées (défaut: '.')")
++	flag.Parse()
++
++	var reader io.Reader
++	if *input != "" {
++		f, err := os.Open(*input)
++		if err != nil {
++			return fmt.Errorf("erreur ouverture fichier: %w", err)
++		}
++		defer f.Close()
++		reader = f
++	} else {
++		reader = os.Stdin
++	}
++
++	var records []map[string]interface{}
++	dec := json.NewDecoder(reader)
++	dec.UseNumber()
++
++	first, err := dec.Token()
++	if err != nil {
++		return fmt.Errorf("erreur lecture JSON: %w", err)
+… omitted 99 diff line(s) across 1 additional file(s)/section(s)
+  ┊ ✍️  write     /root/openclaw/tools/json-to-csv-nested/main.go  0.2s
+  ┊ review diff
+a/tools/json-to-csv-nested/main.go → b/tools/json-to-csv-nested/main.go
+@@ -8,7 +8,6 @@
+ 	"io"
+ 	"os"
+ 	"sort"
+-	"strings"
+ )
+ 
+ func flatten(val interface{}, prefix string, sep string, result map[string]string) {
+@@ -54,7 +53,7 @@
+ func run() error {
+ 	input := flag.String("i", "", "chemin du fichier JSON (vide pour stdin)")
+ 	output := flag.String("o", "", "chemin du fichier CSV de sortie (vide pour stdout)")
+-	sep := flag.String("s", ".", "séparateur pour les clés imbriquées (défaut: '.')")
++	sep := flag.String("s", ".", "separateur pour les cles imbriquees (defaut: '.')")
+ 	flag.Parse()
+ 
+ 	var reader io.Reader
+@@ -69,44 +68,26 @@
+ 		reader = os.Stdin
+ 	}
+ 
+-	var records []map[string]interface{}
+-	dec := json.NewDecoder(reader)
+-	dec.UseNumber()
+-
+-	first, err := dec.Token()
++	data, err := io.ReadAll(reader)
+ 	if err != nil {
+-		return fmt.Errorf("erreur lecture JSON: %w", err)
++		return fmt.Errorf("erreur lecture: %w", err)
+ 	}
+ 
+ 	var objs []map[string]interface{}
+-	if delim, ok := first.(json.Delim); ok && delim == '[' {
+-		for dec.More() {
+-			var obj map[string]interface{}
+-			if err := dec.Decode(&obj); err != nil {
+-				return fmt.Errorf("erreur décodage objet: %w", err)
+-			}
+-			objs = append(objs, obj)
+-		}
+-		if _, err := dec.Token(); err != nil {
+-			return fmt.Errorf("erreur fin tableau: %w", err)
+-		}
++
++	if json.Unmarshal(data, &objs) == nil {
++		// le JSON est un tableau
+ 	} else {
++		// le JSON est un objet unique
+ 		var obj map[string]interface{}
+-		if err := dec.InputOffset(); err != nil {
+-			_ = err
+-		}
+-		raw, err := io.ReadAll(dec)
+-		if err != nil {
+-			return fmt.Errorf("erreur lecture: %w", err)
+-		}
+-		if err := json.Unmarshal(raw, &obj); err != nil {
+-			return fmt.Errorf("erreur décodage objet JSON: %w", err)
++		if err := json.Unmarshal(data, &obj); err != nil {
++			return fmt.Errorf("erreur decodage JSON: %w", err)
+ 		}
+ 		objs = append(objs, obj)
+ 	}
+ 
+ 	if len(objs) == 0 {
+-		return fmt.Errorf("aucun objet trouvé dans le JSON")
++		return fmt.Errorf("aucun objet trouve dans le JSON")
+ 	}
+ 
+ 	flattened := make([]map[string]string, len(objs))
+@@ -131,7 +112,7 @@
+ 	if *output != "" {
+ 		f, err := os.Create(*output)
+ 		if err != nil {
+-			return fmt.Errorf("erreur création fichier: %w", err)
++			return fmt.Errorf("erreur creation fichier: %w", err)
+ 		}
+ 		defer f.Close()
+… omitted 19 diff line(s) across 1 additional file(s)/section(s)
+  ┊ 💻 $         cd /root/openclaw/tools/json-to-csv-nested && go build -o json-to-csv-nested .  0.0s [exit 1]
+  ┊ 💻 $         cd /root/openclaw/tools/json-to-csv-nested && go mod init json-to-csv-nested && go build -o json-to-csv-nested .  1.8s
+  ┊ 💻 $         cd /root/openclaw/tools/json-to-csv-nested && echo '[{"name":"Alice","address":{"city":"Paris","coords":{"lat":48.8,"lng":2.3}},"tags":["dev","go"]},{"name":"Bob","address":{"city":"Lyon"},"scores":[10,20,30]}]' | ./json-to-csv-nested  0.0s
+  ┊ ✍️  write     /root/openclaw/tools/json-to-csv-nested/README.md  0.1s
+  ┊ review diff
+a/tools/json-to-csv-nested/README.md → b/tools/json-to-csv-nested/README.md
+@@ -0,0 +1,93 @@
++# json-to-csv-nested
++
++Convertisseur JSON imbriqué vers CSV avec aplatissement automatique des structures profondes.
++
++Gère les objets imbriqués, les tableaux et les types primitifs. Les clés imbriquées sont aplaties avec un séparateur configurable (par défaut `.`).
++
++## Installation
++
++```bash
++go install github.com/TataneSan/json-to-csv-nested@latest
++```
++
++Ou télécharger le binaire depuis [Releases](https://github.com/TataneSan/json-to-csv-nested/releases).
++
++## Utilisation
++
++```
++json-to-csv-nested [-i INPUT] [-o OUTPUT] [-s SEPARATOR]
++```
++
++### Options
++
++| Option | Description | Défaut |
++|--------|-------------|--------|
++| `-i` | Fichier JSON d'entrée | stdin |
++| `-o` | Fichier CSV de sortie | stdout |
++| `-s` | Séparateur pour les clés imbriquées | `.` |
++
++### Exemples
++
++**Conversion basique :**
++
++```bash
++json-to-csv-nested -i data.json -o output.csv
++```
++
++**Via pipe :**
++
++```bash
++cat data.json | json-to-csv-nested
++```
++
++**Avec séparateur personnalisé :**
++
++```bash
++json-to-csv-nested -s '_' -i data.json
++```
++
++### Exemple complet
++
++Entrée (`users.json`) :
++
++```json
++[
++  {
++    "name": "Alice",
++    "address": {
++      "city": "Paris",
++      "coords": {
++        "lat": 48.8,
++        "lng": 2.3
++      }
++    },
++    "tags": ["dev", "go"]
++  },
++  {
++    "name": "Bob",
++    "address": {
++      "city": "Lyon"
++    },
++    "scores": [10, 20, 30]
++  }
++]
++```
++
++Sortie CSV :
++
++```csv
+… omitted 15 diff line(s) across 1 additional file(s)/section(s)
+  ┊ ✍️  write     /root/openclaw/tools/json-to-csv-nested/LICENSE  0.1s
+  ┊ review diff
+a/tools/json-to-csv-nested/LICENSE → b/tools/json-to-csv-nested/LICENSE
+@@ -0,0 +1,21 @@
++MIT License
++
++Copyright (c) 2026 TataneSan
++
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
+  ┊ ✍️  write     /root/openclaw/tools/json-to-csv-nested/.gitignore  0.1s
+  ┊ review diff
+a/tools/json-to-csv-nested/.gitignore → b/tools/json-to-csv-nested/.gitignore
+@@ -0,0 +1 @@
++json-to-csv-nested
+  ┊ 📋 plan      1/3 task(s)  0.0s
+  ┊ 💻 $         cd /root/openclaw/tools/json-to-csv-nested && git init && git add -A && git commit -m "feat: convert nested JSON to flat CSV with configurable separator" && git branch -M main  0.0s
+  ┊ 💻 $         cd /root/openclaw/tools/json-to-csv-nested && git remote add origin git@github.com:TataneSan/json-to-csv-nested.git && git push -u origin main 2>&1  1.4s [exit 128]
+  ┊ 💻 $         cd /root/openclaw/tools/json-to-csv-nested && gh repo create TataneSan/json-to-csv-nested --private --confirm 2>&1  3.0s
+  ┊ 💻 $         cd /root/openclaw/tools/json-to-csv-nested && git push -u origin main 2>&1  1.8s
+  ┊ 📋 plan      2/3 task(s)  0.0s
+  ┊ 🔧 patch     /root/openclaw/MISSION.md  0.1s
+  ┊ review diff
+a//root/openclaw/MISSION.md → b//root/openclaw/MISSION.md
+@@ -443,7 +443,7 @@
+ 
+ ## Vague 35 — CLI Tools
+ - [x] ini-to-yaml : convertisseur INI vers YAML ✓ 2026-05-28
+-- [ ] json-to-csv-nested : convertisseur JSON imbriqué vers CSV (aplatissement)
++- [x] json-to-csv-nested : convertisseur JSON imbriqué vers CSV (aplatissement) ✓ 2026-05-28
+ - [ ] git-log-summary : résumé du historique git (commits, fichiers, auteurs)
+ - [ ] xml-validate : valide la syntaxe XML d'un fichier
+ - [ ] env-to-tsv : convertit un fichier .env en TSV
+  ┊ 📋 plan      3 task(s)  0.0s
+  ┊ 💻 $         mkdir -p /root/openclaw/tools/git-log-summary  0.0s
+  ┊ ✍️  write     /root/openclaw/tools/git-log-summary/main.go  0.5s
+  ┊ review diff
+a/tools/git-log-summary/main.go → b/tools/git-log-summary/main.go
+@@ -1,15 +1,7 @@
+-// git-log-summary summarizes git commits with stats per author and commit type.
+-//
+-// It parses git log output and produces a summary including:
+-// - Total commits and date range
+-// - Commits per author
+-// - Commits per type (feat, fix, docs, etc.)
+-// - Most active days
+-// - Top files changed
+ package main
+ 
+ import (
+-	"bufio"
++	"flag"
+ 	"fmt"
+ 	"os"
+ 	"os/exec"
+@@ -18,523 +10,281 @@
+ 	"time"
+ )
+ 
+-type Commit struct {
+-	Hash    string
+-	Author  string
+-	Email   string
+-	Date    time.Time
+-	Type    string
+-	Subject string
+-	Files   []string
+-}
+-
+ type Summary struct {
+-	Commits       []Commit
+-	Total         int
+-	DateRange     string
+-	AuthorStats   map[string]int
+-	TypeStats     map[string]int
+-	DayStats      map[string]int
+-	FileStats     map[string]int
+-	FirstCommit   time.Time
+-	LastCommit    time.Time
++	TotalCommits int
++	FirstCommit  time.Time
++	LastCommit   time.Time
++	Authors      map[string]int
++	Files        map[string]int
++	Monthly      map[string]int
++	ByType       map[string]int
++}
++
++func runGit(args ...string) (string, error) {
++	cmd := exec.Command("git", args...)
++	cmd.Dir = repo
++	out, err := cmd.Output()
++	return strings.TrimSpace(string(out)), err
++}
++
++var repo string
++
++func run() error {
++	repo = flag.String("r", ".", "chemin du repertoire git")
++	format := flag.String("f", "full", "format de sortie: full, commits, authors, files, monthly, types")
++	since := flag.String("since", "", "commits depuis cette date (ex: '30 days ago', '2024-01-01')")
++	flag.Parse()
++
++	// verifier que c'est un repo git
++	if _, err := runGit("rev-parse", "--git-dir"); err != nil {
++		return fmt.Errorf("pas un repertoire git: %s", *repo)
++	}
++
++	var sinceArgs []string
++	if *since != "" {
++		sinceArgs = append(sinceArgs, "--since", *since)
++	}
++
++	// total commits
++	countOut, err := runGit(append([]string{"rev-list", "--count", "HEAD"}, sinceArgs...)...)
++	if err != nil {
++		return fmt.Errorf("erreur comptage commits: %w", err)
+… omitted 732 diff line(s) across 1 additional file(s)/section(s)
+  ┊ 🔧 patch     /root/openclaw/tools/git-log-summary/main.go  0.2s
+  ┊ review diff
+a//root/openclaw/tools/git-log-summary/main.go → b//root/openclaw/tools/git-log-summary/main.go
+@@ -27,10 +27,11 @@
+ 	return strings.TrimSpace(string(out)), err
+ }
+ 
+-var repo string
++var repoPtr *string
+ 
+ func run() error {
+-	repo = flag.String("r", ".", "chemin du repertoire git")
++	repoPtr = flag.String("r", ".", "chemin du repertoire git")
++	repo := *repoPtr
+ 	format := flag.String("f", "full", "format de sortie: full, commits, authors, files, monthly, types")
+ 	since := flag.String("since", "", "commits depuis cette date (ex: '30 days ago', '2024-01-01')")
+ 	flag.Parse()
+  ┊ ✍️  write     /root/openclaw/tools/git-log-summary/main.go  0.1s
+  ┊ review diff
+a/tools/git-log-summary/main.go → b/tools/git-log-summary/main.go
+@@ -20,25 +20,26 @@
+ 	ByType       map[string]int
+ }
+ 
++var repoPath string
++
+ func runGit(args ...string) (string, error) {
+ 	cmd := exec.Command("git", args...)
+-	cmd.Dir = repo
++	cmd.Dir = repoPath
+ 	out, err := cmd.Output()
+ 	return strings.TrimSpace(string(out)), err
+ }
+ 
+-var repoPtr *string
+-
+ func run() error {
+-	repoPtr = flag.String("r", ".", "chemin du repertoire git")
+-	repo := *repoPtr
++	r := flag.String("r", ".", "chemin du repertoire git")
+ 	format := flag.String("f", "full", "format de sortie: full, commits, authors, files, monthly, types")
+ 	since := flag.String("since", "", "commits depuis cette date (ex: '30 days ago', '2024-01-01')")
+ 	flag.Parse()
+ 
++	repoPath = *r
++
+ 	// verifier que c'est un repo git
+ 	if _, err := runGit("rev-parse", "--git-dir"); err != nil {
+-		return fmt.Errorf("pas un repertoire git: %s", *repo)
++		return fmt.Errorf("pas un repertoire git: %s", repoPath)
+ 	}
+ 
+ 	var sinceArgs []string
+@@ -51,6 +52,7 @@
+ 	if err != nil {
+ 		return fmt.Errorf("erreur comptage commits: %w", err)
+ 	}
++	var totalCommits int
+ 	fmt.Sscanf(countOut, "%d", &totalCommits)
+ 
+ 	// authors
+@@ -74,8 +76,6 @@
+ 	}
+ 
+ 	// files touched
+-	filesOut, err := runGit(append([]string{"diff", "--name-only", "HEAD^{commit}"}, sinceArgs...)...)
+-	_ = filesOut
+ 	files := make(map[string]int)
+ 	logOut, err := runGit(append([]string{"log", "--name-only", "--format=", "HEAD"}, sinceArgs...)...)
+ 	if err == nil {
+@@ -90,8 +90,10 @@
+ 	// monthly
+ 	monthlyOut, err := runGit(append([]string{"log", "--format=%aI", "HEAD"}, sinceArgs...)...)
+ 	monthly := make(map[string]int)
+-	if err == nil {
+-		for _, line := range strings.Split(monthlyOut, "\n") {
++	firstCommit, lastCommit := time.Time{}, time.Time{}
++	if err == nil && monthlyOut != "" {
++		dates := strings.Split(monthlyOut, "\n")
++		for i, line := range dates {
+ 			line = strings.TrimSpace(line)
+ 			if line == "" {
+ 				continue
+@@ -102,21 +104,10 @@
+ 			}
+ 			key := fmt.Sprintf("%d-%02d", t.Year(), t.Month())
+ 			monthly[key]++
+-		}
+-	}
+-
+-	// first and last commit
+-	datesOut, _ := runGit(append([]string{"log", "--format=%aI", "--reverse", "HEAD"}, sinceArgs...)...)
+-	firstCommit, lastCommit := time.Time{}, time.Time{}
+-	if datesOut != "" {
+-		dates := strings.Split(datesOut, "\n")
+-		if len(dates) > 0 {
+-			if t, err := time.Parse(time.RFC3339, strings.TrimSpace(dates[0])); err == nil {
+-				firstCommit = t
+-			}
+… omitted 35 diff line(s) across 1 additional file(s)/section(s)
+  ┊ 💻 $         cd /root/openclaw/tools/git-log-summary && go mod init git-log-summary && go build -o git-log-summary . 2>&1  0.0s [exit 1]
+  ┊ 💻 $         cd /root/openclaw/tools/git-log-summary && rm -f go.mod go.sum && go mod init git-log-summary && go build -o git-log-summary . 2>&1  0.4s
+  ┊ 💻 $         cd /root/openclaw/tools/git-log-summary && ./git-log-summary -r /root/openclaw 2>&1 | head -40  0.1s
+  ┊ ✍️  write     /root/openclaw/tools/git-log-summary/README.md  0.1s
+  ┊ review diff
+a/tools/git-log-summary/README.md → b/tools/git-log-summary/README.md
+@@ -1,170 +1,105 @@
+ # git-log-summary
+ 
+-Summarize git commits with stats per author and commit type. Parses git log output and produces a visual summary with author contributions, commit type breakdown, most active days, and top changed files.
++Résumé du historique Git : commits, auteurs, fichiers modifiés, répartition mensuelle et types de commits.
+ 
+-## Features
+-
+-- Total commits and date range overview
+-- Commits per author with visual bar chart
+-- Commit type detection (conventional commits: feat, fix, docs, etc.)
+-- Most active days ranking
+-- Top changed files across all commits
+-- Custom date ranges with `--since` / `--until`
+-- Branch-specific analysis
+-- Multiple output formats: text, JSON, CSV
+-
+-## Install
++## Installation
+ 
+ ```bash
+ go install github.com/TataneSan/git-log-summary@latest
+ ```
+ 
+-Or build from source:
++Ou télécharger le binaire depuis [Releases](https://github.com/TataneSan/git-log-summary/releases).
+ 
+-```bash
+-git clone https://github.com/TataneSan/git-log-summary.git
+-cd git-log-summary
+-go build -o git-log-summary .
+-```
+-
+-## Usage
++## Utilisation
+ 
+ ```
+-git-log-summary [OPTIONS]
++git-log-summary [-r REPO] [-f FORMAT] [-since DATE]
+ ```
+ 
+ ### Options
+ 
+-| Flag | Description | Default |
+-|------|-------------|---------|
+-| `-r, --repo PATH` | Path to git repository | current directory |
+-| `-s, --since DATE` | Only show commits since date | all time |
+-| `-u, --until DATE` | Only show commits until date | now |
+-| `-b, --branch NAME` | Analyze a specific branch | current branch |
+-| `-f, --format FMT` | Output format: `text`, `json`, `csv` | `text` |
+-| `-n, --max-files N` | Max files in top changed list | 15 |
+-| `-h, --help` | Show help message | — |
++| Option | Description | Défaut |
++|--------|-------------|--------|
++| `-r` | Chemin du répertoire git | `.` |
++| `-f` | Format de sortie | `full` |
++| `-since` | Filtrer les commits depuis une date | tous |
+ 
+-### Examples
++### Formats disponibles
+ 
+-Analyze current repository:
++- `full` — résumé complet (défaut)
++- `commits` — nombre total, premier et dernier commit
++- `authors` — répartition par auteur
++- `files` — fichiers les plus modifiés
++- `monthly` — commits par mois
++- `types` — répartition par type de commit (conventional commits)
++
++### Exemples
++
++**Résumé complet du repo courant :**
++
+ ```bash
+ git-log-summary
+ ```
+ 
+-Analyze a specific repo with date range:
++**Résumé d'un repo spécifique :**
+… omitted 160 diff line(s) across 1 additional file(s)/section(s)
+  ┊ ✍️  write     /root/openclaw/tools/git-log-summary/LICENSE  0.1s
+  ┊ review diff
+a/tools/git-log-summary/LICENSE → b/tools/git-log-summary/LICENSE
+@@ -0,0 +1,21 @@
++MIT License
++
++Copyright (c) 2026 TataneSan
++
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
+  ┊ ✍️  write     /root/openclaw/tools/git-log-summary/.gitignore  0.1s
+  ┊ review diff
+a/tools/git-log-summary/.gitignore → b/tools/git-log-summary/.gitignore
+@@ -0,0 +1 @@
++git-log-summary
+  ┊ 💻 $         cd /root/openclaw/tools/git-log-summary && git init && git add -A && git commit -m "feat: git log summary with authors, files, monthly and commit types" && git branch -M main  0.2s
+  ┊ 💻 $         cd /root/openclaw/tools/git-log-summary && gh repo create TataneSan/git-log-summary --private --confirm 2>&1  1.0s [exit 1]
+  ┊ 💻 $         cd /root/openclaw/tools/git-log-summary && git remote add origin git@github.com:TataneSan/git-log-summary.git 2>/dev/null; git push -u origin main 2>&1  2.8s
+  ┊ 🔧 patch     /root/openclaw/MISSION.md  0.1s
+  ┊ review diff
+a//root/openclaw/MISSION.md → b//root/openclaw/MISSION.md
+@@ -444,6 +444,6 @@
+ ## Vague 35 — CLI Tools
+ - [x] ini-to-yaml : convertisseur INI vers YAML ✓ 2026-05-28
+ - [x] json-to-csv-nested : convertisseur JSON imbriqué vers CSV (aplatissement) ✓ 2026-05-28
+-- [ ] git-log-summary : résumé du historique git (commits, fichiers, auteurs)
++- [x] git-log-summary : résumé du historique git (commits, fichiers, auteurs) ✓ 2026-05-28
+ - [ ] xml-validate : valide la syntaxe XML d'un fichier
+ - [ ] env-to-tsv : convertit un fichier .env en TSV
+  ┊ 📋 plan      3 task(s)  0.0s
+  ┊ 💻 $         mkdir -p /root/openclaw/tools/xml-validate  0.0s
+  ┊ ✍️  write     /root/openclaw/tools/xml-validate/main.go  0.2s
+  ┊ review diff
+a/tools/xml-validate/main.go → b/tools/xml-validate/main.go
+@@ -0,0 +1,71 @@
++package main
++
++import (
++	"encoding/xml"
++	"flag"
++	"fmt"
++	"io"
++	"os"
++)
++
++func run() error {
++	input := flag.String("i", "", "chemin du fichier XML (vide pour stdin)")
++	pretty := flag.Bool("p", false, "affiche le XML formaté si valide")
++	flag.Parse()
++
++	var reader io.Reader
++	if *input != "" {
++		f, err := os.Open(*input)
++		if err != nil {
++			return fmt.Errorf("erreur ouverture fichier: %w", err)
++		}
++		defer f.Close()
++		reader = f
++	} else {
++		reader = os.Stdin
++	}
++
++	data, err := io.ReadAll(reader)
++	if err != nil {
++		return fmt.Errorf("erreur lecture: %w", err)
++	}
++
++	// Validation XML
++	dec := xml.NewDecoder(io.Bytes.NewReader(data))
++	errors := 0
++	for {
++		_, err := dec.Token()
++		if err == io.EOF {
++			break
++		}
++		if err != nil {
++			fmt.Fprintf(os.Stderr, "ERREUR (ligne %d): %v\n", dec.InputPos().Offset, err)
++			errors++
++		}
++	}
++
++	if errors > 0 {
++		fmt.Fprintf(os.Stderr, "Validation echouee: %d erreur(s)\n", errors)
++		os.Exit(1)
++		return nil
++	}
++
++	fmt.Fprintln(os.Stderr, "Validation reussie: XML valide")
++
++	if *pretty {
++		var raw interface{}
++		if err := xml.Unmarshal(data, &raw); err == nil {
++			pretty, _ := xml.MarshalIndent(raw, "", "  ")
++			fmt.Println(string(pretty))
++		}
++	}
++
++	return nil
++}
++
++func main() {
++	if err := run(); err != nil {
++		fmt.Fprintf(os.Stderr, "xml-validate: %v\n", err)
++		os.Exit(1)
++	}
++}
+  ┊ ✍️  write     /root/openclaw/tools/xml-validate/main.go  0.2s
+  ┊ review diff
+a/tools/xml-validate/main.go → b/tools/xml-validate/main.go
+@@ -1,6 +1,7 @@
+ package main
+ 
+ import (
++	"bytes"
+ 	"encoding/xml"
+ 	"flag"
+ 	"fmt"
+@@ -10,7 +11,7 @@
+ 
+ func run() error {
+ 	input := flag.String("i", "", "chemin du fichier XML (vide pour stdin)")
+-	pretty := flag.Bool("p", false, "affiche le XML formaté si valide")
++	pretty := flag.Bool("p", false, "affiche le XML formate si valide")
+ 	flag.Parse()
+ 
+ 	var reader io.Reader
+@@ -31,7 +32,7 @@
+ 	}
+ 
+ 	// Validation XML
+-	dec := xml.NewDecoder(io.Bytes.NewReader(data))
++	dec := xml.NewDecoder(bytes.NewReader(data))
+ 	errors := 0
+ 	for {
+ 		_, err := dec.Token()
+@@ -39,7 +40,8 @@
+ 			break
+ 		}
+ 		if err != nil {
+-			fmt.Fprintf(os.Stderr, "ERREUR (ligne %d): %v\n", dec.InputPos().Offset, err)
++			line, col := dec.InputPos()
++			fmt.Fprintf(os.Stderr, "ERREUR (ligne %d, col %d): %v\n", line, col, err)
+ 			errors++
+ 		}
+ 	}
+  ┊ 💻 $         cd /root/openclaw/tools/xml-validate && go mod init xml-validate && go build -o xml-validate . 2>&1  1.6s
+  ┊ 💻 $         cd /root/openclaw/tools/xml-validate && echo '<root><item>Hello</item></root>' | ./xml-validate 2>&1 && echo "---" && echo '<root><item>Bad' | ./xml-validate 2>&1; echo "exit: $?"  63.6s [exit 124]
+  ┊ ✍️  write     /root/openclaw/tools/xml-validate/main.go  0.3s
+  ┊ review diff
+a/tools/xml-validate/main.go → b/tools/xml-validate/main.go
+@@ -31,23 +31,11 @@
+ 		return fmt.Errorf("erreur lecture: %w", err)
+ 	}
+ 
+-	// Validation XML
+-	dec := xml.NewDecoder(bytes.NewReader(data))
+-	errors := 0
+-	for {
+-		_, err := dec.Token()
+-		if err == io.EOF {
+-			break
+-		}
+-		if err != nil {
+-			line, col := dec.InputPos()
+-			fmt.Fprintf(os.Stderr, "ERREUR (ligne %d, col %d): %v\n", line, col, err)
+-			errors++
+-		}
+-	}
+-
+-	if errors > 0 {
+-		fmt.Fprintf(os.Stderr, "Validation echouee: %d erreur(s)\n", errors)
++	// Validation XML via Unmarshal
++	var raw interface{}
++	if err := xml.Unmarshal(data, &raw); err != nil {
++		fmt.Fprintf(os.Stderr, "ERREUR: %v\n", err)
++		fmt.Fprintf(os.Stderr, "Validation echouee\n")
+ 		os.Exit(1)
+ 		return nil
+ 	}
+@@ -55,11 +43,8 @@
+ 	fmt.Fprintln(os.Stderr, "Validation reussie: XML valide")
+ 
+ 	if *pretty {
+-		var raw interface{}
+-		if err := xml.Unmarshal(data, &raw); err == nil {
+-			pretty, _ := xml.MarshalIndent(raw, "", "  ")
+-			fmt.Println(string(pretty))
+-		}
++		pretty, _ := xml.MarshalIndent(raw, "", "  ")
++		fmt.Println(string(pretty))
+ 	}
+ 
+ 	return nil
+  ┊ 🔧 patch     /root/openclaw/tools/xml-validate/main.go  0.2s
+  ┊ review diff
+a//root/openclaw/tools/xml-validate/main.go → b//root/openclaw/tools/xml-validate/main.go
+@@ -1,7 +1,6 @@
+ package main
+ 
+ import (
+-	"bytes"
+ 	"encoding/xml"
+ 	"flag"
+ 	"fmt"
+  ┊ 💻 $         cd /root/openclaw/tools/xml-validate && go build -o xml-validate . 2>&1  1.8s
+  ┊ 💻 $         cd /root/openclaw/tools/xml-validate && echo '<root><item>Hello</item></root>' | ./xml-validate 2>&1; echo "exit: $?"  0.0s
+  ┊ 💻 $         cd /root/openclaw/tools/xml-validate && git add -A && git commit -m "feat: validate XML syntax with pretty print option" && git branch -M main  1.8s

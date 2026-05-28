@@ -26,10 +26,10 @@ Push automatique après chaque outil.
 
 ## Vague 30 — CLI Tools
 - [x] yaml-to-toml : convertisseur YAML vers TOML ✓ 2026-05-28
-- [ ] json-validate : valide la syntaxe JSON d'un fichier
-- [ ] csv-to-tsv : convertisseur CSV vers TSV
-- [ ] git-branch-list : liste les branches git avec dernier commit
-- [ ] url-encode : encode/decode des chaînes URL
+- [x] json-validate : valide la syntaxe JSON d'un fichier ✓ 2026-05-28
+- [x] csv-to-tsv : convertisseur CSV vers TSV ✓ 2026-05-28
+- [x] git-branch-list : liste les branches git avec dernier commit ✓ 2026-05-28
+- [x] url-encode : encode/decode des chaînes URL ✓ 2026-05-28
 
 ## Vague 26 — CLI Tools
 - [x] ncat-lite : client/serveur TCP léger pour le debug réseau ✓ 2026-05-28
@@ -412,3 +412,38 @@ Push automatique après chaque outil.
 - [x] csv-validate : valide la structure d'un CSV (colonnes, types, nulls) ✓ 2026-05-28
 - [x] git-tag-info : affiche les infos détaillées d'un tag git ✓ 2026-05-28
 - [x] toml-to-ini : convertisseur TOML vers INI ✓ 2026-05-28
+
+## Vague 31 — CLI Tools
+- [x] json-to-sql : génère des requêtes INSERT SQL depuis un JSON ✓ 2026-05-28
+- [x] csv-diff : compare deux fichiers CSV et affiche les différences ✓ 2026-05-28
+- [x] markdown-link-check : vérifie les liens dans des fichiers Markdown ✓ 2026-05-28
+- [x] env-to-xml : convertit un fichier .env en XML ✓ 2026-05-28
+- [x] git-commit-graph : affiche un graphique ASCII du historique de commits ✓ 2026-05-28
+
+## Vague 32 — CLI Tools
+- [x] xml-to-csv : convertisseur XML vers CSV ✓ 2026-05-28
+- [x] json-to-ini : convertisseur JSON vers INI ✓ 2026-05-28
+- [x] csv-format : formate et normalise des fichiers CSV ✓ 2026-05-28
+- [x] git-changelog : génère un changelog depuis les tags git ✓ 2026-05-28
+- [x] env-to-yaml : convertit un fichier .env en YAML ✓ 2026-05-28
+
+## Vague 33 — CLI Tools
+- [x] toml-to-yaml : convertisseur TOML vers YAML ✓ 2026-05-28
+- [x] json-to-markdown-table : convertit un tableau JSON en tableau Markdown ✓ 2026-05-28
+- [x] csv-to-jsonl : convertisseur CSV vers JSONL ✓ 2026-05-28
+- [x] git-file-stats : stats par fichier (LOC, commits, auteurs) ✓ 2026-05-28
+- [x] env-to-ini : convertit un fichier .env en format INI ✓ 2026-05-28
+
+## Vague 34 — CLI Tools
+- [x] ini-to-csv : convertisseur INI vers CSV ✓ 2026-05-28
+- [x] json-to-env : convertisseur JSON vers .env ✓ 2026-05-28
+- [x] csv-to-yaml : convertisseur CSV vers YAML ✓ 2026-05-28
+- [x] git-stash-list : liste les stashes git avec details ✓ 2026-05-28
+- [x] toml-validate : valide la syntaxe d'un fichier TOML ✓ 2026-05-28
+
+## Vague 35 — CLI Tools
+- [x] ini-to-yaml : convertisseur INI vers YAML ✓ 2026-05-28
+- [x] json-to-csv-nested : convertisseur JSON imbriqué vers CSV (aplatissement) ✓ 2026-05-28
+- [x] git-log-summary : résumé du historique git (commits, fichiers, auteurs) ✓ 2026-05-28
+- [ ] xml-validate : valide la syntaxe XML d'un fichier
+- [ ] env-to-tsv : convertit un fichier .env en TSV
