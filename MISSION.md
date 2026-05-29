@@ -503,7 +503,7 @@ Push automatique après chaque outil.
 - [x] json-to-rust : génère des structs Rust depuis du JSON ✓ 2026-05-29
 - [x] yaml-to-sql : génère des requêtes SQL (CREATE + INSERT) depuis YAML ✓ 2026-05-29
 - [x] git-commit-lint : vérifie le format des messages de commit ✓ 2026-05-29
-- [ ] env-mask : masque les valeurs sensibles dans un .env
+- [x] env-mask : masque les valeurs sensibles dans un .env ✓ 2026-05-29
 
 ## Vague 44 — CLI Tools
 - [x] go-vet-check : lance go vet et formate le rapport ✓ 2026-05-28
@@ -920,3 +920,10 @@ Push automatique après chaque outil.
 - [x] csv-to-pie-chart : convertisseur CSV vers graphique camembert SVG ✓ 2026-05-29
 - [x] markdown-code-extract : extrait les blocs de code depuis des fichiers Markdown ✓ 2026-05-29
 - [x] json-to-nix : convertisseur JSON vers expressions Nix ✓ 2026-05-29
+
+## Vague 118 — CLI Tools
+- [x] dockerfile-lint : analyse et signale les mauvaises pratiques dans les Dockerfiles ✓ 2026-05-29
+- [x] json-to-terraform-var : genere des variables Terraform depuis du JSON ✓ 2026-05-29
+- [x] csv-to-chart-svg : genere des graphiques SVG (barres, lignes) depuis un CSV ✓ 2026-05-29
+- [ ] git-commit-author : affiche les infos de l'auteur du dernier commit
+- [ ] http-follow-redirect : fetch une URL en suivant toutes les redirections

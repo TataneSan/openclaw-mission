@@ -1,18 +1,17 @@
 # env-mask
 
-Mask sensitive values in `.env` files before sharing or logging. Detects passwords, secrets, tokens, and keys by pattern matching and replaces their values with a placeholder.
+CLI tool that masks sensitive values in `.env` files. Reads an environment file and replaces sensitive values (passwords, secrets, tokens, API keys) with `[MASKED]` while preserving the file structure, comments, and non-sensitive values.
 
 ## Features
 
-- **Auto-detection** of 25+ sensitive key patterns (password, secret, token, api_key, etc.)
-- **Case-insensitive** matching
-- **Configurable mask style**: `****`, `••••`, or `<masked>`
-- **Whitelist** keys to skip masking
-- **Custom patterns** for project-specific sensitive keys
-- **Stdin support** — pipe any `.env` content through the tool
-- **Preserves** comments, empty lines, and non-sensitive keys
-- **Supports** both `KEY=VALUE` and `export KEY=VALUE` formats
-- Single binary, no dependencies
+- Automatic detection of sensitive keys (passwords, secrets, tokens, API keys, credentials)
+- Custom key filtering with `--keys` flag
+- Custom regex patterns with `--pattern` flag
+- Configurable mask string (`--mask`)
+- Strip mode that sets sensitive values to empty (`--strip`)
+- Summary mode that lists masked keys without outputting the file (`--show`)
+- JSON output format (`--format json`)
+- Preserves comments, blank lines, and file structure
 
 ## Install
 
@@ -26,75 +25,128 @@ Or build from source:
 git clone https://github.com/TataneSan/env-mask.git
 cd env-mask
 go build -o env-mask .
-cp env-mask /usr/local/bin/
 ```
 
 ## Usage
 
 ```
-env-mask [OPTIONS] [FILE]
-cat .env | env-mask [OPTIONS]
+env-mask [flags] <file.env>
 ```
 
-### Options
+### Flags
 
-| Flag | Description |
-|------|-------------|
-| `-p, --pattern PATTERNS` | Comma-separated sensitive key patterns |
-| `-w, --whitelist KEYS` | Comma-separated keys to skip masking |
-| `-s, --style STYLE` | Mask style: `asterisk`, `dots`, `placeholder` |
-| `-h, --help` | Show help |
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--keys` | | Comma-separated list of exact key names to mask |
+| `--pattern` | | Regex pattern to match sensitive key names (overrides defaults) |
+| `--defaults` | `true` | Use built-in sensitive key patterns |
+| `--mask` | `[MASKED]` | Replacement string for masked values |
+| `--format` | `env` | Output format: `env`, `json` |
+| `--strip` | `false` | Strip values entirely (set to empty string) |
+| `--show` | `false` | Show which keys were masked (summary mode) |
+| `--version` | `false` | Print version |
 
-### Examples
+## Examples
+
+### Mask sensitive values with defaults
 
 ```bash
-# Mask sensitive values in .env
 env-mask .env
-
-# Use placeholder style
-env-mask -s placeholder .env
-
-# Pipe from stdin
-cat .env | env-mask
-
-# Whitelist specific keys
-env-mask -w "DB_PASSWORD,API_KEY" .env
-
-# Custom patterns
-env-mask -p "secret,key,token" .env
 ```
 
-### Example
-
-Given this `.env` file:
-
+Output:
 ```
+# Database config
 DB_HOST=localhost
 DB_PORT=5432
-DB_PASSWORD=supers3cret
-API_KEY=abc123xyz
-APP_NAME=myapp
-SECRET_TOKEN=tok_98765
-export AWS_SECRET_KEY=wJalrXUtn
+DB_PASSWORD=[MASKED]
+# API settings
+API_KEY=[MASKED]
+# Auth
+JWT_SECRET=[MASKED]
+# Public values
+APP_NAME=MyApp
+APP_ENV=production
 ```
 
-Running `env-mask .env` outputs:
+### Mask specific keys only
 
-```
-DB_HOST=localhost
-DB_PORT=5432
-DB_PASSWORD=****
-API_KEY=****
-APP_NAME=myapp
-SECRET_TOKEN=****
-export AWS_SECRET_KEY=****
+```bash
+env-mask --defaults=false --keys PASSWORD,TOKEN .env
 ```
 
-## Default Sensitive Patterns
+### Mask by regex pattern
 
-The tool matches keys containing any of these patterns (case-insensitive):
+```bash
+env-mask --defaults=false --pattern '.*(PASS|SECRET|KEY|TOKEN).*' .env
+```
 
-password, passwd, pass, secret, token, api_key, apikey, api-key, private_key, privatekey, private-key, access_key, accesskey, access-key, secret_key, secretkey, secret-key, auth, credential, credentials, encryption_key, signing_key, jwt_secret, db_password, database_password, smtp_password, email_password, aws_secret, gcp_secret, azure_secret, ssh_key, ssh-key, cookie_secret, session_secret, master_key, masterkey, client_secret, clientsecret
+### Custom mask string
+
+```bash
+env-mask --mask '***' .env
+```
+
+### Strip sensitive values (set to empty)
+
+```bash
+env-mask --strip .env
+```
+
+Output:
+```
+DB_PASSWORD=
+API_KEY=
+JWT_SECRET=
+```
+
+### Show summary of masked keys
+
+```bash
+env-mask --show .env
+```
+
+Output:
+```
+File: .env
+Sensitive keys found: 4
+
+Masked keys:
+  - DB_PASSWORD
+  - API_KEY
+  - JWT_SECRET
+  - SESSION_SECRET
+```
+
+### JSON output
+
+```bash
+env-mask --format json .env
+```
+
+### Write masked output to a new file
+
+```bash
+env-mask .env > .env.masked
+```
+
+## Default sensitive key patterns
+
+The tool detects the following key patterns by default (case-insensitive):
+
+- `password`, `passwd`
+- `secret`, `secret_key`, `secret-key`
+- `token`
+- `api_key`, `apikey`, `api-key`
+- `private_key`, `private-key`
+- `access_key`, `access-key`
+- `auth`
+- `credential`, `credentials`
+- `db_pass`, `db_password`, `database_password`
+- `mysql_password`, `postgres_password`, `redis_password`, `smtp_password`
+- `encryption_key`, `signing_key`
+- `jwt_secret`, `session_secret`, `cookie_secret`
+- `aws_secret`, `gcp_key`, `azure_key`
 
 ## License
 
