@@ -859,8 +859,29 @@ Push automatique après chaque outil.
 - [x] env-to-json : convertit un fichier .env en JSON ✓ 2026-05-29
 
 ## Vague 100 — CLI Tools
-- [ ] xml-to-ini : convertisseur XML vers INI
-- [ ] tsv-to-yaml : convertisseur TSV vers YAML
-- [ ] git-tag-annotate : annote des tags git en batch
-- [ ] http-cookie-parser : parse et affiche les cookies HTTP d'une URL
-- [ ] json-to-ini : convertisseur JSON vers INI
+- [x] xml-to-ini : convertisseur XML vers INI ✓ 2026-05-29
+- [x] tsv-to-yaml : convertisseur TSV vers YAML ✓ 2026-05-29
+- [x] git-tag-annotate : annote des tags git en batch ✓ 2026-05-29
+- [x] http-cookie-parser : parse et affiche les cookies HTTP d'une URL ✓ 2026-05-29
+- [x] json-to-ini : convertisseur JSON vers INI ✓ 2026-05-29
+
+## Vague 101 — CLI Tools
+- [x] ini-to-xml : convertisseur INI vers XML ✓ 2026-05-29
+- [x] yaml-to-tsv : convertisseur YAML vers TSV ✓ 2026-05-29
+- [x] git-tag-delete : supprime des tags git en batch (local et remote) ✓ 2026-05-29
+- [x] http-header-check : vérifie la présence de headers HTTP spécifiques ✓ 2026-05-29
+- [x] json-to-env : convertisseur JSON vers .env ✓ 2026-05-29
+
+## Vague 102 — CLI Tools
+- [x] xml-to-sql : génère des requêtes SQL INSERT depuis un XML ✓ 2026-05-29
+- [x] tsv-to-ini : convertisseur TSV vers INI ✓ 2026-05-29
+- [x] git-branch-rename : renomme des branches git en batch ✓ 2026-05-29 (dup Vague 50)
+- [x] http-h2-check : vérifie le support HTTP/2 d'un serveur ✓ 2026-05-29 (dup Vague 85)
+- [x] ini-to-env : convertisseur INI vers .env ✓ 2026-05-29
+
+## Vague 103 — CLI Tools
+- [x] markdown-heading-list : liste tous les titres d'un fichier Markdown avec niveaux ✓ 2026-05-29
+- [x] http-basic-auth : client HTTP avec authentification basique ✓ 2026-05-29
+- [x] xml-to-env : convertisseur XML vers .env ✓ 2026-05-29
+- [x] git-commit-range : affiche les commits entre deux refs avec stats ✓ 2026-05-29
+- [x] file-word-count : compte les mots uniques dans des fichiers ✓ 2026-05-29
