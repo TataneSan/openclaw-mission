@@ -492,6 +492,13 @@ Push automatique après chaque outil.
 - [x] sql-from-csv : génère des requêtes SQL (CREATE + INSERT) depuis un CSV ✓ 2026-05-28
 - [x] toml-to-env : convertisseur TOML vers .env ✓ 2026-05-28
 
+## Vague 44 — CLI Tools
+- [x] tsv-to-json : convertisseur TSV vers JSON ✓ 2026-05-29
+- [x] yaml-to-sql : génère des requêtes SQL (CREATE + INSERT) depuis du YAML ✓ 2026-05-29
+- [x] csv-to-env : convertisseur CSV vers .env ✓ 2026-05-29
+- [x] git-untracked : liste les fichiers non suivis dans un repo git ✓ 2026-05-29
+- [x] ini-validate : valide la syntaxe d'un fichier INI ✓ 2026-05-29
+
 ## Vague 43 — CLI Tools
 - [x] go-struct-gen : génère des structs Go depuis du JSON ✓ 2026-05-28
 - [x] json-to-go : génère des structs Go depuis du JSON (avec type hints) ✓ 2026-05-28
@@ -925,5 +932,124 @@ Push automatique après chaque outil.
 - [x] dockerfile-lint : analyse et signale les mauvaises pratiques dans les Dockerfiles ✓ 2026-05-29
 - [x] json-to-terraform-var : genere des variables Terraform depuis du JSON ✓ 2026-05-29
 - [x] csv-to-chart-svg : genere des graphiques SVG (barres, lignes) depuis un CSV ✓ 2026-05-29
-- [ ] git-commit-author : affiche les infos de l'auteur du dernier commit
-- [ ] http-follow-redirect : fetch une URL en suivant toutes les redirections
+- [x] git-commit-author : affiche les infos de l'auteur du dernier commit ✓ 2026-05-29
+- [x] http-follow-redirect : fetch une URL en suivant toutes les redirections ✓ 2026-05-29
+
+## Vague 119 — CLI Tools
+- [x] http-batch-fetch : fetch multiple URLs concurrently with status, size, and timing ✓ 2026-05-29
+
+## Vague 120 — CLI Tools
+- [x] markdown-frontmatter : lit, écrit et gère le YAML frontmatter dans des fichiers Markdown ✓ 2026-05-29
+- [x] http-stream-cli : stream HTTP responses en temps réel avec progress tracking ✓ 2026-05-29
+
+## Vague 121 — CLI Tools
+- [x] csv-to-chart-svg : genere des graphiques SVG (barres, lignes) depuis un CSV ✓ 2026-05-29
+- [x] git-commit-lint : linter de messages de commits (Conventional Commits) ✓ 2026-05-29
+
+## Vague 122 — CLI Tools
+- [x] markdown-heading-validate : valide la hierarchie des titres Markdown (pas de niveaux sautes, H1 en premier) ✓ 2026-05-29
+- [x] http-content-negotiation : teste la negociation de contenu HTTP (Accept headers vs reponses) ✓ 2026-05-29
+- [x] file-compress : compresse des fichiers avec gzip, zip, tar.gz, zlib et compare les ratios ✓ 2026-05-29
+
+## Vague 123 — CLI Tools
+- [x] http-multipart-cli : envoie des requetes HTTP multipart/form-data depuis le terminal ✓ 2026-05-29
+- [x] file-decompress : decompresse des fichiers gzip, zip, tar.gz, bzip2, xz, zlib ✓ 2026-05-29
+- [x] file-encrypt : chiffre/dechiffre des fichiers avec AES-256-GCM ✓ 2026-05-29
+
+## Vague 124 — CLI Tools
+- [x] http-idempotency-check : vérifie l'idempotence HTTP en envoyant la même requête N fois et en comparant les réponses ✓ 2026-05-29
+
+## Vague 125 — CLI Tools
+- [x] rss-reader-cli : lecteur de flux RSS/Atom en terminal (RSS 2.0, Atom, sortie text/JSON) ✓ 2026-05-29
+- [x] file-watch-exec : surveille des fichiers et lance des commandes sur changement (inotify + polling) ✓ 2026-05-29
+
+## Vague 126 — CLI Tools
+- [x] git-commit-lint : linter de messages de commits git (conventional commits, longueur, style) ✓ 2026-05-29
+- [x] json-to-toml-strict : convertisseur JSON vers TOML avec validation stricte ✓ 2026-05-29
+- [x] csv-sample : échantillonne aléatoirement N lignes d'un CSV ✓ 2026-05-29
+- [x] http-method-check : vérifie les méthodes HTTP supportées par une URL ✓ 2026-05-29
+- [x] yaml-to-env : convertisseur YAML vers .env ✓ 2026-05-29
+
+## Vague 127 — CLI Tools
+- [x] text-readability : analyse la lisibilité de texte (Flesch, Gunning Fog, SMOG, Coleman-Liau) ✓ 2026-05-29
+- [x] file-hardlink : crée et gère des hardlinks entre fichiers ✓ 2026-05-29
+- [x] http-chunked-cli : client HTTP pour tester le transfer-encoding chunked ✓ 2026-05-29
+- [x] json-to-yaml-strict : convertisseur JSON vers YAML avec validation de types ✓ 2026-05-29
+- [x] csv-to-sqlite-bulk : import bulk CSV vers SQLite avec transactions ✓ 2026-05-29
+
+## Vague 128 — CLI Tools
+- [x] json-patch : outil JSON Patch CLI (RFC 6902) avec apply, diff, inverse ✓ 2026-05-29
+- [x] yaml-merge : fusionne plusieurs fichiers YAML avec priorité configurable ✓ 2026-05-29
+- [x] csv-aggregate : agrège des données CSV par groupe (sum, avg, count, min, max) ✓ 2026-05-29
+- [x] git-commit-daily : compteur de commits par jour sur une période ✓ 2026-05-29
+- [x] http-digest-auth : client HTTP avec authentification Digest ✓ 2026-05-29
+
+## Vague 129 — CLI Tools
+- [x] csv-to-markdown-table : convertit un CSV en tableau Markdown formaté ✓ 2026-05-29
+- [x] git-branch-list : liste les branches git avec dernier commit ✓ 2026-05-29
+- [x] env-diff-cli : compare deux fichiers .env et affiche les différences ✓ 2026-05-29
+
+## Vague 130 — CLI Tools
+- [x] proc-open-files : affiche les fichiers ouverts par un processus depuis /proc/PID/fd ✓ 2026-05-29
+- [x] net-interface-stats : affiche les statistiques des interfaces reseau ✓ 2026-05-29
+- [x] json-to-go-interfaces : genere des interfaces Go depuis du JSON ✓ 2026-05-29
+- [x] csv-to-mermaid-flow : genere un diagramme Mermaid flowchart depuis un CSV ✓ 2026-05-29
+- [x] http-connection-pool-test : teste le connection pooling HTTP ✓ 2026-05-29
+
+## Vague 131 — CLI Tools
+- [x] markdown-image-list : liste toutes les images referencees dans des fichiers Markdown ✓ 2026-05-29
+- [x] http-response-size : mesure la taille des reponses HTTP (headers + body) ✓ 2026-05-29
+- [x] json-to-csv-schema : genere un schema de colonnes CSV depuis du JSON ✓ 2026-05-29
+- [x] git-commit-merge : liste les commits de merge dans un repo git ✓ 2026-05-29
+- [x] env-to-script : genere un script shell depuis un fichier .env ✓ 2026-05-29
+
+## Vague 132 — CLI Tools
+- [x] docker-volume-list : liste les volumes Docker avec tailles et containers connectes ✓ 2026-05-29
+
+## Vague 133 — CLI Tools
+- [x] file-age-cli : affiche l'âge des fichiers (création, modification, accès) avec format humain ✓ 2026-05-29
+
+## Vague 134 — CLI Tools
+- [x] markdown-checklist-stats : affiche les stats de checklists dans des fichiers Markdown ✓ 2026-05-29
+
+## Vague 135 — CLI Tools
+- [x] json-to-toml : convertisseur JSON vers TOML ✓ 2026-05-29
+- [x] csv-to-sql : génère des requêtes SQL (CREATE + INSERT) depuis un CSV ✓ 2026-05-29
+- [x] git-commit-size : affiche la taille des commits (fichiers ajoutés/modifiés/supprimés) ✓ 2026-05-29
+- [x] env-to-markdown : génère un tableau Markdown depuis un .env ✓ 2026-05-29
+- [x] xml-to-toml : convertisseur XML vers TOML ✓ 2026-05-29
+
+## Vague 136 — CLI Tools
+- [x] csv-to-ini : convertisseur CSV vers INI avec regroupement par clé ✓ 2026-05-29
+- [x] json-to-yaml : convertisseur JSON vers YAML avec indentation configurable ✓ 2026-05-29
+- [x] git-tag-create : crée des tags git annotés en batch depuis un fichier ✓ 2026-05-29
+- [x] env-to-csv : convertit un fichier .env en CSV ✓ 2026-05-29
+- [x] xml-to-json : convertisseur XML vers JSON ✓ 2026-05-29
+
+## Vague 137 — CLI Tools
+- [x] csv-to-protobuf : convertisseur CSV vers définitions Protocol Buffers ✓ 2026-05-29
+- [x] json-to-go : génère des structs Go depuis du JSON ✓ 2026-05-29
+- [x] git-branch-age : affiche l'âge de chaque branche git ✓ 2026-05-29
+- [x] env-to-yaml : convertit un fichier .env en YAML ✓ 2026-05-29
+- [x] yaml-to-csv : convertisseur YAML vers CSV ✓ 2026-05-29
+
+## Vague 138 — CLI Tools
+- [x] json-to-rust : génère des structs Rust depuis du JSON ✓ 2026-05-29
+- [x] csv-to-sql : génère des requêtes SQL INSERT depuis un CSV ✓ 2026-05-29
+- [x] git-commit-lint : linter de messages de commits (Conventional Commits) ✓ 2026-05-29
+- [x] env-to-toml : convertit un fichier .env en TOML ✓ 2026-05-29
+- [x] xml-to-yaml : convertisseur XML vers YAML ✓ 2026-05-29
+
+## Vague 139 — CLI Tools
+- [x] toml-to-csv : convertisseur TOML vers CSV ✓ 2026-05-29
+- [x] json-to-ini : convertisseur JSON vers INI ✓ 2026-05-29
+- [x] csv-to-markdown : convertisseur CSV vers tableau Markdown ✓ 2026-05-29
+- [x] git-tag-list : liste les tags git avec détails ✓ 2026-05-29
+- [x] env-validate : valide un .env contre une liste de clés requises ✓ 2026-05-29
+
+## Vague 140 — CLI Tools
+- [x] ini-to-csv : convertisseur INI vers CSV ✓ 2026-05-29
+- [x] yaml-flatten : aplatit du YAML imbriqué en paires clé-valeur ✓ 2026-05-29
+- [x] csv-to-typescript : génère des interfaces TypeScript depuis un CSV ✓ 2026-05-29
+- [ ] git-diff-summary : résumé des changements entre deux commits
+- [ ] http-redirect-trace : trace les chaînes de redirection HTTP

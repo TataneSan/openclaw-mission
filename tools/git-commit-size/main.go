@@ -1,410 +1,404 @@
+// git-commit-size shows the size of commits (files added, modified, deleted)
+// in a git repository. Supports single commit, range, and summary modes.
 package main
 
 import (
-	"bufio"
-	"bytes"
 	"flag"
 	"fmt"
-	"math"
 	"os"
 	"os/exec"
+	"path/filepath"
 	"sort"
 	"strconv"
 	"strings"
 )
 
-// CommitStat holds statistics for a single commit.
-type CommitStat struct {
-	Hash       string
-	ShortHash  string
-	Subject    string
-	Files      int
-	Insertions int
-	Deletions  int
-	TotalLOC   int
+// FileChange represents a changed file in a commit.
+type FileChange struct {
+	Status rune // 'A', 'M', 'D'
+	Path   string
 }
 
-// FileStat holds per-file statistics within a commit.
-type FileStat struct {
-	Insertions int
-	Deletions  int
-	FileName   string
+// CommitSize holds aggregated stats for a single commit.
+type CommitSize struct {
+	Hash   string
+	Short  string
+	Author string
+	Date   string
+	Msg    string
+	Added  int
+	Mod    int
+	Deleted int
+	Total  int
+	Files  []FileChange
 }
 
-// parseDiffStat parses the output of `git diff --stat` into FileStat entries.
-func parseDiffStat(output string) []FileStat {
-	var stats []FileStat
-	scanner := bufio.NewScanner(strings.NewReader(output))
-	for scanner.Scan() {
-		line := scanner.Text()
+func runGit(args ...string) (string, error) {
+	cmd := exec.Command("git", args...)
+	out, err := cmd.Output()
+	if err != nil {
+		return "", fmt.Errorf("git %s: %w", strings.Join(args, " "), err)
+	}
+	return strings.TrimSpace(string(out)), nil
+}
+
+func parseDiffNameStatus(output string) []FileChange {
+	var changes []FileChange
+	for _, line := range strings.Split(output, "\n") {
 		if line == "" {
 			continue
 		}
-
-		// Format: " path/to/file.go | 12 +++++++++---"
-		// or:     " path/to/file.go | Bin 0 -> 1234 bytes"
-		parts := strings.Split(line, "|")
-		if len(parts) < 2 {
+		// Format from diff-tree: ":mode mode hash hash STATUS\tpath"
+		// e.g. ":100644 000000 hash 0000000... D\tpath"
+		// Find the last tab-separated field and the status before it
+		lastTab := strings.LastIndex(line, "\t")
+		if lastTab == -1 {
 			continue
 		}
+		beforeTab := line[:lastTab]
+		path := line[lastTab+1:]
+		// Status is the last field before the tab
+		parts := strings.Fields(beforeTab)
+		if len(parts) < 5 {
+			continue
+		}
+		statusStr := parts[len(parts)-1]
+		var s rune = 'M'
+		switch statusStr {
+		case "A":
+			s = 'A'
+		case "M":
+			s = 'M'
+		case "D":
+			s = 'D'
+		case "C":
+			s = 'M' // copy counts as modify
+		}
+		changes = append(changes, FileChange{Status: s, Path: path})
+	}
+	return changes
+}
 
-		fileName := strings.TrimSpace(parts[0])
-		changePart := strings.TrimSpace(parts[1])
+func getCommitSize(commitRef string) (*CommitSize, error) {
+	cs := &CommitSize{Hash: commitRef}
 
-		var ins, del int
-		// Skip binary files
-		if strings.HasPrefix(changePart, "Bin") {
-			ins = 0
-			del = 0
+	hash, err := runGit("rev-parse", commitRef)
+	if err != nil {
+		return nil, err
+	}
+	cs.Hash = hash
+	cs.Short = hash[:7]
+
+	short, _ := runGit("log", "-1", "--format=%h", commitRef)
+	if short != "" {
+		cs.Short = short
+	}
+
+	author, _ := runGit("log", "-1", "--format=%an", commitRef)
+	cs.Author = author
+
+	date, _ := runGit("log", "-1", "--format=%ad", "--date=short", commitRef)
+	cs.Date = date
+
+	msg, _ := runGit("log", "-1", "--format=%s", commitRef)
+	cs.Msg = msg
+
+	diffOut, err := runGit("diff-tree", "--root", "--no-commit-id", "-r", "--diff-filter=ACDM", "--no-renames", commitRef)
+	if err != nil {
+		return nil, err
+	}
+
+	changes := parseDiffNameStatus(diffOut)
+	cs.Files = changes
+	for _, f := range changes {
+		switch f.Status {
+		case 'A':
+			cs.Added++
+		case 'M':
+			cs.Mod++
+		case 'D':
+			cs.Deleted++
+		}
+	}
+	cs.Total = cs.Added + cs.Mod + cs.Deleted
+	return cs, nil
+}
+
+func formatSingle(cs *CommitSize) string {
+	var sb strings.Builder
+	sb.WriteString(fmt.Sprintf("Commit: %s\n", cs.Short))
+	sb.WriteString(fmt.Sprintf("Author: %s\n", cs.Author))
+	sb.WriteString(fmt.Sprintf("Date:   %s\n", cs.Date))
+	sb.WriteString(fmt.Sprintf("Message: %s\n", cs.Msg))
+	sb.WriteString(fmt.Sprintf("\nFiles: %d added, %d modified, %d deleted (total: %d)\n",
+		cs.Added, cs.Mod, cs.Deleted, cs.Total))
+
+	if len(cs.Files) > 0 {
+		sb.WriteString("\nChanged files:\n")
+		for _, f := range cs.Files {
+			var marker string
+			switch f.Status {
+			case 'A':
+				marker = "A"
+			case 'M':
+				marker = "M"
+			case 'D':
+				marker = "D"
+			}
+			sb.WriteString(fmt.Sprintf("  [%s] %s\n", marker, f.Path))
+		}
+	}
+	return sb.String()
+}
+
+func formatTable(commits []*CommitSize) string {
+	if len(commits) == 0 {
+		return "No commits found."
+	}
+
+	var sb strings.Builder
+	sb.WriteString(fmt.Sprintf("%-10s %-8s %-8s %-8s %-6s  %s\n",
+		"Commit", "Added", "Modified", "Deleted", "Total", "Message"))
+	sb.WriteString(strings.Repeat("-", 90) + "\n")
+
+	for _, cs := range commits {
+		msg := cs.Msg
+		if len(msg) > 40 {
+			msg = msg[:37] + "..."
+		}
+		sb.WriteString(fmt.Sprintf("%-10s %-8d %-8d %-8d %-6d  %s\n",
+			cs.Short, cs.Added, cs.Mod, cs.Deleted, cs.Total, msg))
+	}
+
+	// Summary row
+	var totalAdded, totalMod, totalDel int
+	for _, cs := range commits {
+		totalAdded += cs.Added
+		totalMod += cs.Mod
+		totalDel += cs.Deleted
+	}
+	sb.WriteString(strings.Repeat("-", 90) + "\n")
+	sb.WriteString(fmt.Sprintf("TOTAL      %-8d %-8d %-8d %-6d  %d commits\n",
+		totalAdded, totalMod, totalDel, totalAdded+totalMod+totalDel, len(commits)))
+
+	return sb.String()
+}
+
+func formatSummary(commits []*CommitSize) string {
+	if len(commits) == 0 {
+		return "No commits found."
+	}
+
+	type authorStats struct {
+		Author    string
+		Commits   int
+		Added     int
+		Modified  int
+		Deleted   int
+	}
+
+	authors := make(map[string]*authorStats)
+	var totalAdded, totalMod, totalDel int
+
+	for _, cs := range commits {
+		totalAdded += cs.Added
+		totalMod += cs.Mod
+		totalDel += cs.Deleted
+		if _, ok := authors[cs.Author]; !ok {
+			authors[cs.Author] = &authorStats{Author: cs.Author}
+		}
+		a := authors[cs.Author]
+		a.Commits++
+		a.Added += cs.Added
+		a.Modified += cs.Mod
+		a.Deleted += cs.Deleted
+	}
+
+	var sb strings.Builder
+	sb.WriteString(fmt.Sprintf("Summary: %d commits\n\n", len(commits)))
+	sb.WriteString(fmt.Sprintf("Total files: %d added, %d modified, %d deleted\n\n",
+		totalAdded, totalMod, totalDel))
+
+	// Sort authors by total changes
+	var authorList []*authorStats
+	for _, a := range authors {
+		authorList = append(authorList, a)
+	}
+	sort.Slice(authorList, func(i, j int) bool {
+		ti := authorList[i].Added + authorList[i].Modified + authorList[i].Deleted
+		tj := authorList[j].Added + authorList[j].Modified + authorList[j].Deleted
+		return ti > tj
+	})
+
+	sb.WriteString(fmt.Sprintf("%-25s %-8s %-7s %-8s %-7s %-6s\n",
+		"Author", "Commits", "Added", "Modified", "Deleted", "Total"))
+	sb.WriteString(strings.Repeat("-", 75) + "\n")
+	for _, a := range authorList {
+		total := a.Added + a.Modified + a.Deleted
+		sb.WriteString(fmt.Sprintf("%-25s %-8d %-7d %-8d %-7d %-6d\n",
+			a.Author, a.Commits, a.Added, a.Modified, a.Deleted, total))
+	}
+
+	return sb.String()
+}
+
+func getCommitsFromRange(ref string) ([]*CommitSize, error) {
+	logOut, err := runGit("log", "--format=%H", ref)
+	if err != nil {
+		return nil, err
+	}
+
+	hashes := strings.Fields(logOut)
+	if len(hashes) == 0 {
+		return nil, fmt.Errorf("no commits found for ref %q", ref)
+	}
+
+	var commits []*CommitSize
+	for _, h := range hashes {
+		cs, err := getCommitSize(h)
+		if err != nil {
+			return nil, fmt.Errorf("commit %s: %w", h[:7], err)
+		}
+		commits = append(commits, cs)
+	}
+	return commits, nil
+}
+
+func humanSize(n int64) string {
+	if n < 1024 {
+		return fmt.Sprintf("%d B", n)
+	}
+	if n < 1024*1024 {
+		return fmt.Sprintf("%.1f KB", float64(n)/1024)
+	}
+	return fmt.Sprintf("%.1f MB", float64(n)/(1024*1024))
+}
+
+func main() {
+	var ref, output, repo string
+	var summary, allFiles bool
+
+	flag.StringVar(&ref, "ref", "HEAD", "Commit ref or range (e.g. HEAD, main..develop, HEAD~5..HEAD)")
+	flag.StringVar(&output, "output", "table", "Output format: table, summary, json")
+	flag.StringVar(&repo, "repo", ".", "Path to git repository")
+	flag.BoolVar(&summary, "summary", false, "Show summary by author (shorthand for --output=summary)")
+	flag.BoolVar(&allFiles, "files", false, "Show all changed files per commit")
+	flag.Parse()
+
+	if summary {
+		output = "summary"
+	}
+
+	// Change to repo directory
+	absRepo, err := filepath.Abs(repo)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+		os.Exit(1)
+	}
+	if err := os.Chdir(absRepo); err != nil {
+		fmt.Fprintf(os.Stderr, "Error changing to %s: %v\n", absRepo, err)
+		os.Exit(1)
+	}
+
+	// Check it's a git repo
+	if _, err := runGit("rev-parse", "--git-dir"); err != nil {
+		fmt.Fprintf(os.Stderr, "Error: %s is not a git repository\n", absRepo)
+		os.Exit(1)
+	}
+
+	// Single commit mode: if ref doesn't contain '..' or '...' and no range
+	isRange := strings.Contains(ref, "..")
+	var commits []*CommitSize
+
+	if !isRange {
+		// Could be a single commit or a branch name
+		// If it looks like a single hash or HEAD~N, treat as single
+		// Otherwise get recent commits
+		if strings.Contains(ref, "~") || strings.HasPrefix(ref, "HEAD") || len(ref) >= 7 {
+			// Check if it's a single commit
+			cs, err := getCommitSize(ref)
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+				os.Exit(1)
+			}
+			commits = []*CommitSize{cs}
 		} else {
-			// Parse "12 +++++++++---" or just "12"
-			fields := strings.Fields(changePart)
-			if len(fields) >= 1 {
-				total, err := strconv.Atoi(fields[0])
-				if err == nil {
-					// Count + and - characters
-					rest := ""
-					if len(fields) >= 2 {
-						rest = fields[1]
-					}
-					plusCount := strings.Count(rest, "+")
-					minusCount := strings.Count(rest, "-")
-					if plusCount+minusCount > 0 {
-						ins = plusCount
-						del = minusCount
-					} else {
-						// No visual indicators, use total as insertions
-						ins = total
-						del = 0
+			// Branch/tag - get last 10 commits
+			commits, err = getCommitsFromRange(ref + "~0")
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+				os.Exit(1)
+			}
+			if len(commits) > 10 {
+				commits = commits[:10]
+			}
+		}
+	} else {
+		commits, err = getCommitsFromRange(ref)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+			os.Exit(1)
+		}
+	}
+
+	switch output {
+	case "json":
+		fmt.Println(jsonOutput(commits))
+	case "summary":
+		fmt.Println(formatSummary(commits))
+	case "table":
+		if len(commits) == 1 && !isRange {
+			fmt.Println(formatSingle(commits[0]))
+		} else {
+			fmt.Println(formatTable(commits))
+			if allFiles {
+				for _, cs := range commits {
+					if len(cs.Files) > 0 {
+						fmt.Printf("\n%s files:\n", cs.Short)
+						for _, f := range cs.Files {
+							var marker string
+							switch f.Status {
+							case 'A':
+								marker = "A"
+							case 'M':
+								marker = "M"
+							case 'D':
+								marker = "D"
+							}
+							fmt.Printf("  [%s] %s\n", marker, f.Path)
+						}
 					}
 				}
 			}
 		}
-
-		stats = append(stats, FileStat{
-			FileName:   fileName,
-			Insertions: ins,
-			Deletions:  del,
-		})
-	}
-	return stats
-}
-
-// getCommits runs git log and returns commit hashes and subjects.
-func getCommits(rev string, limit int) ([]string, []string, error) {
-	args := []string{"log", "--format=%H%n%s", "--no-merges"}
-	if rev != "" {
-		args = append(args, rev)
-	}
-	if limit > 0 {
-		args = append(args, fmt.Sprintf("-n%d", limit))
-	}
-
-	cmd := exec.Command("git", args...)
-	var out bytes.Buffer
-	cmd.Stdout = &out
-	cmd.Stderr = os.Stderr
-	if err := cmd.Run(); err != nil {
-		return nil, nil, err
-	}
-
-	lines := strings.Split(strings.TrimSpace(out.String()), "\n")
-	var hashes, subjects []string
-	for i := 0; i+1 < len(lines); i += 2 {
-		hashes = append(hashes, lines[i])
-		subjects = append(subjects, lines[i+1])
-	}
-	return hashes, subjects, nil
-}
-
-// getCommitStats runs git diff --stat for a commit and returns file stats.
-func getCommitStats(hash string) ([]FileStat, error) {
-	var parentArg string
-	// Check if commit has a parent
-	cmd := exec.Command("git", "rev-parse", hash+"^")
-	if err := cmd.Run(); err != nil {
-		// No parent (root commit) — diff against empty tree
-		parentArg = "4b825dc642cb6eb9a060e54bf8d69288fbee4904"
-	} else {
-		parentArg = hash + "^"
-	}
-
-	cmd = exec.Command("git", "diff", "--stat", parentArg+".."+hash)
-	var out bytes.Buffer
-	cmd.Stdout = &out
-	cmd.Stderr = os.Stderr
-	if err := cmd.Run(); err != nil {
-		return nil, err
-	}
-
-	return parseDiffStat(out.String()), nil
-}
-
-// formatNumber formats a number with thousand separators.
-func formatNumber(n int) string {
-	if n < 0 {
-		return "-" + formatNumber(-n)
-	}
-	s := strconv.Itoa(n)
-	if len(s) <= 3 {
-		return s
-	}
-
-	var result strings.Builder
-	result.Grow(len(s) + (len(s)-1)/3)
-	for i, c := range s {
-		if i > 0 && (len(s)-i)%3 == 0 {
-			result.WriteByte(',')
-		}
-		result.WriteRune(c)
-	}
-	return result.String()
-}
-
-// bar creates a simple text bar.
-func bar(count, maxCount, width int) string {
-	if maxCount == 0 {
-		return strings.Repeat(" ", width)
-	}
-	filled := int(math.Round(float64(count)/float64(maxCount) * float64(width)))
-	if filled > width {
-		filled = width
-	}
-	return strings.Repeat("█", filled) + strings.Repeat(" ", width-filled)
-}
-
-func printUsage() {
-	fmt.Fprintf(os.Stderr, `git-commit-size - Show commit sizes (files touched, lines of code)
-
-Usage:
-  git-commit-size [options] [revision]
-
-Options:
-  -n int
-        Number of commits to show (default: 10)
-  -all
-        Show all commits in history
-  -files
-        Show per-file breakdown for each commit
-  -sort string
-        Sort by: files, insertions, deletions, total (default: "files")
-  -top int
-        When -files is set, show only top N files per commit (default: 0 = all)
-  -bar-width int
-        Width of the bar chart (default: 30)
-  -no-color
-        Disable colored output
-  -json
-        Output as JSON
-
-Examples:
-  git-commit-size
-  git-commit-size -n 20
-  git-commit-size -all
-  git-commit-size -files -top 5
-  git-commit-size -sort insertions main..develop
-  git-commit-size -json -n 5 > commits.json
-
-Revisions:
-  (none)        Last N commits on current branch
-  main          Last N commits on main branch
-  main..develop Commits in develop not in main
-  v1.0..v2.0    Commits between two tags
-
-`)
-}
-
-func main() {
-	if len(os.Args) > 1 && os.Args[1] == "--help" {
-		printUsage()
-		os.Exit(0)
-	}
-
-	fs := flag.NewFlagSet("git-commit-size", flag.ExitOnError)
-	limit := fs.Int("n", 10, "Number of commits to show")
-	showAll := fs.Bool("all", false, "Show all commits")
-	showFiles := fs.Bool("files", false, "Show per-file breakdown")
-	sortBy := fs.String("sort", "files", "Sort by: files, insertions, deletions, total")
-	topFiles := fs.Int("top", 0, "Top N files per commit (0 = all)")
-	barWidth := fs.Int("bar-width", 30, "Width of bar chart")
-	noColor := fs.Bool("no-color", false, "Disable colors")
-	outputJSON := fs.Bool("json", false, "Output as JSON")
-
-	fs.Usage = printUsage
-	fs.Parse(os.Args[1:])
-
-	rev := ""
-	if fs.NArg() > 0 {
-		rev = fs.Arg(0)
-	}
-
-	if *showAll {
-		*limit = 0
-	}
-
-	// Validate sort
-	validSorts := map[string]bool{"files": true, "insertions": true, "deletions": true, "total": true}
-	if !validSorts[*sortBy] {
-		fmt.Fprintf(os.Stderr, "Error: invalid sort field %q, must be one of: files, insertions, deletions, total\n", *sortBy)
+	default:
+		fmt.Fprintf(os.Stderr, "Unknown output format: %s\n", output)
 		os.Exit(1)
 	}
-
-	// Check we're in a git repo
-	if err := exec.Command("git", "rev-parse", "--git-dir").Run(); err != nil {
-		fmt.Fprintln(os.Stderr, "Error: not a git repository")
-		os.Exit(1)
-	}
-
-	hashes, subjects, err := getCommits(rev, *limit)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error getting commits: %v\n", err)
-		os.Exit(1)
-	}
-
-	if len(hashes) == 0 {
-		fmt.Println("No commits found.")
-		return
-	}
-
-	// Gather stats
-	stats := make([]CommitStat, len(hashes))
-	for i, hash := range hashes {
-		fileStats, err := getCommitStats(hash)
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "Warning: could not get stats for %s: %v\n", hash[:7], err)
-			continue
-		}
-
-		var totalIns, totalDel int
-		for _, fs := range fileStats {
-			totalIns += fs.Insertions
-			totalDel += fs.Deletions
-		}
-
-		stats[i] = CommitStat{
-			Hash:       hash,
-			ShortHash:  hash[:7],
-			Subject:    subjects[i],
-			Files:      len(fileStats),
-			Insertions: totalIns,
-			Deletions:  totalDel,
-			TotalLOC:   totalIns + totalDel,
-		}
-	}
-
-	// Sort
-	switch *sortBy {
-	case "files":
-		sort.Slice(stats, func(i, j int) bool { return stats[i].Files > stats[j].Files })
-	case "insertions":
-		sort.Slice(stats, func(i, j int) bool { return stats[i].Insertions > stats[j].Insertions })
-	case "deletions":
-		sort.Slice(stats, func(i, j int) bool { return stats[i].Deletions > stats[j].Deletions })
-	case "total":
-		sort.Slice(stats, func(i, j int) bool { return stats[i].TotalLOC > stats[j].TotalLOC })
-	}
-
-	// JSON output
-	if *outputJSON {
-		jsonOutput(stats)
-		return
-	}
-
-	// Find max values for bar scaling
-	maxFiles, maxIns, maxDel := 1, 1, 1
-	for _, s := range stats {
-		if s.Files > maxFiles {
-			maxFiles = s.Files
-		}
-		if s.Insertions > maxIns {
-			maxIns = s.Insertions
-		}
-		if s.Deletions > maxDel {
-			maxDel = s.Deletions
-		}
-	}
-
-	w := *barWidth
-
-	// Colors
-	var green, red, cyan, yellow, reset string
-	if !*noColor {
-		green = "\033[32m"
-		red = "\033[31m"
-		cyan = "\033[36m"
-		yellow = "\033[33m"
-		reset = "\033[0m"
-	}
-
-	// Print header
-	fmt.Printf("%-8s  %-6s %-7s %-7s  %s\n", "HASH", "FILES", "+INS", "-DEL", "SUBJECT")
-	fmt.Println(strings.Repeat("-", 90))
-
-	for _, s := range stats {
-		insBar := bar(s.Insertions, maxIns, w/3)
-		delBar := bar(s.Deletions, maxDel, w/3)
-
-		fmt.Printf("%-8s  %s%-6d%s %s%-7s%s %s%-7s%s  %s\n",
-			cyan+s.ShortHash+reset,
-			yellow, s.Files, reset,
-			green, formatNumber(s.Insertions), reset,
-			red, formatNumber(s.Deletions), reset,
-			s.Subject)
-
-		fmt.Printf("          %s+%-7s%s %s-%-7s%s\n",
-			green, insBar, reset,
-			red, delBar, reset)
-
-		// Per-file breakdown
-		if *showFiles {
-			fileStats, _ := getCommitStats(s.Hash)
-			// Sort files by total changes
-			sort.Slice(fileStats, func(i, j int) bool {
-				ti := fileStats[i].Insertions + fileStats[i].Deletions
-				tj := fileStats[j].Insertions + fileStats[j].Deletions
-				return ti > tj
-			})
-
-			limitFiles := *topFiles
-			if limitFiles > 0 && len(fileStats) > limitFiles {
-				fileStats = fileStats[:limitFiles]
-			}
-
-			for _, fs := range fileStats {
-				insStr := green + "+" + formatNumber(fs.Insertions) + reset
-				delStr := red + "-" + formatNumber(fs.Deletions) + reset
-				fmt.Printf("      %-20s %s  %s\n", fs.FileName, insStr, delStr)
-			}
-		}
-
-		fmt.Println()
-	}
-
-	// Summary
-	var totalFiles, totalIns, totalDel int
-	for _, s := range stats {
-		totalFiles += s.Files
-		totalIns += s.Insertions
-		totalDel += s.Deletions
-	}
-	fmt.Println(strings.Repeat("-", 90))
-	fmt.Printf("Total: %d commits, %s%d%s files, %s+%-7s%s ins, %s-%-7s%s del\n",
-		len(stats),
-		yellow, totalFiles, reset,
-		green, formatNumber(totalIns), reset,
-		red, formatNumber(totalDel), reset)
 }
 
-// jsonOutput outputs stats as JSON.
-func jsonOutput(stats []CommitStat) {
-	fmt.Println("[")
-	for i, s := range stats {
-		comma := ","
-		if i == len(stats)-1 {
-			comma = ""
+func jsonOutput(commits []*CommitSize) string {
+	var sb strings.Builder
+	sb.WriteString("[\n")
+	for i, cs := range commits {
+		if i > 0 {
+			sb.WriteString(",\n")
 		}
-		fmt.Printf("  {\"hash\": \"%s\", \"subject\": %q, \"files\": %d, \"insertions\": %d, \"deletions\": %d, \"total\": %d}%s\n",
-			s.Hash, s.Subject, s.Files, s.Insertions, s.Deletions, s.TotalLOC, comma)
+		sb.WriteString("  {\n")
+		sb.WriteString(fmt.Sprintf("    \"commit\": %q,\n", cs.Short))
+		sb.WriteString(fmt.Sprintf("    \"author\": %q,\n", cs.Author))
+		sb.WriteString(fmt.Sprintf("    \"date\": %q,\n", cs.Date))
+		sb.WriteString(fmt.Sprintf("    \"message\": %q,\n", cs.Msg))
+		sb.WriteString(fmt.Sprintf("    \"added\": %d,\n", cs.Added))
+		sb.WriteString(fmt.Sprintf("    \"modified\": %d,\n", cs.Mod))
+		sb.WriteString(fmt.Sprintf("    \"deleted\": %d,\n", cs.Deleted))
+		sb.WriteString(fmt.Sprintf("    \"total\": %d\n", cs.Total))
+		sb.WriteString("  }")
 	}
-	fmt.Println("]")
+	sb.WriteString("\n]\n")
+	return sb.String()
 }
+
+// unused helper kept for potential future use
+var _ = humanSize
+var _ = strconv.Atoi
