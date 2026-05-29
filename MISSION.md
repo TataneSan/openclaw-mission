@@ -500,6 +500,12 @@ Push automatique après chaque outil.
 - [x] go-mod-tidy-check : vérifie si go.mod est à jour ✓ 2026-05-28
 
 ## Vague 44 — CLI Tools
+- [x] json-to-rust : génère des structs Rust depuis du JSON ✓ 2026-05-29
+- [x] yaml-to-sql : génère des requêtes SQL (CREATE + INSERT) depuis YAML ✓ 2026-05-29
+- [x] git-commit-lint : vérifie le format des messages de commit ✓ 2026-05-29
+- [ ] env-mask : masque les valeurs sensibles dans un .env
+
+## Vague 44 — CLI Tools
 - [x] go-vet-check : lance go vet et formate le rapport ✓ 2026-05-28
 - [x] json-to-toml-nested : convertisseur JSON profond vers TOML ✓ 2026-05-28
 - [x] csv-to-sql : génère CREATE TABLE + INSERT SQL depuis un CSV ✓ 2026-05-28
@@ -885,3 +891,32 @@ Push automatique après chaque outil.
 - [x] xml-to-env : convertisseur XML vers .env ✓ 2026-05-29
 - [x] git-commit-range : affiche les commits entre deux refs avec stats ✓ 2026-05-29
 - [x] file-word-count : compte les mots uniques dans des fichiers ✓ 2026-05-29
+
+## Vague 112 — CLI Tools
+- [x] json-to-sqlite-schema : genere du SQL SQLite depuis du JSON ✓ 2026-05-29
+- [x] http-body-check : valide le corps HTTP contre des regles ✓ 2026-05-29
+
+## Vague 113 — CLI Tools
+- [x] file-concat : concatene des fichiers avec separateurs, verification SHA-256 et globs ✓ 2026-05-29
+- [x] file-split-by-size : divise des fichiers en chunks par taille ou nombre avec verification SHA-256 ✓ 2026-05-29
+- [x] http-pipeline-cli : enchainement de requetes HTTP ou chaque reponse alimente la suivante ✓ 2026-05-29
+
+## Vague 114 — CLI Tools
+- [x] markdown-toc-cli : genere et insere une table des matieres dans des fichiers Markdown ✓ 2026-05-29
+- [x] csv-to-json-schema : genere un JSON Schema depuis un fichier CSV ✓ 2026-05-29
+
+## Vague 115 — CLI Tools
+- [x] word-frequency : compteur de frequence de mots dans des fichiers texte ✓ 2026-05-29
+- [x] tsv-to-csv : convertisseur TSV vers CSV avec delimitateur configurable ✓ 2026-05-29
+- [x] html-to-text : convertit du HTML en texte brut ✓ 2026-05-29
+- [x] yaml-diff : compare deux fichiers YAML et affiche les differences ✓ 2026-05-29
+- [x] markdown-link-list : extrait tous les liens d'un fichier Markdown ✓ 2026-05-29
+
+## Vague 116 — CLI Tools
+- [x] http-cors-check : vérifie les headers CORS d'un endpoint HTTP ✓ 2026-05-29
+- [x] markdown-to-slides : convertit du markdown en présentation HTML ✓ 2026-05-29
+
+## Vague 117 — CLI Tools
+- [x] csv-to-pie-chart : convertisseur CSV vers graphique camembert SVG ✓ 2026-05-29
+- [x] markdown-code-extract : extrait les blocs de code depuis des fichiers Markdown ✓ 2026-05-29
+- [x] json-to-nix : convertisseur JSON vers expressions Nix ✓ 2026-05-29
