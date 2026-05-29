@@ -1,176 +1,180 @@
+// git-tag-list lists git tags with details (date, type, author, message).
+//
+// Usage:
+//
+//	git-tag-list [options] [repo]
+//
+// Examples:
+//
+//	git-tag-list
+//	git-tag-list --format table
+//	git-tag-list --sort date ./my-repo
 package main
 
 import (
-	"bufio"
-	"flag"
 	"fmt"
 	"os"
 	"os/exec"
 	"sort"
 	"strings"
+	"time"
 )
 
 type TagInfo struct {
-	Name        string
-	Target      string
-	Type        string // "commit", "tree", "blob"
-	Date        string
-	Author      string
-	Message     string
-	CommitMsg   string
+	Name    string
+	Target  string // commit SHA
+	Type    string // "annotated" or "lightweight"
+	Date    time.Time
+	Author  string
+	Message string
 }
 
-func run() int {
-	dir := flag.String("d", ".", "repository directory")
-	sortFlag := flag.String("sort", "date", "sort order: date, name, version")
-	reverse := flag.Bool("r", false, "reverse sort order")
-	verbose := flag.Bool("v", false, "show verbose output with commit message")
-	format := flag.String("f", "table", "output format: table, list, json")
-	flag.Parse()
+func printUsage() {
+	fmt.Fprintf(os.Stderr, `git-tag-list - List git tags with details
 
-	tags, err := listTags(*dir)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "error: %v\n", err)
-		return 1
-	}
+Usage:
+  git-tag-list [options] [repo]
 
-	sortTags(tags, *sortFlag, *reverse)
+Options:
+  -f, --format FORMAT   Output format: table (default), json, csv
+  -s, --sort FIELD      Sort field: name (default), date, author
+  -r, --reverse         Reverse sort order
+  -h, --help            Show this help message
 
-	switch *format {
-	case "table":
-		printTable(tags, *verbose)
-	case "list":
-		printList(tags, *verbose)
-	case "json":
-		printJSON(tags)
-	default:
-		fmt.Fprintf(os.Stderr, "error: unknown format %q\n", *format)
-		return 1
-	}
+Arguments:
+  repo                  Path to git repository (default: current directory)
 
-	return 0
+Examples:
+  git-tag-list
+  git-tag-list --format json
+  git-tag-list --sort date
+  git-tag-list --sort date --reverse
+  git-tag-list ./path/to/repo
+
+Exit codes:
+  0  Success
+  1  Error (not a git repo, etc.)
+`)
 }
 
-func listTags(dir string) ([]TagInfo, error) {
-	out, err := exec.Command("git", "-C", dir, "tag", "-l").Output()
+func runGit(dir string, args ...string) (string, error) {
+	cmd := exec.Command("git", args...)
+	cmd.Dir = dir
+	out, err := cmd.Output()
+	return strings.TrimSpace(string(out)), err
+}
+
+func collectTags(dir string) ([]TagInfo, error) {
+	// Get all tags
+	out, err := runGit(dir, "tag", "-l")
 	if err != nil {
 		return nil, fmt.Errorf("not a git repository: %w", err)
 	}
 
+	tagNames := strings.Split(strings.TrimSpace(out), "\n")
+	if len(tagNames) == 1 && tagNames[0] == "" {
+		return nil, nil
+	}
+
 	var tags []TagInfo
-	scanner := bufio.NewScanner(strings.NewReader(string(out)))
-	for scanner.Scan() {
-		name := strings.TrimSpace(scanner.Text())
+	for _, name := range tagNames {
+		name = strings.TrimSpace(name)
 		if name == "" {
 			continue
 		}
-		info, err := tagInfo(dir, name)
+
+		info := TagInfo{Name: name}
+
+		// Get tag details via for-each-ref
+		fmtStr := "%(taggerdate:iso8601)|%(taggername)|%(subject)|%(objecttype)"
+		detailOut, err := runGit(dir, "for-each-ref", "--format="+fmtStr, "refs/tags/"+name)
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "warning: could not read tag %q: %v\n", name, err)
 			continue
 		}
+
+		parts := strings.SplitN(detailOut, "|", 4)
+		if len(parts) >= 1 && parts[0] != "" {
+			if t, err := time.Parse("2006-01-02 15:04:05 -0700", parts[0]); err == nil {
+				info.Date = t
+			}
+		}
+		if len(parts) >= 2 && parts[1] != "" {
+			info.Author = parts[1]
+		}
+		if len(parts) >= 3 {
+			info.Message = parts[2]
+		}
+		if len(parts) >= 4 {
+			if parts[3] == "tag" {
+				info.Type = "annotated"
+			} else {
+				info.Type = "lightweight"
+			}
+		}
+
+		// For lightweight tags, get author from the commit
+		if info.Type == "lightweight" && info.Author == "" {
+			authorOut, err := runGit(dir, "log", "-1", "--format=%an", name)
+			if err == nil {
+				info.Author = authorOut
+			}
+		}
+
+		// Get commit SHA
+		sha, err := runGit(dir, "rev-list", "-n", "1", name)
+		if err == nil {
+			info.Target = sha[:10]
+		}
+
 		tags = append(tags, info)
 	}
 
-	return tags, scanner.Err()
+	return tags, nil
 }
 
-func tagInfo(dir, name string) (TagInfo, error) {
-	info := TagInfo{Name: name}
-
-	// Get tag type and target via for-each-ref
-	out, err := exec.Command("git", "-C", dir, "for-each-ref",
-		fmt.Sprintf("refs/tags/%s", name),
-		"--format=%(objecttype)|%(objectname)|%(creatordate:iso8601)|%(authorname)|%(contents)",
-	).Output()
-	if err != nil {
-		return info, err
+func sortTags(tags []TagInfo, field string, reverse bool) {
+	sortFunc := func(i, j int) bool {
+		switch field {
+		case "date":
+			return tags[i].Date.Before(tags[j].Date)
+		case "author":
+			return tags[i].Author < tags[j].Author
+		default: // name
+			return tags[i].Name < tags[j].Name
+		}
 	}
-
-	parts := strings.SplitN(string(out), "|", 5)
-	if len(parts) >= 1 {
-		info.Type = parts[0]
-	}
-	if len(parts) >= 2 {
-		info.Target = parts[1][:8]
-	}
-	if len(parts) >= 3 {
-		info.Date = parts[2]
-	}
-	if len(parts) >= 4 {
-		info.Author = parts[3]
-	}
-	if len(parts) >= 5 {
-		info.Message = strings.TrimSpace(parts[4])
-	}
-
-	// Get commit message for the target
-	commitOut, _ := exec.Command("git", "-C", dir, "log", "-1", "--format=%s", name).Output()
-	info.CommitMsg = strings.TrimSpace(string(commitOut))
-
-	return info, nil
-}
-
-func sortTags(tags []TagInfo, by string, reverse bool) {
 	sort.Slice(tags, func(i, j int) bool {
-		var a, b string
-		switch by {
-		case "name":
-			a, b = tags[i].Name, tags[j].Name
-		case "version":
-			a, b = tags[i].Name, tags[j].Name
-		default: // date
-			a, b = tags[i].Date, tags[j].Date
-		}
+		result := sortFunc(i, j)
 		if reverse {
-			return a > b
+			return !result
 		}
-		return a < b
+		return result
 	})
 }
 
-func printTable(tags []TagInfo, verbose bool) {
+func printTable(tags []TagInfo) {
 	if len(tags) == 0 {
-		fmt.Println("no tags found")
+		fmt.Println("No tags found.")
 		return
 	}
 
-	// Calculate column widths
-	nameW, dateW, typeW := 5, 4, 4
-	for _, t := range tags {
-		if l := len(t.Name); l > nameW {
-			nameW = l
-		}
-		if l := len(t.Date); l > dateW {
-			dateW = l
-		}
-		if l := len(t.Type); l > typeW {
-			typeW = l
-		}
-	}
-
-	// Header
-	fmt.Printf("%-*s  %-*s  %-*s  %s\n", nameW, "NAME", dateW, "DATE", typeW, "TYPE", "COMMIT")
-	fmt.Printf("%-*s  %-*s  %-*s  %s\n", nameW, strings.Repeat("-", nameW), dateW, strings.Repeat("-", dateW), typeW, strings.Repeat("-", typeW), "------")
+	// Headers
+	fmt.Printf("%-25s %-12s %-10s %-20s %s\n", "NAME", "TYPE", "DATE", "AUTHOR", "MESSAGE")
+	fmt.Println(strings.Repeat("-", 100))
 
 	for _, t := range tags {
-		msg := ""
-		if verbose && t.CommitMsg != "" {
-			msg = "  " + t.CommitMsg
+		dateStr := ""
+		if !t.Date.IsZero() {
+			dateStr = t.Date.Format("2006-01-02")
 		}
-		fmt.Printf("%-*s  %-*s  %-*s  %s%s\n", nameW, t.Name, dateW, t.Date, typeW, t.Type, t.Target, msg)
+		msg := t.Message
+		if len(msg) > 35 {
+			msg = msg[:32] + "..."
+		}
+		fmt.Printf("%-25s %-12s %-10s %-20s %s\n", t.Name, t.Type, dateStr, t.Author, msg)
 	}
 
 	fmt.Printf("\n%d tag(s)\n", len(tags))
-}
-
-func printList(tags []TagInfo, verbose bool) {
-	for _, t := range tags {
-		fmt.Printf("%s (%s, %s)\n", t.Name, t.Date, t.Type)
-		if verbose && t.CommitMsg != "" {
-			fmt.Printf("  %s\n", t.CommitMsg)
-		}
-	}
 }
 
 func printJSON(tags []TagInfo) {
@@ -180,12 +184,99 @@ func printJSON(tags []TagInfo) {
 		if i == len(tags)-1 {
 			comma = ""
 		}
-		fmt.Printf("  {\"name\": %q, \"date\": %q, \"type\": %q, \"target\": %q, \"message\": %q, \"commit_message\": %q}%s\n",
-			t.Name, t.Date, t.Type, t.Target, t.Message, t.CommitMsg, comma)
+		dateStr := ""
+		if !t.Date.IsZero() {
+			dateStr = t.Date.Format(time.RFC3339)
+		}
+		fmt.Printf("  {\n")
+		fmt.Printf("    \"name\": %q,\n", t.Name)
+		fmt.Printf("    \"type\": %q,\n", t.Type)
+		fmt.Printf("    \"target\": %q,\n", t.Target)
+		fmt.Printf("    \"date\": %q,\n", dateStr)
+		fmt.Printf("    \"author\": %q,\n", t.Author)
+		fmt.Printf("    \"message\": %q\n", t.Message)
+		fmt.Printf("  }%s\n", comma)
 	}
 	fmt.Println("]")
 }
 
+func printCSV(tags []TagInfo) {
+	if len(tags) == 0 {
+		fmt.Println("name,type,target,date,author,message")
+		return
+	}
+
+	fmt.Println("name,type,target,date,author,message")
+	for _, t := range tags {
+		dateStr := ""
+		if !t.Date.IsZero() {
+			dateStr = t.Date.Format("2006-01-02")
+		}
+		msg := strings.ReplaceAll(t.Message, "\"", "\"\"")
+		if strings.Contains(msg, ",") || strings.Contains(msg, "\"") {
+			msg = "\"" + msg + "\""
+		}
+		fmt.Printf("%s,%s,%s,%s,%s,%s\n", t.Name, t.Type, t.Target, dateStr, t.Author, msg)
+	}
+}
+
 func main() {
-	os.Exit(run())
+	args := os.Args[1:]
+
+	format := "table"
+	sortField := "name"
+	reverse := false
+	repo := ""
+
+	for len(args) > 0 {
+		switch args[0] {
+		case "-h", "--help":
+			printUsage()
+			os.Exit(0)
+		case "-f", "--format":
+			if len(args) < 2 {
+				fmt.Fprintf(os.Stderr, "error: --format requires an argument (table, json, csv)\n")
+				os.Exit(1)
+			}
+			format = args[1]
+			args = args[2:]
+		case "-s", "--sort":
+			if len(args) < 2 {
+				fmt.Fprintf(os.Stderr, "error: --sort requires an argument (name, date, author)\n")
+				os.Exit(1)
+			}
+			sortField = args[1]
+			args = args[2:]
+		case "-r", "--reverse":
+			reverse = true
+			args = args[1:]
+		default:
+			repo = args[0]
+			args = args[1:]
+		}
+	}
+
+	if repo == "" {
+		repo = "."
+	}
+
+	tags, err := collectTags(repo)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "error: %v\n", err)
+		os.Exit(1)
+	}
+
+	sortTags(tags, sortField, reverse)
+
+	switch format {
+	case "table":
+		printTable(tags)
+	case "json":
+		printJSON(tags)
+	case "csv":
+		printCSV(tags)
+	default:
+		fmt.Fprintf(os.Stderr, "error: unknown format %q (valid: table, json, csv)\n", format)
+		os.Exit(1)
+	}
 }

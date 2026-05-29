@@ -1,3 +1,9 @@
+// git-merge-base finds the common ancestor between two git branches or commits.
+//
+// Usage:
+//   git-merge-base main feature-login
+//   git-merge-base main feature-login --verbose
+//   git-merge-base abc123 def456
 package main
 
 import (
@@ -7,141 +13,91 @@ import (
 	"strings"
 )
 
-func runGit(args ...string) (string, error) {
+func main() {
+	verbose := false
+	args := []string{}
+	for _, a := range os.Args[1:] {
+		if a == "--verbose" || a == "-v" {
+			verbose = true
+		} else {
+			args = append(args, a)
+		}
+	}
+
+	if len(args) < 2 {
+		fmt.Fprintf(os.Stderr, "Usage: git-merge-base [--verbose] <branch1> <branch2>\n")
+		os.Exit(1)
+	}
+
+	branch1 := args[0]
+	branch2 := args[1]
+
+	if !isGitRepo() {
+		fmt.Fprintf(os.Stderr, "error: not a git repository\n")
+		os.Exit(1)
+	}
+
+	if !branchExists(branch1) {
+		fmt.Fprintf(os.Stderr, "error: branch or commit %q not found\n", branch1)
+		os.Exit(1)
+	}
+	if !branchExists(branch2) {
+		fmt.Fprintf(os.Stderr, "error: branch or commit %q not found\n", branch2)
+		os.Exit(1)
+	}
+
+	mergeBase := runGit("merge-base", branch1, branch2)
+	if mergeBase == "" {
+		fmt.Println("No common ancestor found.")
+		os.Exit(1)
+	}
+
+	sha := strings.TrimSpace(mergeBase)
+	fmt.Printf("Merge base between %q and %q:\n", branch1, branch2)
+	fmt.Printf("  %s\n", sha)
+
+	if verbose {
+		msg := runGit("log", "-1", "--format=%s", sha)
+		author := runGit("log", "-1", "--format=%an <%ae>", sha)
+		date := runGit("log", "-1", "--format=%ai", sha)
+		fmt.Printf("  Message: %s\n", strings.TrimSpace(msg))
+		fmt.Printf("  Author:  %s\n", strings.TrimSpace(author))
+		fmt.Printf("  Date:    %s\n", strings.TrimSpace(date))
+
+		ahead1, behind1 := getAheadBehind(branch1, sha)
+		ahead2, behind2 := getAheadBehind(branch2, sha)
+		fmt.Printf("  %s is %d commits ahead, %d behind\n", branch1, ahead1, behind1)
+		fmt.Printf("  %s is %d commits ahead, %d behind\n", branch2, ahead2, behind2)
+	}
+}
+
+func isGitRepo() bool {
+	cmd := exec.Command("git", "rev-parse", "--git-dir")
+	return cmd.Run() == nil
+}
+
+func branchExists(ref string) bool {
+	cmd := exec.Command("git", "rev-parse", "--verify", ref)
+	return cmd.Run() == nil
+}
+
+func runGit(args ...string) string {
 	cmd := exec.Command("git", args...)
 	out, err := cmd.Output()
 	if err != nil {
-		return "", err
+		return ""
 	}
-	return strings.TrimSpace(string(out)), nil
+	return string(out)
 }
 
-func isInGitRepo() bool {
-	_, err := runGit("rev-parse", "--git-dir")
-	return err == nil
-}
+func getAheadBehind(branch, base string) (int, int) {
+	out := runGit("rev-list", "--count", base+".."+branch)
+	ahead := 0
+	fmt.Sscanf(strings.TrimSpace(out), "%d", &ahead)
 
-func listBranches(all bool) ([]string, error) {
-	args := []string{"branch"}
-	if all {
-		args = append(args, "-a")
-	}
-	out, err := runGit(args...)
-	if err != nil {
-		return nil, err
-	}
-	var branches []string
-	for _, line := range strings.Split(out, "\n") {
-		line = strings.TrimSpace(line)
-		if line == "" {
-			continue
-		}
-		line = strings.TrimPrefix(line, "* ")
-		line = strings.TrimPrefix(line, "  ")
-		if strings.HasPrefix(line, "remotes/") {
-			line = strings.TrimPrefix(line, "remotes/")
-		}
-		branches = append(branches, line)
-	}
-	return branches, nil
-}
+	out = runGit("rev-list", "--count", branch+".."+base)
+	behind := 0
+	fmt.Sscanf(strings.TrimSpace(out), "%d", &behind)
 
-func getMergeBase(branch1, branch2 string) (string, error) {
-	return runGit("merge-base", branch1, branch2)
-}
-
-func printCommit(sha string) {
-	fmt.Printf("  Commit: %s\n", sha[:12])
-	oneline, _ := runGit("log", "-1", "--format=%an <%ae> %as %s", sha)
-	fmt.Printf("  %s\n", oneline)
-}
-
-func printUsage() {
-	fmt.Fprintf(os.Stderr, `Usage: git-merge-base <branch1> <branch2> [options]
-
-Find the common ancestor (merge base) between two git branches.
-
-Options:
-  -v, --verbose    Show detailed commit info for the merge base
-  -l, --list       List all branches (use with --all for remote branches)
-  -a, --all        Include remote branches in listing
-  -h, --help       Show this help message
-
-Examples:
-  git-merge-base main feature-x
-  git-merge-base main feature-x -v
-  git-merge-base HEAD~5 develop
-  git-merge-base --list
-`)
-}
-
-func main() {
-	if len(os.Args) < 2 {
-		printUsage()
-		os.Exit(1)
-	}
-
-	verbose := false
-	listMode := false
-	allBranches := false
-	var branch1, branch2 string
-
-	i := 1
-	for i < len(os.Args) {
-		arg := os.Args[i]
-		switch arg {
-		case "-h", "--help":
-			printUsage()
-			os.Exit(0)
-		case "-v", "--verbose":
-			verbose = true
-		case "-l", "--list":
-			listMode = true
-		case "-a", "--all":
-			allBranches = true
-		default:
-			if branch1 == "" {
-				branch1 = arg
-			} else {
-				branch2 = arg
-			}
-		}
-		i++
-	}
-
-	if !isInGitRepo() {
-		fmt.Fprintf(os.Stderr, "Error: not a git repository\n")
-		os.Exit(1)
-	}
-
-	if listMode {
-		branches, err := listBranches(allBranches)
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "Error listing branches: %v\n", err)
-			os.Exit(1)
-		}
-		for _, b := range branches {
-			fmt.Println(b)
-		}
-		return
-	}
-
-	if branch1 == "" || branch2 == "" {
-		fmt.Fprintf(os.Stderr, "Error: two branches are required\n\n")
-		printUsage()
-		os.Exit(1)
-	}
-
-	mergeBase, err := getMergeBase(branch1, branch2)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error finding merge base: %v\n", err)
-		os.Exit(1)
-	}
-
-	if verbose {
-		fmt.Printf("Merge base between '%s' and '%s':\n\n", branch1, branch2)
-		printCommit(mergeBase)
-	} else {
-		fmt.Println(mergeBase)
-	}
+	return ahead, behind
 }

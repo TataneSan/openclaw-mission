@@ -1,9 +1,6 @@
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-*.test
-*.out
+# Binaries
 git-merge-base
-/vendor/
+git-merge-base.exe
+
+# Go
+vendor/

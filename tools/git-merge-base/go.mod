@@ -1,3 +1,3 @@
-module git-merge-base
+module github.com/TataneSan/git-merge-base
 
-go 1.22.2
+go 1.21

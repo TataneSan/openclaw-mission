@@ -1,6 +1,6 @@
 # git-tag-list
 
-List Git tags with details including date, type, author, and commit message. Supports multiple output formats and sorting options.
+List git tags with details: date, type (annotated/lightweight), author, message, and target commit.
 
 ## Install
 
@@ -11,62 +11,99 @@ go install github.com/TataneSan/git-tag-list@latest
 ## Usage
 
 ```
-git-tag-list [-d DIR] [-sort SORT] [-r] [-v] [-f FORMAT]
+git-tag-list [options] [repo]
 ```
 
-### Options
+## Options
 
-| Flag | Description | Default |
-|------|-------------|---------|
-| `-d` | Repository directory | `.` |
-| `-sort` | Sort order: `date`, `name`, `version` | `date` |
-| `-r` | Reverse sort order | off |
-| `-v` | Verbose: show commit messages | off |
-| `-f` | Output format: `table`, `list`, `json` | `table` |
+| Flag | Description |
+|------|-------------|
+| `-f, --format FORMAT` | Output format: `table` (default), `json`, `csv` |
+| `-s, --sort FIELD` | Sort field: `name` (default), `date`, `author` |
+| `-r, --reverse` | Reverse sort order |
+| `-h, --help` | Show help message |
+
+## Arguments
+
+| Arg | Description |
+|-----|-------------|
+| `repo` | Path to git repository (default: current directory) |
 
 ## Examples
 
-### List all tags
+List tags in current repo:
 
 ```bash
 git-tag-list
 ```
 
-Output:
-
-```
-NAME       DATE                   TYPE    COMMIT
-----       ----                   ----    ------
-v1.0.0     2024-01-15 10:30:00   tag     a1b2c3d4
-v1.1.0     2024-02-20 14:15:00   tag     e5f6g7h8
-v2.0.0     2024-03-10 09:00:00   tag     i9j0k1l2
-
-3 tag(s)
-```
-
-### Verbose with commit messages
+Output as JSON:
 
 ```bash
-git-tag-list -v
+git-tag-list --format json
 ```
 
-### Sort by name, reversed
+Sort by date, newest first:
 
 ```bash
-git-tag-list -sort name -r
+git-tag-list --sort date --reverse
 ```
 
-### JSON output
+List tags in a specific repo:
 
 ```bash
-git-tag-list -f json
+git-tag-list ./path/to/repo
 ```
 
-### Specific repository
+## Output
 
-```bash
-git-tag-list -d /path/to/repo
+### Table (default)
+
 ```
+NAME                      TYPE         DATE       AUTHOR               MESSAGE
+----------------------------------------------------------------------------------------------------
+v1.0.0                    lightweight  2026-05-28 Alice                Initial release
+v2.0.0                    annotated    2026-05-29 Alice                Release v2
+
+2 tag(s)
+```
+
+### JSON
+
+```json
+[
+  {
+    "name": "v1.0.0",
+    "type": "lightweight",
+    "target": "a1b2c3d4e5",
+    "date": "2026-05-28T12:00:00Z",
+    "author": "Alice",
+    "message": "Initial release"
+  }
+]
+```
+
+### CSV
+
+```csv
+name,type,target,date,author,message
+v1.0.0,lightweight,a1b2c3d4e5,2026-05-28,Alice,Initial release
+```
+
+## Features
+
+- Detects annotated vs lightweight tags
+- Shows tagger date and author
+- Retrieves commit author for lightweight tags
+- Sortable by name, date, or author
+- Three output formats: table, JSON, CSV
+
+## Exit Codes
+
+| Code | Meaning |
+|------|---------|
+| 0 | Success |
+| 1 | Error (not a git repo, etc.) |
 
 ## License
 

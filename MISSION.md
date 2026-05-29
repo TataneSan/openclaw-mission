@@ -757,5 +757,110 @@ Push automatique après chaque outil.
 - [x] netstat-filter : filtre les connexions réseau par état/hôte/port depuis /proc/net ✓ 2026-05-29
 - [x] json-to-xml : convertisseur JSON vers XML ✓ 2026-05-29
 - [x] csv-to-ini : convertisseur CSV vers INI avec regroupement par section ✓ 2026-05-29
-- [ ] git-branch-depth : affiche la profondeur d'historique par branche
-- [ ] env-to-nginx : convertit un .env en variables Nginx config
+- [x] git-branch-depth : affiche la profondeur d'historique par branche ✓ 2026-05-29
+- [x] env-to-nginx : convertit un .env en variables Nginx config ✓ 2026-05-29
+
+## Vague 84 — CLI Tools
+- [x] proc-environ : affiche les variables d'environnement d'un processus par PID ✓ 2026-05-29
+- [x] json-to-yaml : convertisseur JSON vers YAML ✓ 2026-05-29 (dup Vague 22)
+- [x] csv-to-tsv : convertisseur CSV vers TSV ✓ 2026-05-29 (dup Vague 30)
+- [x] git-tag-depth : affiche la profondeur d'historique par tag ✓ 2026-05-29
+- [x] env-to-apache : convertit un .env en variables Apache config ✓ 2026-05-29
+
+## Vague 85 — CLI Tools
+- [x] http-h2-check : vérifie le support HTTP/2 d'un serveur et compare avec HTTP/1.1 ✓ 2026-05-29
+- [x] json-to-csv-flat : convertisseur JSON profond vers CSV avec aplatissement configurable ✓ 2026-05-29
+- [x] csv-to-jsonl : convertisseur CSV vers JSONL ✓ 2026-05-29
+- [x] git-commit-distribution : histogramme des commits par heure du jour ✓ 2026-05-29
+- [x] env-to-caddy : convertit un .env en config Caddy ✓ 2026-05-29
+
+## Vague 86 — CLI Tools
+- [x] json-to-sql : genere des requetes SQL INSERT depuis du JSON ✓ 2026-05-29
+- [x] csv-to-markdown : convertisseur CSV vers tableau Markdown ✓ 2026-05-29
+- [x] git-merge-conflict-finder : detecte les conflits de merge dans un repo git ✓ 2026-05-29
+- [x] env-to-supabase : convertit un .env en config Supabase ✓ 2026-05-29
+- [x] http-redirect-trace : trace les chaines de redirection HTTP avec timing ✓ 2026-05-29
+
+## Vague 87 — CLI Tools
+- [x] tsv-to-csv : convertisseur TSV vers CSV ✓ 2026-05-29
+- [x] json-to-sql-schema : genere un schema SQL CREATE TABLE depuis du JSON ✓ 2026-05-29
+- [x] git-merge-base : trouve le dernier ancetre commun entre deux branches ✓ 2026-05-29
+
+## Vague 88 — CLI Tools
+- [x] yaml-to-json : convertisseur YAML vers JSON ✓ 2026-05-29
+- [x] csv-to-sql : genere des requetes SQL INSERT depuis un CSV ✓ 2026-05-29
+- [x] git-log-oneline : affiche l'historique git en une ligne par commit ✓ 2026-05-29
+
+## Vague 89 — CLI Tools
+- [x] env-to-json : convertit un fichier .env en JSON ✓ 2026-05-29
+- [x] json-to-env : convertisseur JSON vers .env ✓ 2026-05-29
+- [x] git-branch-sort : trie les branches git par date de dernier commit ✓ 2026-05-29
+
+## Vague 90 — CLI Tools
+- [x] toml-to-json : convertisseur TOML vers JSON ✓ 2026-05-29
+- [x] xml-to-yaml : convertisseur XML vers YAML ✓ 2026-05-29
+- [x] git-tag-list : liste les tags git avec details ✓ 2026-05-29
+
+## Vague 91 — CLI Tools
+- [x] ini-to-toml : convertisseur INI vers TOML ✓ 2026-05-29
+- [x] tsv-to-csv : convertisseur TSV vers CSV ✓ 2026-05-29 (dup Vague 87)
+- [x] json-to-sql : genere des requetes SQL INSERT depuis du JSON ✓ 2026-05-29 (dup Vague 86)
+
+## Vague 92 — CLI Tools
+- [x] net-arp-table : affiche la table ARP du système depuis /proc/net/arp ✓ 2026-05-29
+- [x] json-to-hcl : convertisseur JSON vers HCL (Terraform) ✓ 2026-05-29
+- [x] csv-to-rust : génère des structs Rust depuis les headers CSV ✓ 2026-05-29
+- [x] git-wip-manager : gestionnaire de commits WIP (save, restore, list) ✓ 2026-05-29
+- [x] http-sse-cli : client Server-Sent Events pour tester des endpoints SSE ✓ 2026-05-29
+
+## Vague 94 — CLI Tools
+- [x] xml-to-toml : convertisseur XML vers TOML ✓ 2026-05-29
+- [x] tsv-to-json : convertisseur TSV vers JSON ✓ 2026-05-29
+- [x] csv-to-sql : genere des requetes SQL INSERT depuis un CSV ✓ 2026-05-29
+- [x] git-branch-depth : affiche la profondeur d'historique par branche ✓ 2026-05-29
+- [x] env-to-caddy : convertit un .env en config Caddy ✓ 2026-05-29
+
+## Vague 93 — CLI Tools
+- [x] csv-to-typescript : genere des interfaces TypeScript depuis un CSV avec inference de types ✓ 2026-05-29
+- [x] yaml-to-typescript : genere des interfaces TypeScript depuis un fichier YAML ✓ 2026-05-29
+- [x] toml-to-typescript : genere des interfaces TypeScript depuis un fichier TOML ✓ 2026-05-29
+- [x] ini-to-typescript : genere des interfaces TypeScript depuis un fichier INI ✓ 2026-05-29
+
+## Vague 95 — CLI Tools
+- [x] http-benchmark-cli : outil de benchmark HTTP avec percentiles de latence, RPS, et taux d'erreurs ✓ 2026-05-29
+- [x] log-anonymizer : anonymise les donnees sensibles dans les logs (emails, IPs, telephones, etc.) ✓ 2026-05-29
+- [x] html-gallery-gen : genere une galerie HTML statique depuis un dossier d'images ✓ 2026-05-29
+
+## Vague 96 — CLI Tools
+- [x] markdown-checklist-cli : gestionnaire de checklists dans des fichiers Markdown (list, add, toggle, check, uncheck, delete, stats) ✓ 2026-05-29
+- [x] csv-to-protobuf : convertisseur CSV vers définitions Protocol Buffers ✓ 2026-05-29
+- [x] git-commit-lint : linter de messages de commits (Conventional Commits) ✓ 2026-05-29
+- [x] env-to-kubernetes : convertit un .env en ConfigMap/Secret Kubernetes ✓ 2026-05-29
+- [x] http-sse-cli : client Server-Sent Events pour tester des endpoints SSE ✓ 2026-05-29
+
+## Vague 97 — CLI Tools
+- [x] project-env-vars : scanne un projet et extrait toutes les références de variables d'environnement ✓ 2026-05-29
+- [x] go-test-runner : wrapper pratique autour de go test (race, coverage, benchmarks) ✓ 2026-05-29
+- [x] go-dep-tree : affiche l'arbre de dépendances d'un module Go avec versions ✓ 2026-05-29
+- [x] go-mod-outdated-check : vérifie les dépendances Go obsolètes et signale les nouvelles versions ✓ 2026-05-29
+
+## Vague 98 — CLI Tools
+- [x] git-commit-calendar : calendrier de commits style GitHub en terminal ✓ 2026-05-29
+- [x] http-redirect-trace : trace les chaînes de redirection HTTP avec timing ✓ 2026-05-29
+- [x] json-to-csv : convertisseur JSON arrays vers CSV ✓ 2026-05-29
+- [x] csv-to-yaml : convertisseur CSV vers YAML ✓ 2026-05-29
+- [x] file-du : affiche l'utilisation disque des fichiers triée par taille ✓ 2026-05-29
+
+## Vague 99 — CLI Tools
+- [x] git-blame-summary : résumé de code ownership par fichier (auteurs, %) ✓ 2026-05-29
+- [x] yaml-to-env : convertisseur YAML vers .env ✓ 2026-05-29
+- [x] csv-to-tsv : convertisseur CSV vers TSV ✓ 2026-05-29
+- [x] http-status-cli : vérifie le code HTTP d'une URL avec timing ✓ 2026-05-29
+- [x] env-to-json : convertit un fichier .env en JSON ✓ 2026-05-29
+
+## Vague 100 — CLI Tools
+- [ ] xml-to-ini : convertisseur XML vers INI
+- [ ] tsv-to-yaml : convertisseur TSV vers YAML
+- [ ] git-tag-annotate : annote des tags git en batch
+- [ ] http-cookie-parser : parse et affiche les cookies HTTP d'une URL
+- [ ] json-to-ini : convertisseur JSON vers INI
