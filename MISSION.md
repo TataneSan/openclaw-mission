@@ -1144,7 +1144,13 @@ Push automatique après chaque outil.
 
 ## Vague 156 — CLI Tools
 - [x] roman-cli : convertit entre chiffres romains et arabes (validation, batch, JSON) ✓ 2026-07-28
-- [ ] levenshtein-cli : distance d'édition entre chaînes (matrice, ops, batch)
-- [ ] iban-validate : valide des IBAN selon ISO 13616 (checksum, format pays, JSON)
-- [ ] punycode-cli : encode/decode punycode (RFC 3492, IDN)
-- [ ] hashid-cli : génère des hashids YouTube-style depuis des entiers (réversible, salt)
+- [x] levenshtein-cli : distance d'édition entre chaînes (matrice, ops, batch) ✓ 2026-07-28
+- [x] iban-validate : valide des IBAN selon ISO 13616 (checksum, format pays, JSON) ✓ 2026-07-28
+- [x] punycode-cli : encode/decode punycode (RFC 3492, IDN) ✓ 2026-07-28
+- [x] hashid-cli : génère des hashids YouTube-style depuis des entiers (réversible, salt) ✓ 2026-07-28
+## Vague 157 — CLI Tools
+- [x] base85-cli : encode/decode Ascii85 (Adobe) et Z85 (ZeroMQ) avec stdin/batch/JSON ✓ 2026-07-28
+- [x] morse-cli : encode/decode code Morse international (audio opt, batch, JSON) ✓ 2026-07-28
+- [x] soundex-cli : algorithmes phonétiques Soundex, Metaphone, NYSIIS (similarité, batch, JSON) ✓ 2026-07-28
+- [x] damerau-cli : distance de Damerau-Levenshtein avec détail des opérations ✓ 2026-07-28
+- [ ] caesar-cli : chiffre/déchiffre Caesar et ROT13 avec brute-force intégré
