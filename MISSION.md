@@ -1158,6 +1158,6 @@ Push automatique après chaque outil.
 ## Vague 158 — CLI Tools
 - [x] rot5-cli : chiffre/déchiffre ROT5 sur les chiffres uniquement (batch, stdin, JSON) ✓ 2026-07-28
 - [x] atbash-cli : chiffre/déchiffre Atbash (alphabet inversé, batch, stdin, JSON) ✓ 2026-07-28
-- [ ] vigenere-cli : chiffre/déchiffre Vigenère avec clé (analyze, stdin, JSON)
+- [x] vigenere-cli : chiffre/déchiffre Vigenère avec clé (analyze, stdin, JSON) ✓ 2026-07-28
 - [ ] xor-cli : chiffre/déchiffre XOR hex ou base64 (single-byte, key, bruteforce)
 - [ ] pig-latin-cli : traduit en/fr pig latin (batch, stdin, JSON)
