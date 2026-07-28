@@ -1197,3 +1197,10 @@ Push automatique après chaque outil.
 - [x] beaufort-variant-cli : chiffre Beaufort variant C=(P+K) mod 26 (encode/decode, batch, JSON) ✓ 2026-07-28
 - [x] autokey-cli : chiffre Autokey (Vigenère avec clé étendue par le plaintext, batch, stdin, JSON) ✓ 2026-07-28
 - [x] running-key-cli : chiffre Running Key (texte long comme clé, batch, stdin, JSON) ✓ 2026-07-28
+
+## Vague 163 — CLI Tools (chiffrement, suite)
+- [ ] porta-cli : chiffre Porta (tableau réciproque 13 paires, batch, stdin, JSON)
+- [ ] quagmire-cli : chiffres Quagmire I-II-III-IV (clé K1/K2 with alphabet indicateur, batch, JSON)
+- [ ] periodic-gromark-cli : chiffre Periodic Gromark (transposition chiffrée + Vigenère numérique, batch, JSON)
+- [ ] checkerboard-cli : chiffre à damier straddling checkerboard (homophone, batch, JSON)
+- [ ] vic-cipher-cli : chiffre VIC russe (straddling checkerboard + double transposition, batch, JSON)
