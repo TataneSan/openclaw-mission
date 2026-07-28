@@ -1263,3 +1263,17 @@ Push automatique après chaque outil.
 - [x] line-filter : garde/supprime les lignes contenant/matchant un pattern ✓ 2026-07-28
 - [x] text-rotate : décale les caractères (rot47 custom, caesar) ✓ 2026-07-28
 - [x] grep-context : grep-like avec lignes de contexte avant/après ✓ 2026-07-28
+
+## Vague 173 — CLI Tools (texte)
+- [x] tail-head : affiche les N premières et N dernières lignes d'un fichier (milieu élidé) ✓ 2026-07-28
+- [x] col-swap : échange l'ordre de colonnes délimitées (CSV/TSV/espace) ✓ 2026-07-28
+- [x] line-shuffle : mélange aléatoirement les lignes (Fisher-Yates, seed optionnel) ✓ 2026-07-28
+- [x] text-pad : complète/tronque chaque ligne à une largeur fixe ✓ 2026-07-28
+- [x] char-decode : affiche les points de code Unicode de chaque caractère ✓ 2026-07-28
+
+## Vague 174 — CLI Tools (texte)
+- [ ] word-reverse : inverse l'ordre des mots de chaque ligne
+- [ ] line-reverse : inverse l'ordre des lignes d'un fichier (tac-like)
+- [ ] text-columns : reformate un texte en N colonnes équilibrées
+- [ ] char-count : compte les occurrences de chaque caractère (histogramme)
+- [ ] text-justify : justifie un texte à une largeur donnée
