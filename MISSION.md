@@ -1326,3 +1326,24 @@ Push automatique après chaque outil.
 - [x] json-escape : échappe/ déséchappe les caractères JSON dans un texte ✓ 2026-07-28
 - [x] csv-to-markdown-table : convertit un CSV en tableau Markdown ✓ 2026-07-28
 - [x] text-troncat : tronque un texte avec ajout de ... si dépassement ✓ 2026-07-28
+
+## Vague 181 — CLI Tools (utilitaires)
+- [x] base32-cli : encode/decode Base32 et Base32hex (RFC 4648) en terminal ✓ 2026-07-28
+- [x] csv-to-toml : convertit un CSV en tableau TOML (array-of-tables, types, JSON wrapper) ✓ 2026-07-28
+- [x] unix-timestamp-cli : conversion Unix timestamp ⇆ dates humaines (seconds/millis, timezone, JSON) ✓ 2026-07-28
+- [x] jwt-decode-cli : décode et inspecte des JSON Web Tokens (header, payload, expiry, claims) ✓ 2026-07-28
+- [x] yaml-to-go-struct : génère des structs Go depuis du YAML (nested, tags yaml/json, omitempty) ✓ 2026-07-28
+- [x] toml-to-env : convertit TOML en .env (flatten, prefix, export, JSON) ✓ 2026-07-28
+- [x] uuid-batch-gen : génère des UUIDs v4 en batch (count, formats, JSON) ✓ 2026-07-28
+- [x] json-to-csv : convertit JSON array en CSV (flatten dot-notation, sélecteur de colonnes) ✓ 2026-07-28
+- [x] sql-from-json : génère CREATE TABLE + INSERT SQL depuis JSON (types inférés, dialectes) ✓ 2026-07-28
+- [x] ansi-to-html : convertit sortie terminal ANSI colorée en page HTML (dark/light themes) ✓ 2026-07-28
+
+## Vague 182 — CLI Tools (git & data)
+- [x] git-author-activity : analyse l'activité par auteur (commits, lignes, fichiers, jours actifs, histogramme) ✓ 2026-07-28
+- [x] yaml-deep-merge : fusion profonde multi-fichiers YAML avec reporting des overrides et concat-arrays ✓ 2026-07-28
+- [x] http-mock-server : serveur HTTP de mock piloté par spec JSON/YAML (status, headers, delay, hot-reload) ✓ 2026-07-28
+- [x] ip-subnet-calc : calculateur sous-réseaux IPv4/IPv6 (broadcast, wildcard, hosts, split N subnets, JSON) ✓ 2026-07-28
+- [x] openapi-validate : validateur statique de specs OpenAPI 3.x (erreurs, warnings, refs, $refs, JSON/strict) ✓ 2026-07-28
+- [x] cron-describe : explique une expression cron en langage humain et liste les prochaines exécutions ✓ 2026-07-28
+- [x] git-repo-summary : résumé haut niveau d'un repo git (branches, tags, activity, top authors, extensions) ✓ 2026-07-28
