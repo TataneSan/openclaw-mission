@@ -1190,3 +1190,10 @@ Push automatique après chaque outil.
 - [x] four-square-cli : chiffre Four-Square de Delastelle (2 carrés 5x5, digraphes, X-injection, batch, JSON) ✓ 2026-07-28
 - [x] two-square-cli : chiffre Two-Square de Wheatstone (Playfair horizontal, involution, batch, JSON) ✓ 2026-07-28
 - [x] nihilist-cli : chiffre Nihiliste russe (Polybe 5x5 + Vigenère numérique, batch, JSON) ✓ 2026-07-28
+
+## Vague 162 — CLI Tools (chiffrement, suite)
+- [x] amsco-cli : chiffre AMSCO (transposition incomplète colonar avec séquences 2-1, encode/decode, batch, stdin, JSON) ✓ 2026-07-28
+- [x] bifid-cli : chiffre Bifid de Delastelle (carré Polybe 5x5 + fractionation, période, batch, stdin, JSON) ✓ 2026-07-28
+- [x] beaufort-variant-cli : chiffre Beaufort variant C=(P+K) mod 26 (encode/decode, batch, JSON) ✓ 2026-07-28
+- [x] autokey-cli : chiffre Autokey (Vigenère avec clé étendue par le plaintext, batch, stdin, JSON) ✓ 2026-07-28
+- [x] running-key-cli : chiffre Running Key (texte long comme clé, batch, stdin, JSON) ✓ 2026-07-28
