@@ -5,6 +5,27 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 185 — CLI Tools
+- [x] percent-change : calc des variations % (simple, série, chaînée) ✓ 2026-07-28
+- [x] list-dedup : supprime doublons de lignes préservant l'ordre (i/t/n/d) ✓ 2026-07-28
+- [x] domain-expiry : quiis whois + jours restants avant expiration ✓ 2026-07-28
+- [x] text-metrics : indices de lisibilité (Flesch, FK, SMOG, CLI, ARI, LIX) ✓ 2026-07-28
+- [x] env-shell : export .env vers sh/ps1/json/list/check ✓ 2026-07-28
+
+## Vague 186 — CLI Tools
+- [x] csv-row-count : compte lignes + champs CSV (multi-fichiers, JSON) ✓ 2026-07-28
+- [x] file-ext-count : stats fichiers par extension (count/bytes, JSON) ✓ 2026-07-28
+- [x] port-knock : client de port-knocking TCP (séquence de ports) ✓ 2026-07-28
+- [x] text-diff-lite : diff unifié entre deux fichiers (stat, JSON) ✓ 2026-07-28
+- [x] number-base-convert : conversion bases 2-64 (auto-détection préfixes) ✓ 2026-07-28
+
+## Vague 187 — CLI Tools
+- [x] text-to-slug-batch : slugs URL-friendly par ligne (batch, stdin, JSON) ✓ 2026-07-28
+- [x] markdown-to-rst : convertisseur Markdown vers reStructuredText (headers, lists, links, code) ✓ 2026-07-28
+- [x] http-post-data : envoie requêtes HTTP avec body JSON/form/raw (méthode custom, headers, timing) ✓ 2026-07-28
+- [x] file-perm-copy : copie/sets permissions fichiers (mode, uid, gid, -r) ✓ 2026-07-28
+- [x] json-merge-deep : fusion profonde de JSON (récursive, -concat, -q, -indent) ✓ 2026-07-28
+
 ## Terminés
 - [x] foundry-autopilot-dashboard : dashboard Go temps réel pour cycles, revues, PR, historique et journal systemd ✓ 2026-07-27
 - [x] percent-change : calc des variations % (simple, série, chaînée) ✓ 2026-07-28
