@@ -1154,3 +1154,10 @@ Push automatique après chaque outil.
 - [x] soundex-cli : algorithmes phonétiques Soundex, Metaphone, NYSIIS (similarité, batch, JSON) ✓ 2026-07-28
 - [x] damerau-cli : distance de Damerau-Levenshtein avec détail des opérations ✓ 2026-07-28
 - [x] caesar-cli : chiffre/déchiffre Caesar et ROT13 avec brute-force intégré ✓ 2026-07-28
+
+## Vague 158 — CLI Tools
+- [ ] rot5-cli : chiffre/déchiffre ROT5 sur les chiffres uniquement (batch, stdin, JSON)
+- [ ] atbash-cli : chiffre/déchiffre Atbash (alphabet inversé, batch, stdin, JSON)
+- [ ] vigenere-cli : chiffre/déchiffre Vigenère avec clé (analyze, stdin, JSON)
+- [ ] xor-cli : chiffre/déchiffre XOR hex ou base64 (single-byte, key, bruteforce)
+- [ ] pig-latin-cli : traduit en/fr pig latin (batch, stdin, JSON)
