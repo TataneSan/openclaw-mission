@@ -1168,3 +1168,4 @@ Push automatique après chaque outil.
 - [x] tap-code-cli : encode/décode le tap code carré Polybe 5x5 (batch, stdin, JSON) ✓ 2026-07-28
 - [x] bacon-cipher-cli : chiffre de Bacon bilitère A/B (encode/decode, batch, stdin, JSON) ✓ 2026-07-28
 - [x] rail-fence-cli : chiffre des rails (zigzag) encode/decode avec N rails (batch, stdin, JSON) ✓ 2026-07-28
+- [x] scytale-cli : chiffre scytale cylindrique (transposition grecque, encode/decode, batch, stdin, JSON) ✓ 2026-07-28
