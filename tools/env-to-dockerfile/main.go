@@ -1,298 +1,181 @@
+// env-to-dockerfile converts a .env file into Dockerfile ARG and ENV instructions.
+//
+// It reads key=value pairs from a .env file and outputs Dockerfile-compatible
+// ARG declarations (for build-time) and ENV declarations (for runtime).
+//
+// Usage:
+//
+//	env-to-dockerfile [flags] [file]
 package main
 
 import (
 	"bufio"
 	"fmt"
 	"os"
-	"regexp"
 	"strings"
 )
 
-type EnvVar struct {
-	Key       string
-	Value     string
-	IsSecret  bool
-	Quoted    bool
-}
-
 func main() {
-	baseImage := "alpine:latest"
-	var secretPatterns []string
-	argOnly := false
-	allArg := false
-	allEnv := false
-	outputFile := ""
-	inputFile := ""
+	filename := flagArg(0, ".env")
+	buildOnly := flagBool("build", false)
+	runOnly := flagBool("run", false)
 
-	args := os.Args[1:]
-	i := 0
-	for i < len(args) {
-		switch args[i] {
-		case "--from":
-			i++
-			if i < len(args) {
-				baseImage = args[i]
-			}
-		case "--secret-pattern":
-			i++
-			if i < len(args) {
-				secretPatterns = append(secretPatterns, args[i])
-			}
-		case "--arg-only":
-			argOnly = true
-		case "--all-arg":
-			allArg = true
-		case "--all-env":
-			allEnv = true
-		case "--output", "-o":
-			i++
-			if i < len(args) {
-				outputFile = args[i]
-			}
-		case "--help", "-h":
-			printUsage()
-			os.Exit(0)
-		default:
-			inputFile = args[i]
-		}
-		i++
-	}
-
-	if inputFile == "" {
-		fmt.Fprintln(os.Stderr, "Error: input file required")
-		printUsage()
-		os.Exit(1)
-	}
-
-	// Default secret pattern if none provided
-	if len(secretPatterns) == 0 {
-		secretPatterns = []string{`(PASSWORD|SECRET|KEY|TOKEN|CREDENTIAL|PRIVATE|AUTH)`}
-	}
-
-	secretRE := compileSecretPatterns(secretPatterns)
-
-	vars, err := parseEnvFile(inputFile)
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error reading file: %v\n", err)
-		os.Exit(1)
-	}
-
-	if len(vars) == 0 {
-		fmt.Fprintln(os.Stderr, "Warning: no variables found in input file")
-	}
-
-	output := generateDockerfile(vars, baseImage, secretRE, argOnly, allArg, allEnv)
-
-	if outputFile != "" {
-		if err := os.WriteFile(outputFile, []byte(output), 0644); err != nil {
-			fmt.Fprintf(os.Stderr, "Error writing output: %v\n", err)
-			os.Exit(1)
-		}
-		fmt.Fprintf(os.Stderr, "Dockerfile written to %s\n", outputFile)
+	var f *os.File
+	var err error
+	if filename == "-" {
+		f = os.Stdin
 	} else {
-		fmt.Print(output)
+		f, err = os.Open(filename)
+		if err != nil {
+			fatal("open: %v", err)
+		}
+		defer f.Close()
 	}
-}
 
-func compileSecretPatterns(patterns []string) *regexp.Regexp {
-	combined := strings.Join(patterns, "|")
-	re, err := regexp.Compile("(?i)" + combined)
-	if err != nil {
-		// Fallback to simple pattern
-		re = regexp.MustCompile(`(?i)(PASSWORD|SECRET|KEY|TOKEN|CREDENTIAL|PRIVATE|AUTH)`)
-	}
-	return re
-}
-
-func parseEnvFile(path string) ([]EnvVar, error) {
-	f, err := os.Open(path)
-	if err != nil {
-		return nil, err
-	}
-	defer f.Close()
-
-	var vars []EnvVar
 	scanner := bufio.NewScanner(f)
-	lineNum := 0
+	var pairs [][]string
 
 	for scanner.Scan() {
-		lineNum++
 		line := strings.TrimSpace(scanner.Text())
-
-		// Skip empty lines and comments
 		if line == "" || strings.HasPrefix(line, "#") {
 			continue
 		}
-
-		// Skip export prefix
-		if strings.HasPrefix(line, "export ") {
-			line = strings.TrimPrefix(line, "export ")
-			line = strings.TrimSpace(line)
-		}
-
-		// Find the first = sign
-		eqIdx := strings.Index(line, "=")
-		if eqIdx <= 0 {
+		// Strip optional leading/trailing quotes from value.
+		key, val, ok := parseEnvLine(line)
+		if !ok {
 			continue
 		}
-
-		key := strings.TrimSpace(line[:eqIdx])
-		value := strings.TrimSpace(line[eqIdx+1:])
-
-		// Validate key
-		if !isValidEnvKey(key) {
-			continue
-		}
-
-		// Handle quoted values
-		quoted := false
-		if len(value) >= 2 {
-			if (value[0] == '"' && value[len(value)-1] == '"') ||
-				(value[0] == '\'' && value[len(value)-1] == '\'') {
-				value = value[1 : len(value)-1]
-				quoted = true
-			}
-		}
-
-		vars = append(vars, EnvVar{
-			Key:    key,
-			Value:  value,
-			Quoted: quoted,
-		})
+		pairs = append(pairs, []string{key, val})
 	}
-
 	if err := scanner.Err(); err != nil {
-		return nil, err
+		fatal("read: %v", err)
 	}
 
-	return vars, nil
+	if !*buildOnly && !*runOnly {
+		// Default: print both ARG and ENV.
+		fmt.Fprintln(os.Stderr, "# Build-time arguments")
+		for _, p := range pairs {
+			fmt.Printf("ARG %s\n", sanitizeKey(p[0]))
+		}
+		fmt.Println()
+		fmt.Fprintln(os.Stderr, "# Runtime environment variables")
+		for _, p := range pairs {
+			fmt.Printf("ENV %s=${%s}\n", sanitizeKey(p[0]), sanitizeKey(p[0]))
+		}
+	} else if *buildOnly {
+		for _, p := range pairs {
+			fmt.Printf("ARG %s\n", sanitizeKey(p[0]))
+		}
+	} else {
+		for _, p := range pairs {
+			fmt.Printf("ENV %s=%s\n", sanitizeKey(p[0]), quoteVal(p[1]))
+		}
+	}
 }
 
-func isValidEnvKey(key string) bool {
+func parseEnvLine(line string) (string, string, bool) {
+	line = strings.TrimSpace(line)
+	if line == "" || strings.HasPrefix(line, "#") {
+		return "", "", false
+	}
+	idx := strings.Index(line, "=")
+	if idx <= 0 {
+		return "", "", false
+	}
+	key := strings.TrimSpace(line[:idx])
+	val := strings.TrimSpace(line[idx+1:])
+	// Remove surrounding quotes.
+	val = stripQuotes(val)
+	if key == "" || !isValidKey(key) {
+		return "", "", false
+	}
+	return key, val, true
+}
+
+func stripQuotes(s string) string {
+	if len(s) >= 2 {
+		if (s[0] == '"' && s[len(s)-1] == '"') || (s[0] == '\'' && s[len(s)-1] == '\'') {
+			return s[1 : len(s)-1]
+		}
+	}
+	return s
+}
+
+func isValidKey(key string) bool {
 	if len(key) == 0 {
 		return false
 	}
-	// Env keys must start with letter or underscore, contain only alphanumeric and underscore
-	first := key[0]
-	if (first < 'A' || first > 'Z') && (first < 'a' || first > 'z') && first != '_' {
-		return false
-	}
-	for _, c := range key {
-		if (c < 'A' || c > 'Z') && (c < 'a' || c > 'z') && (c < '0' || c > '9') && c != '_' {
-			return false
+	// Docker ENV/ARG keys: letters, digits, underscores. Must start with letter or underscore.
+	for i, c := range key {
+		if i == 0 {
+			if !((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == '_') {
+				return false
+			}
+		} else {
+			if !((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || c == '_') {
+				return false
+			}
 		}
 	}
 	return true
 }
 
-func generateDockerfile(vars []EnvVar, baseImage string, secretRE *regexp.Regexp, argOnly, allArg, allEnv bool) string {
-	var sb strings.Builder
-
-	// Mark secrets
-	var secrets []string
-	var nonSecrets []EnvVar
-	for i := range vars {
-		if secretRE.MatchString(vars[i].Key) {
-			vars[i].IsSecret = true
-			secrets = append(secrets, vars[i].Key)
-		} else {
-			nonSecrets = append(nonSecrets, vars[i])
-		}
-	}
-
-	sb.WriteString("# Generated by env-to-dockerfile\n")
-	sb.WriteString("FROM ")
-	sb.WriteString(baseImage)
-	sb.WriteString("\n")
-
-	if allEnv {
-		// All vars as ENV only
-		sb.WriteString("\n# Environment variables\n")
-		for _, v := range vars {
-			sb.WriteString("ENV ")
-			sb.WriteString(v.Key)
-			sb.WriteString("=")
-			sb.WriteString(escapeDockerValue(v.Value))
-			sb.WriteString("\n")
-		}
-	} else if allArg {
-		// All vars as ARG only
-		sb.WriteString("\n# Build arguments\n")
-		for _, v := range vars {
-			sb.WriteString("ARG ")
-			sb.WriteString(v.Key)
-			sb.WriteString("=")
-			sb.WriteString(escapeDockerValue(v.Value))
-			sb.WriteString("\n")
-		}
-	} else {
-		// ARG + ENV pattern (standard)
-		sb.WriteString("\n# Build arguments\n")
-		for _, v := range vars {
-			sb.WriteString("ARG ")
-			sb.WriteString(v.Key)
-			sb.WriteString("=")
-			if v.IsSecret {
-				sb.WriteString("***")
+func sanitizeKey(key string) string {
+	var b strings.Builder
+	for i, c := range key {
+		if i == 0 {
+			if (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') {
+				b.WriteRune(c)
 			} else {
-				sb.WriteString(escapeDockerValue(v.Value))
+				b.WriteRune('_')
 			}
-			sb.WriteString("\n")
-		}
-
-		sb.WriteString("\n# Runtime environment\n")
-		for _, v := range nonSecrets {
-			sb.WriteString("ENV ")
-			sb.WriteString(v.Key)
-			sb.WriteString("=${")
-			sb.WriteString(v.Key)
-			sb.WriteString("}")
-			sb.WriteString("\n")
-		}
-	}
-
-	// Note about secrets
-	if len(secrets) > 0 && !allEnv {
-		sb.WriteString("\n# Sensitive: ")
-		sb.WriteString(strings.Join(secrets, ", "))
-		if argOnly {
-			sb.WriteString(" (pass at build time with --build-arg)\n")
-		} else if !allArg {
-			sb.WriteString(" (ARG only, not baked into image)\n")
 		} else {
-			sb.WriteString(" (ARG with masked default)\n")
+			if (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || c == '_' {
+				b.WriteRune(c)
+			} else {
+				b.WriteRune('_')
+			}
 		}
 	}
-
-	return sb.String()
+	return b.String()
 }
 
-func escapeDockerValue(value string) string {
-	// Escape backslashes and double quotes for Dockerfile
-	value = strings.ReplaceAll(value, `\`, `\\`)
-	value = strings.ReplaceAll(value, `"`, `\"`)
-	return value
+func quoteVal(val string) string {
+	if strings.ContainsAny(val, " \"'\n") {
+		return "'" + strings.ReplaceAll(val, "'", "'\"'\"'") + "'"
+	}
+	return val
 }
 
-func printUsage() {
-	fmt.Println(`env-to-dockerfile - Convert .env files to Dockerfile ARG/ENV instructions
+func fatal(msg string, args ...any) {
+	fmt.Fprintf(os.Stderr, "env-to-dockerfile: "+msg+"\n", args...)
+	os.Exit(1)
+}
 
-Usage:
-  env-to-dockerfile [flags] <input.env>
+func flagArg(idx int, def string) string {
+	pos := 0
+	for i := 1; i < len(os.Args); i++ {
+		if strings.HasPrefix(os.Args[i], "-") {
+			if i+1 < len(os.Args) && !strings.HasPrefix(os.Args[i+1], "-") {
+				i++
+			}
+			continue
+		}
+		if pos == idx {
+			return os.Args[i]
+		}
+		pos++
+	}
+	return def
+}
 
-Flags:
-  --from string          Base image (FROM instruction) (default "alpine:latest")
-  --secret-pattern str   Regex pattern for sensitive vars (repeatable)
-  --arg-only             Sensitive vars as ARG only (not ENV)
-  --all-arg              All vars as ARG (no ENV)
-  --all-env              All vars as ENV (no ARG)
-  --output, -o string    Output file path (stdout if omitted)
-  --help, -h             Show this help message
-
-Examples:
-  env-to-dockerfile .env
-  env-to-dockerfile --from node:18-alpine .env
-  env-to-dockerfile --arg-only .env
-  env-to-dockerfile --all-arg .env
-  env-to-dockerfile --output Dockerfile .env`)
+func flagBool(name string, def bool) *bool {
+	v := new(bool)
+	*v = def
+	for i := 1; i < len(os.Args); i++ {
+		if os.Args[i] == "-"+name || os.Args[i] == "--"+name {
+			*v = true
+		}
+	}
+	return v
 }

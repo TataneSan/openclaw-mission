@@ -6,6 +6,7 @@ JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
 ## Terminés
+- [x] foundry-autopilot-dashboard : dashboard Go temps réel pour cycles, revues, PR, historique et journal systemd ✓ 2026-07-27
 (mettre à jour ici chaque outil fini)
 
 ## En cours
@@ -1051,5 +1052,80 @@ Push automatique après chaque outil.
 - [x] ini-to-csv : convertisseur INI vers CSV ✓ 2026-05-29
 - [x] yaml-flatten : aplatit du YAML imbriqué en paires clé-valeur ✓ 2026-05-29
 - [x] csv-to-typescript : génère des interfaces TypeScript depuis un CSV ✓ 2026-05-29
-- [ ] git-diff-summary : résumé des changements entre deux commits
-- [ ] http-redirect-trace : trace les chaînes de redirection HTTP
+- [x] git-diff-summary : résumé des changements entre deux commits ✓ 2026-05-29
+- [x] http-redirect-trace : trace les chaînes de redirection HTTP ✓ 2026-05-29
+
+## Vague 141 — CLI Tools
+- [x] json-to-ruby : génère des structs Ruby depuis du JSON ✓ 2026-05-29
+- [x] csv-to-latex : convertisseur CSV vers tableau LaTeX ✓ 2026-05-29
+- [x] git-commit-graph : affiche un graphique ASCII du historique de commits ✓ 2026-05-29
+- [x] env-to-dhall : convertit un fichier .env en expression Dhall ✓ 2026-05-29
+- [x] http-chunked-cli : client HTTP pour tester le transfer-encoding chunked ✓ 2026-05-29 (dup Vague 127)
+
+## Vague 142 — CLI Tools
+- [x] json-to-xlsx : convertisseur JSON arrays vers fichiers Excel (.xlsx) ✓ 2026-05-29
+- [x] csv-to-pdf : genere des tableaux PDF depuis des fichiers CSV ✓ 2026-05-29
+- [x] git-commit-calendar : calendrier de commits style GitHub en terminal ✓ 2026-05-29
+- [x] env-to-nginx : convertit un .env en variables Nginx config ✓ 2026-05-29
+- [x] http-cors-check : vérifie les headers CORS d'un endpoint HTTP ✓ 2026-05-29
+
+## Vague 144 — CLI Tools
+- [x] markdown-to-text : supprime le formatage markdown et affiche du texte brut ✓ 2026-05-29
+- [x] json-to-sql : genere des requetes SQL INSERT depuis du JSON ✓ 2026-05-29
+- [x] csv-to-yaml : convertisseur CSV vers YAML ✓ 2026-05-29
+- [x] git-branch-list : liste les branches git avec dernier commit ✓ 2026-05-29
+- [x] env-diff-cli : compare deux fichiers .env et affiche les différences ✓ 2026-05-29
+
+## Vague 145 — CLI Tools
+- [x] json-to-graphql : genere un schema GraphQL depuis du JSON ✓ 2026-05-29
+- [x] csv-to-latex : convertisseur CSV vers tableau LaTeX ✓ 2026-05-29
+- [x] git-commit-lint : linter de messages de commits (Conventional Commits) ✓ 2026-05-29
+- [x] env-to-docker-compose : convertit un .env en docker-compose.yml ✓ 2026-05-29
+- [x] http-cache-analyzer : analyse les headers de cache HTTP (Cache-Control, ETag, Expires) ✓ 2026-05-29
+
+## Vague 146 — CLI Tools
+- [x] tcp-ping : teste la connectivité TCP vers un hôte/port avec timing (alternative à ping sans ICMP) ✓ 2026-05-29
+- [x] json-to-go : génère des structs Go depuis du JSON avec type inference ✓ 2026-05-29
+- [x] csv-to-xlsx : convertisseur CSV vers Excel (.xlsx) ✓ 2026-05-29
+- [x] git-commit-template : gestionnaire de templates de messages git ✓ 2026-05-29
+- [x] http-headers-cli : affiche tous les headers HTTP d'une URL formatés ✓ 2026-05-29
+
+## Vague 147 — CLI Tools
+- [x] json-to-protobuf : génère des fichiers .proto depuis du JSON ✓ 2026-05-29
+- [x] csv-to-sql : génère des requêtes SQL (CREATE + INSERT) depuis un CSV ✓ 2026-05-29
+- [x] git-log-filter : filtre l'historique git par auteur, date, fichier ✓ 2026-05-29
+- [x] yaml-to-env : convertisseur YAML vers .env ✓ 2026-05-29
+- [x] http-status-cli : vérifie le code HTTP d'une URL et affiche le résultat ✓ 2026-05-29
+
+## Vague 148 — CLI Tools
+- [x] file-perm-check : vérifie les permissions de fichiers et signale les problèmes de sécurité ✓ 2026-05-29
+- [x] json-to-avro : génère un schema Avro depuis du JSON ✓ 2026-05-29
+- [x] csv-to-xlsx : convertisseur CSV vers Excel (.xlsx) ✓ 2026-05-29
+- [x] git-commit-sign : signe des commits git avec GPG ✓ 2026-05-29
+- [x] http-etag-check : vérifie et compare les ETags HTTP d'une URL ✓ 2026-05-29
+
+## Vague 149 — CLI Tools
+- [x] xlsx-to-csv : convertisseur Excel (.xlsx) vers CSV ✓ 2026-05-29
+- [x] git-prune-refs : nettoie les références distantes obsolètes ✓ 2026-05-29
+- [x] json-to-protobuf : génère un fichier .proto depuis du JSON ✓ 2026-05-29
+
+## Vague 150 — CLI Tools
+- [x] xml-lint : vérifie la syntaxe et le style XML ✓ 2026-05-29
+- [x] json-to-toml-nested : convertisseur JSON imbriqué vers TOML ✓ 2026-05-29
+- [x] csv-unique : extrait les lignes uniques d'un CSV par colonne ✓ 2026-05-29
+- [x] git-commit-diff : affiche le diff d'un commit spécifique ✓ 2026-05-29
+- [x] env-to-sql : génère des requêtes SQL INSERT depuis un .env ✓ 2026-05-29
+
+## Vague 152 — CLI Tools
+- [x] toml-merge : fusionne plusieurs fichiers TOML avec priorité configurable ✓ 2026-05-29
+- [x] markdown-outline : génère un outline de titres depuis du Markdown ✓ 2026-05-29
+- [x] git-commit-revert : assistant interactif de revert de commits ✓ 2026-05-29
+- [x] csv-to-bar-chart : génère des graphiques en barres terminaux depuis CSV ✓ 2026-05-29
+- [x] http-response-time-histogram : mesure et affiche un histogramme de temps de réponse HTTP ✓ 2026-05-29
+
+## Vague 153 — CLI Tools
+- [x] regex-tester : teste des patterns regex contre des chaînes avec détails des captures ✓ 2026-05-29
+- [x] json-to-typescript : génère des interfaces TypeScript depuis du JSON ✓ 2026-05-29
+
+## Vague 154 — CLI Tools
+- [x] cron-next-run : calcule les prochaines exécutions d'expressions cron (timezone, JSON) ✓ 2026-07-28
