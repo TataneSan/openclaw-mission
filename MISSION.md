@@ -40,6 +40,13 @@ Push automatique après chaque outil.
 - [x] cron-html-report : audit tout crons + systemd timers → rapport HTML/JSON avec prochaines exécutions ✓ 2026-07-28
 - [x] ssh-known-hosts-audit : audite ~/.ssh/known_hosts (algos faibles, doublons, classes) ✓ 2026-07-28
 
+## Vague 191 — CLI Tools (markdown & texte)
+- [x] markdown-title-case : convertit les titres Markdown en title case (APA/Chicago) ou sentence case ✓ 2026-07-28
+- [x] json-path-exists : vérifie l'existence de chemins dans un JSON (dot notation, [idx], wildcards) ✓ 2026-07-28
+- [x] file-strings : extrait les chaînes imprimables d'un binaire (ASCII/UTF-16, offsets, JSON) ✓ 2026-07-28
+- [x] http-options-cli : requêtes OPTIONS + audit CORS pre-flight (Allow, Access-Control-*, probes) ✓ 2026-07-28
+- [x] text-reverse-chars : inverse les caractères (par ligne, mot, ordre des mots, stream) ✓ 2026-07-28
+
 ## Vague 190 — CLI Tools
 - [x] file-hardlinks : trouve et rapporte les groupes de hardlinks (inode, paths, JSON) ✓ 2026-07-28
 - [x] text-wrap : formate du texte en colonnes (justify, prefix, width) ✓ 2026-07-28
