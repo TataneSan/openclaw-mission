@@ -1279,8 +1279,15 @@ Push automatique après chaque outil.
 - [x] text-justify : justifie un texte à une largeur donnée ✓ 2026-07-28
 
 ## Vague 175 — CLI Tools (texte)
-- [ ] text-dedupe : supprime les lignes dupliquées adjacentes (uniq-like avec options)
-- [ ] tab-expand : convertit tabs en espaces (et inversement) avec tabstop configurable
-- [ ] csv-fill-down : remplit les cellules vides d'un CSV avec la valeur précédente
-- [ ] text-prefix : ajoute un préfixe/suffixe à chaque ligne
-- [ ] random-lines : sélectionne N lignes aléatoires d'un fichier (échantillonnage)
+- [x] text-dedupe : supprime les lignes dupliquées adjacentes (uniq-like avec options) ✓ 2026-07-28
+- [x] tab-expand : convertit tabs en espaces (et inversement) avec tabstop configurable ✓ 2026-07-28
+- [x] csv-fill-down : remplit les cellules vides d'un CSV avec la valeur précédente ✓ 2026-07-28
+- [x] text-prefix : ajoute un préfixe/suffixe à chaque ligne ✓ 2026-07-28
+- [x] random-lines : sélectionne N lignes aléatoires d'un fichier (échantillonnage) ✓ 2026-07-28
+
+## Vague 176 — CLI Tools (texte)
+- [ ] text-replace : rechercher/remplacer multi-pattern (literal + regex) en fichier/stdin
+- [ ] line-slice : extrait une tranche de lignes (start:end style) avec pas
+- [ ] text-fold : replie des lignes longues en lignes multiples à largeur fixe
+- [ ] strip-html : enlève les balises HTML d'un texte (texte brut)
+- [ ] csv-filter-rows : filtre les lignes d'un CSV par expression sur colonnes
