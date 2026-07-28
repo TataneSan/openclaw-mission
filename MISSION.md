@@ -40,6 +40,13 @@ Push automatique après chaque outil.
 - [x] cron-html-report : audit tout crons + systemd timers → rapport HTML/JSON avec prochaines exécutions ✓ 2026-07-28
 - [x] ssh-known-hosts-audit : audite ~/.ssh/known_hosts (algos faibles, doublons, classes) ✓ 2026-07-28
 
+## Vague 193 — CLI Tools (CSV, git, JSON, texte, HTTP)
+- [x] csv-stats-full : statistiques descriptives complètes par colonne CSV (min/max/mean/stddev/quartiles ou top catégories) ✓ 2026-07-28
+- [x] git-repo-hotspots : classe les fichiers git par fréquence de changement et churn (lignes ajoutées+supprimées) ✓ 2026-07-28
+- [x] json-key-prefix : ajoute/retire un préfixe sur les clés JSON récursivement (in-place, stdin) ✓ 2026-07-28
+- [x] text-word-frequency : compteur de fréquences de mots (multi-fichiers, ppm, JSON) ✓ 2026-07-28
+- [x] http-head-check : requêtes HEAD avec chaîne de redirections complète, timings et headers ✓ 2026-07-28
+
 ## Vague 192 — CLI Tools (JSON, CSV, HTTP, fichiers)
 - [x] json-fuzz-validate : fuzz-validation structurelle d'un JSON (profondeur, tailles, nulls, vides, key patterns, nums, dup-keys) ✓ 2026-07-28
 - [x] csv-multi-sort : tri CSV multi-colonnes avec direction et type par colonne (str/num/date) ✓ 2026-07-28
