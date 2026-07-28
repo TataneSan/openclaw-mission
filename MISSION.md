@@ -1189,3 +1189,4 @@ Push automatique après chaque outil.
 - [x] trifid-cli : chiffre Trifid de Delastelle (cube 3x3x3 + fractionation horizontale, période, batch, JSON) ✓ 2026-07-28
 - [x] four-square-cli : chiffre Four-Square de Delastelle (2 carrés 5x5, digraphes, X-injection, batch, JSON) ✓ 2026-07-28
 - [x] two-square-cli : chiffre Two-Square de Wheatstone (Playfair horizontal, involution, batch, JSON) ✓ 2026-07-28
+- [x] nihilist-cli : chiffre Nihiliste russe (Polybe 5x5 + Vigenère numérique, batch, JSON) ✓ 2026-07-28
