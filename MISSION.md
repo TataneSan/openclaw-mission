@@ -1185,3 +1185,4 @@ Push automatique après chaque outil.
 
 ## Vague 161 — CLI Tools (chiffrement, suite)
 - [x] adfgvx-cli : chiffre allemand ADFGVX 1918 (carré 6x6 A-Z0-9 + transposition columnar, encode/decode, batch, JSON) ✓ 2026-07-28
+- [x] hill-cli : chiffre de Hill matriciel 2x2/3x3 mod 26 (inverse modulaire, padding X, batch, JSON) ✓ 2026-07-28
