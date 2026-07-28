@@ -7,6 +7,11 @@ Push automatique après chaque outil.
 
 ## Terminés
 - [x] foundry-autopilot-dashboard : dashboard Go temps réel pour cycles, revues, PR, historique et journal systemd ✓ 2026-07-27
+- [x] percent-change : calc des variations % (simple, série, chaînée) ✓ 2026-07-28
+- [x] list-dedup : supprime doublons de lignes préservant l'ordre (i/t/n/d) ✓ 2026-07-28
+- [x] domain-expiry : quiis whois + jours restants avant expiration ✓ 2026-07-28
+- [x] text-metrics : indices de lisibilité (Flesch, FK, SMOG, CLI, ARI, LIX) ✓ 2026-07-28
+- [x] env-shell : export .env vers sh/ps1/json/list/check ✓ 2026-07-28
 (mettre à jour ici chaque outil fini)
 
 ## En cours
