@@ -1211,3 +1211,55 @@ Push automatique après chaque outil.
 - [x] phillips-cli : chiffre Phillips (8 carrés 5x5 shiftés, clé, batch, JSON) ✓ 2026-07-28
 - [x] polybius-square-cli : carré de Polybe classique (coordonnées 11-55, keyed square, batch, JSON) ✓ 2026-07-28
 - [x] nomenclator-cli : chiffre par nomenclateur (codes mots 90xx + table lettres shiftée, nulls, batch, JSON) ✓ 2026-07-28
+
+## Vague 165 — CLI Tools (chiffrement, suite)
+- [x] vic-cli : chiffre VIC simplifié (straddling checkerboard ATONESIR + double transposition à mot-clé, batch, JSON) ✓ 2026-07-28
+
+## Vague 166 — CLI Tools (utilitaires)
+- [x] adfgx-cli : chiffre ADFGX WWI (carré Polybius 5x5 + transposition columnar, batch, JSON) ✓ 2026-07-28
+- [x] newsletter-template-cli : génère un squelette newsletter Markdown/HTML avec sections et placeholders ✓ 2026-07-28
+- [x] csv-normalize : normalise CSV (détection délimiteur, conversion, quoting, EOL) ✓ 2026-07-28
+- [x] json-escape : échappe/déséchappe du contenu de chaînes JSON (stdin/arg, JSON out) ✓ 2026-07-28
+- [x] url-canonicalize : normalise les URLs (lower host, sans fragment, query triée, strip tracking, dedup) ✓ 2026-07-28
+- [x] env-var-export : convertit un .env en export sh/fish/csh/PowerShell/cmd/JSON ✓ 2026-07-28
+
+## Vague 167 — CLI Tools (utilitaires)
+- [x] markdown-check-links : vérifie les ancres internes d'un Markdown (règles de slug GitHub, JSON, exit codes) ✓ 2026-07-28
+- [x] diff-lines : diff ligne par ligne LCS minimal (unified context, JSON, couleurs) ✓ 2026-07-28
+- [x] file-mime-sniff : détecte le type MIME par magic bytes (zip-subtypes docx/xlsx/apk/jar, text heuristics) ✓ 2026-07-28
+- [x] cli-wc : compte lignes/mots/caractères/bytes, JSON, paragraphs ✓ 2026-07-28
+
+## Vague 168 — CLI Tools (utilitaires)
+- [x] string-case-convert : conversion camelCase/snake_case/kebab/Pascal/CONSTANT ✓ 2026-07-28
+- [x] shuffle-lines : mélange aléatoirement les lignes (Fisher–Yates, seedable) ✓ 2026-07-28
+- [x] truncate-lines : tronque chaque ligne à N colonnes avec ellipsis ✓ 2026-07-28
+- [x] indent-convert : convertit entre espaces et tabs en début de ligne ✓ 2026-07-28
+- [x] timestamp-diff : calcule la différence entre deux timestamps ✓ 2026-07-28
+
+## Vague 169 — CLI Tools (utilitaires)
+- [x] rot13-cli : applique ROT13/ROT47 sur des fichiers ou stdin (batch, JSON) ✓ 2026-07-28
+- [x] reverse-lines : inverse l'ordre des lignes (stdin/fichier, in-place option) ✓ 2026-07-28
+- [x] csv-sum : somme/moyenne/min/max rapide sur une colonne CSV ✓ 2026-07-28
+- [x] dir-size-tree : affiche la taille des sous-dossiers en arbre ✓ 2026-07-28
+- [x] uppercase-files : renomme des fichiers en majuscules/minuscules (batch) ✓ 2026-07-28
+
+## Vague 170 — CLI Tools (utilitaires)
+- [x] trim-lines : supprime les espaces/tabulations en début/fin de ligne ✓ 2026-07-28
+- [x] uniq-lines : détecte et supprime les lignes dupliquées (count, sort) ✓ 2026-07-28
+- [x] join-lines : joint des lignes avec un délimiteur personnalisé ✓ 2026-07-28
+- [x] split-lines : découpe les lignes longues en chunks de N caractères ✓ 2026-07-28
+- [x] column-align : aligne des colonnes de texte sur un délimiteur ✓ 2026-07-28
+
+## Vague 171 — CLI Tools (texte)
+- [x] word-frequency : compte la fréquence des mots dans un texte ✓ 2026-07-28
+- [x] ngram-count : génère et compte des n-grams de mots ou caractères ✓ 2026-07-28
+- [x] case-convert : convertit casse camel/snake/kebab/title par ligne ✓ (déjà fait: string-case-convert)
+- [x] number-lines : numérote les lignes avec format configurable ✓ 2026-07-28
+- [x] squeeze-blank : compresse plusieurs lignes vides en une seule ✓ 2026-07-28
+
+## Vague 172 — CLI Tools (texte)
+- [x] text-wrap : rewrap un texte à une largeur donnée (soft/hard) ✓ 2026-07-28
+- [x] ansi-strip : supprime les codes ANSI d'un flux ✓ 2026-07-28
+- [x] line-filter : garde/supprime les lignes contenant/matchant un pattern ✓ 2026-07-28
+- [x] text-rotate : décale les caractères (rot47 custom, caesar) ✓ 2026-07-28
+- [x] grep-context : grep-like avec lignes de contexte avant/après ✓ 2026-07-28
