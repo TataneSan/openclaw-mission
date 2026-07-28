@@ -1132,3 +1132,4 @@ Push automatique après chaque outil.
 - [x] git-standup : résumé style standup des commits récents multi-repos (JSON, stats) ✓ 2026-07-28
 - [x] totp-cli : générateur TOTP RFC 6238 (sha1/256/512, watch mode, JSON) ✓ 2026-07-28
 - [x] hmac-cli : calcule des signatures HMAC (md5/sha1/sha2) depuis le terminal ✓ 2026-07-28
+- [x] url-query-builder : parse, build et manipulation de query strings URL (JSON, stdin) ✓ 2026-07-28
