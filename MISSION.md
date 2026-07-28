@@ -1355,3 +1355,10 @@ Push automatique après chaque outil.
 - [x] json-unflatten : inverse de json-flatten (keys dotted -> objets imbriqués, arrays) ✓ 2026-07-28
 - [x] text-template : rend des templates {{ keys }} depuis env/.env/JSON ✓ 2026-07-28
 - [x] git-quick-stats : snapshot repo (auteurs, activity jours/heures, hotspots) ✓ 2026-07-28
+
+## Vague 184 — CLI Tools (utilitaires)
+- [x] percent-calc : calculs de pourcentages (of, change, part, vat, increase, decrease) ✓ 2026-07-28
+- [x] duration-parse : parse des durées humaines (2h30m, 90min, 1d4h) vers secondes/ISO 8601/JSON ✓ 2026-07-28
+- [x] number-format : formate des nombres (séparateurs milliers, décimales, notation scientifique, arrondi) ✓ 2026-07-28
+- [x] roman-numerals : convertisseur nombres ⇆ chiffres romains (1..3999, batch, JSON) ✓ 2026-07-28
+- [x] csv-max-min : valeurs min/max des colonnes numériques d'un CSV (fichier/stdin, JSON) ✓ 2026-07-28
