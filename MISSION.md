@@ -26,6 +26,13 @@ Push automatique après chaque outil.
 - [x] file-perm-copy : copie/sets permissions fichiers (mode, uid, gid, -r) ✓ 2026-07-28
 - [x] json-merge-deep : fusion profonde de JSON (récursive, -concat, -q, -indent) ✓ 2026-07-28
 
+## Vague 188 — CLI Tools
+- [x] text-dup-lines : trouve et rapporte les lignes dupliquées (i/t/n, count-only, JSON) ✓ 2026-07-28
+- [x] http-delay-test : benchmark de latence HTTP (percentiles p50-p99, concurrence, JSON) ✓ 2026-07-28
+- [x] file-empty-dirs : trouve et supprime les dossiers vides (ignore-hidden, .gitkeep, multi-pass delete) ✓ 2026-07-28
+- [x] json-key-rename : renomme les clés JSON récursivement (mapping, regex, camel/snake, in-place) ✓ 2026-07-28
+- [x] text-case-convert : conversion entre conventions de nommage (camel, snake, kebab, pascal...) ✓ 2026-07-28
+
 ## Terminés
 - [x] foundry-autopilot-dashboard : dashboard Go temps réel pour cycles, revues, PR, historique et journal systemd ✓ 2026-07-27
 - [x] percent-change : calc des variations % (simple, série, chaînée) ✓ 2026-07-28
