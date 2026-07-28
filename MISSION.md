@@ -12,6 +12,11 @@ Push automatique après chaque outil.
 - [x] domain-expiry : quiis whois + jours restants avant expiration ✓ 2026-07-28
 - [x] text-metrics : indices de lisibilité (Flesch, FK, SMOG, CLI, ARI, LIX) ✓ 2026-07-28
 - [x] env-shell : export .env vers sh/ps1/json/list/check ✓ 2026-07-28
+- [x] csv-row-count : compte lignes + champs CSV (multi-fichiers, JSON) ✓ 2026-07-28
+- [x] file-ext-count : stats fichiers par extension (count/bytes, JSON) ✓ 2026-07-28
+- [x] port-knock : client de port-knocking TCP (séquence de ports) ✓ 2026-07-28
+- [x] text-diff-lite : diff unifié entre deux fichiers (stat, JSON) ✓ 2026-07-28
+- [x] number-base-convert : conversion bases 2-64 (auto-détection préfixes) ✓ 2026-07-28
 (mettre à jour ici chaque outil fini)
 
 ## En cours
