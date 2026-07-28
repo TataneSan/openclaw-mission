@@ -1347,3 +1347,10 @@ Push automatique après chaque outil.
 - [x] openapi-validate : validateur statique de specs OpenAPI 3.x (erreurs, warnings, refs, $refs, JSON/strict) ✓ 2026-07-28
 - [x] cron-describe : explique une expression cron en langage humain et liste les prochaines exécutions ✓ 2026-07-28
 - [x] git-repo-summary : résumé haut niveau d'un repo git (branches, tags, activity, top authors, extensions) ✓ 2026-07-28
+
+## Vague 183 — CLI Tools (utilitaires)
+- [x] wait-for-it : attend qu'un port TCP ou une URL HTTP soit prêt (CI, entrypoints) ✓ 2026-07-28
+- [x] env-set : édite des fichiers .env (set/get/unset/list) en préservant commentaires ✓ 2026-07-28
+- [x] csv-stack : concaténation verticale de CSV à headers différents (union/intersect, source) ✓ 2026-07-28
+- [x] json-unflatten : inverse de json-flatten (keys dotted -> objets imbriqués, arrays) ✓ 2026-07-28
+- [x] text-template : rend des templates {{ keys }} depuis env/.env/JSON ✓ 2026-07-28
