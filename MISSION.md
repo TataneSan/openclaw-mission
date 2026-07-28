@@ -1129,3 +1129,4 @@ Push automatique après chaque outil.
 
 ## Vague 154 — CLI Tools
 - [x] cron-next-run : calcule les prochaines exécutions d'expressions cron (timezone, JSON) ✓ 2026-07-28
+- [x] git-standup : résumé style standup des commits récents multi-repos (JSON, stats) ✓ 2026-07-28
