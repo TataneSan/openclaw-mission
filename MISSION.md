@@ -1156,7 +1156,7 @@ Push automatique après chaque outil.
 - [x] caesar-cli : chiffre/déchiffre Caesar et ROT13 avec brute-force intégré ✓ 2026-07-28
 
 ## Vague 158 — CLI Tools
-- [ ] rot5-cli : chiffre/déchiffre ROT5 sur les chiffres uniquement (batch, stdin, JSON)
+- [x] rot5-cli : chiffre/déchiffre ROT5 sur les chiffres uniquement (batch, stdin, JSON) ✓ 2026-07-28
 - [ ] atbash-cli : chiffre/déchiffre Atbash (alphabet inversé, batch, stdin, JSON)
 - [ ] vigenere-cli : chiffre/déchiffre Vigenère avec clé (analyze, stdin, JSON)
 - [ ] xor-cli : chiffre/déchiffre XOR hex ou base64 (single-byte, key, bruteforce)
