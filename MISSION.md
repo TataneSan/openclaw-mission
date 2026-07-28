@@ -1285,6 +1285,14 @@ Push automatique après chaque outil.
 - [x] text-prefix : ajoute un préfixe/suffixe à chaque ligne ✓ 2026-07-28
 - [x] random-lines : sélectionne N lignes aléatoires d'un fichier (échantillonnage) ✓ 2026-07-28
 
+## Vague 179 — CLI Tools (texte/CSV)
+- [x] text-wrap : ré-enveloppe un texte à largeur donnée (fmt-like) ✓ 2026-07-28
+- [x] csv-drop-columns : supprime des colonnes CSV par nom ou index ✓ 2026-07-28
+- [x] line-number : préfixe les lignes avec numéros (nl-like) ✓ 2026-07-28
+- [x] char-reverse : inverse les caractères de chaque ligne (rev-like) ✓ 2026-07-28
+- [x] csv-transpose : transpose lignes/colonnes d'un CSV ✓ 2026-07-28
+- [x] csv-swap-rows : échange/déplace/inverse des lignes de CSV par index ✓ 2026-07-28
+
 ## Vague 176 — CLI Tools (texte)
 - [x] text-replace : rechercher/remplacer multi-pattern (literal + regex) en fichier/stdin ✓ 2026-07-28
 - [x] line-slice : extrait une tranche de lignes (start:end style) avec pas ✓ 2026-07-28
@@ -1293,8 +1301,15 @@ Push automatique après chaque outil.
 - [x] csv-filter-rows : filtre les lignes d'un CSV par expression sur colonnes ✓ 2026-07-28
 
 ## Vague 177 — CLI Tools (texte)
-- [ ] trim-lines : supprime espaces début/fin de chaque ligne (left/right/both)
-- [ ] text-uniq-chars : compte les caractères uniques d'un texte (alphabet, set)
-- [ ] csv-sample : échantillonne N lignes aléatoires d'un CSV (seed optionnel)
-- [ ] indent-lines : indente/désindente des lignes de N espaces ou tabs
-- [ ] text-between : extrait le texte entre deux marqueurs/délimiteurs
+- [x] trim-lines : supprime espaces début/fin de chaque ligne (left/right/both) ✓ 2026-07-28
+- [x] text-uniq-chars : compte les caractères uniques d'un texte (alphabet, set) ✓ 2026-07-28
+- [x] csv-sample : échantillonne N lignes aléatoires d'un CSV (seed optionnel) ✓ 2026-07-28
+- [x] indent-lines : indente/désindente des lignes de N espaces ou tabs ✓ 2026-07-28
+- [x] text-between : extrait le texte entre deux marqueurs/délimiteurs ✓ 2026-07-28
+
+## Vague 178 — CLI Tools (texte)
+- [x] line-join : joint toutes les lignes d'un fichier avec un délimiteur ✓ 2026-07-28
+- [x] text-split : divise un texte en lignes par délimiteur (inverse de line-join) ✓ 2026-07-28
+- [x] csv-row-filter : garde/supprime les lignes selon une condition sur une colonne ✓ 2026-07-28
+- [x] text-prefix-lines : préfixe chaque ligne avec numéro ou texte ✓ 2026-07-28 (déjà fait: text-prefix)
+- [x] csv-column-swap : échange deux colonnes dans un CSV ✓ 2026-07-28
