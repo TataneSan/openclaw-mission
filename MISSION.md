@@ -40,6 +40,13 @@ Push automatique après chaque outil.
 - [x] cron-html-report : audit tout crons + systemd timers → rapport HTML/JSON avec prochaines exécutions ✓ 2026-07-28
 - [x] ssh-known-hosts-audit : audite ~/.ssh/known_hosts (algos faibles, doublons, classes) ✓ 2026-07-28
 
+## Vague 192 — CLI Tools (JSON, CSV, HTTP, fichiers)
+- [x] json-fuzz-validate : fuzz-validation structurelle d'un JSON (profondeur, tailles, nulls, vides, key patterns, nums, dup-keys) ✓ 2026-07-28
+- [x] csv-multi-sort : tri CSV multi-colonnes avec direction et type par colonne (str/num/date) ✓ 2026-07-28
+- [x] text-uniq-adjacent : supprime les lignes dupliquées adjacentes (style uniq -c -i -d -u) ✓ 2026-07-28
+- [x] http-basic-client : client HTTP minimal (méthodes, headers, body, basic auth, redirects, timing, -o) ✓ 2026-07-28
+- [x] file-size-distribution : histogramme des tailles de fichiers (buckets, top extensions, biggest) ✓ 2026-07-28
+
 ## Vague 191 — CLI Tools (markdown & texte)
 - [x] markdown-title-case : convertit les titres Markdown en title case (APA/Chicago) ou sentence case ✓ 2026-07-28
 - [x] json-path-exists : vérifie l'existence de chemins dans un JSON (dot notation, [idx], wildcards) ✓ 2026-07-28
