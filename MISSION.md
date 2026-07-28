@@ -1321,3 +1321,8 @@ Push automatique après chaque outil.
 - [x] text-reverse-lines : inverse l'ordre des lignes ✓ 2026-07-28
 - [x] csv-swap-rows : échange deux lignes dans un CSV ✓ 2026-07-28
 - [x] text-dedup-words : supprime les mots dupliqués consécutifs ✓ 2026-07-28
+
+## Vague 180 — CLI Tools (utilitaires)
+- [x] json-escape : échappe/ déséchappe les caractères JSON dans un texte ✓ 2026-07-28
+- [x] csv-to-markdown-table : convertit un CSV en tableau Markdown ✓ 2026-07-28
+- [x] text-troncat : tronque un texte avec ajout de ... si dépassement ✓ 2026-07-28
