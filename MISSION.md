@@ -1134,4 +1134,17 @@ Push automatique après chaque outil.
 - [x] hmac-cli : calcule des signatures HMAC (md5/sha1/sha2) depuis le terminal ✓ 2026-07-28
 - [x] url-query-builder : parse, build et manipulation de query strings URL (JSON, stdin) ✓ 2026-07-28
 - [x] json-lines : flatten JSON vers lignes `path = value` grep-friendly et inverse ✓ 2026-07-28
+## Vague 155 — CLI Tools
+- [x] epoch-cli : convertit entre timestamps Unix (s/ms/us/ns) et dates humaines (multi-formats, timezone, relatif, JSON) ✓ 2026-07-28
+- [x] text-case : convertit entre camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case (batch, stdin) ✓ 2026-07-28
+- [x] fuzzy-cli : fuzzy matching de chaînes avec scores (Levenshtein, Jaro-Winkler, sous-séquence, tri des résultats) ✓ 2026-07-28
+- [x] lorem-gen : génère du texte lorem ipsum (mots, phrases, paragraphes, seed reproductible) ✓ 2026-07-28
+- [x] base62-cli : encode/decode base62 (alphabet alphanumérique) avec support bigint et stdin ✓ 2026-07-28
 - [x] ulid-cli : génère et décode des ULID (Crockford Base32, sortable, JSON) ✓ 2026-07-28
+
+## Vague 156 — CLI Tools
+- [x] roman-cli : convertit entre chiffres romains et arabes (validation, batch, JSON) ✓ 2026-07-28
+- [ ] levenshtein-cli : distance d'édition entre chaînes (matrice, ops, batch)
+- [ ] iban-validate : valide des IBAN selon ISO 13616 (checksum, format pays, JSON)
+- [ ] punycode-cli : encode/decode punycode (RFC 3492, IDN)
+- [ ] hashid-cli : génère des hashids YouTube-style depuis des entiers (réversible, salt)
