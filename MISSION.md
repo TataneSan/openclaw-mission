@@ -1173,3 +1173,4 @@ Push automatique après chaque outil.
 - [x] columnar-transposition-cli : transposition columnar avec clé (encode/decode, batch, stdin, JSON) ✓ 2026-07-28
 - [x] gronsfeld-cli : chiffre Gronsfeld (Vigenère à clé numérique 0-9, analyze, crack, batch, stdin, JSON) ✓ 2026-07-28
 - [x] affine-cli : chiffre affine E(x)=(ax+b) mod 26 (bruteforce, inverse modulaire, batch, stdin, JSON) ✓ 2026-07-28
+- [x] rot47-cli : rotation sur 94 caractères ASCII imprimables (auto-inverse, custom -n, batch, stdin, JSON) ✓ 2026-07-28
