@@ -1182,3 +1182,6 @@ Push automatique après chaque outil.
 - [x] beaufort-cli : chiffre Beaufort réciproque C=(K-P) mod 26 (encode=decode, batch, stdin, JSON) ✓ 2026-07-28
 - [x] keyword-cipher-cli : substitution monoalphabétique par mot-clé (alphabet, encode/decode, batch, JSON) ✓ 2026-07-28
 - [x] playfair-cli : chiffre Playfair 5x5 avec I/J fusionnés (square, digraphes, padding X, batch, JSON) ✓ 2026-07-28
+
+## Vague 161 — CLI Tools (chiffrement, suite)
+- [x] adfgvx-cli : chiffre allemand ADFGVX 1918 (carré 6x6 A-Z0-9 + transposition columnar, encode/decode, batch, JSON) ✓ 2026-07-28
