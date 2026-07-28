@@ -1354,3 +1354,4 @@ Push automatique après chaque outil.
 - [x] csv-stack : concaténation verticale de CSV à headers différents (union/intersect, source) ✓ 2026-07-28
 - [x] json-unflatten : inverse de json-flatten (keys dotted -> objets imbriqués, arrays) ✓ 2026-07-28
 - [x] text-template : rend des templates {{ keys }} depuis env/.env/JSON ✓ 2026-07-28
+- [x] git-quick-stats : snapshot repo (auteurs, activity jours/heures, hotspots) ✓ 2026-07-28
