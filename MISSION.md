@@ -1153,4 +1153,4 @@ Push automatique après chaque outil.
 - [x] morse-cli : encode/decode code Morse international (audio opt, batch, JSON) ✓ 2026-07-28
 - [x] soundex-cli : algorithmes phonétiques Soundex, Metaphone, NYSIIS (similarité, batch, JSON) ✓ 2026-07-28
 - [x] damerau-cli : distance de Damerau-Levenshtein avec détail des opérations ✓ 2026-07-28
-- [ ] caesar-cli : chiffre/déchiffre Caesar et ROT13 avec brute-force intégré
+- [x] caesar-cli : chiffre/déchiffre Caesar et ROT13 avec brute-force intégré ✓ 2026-07-28
