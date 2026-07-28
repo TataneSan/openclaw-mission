@@ -1160,4 +1160,4 @@ Push automatique après chaque outil.
 - [x] atbash-cli : chiffre/déchiffre Atbash (alphabet inversé, batch, stdin, JSON) ✓ 2026-07-28
 - [x] vigenere-cli : chiffre/déchiffre Vigenère avec clé (analyze, stdin, JSON) ✓ 2026-07-28
 - [x] xor-cli : chiffre/déchiffre XOR hex ou base64 (single-byte, key, bruteforce) ✓ 2026-07-28
-- [ ] pig-latin-cli : traduit en/fr pig latin (batch, stdin, JSON)
+- [x] pig-latin-cli : traduit en/fr pig latin (batch, stdin, JSON) ✓ 2026-07-28
