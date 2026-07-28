@@ -1286,8 +1286,15 @@ Push automatique après chaque outil.
 - [x] random-lines : sélectionne N lignes aléatoires d'un fichier (échantillonnage) ✓ 2026-07-28
 
 ## Vague 176 — CLI Tools (texte)
-- [ ] text-replace : rechercher/remplacer multi-pattern (literal + regex) en fichier/stdin
-- [ ] line-slice : extrait une tranche de lignes (start:end style) avec pas
-- [ ] text-fold : replie des lignes longues en lignes multiples à largeur fixe
-- [ ] strip-html : enlève les balises HTML d'un texte (texte brut)
-- [ ] csv-filter-rows : filtre les lignes d'un CSV par expression sur colonnes
+- [x] text-replace : rechercher/remplacer multi-pattern (literal + regex) en fichier/stdin ✓ 2026-07-28
+- [x] line-slice : extrait une tranche de lignes (start:end style) avec pas ✓ 2026-07-28
+- [x] text-fold : replie des lignes longues en lignes multiples à largeur fixe ✓ 2026-07-28
+- [x] strip-html : enlève les balises HTML d'un texte (texte brut) ✓ 2026-07-28
+- [x] csv-filter-rows : filtre les lignes d'un CSV par expression sur colonnes ✓ 2026-07-28
+
+## Vague 177 — CLI Tools (texte)
+- [ ] trim-lines : supprime espaces début/fin de chaque ligne (left/right/both)
+- [ ] text-uniq-chars : compte les caractères uniques d'un texte (alphabet, set)
+- [ ] csv-sample : échantillonne N lignes aléatoires d'un CSV (seed optionnel)
+- [ ] indent-lines : indente/désindente des lignes de N espaces ou tabs
+- [ ] text-between : extrait le texte entre deux marqueurs/délimiteurs
