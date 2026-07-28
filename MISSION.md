@@ -1159,5 +1159,5 @@ Push automatique après chaque outil.
 - [x] rot5-cli : chiffre/déchiffre ROT5 sur les chiffres uniquement (batch, stdin, JSON) ✓ 2026-07-28
 - [x] atbash-cli : chiffre/déchiffre Atbash (alphabet inversé, batch, stdin, JSON) ✓ 2026-07-28
 - [x] vigenere-cli : chiffre/déchiffre Vigenère avec clé (analyze, stdin, JSON) ✓ 2026-07-28
-- [ ] xor-cli : chiffre/déchiffre XOR hex ou base64 (single-byte, key, bruteforce)
+- [x] xor-cli : chiffre/déchiffre XOR hex ou base64 (single-byte, key, bruteforce) ✓ 2026-07-28
 - [ ] pig-latin-cli : traduit en/fr pig latin (batch, stdin, JSON)
