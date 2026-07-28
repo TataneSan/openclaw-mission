@@ -1170,3 +1170,4 @@ Push automatique après chaque outil.
 - [x] rail-fence-cli : chiffre des rails (zigzag) encode/decode avec N rails (batch, stdin, JSON) ✓ 2026-07-28
 - [x] scytale-cli : chiffre scytale cylindrique (transposition grecque, encode/decode, batch, stdin, JSON) ✓ 2026-07-28
 - [x] route-cipher-cli : chiffre de transposition par route (rows/columns/boustrophedon/diagonal/spiral, batch, stdin, JSON) ✓ 2026-07-28
+- [x] columnar-transposition-cli : transposition columnar avec clé (encode/decode, batch, stdin, JSON) ✓ 2026-07-28
