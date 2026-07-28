@@ -33,6 +33,20 @@ Push automatique après chaque outil.
 - [x] json-key-rename : renomme les clés JSON récursivement (mapping, regex, camel/snake, in-place) ✓ 2026-07-28
 - [x] text-case-convert : conversion entre conventions de nommage (camel, snake, kebab, pascal...) ✓ 2026-07-28
 
+## Vague 189 — CLI Tools
+- [x] unicode-inspect : inspecte caractères Unicode (codepoints, names, blocks, NFKC, détecte confusables) ✓ 2026-07-28
+- [x] service-banner : grab banners + identifie services sur ports TCP (SSH/HTTP/FTP/MySQL/Redis...) ✓ 2026-07-28
+- [x] tmux-session-save : sauvegarde/restaure sessions tmux (windows, panes, layouts, cwd) ✓ 2026-07-28
+- [x] cron-html-report : audit tout crons + systemd timers → rapport HTML/JSON avec prochaines exécutions ✓ 2026-07-28
+- [x] ssh-known-hosts-audit : audite ~/.ssh/known_hosts (algos faibles, doublons, classes) ✓ 2026-07-28
+
+## Vague 190 — CLI Tools
+- [x] file-hardlinks : trouve et rapporte les groupes de hardlinks (inode, paths, JSON) ✓ 2026-07-28
+- [x] text-wrap : formate du texte en colonnes (justify, prefix, width) ✓ 2026-07-28
+- [x] json-stats : statistiques sur un JSON (types, profondeur, tailles) ✓ 2026-07-28
+- [x] http-etag-check : vérifie ETag/Last-Modified et retourne 304 si match ✓ 2026-07-28
+- [x] csv-column-reorder : réordonne colonnes CSV (noms/indices, ranges, drop, in-place) ✓ 2026-07-28
+
 ## Terminés
 - [x] foundry-autopilot-dashboard : dashboard Go temps réel pour cycles, revues, PR, historique et journal systemd ✓ 2026-07-27
 - [x] percent-change : calc des variations % (simple, série, chaînée) ✓ 2026-07-28
