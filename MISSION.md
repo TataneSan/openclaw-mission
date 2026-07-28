@@ -1272,8 +1272,15 @@ Push automatique après chaque outil.
 - [x] char-decode : affiche les points de code Unicode de chaque caractère ✓ 2026-07-28
 
 ## Vague 174 — CLI Tools (texte)
-- [ ] word-reverse : inverse l'ordre des mots de chaque ligne
-- [ ] line-reverse : inverse l'ordre des lignes d'un fichier (tac-like)
-- [ ] text-columns : reformate un texte en N colonnes équilibrées
-- [ ] char-count : compte les occurrences de chaque caractère (histogramme)
-- [ ] text-justify : justifie un texte à une largeur donnée
+- [x] word-reverse : inverse l'ordre des mots de chaque ligne ✓ 2026-07-28
+- [x] line-reverse : inverse l'ordre des lignes d'un fichier (tac-like) ✓ 2026-07-28
+- [x] text-columns : reformate un texte en N colonnes équilibrées ✓ 2026-07-28
+- [x] char-count : compte les occurrences de chaque caractère (histogramme) ✓ 2026-07-28
+- [x] text-justify : justifie un texte à une largeur donnée ✓ 2026-07-28
+
+## Vague 175 — CLI Tools (texte)
+- [ ] text-dedupe : supprime les lignes dupliquées adjacentes (uniq-like avec options)
+- [ ] tab-expand : convertit tabs en espaces (et inversement) avec tabstop configurable
+- [ ] csv-fill-down : remplit les cellules vides d'un CSV avec la valeur précédente
+- [ ] text-prefix : ajoute un préfixe/suffixe à chaque ligne
+- [ ] random-lines : sélectionne N lignes aléatoires d'un fichier (échantillonnage)
