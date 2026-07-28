@@ -1313,3 +1313,11 @@ Push automatique après chaque outil.
 - [x] csv-row-filter : garde/supprime les lignes selon une condition sur une colonne ✓ 2026-07-28
 - [x] text-prefix-lines : préfixe chaque ligne avec numéro ou texte ✓ 2026-07-28 (déjà fait: text-prefix)
 - [x] csv-column-swap : échange deux colonnes dans un CSV ✓ 2026-07-28
+
+## Vague 179 — CLI Tools (fichiers & texte)
+- [x] text-wrap : formate un texte à largeur fixe (mots entiers, pas de coupure) ✓ 2026-07-28
+- [x] csv-drop-columns : supprime une ou plusieurs colonnes d'un CSV ✓ 2026-07-28
+- [x] line-number : ajoute/supprime les numéros de ligne ✓ 2026-07-28
+- [x] text-reverse-lines : inverse l'ordre des lignes ✓ 2026-07-28
+- [x] csv-swap-rows : échange deux lignes dans un CSV ✓ 2026-07-28
+- [x] text-dedup-words : supprime les mots dupliqués consécutifs ✓ 2026-07-28
