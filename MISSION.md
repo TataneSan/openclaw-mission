@@ -1174,3 +1174,11 @@ Push automatique après chaque outil.
 - [x] gronsfeld-cli : chiffre Gronsfeld (Vigenère à clé numérique 0-9, analyze, crack, batch, stdin, JSON) ✓ 2026-07-28
 - [x] affine-cli : chiffre affine E(x)=(ax+b) mod 26 (bruteforce, inverse modulaire, batch, stdin, JSON) ✓ 2026-07-28
 - [x] rot47-cli : rotation sur 94 caractères ASCII imprimables (auto-inverse, custom -n, batch, stdin, JSON) ✓ 2026-07-28
+
+## Vague 160 — CLI Tools (chiffrement, suite)
+- [x] base32-cli : encode/decode Base32 RFC 4648 (std/hex/nopad/crockford, batch, stdin, JSON) ✓ 2026-07-28
+- [x] crc32-cli : checksums CRC-32 (IEEE, Castagnoli, Koopman) et CRC-64 (ISO, ECMA), verify, batch, JSON ✓ 2026-07-28
+- [x] nato-cli : alphabet phonétique NATO/ICAO (encode, decode, batch, JSON) ✓ 2026-07-28
+- [x] beaufort-cli : chiffre Beaufort réciproque C=(K-P) mod 26 (encode=decode, batch, stdin, JSON) ✓ 2026-07-28
+- [x] keyword-cipher-cli : substitution monoalphabétique par mot-clé (alphabet, encode/decode, batch, JSON) ✓ 2026-07-28
+- [x] playfair-cli : chiffre Playfair 5x5 avec I/J fusionnés (square, digraphes, padding X, batch, JSON) ✓ 2026-07-28
