@@ -19,12 +19,19 @@ Push automatique après chaque outil.
 - [x] url-extract-params : extrait les paramètres query d'URLs en clés/valeurs tabulées (--unique CI, JSON) ✓ 2026-08-01
 - [x] file-size-outliers : liste les fichiers dont la taille dévie de la médiane d'une arborescence (--factor CI, JSON) ✓ 2026-08-01
 
-## Vague 244 — CLI Tools (à définir)
-- [ ] csv-dedupe-rows : supprime les lignes dupliquées d'un CSV (clés ciblées, keep first/last, --check CI, JSON)
-- [ ] json-flatten-paths : aplatit un JSON en paires chemin=valeur (sep custom, arrays indexées, --check CI, JSON)
-- [ ] text-para-wrap : reformate des paragraphes à largeur fixe (détection blocs vides, indent préservé, --check CI, JSON)
-- [ ] url-normalize-case : met en minuscules scheme+host des URLs en flux (path/query préservés, --check CI, JSON)
-- [ ] file-dupe-lines-across : détecte les lignes identiques partagées entre fichiers d'un dossier (--min-files CI, JSON)
+## Vague 245 — CLI Tools (à définir)
+- [ ] csv-count-distinct : compte les valeurs distinctes par colonne CSV (top-N, --check CI, JSON)
+- [ ] json-select-fields : garde seulement certains champs d'objets JSONL (dot-paths whitelist, --check CI, JSON)
+- [ ] text-align-columns : aligne des colonnes whitespace en tableau à largeur fixe (left/right, --check CI, JSON)
+- [ ] url-strip-query : retire tout ou partie de la query string des URLs (keep-list, --check CI, JSON)
+- [ ] file-line-count-report : rapport nombre de lignes par fichier d'une arborescence (total, moyenne, --check CI, JSON)
+
+## Vague 244 — CLI Tools (dédup lignes CSV, aplatissement JSON, wrap paragraphes, normalisation casse URL, lignes partagées entre fichiers)
+- [x] csv-dedupe-rows : supprime les lignes dupliquées d'un CSV (clés ciblées, keep first/last, --check CI, JSON) ✓ 2026-08-01
+- [x] json-flatten-paths : aplatit un JSON en paires chemin=valeur (sep custom, arrays indexées, --check CI, JSON) ✓ 2026-08-01
+- [x] text-para-wrap : reformate des paragraphes à largeur fixe (détection blocs vides, indent préservé, --check CI, JSON) ✓ 2026-08-01
+- [x] url-normalize-case : met en minuscules scheme+host des URLs en flux (path/query préservés, --check CI, JSON) ✓ 2026-08-01
+- [x] file-dupe-lines-across : détecte les lignes identiques partagées entre fichiers d'un dossier (--min-files CI, JSON) ✓ 2026-08-01
 
 ## Vague 243 — CLI Tools (swap colonnes CSV, feuilles JSON, trim pré/suffixe, TLD URLs, rapport BOM)
 - [x] csv-swap-columns : échange deux colonnes d'un CSV (noms/indices, --check CI, JSON) ✓ 2026-08-01
