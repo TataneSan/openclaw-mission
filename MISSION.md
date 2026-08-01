@@ -381,12 +381,26 @@ Push automatique après chaque outil.
 - [x] url-normalize-segment-case : met les segments path d'URLs en minuscules sauf segments protégés (regex, --check CI, JSON) ✓ 2026-08-01
 - [x] file-same-content-as-stdin : liste les fichiers d'un dossier dont le contenu matche exactement stdin (sha256, --require CI, JSON) ✓ 2026-08-01
 
-## Vague 303 — CLI Tools (à faire)
-- [ ] csv-last-non-empty-row : garde seulement les cellules non vides de la dernière occurrence par clé (dedupe keep-last-non-empty, --check CI, JSON)
-- [ ] json-round-trip-check : vérifie qu'un JSON re-sérialisé canoniquement est identique octet-pour-octet (sorted keys, --check CI, JSON)
-- [ ] text-strip-matching-lines : retire les lignes matchant un pattern ET leurs N lignes de contexte (--before/--after, --check CI, JSON)
-- [ ] url-detect-localhost : détecte les URLs pointant vers localhost/127.0.0.0/8/::1/.local (report, --check CI, JSON)
-- [ ] file-name-hash-collision : vérifie qu'aucun fichier n'a le même nom normalisé (lower, strip accents) sous un autre dossier (--check CI, JSON)
+## Vague 303 — CLI Tools (merge non-vide CSV, canonical JSON, purge contexte, localhost URL, collisions noms)
+- [x] csv-last-non-empty-row : fusionne les lignes CSV partageant une clé, dernière valeur non vide par colonne (--check CI, JSON) ✓ 2026-08-01
+- [x] json-round-trip-check : vérifie qu'un JSON re-sérialisé canoniquement est identique octet-pour-octet (sorted keys, --write, --check CI, JSON) ✓ 2026-08-01
+- [x] text-strip-matching-lines : retire les lignes matchant un pattern ET leurs N lignes de contexte (--before/--after, --check CI, JSON) ✓ 2026-08-01
+- [x] url-detect-localhost : détecte les URLs pointant vers localhost/loopback/privé/.local (report, --check CI, JSON) ✓ 2026-08-01
+- [x] file-name-collision-report : détecte les fichiers dont les noms entrent en collision après normalisation (lower, accents, --dirs, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 304 — CLI Tools (ordre colonnes CSV, chemins floats JSON, inversion casse, eTLD+1 URL, blocs disque)
+- [x] csv-detect-out-of-order : détecte les lignes dont une colonne clé n'est pas monotonique (asc/desc, --check CI, JSON) ✓ 2026-08-01
+- [x] json-extract-float-paths : liste les chemins contenant des floats non entiers avec statistiques (--check CI, JSON) ✓ 2026-08-01
+- [x] text-invert-case : inverse la casse des lettres ligne par ligne (upper<->lower, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-registered-domain-rdap-hint : classe les domaines d'URLs par eTLD+1 approximatif + TLD connu inconnu (--check CI, JSON) ✓ 2026-08-01
+- [x] file-block-count-report : rapport du nombre de blocs disque (st_blocks) par fichier (--threshold CI, JSON) ✓ 2026-08-01
+
+## Vague 305 — CLI Tools (à faire)
+- [ ] csv-missing-value-report : rapport des valeurs manquantes par colonne CSV (null/NA/vide, --max-missing CI, JSON)
+- [ ] json-extract-string-lengths : distribution des longueurs de chaînes par chemin dans un JSONL (--max-len CI, JSON)
+- [ ] text-tabs-to-spaces : convertit les tabs en espaces avec largeur configurable (--tab-width, --check CI, JSON)
+- [ ] url-detect-http-auth : détecte les URLs nécessitant une auth (401-prone paths, basic-auth patterns, --check CI, JSON)
+- [ ] file-hardlink-tree : reconstruit l'arbre des liens durs par inode avec root commun (--check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
