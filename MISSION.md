@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 199 — CLI Tools (CSV slices, redaction, fichiers vides, headers, base91)
+- [x] csv-slice : extraction de tranches CSV (ranges de lignes 1-based/-n:, colonnes nom/index, inversion, JSONL) ✓ 2026-08-01
+- [x] text-redact : masque données sensibles (email, IP, URL, CB, JWT, clés AWS, patterns custom, check CI) ✓ 2026-08-01
+- [x] file-empty-files : trouve et supprime les fichiers vides ou whitespace-only (glob, dry-run, NUL, CI) ✓ 2026-08-01
+- [x] csv-header-normalize : normalise les en-têtes CSV (snake/slug/camel/pascal/upper, accents, doublons, check CI) ✓ 2026-08-01
+- [x] base91-cli : encode/décode basE91 (binaire-safe, wrap, strict, roundtrip vérifié) ✓ 2026-08-01
+
 ## Vague 198 — CLI Tools (pivot CSV, Morse, JSON paths, query strings, git tags)
 - [x] csv-pivot-table : tableaux croisés depuis un CSV (sum/count/mean/min/max, totaux, tri, JSON) ✓ 2026-08-01
 - [x] text-morse-code : encode/décode le code Morse international (symboles custom, strict, JSON) ✓ 2026-08-01
