@@ -85,12 +85,19 @@ Push automatique après chaque outil.
 - [x] url-extract-tld : extrait le TLD effectif respectant public-suffix-list embarquée (com.co.uk correct, --check CI, JSON) ✓ 2026-08-01 (déjà publié Vague 243)
 - [x] file-cascade-permissions : vérifie que chaque parent d'un fichier est bien traversable par son owner (--check CI, JSON) ✓ 2026-08-01
 
-## Vague 258 — CLI Tools (à définir)
-- [ ] csv-column-z-score : ajoute une colonne z-score par colonne numérique (mean/stdev, --threshold CI outlier, JSON)
-- [ ] json-depth-first-walk : émet chaque noeud d'un JSONL en DFS avec profondeur et chemin (--max-depth CI, JSON)
-- [ ] text-wrap-quotes-aware : wrap de texte qui préserve les guillemets ouvrants/fermants sur les lignes coupées (--check CI, JSON)
-- [ ] url-extract-site-path-depth : profondeur de path par URL (/, /a, /a/b... histogramme, --max-depth CI, JSON)
-- [ ] file-group-by-extension-total : agrège taille et count par extension, avec sous-total par dossier (--top, --threshold CI, JSON)
+## Vague 258 — CLI Tools (z-scores CSV, JSON DFS walk, wrap quotes-aware, path depth, totals par extension)
+- [x] csv-column-z-score : ajoute une colonne z-score par colonne numérique (mean/stdev, --threshold CI outlier, JSON) ✓ 2026-08-01
+- [x] json-depth-first-walk : émet chaque noeud d'un JSONL en DFS avec profondeur et chemin (--max-depth CI, JSON) ✓ 2026-08-01
+- [x] text-wrap-quotes-aware : wrap de texte qui préserve les guillemets ouvrants/fermants sur les lignes coupées (--check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-site-path-depth : profondeur de path par URL (/, /a, /a/b... histogramme, --max-depth CI, JSON) ✓ 2026-08-01
+- [x] file-group-by-extension-total : agrège taille et count par extension, avec sous-total par dossier (--top, --threshold CI, JSON) ✓ 2026-08-01
+
+## Vague 259 — CLI Tools (à définir)
+- [ ] csv-window-functions : fonctions glissantes sur colonnes CSV (rolling mean/sum, window N, --check CI, JSON)
+- [ ] json-merge-patch-multi : applique une série de RFC 7386 merge patches en chaîne (--exit-on-fail CI, JSON)
+- [ ] text-diff-rolling-window : détecte la fenêtre N lignes la plus modifiée entre deux fichiers (--check CI, JSON)
+- [ ] url-parse-host-labels : éclate le host en labels (tld/sld/sub) avec counts statistiques (--min-sub-depth CI, JSON)
+- [ ] file-dirs-by-age-total : regroupe les dossiers par âge moyen des fichiers qu'ils contiennent (--check CI, JSON)
 
 ## Vague 249 — CLI Tools (à définir)
 - [x] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON) ✓ 2026-08-01
