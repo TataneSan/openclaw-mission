@@ -445,11 +445,18 @@ Push automatique après chaque outil.
 - [x] file-newest-per-dir : trouve le fichier le plus récent par dossier d'une arborescence (--check CI, JSON) ✓ 2026-08-02 (déjà publié Vague 240)
 
 ## Vague 312 — CSV/JSON/text/URL/file mix
-- [ ] csv-trim-cells : retire les espaces de début/fin des cellules d'un CSV (--check CI, JSON)
-- [ ] json-pretty-print : reformate un JSON/JSONL avec indentation et ordre de clés optionnels (--indent N, --check CI, JSON)
-- [ ] text-count-paragraphs : statistiques sur les paragraphes d'un texte (count, taille min/max/mean, --check CI, JSON)
-- [ ] url-strip-userinfo : retire les informations user:pass@ des URLs (masquage, --check CI, JSON)
-- [ ] file-count-by-size-range : histogramme des fichiers par tranche de taille (--ranges, --check CI, JSON)
+- [x] csv-trim-cells : retire les espaces de début/fin des cellules d'un CSV (--check CI, JSON) ✓ 2026-08-02 (déjà publié)
+- [x] json-pretty-print : reformate un JSON/JSONL avec indentation et ordre de clés optionnels (--indent N, --check CI, JSON) ✓ 2026-08-02
+- [x] text-count-paragraphs : statistiques sur les paragraphes d'un texte (count, taille min/max/mean, --check CI, JSON) ✓ 2026-08-02
+- [x] url-strip-userinfo : retire les informations user:pass@ des URLs (masquage, --check CI, JSON) ✓ 2026-08-02
+- [x] file-count-by-size-range : histogramme des fichiers par tranche de taille (--ranges, --check CI, JSON) ✓ 2026-08-02
+
+## Vague 313 — CSV/JSON/text/URL/file mix
+- [ ] csv-column-stats-summary : résumé statistique global par colonne CSV (count/empty/unique/top/mean, --check CI, JSON)
+- [ ] json-extract-top-level-keys : liste les clés racine d'un document JSON avec leurs types et cardinalités (--check CI, JSON)
+- [ ] text-suffix-common-strip : retire le suffixe commun à toutes les lignes (auto-detect, --check CI, JSON)
+- [ ] url-detect-static-assets : classe les URLs par type de ressource statique (css/js/img/font/doc, --check CI, JSON)
+- [ ] file-group-by-month-total : regroupe les fichiers par mois de mtime avec taille totale (--check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
