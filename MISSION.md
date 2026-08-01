@@ -19,12 +19,19 @@ Push automatique après chaque outil.
 - [x] url-extract-params : extrait les paramètres query d'URLs en clés/valeurs tabulées (--unique CI, JSON) ✓ 2026-08-01
 - [x] file-size-outliers : liste les fichiers dont la taille dévie de la médiane d'une arborescence (--factor CI, JSON) ✓ 2026-08-01
 
-## Vague 242 — CLI Tools (à définir)
-- [ ] csv-extract-column : extrait une seule colonne CSV en flux brut (index/nom, --check CI, JSON)
-- [ ] json-path-count : compte les occurrences de chaque chemin dot/crochet dans des objets JSONL (--check CI, JSON)
-- [ ] text-split-long-lines : coupe les lignes plus longues que N en segments (continuation \ ou indent, --check CI, JSON)
-- [ ] url-drop-scheme : passe des URLs https://vers scheme-relative ou path-only (--check CI, JSON)
-- [ ] file-content-etag : calcule un etag md5 par fichier et le compare à un manifeste (--check CI, JSON)
+## Vague 243 — CLI Tools (à définir)
+- [ ] csv-swap-columns : échange deux colonnes d'un CSV (noms/indices, --check CI, JSON)
+- [ ] json-extract-leaves : liste seulement les valeurs feuilles d'un JSON (skips clés intermédiaires, --check CI, JSON)
+- [ ] text-trim-lines : retire préfixe AND suffixe fixes des lignes (longueur ou chaîne, --check CI, JSON)
+- [ ] url-extract-tld : extrait TLD/domaine enregistré minimal (heuristique suffixe publique, --check CI, JSON)
+- [ ] file-bom-report : détecte les BOM dans une arborescence de fichiers texte (--types, --check CI, JSON)
+
+## Vague 242 — CLI Tools (colonne CSV, compte-chemins JSON, split lignes longues, drop scheme URL, etags MD5 fichiers)
+- [x] csv-extract-column : extrait une seule colonne CSV en flux brut (index/nom, --check CI, JSON) ✓ 2026-08-01
+- [x] json-path-count : compte les occurrences de chaque chemin dot/crochet dans des objets JSONL (--check CI, JSON) ✓ 2026-08-01
+- [x] text-split-long-lines : coupe les lignes plus longues que N en segments (continuation \ ou indent, --check CI, JSON) ✓ 2026-08-01
+- [x] url-drop-scheme : passe des URLs https://vers scheme-relative ou path-only (--check CI, JSON) ✓ 2026-08-01
+- [x] file-content-etag : calcule un etag md5 par fichier et le compare à un manifeste (--check CI, JSON) ✓ 2026-08-01
 
 ## Vague 241 — CLI Tools (BOM CSV, wrap JSONL, histo longueurs, ports HTTP par défaut, âges de fichiers)
 - [x] csv-strip-bom : retire/pointe les BOM UTF-8/UTF-16 des fichiers CSV (--check CI, JSON) ✓ 2026-08-01
