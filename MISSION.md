@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 202 — CLI Tools (CSV fill, Damerau, MIME, JSON path, hexdump)
+- [x] csv-fill-blanks : remplit les cellules vides CSV (valeur globale, mapping par colonne, check CI, JSON) ✓ 2026-08-01
+- [x] text-damerau-levenshtein : distance Damerau-Levenshtein avec transpositions (stdin tab/comma, --max CI, JSON) ✓ 2026-08-01
+- [x] file-mime-detect : détecte le type MIME par magic bytes (images, archives, docs, exécutables, --require CI) ✓ 2026-08-01
+- [x] json-get-path : extraction de valeurs JSON par chemins dot/bracket (wildcards, index négatifs, --default, --required) ✓ 2026-08-01
+- [x] text-hex-dump : dump hexadécimal fichiers/stdin (offset hex, longueur, largeur, ASCII sidebar) ✓ 2026-08-01
+
 ## Vague 201 — CLI Tools (CSV types, Hamming, entropy, JSON merge, base64url)
 - [x] csv-column-type : infère les types des colonnes CSV (int/float/bool/date/email/uuid/url, confiance, strict, JSON) ✓ 2026-08-01
 - [x] text-hamming-distance : distance de Hamming entre chaînes (stdin tab/comma, --max CI, JSON) ✓ 2026-08-01
