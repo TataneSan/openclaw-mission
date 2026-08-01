@@ -92,12 +92,19 @@ Push automatique après chaque outil.
 - [x] url-extract-site-path-depth : profondeur de path par URL (/, /a, /a/b... histogramme, --max-depth CI, JSON) ✓ 2026-08-01
 - [x] file-group-by-extension-total : agrège taille et count par extension, avec sous-total par dossier (--top, --threshold CI, JSON) ✓ 2026-08-01
 
-## Vague 259 — CLI Tools (à définir)
-- [ ] csv-window-functions : fonctions glissantes sur colonnes CSV (rolling mean/sum, window N, --check CI, JSON)
-- [ ] json-merge-patch-multi : applique une série de RFC 7386 merge patches en chaîne (--exit-on-fail CI, JSON)
-- [ ] text-diff-rolling-window : détecte la fenêtre N lignes la plus modifiée entre deux fichiers (--check CI, JSON)
-- [ ] url-parse-host-labels : éclate le host en labels (tld/sld/sub) avec counts statistiques (--min-sub-depth CI, JSON)
-- [ ] file-dirs-by-age-total : regroupe les dossiers par âge moyen des fichiers qu'ils contiennent (--check CI, JSON)
+## Vague 259 — CLI Tools (rolling window CSV, chaîne de merge patches RFC 7386, fenêtre la plus modifiée, labels host, dossiers par âge)
+- [x] csv-window-functions : fonctions glissantes sur colonnes CSV (rolling mean/sum, window N, --check CI, JSON) ✓ 2026-08-01
+- [x] json-merge-patch-multi : applique une série de RFC 7386 merge patches en chaîne (--exit-on-fail CI, JSON) ✓ 2026-08-01
+- [x] text-diff-rolling-window : détecte la fenêtre N lignes la plus modifiée entre deux fichiers (--check CI, JSON) ✓ 2026-08-01
+- [x] url-parse-host-labels : éclate le host en labels (tld/sld/sub) avec counts statistiques (--min-sub-depth CI, JSON) ✓ 2026-08-01
+- [x] file-dirs-by-age-total : regroupe les dossiers par âge moyen des fichiers qu'ils contiennent (--check CI, JSON) ✓ 2026-08-01
+
+## Vague 260 — CLI Tools (à définir)
+- [ ] csv-sliding-diff : différence ligne-à-ligne d'une colonne numérique CSV (delta, pct-change, --threshold CI, JSON)
+- [ ] json-time-travel : rejoue une série de patches et extrait l'état à l'étape K (--at CI, JSON)
+- [ ] text-markdown-list-extract : extrait les items de listes markdown (bullets/ordered/task, --checked CI, JSON)
+- [ ] url-extract-default-creds-risk : détecte les URLs utilisant des credentials triviaux (admin:admin, root:root, --check CI, JSON)
+- [ ] file-permission-audit : rapport setuid/setgid/world-writable et sticky bits anormaux (--check CI, JSON)
 
 ## Vague 249 — CLI Tools (à définir)
 - [x] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON) ✓ 2026-08-01
