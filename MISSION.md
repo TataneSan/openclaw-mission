@@ -5,12 +5,19 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
-## Vague 235 — CLI Tools (à définir)
-- [ ] text-first-sentences : garde les N premières phrases de chaque paragraphe (N global, --min-words CI, JSON)
-- [ ] csv-detect-delimiter : détecte le délimiteur d'un CSV (virgule/point-virgule/tab/pipe, échantillon, --require CI, JSON)
-- [ ] json-ensure-keys : ajoute les clés manquantes avec valeur par défaut à des objets JSON/JSONL (dot-paths, --check CI, JSON)
-- [ ] text-to-camel-case : convertit chaque ligne en camelCase/PascalCase/snake_case/kebab-case (--style, --preserve-digits CI, JSON)
-- [ ] file-recent-modified : liste les fichiers modifiés depuis N minutes/heures (mtime, excludes glob, --count CI, JSON)
+## Vague 236 — CLI Tools (à définir)
+- [ ] csv-quote-fields : force/retraite les guillemets autour des champs CSV (style minimal/all/non-numeric, --check CI, JSON)
+- [ ] json-strip-comments : retire les commentaires //ligne et /*bloc*/ d'un JSONC vers JSON strict (strings préservées, --check CI, JSON)
+- [ ] text-swap-words : échange deux mots/token dans chaque ligne (regex, occurence N, --check CI, JSON)
+- [ ] url-dedupe-params : déduplique les paramètres répétés dans des URLs (keep first/last, --check CI, JSON)
+- [ ] file-empty-detect : liste les fichiers vides (0 octet) d'une arborescence (excludes, --delete, --check CI, JSON)
+
+## Vague 235 — CLI Tools (premières phrases, délimiteur CSV, clés JSON par défaut, conversion de casse, fichiers récents)
+- [x] text-first-sentences : garde les N premières phrases de chaque paragraphe (N global, --min-words CI, JSON) ✓ 2026-08-01
+- [x] csv-detect-delimiter : détecte le délimiteur d'un CSV (virgule/point-virgule/tab/pipe, échantillon, --require CI, JSON) ✓ 2026-08-01
+- [x] json-ensure-keys : ajoute les clés manquantes avec valeur par défaut à des objets JSON/JSONL (dot-paths, --check CI, JSON) ✓ 2026-08-01
+- [x] text-to-camel-case : convertit chaque ligne en camelCase/PascalCase/snake_case/kebab-case (--style, --no-split-digits, --check CI, JSON) ✓ 2026-08-01
+- [x] file-recent-modified : liste les fichiers modifiés depuis N minutes/heures (mtime, excludes glob, --count CI, JSON) ✓ 2026-08-01
 
 ## Vague 234 — CLI Tools (trim fin de ligne, pivot CSV, mini-schéma JSON, base64 ligne par ligne, expansion CIDR)
 - [x] text-trim-trailing : retire les espaces/tabulations en fin de ligne (fichier ou stdin, --in-place, --check CI, JSON) ✓ 2026-08-01
