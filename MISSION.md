@@ -6,11 +6,18 @@ JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
 ## Vague 221 — CLI Tools (indentation, colonnes CSV, timestamps texte, dupes JSON, padding CSV)
-- [ ] text-indent-detect : détecte le style d'indentation d'un fichier (tabs vs espaces, largeur, mixte, --require CI, JSON)
-- [ ] csv-swap-columns : échange ou réordonne des colonnes CSV par nom/index (--swap, --order, --check CI)
-- [ ] text-epoch-embed : remplace les timestamps Unix d'un texte par des dates ISO (--to-epoch inverse, --tz, --check CI, JSON)
-- [ ] json-dup-keys : détecte les clés dupliquées dans un objet JSON (object_pairs_hook, positions, --check CI)
-- [ ] csv-align-columns : réaligne la largeur des champs d'un CSV en sortie texte/table (markdown, unicode, --max-width)
+- [x] text-indent-detect : détecte le style d'indentation d'un fichier (tabs vs espaces, largeur, mixte, --require CI, JSON) ✓ 2026-08-01
+- [x] csv-swap-columns : échange ou réordonne des colonnes CSV par nom/index (--swap, --order, --check CI) ✓ 2026-08-01
+- [x] text-epoch-embed : remplace les timestamps Unix d'un texte par des dates ISO (--to-epoch inverse, --tz, --check CI, JSON) ✓ 2026-08-01
+- [x] json-dup-keys : détecte les clés dupliquées dans un objet JSON (object_pairs_hook, positions, --check CI) ✓ 2026-08-01
+- [x] csv-align-columns : réaligne la largeur des champs d'un CSV en sortie texte/table (markdown, unicode, --max-width) ✓ 2026-08-01
+
+## Vague 222 — CLI Tools (portée lignes, JSON, casse URL, BOM, effective CIDR)
+- [x] text-excerpt : extrait un extrait centré sur une ligne/pattern (contexte +/-N, --mark, JSON) ✓ 2026-08-01
+- [x] json-key-case : uniformise la casse des clés JSON (snake/camel/kebab/upper, récursif, --check CI) ✓ 2026-08-01
+- [x] url-lowercase-host : normalise la casse scheme/host des URLs (domaine seul, --check CI, JSON) ✓ 2026-08-01
+- [x] text-strip-bom : retire BOM UTF-8/UTF-16 de fichiers (--add inverse, in-place, --check CI, JSON) ✓ 2026-08-01
+- [x] ip-network-of : calcule network/broadcast d'une IP+CIDR (supernet, --contains, JSON, CI) ✓ 2026-08-01
 
 ## Vague 220 — CLI Tools (quoting CSV, hyperliens OSC 8, query string, entourage lignes, stat git)
 - [x] csv-quote-all : force le quoting de toutes (ou certaines) cellules CSV (--all/--columns, --none inverse, --check CI) ✓ 2026-08-01
