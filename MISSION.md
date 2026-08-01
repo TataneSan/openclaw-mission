@@ -480,11 +480,18 @@ Push automatique après chaque outil.
 - [x] file-same-content-pairs-rolling : détecte les paires de fichiers au contenu identique via rolling hash préfiltre (fast, --check CI, JSON) ✓ 2026-08-02
 
 ## Vague 317 — CSV/JSON/text/URL/file mix
-- [ ] csv-number-format-check : vérifie qu'une colonne CSV ne contient que des nombres bien formatés (thousands, decimales, --check CI, JSON)
-- [ ] json-merge-prefer-non-null : fusionne deux JSONL en préférant les valeurs non-null par clé (--check CI, JSON)
-- [ ] text-extract-quoted-lines : garde les lignes contenant une chaîne quotée (--quote char, --invert, --check CI, JSON)
-- [ ] url-path-depth-limit : filtre les URLs dont la profondeur de path dépasse N (--check CI, JSON)
-- [ ] file-group-by-first-byte : regroupe les fichiers d'une arborescence par leur premier octet magic (--check CI, JSON)
+- [x] csv-number-format-check : vérifie qu'une colonne CSV ne contient que des nombres bien formatés (thousands, decimales, --check CI, JSON) ✓ 2026-08-02
+- [x] json-merge-prefer-non-null : fusionne deux JSONL en préférant les valeurs non-null par clé (--check CI, JSON) ✓ 2026-08-02
+- [x] text-extract-quoted-lines : garde les lignes contenant une chaîne quotée (--quote char, --invert, --check CI, JSON) ✓ 2026-08-02
+- [x] url-path-depth-limit : filtre les URLs dont la profondeur de path dépasse N (--check CI, JSON) ✓ 2026-08-02
+- [x] file-group-by-first-byte : regroupe les fichiers d'une arborescence par leur premier octet magic (--check CI, JSON) ✓ 2026-08-02
+
+## Vague 318 — CSV/JSON/text/URL/file mix
+- [ ] csv-row-position-shift : décale les lignes d'un CSV de N positions (wrap-around, --check CI, JSON)
+- [ ] json-array-of-arrays-to-csv : rend un tableau de tableaux JSON en CSV (--header, --check CI, JSON)
+- [ ] text-markup-strip : retire le markup léger (bold/italique/html simple) d'un texte (--check CI, JSON)
+- [ ] url-hostname-rotate : remplace le host d'URLs par rotation sur une liste (--list, --seed, --check CI, JSON)
+- [ ] file-mtime-range-filter : ne garde que les fichiers dont le mtime est dans [min,max] (--since/--until, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
