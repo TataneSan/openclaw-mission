@@ -232,12 +232,18 @@ Push automatique après chaque outil.
 - [x] url-path-join-normalize : joint et normalise des segments path d'URL (.., ., //, --check CI, JSON) ✓ 2026-08-01
 - [x] file-dup-lines-across : détecte les lignes apparaissant dans plusieurs fichiers d'un dossier (--min-files CI, JSON) ✓ 2026-08-01
 
-## Vague 280 — CLI Tools (à définir)
-- [ ] csv-detect-delimiter : détecte le séparateur d'un CSV brut (, ; tab |) par scoring (--check CI, JSON)
-- [ ] json-array-stats : statistiques sur les valeurs d'un tableau à un dot-path (min/max/sum/mean, --check CI, JSON)
-- [ ] text-column-slice : extrait une plage de colonnes caractères de chaque ligne (cut -c like, --check CI, JSON)
-- [ ] url-domain-age-hint : score heuristique d'âge d'un domaine dans une URL (motifs, tld, --check CI, JSON)
-- [ ] file-tree-manifest : génère un manifeste path+size+mtime+sha256 d'une arborescence (--verify CI, JSON)
+## Vague 280 — CLI Tools (tableaux JSON stats, suffixe commun, âge domaine URL, manifeste arborescence)
+- [x] json-array-stats : statistiques sur les valeurs d'un tableau à un dot-path (min/max/sum/mean, --check CI, JSON) ✓ 2026-08-01
+- [x] text-common-suffix-lines : calcule le suffixe commun le plus long de toutes les lignes (--ignore-case, --check CI, JSON) ✓ 2026-08-01
+- [x] url-domain-age-hint : score heuristique d'âge d'un domaine dans une URL (motifs, tld, --check CI, JSON) ✓ 2026-08-01
+- [x] file-tree-manifest : génère un manifeste path+size+mtime+sha256 d'une arborescence (--verify CI, JSON) ✓ 2026-08-01
+
+## Vague 281 — CLI Tools (à faire)
+- [ ] csv-add-bucket-label : ajoute une colonne de label de bucket par seuils numériques (--thresholds, --labels, --check CI, JSON)
+- [ ] json-merge-key-precedence : fusionne deux objets JSON avec ordre de priorité des clés documenté (left/right, --check CI, JSON)
+- [ ] text-collapse-repeats : réduit les répétitions consécutives d'un caractère à N occurrences (--char, --max, --check CI, JSON)
+- [ ] url-path-swap-segments : échange deux segments positionnels du path d'URLs (--i, --j, --check CI, JSON)
+- [ ] file-content-type-report : rapport des types MIME détectés par magic numbers dans une arborescence (histogramme, --check CI, JSON)
 
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
