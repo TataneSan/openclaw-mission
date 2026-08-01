@@ -281,11 +281,18 @@ Push automatique après chaque outil.
 - [x] file-recent-hours : liste les fichiers modifiés dans les N dernières heures (--hours, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 289 — CLI Tools (à faire)
-- [ ] csv-trim-cells : retire les espaces de début/fin de chaque cellule CSV (--inner collapse, --check CI, JSON)
-- [ ] json-renumber-array-field : réécrit un champ entier séquentiel dans les objets d'un JSONL (start/step, --check CI, JSON)
-- [ ] text-squeeze-repeats : réduit les répétitions consécutives d'un caractère à N occurrences (--char, --check CI, JSON)
-- [ ] url-swap-host-path-prefix : déplace le premier segment du path vers le host (a.b.com/p1 -> p1.a.b.com, --check CI, JSON)
-- [ ] file-count-by-hour-of-day : histogramme des fichiers par heure de mtime (0-23, --check CI, JSON)
+- [x] csv-trim-cells : retire les espaces de début/fin de chaque cellule CSV (--check CI, JSON) ✓ 2026-08-01 (déjà publié)
+- [x] json-renumber-array-field : réécrit un champ entier séquentiel dans les objets d'un JSONL (start/step, --check CI, JSON) ✓ 2026-08-01
+- [x] text-squeeze-repeats : réduit les répétitions consécutives d'un caractère à N occurrences (--char, --check CI, JSON) ✓ 2026-08-01
+- [x] url-swap-host-path-prefix : déplace le premier segment du path vers le host (a.b.com/p1 -> p1.a.b.com, --check CI, JSON) ✓ 2026-08-01
+- [x] file-count-by-hour-of-day : histogramme des fichiers par heure de mtime (0-23, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 290 — CLI Tools (à faire)
+- [ ] csv-drop-comment-rows : retire les lignes commençant par un préfixe commentaire (#, //, --prefix, --check CI, JSON)
+- [ ] json-round-numbers : arrondit tous les nombres flottants d'un JSON/JSONL à N décimales (int préservés, --check CI, JSON)
+- [ ] text-rstrip-blank-tail : supprime les lignes vides en fin de fichier (--head aussi, --check CI, JSON)
+- [ ] url-extract-query-value : extrait la valeur d'un paramètre query donné par URL (--all occurrences, --check CI, JSON)
+- [ ] file-symlink-target-report : rapport des cibles de symlinks (absolue/relative, existante/cassée, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
