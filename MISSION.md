@@ -353,12 +353,19 @@ Push automatique après chaque outil.
 - [x] url-detect-credential-leak : repère les URLs embarquant des secrets (userinfo user:pass@, token=/api_key=/auth= en query, masquage, --check CI, JSON) ✓ 2026-08-01
 - [x] file-duplicate-basename : liste les noms de fichiers en double dans une arborescence regardless of dir (match exact ou normalisé, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 299 — CLI Tools (à définir)
-- [ ] csv-remove-columns : retire des colonnes d'un CSV par nom ou index (blacklist, inverse de keep, --check CI, JSON)
-- [ ] json-sort-keys-deep : trie récursivement les clés d'objets JSON/JSONL (ordre alpha, --check déjà trié CI, JSON)
-- [ ] text-longest-line-report : rapport des lignes les plus longues d'un texte (top-N, largeur moyenne, --max-width CI, JSON)
-- [ ] url-extract-fragment-keys : éclate les fragments de type #k=v&k2=v2 en paires clé=valeur (SPA routes, --check CI, JSON)
-- [ ] file-age-buckets-report : répartit les fichiers d'une arborescence par tranche d'âge (<1h, <1j, <1sem, <1mois, plus, --check CI, JSON)
+## Vague 299 — CLI Tools (colonnes CSV, longueurs tableaux JSON, lignes longues, fragments URL, âge fichiers)
+- [x] csv-remove-columns : retire des colonnes d'un CSV par nom ou index (blacklist, inverse de keep, --check CI, JSON) ✓ 2026-08-01 (déjà publié)
+- [x] json-count-array-lengths : statistiques sur les longueurs de tableaux par dot-path (min/max/mean, --threshold CI, JSON) ✓ 2026-08-01 (déjà publié)
+- [x] text-longest-line-report : rapport des lignes les plus longues d'un texte (top-N, largeur moyenne, --max-width CI, JSON) ✓ 2026-08-01
+- [x] url-extract-fragment-keys : éclate les fragments de type #k=v&k2=v2 en paires clé=valeur (SPA routes, --check CI, JSON) ✓ 2026-08-01
+- [x] file-age-buckets-report : répartit les fichiers d'une arborescence par tranche d'âge (<1h, <1j, <1sem, <1mois, plus, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 300 — CLI Tools (à faire)
+- [ ] csv-join-two-files : jointure de deux CSV sur une colonne clé (inner/left, --check CI, JSON)
+- [ ] json-normalize-unicode : applique une normalisation Unicode NFC/NFKC aux strings d'un JSON/JSONL (--check CI, JSON)
+- [ ] text-paragraph-split : découpe un texte en paragraphes (blocs séparés par lignes vides, indices, --check CI, JSON)
+- [ ] url-canonicalize-query-encoding : ré-encode uniformément les valeurs query des URLs (percent-encoding minimal, --check CI, JSON)
+- [ ] file-permission-octal-report : liste les fichiers par mode octal exact d'une arborescence (histogramme, --require-modes CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
