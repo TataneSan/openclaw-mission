@@ -6,11 +6,11 @@ JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
 ## Vague 209 — CLI Tools (MAC, mots de passe, CSV colonnes, HTML, nombres)
-- [ ] mac-vendor-lookup : identifie le fabricant d'une adresse MAC (base OUI embarquée, normalisation, JSON)
-- [ ] text-password-strength : évalue la robustesse d'un mot de passe (entropie, classes, motifs, JSON)
-- [ ] csv-pick-columns : projection de colonnes CSV par nom/index/range (exclude, ordre, --check CI)
-- [ ] text-html-escape : encode/décode les entités HTML (named/decimal/hex, --check roundtrip, JSON)
-- [ ] number-to-words : convertit des nombres en toutes lettres (fr/en, ordinals, JSON)
+- [x] mac-vendor-lookup : identifie le fabricant d'une adresse MAC (base OUI embarquée, normalisation, JSON) ✓ 2026-08-01
+- [x] text-password-strength : évalue la robustesse d'un mot de passe (entropie, classes, motifs, JSON) ✓ 2026-08-01
+- [x] csv-pick-columns : projection de colonnes CSV par nom/index/range (exclude, ordre, --check CI) ✓ 2026-08-01
+- [x] text-html-escape : encode/décode les entités HTML (named/decimal/hex, --check roundtrip, JSON) ✓ 2026-08-01
+- [x] number-to-words : convertit des nombres en toutes lettres (fr/en, ordinals, JSON) ✓ 2026-08-01
 
 ## Vague 208 — CLI Tools (CIDR, whitespace guillemets, CSV filtering, ROT, case)
 - [x] ip-cidr-tools : calcules CIDR (network/broadcast/hosts, contains, split, JSON) ✓ 2026-08-01
