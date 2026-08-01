@@ -26,12 +26,19 @@ Push automatique après chaque outil.
 - [x] url-strip-query : retire tout ou partie de la query string des URLs (keep-list, --check CI, JSON) ✓ 2026-08-01
 - [x] file-line-count-report : rapport nombre de lignes par fichier d'une arborescence (total, moyenne, --check CI, JSON) ✓ 2026-08-01
 
+## Vague 249 — CLI Tools (à définir)
+- [ ] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON)
+- [ ] json-depth-report : rapport de profondeur max/moyenne des documents JSONL (histogramme, --max-depth CI, JSON)
+- [ ] text-wrap-after-delimiter : coupe les lignes après chaque occurrence d'un délimiteur (;, |, --keep-delim CI, JSON)
+- [ ] url-extract-credentials : détecte les credentials user:pass@ dans des URLs (masquage, --redact CI, JSON)
+- [ ] file-owner-report : rapport par propriétaire (uid/user) des fichiers d'une arborescence (counts, tailles, --check CI, JSON)
+
 ## Vague 248 — CLI Tools (à définir)
-- [ ] csv-strict-width : vérifie que chaque ligne CSV a le même nombre de champs que le header (rapport écarts, --check CI, JSON)
-- [ ] json-merge-arrays-concat : fusionne des tableaux JSONL de mêmes index en concat (mode pairwise/first, --check CI, JSON)
-- [ ] text-blank-line-stats : statistiques sur les lignes vides (total, runs, run le plus long, positions, --check CI, JSON)
-- [ ] url-append-path : ajoute un segment de path à des URLs (trailing slash gérée, --index insert, --check CI, JSON)
-- [ ] file-ctime-report : rapport d'âge par ctime (metadata change) des fichiers (buckets, --stale-days CI, JSON)
+- [x] csv-strict-width : vérifie que chaque ligne CSV a le même nombre de champs que le header (rapport écarts, --check CI, JSON) ✓ 2026-08-01
+- [x] json-merge-arrays-concat : fusionne des tableaux JSONL de mêmes index en concat (mode pairwise/first, --check CI, JSON) ✓ 2026-08-01
+- [x] text-blank-line-stats : statistiques sur les lignes vides (total, runs, run le plus long, positions, --check CI, JSON) ✓ 2026-08-01
+- [x] url-append-path : ajoute un segment de path à des URLs (trailing slash gérée, --index insert, --check CI, JSON) ✓ 2026-08-01
+- [x] file-ctime-report : rapport d'âge par ctime (metadata change) des fichiers (buckets, --stale-days CI, JSON) ✓ 2026-08-01
 
 ## Vague 247 — CLI Tools (colonnes vides CSV, index JSON par clé, trim leading, segments path URL, rapport atime)
 - [x] csv-drop-empty-columns : supprime les colonnes entièrement vides d'un CSV (header conservé, --check CI, JSON) ✓ 2026-08-01
