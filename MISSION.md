@@ -61,6 +61,20 @@ Push automatique après chaque outil.
 - [x] url-detect-language : heuristique de langue d'une URL par TLD/path/query (--check LANGS CI, JSON) ✓ 2026-08-01
 - [x] file-hash-chain : chaîne de hash SHA-256 incrémentale par fichier (tip tamper-evident, --check TIP/manifeste CI, JSON) ✓ 2026-08-01
 
+## Vague 255 — CLI Tools (checksums de lignes CSV, nombres JSON, segments quotés, sous-domaines, préfixe timestamp)
+- [x] csv-add-checksum-column : ajoute une colonne hash d'intégrité par ligne CSV (md5/sha256, colonnes ciblées, --check manifeste CI, JSON) ✓ 2026-08-01
+- [x] json-extract-numbers : extrait tous les nombres d'un JSON/JSONL avec leur chemin (min/max/sum/mean, --check bornes CI, JSON) ✓ 2026-08-01
+- [x] text-extract-quoted : extrait les segments entre guillemets de chaque ligne (apostrophe-aware, quotes non refermées, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-subdomain : extrait le sous-domaine de chaque URL (co.uk/com.br/composite suffixes, --check CI, JSON) ✓ 2026-08-01
+- [x] file-timestamp-prefix : préfixe les fichiers de leur mtime YYYYMMDD-HHMMSS (idempotent, --dry-run/--apply/--check CI, JSON) ✓ 2026-08-01
+
+## Vague 256 — CLI Tools (à définir)
+- [ ] csv-split-by-column : éclate un CSV en un fichier par valeur de colonne clé (sortie dossier, --check CI, JSON)
+- [ ] json-count-deep : compte les noeuds d'un JSON par type et profondeur (histogramme, --check CI, JSON)
+- [ ] text-detect-chars : rapport des classes de caractères présentes (unicode categories, non-ASCII, --check ASCII CI, JSON)
+- [ ] url-normalize-query-empty : uniformise les paramètres query vides (a= vs a, --check CI, JSON)
+- [ ] file-ollvm-report : rapport sur les fichiers binaires ELF d'une arborescence (arch, linkage, --check CI, JSON)
+
 ## Vague 249 — CLI Tools (à définir)
 - [x] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON) ✓ 2026-08-01
 - [x] json-depth-report : rapport de profondeur max/moyenne des documents JSONL (histogramme, --max-depth CI, JSON) ✓ 2026-08-01
