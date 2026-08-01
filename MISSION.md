@@ -374,12 +374,19 @@ Push automatique après chaque outil.
 - [x] url-sort-path-segments : trie les segments du path d'URLs alphabétiquement (premier ancré, --check CI, JSON) ✓ 2026-08-01
 - [x] file-symlink-chain-report : résout les chaînes de symlinks d'une arborescence (longueur, boucles, cibles cassées, --max-depth CI, JSON) ✓ 2026-08-01
 
-## Vague 302 — CLI Tools (à faire)
-- [ ] csv-column-fill-backward : propage la première valeur non vide vers le haut dans des colonnes CSV (groupes par clé, --check CI, JSON)
-- [ ] json-extract-path-values : extrait toutes les valeurs sous un dot-path incluant tableaux (wildcard *, --check CI, JSON)
-- [ ] text-count-char-runs : compte les runs d'un caractère donné dans chaque ligne (--char, --min-run CI, JSON)
-- [ ] url-normalize-segment-case : met les segments path d'URLs en minuscules sauf segments protégés (liste, --check CI, JSON)
-- [ ] file-same-content-as-stdin : liste les fichiers d'un dossier dont le contenu matche exactement stdin (hash, --check CI, JSON)
+## Vague 302 — CLI Tools (bfill CSV, wildcard JSON, runs caractères, casse segments URL, contenu stdin)
+- [x] csv-column-fill-backward : propage la première valeur non vide vers le haut dans des colonnes CSV (groupes par clé, --check CI, JSON) ✓ 2026-08-01
+- [x] json-extract-path-values : extrait toutes les valeurs sous un dot-path incluant tableaux (wildcard *, --require CI, JSON) ✓ 2026-08-01
+- [x] text-count-char-runs : compte les runs d'un caractère donné dans chaque ligne (--char, --min-run CI, JSON) ✓ 2026-08-01
+- [x] url-normalize-segment-case : met les segments path d'URLs en minuscules sauf segments protégés (regex, --check CI, JSON) ✓ 2026-08-01
+- [x] file-same-content-as-stdin : liste les fichiers d'un dossier dont le contenu matche exactement stdin (sha256, --require CI, JSON) ✓ 2026-08-01
+
+## Vague 303 — CLI Tools (à faire)
+- [ ] csv-last-non-empty-row : garde seulement les cellules non vides de la dernière occurrence par clé (dedupe keep-last-non-empty, --check CI, JSON)
+- [ ] json-round-trip-check : vérifie qu'un JSON re-sérialisé canoniquement est identique octet-pour-octet (sorted keys, --check CI, JSON)
+- [ ] text-strip-matching-lines : retire les lignes matchant un pattern ET leurs N lignes de contexte (--before/--after, --check CI, JSON)
+- [ ] url-detect-localhost : détecte les URLs pointant vers localhost/127.0.0.0/8/::1/.local (report, --check CI, JSON)
+- [ ] file-name-hash-collision : vérifie qu'aucun fichier n'a le même nom normalisé (lower, strip accents) sous un autre dossier (--check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
