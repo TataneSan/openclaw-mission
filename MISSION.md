@@ -238,12 +238,19 @@ Push automatique après chaque outil.
 - [x] url-domain-age-hint : score heuristique d'âge d'un domaine dans une URL (motifs, tld, --check CI, JSON) ✓ 2026-08-01
 - [x] file-tree-manifest : génère un manifeste path+size+mtime+sha256 d'une arborescence (--verify CI, JSON) ✓ 2026-08-01
 
-## Vague 281 — CLI Tools (à faire)
-- [ ] csv-add-bucket-label : ajoute une colonne de label de bucket par seuils numériques (--thresholds, --labels, --check CI, JSON)
-- [ ] json-merge-key-precedence : fusionne deux objets JSON avec ordre de priorité des clés documenté (left/right, --check CI, JSON)
-- [ ] text-collapse-repeats : réduit les répétitions consécutives d'un caractère à N occurrences (--char, --max, --check CI, JSON)
-- [ ] url-path-swap-segments : échange deux segments positionnels du path d'URLs (--i, --j, --check CI, JSON)
-- [ ] file-content-type-report : rapport des types MIME détectés par magic numbers dans une arborescence (histogramme, --check CI, JSON)
+## Vague 281 — CLI Tools (buckets CSV, priorité clés JSON, répétitions, swap segments URL, types MIME)
+- [x] csv-add-bucket-label : ajoute une colonne de label de bucket par seuils numériques (--thresholds, --labels, --check CI, JSON) ✓ 2026-08-01
+- [x] json-merge-key-precedence : fusionne deux objets JSON avec ordre de priorité des clés documenté (left/right, --check CI, JSON) ✓ 2026-08-01
+- [x] text-collapse-repeats : réduit les répétitions consécutives d'un caractère à N occurrences (--char, --max, --check CI, JSON) ✓ 2026-08-01
+- [x] url-path-swap-segments : échange deux segments positionnels du path d'URLs (--i, --j, --check CI, JSON) ✓ 2026-08-01
+- [x] file-content-type-report : rapport des types MIME détectés par magic numbers dans une arborescence (histogramme, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 282 — CLI Tools (à faire)
+- [ ] csv-bucket-counts : compte les lignes par bucket de valeurs numériques (histogramme fixe, --check CI, JSON)
+- [ ] json-remove-empty-containers : retire les objets/tableaux vides récursivement d'un JSON (keep-null, --check CI, JSON)
+- [ ] text-collapse-whitespace-runs : réduit les runs d'espaces/tabs à un seul séparateur (style tr -s, --check CI, JSON)
+- [ ] url-path-swap-params-to-headers : déplace des paramètres query vers des pseudo-headers X-Param (mode debug, --check CI, JSON)
+- [ ] file-mime-extension-mismatch : signale les fichiers dont le magic number contredit l'extension déclarée (rapport, --check CI, JSON)
 
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
