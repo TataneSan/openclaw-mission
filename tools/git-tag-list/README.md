@@ -1,109 +1,63 @@
 # git-tag-list
 
-List git tags with details: date, type (annotated/lightweight), author, message, and target commit.
+List and analyze git tags: versions, dates, pre-release flags, and version gaps.
+
+## Features
+
+- Lists tags with date and annotated/lightweight marker
+- Semver-aware sorting (`v1.9.0` < `v1.10.0`)
+- Pre-release detection (`rc`, `beta`, `alpha`...)
+- Version gap detection (skipped minor/major numbers)
+- Regex filtering, `--semver`-only mode, limit / reverse
+- `--json` machine-readable output
+- Exit code 2 when no tags match (CI-friendly)
 
 ## Install
 
 ```bash
-go install github.com/TataneSan/git-tag-list@latest
+pip install .
+# or
+pip install git+https://github.com/TataneSan/git-tag-list.git
 ```
 
 ## Usage
 
-```
-git-tag-list [options] [repo]
-```
-
-## Options
-
-| Flag | Description |
-|------|-------------|
-| `-f, --format FORMAT` | Output format: `table` (default), `json`, `csv` |
-| `-s, --sort FIELD` | Sort field: `name` (default), `date`, `author` |
-| `-r, --reverse` | Reverse sort order |
-| `-h, --help` | Show help message |
-
-## Arguments
-
-| Arg | Description |
-|-----|-------------|
-| `repo` | Path to git repository (default: current directory) |
-
-## Examples
-
-List tags in current repo:
-
 ```bash
+# inside a repo
 git-tag-list
+
+# tags of another repo, sorted by version (default)
+git-tag-list /path/to/repo
+
+# latest 5 releases, only strict semver
+git-tag-list --semver --limit 5
+
+# newest first with gap detection
+git-tag-list --reverse --gaps
+
+# JSON for scripting
+git-tag-list --json | jq '.tags[-1].name'
+
+# filter by pattern
+git-tag-list --grep '^v2\.'
 ```
 
-Output as JSON:
-
-```bash
-git-tag-list --format json
-```
-
-Sort by date, newest first:
-
-```bash
-git-tag-list --sort date --reverse
-```
-
-List tags in a specific repo:
-
-```bash
-git-tag-list ./path/to/repo
-```
-
-## Output
-
-### Table (default)
+Sample output:
 
 ```
-NAME                      TYPE         DATE       AUTHOR               MESSAGE
-----------------------------------------------------------------------------------------------------
-v1.0.0                    lightweight  2026-05-28 Alice                Initial release
-v2.0.0                    annotated    2026-05-29 Alice                Release v2
-
-2 tag(s)
+v1.0.0                   2026-01-12  [annotated]
+v1.1.0-rc.1              2026-02-03  [annotated, pre:rc.1]
+v1.1.0                   2026-02-10  [annotated]
+v2.0.0                   2026-05-01  [annotated]
 ```
 
-### JSON
-
-```json
-[
-  {
-    "name": "v1.0.0",
-    "type": "lightweight",
-    "target": "a1b2c3d4e5",
-    "date": "2026-05-28T12:00:00Z",
-    "author": "Alice",
-    "message": "Initial release"
-  }
-]
-```
-
-### CSV
-
-```csv
-name,type,target,date,author,message
-v1.0.0,lightweight,a1b2c3d4e5,2026-05-28,Alice,Initial release
-```
-
-## Features
-
-- Detects annotated vs lightweight tags
-- Shows tagger date and author
-- Retrieves commit author for lightweight tags
-- Sortable by name, date, or author
-- Three output formats: table, JSON, CSV
-
-## Exit Codes
+## Exit codes
 
 | Code | Meaning |
 |------|---------|
 | 0 | Success |
-| 1 | Error (not a git repo, etc.) |
+| 1 | I/O or CLI error (not a git repo, git missing) |
+| 2 | No tags found |
 
 ## License
 

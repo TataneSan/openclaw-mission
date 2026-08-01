@@ -1,2 +1,6 @@
-tools/
-git-tag-list
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/

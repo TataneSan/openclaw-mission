@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csv-column-stats"
+version = "1.0.0"
+description = "Numeric statistics per CSV column (min/max/mean/median/stdev)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+csv-column-stats = "csv_column_stats.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["csv_column_stats*"]

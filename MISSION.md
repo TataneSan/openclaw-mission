@@ -6,11 +6,18 @@ JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
 ## Vague 238 — CLI Tools (à définir)
-- [ ] csv-column-stats : statistiques numériques par colonne CSV (min/max/mean/median, colonnes ciblées, --check CI, JSON)
-- [ ] json-diff-patch : génère un patch JSON (RFC 6902-like simplifié) entre deux documents (--apply, --check CI, JSON)
-- [ ] text-number-lines : numérote les lignes (start/step, largeur fixe, skip blank, --check CI, JSON)
-- [ ] url-add-params : ajoute/remplace des paramètres query dans des URLs en flux (k=v, --replace, --check CI, JSON)
-- [ ] file-hardlink-detect : liste les fichiers partageant le même inode dans une arborescence (--min-links, --check CI, JSON)
+- [x] csv-column-stats : statistiques numériques par colonne CSV (min/max/mean/median, colonnes ciblées, --check CI, JSON) ✓ 2026-08-01
+- [x] json-diff-patch : génère un patch JSON (RFC 6902-like simplifié) entre deux documents (--apply, --check CI, JSON) ✓ 2026-08-01
+- [x] text-number-lines : numérote les lignes (start/step, largeur fixe, skip blank, --check CI, JSON) ✓ 2026-08-01
+- [x] url-set-params : ajoute/remplace des paramètres query dans des URLs en flux (k=v, --replace, --check CI, JSON) ✓ 2026-08-01
+- [x] file-hardlink-detect : liste les fichiers partageant le même inode dans une arborescence (--min-links, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 239 — CLI Tools (à définir)
+- [ ] csv-fill-header : complète les en-têtes manquantes d'un CSV (col_N, détection, --check CI, JSON)
+- [ ] json-merge-objects : fusionne des objets JSON (deep/shallow, arrays append/replace, --check CI, JSON)
+- [ ] text-strip-prefix : retire un préfixe commun ou fixe de chaque ligne (auto-detect, --check CI, JSON)
+- [ ] url-extract-params : extrait les paramètres query d'URLs en clés/valeurs tabulées (--unique CI, JSON)
+- [ ] file-size-outliers : liste les fichiers dont la taille dévie de la médiane d'une arborescence (--factor CI, JSON)
 
 ## Vague 237 — CLI Tools (réordonnage colonnes CSV, tri clés JSON récursif, collapse répétitions, strip fragments URL, symlinks cassés)
 - [x] csv-reorder-columns : réordonne les colonnes par liste de noms/indices (reste append/prepend, --check CI, JSON) ✓ 2026-08-01
