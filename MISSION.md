@@ -26,12 +26,19 @@ Push automatique après chaque outil.
 - [x] url-strip-query : retire tout ou partie de la query string des URLs (keep-list, --check CI, JSON) ✓ 2026-08-01
 - [x] file-line-count-report : rapport nombre de lignes par fichier d'une arborescence (total, moyenne, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 247 — CLI Tools (à définir)
-- [ ] csv-drop-empty-columns : supprime les colonnes entièrement vides d'un CSV (header conservé, --check CI, JSON)
-- [ ] json-netaddr-index : indexe des objets JSONL par un champ clé vers un tableau (clé dupliquée agrégée, --check CI, JSON)
-- [ ] text-trim-leading : retire les espaces/tabulations en début de ligne (--in-place, --min-indent CI, JSON)
-- [ ] url-extract-path-segments : extrait les segments d'URL path en colonnes (index, join char, --check CI, JSON)
-- [ ] file-atime-report : rapport d'âge par atime (last access) des fichiers d'une arborescence (buckets, --check CI, JSON)
+## Vague 248 — CLI Tools (à définir)
+- [ ] csv-strict-width : vérifie que chaque ligne CSV a le même nombre de champs que le header (rapport écarts, --check CI, JSON)
+- [ ] json-merge-arrays-concat : fusionne des tableaux JSONL de mêmes index en concat (mode pairwise/first, --check CI, JSON)
+- [ ] text-blank-line-stats : statistiques sur les lignes vides (total, runs, run le plus long, positions, --check CI, JSON)
+- [ ] url-append-path : ajoute un segment de path à des URLs (trailing slash gérée, --index insert, --check CI, JSON)
+- [ ] file-ctime-report : rapport d'âge par ctime (metadata change) des fichiers (buckets, --stale-days CI, JSON)
+
+## Vague 247 — CLI Tools (colonnes vides CSV, index JSON par clé, trim leading, segments path URL, rapport atime)
+- [x] csv-drop-empty-columns : supprime les colonnes entièrement vides d'un CSV (header conservé, --check CI, JSON) ✓ 2026-08-01
+- [x] json-netaddr-index : indexe des objets JSONL par un champ clé vers un tableau (clé dupliquée agrégée, --check CI, JSON) ✓ 2026-08-01
+- [x] text-trim-leading : retire les espaces/tabulations en début de ligne (--in-place, --min-indent CI, JSON) ✓ 2026-08-01
+- [x] url-extract-path-segments : extrait les segments d'URL path en colonnes (index, join char, --check CI, JSON) ✓ 2026-08-01
+- [x] file-atime-report : rapport d'âge par atime (last access) des fichiers d'une arborescence (buckets, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 246 — CLI Tools (normalisation nuls CSV, wrap/unwrap clé JSON, squeeze lignes vides, fragments URL, snapshots mtime)
 - [x] csv-normalize-nulls : uniformise les valeurs nulles d'un CSV (NA/N/A/null/"" -> "", --check CI, JSON) ✓ 2026-08-01
