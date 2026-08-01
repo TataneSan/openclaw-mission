@@ -205,11 +205,19 @@ Push automatique après chaque outil.
 - [x] file-largest-per-ext : plus gros fichier par extension d'une arborescence (top-N, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 276 — CLI Tools (à définir)
-- [ ] csv-column-shift : décale les valeurs d'une colonne CSV vers le haut/bas (fill vide, --check CI, JSON)
-- [ ] json-pluck-unique : extrait les valeurs uniques d'un chemin dot-path à travers JSONL (comptage, --check CI, JSON)
-- [ ] text-strip-markdown-format : retire le formatage markdown (**, *, _, ``, ~~) en gardant le texte (--check CI, JSON)
-- [ ] url-parse-userinfo : extrait user/pass des URLs et les masque (show/partial, --check CI, JSON)
-- [ ] file-permission-classes : rapport des classes de permissions ugo par dossier (rwx histogramme, --check CI, JSON)
+- [x] csv-column-shift : décale les valeurs d'une colonne CSV vers le haut/bas (fill vide, --check CI, JSON) ✓ 2026-08-01
+- [x] json-pluck-unique : extrait les valeurs uniques d'un chemin dot-path à travers JSONL (comptage, --check CI, JSON) ✓ 2026-08-01
+- [x] text-strip-markdown-format : retire le formatage markdown (**, *, _, ``, ~~) en gardant le texte (--check CI, JSON) ✓ 2026-08-01
+- [x] url-parse-userinfo : extrait user/pass des URLs et les masque (show/partial, --check CI, JSON) ✓ 2026-08-01
+- [x] file-permission-classes : rapport des classes de permissions ugo par dossier (rwx histogramme, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 277 — CLI Tools (à définir)
+- [ ] csv-row-digest : calcule un hash par ligne CSV (colonnes choisies, algo md5/sha1/sha256, --check manifeste CI, JSON)
+- [ ] json-coalesce : remplace les valeurs null/vides à un dot-path par la première valeur par défaut fournie (--values-list, --check CI, JSON)
+- [ ] text-strip-html-tags : retire les balises HTML en gardant le texte (entités décodées, --check CI, JSON)
+- [ ] url-extract-id-pattern : extrait des IDs numériques/uuid des segments path d'URLs (regex embarqué, --check CI, JSON)
+- [ ] file-magic-header-dump : dump hex des N premiers octets par fichier d'une arborescence (--bytes N, --check CI, JSON)
+
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
