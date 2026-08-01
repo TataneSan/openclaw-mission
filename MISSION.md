@@ -191,11 +191,18 @@ Push automatique après chaque outil.
 - [x] file-mtime-shift : applique un décalage horaire aux mtimes d'une arborescence (±Nh, --dry-run, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 274 — CLI Tools (à définir)
-- [ ] csv-strip-bom-rows : retire les U+FEFF BOM des cellules en début de ligne CSV (--check CI, JSON)
-- [ ] json-path-stats : statistiques par dot-path (type distribution, count, --check CI, JSON)
-- [ ] text-first-letters : extrait le premier caractère de chaque mot (acrostiche, --upper CI, JSON)
-- [ ] url-scheme-canonical : normalise scheme+host et retire le default port d'URLs (--check CI, JSON)
-- [ ] file-dupe-basename-groups : groupe les fichiers par basename partagé entre dossiers (--check CI, JSON)
+- [x] csv-strip-bom-rows : retire les U+FEFF BOM des cellules en début de ligne CSV (--check CI, JSON) ✓ 2026-08-01
+- [x] json-path-stats : statistiques par dot-path (type distribution, count, --check CI, JSON) ✓ 2026-08-01
+- [x] text-first-letters : extrait le premier caractère de chaque mot (acrostiche, --upper CI, JSON) ✓ 2026-08-01
+- [x] url-scheme-canonical : normalise scheme+host et retire le default port d'URLs (--check CI, JSON) ✓ 2026-08-01
+- [x] file-dupe-basename-groups : groupe les fichiers par basename partagé entre dossiers (--check CI, JSON) ✓ 2026-08-01
+
+## Vague 275 — CLI Tools (à définir)
+- [ ] csv-normalize-delimiter : réécrit un CSV avec un délimiteur cible uniforme (quoting minimal, --check CI, JSON)
+- [ ] json-flatten-max-depth : aplatit un JSON en limitant la profondeur d'expansion (truncate marker, --check CI, JSON)
+- [ ] text-second-letters : extrait le deuxième caractère de chaque mot (--upper CI, JSON)
+- [ ] url-https-upgrade : récrit les URLs http:// en https:// sauf exceptions fichier (--check CI, JSON)
+- [ ] file-largest-per-ext : plus gros fichier par extension d'une arborescence (top-N, --check CI, JSON)
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
