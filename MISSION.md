@@ -273,12 +273,19 @@ Push automatique après chaque outil.
 - [x] url-add-default-scheme : ajoute https:// aux URLs sans scheme (exceptions bare-IP, --check CI, JSON) ✓ 2026-08-01
 - [x] file-newest-oldest-per-ext : plus récent/plus ancien fichier par extension (mtime, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 287 — CLI Tools (à faire)
-- [ ] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON)
-- [ ] json-flatten-keys : aplatit un JSON en paires chemin=valeur (séparateur dot, arrays indexés, --check CI, JSON)
-- [ ] text-sort-by-length : trie les lignes par longueur (asc/desc, tie-break alpha, --check CI, JSON)
-- [ ] url-extract-query-keys-values : éclate chaque URL en lignes key=value pour la query (dedup, --check CI, JSON)
-- [ ] file-oldest-first-list : liste les fichiers d'une arborescence triés par mtime croissant (--top, --check CI, JSON)
+## Vague 288 — CLI Tools (à faire)
+- [ ] csv-remove-column : supprime une ou plusieurs colonnes d'un CSV (par nom ou index, --require CI, JSON)
+- [ ] json-sort-keys-deep : trie les clés de tous les objets d'un JSON/JSONL récursivement (arrays préservés, --check CI, JSON)
+- [ ] text-unique-words : extrait les mots uniques d'un texte (normalisation, tri, --check CI, JSON)
+- [ ] url-remove-query-param : retire des paramètres query ciblés des URLs (blacklist, keep-blank, --check CI, JSON)
+- [ ] file-recent-hours : liste les fichiers modifiés dans les N dernières heures (--hours, --check CI, JSON)
+
+## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
+- [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
+- [x] json-flatten-keys : aplatit un JSON en paires chemin=valeur (séparateur dot, arrays indexés, --check CI, JSON) ✓ 2026-08-01
+- [x] text-sort-by-length : trie les lignes par longueur (asc/desc, tie-break alpha, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-query-keys-values : éclate chaque URL en lignes key=value pour la query (dedup, --check CI, JSON) ✓ 2026-08-01
+- [x] file-oldest-first-list : liste les fichiers d'une arborescence triés par mtime croissant (--top, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 286 — CLI Tools (whitelist CSV, unescape JSON, table→kv, strip www, taille par owner)
 - [x] csv-column-keep : garde seulement certaines colonnes d'un CSV (whitelist par nom ou index, --require CI, JSON) ✓ 2026-08-01
