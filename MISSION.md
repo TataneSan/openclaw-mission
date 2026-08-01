@@ -592,11 +592,18 @@ Push automatique après chaque outil.
 - [x] file-duplicate-names-report : rapport des noms de fichiers en double avec chemins complets (--check CI, JSON) ✓ 2026-08-02
 
 ## Vague 333 — CSV/JSON/text/URL/file mix
-- [ ] csv-add-column-index : ajoute une colonne d'index 1-based à un CSV (--start, --check CI, JSON)
-- [ ] json-array-length-check : vérifie que tous les tableaux d'un chemin JSON ont la même longueur (--length, --check CI, JSON)
-- [ ] text-strip-inline-whitespace : réduit les whitespace internes multiples à un seul espace (--check CI, JSON)
-- [ ] url-extract-port-list : extrait et liste les ports uniques des URLs (--check CI, JSON)
-- [ ] file-large-files-report : rapport des fichiers dépassant une taille seuil (--min-size, --check CI, JSON)
+- [x] csv-add-column-index : ajoute une colonne d'index 1-based à un CSV (--start, --check CI, JSON) ✓ 2026-08-02
+- [x] json-array-length-check : vérifie que tous les tableaux d'un chemin JSON ont la même longueur (--length, --check CI, JSON) ✓ 2026-08-02
+- [x] text-strip-inline-whitespace : réduit les whitespace internes multiples à un seul espace (--check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-port-list : extrait et liste les ports uniques des URLs (--check CI, JSON) ✓ 2026-08-02
+- [x] file-large-files-report : rapport des fichiers dépassant une taille seuil (--min-size, --check CI, JSON) ✓ 2026-08-02
+
+## Vague 334 — CSV/JSON/text/URL/file mix
+- [ ] csv-filter-empty-rows : retire les lignes entièrement vides d'un CSV (--check CI, JSON)
+- [ ] json-key-case-report : rapport des styles de casse des clés JSON (camel/snake/kebab, --check CI, JSON)
+- [ ] text-collapse-multiple-blank : réduit les lignes vides multiples à une seule (--max, --check CI, JSON)
+- [ ] url-query-add-param : ajoute un paramètre query à des URLs (--check CI, JSON)
+- [ ] file-permission-world-writable : liste les fichiers world-writable d'une arborescence (--check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
