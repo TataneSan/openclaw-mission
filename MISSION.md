@@ -26,12 +26,19 @@ Push automatique après chaque outil.
 - [x] url-strip-query : retire tout ou partie de la query string des URLs (keep-list, --check CI, JSON) ✓ 2026-08-01
 - [x] file-line-count-report : rapport nombre de lignes par fichier d'une arborescence (total, moyenne, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 250 — CLI Tools (à définir)
-- [ ] csv-sample-rows : échantillonne N lignes d'un CSV (seed, reservoir, --check CI, JSON)
-- [ ] json-extract-paths-matching : extrait les paires chemin=valeur dont le chemin matche un regex (--invert CI, JSON)
-- [ ] text-frequency-words : fréquence des mots d'un texte (top-N, min-length, stop-words fichier, --check CI, JSON)
-- [ ] url-detect-redirect-style : classe les URLs par style de redirection (?url=, /redirect/, shorteners, --check CI, JSON)
-- [ ] file-extension-mismatch : détecte les fichiers dont le magic number contredit l'extension (png/jpg/pdf/zip/gz, --check CI, JSON)
+## Vague 250 — CLI Tools (échantillon CSV, chemins JSON par regex, fréquence mots, style redirect URL, magic numbers)
+- [x] csv-sample-rows : échantillonne N lignes d'un CSV (seed, reservoir, --require CI, JSON) ✓ 2026-08-01
+- [x] json-extract-paths-matching : extrait les paires chemin=valeur dont le chemin matche un regex (--invert, --require CI, JSON) ✓ 2026-08-01
+- [x] text-frequency-words : fréquence des mots d'un texte (top-N, min-length, stop-words fichier, --check CI, JSON) ✓ 2026-08-01
+- [x] url-detect-redirect-style : classe les URLs par style de redirection (?url=, /redirect/, shorteners, --check CI, JSON) ✓ 2026-08-01
+- [x] file-extension-mismatch : détecte les fichiers dont le magic number contredit l'extension (png/jpg/pdf/zip/gz, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 251 — CLI Tools (à définir)
+- [ ] csv-replace-values : remplace des valeurs exactes ou regex dans des colonnes CSV ciblées (mapping fichier, --dry-run CI, JSON)
+- [ ] json-array-flatten : aplatit les tableaux imbriqués d'un document JSON/JSONL à une profondeur donnée (--depth, --check CI, JSON)
+- [ ] text-number-words : convertit les nombres en toutes lettres et inversement (en/fr, plage, --check CI, JSON)
+- [ ] url-compare-parts : diff structurel de deux URLs (scheme/host/port/path/query/fragment, --same-host CI, JSON)
+- [ ] file-permission-report : rapport sur les bits de permission inhabituels d'une arborescence (world-writable, suid, --check CI, JSON)
 
 ## Vague 249 — CLI Tools (à définir)
 - [x] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON) ✓ 2026-08-01
