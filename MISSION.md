@@ -536,11 +536,39 @@ Push automatique après chaque outil.
 - [x] file-permission-check : vérifie les permissions d'une arborescence (--expect/--max octal, --apply, CI, JSON) ✓ 2026-08-02
 
 ## Vague 325 — CSV/JSON/text/URL/file mix
-- [ ] csv-median-column : calcule la médiane d'une colonne CSV (-c, percentiles, --check CI, JSON)
-- [ ] json-key-frequency : fréquence d'occurrence de chaque clé sur un JSONL (top-N, --check CI, JSON)
-- [ ] text-longest-line : affiche la plus longue ligne et son numéro (--top, --check CI, JSON)
-- [ ] url-swap-scheme : permute http/https des URLs (--check CI, JSON)
-- [ ] file-empty-dirs : liste les dossiers vides d'une arborescence (--prune, --check CI, JSON)
+- [x] csv-median-column : calcule la médiane d'une colonne CSV (-c, percentiles, --check CI, JSON) ✓ 2026-08-02 (déjà publié)
+- [x] json-key-frequency : fréquence d'occurrence de chaque clé sur un JSONL (top-N, --check CI, JSON) ✓ 2026-08-02 (déjà publié Vague 306)
+- [x] text-longest-line : affiche la plus longue ligne et son numéro (--top, --check CI, JSON) ✓ 2026-08-02
+- [x] url-swap-scheme : permute http/https (ws/wss, ftp/sftp) des URLs (--to, --check CI, JSON) ✓ 2026-08-02
+- [x] file-empty-dirs : liste les dossiers vides d'une arborescence (--prune, --check CI, JSON) ✓ 2026-08-02 (déjà publié)
+
+## Vague 326 — CSV/JSON/text/URL/file mix
+- [x] csv-row-swap : échange deux lignes de données d'un CSV par position (1-based, --check CI, JSON) ✓ 2026-08-02
+- [x] json-extract-booleans : liste toutes les valeurs booléennes d'un JSON/JSONL avec leur chemin (--check CI, JSON) ✓ 2026-08-02
+- [x] text-strip-trailing-punct : retire la ponctuation terminale de chaque ligne (. , ; : ! ?, --chars, --check CI, JSON) ✓ 2026-08-02
+- [x] url-add-path-prefix : préfixe le path des URLs d'un segment (/api/v1, trailing slash gérée, --check CI, JSON) ✓ 2026-08-02
+- [x] file-permission-setuid-detect : liste les fichiers setuid/setgid d'une arborescence (rapport, --check CI, JSON) ✓ 2026-08-02
+
+## Vague 327 — CSV/JSON/text/URL/file mix
+- [x] csv-column-last-non-empty : remplace chaque cellule vide par la dernière valeur non vide au-dessus dans la colonne (--cols, --check CI, JSON) ✓ 2026-08-02
+- [x] json-count-array-items : compte total d'éléments de tous les tableaux d'un JSON/JSONL (par chemin, --check CI, JSON) ✓ 2026-08-02
+- [x] text-duplicate-word-detect : détecte les mots répétés consécutivement dans chaque ligne ("the the", --ignore-case, --check CI, JSON) ✓ 2026-08-02
+- [x] url-strip-path-suffix : retire un suffixe de path des URLs (/index.html, --suffix, --check CI, JSON) ✓ 2026-08-02
+- [x] file-extension-lowercase-check : vérifie que toutes les extensions sont en minuscules (--apply rename, --check CI, JSON) ✓ 2026-08-02
+
+## Vague 328 — CSV/JSON/text/URL/file mix
+- [x] csv-collapse-blank-rows : retire les lignes vides (ou ne contenant que des virgules/espaces) d'un CSV (--check CI, JSON) ✓ 2026-08-02
+- [x] json-extract-top-level-arrays : extrait les tableaux racine d'un JSON/JSONL en lignes JSONL séparées (--min-len, --check CI, JSON) ✓ 2026-08-02
+- [x] text-swap-word-pairs : échange deux mots donnés dans chaque ligne (--a/--b, simultané --check CI, JSON) ✓ 2026-08-02
+- [x] url-host-replace-mapping : remplace des hosts d'URLs via mapping fichier old=new (port préservé, --check CI, JSON) ✓ 2026-08-02
+- [x] file-oldest-per-build-dir : trouve le fichier le plus ancien de chaque sous-dossier (bascule de build stale, --check CI, JSON) ✓ 2026-08-02
+
+## Vague 329 — CSV/JSON/text/URL/file mix
+- [ ] csv-swap-columns : échange deux colonnes d'un CSV par nom ou index (--check CI, JSON)
+- [ ] json-pick-random-key : sélectionne une clé aléatoire (seed) par objet JSONL (--check CI, JSON)
+- [ ] text-wrap-prefix-indent : re-wrap les lignes longues en indentant la continuation (--width, --check CI, JSON)
+- [ ] url-remove-default-port : retire le port par défaut du scheme (:80 http, :443 https) des URLs (--check CI, JSON)
+- [ ] file-empty-dirs-list : liste les dossiers vides d'une arborescence (--delete, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
