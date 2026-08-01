@@ -273,7 +273,14 @@ Push automatique après chaque outil.
 - [x] url-add-default-scheme : ajoute https:// aux URLs sans scheme (exceptions bare-IP, --check CI, JSON) ✓ 2026-08-01
 - [x] file-newest-oldest-per-ext : plus récent/plus ancien fichier par extension (mtime, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 286 — CLI Tools (à faire)
+## Vague 287 — CLI Tools (à faire)
+- [ ] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON)
+- [ ] json-flatten-keys : aplatit un JSON en paires chemin=valeur (séparateur dot, arrays indexés, --check CI, JSON)
+- [ ] text-sort-by-length : trie les lignes par longueur (asc/desc, tie-break alpha, --check CI, JSON)
+- [ ] url-extract-query-keys-values : éclate chaque URL en lignes key=value pour la query (dedup, --check CI, JSON)
+- [ ] file-oldest-first-list : liste les fichiers d'une arborescence triés par mtime croissant (--top, --check CI, JSON)
+
+## Vague 286 — CLI Tools (whitelist CSV, unescape JSON, table→kv, strip www, taille par owner)
 - [x] csv-column-keep : garde seulement certaines colonnes d'un CSV (whitelist par nom ou index, --require CI, JSON) ✓ 2026-08-01
 - [x] json-unescape-strings : décode les séquences \n \t \uXXXX dans les valeurs string d'un JSONL (--check CI, JSON) ✓ 2026-08-01
 - [x] text-columns-to-lines : convertit un tableau whitespace en lignes clé=valeur (--kv, --check CI, JSON) ✓ 2026-08-01
