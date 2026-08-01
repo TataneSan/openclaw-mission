@@ -55,11 +55,11 @@ Push automatique après chaque outil.
 - [x] file-symlink-report : inventaire des symlinks d'une arborescence (target exists/missing, relative/absolute, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 254 — CLI Tools (à définir)
-- [ ] csv-group-by-count : agrège un CSV par une colonne clé et compte les occurrences (top-N, --check CI, JSON)
-- [ ] json-extract-types : rapport des types JSON par chemin dans un JSONL (histogramme, --check CI, JSON)
-- [ ] text-repeat-pattern : détecte les motifs répétés consécutifs dans chaque ligne (N répétitions min, --check CI, JSON)
-- [ ] url-detect-language : heuristique de langue du contenu d'une URL par TLD/path (fr/en/..., --check CI, JSON)
-- [ ] file-hash-chain : chaîne de hash incrémentale par fichier (tri chemin, sha1 précédent+contenu, --check CI, JSON)
+- [x] csv-group-by-count : agrège un CSV par une colonne clé et compte les occurrences (top-N, --check CI, JSON) ✓ 2026-08-01
+- [x] json-extract-types : rapport des types JSON par chemin dans un JSONL (histogramme MIXED, --check CI, JSON) ✓ 2026-08-01
+- [x] text-repeat-pattern : détecte les motifs répétés consécutifs dans chaque ligne (--min-times, --check CI, JSON) ✓ 2026-08-01
+- [x] url-detect-language : heuristique de langue d'une URL par TLD/path/query (--check LANGS CI, JSON) ✓ 2026-08-01
+- [x] file-hash-chain : chaîne de hash SHA-256 incrémentale par fichier (tip tamper-evident, --check TIP/manifeste CI, JSON) ✓ 2026-08-01
 
 ## Vague 249 — CLI Tools (à définir)
 - [x] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON) ✓ 2026-08-01
