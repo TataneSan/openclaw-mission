@@ -515,11 +515,18 @@ Push automatique après chaque outil.
 - [x] file-content-grep-count : compte les occurrences d'un motif par fichier d'une arborescence (totaux, --threshold CI, JSON) ✓ 2026-08-02
 
 ## Vague 322 — CSV/JSON/text/URL/file mix
-- [ ] csv-add-line-hash : ajoute une colonne avec le hash de chaque ligne (md5/sha256, --check CI, JSON)
-- [ ] json-extract-strings : liste toutes les chaînes d'un document JSON avec leur chemin (min-length, --check CI, JSON)
-- [ ] text-first-words : garde les N premiers mots de chaque ligne (--ellipsis, --check CI, JSON)
-- [ ] url-scheme-downgrade-check : détecte les URLs https ayant un équivalent http dans la liste (--check CI, JSON)
-- [ ] file-duplicate-names : liste les noms de fichiers apparaissant en plusieurs endroits d'une arborescence (--check CI, JSON)
+- [x] csv-add-line-hash : ajoute une colonne avec le hash de chaque ligne (md5/sha256, --check CI, JSON) ✓ 2026-08-02
+- [x] json-extract-strings : liste toutes les chaînes d'un document JSON avec leur chemin (min-length, --check CI, JSON) ✓ 2026-08-02
+- [x] text-first-words : garde les N premiers mots de chaque ligne (--ellipsis, --check CI, JSON) ✓ 2026-08-02
+- [x] url-scheme-downgrade-check : détecte les URLs https ayant un équivalent http dans la liste (--check CI, JSON) ✓ 2026-08-02
+- [x] file-duplicate-names : liste les noms de fichiers apparaissant en plusieurs endroits d'une arborescence (--check CI, JSON) ✓ 2026-08-02
+
+## Vague 323 — CSV/JSON/text/URL/file mix
+- [ ] csv-sort-by-column : trie les lignes d'un CSV par une colonne (numérique ou alpha, --reverse, --check CI, JSON)
+- [ ] json-path-value-set : assigne une valeur à un chemin dot dans un JSONL (create missing, --check CI, JSON)
+- [ ] text-column-extract : extrait une colonne N d'un texte whitespace-séparé (1-based, --check CI, JSON)
+- [ ] url-query-remove-params : retire des paramètres nommés de la query des URLs (keep-list inverse, --check CI, JSON)
+- [ ] file-age-buckets : regroupe les fichiers par tranche d'âge (<1d, <1w, <1m, plus vieux, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
