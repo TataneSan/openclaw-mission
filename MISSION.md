@@ -5,6 +5,20 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 205 — CLI Tools (swap CSV, pig latin, censure, julian, profondeur JSON)
+- [x] csv-swap-columns : échange deux colonnes d'un CSV (nom/index, no-header, --check CI) ✓ 2026-08-01
+- [x] text-pig-latin : traduit du texte en Pig Latin (règles voyelle/consonne, casse préservée, JSON) ✓ 2026-08-01
+- [x] text-censor-words : censure des mots dans un texte (masque, bords préservés, --check CI, JSON) ✓ 2026-08-01
+- [x] julian-date : conversion dates calendaires <-> jours juliens (MJD, dates ordinales, JSON) ✓ 2026-08-01
+- [x] json-depth-count : histogramme des valeurs JSON par profondeur et type (--max-depth lint, JSONL) ✓ 2026-08-01
+
+## Vague 204 — CLI Tools (group-by CSV, numérotation, stdev, chunks, shuffle)
+- [x] csv-group-by : groupe les lignes CSV par clé et agrège (count/sum/mean/min/max, distinct, JSON) ✓ 2026-08-01
+- [x] text-number-lines : numérote les lignes style nl (styles, largeur, séparateur, start/incr) ✓ 2026-08-01
+- [x] csv-stdev : écart-type et variance des colonnes CSV numériques (population/échantillon, JSON) ✓ 2026-08-01
+- [x] text-chunk-lines : découpe un texte en chunks de N lignes (split -l, suffixes alpha/num, dry-run) ✓ 2026-08-01
+- [x] csv-row-shuffle : mélange les lignes de données d'un CSV (seed reproductible, header conservé) ✓ 2026-08-01
+
 ## Vague 203 — CLI Tools (tri CSV, wrap texte, doublons fichiers, Soundex, transpose/md, title case)
 - [x] csv-sort-rows : trie les lignes CSV par colonnes (numérique, naturel, reverse, ignore-case, --check CI, JSON) ✓ 2026-08-01
 - [x] text-word-wrap : reformatage de paragraphes à largeur cible (indents, préfixe, --break-long, --check CI) ✓ 2026-08-01
