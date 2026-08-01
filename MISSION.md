@@ -274,11 +274,11 @@ Push automatique après chaque outil.
 - [x] file-newest-oldest-per-ext : plus récent/plus ancien fichier par extension (mtime, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 286 — CLI Tools (à faire)
-- [ ] csv-column-keep : garde seulement certaines colonnes d'un CSV (whitelist par nom ou index, --require CI, JSON)
-- [ ] json-unescape-strings : décode les séquences \n \t \uXXXX dans les valeurs string d'un JSONL (--check CI, JSON)
-- [ ] text-columns-to-lines : convertit un tableau whitespace en lignes clé=valeur (--kv, --check CI, JSON)
-- [ ] url-strip-www : retire le préfixe www. des hosts d'URLs (--check CI, JSON)
-- [ ] file-group-by-owner-size : regroupe les fichiers d'une arborescence par owner avec total de taille (--threshold CI, JSON)
+- [x] csv-column-keep : garde seulement certaines colonnes d'un CSV (whitelist par nom ou index, --require CI, JSON) ✓ 2026-08-01
+- [x] json-unescape-strings : décode les séquences \n \t \uXXXX dans les valeurs string d'un JSONL (--check CI, JSON) ✓ 2026-08-01
+- [x] text-columns-to-lines : convertit un tableau whitespace en lignes clé=valeur (--kv, --check CI, JSON) ✓ 2026-08-01
+- [x] url-strip-www : retire le préfixe www. des hosts d'URLs (--check CI, JSON) ✓ 2026-08-01
+- [x] file-group-by-owner-size : regroupe les fichiers d'une arborescence par owner avec total de taille (--threshold CI, JSON) ✓ 2026-08-01
 
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
