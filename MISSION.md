@@ -1528,6 +1528,13 @@ Push automatique après chaque outil.
 - [x] line-sort-unique : trie les lignes et supprime les doublons (sort -u) ✓ 2026-08-01
 - [x] text-strip-punctuation : retire la ponctuation d'un texte ✓ 2026-08-01
 
+## Vague 189 — CLI Tools (CSV & texte)
+- [x] csv-last-rows : garde les N dernières lignes de données d'un CSV (tail, header conservé, JSON) ✓ 2026-08-01
+- [x] text-snake-case : convertit du texte/identifiants en snake_case (camelCase, kebab, espaces) ✓ 2026-08-01
+- [x] text-camel-case : convertit du texte/identifiants en camelCase ou PascalCase ✓ 2026-08-01
+- [x] csv-delimiter-detect : détecte le délimiteur d'un CSV (virgule, point-virgule, tab, pipe) ✓ 2026-08-01
+- [x] text-wrap-width : re-wrap les paragraphes d'un texte à une largeur fixe ✓ 2026-08-01
+
 ## Vague 188 — CLI Tools (CSV & texte)
 - [x] csv-count-values : fréquence des valeurs d'une colonne CSV ✓ 2026-08-01
 - [x] csv-first-rows : garde les N premières lignes de données d'un CSV (head) ✓ 2026-08-01
