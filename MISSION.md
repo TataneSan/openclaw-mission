@@ -169,12 +169,19 @@ Push automatique après chaque outil.
 - [x] url-extract-userinfo : extrait/rapporte la présence de userinfo dans des URLs (masquage, --check CI, JSON) ✓ 2026-08-01
 - [x] file-extension-counts-by-dir : compte les extensions par dossier immédiat d'une arborescence (--check CI, JSON) ✓ 2026-08-01
 
-## Vague 271 — CLI Tools (à définir)
-- [ ] csv-row-pair-diff : diff ligne par ligne de deux CSV alignés (clé optionnelle, side-by-side, --check CI, JSON)
-- [ ] json-array-index-of : trouve l'index des éléments matchant un prédicat dans les tableaux d'un JSONL (equals/regex/number-range, --check CI, JSON)
-- [ ] text-column-swap-first-last : échange la première et la dernière colonne whitespace de chaque ligne (--check CI, JSON)
-- [ ] url-extract-port-range : classe les ports d'URLs par plage (well-known/registered/dynamic, --check CI, JSON)
-- [ ] file-mtime-parity-report : rapport des fichiers dont le mtime est pair/impair par dossier (histogramme, --check CI, JSON)
+## Vague 271 — CLI Tools (paires CSV, index tableaux JSON, swap colonnes, plages ports, parité mtime)
+- [x] csv-row-pair-diff : diff ligne par ligne de deux CSV alignés (clé optionnelle, side-by-side, --check CI, JSON) ✓ 2026-08-01
+- [x] json-array-index-of : trouve l'index des éléments matchant un prédicat dans les tableaux d'un JSONL (equals/regex/number-range, --check CI, JSON) ✓ 2026-08-01
+- [x] text-column-swap-first-last : échange la première et la dernière colonne whitespace de chaque ligne (--check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-port-range : classe les ports d'URLs par plage (well-known/registered/dynamic, --check CI, JSON) ✓ 2026-08-01
+- [x] file-mtime-parity-report : rapport des fichiers dont le mtime est pair/impair par dossier (histogramme, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 272 — CLI Tools (à définir)
+- [ ] csv-nth-occurrence : garde la N-ième occurrence de chaque clé dans un CSV (keep-nth, drop-nth, --check CI, JSON)
+- [ ] json-set-path : écrit une valeur à un dot-path dans des docs JSONL (types auto, create-missing, --check CI, JSON)
+- [ ] text-reverse-fields : inverse l'ordre des champs whitespace par ligne (sep préservé global, --check CI, JSON)
+- [ ] url-fragment-to-query : déplace les paramètres k=v du fragment vers la query string (--check CI, JSON)
+- [ ] file-size-histogram-log : histogramme log2 des tailles de fichiers d'une arborescence (buckets puissances de 2, --check CI, JSON)
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
