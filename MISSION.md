@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 226 — CLI Tools (statistiques JSON, jointure lignes, taille répertoires, échappement URL, largeur CJK)
+- [ ] json-stats-fields : statistiques numériques par champ d'une collection JSON/JSONL (min/max/mean/median/stdev, --check CI, JSON)
+- [ ] text-join-by-column : jointure de deux fichiers lignes par colonne clé (1-based, inner/left, --check CI, JSON)
+- [ ] dir-size-report : rapport de taille par sous-dossier (top-N, excludes glob, --threshold CI, JSON)
+- [ ] url-encode-cli : encode/décode composants URL (percent-encoding, form-urlencoded, batch stdin, --check CI, JSON)
+- [ ] text-display-width : largeur d'affichage des lignes en tenant compte des caractères larges CJK/east-asian (--limit CI, JSON)
+
 ## Vague 225 — CLI Tools (opérations SET, scoring, commentaires CSV, colonnes JSON, shuffle)
 - [x] text-set-ops : opérations ensemblistes sur fichiers de lignes (union/intersection/différence --a-only --b-only --xor via stdin, --check CI, JSON) ✓ 2026-08-01
 - [x] text-keyword-score : score la densité de mots-clés par ligne/document (pondérations mot:valeur, --top N, --threshold CI, JSON) ✓ 2026-08-01
