@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 219 — CLI Tools (largeurs lignes, colonnes CSV, JSON, query params, continuations)
+- [x] text-wide-quality : lint de largeur de lignes (distribution, percentiles, --limit CI, JSON, ignore-glob) ✓ 2026-08-01
+- [x] csv-column-prefix : préfixe/suffixe les noms de colonnes CSV (--prefix/--suffix/--only, dry-run, --check CI) ✓ 2026-08-01
+- [x] json-array-flatten : aplatit les tableaux imbriqués d'un JSON (--depth, mode scalars, JSONL, --check CI) ✓ 2026-08-01
+- [x] url-add-params : ajoute/remplace/supprime des paramètres de query d'URLs (batch stdin, --sort, JSON, --check CI) ✓ 2026-08-01
+- [x] text-backslash-join : joint les lignes en continuation backslash (style shell, --join-with, --split inverse, --check CI) ✓ 2026-08-01
+
 ## Vague 218 — CLI Tools (lint JSON, escape CSV, path URL, blank lines, sharding CSV)
 - [x] json-required-keys : lint CI sur clés requises d'un JSON (dot-paths, indices, --non-empty, JSON) ✓ 2026-08-01
 - [x] text-csv-escape : échappe du texte libre en champ CSV RFC 4180 (quote double, --unescape, --check roundtrip) ✓ 2026-08-01
