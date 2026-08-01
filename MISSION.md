@@ -177,11 +177,18 @@ Push automatique après chaque outil.
 - [x] file-mtime-parity-report : rapport des fichiers dont le mtime est pair/impair par dossier (histogramme, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 272 — CLI Tools (à définir)
-- [ ] csv-nth-occurrence : garde la N-ième occurrence de chaque clé dans un CSV (keep-nth, drop-nth, --check CI, JSON)
-- [ ] json-set-path : écrit une valeur à un dot-path dans des docs JSONL (types auto, create-missing, --check CI, JSON)
-- [ ] text-reverse-fields : inverse l'ordre des champs whitespace par ligne (sep préservé global, --check CI, JSON)
-- [ ] url-fragment-to-query : déplace les paramètres k=v du fragment vers la query string (--check CI, JSON)
-- [ ] file-size-histogram-log : histogramme log2 des tailles de fichiers d'une arborescence (buckets puissances de 2, --check CI, JSON)
+- [x] csv-nth-occurrence : garde la N-ième occurrence de chaque clé dans un CSV (keep-nth, drop-nth, --check CI, JSON) ✓ 2026-08-01
+- [x] json-set-path : écrit une valeur à un dot-path dans des docs JSONL (types auto, create-missing, --check CI, JSON) ✓ 2026-08-01
+- [x] text-reverse-fields : inverse l'ordre des champs whitespace par ligne (sep préservé global, --check CI, JSON) ✓ 2026-08-01
+- [x] url-fragment-to-query : déplace les paramètres k=v du fragment vers la query string (--check CI, JSON) ✓ 2026-08-01
+- [x] file-size-histogram-log : histogramme log2 des tailles de fichiers d'une arborescence (buckets puissances de 2, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 273 — CLI Tools (à définir)
+- [ ] csv-row-bucket : assigne chaque ligne CSV à un bucket par valeur de colonne (labels, --check CI, JSON)
+- [ ] json-path-exists : teste si un dot-path existe dans des docs JSONL (--fail-if-missing CI, JSON)
+- [ ] text-dedupe-words-line : retire les mots dupliqués à l'intérieur de chaque ligne (ordre préservé, --check CI, JSON)
+- [ ] url-resolve-relative : résout les URLs relatives par rapport à une base (--base, --check CI, JSON)
+- [ ] file-mtime-shift : applique un décalage horaire aux mtimes d'une arborescence (±Nh, --dry-run, --check CI, JSON)
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
