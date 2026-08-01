@@ -346,12 +346,19 @@ Push automatique après chaque outil.
 - [x] url-normalize-port-default : retire les ports par défaut explicites (80/443/21..., --add-default inverse, --check CI, JSON) ✓ 2026-08-01
 - [x] file-chdir-relative-paths : rend les chemins relatifs d'un manifeste par rapport à un nouveau dossier de base (--check CI, JSON) ✓ 2026-08-01
 
-## Vague 298 — CLI Tools (à définir)
-- [ ] csv-column-fill-forward : propage la dernière valeur non vide vers le bas dans des colonnes CSV (groupes par clé, --check CI, JSON)
-- [ ] json-count-null-fields : compte les champs null par chemin dans un JSONL (top-N, --threshold CI, JSON)
-- [ ] text-truncate-middle : tronque les lignes en conservant début et fin avec ellipse (largeur max, --check CI, JSON)
-- [ ] url-detect-credential-leak : repère les URLs embarquant des secrets (userinfo user:pass@, token=/api_key=/auth= en query, --check CI, JSON)
-- [ ] file-duplicate-basename : liste les noms de fichiers en double dans une arborescence regardless of dir (match exact ou normalisé, --check CI, JSON)
+## Vague 298 — CLI Tools (remplissage CSV, nulls JSON, ellipse milieu, fuites credentials URL, noms de fichiers)
+- [x] csv-column-fill-forward : propage la dernière valeur non vide vers le bas dans des colonnes CSV (groupes par clé, --check CI, JSON) ✓ 2026-08-01
+- [x] json-count-null-fields : compte les champs null par chemin dans un JSONL (top-N, --threshold CI, JSON) ✓ 2026-08-01
+- [x] text-truncate-middle : tronque les lignes en conservant début et fin avec ellipse (largeur max, --check CI, JSON) ✓ 2026-08-01
+- [x] url-detect-credential-leak : repère les URLs embarquant des secrets (userinfo user:pass@, token=/api_key=/auth= en query, masquage, --check CI, JSON) ✓ 2026-08-01
+- [x] file-duplicate-basename : liste les noms de fichiers en double dans une arborescence regardless of dir (match exact ou normalisé, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 299 — CLI Tools (à définir)
+- [ ] csv-remove-columns : retire des colonnes d'un CSV par nom ou index (blacklist, inverse de keep, --check CI, JSON)
+- [ ] json-sort-keys-deep : trie récursivement les clés d'objets JSON/JSONL (ordre alpha, --check déjà trié CI, JSON)
+- [ ] text-longest-line-report : rapport des lignes les plus longues d'un texte (top-N, largeur moyenne, --max-width CI, JSON)
+- [ ] url-extract-fragment-keys : éclate les fragments de type #k=v&k2=v2 en paires clé=valeur (SPA routes, --check CI, JSON)
+- [ ] file-age-buckets-report : répartit les fichiers d'une arborescence par tranche d'âge (<1h, <1j, <1sem, <1mois, plus, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
