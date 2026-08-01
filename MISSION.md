@@ -252,12 +252,19 @@ Push automatique après chaque outil.
 - [x] url-params-to-headers : déplace des paramètres query vers des pseudo-headers X-Param (mode debug, --check CI, JSON) ✓ 2026-08-01
 - [x] file-mime-extension-mismatch : signale les fichiers dont le magic number contredit l'extension déclarée (rapport, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 283 — CLI Tools (à faire)
-- [ ] csv-column-fill-from-map : remplit une colonne vide depuis un mapping clé=valeur par clé CSV (--on missing, --check CI, JSON)
-- [ ] json-sort-array-of-objects : trie les tableaux d'objets d'un JSONL par une clé numérique (desc, stable, --check CI, JSON)
-- [ ] text-detect-mixed-eol : détecte les fins de ligne mélangées CRLF/LF par fichier (rapport, --check CI, JSON)
-- [ ] url-strip-index-files : retire les segments /index.html /default.aspx finaux des URLs (--check CI, JSON)
-- [ ] file-size-dupes-by-ext : liste les groupes de fichiers de même taille et même extension (candidats doublons, --check CI, JSON)
+## Vague 283 — CLI Tools (fill par mapping CSV, tri tableaux JSONL, EOL mélangées, strip index URL, doublons taille+ext)
+- [x] csv-column-fill-from-map : remplit une colonne vide depuis un mapping clé=valeur par clé CSV (--on missing, --check CI, JSON) ✓ 2026-08-01
+- [x] json-sort-array-of-objects : trie les tableaux d'objets d'un JSONL par une clé numérique (desc, stable, --check CI, JSON) ✓ 2026-08-01
+- [x] text-detect-mixed-eol : détecte les fins de ligne mélangées CRLF/LF par fichier (rapport, --check CI, JSON) ✓ 2026-08-01
+- [x] url-strip-index-files : retire les segments /index.html /default.aspx finaux des URLs (--check CI, JSON) ✓ 2026-08-01
+- [x] file-size-dupes-by-ext : liste les groupes de fichiers de même taille et même extension (candidats doublons, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 284 — CLI Tools (à faire)
+- [ ] csv-median-column : calcule la médiane d'une colonne numérique CSV (interpolation paire, --check bornes CI, JSON)
+- [ ] json-paths-as-table : rend tous les chemins feuilles d'un JSON en tableau colonnes séparées (orienté diff, --check CI, JSON)
+- [ ] text-strip-word-wrap : défait un word-wrap et rejoint les lignes en paragraphes (heuristique, --check CI, JSON)
+- [ ] url-extract-base-domain : extrait le domaine enregistré approximatif (eTLD+1 simple) de chaque URL (--check CI, JSON)
+- [ ] file-count-lines-per-ext : compte les lignes des fichiers texte par extension dans une arborescence (Exclure binaires, --check CI, JSON)
 
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
