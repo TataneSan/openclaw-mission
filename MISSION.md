@@ -106,12 +106,19 @@ Push automatique après chaque outil.
 - [x] url-extract-default-creds-risk : détecte les URLs utilisant des credentials triviaux (admin:admin, root:root, --check CI, JSON) ✓ 2026-08-01
 - [x] file-permission-audit : rapport setuid/setgid/world-writable et sticky bits anormaux (--check CI, JSON) ✓ 2026-08-01
 
-## Vague 262 — CLI Tools (à définir)
-- [ ] csv-rolling-median : médiane glissante d'une colonne CSV (fenêtre N, --check CI, JSON)
-- [ ] json-path-rename-regex : renomme les chemins d'un JSON par regex capture groups (dry-run, --check CI, JSON)
-- [ ] text-indent-shift : décale l'indentation de tout un fichier (N espaces ±, tab-aware, --check CI, JSON)
-- [ ] url-extract-subpath-regex : extrait les segments de path matchant un regex par position (--check CI, JSON)
-- [ ] file-duplicate-content-groups : groupe les fichiers par contenu identique (hash complet, --min-size CI, JSON)
+## Vague 262 — CLI Tools (médiane glissante CSV, renommage regex chemins JSON, décalage indentation, sous-paths regex URL, doublons de contenu)
+- [x] csv-rolling-median : médiane glissante d'une colonne CSV (fenêtre N, --check CI, JSON) ✓ 2026-08-01
+- [x] json-path-rename-regex : renomme les chemins d'un JSON par regex capture groups (dry-run, --check CI, JSON) ✓ 2026-08-01
+- [x] text-indent-shift : décale l'indentation de tout un fichier (N espaces ±, tab-aware, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-subpath-regex : extrait les segments de path matchant un regex par position (--check CI, JSON) ✓ 2026-08-01
+- [x] file-duplicate-content-groups : groupe les fichiers par contenu identique (hash complet, --min-size CI, JSON) ✓ 2026-08-01
+
+## Vague 263 — CLI Tools (à définir)
+- [ ] csv-column-rename-regex : renomme des colonnes CSV par regex capture groups (--dry-run, --check CI, JSON)
+- [ ] json-array-shuffle-detect : détecte si deux tableaux JSONL sont permutations l'un de l'autre (--check CI, JSON)
+- [ ] text-trailing-space-report : rapport des lignes avec espaces finaux (counts par fichier, --fix, --check CI, JSON)
+- [ ] url-extract-tracking-params : détecte les paramètres de tracking (utm_*, fbclid, gclid, --strip, --check CI, JSON)
+- [ ] file-recent-changes-since : liste les fichiers modifiés depuis une date/un timestamp (--within, --check CI, JSON)
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
