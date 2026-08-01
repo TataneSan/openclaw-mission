@@ -522,11 +522,18 @@ Push automatique après chaque outil.
 - [x] file-duplicate-names : liste les noms de fichiers apparaissant en plusieurs endroits d'une arborescence (--check CI, JSON) ✓ 2026-08-02
 
 ## Vague 323 — CSV/JSON/text/URL/file mix
-- [ ] csv-sort-by-column : trie les lignes d'un CSV par une colonne (numérique ou alpha, --reverse, --check CI, JSON)
-- [ ] json-path-value-set : assigne une valeur à un chemin dot dans un JSONL (create missing, --check CI, JSON)
-- [ ] text-column-extract : extrait une colonne N d'un texte whitespace-séparé (1-based, --check CI, JSON)
-- [ ] url-query-remove-params : retire des paramètres nommés de la query des URLs (keep-list inverse, --check CI, JSON)
-- [ ] file-age-buckets : regroupe les fichiers par tranche d'âge (<1d, <1w, <1m, plus vieux, --check CI, JSON)
+- [x] csv-sort-by-column : trie les lignes d'un CSV par une colonne (numérique, naturelle, alpha, --reverse, --check CI, JSON) ✓ 2026-08-02
+- [x] json-path-value-set : assigne une valeur à un chemin dot dans un JSONL (create missing, arrays indexés, --check CI, JSON) ✓ 2026-08-02
+- [x] text-column-extract : extrait une colonne N d'un texte whitespace-séparé (1-based, indices négatifs, --check CI, JSON) ✓ 2026-08-02
+- [x] url-query-remove-params : retire des paramètres nommés de la query des URLs (--keep-only inverse, --check CI, JSON) ✓ 2026-08-02
+- [x] file-age-buckets : regroupe les fichiers par tranche d'âge (boundary custom, top N oldest, --check CI, JSON) ✓ 2026-08-02
+
+## Vague 324 — CSV/JSON/text/URL/file mix
+- [ ] csv-normalize-whitespace : nettoie les espaces dans les cellules CSV (trim, collapse, --check CI, JSON)
+- [ ] json-array-shuffle : mélange les lignes d'un JSONL avec une seed déterministe (--check CI, JSON)
+- [ ] text-line-diff-count : compte les lignes ajoutées/supprimées/communes entre deux fichiers (--check CI, JSON)
+- [ ] url-extract-fragment : extrait le fragment (#...) des URLs (stats, --check CI, JSON)
+- [ ] file-permission-check : vérifie que les permissions des fichiers matchent un masque (--check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
