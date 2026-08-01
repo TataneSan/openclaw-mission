@@ -508,11 +508,18 @@ Push automatique après chaque outil.
 - [x] file-newest-per-dir : affiche le fichier le plus récent de chaque dossier d'une arborescence (--check CI, JSON) ✓ 2026-08-02
 
 ## Vague 321 — CSV/JSON/text/URL/file mix
-- [ ] csv-row-filter-regex : filtre les lignes CSV où une colonne matche un regex (--invert, --check CI, JSON)
-- [ ] json-null-fields-report : rapport des champs null par chemin dans un JSONL (% null, --check CI, JSON)
-- [ ] text-wrap-diff : compare le wrapping de deux textes ligne à ligne (--width, --check CI, JSON)
-- [ ] url-dedupe-canonical : déduplique des URLs après normalisation canonique (lowercase host, sort query, --check CI, JSON)
-- [ ] file-content-grep-count : compte les occurrences d'un motif par fichier d'une arborescence (totaux, --threshold CI, JSON)
+- [x] csv-row-filter-regex : filtre les lignes CSV où une colonne matche un regex (--invert, --check CI, JSON) ✓ 2026-08-02
+- [x] json-null-fields-report : rapport des champs null par chemin dans un JSONL (% null, --check CI, JSON) ✓ 2026-08-02
+- [x] text-wrap-diff : compare le wrapping de deux textes ligne à ligne (--width, --check CI, JSON) ✓ 2026-08-02
+- [x] url-dedupe-canonical : déduplique des URLs après normalisation canonique (lowercase host, sort query, --check CI, JSON) ✓ 2026-08-02
+- [x] file-content-grep-count : compte les occurrences d'un motif par fichier d'une arborescence (totaux, --threshold CI, JSON) ✓ 2026-08-02
+
+## Vague 322 — CSV/JSON/text/URL/file mix
+- [ ] csv-add-line-hash : ajoute une colonne avec le hash de chaque ligne (md5/sha256, --check CI, JSON)
+- [ ] json-extract-strings : liste toutes les chaînes d'un document JSON avec leur chemin (min-length, --check CI, JSON)
+- [ ] text-first-words : garde les N premiers mots de chaque ligne (--ellipsis, --check CI, JSON)
+- [ ] url-scheme-downgrade-check : détecte les URLs https ayant un équivalent http dans la liste (--check CI, JSON)
+- [ ] file-duplicate-names : liste les noms de fichiers apparaissant en plusieurs endroits d'une arborescence (--check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
