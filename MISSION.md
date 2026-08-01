@@ -19,12 +19,19 @@ Push automatique après chaque outil.
 - [x] url-extract-params : extrait les paramètres query d'URLs en clés/valeurs tabulées (--unique CI, JSON) ✓ 2026-08-01
 - [x] file-size-outliers : liste les fichiers dont la taille dévie de la médiane d'une arborescence (--factor CI, JSON) ✓ 2026-08-01
 
-## Vague 240 — CLI Tools (à définir)
-- [ ] csv-sum-columns : somme/moyenne par colonne numérique CSV (totaux ligne/footer, --check CI, JSON)
-- [ ] json-rename-keys : renomme des clés JSON par mapping fichier (dot-paths, récursif, --check CI, JSON)
-- [ ] text-suffix-lines : ajoute un suffixe fixe ou dynamique à chaque ligne (pattern, --check CI, JSON)
-- [ ] url-sort-params : trie les paramètres query d'URLs alphabétiquement (stable dupes, --check CI, JSON)
-- [ ] file-newest-per-dir : liste le fichier le plus récent de chaque sous-dossier (mtime, --check CI, JSON)
+## Vague 241 — CLI Tools (à définir)
+- [ ] csv-strip-bom : retire/pointe les BOM UTF-8/UTF-16 des fichiers CSV (--check CI, JSON)
+- [ ] json-wrap-array : enveloppe des objets JSONL dans un tableau JSON (--unwrap, --check CI, JSON)
+- [ ] text-line-histogram : histogramme de longueurs de lignes (buckets, --check CI, JSON)
+- [ ] url-strip-default-port : retire les ports par défaut des URLs (80/443/21..., --check CI, JSON)
+- [ ] file-age-buckets : répartit les fichiers par tranches d'âge (1h/1d/1w/1m, --check CI, JSON)
+
+## Vague 240 — CLI Tools (totaux CSV, renommage clés JSON, suffixes de lignes, tri paramètres URL, plus récents par dossier)
+- [x] csv-sum-columns : somme/moyenne par colonne numérique CSV (totaux ligne/footer, --check CI, JSON) ✓ 2026-08-01
+- [x] json-rename-keys : renomme des clés JSON par mapping fichier (dot-paths, récursif, --check CI, JSON) ✓ 2026-08-01
+- [x] text-suffix-lines : ajoute un suffixe fixe ou dynamique à chaque ligne (pattern, --check CI, JSON) ✓ 2026-08-01
+- [x] url-sort-params : trie les paramètres query d'URLs alphabétiquement (stable dupes, --check CI, JSON) ✓ 2026-08-01
+- [x] file-newest-per-dir : liste le fichier le plus récent de chaque sous-dossier (mtime, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 237 — CLI Tools (réordonnage colonnes CSV, tri clés JSON récursif, collapse répétitions, strip fragments URL, symlinks cassés)
 - [x] csv-reorder-columns : réordonne les colonnes par liste de noms/indices (reste append/prepend, --check CI, JSON) ✓ 2026-08-01
