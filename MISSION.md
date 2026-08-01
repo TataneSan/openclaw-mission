@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 201 — CLI Tools (CSV types, Hamming, entropy, JSON merge, base64url)
+- [x] csv-column-type : infère les types des colonnes CSV (int/float/bool/date/email/uuid/url, confiance, strict, JSON) ✓ 2026-08-01
+- [x] text-hamming-distance : distance de Hamming entre chaînes (stdin tab/comma, --max CI, JSON) ✓ 2026-08-01
+- [x] file-entropy : entropie de Shannon de fichiers (classification, --min/--max CI, JSON, stdin) ✓ 2026-08-01
+- [x] json-merge-patch : applique un RFC 7386 JSON Merge Patch (stdin, --check CI, compact, -o) ✓ 2026-08-01
+- [x] text-base64-url : encode/décode base64url RFC 4648 §5 (padding optionnel, strict, JSON) ✓ 2026-08-01
+
 ## Vague 200 — CLI Tools (CSV rows, levenshtein, JSON keys, gitignore, URL)
 - [x] csv-drop-rows : supprime les lignes CSV par conditions (eq/ne/regex/empty/gt/lt, AND/OR, invert, check CI) ✓ 2026-08-01
 - [x] text-levenshtein-distance : distance d'édition Levenshtein + ratio (paires stdin, --within CI, JSON) ✓ 2026-08-01
