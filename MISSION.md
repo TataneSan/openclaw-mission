@@ -1528,6 +1528,13 @@ Push automatique après chaque outil.
 - [x] line-sort-unique : trie les lignes et supprime les doublons (sort -u) ✓ 2026-08-01
 - [x] text-strip-punctuation : retire la ponctuation d'un texte ✓ 2026-08-01
 
+## Vague 190 — CLI Tools (CSV & texte)
+- [x] csv-column-count : compte les colonnes d'un CSV (détection lignes irrégulières, --strict, JSON) ✓ 2026-08-01
+- [x] path-base-dir : découpe des chemins en dirname/basename (+ extension, stdin, JSON) ✓ 2026-08-01
+- [x] json-depth : profondeur maximale d'imbrication d'un document JSON (--max lint, exit 2) ✓ 2026-08-01
+- [x] text-squeeze-blank-lines : réduit les suites de lignes vides à une seule (cat -s, --remove-all) ✓ 2026-08-01
+- [x] csv-row-numbers : préfixe un CSV avec une colonne de numéros de ligne (id, --start, JSON) ✓ 2026-08-01
+
 ## Vague 189 — CLI Tools (CSV & texte)
 - [x] csv-last-rows : garde les N dernières lignes de données d'un CSV (tail, header conservé, JSON) ✓ 2026-08-01
 - [x] text-snake-case : convertit du texte/identifiants en snake_case (camelCase, kebab, espaces) ✓ 2026-08-01
