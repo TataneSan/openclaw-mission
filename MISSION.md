@@ -99,12 +99,19 @@ Push automatique après chaque outil.
 - [x] url-parse-host-labels : éclate le host en labels (tld/sld/sub) avec counts statistiques (--min-sub-depth CI, JSON) ✓ 2026-08-01
 - [x] file-dirs-by-age-total : regroupe les dossiers par âge moyen des fichiers qu'ils contiennent (--check CI, JSON) ✓ 2026-08-01
 
-## Vague 260 — CLI Tools (à définir)
-- [ ] csv-sliding-diff : différence ligne-à-ligne d'une colonne numérique CSV (delta, pct-change, --threshold CI, JSON)
-- [ ] json-time-travel : rejoue une série de patches et extrait l'état à l'étape K (--at CI, JSON)
-- [ ] text-markdown-list-extract : extrait les items de listes markdown (bullets/ordered/task, --checked CI, JSON)
-- [ ] url-extract-default-creds-risk : détecte les URLs utilisant des credentials triviaux (admin:admin, root:root, --check CI, JSON)
-- [ ] file-permission-audit : rapport setuid/setgid/world-writable et sticky bits anormaux (--check CI, JSON)
+## Vague 260 — CLI Tools (delta CSV, replay patches JSON, listes markdown, creds faibles, audit permissions)
+- [x] csv-sliding-diff : différence ligne-à-ligne d'une colonne numérique CSV (delta, pct-change, --threshold CI, JSON) ✓ 2026-08-01
+- [x] json-time-travel : rejoue une série de patches et extrait l'état à l'étape K (--at CI, JSON) ✓ 2026-08-01
+- [x] text-markdown-list-extract : extrait les items de listes markdown (bullets/ordered/task, --checked CI, JSON) ✓ 2026-08-01
+- [x] url-extract-default-creds-risk : détecte les URLs utilisant des credentials triviaux (admin:admin, root:root, --check CI, JSON) ✓ 2026-08-01
+- [x] file-permission-audit : rapport setuid/setgid/world-writable et sticky bits anormaux (--check CI, JSON) ✓ 2026-08-01
+
+## Vague 261 — CLI Tools (à définir)
+- [ ] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON)
+- [ ] json-hash-tree : construit un arbre de Merkle SHA-256 sur les chemins/valeurs d'un JSON (--verify CI, JSON)
+- [ ] text-fuzzy-dedupe : déduplique les lignes par similarité (threshold Jaccard/normalisation, --check CI, JSON)
+- [ ] url-extract-breadcrumb : décompose le path en breadcrumb key=value (segments positionnels, --check CI, JSON)
+- [ ] file-content-encoding-detect : rapport d'encodage (ascii/utf8/utf16/latin1 heuristic) par fichier (--check CI, JSON)
 
 ## Vague 249 — CLI Tools (à définir)
 - [x] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON) ✓ 2026-08-01
