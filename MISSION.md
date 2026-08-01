@@ -619,12 +619,19 @@ Push automatique après chaque outil.
 - [x] url-ensure-scheme : garantit un scheme par défaut (https) aux URLs sans scheme (--check CI, JSON) ✓ 2026-08-02
 - [x] file-hardlink-count-report : rapport du nombre de liens durs par fichier (--min-links, --check CI, JSON) ✓ 2026-08-02
 
+## Vague 338 — CSV/JSON/text/URL/file mix
+- [ ] csv-escape-formula-prefix : préfixe les cellules CSV commençant par =, +, -, @ d'une apostrophe (anti formula-injection, --check CI, JSON)
+- [ ] json-unwrap-single-element : déplie les objets JSON à une seule clé en leur valeur directe (récursif, --check CI, JSON)
+- [ ] text-collapse-blank-runs : écrase les runs de lignes vides consécutives en une seule (--max N, --check CI, JSON)
+- [ ] url-extract-tld-domain : extrait le registered domain (tld+1) d'URLs (public suffix embarqué, --check CI, JSON)
+- [ ] file-utf8-validity-check : vérifie que chaque fichier texte d'une arborescence est UTF-8 valide (rapport, --check CI, JSON)
+
 ## Vague 337 — CSV/JSON/text/URL/file mix
-- [ ] csv-quote-all-cells : force le quoting de toutes les cellules CSV (QUOTE_ALL, --minimal inverse, --check CI, JSON)
-- [ ] json-boolean-report : rapport des valeurs booléennes par dot-path dans un JSONL (ratio true/false, --check CI, JSON)
-- [ ] text-squeeze-spaces : écrase les espaces multiples en un seul (hors indentation, --keep-indent, --check CI, JSON)
-- [ ] url-lowercase-host-path-split : passe host en minuscules mais préserve la casse du path (--check CI, JSON)
-- [ ] file-atime-report : rapport des fichiers dont l'atime est postérieur au mtime (--check CI, JSON)
+- [x] csv-quote-all-cells : force le quoting de toutes les cellules CSV (QUOTE_ALL, --minimal inverse, --check CI, JSON) ✓ 2026-08-02
+- [x] json-boolean-report : rapport des valeurs booléennes par dot-path dans un JSONL (ratio true/false, --check CI, JSON) ✓ 2026-08-02
+- [x] text-squeeze-spaces : écrase les espaces multiples en un seul (hors indentation, --keep-indent, --check CI, JSON) ✓ 2026-08-02
+- [x] url-lowercase-host-path-split : passe host en minuscules mais préserve la casse du path (--check CI, JSON) ✓ 2026-08-02
+- [x] file-size-dupes-same-name : détecte les fichiers de même nom et même taille dans des dossiers différents (--check CI, JSON) ✓ 2026-08-02
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
