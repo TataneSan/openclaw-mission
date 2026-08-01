@@ -409,12 +409,19 @@ Push automatique après chaque outil.
 - [x] url-extract-domains-tld-aware : extrait unique domaines depuis flux d'URLs en respectant l'eTLD+1 (--check CI, JSON) ✓ 2026-08-01
 - [x] file-content-classify : classe fichiers par contenu (code/data/media/docs) via magic+extension (--check CI, JSON) ✓ 2026-08-01
 
-## Vague 307 — CLI Tools (à définir)
-- [ ] csv-add-weekday-column : ajoute une colonne jour de semaine dérivé d'une colonne date CSV (locale en/fr, --check CI, JSON)
-- [ ] json-type-coverage : couverture des types JSON par chemin à travers JSONL (type union, --check CI, JSON)
-- [ ] text-align-comments : aligne les commentaires en fin de ligne sur une colonne fixe (#, //, --check CI, JSON)
-- [ ] url-replace-path-segment : remplace le N-ième segment du path d'URLs en flux (1-based, négatifs, --check CI, JSON)
-- [ ] file-count-by-month : histogramme des fichiers par mois de mtime (YYYY-MM, --require PATTERN CI, JSON)
+## Vague 307 — CLI Tools (jour semaine CSV, couverture types JSON, alignement commentaires, segment URL, mois mtime)
+- [x] csv-add-weekday-column : ajoute une colonne jour de semaine dérivé d'une colonne date CSV (locale en/fr, --check CI, JSON) ✓ 2026-08-01
+- [x] json-type-coverage : couverture des types JSON par chemin à travers JSONL (type union, --check CI, JSON) ✓ 2026-08-01
+- [x] text-align-comments : aligne les commentaires en fin de ligne sur une colonne fixe (#, //, --check CI, JSON) ✓ 2026-08-01
+- [x] url-replace-path-segment : remplace le N-ième segment du path d'URLs en flux (1-based, négatifs, --check CI, JSON) ✓ 2026-08-01
+- [x] file-count-by-month : histogramme des fichiers par mois de mtime (YYYY-MM, --require PATTERN CI, JSON) ✓ 2026-08-01
+
+## Vague 308 — CLI Tools (à définir)
+- [ ] csv-add-age-days : ajoute une colonne âge en jours depuis une colonne date CSV (référence --as-of, --check CI, JSON)
+- [ ] json-coalesce-paths : fusionne plusieurs dot-paths alias en un seul canonique (--prefer first/last, --check CI, JSON)
+- [ ] text-collapse-consonant-runs : réduit les runs de consonnes répétées (>2) dans chaque mot (--keep N, --check CI, JSON)
+- [ ] url-query-sort-values : trie les valeurs multi-occurrences de chaque clé query (dedup optionnel, --check CI, JSON)
+- [ ] file-group-by-size-prefix : regroupe les fichiers par préfixe de taille lisible (K/M/G buckets, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
