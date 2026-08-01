@@ -466,11 +466,18 @@ Push automatique après chaque outil.
 - [x] file-extension-case-normalize : uniformise la casse des extensions en minuscules (--apply, --check CI, JSON) ✓ 2026-08-02
 
 ## Vague 315 — CSV/JSON/text/URL/file mix
-- [ ] csv-row-shuffle : mélange aléatoirement les lignes d'un CSV (seed reproductible, header préservé, --check CI, JSON)
-- [ ] json-invert-mapping : inverse un mapping JSON clé->valeur en valeur->clés (collisions en array, --check CI, JSON)
-- [ ] text-extract-ips : extrait les adresses IPv4/IPv6 d'un texte (validation stricte, --check CI, JSON)
-- [ ] url-extract-anchor-text : associe chaque URL à un texte d'ancre markdown/html adjacent ([text](url) ou <a>, --check CI, JSON)
-- [ ] file-broken-symlink-detect : liste les liens symboliques morts d'une arborescence (--prune option, --check CI, JSON)
+- [x] csv-row-shuffle : mélange aléatoirement les lignes d'un CSV (seed reproductible, header préservé, --check CI, JSON) ✓ 2026-08-02
+- [x] json-invert-mapping : inverse un mapping JSON clé->valeur en valeur->clés (collisions en array, --check CI, JSON) ✓ 2026-08-02
+- [x] text-extract-ips : extrait les adresses IPv4/IPv6 d'un texte (validation stricte, --check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-anchor-text : associe chaque URL à un texte d'ancre markdown/html adjacent ([text](url) ou <a>, --check CI, JSON) ✓ 2026-08-02
+- [x] file-broken-symlink-detect : liste les liens symboliques morts d'une arborescence (--prune option, --check CI, JSON) ✓ 2026-08-02
+
+## Vague 316 — CSV/JSON/text/URL/file mix
+- [ ] csv-swap-column-order : réordonne les colonnes d'un CSV via nom1,nom2,... (--check CI, JSON)
+- [ ] json-pluck-values : extrait toutes les valeurs scalaires d'un JSON/JSONL (path, --check CI, JSON)
+- [ ] text-strip-control-chars : retire les caractères de contrôle non-imprimables sauf tab/NL (--check CI, JSON)
+- [ ] url-punycode-decode : décode les hosts IDN punycode (xn--) en Unicode (--encode inverse, --check CI, JSON)
+- [ ] file-same-content-pairs-rolling : détecte les paires de fichiers au contenu identique via rolling hash préfiltre (fast, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
