@@ -5,12 +5,19 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
-## Vague 228 — CLI Tools (à définir)
-- [ ] json-normalize-keys : renomme les clés JSON via une table de correspondance ou un pattern (map fichier, --lower, --check CI, JSON)
-- [ ] text-wrap-hard : coupe toutes les lignes dépassant une largeur fixe (CJK-aware via unicodedata, --indent continuation, --check CI, JSON)
-- [ ] csv-add-rownumber : ajoute une colonne de numérotation (start/step, colonne position, --check CI, JSON)
-- [ ] url-strip-tracking : retire les paramètres de tracking des URLs (utm_*, fbclid, gclid, listes custom, --check CI, JSON)
-- [ ] text-sort-natural : tri naturel des lignes avec nombres intégrés (v2 < v10, --numeric/--reverse, --unique, --check CI, JSON)
+## Vague 229 — CLI Tools (à définir)
+- [ ] json-flatten-leaf : aplatit un JSON imbriqué en paires chemin=valeur (feuilles seules, sep custom, --check CI, JSON)
+- [ ] text-column-select : sélectionne des colonnes whitespace-separated (comme cut -f, multi-ranges 1-3,5, --invert, --check CI, JSON)
+- [ ] csv-dedupe-rows : supprime les lignes dupliquées d'un CSV (clés colonnes subsets, keep first/last, --check CI, JSON)
+- [ ] url-normalize-cli : normalise des URLs (lowercase host, default ports, slash trailing, sort params, --check CI, JSON)
+- [ ] text-pad-columns : aligne des colonnes whitespace en padding (left/right/center par colonne, --min-width, --check CI, JSON)
+
+## Vague 228 — CLI Tools (renommage clés JSON, wrap largeur, numérotation CSV, paramètres tracking URL, tri naturel)
+- [x] json-normalize-keys : renomme les clés JSON via map/regex/case (snake/camel/kebab, récursif, --preview, --check CI, JSON) ✓ 2026-08-01
+- [x] text-wrap-hard : coupe les lignes à une largeur fixe (CJK-aware, --indent continuation, --check-width CI, JSON) ✓ 2026-08-01
+- [x] csv-add-rownumber : ajoute une colonne de numérotation (start/step/pad, --group-by, --position, --check/--last CI, JSON) ✓ 2026-08-01
+- [x] url-strip-tracking : retire les paramètres de tracking (utm_*, fbclid, gclid, globs custom, --keep, --check-count CI, JSON) ✓ 2026-08-01
+- [x] text-sort-natural : tri naturel avec nombres intégrés (v2 < v10, --field, --numeric, --reverse, --unique, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 227 — CLI Tools (extraction typée JSON, sections texte, transposition CSV, diff query URL, miroir graphemes)
 - [x] json-values-by-type : extrait les valeurs JSON d'un type donné (string/number/bool/null, récursif, --check CI, JSON) ✓ 2026-08-01
