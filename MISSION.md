@@ -245,12 +245,19 @@ Push automatique après chaque outil.
 - [x] url-path-swap-segments : échange deux segments positionnels du path d'URLs (--i, --j, --check CI, JSON) ✓ 2026-08-01
 - [x] file-content-type-report : rapport des types MIME détectés par magic numbers dans une arborescence (histogramme, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 282 — CLI Tools (à faire)
-- [ ] csv-bucket-counts : compte les lignes par bucket de valeurs numériques (histogramme fixe, --check CI, JSON)
-- [ ] json-remove-empty-containers : retire les objets/tableaux vides récursivement d'un JSON (keep-null, --check CI, JSON)
-- [ ] text-collapse-whitespace-runs : réduit les runs d'espaces/tabs à un seul séparateur (style tr -s, --check CI, JSON)
-- [ ] url-path-swap-params-to-headers : déplace des paramètres query vers des pseudo-headers X-Param (mode debug, --check CI, JSON)
-- [ ] file-mime-extension-mismatch : signale les fichiers dont le magic number contredit l'extension déclarée (rapport, --check CI, JSON)
+## Vague 282 — CLI Tools (histogramme CSV, prune containers JSON, squeeze whitespace, params vers headers, MIME vs extension)
+- [x] csv-bucket-counts : compte les lignes par bucket de valeurs numériques (histogramme fixe, --check CI, JSON) ✓ 2026-08-01
+- [x] json-remove-empty-containers : retire les objets/tableaux vides récursivement d'un JSON (keep-null, --check CI, JSON) ✓ 2026-08-01
+- [x] text-collapse-whitespace-runs : réduit les runs d'espaces/tabs à un seul séparateur (style tr -s, --check CI, JSON) ✓ 2026-08-01
+- [x] url-params-to-headers : déplace des paramètres query vers des pseudo-headers X-Param (mode debug, --check CI, JSON) ✓ 2026-08-01
+- [x] file-mime-extension-mismatch : signale les fichiers dont le magic number contredit l'extension déclarée (rapport, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 283 — CLI Tools (à faire)
+- [ ] csv-column-fill-from-map : remplit une colonne vide depuis un mapping clé=valeur par clé CSV (--on missing, --check CI, JSON)
+- [ ] json-sort-array-of-objects : trie les tableaux d'objets d'un JSONL par une clé numérique (desc, stable, --check CI, JSON)
+- [ ] text-detect-mixed-eol : détecte les fins de ligne mélangées CRLF/LF par fichier (rapport, --check CI, JSON)
+- [ ] url-strip-index-files : retire les segments /index.html /default.aspx finaux des URLs (--check CI, JSON)
+- [ ] file-size-dupes-by-ext : liste les groupes de fichiers de même taille et même extension (candidats doublons, --check CI, JSON)
 
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
