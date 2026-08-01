@@ -26,12 +26,19 @@ Push automatique après chaque outil.
 - [x] url-strip-query : retire tout ou partie de la query string des URLs (keep-list, --check CI, JSON) ✓ 2026-08-01
 - [x] file-line-count-report : rapport nombre de lignes par fichier d'une arborescence (total, moyenne, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 246 — CLI Tools (à définir)
-- [ ] csv-normalize-nulls : uniformise les valeurs nulles d'un CSV (NA/N/A/null/"" -> "", --check CI, JSON)
-- [ ] json-wrap-objects-in : enveloppe des objets JSONL sous une clé donnée (--unwrap inverse, --check CI, JSON)
-- [ ] text-squeeze-blank-runs : réduit les runs de lignes vides à N max (style cat -s, --check CI, JSON)
-- [ ] url-extract-fragments : extrait les fragments #... des URLs (clé=valeur pairs, --unique CI, JSON)
-- [ ] file-mtime-snapshots : snapshot des mtimes d'un dossier + diff added/changed/deleted (--check CI, JSON)
+## Vague 247 — CLI Tools (à définir)
+- [ ] csv-drop-empty-columns : supprime les colonnes entièrement vides d'un CSV (header conservé, --check CI, JSON)
+- [ ] json-netaddr-index : indexe des objets JSONL par un champ clé vers un tableau (clé dupliquée agrégée, --check CI, JSON)
+- [ ] text-trim-leading : retire les espaces/tabulations en début de ligne (--in-place, --min-indent CI, JSON)
+- [ ] url-extract-path-segments : extrait les segments d'URL path en colonnes (index, join char, --check CI, JSON)
+- [ ] file-atime-report : rapport d'âge par atime (last access) des fichiers d'une arborescence (buckets, --check CI, JSON)
+
+## Vague 246 — CLI Tools (normalisation nuls CSV, wrap/unwrap clé JSON, squeeze lignes vides, fragments URL, snapshots mtime)
+- [x] csv-normalize-nulls : uniformise les valeurs nulles d'un CSV (NA/N/A/null/"" -> "", --check CI, JSON) ✓ 2026-08-01
+- [x] json-wrap-objects-in : enveloppe des objets JSONL sous une clé donnée (--unwrap inverse, --check CI, JSON) ✓ 2026-08-01
+- [x] text-squeeze-blank-runs : réduit les runs de lignes vides à N max (style cat -s, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-fragments : extrait les fragments #... des URLs (clé=valeur pairs, --unique CI, JSON) ✓ 2026-08-01
+- [x] file-mtime-snapshots : snapshot des mtimes d'un dossier + diff added/changed/deleted (--check CI, JSON) ✓ 2026-08-01
 
 ## Vague 244 — CLI Tools (dédup lignes CSV, aplatissement JSON, wrap paragraphes, normalisation casse URL, lignes partagées entre fichiers)
 - [x] csv-dedupe-rows : supprime les lignes dupliquées d'un CSV (clés ciblées, keep first/last, --check CI, JSON) ✓ 2026-08-01
