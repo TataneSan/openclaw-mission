@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 206 — CLI Tools (tabs, regex CSV, sampling, ANSI, tally)
+- [x] text-expand-tabs : convertit tabs <-> espaces (expand/unexpand, tab size, --check CI) ✓ 2026-08-01
+- [x] csv-row-filter-regex : filtre les lignes CSV par regex sur une colonne (invert, count, exit codes grep) ✓ 2026-08-01
+- [x] text-random-sample : échantillonne des lignes au hasard (reservoir sampling, seed, fraction/compte) ✓ 2026-08-01
+- [x] text-ansi-strip : retire les séquences ANSI (couleurs, curseur, hyperliens, --check CI) ✓ 2026-08-01
+- [x] csv-tally : table de contingence entre deux colonnes CSV (totaux, JSON) ✓ 2026-08-01
+
 ## Vague 205 — CLI Tools (swap CSV, pig latin, censure, julian, profondeur JSON)
 - [x] csv-swap-columns : échange deux colonnes d'un CSV (nom/index, no-header, --check CI) ✓ 2026-08-01
 - [x] text-pig-latin : traduit du texte en Pig Latin (règles voyelle/consonne, casse préservée, JSON) ✓ 2026-08-01
