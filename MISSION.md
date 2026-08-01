@@ -395,12 +395,19 @@ Push automatique après chaque outil.
 - [x] url-extract-registered-domain-rdap-hint : classe les domaines d'URLs par eTLD+1 approximatif + TLD connu inconnu (--check CI, JSON) ✓ 2026-08-01
 - [x] file-block-count-report : rapport du nombre de blocs disque (st_blocks) par fichier (--threshold CI, JSON) ✓ 2026-08-01
 
-## Vague 305 — CLI Tools (à faire)
-- [ ] csv-missing-value-report : rapport des valeurs manquantes par colonne CSV (null/NA/vide, --max-missing CI, JSON)
-- [ ] json-extract-string-lengths : distribution des longueurs de chaînes par chemin dans un JSONL (--max-len CI, JSON)
-- [ ] text-tabs-to-spaces : convertit les tabs en espaces avec largeur configurable (--tab-width, --check CI, JSON)
-- [ ] url-detect-http-auth : détecte les URLs nécessitant une auth (401-prone paths, basic-auth patterns, --check CI, JSON)
-- [ ] file-hardlink-tree : reconstruit l'arbre des liens durs par inode avec root commun (--check CI, JSON)
+## Vague 305 — CLI Tools (valeurs manquantes CSV, longueurs strings JSONL, tabs→spaces, auth HTTP URL, hardlinks)
+- [x] csv-missing-value-report : rapport des valeurs manquantes par colonne CSV (null/NA/vide, --max-missing CI, JSON) ✓ 2026-08-01
+- [x] json-extract-string-lengths : distribution des longueurs de chaînes par chemin dans un JSONL (--max-len CI, JSON) ✓ 2026-08-01
+- [x] text-tabs-to-spaces : convertit les tabs en espaces avec largeur configurable (--tab-width, --check CI, JSON) ✓ 2026-08-01
+- [x] url-detect-http-auth : détecte les URLs nécessitant une auth (basic-auth, /admin, query tokens, --check CI, JSON) ✓ 2026-08-01
+- [x] file-hardlink-tree : reconstruit l'arbre des liens durs par inode avec root commun (--check CI, JSON) ✓ 2026-08-01
+
+## Vague 306 — CLI Tools (à faire)
+- [ ] csv-column-histogram : histogramme visuel ASCII par colonne numérique CSV (buckets, --width, --check CI, JSON)
+- [ ] json-key-frequency : fréquence d'apparition de chaque clé à travers les docs JSONL (--top, --check CI, JSON)
+- [ ] text-strip-non-ascii : retire les caractères non-ASCII de chaque ligne (--replace X, --check CI, JSON)
+- [ ] url-extract-domains-tld-aware : extrait unique domaines depuis flux d'URLs en respectant l'eTLD+1 (--check CI, JSON)
+- [ ] file-content-classify : classe fichiers par contenu (code/data/media/docs) via magic+extension (--check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
