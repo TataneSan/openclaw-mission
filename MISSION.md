@@ -606,11 +606,18 @@ Push automatique après chaque outil.
 - [x] file-permission-world-writable : liste les fichiers world-writable d'une arborescence (--check CI, JSON) ✓ 2026-08-02
 
 ## Vague 335 — CSV/JSON/text/URL/file mix
-- [ ] csv-strip-empty-columns : retire les colonnes entièrement vides d'un CSV (--check CI, JSON)
-- [ ] json-array-dedupe : supprime les doublons des tableaux d'un JSONL (stable, --check CI, JSON)
-- [ ] text-first-n-lines-of-blocks : garde les N premières lignes de chaque bloc séparé par des lignes vides (--check CI, JSON)
-- [ ] url-extract-host : extrait le hostname de chaque URL (dedup, stats, --check CI, JSON)
-- [ ] file-executable-report : liste les fichiers exécutables d'une arborescence (shebang/ELF/bit x, --check CI, JSON)
+- [x] csv-strip-empty-columns : retire les colonnes entièrement vides d'un CSV (--check CI, JSON) ✓ 2026-08-02
+- [x] json-path-tail : extrait le dernier segment des chemins d'un JSON (dot-path leaves, --check CI, JSON) ✓ 2026-08-02
+- [x] text-first-n-lines-of-blocks : garde les N premières lignes de chaque bloc séparé par des lignes vides (--check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-host : extrait le hostname de chaque URL (dedup, stats, --check CI, JSON) ✓ 2026-08-02
+- [x] file-executable-report : liste les fichiers exécutables d'une arborescence (shebang/ELF/bit x, --check CI, JSON) ✓ 2026-08-02
+
+## Vague 336 — CSV/JSON/text/URL/file mix
+- [ ] csv-swap-columns : échange deux colonnes d'un CSV par nom ou index (--check CI, JSON)
+- [ ] json-type-coerce-strings : convertit les strings JSON "123"/"true"/"null" en types natifs (récursif, --check CI, JSON)
+- [ ] text-dedupe-adjacent-lines : supprime les lignes consécutives identiques (comme uniq, --ignore-case, --count, --check CI, JSON)
+- [ ] url-append-path-segment : ajoute un segment au path de chaque URL (join propre, trailing slash géré, --check CI, JSON)
+- [ ] file-broken-symlink-detect : liste les liens symboliques dont la cible n'existe pas (--check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
