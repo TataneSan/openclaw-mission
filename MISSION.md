@@ -5,12 +5,19 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
-## Vague 234 — CLI Tools (à définir)
-- [ ] text-trim-trailing : retire les espaces/tabulations en fin de ligne (fichier ou stdin, --in-place, --check CI, JSON)
-- [ ] csv-pivot-simple : pivot léger CSV (lignes->colonnes sur clé/valeur, --check CI, JSON)
-- [ ] json-validate-schema-mini : valide un JSON contre un mini-schéma (types, required, enum, --check CI, JSON)
-- [ ] text-base64-lines : encode/décode chaque ligne en base64 (--decode, URL-safe, --check CI, JSON)
-- [ ] ip-cidr-expand : étend un CIDR en liste d'IPs ou le résume (limites, --count CI, JSON)
+## Vague 235 — CLI Tools (à définir)
+- [ ] text-first-sentences : garde les N premières phrases de chaque paragraphe (N global, --min-words CI, JSON)
+- [ ] csv-detect-delimiter : détecte le délimiteur d'un CSV (virgule/point-virgule/tab/pipe, échantillon, --require CI, JSON)
+- [ ] json-ensure-keys : ajoute les clés manquantes avec valeur par défaut à des objets JSON/JSONL (dot-paths, --check CI, JSON)
+- [ ] text-to-camel-case : convertit chaque ligne en camelCase/PascalCase/snake_case/kebab-case (--style, --preserve-digits CI, JSON)
+- [ ] file-recent-modified : liste les fichiers modifiés depuis N minutes/heures (mtime, excludes glob, --count CI, JSON)
+
+## Vague 234 — CLI Tools (trim fin de ligne, pivot CSV, mini-schéma JSON, base64 ligne par ligne, expansion CIDR)
+- [x] text-trim-trailing : retire les espaces/tabulations en fin de ligne (fichier ou stdin, --in-place, --check CI, JSON) ✓ 2026-08-01
+- [x] csv-pivot-simple : pivot léger CSV (lignes->colonnes sur clé/valeur, --check CI, JSON) ✓ 2026-08-01
+- [x] json-validate-schema-mini : valide un JSON contre un mini-schéma (types, required, enum, --check CI, JSON) ✓ 2026-08-01
+- [x] text-base64-lines : encode/décode chaque ligne en base64 (--decode, URL-safe, --check CI, JSON) ✓ 2026-08-01
+- [x] ip-cidr-expand : étend un CIDR en liste d'IPs ou le résume (limites, --count CI, JSON) ✓ 2026-08-01
 
 ## Vague 233 — CLI Tools (phrases, renommage colonnes CSV, JSON unflatten, strip ANSI, doublons hash)
 - [x] text-sentence-split : découpe un texte en phrases (une par ligne, abréviations ignorées, --min-words CI, JSON) ✓ 2026-08-01
