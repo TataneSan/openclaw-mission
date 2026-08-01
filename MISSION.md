@@ -225,12 +225,19 @@ Push automatique après chaque outil.
 - [x] url-diff-batch : diff structurel en masse de paires d'URLs (ligne paire gauche/droite, --check CI, JSON) ✓ 2026-08-01
 - [x] file-permission-set-default : applique des umask par default (0644 files / 0755 dirs) sur une arborescence (--dry-run, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 279 — CLI Tools (à définir)
-- [ ] csv-pivot-sum : pivot CSV avec agrégation somme d'une colonne numérique (--sum-col, --check CI, JSON)
-- [ ] json-normalize-key-order : trie récursivement les clés d'objets JSON/JSONL (canonique, --check CI, JSON)
-- [ ] text-transliterate-ascii : translittération unicode->ASCII agressive (unidecode-like maison, --check CI, JSON)
-- [ ] url-path-join-normalize : joint et normalise des segments path d'URL (.., .,(//), --check CI, JSON)
-- [ ] file-dup-lines-across : détecte les lignes apparaissant dans plusieurs fichiers d'un dossier (--min-files CI, JSON)
+## Vague 279 — CLI Tools (pivot somme CSV, ordre clés JSON, translittération, normalisation path URL, lignes partagées)
+- [x] csv-pivot-sum : pivot CSV avec agrégation somme d'une colonne numérique (--sum-col, --check CI, JSON) ✓ 2026-08-01
+- [x] json-normalize-key-order : trie récursivement les clés d'objets JSON/JSONL (canonique, --check CI, JSON) ✓ 2026-08-01
+- [x] text-transliterate-ascii : translittération unicode->ASCII agressive (unidecode-like maison, --check CI, JSON) ✓ 2026-08-01
+- [x] url-path-join-normalize : joint et normalise des segments path d'URL (.., ., //, --check CI, JSON) ✓ 2026-08-01
+- [x] file-dup-lines-across : détecte les lignes apparaissant dans plusieurs fichiers d'un dossier (--min-files CI, JSON) ✓ 2026-08-01
+
+## Vague 280 — CLI Tools (à définir)
+- [ ] csv-detect-delimiter : détecte le séparateur d'un CSV brut (, ; tab |) par scoring (--check CI, JSON)
+- [ ] json-array-stats : statistiques sur les valeurs d'un tableau à un dot-path (min/max/sum/mean, --check CI, JSON)
+- [ ] text-column-slice : extrait une plage de colonnes caractères de chaque ligne (cut -c like, --check CI, JSON)
+- [ ] url-domain-age-hint : score heuristique d'âge d'un domaine dans une URL (motifs, tld, --check CI, JSON)
+- [ ] file-tree-manifest : génère un manifeste path+size+mtime+sha256 d'une arborescence (--verify CI, JSON)
 
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
