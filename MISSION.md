@@ -350,8 +350,8 @@ Push automatique après chaque outil.
 - [ ] csv-column-fill-forward : propage la dernière valeur non vide vers le bas dans des colonnes CSV (groupes par clé, --check CI, JSON)
 - [ ] json-count-null-fields : compte les champs null par chemin dans un JSONL (top-N, --threshold CI, JSON)
 - [ ] text-truncate-middle : tronque les lignes en conservant début et fin avec ellipse (largeur max, --check CI, JSON)
-- [ ] url-detect-tracking-params : repère les paramètres de tracking (utm_*, fbclid, gclid...) et les liste ou les retire (--strip, --check CI, JSON)
-- [ ] file-recent-changes : liste les fichiers modifiés dans les N dernières minutes/heures d'une arborescence (--window, --check CI, JSON)
+- [ ] url-detect-credential-leak : repère les URLs embarquant des secrets (userinfo user:pass@, token=/api_key=/auth= en query, --check CI, JSON)
+- [ ] file-duplicate-basename : liste les noms de fichiers en double dans une arborescence regardless of dir (match exact ou normalisé, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
