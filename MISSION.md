@@ -424,11 +424,18 @@ Push automatique après chaque outil.
 - [x] file-group-by-size-prefix : regroupe les fichiers par préfixe de taille lisible (K/M/G buckets, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 309 — CSV/JSON/text/URL/file mix
-- [ ] csv-numeric-format : reformate les colonnes numériques (décimales, séparateur milliers, --check CI, JSON)
-- [ ] json-flatten-to-csv : aplatit chaque objet JSONL en une ligne CSV (union des clés, --check CI, JSON)
-- [ ] text-average-line-length : rapport des longueurs de lignes (min/max/mean, --max-len CI, JSON)
-- [ ] url-drop-query-keys : retire des clés query spécifiques des URLs (keep-list inverse, --check CI, JSON)
-- [ ] file-snapshot-manifest : génère un manifeste chemin+taille+sha256 d'une arborescence (--check manifeste CI, JSON)
+- [x] csv-numeric-format : reformate les colonnes numériques (décimales, séparateur milliers, --check CI, JSON) ✓ 2026-08-02
+- [x] json-flatten-to-csv : aplatit chaque objet JSONL en une ligne CSV (union des clés, --check CI, JSON) ✓ 2026-08-02
+- [x] text-average-line-length : rapport des longueurs de lignes (min/max/mean, --max-len CI, JSON) ✓ 2026-08-02
+- [x] url-drop-query-keys : retire des clés query spécifiques des URLs (keep-list inverse, --check CI, JSON) ✓ 2026-08-02
+- [x] file-snapshot-manifest : génère un manifeste chemin+taille+sha256 d'une arborescence (--check manifeste CI, JSON) ✓ 2026-08-02
+
+## Vague 310 — CSV/JSON/text/URL/file mix
+- [ ] csv-swap-columns : échange deux colonnes d'un CSV (par nom ou index, --check CI, JSON)
+- [ ] json-unwrap-single-key : extrait la valeur d'un champ racine unique par ligne JSONL (--key, --check CI, JSON)
+- [ ] text-collapse-blank-runs : réduit les runs de lignes vides à N max (--max N, --check CI, JSON)
+- [ ] url-extract-id-path : extrait le dernier segment numérique/slug du path d'URLs (--pattern, --check CI, JSON)
+- [ ] file-extension-report : rapport par extension (count, taille totale/moyenne, --top N CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
