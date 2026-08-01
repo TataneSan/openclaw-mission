@@ -6,11 +6,11 @@ JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
 ## Vague 223 — CLI Tools (dédoublonnage JSON, entêtes CSV, wrapping URL, checksums texte, swapping colonnes TSV)
-- [ ] json-array-dedupe : déduplique les éléments d'un tableau JSON (clé de comparaison, stable, JSONL, --check CI, JSON)
-- [ ] csv-drop-columns : supprime des colonnes CSV par nom/index (keep-list inverse, --check CI, JSON)
-- [ ] url-defang : neutralise/réarme URLs et IPs pour partage sûr (hxxp, [.], --refang inverse, --check CI, JSON)
-- [ ] text-line-checksum : ajoute/vérifie un hash par ligne (md5/sha256, format NEC-like, --verify CI, JSON)
-- [ ] tsv-to-csv : convertit TSV ⇄ CSV (--to-tsv inverse, quoting minimal, --check CI, JSON)
+- [x] json-array-dedupe : déduplique les éléments d'un tableau JSON (clé de comparaison, stable, JSONL, --check CI, JSON) ✓ 2026-08-01
+- [x] csv-drop-columns : supprime des colonnes CSV par nom/index (keep-list inverse, --check CI, JSON) ✓ 2026-08-01
+- [x] url-defang : neutralise/réarme URLs et IPs pour partage sûr (hxxp, [.], --refang inverse, --check CI, JSON) ✓ 2026-08-01
+- [x] text-line-checksum : ajoute/vérifie un hash par ligne (md5/sha256, format NEC-like, --verify CI, JSON) ✓ 2026-08-01
+- [x] tsv-to-csv : convertit TSV ⇄ CSV (--to-tsv inverse, quoting minimal, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 221 — CLI Tools (indentation, colonnes CSV, timestamps texte, dupes JSON, padding CSV)
 - [x] text-indent-detect : détecte le style d'indentation d'un fichier (tabs vs espaces, largeur, mixte, --require CI, JSON) ✓ 2026-08-01
