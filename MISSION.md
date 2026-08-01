@@ -78,12 +78,19 @@ Push automatique après chaque outil.
 - [x] url-normalize-query-empty : uniformise les paramètres query vides (a= vs a, --check CI, JSON) ✓ 2026-08-01
 - [x] file-elf-report : rapport sur les binaires ELF d'une arborescence (arch, type, lien, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 257 — CLI Tools (à définir)
-- [ ] csv-column-correlation : corrélation de Pearson entre paires de colonnes numériques CSV (top-N, --check r² CI, JSON)
-- [ ] json-schema-infer : infère un JSON Schema simplifié depuis un JSONL (types, required, enums, --check conformité CI, JSON)
-- [ ] text-extract-emails : extrait et valide les adresses email d'un texte (dedup, domain-stats, --check CI, JSON)
-- [ ] url-extract-tld : extrait le TLD effectif respectant public-suffix-list embarquée (com.co.uk correct, --check CI, JSON)
-- [ ] file-cascade-permissions : vérifie que chaque parent d'un fichier est bien traversable par son owner (--check CI, JSON)
+## Vague 257 — CLI Tools (corrélation CSV, JSON schema, emails, TLD, permissions cascade)
+- [x] csv-column-correlation : corrélation de Pearson entre paires de colonnes numériques CSV (top-N, --check r² CI, JSON) ✓ 2026-08-01
+- [x] json-schema-infer : infère un JSON Schema simplifié depuis un JSONL (types, required, enums, --check conformité CI, JSON) ✓ 2026-08-01 (déjà publié Vague 215)
+- [x] text-extract-emails : extrait et valide les adresses email d'un texte (dedup, domain-stats, --check CI, JSON) ✓ 2026-08-01 (déjà publié)
+- [x] url-extract-tld : extrait le TLD effectif respectant public-suffix-list embarquée (com.co.uk correct, --check CI, JSON) ✓ 2026-08-01 (déjà publié Vague 243)
+- [x] file-cascade-permissions : vérifie que chaque parent d'un fichier est bien traversable par son owner (--check CI, JSON) ✓ 2026-08-01
+
+## Vague 258 — CLI Tools (à définir)
+- [ ] csv-column-z-score : ajoute une colonne z-score par colonne numérique (mean/stdev, --threshold CI outlier, JSON)
+- [ ] json-depth-first-walk : émet chaque noeud d'un JSONL en DFS avec profondeur et chemin (--max-depth CI, JSON)
+- [ ] text-wrap-quotes-aware : wrap de texte qui préserve les guillemets ouvrants/fermants sur les lignes coupées (--check CI, JSON)
+- [ ] url-extract-site-path-depth : profondeur de path par URL (/, /a, /a/b... histogramme, --max-depth CI, JSON)
+- [ ] file-group-by-extension-total : agrège taille et count par extension, avec sous-total par dossier (--top, --threshold CI, JSON)
 
 ## Vague 249 — CLI Tools (à définir)
 - [x] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON) ✓ 2026-08-01
