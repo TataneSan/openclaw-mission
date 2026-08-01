@@ -113,12 +113,19 @@ Push automatique après chaque outil.
 - [x] url-extract-subpath-regex : extrait les segments de path matchant un regex par position (--check CI, JSON) ✓ 2026-08-01
 - [x] file-duplicate-content-groups : groupe les fichiers par contenu identique (hash complet, --min-size CI, JSON) ✓ 2026-08-01
 
-## Vague 263 — CLI Tools (à définir)
-- [ ] csv-column-rename-regex : renomme des colonnes CSV par regex capture groups (--dry-run, --check CI, JSON)
-- [ ] json-array-shuffle-detect : détecte si deux tableaux JSONL sont permutations l'un de l'autre (--check CI, JSON)
-- [ ] text-trailing-space-report : rapport des lignes avec espaces finaux (counts par fichier, --fix, --check CI, JSON)
-- [ ] url-extract-tracking-params : détecte les paramètres de tracking (utm_*, fbclid, gclid, --strip, --check CI, JSON)
-- [ ] file-recent-changes-since : liste les fichiers modifiés depuis une date/un timestamp (--within, --check CI, JSON)
+## Vague 263 — CLI Tools (renommage regex colonnes CSV, permutation tableaux JSON, espaces finaux, tracking params URL, fichiers récents)
+- [x] csv-column-rename-regex : renomme des colonnes CSV par regex capture groups (--dry-run, --check CI, JSON) ✓ 2026-08-01
+- [x] json-array-shuffle-detect : détecte si deux tableaux JSON sont permutations l'un de l'autre (multiset canonique, --check CI, JSON) ✓ 2026-08-01
+- [x] text-trailing-space-report : rapport des lignes avec espaces finaux (space/tab/mixed, --fix in-place, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-tracking-params : détecte/strip les paramètres de tracking (utm_*, *_clid, hsa_*, --extra, --check CI, JSON) ✓ 2026-08-01
+- [x] file-recent-changes-since : liste les fichiers modifiés depuis timestamp/fenêtre (--since ISO/ts, --within 6h, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 264 — CLI Tools (à définir)
+- [ ] csv-column-regex-extract : extrait les groupes de capture d'un regex appliqué à une colonne CSV en nouvelles colonnes (--check CI, JSON)
+- [ ] json-key-collision-report : détecte les clés qui changeraient après normalisation (case-fold/underscore, --check CI, JSON)
+- [ ] text-blank-run-histogram : histogramme des longueurs de runs de lignes vides consécutives (--max-run CI, JSON)
+- [ ] url-detect-open-redirect-param : repère les paramètres contenant des URLs de redirection (url=, next=, redirect=, --check CI, JSON)
+- [ ] file-permission-diff-manifest : compare les permissions actuelles d'une arborescence à un manifeste octal (--apply, --check CI, JSON)
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
