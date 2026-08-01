@@ -5,12 +5,19 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
-## Vague 227 — CLI Tools (à définir)
-- [ ] json-values-by-type : extrait les valeurs JSON d'un type donné (string/number/bool/null, récursif, --check CI, JSON)
-- [ ] text-split-at-marker : découpe un texte en sections délimitées par un marker regex (header extrait, --index N, --count CI, JSON)
-- [ ] csv-transpose-cli : transpose un CSV (lignes ⇄ colonnes, --header keep, valeurs manquantes, --check CI, JSON)
-- [ ] url-query-diff : compare les query strings de deux URLs (params communs/ajoutés/retirés/modifiés, batch stdin, --check CI, JSON)
-- [ ] text-mirror-pairs : retourne chaque ligne en miroir (reverse Unicode-aware, graphemes approx, --exclude-spaces, --check CI, JSON)
+## Vague 228 — CLI Tools (à définir)
+- [ ] json-normalize-keys : renomme les clés JSON via une table de correspondance ou un pattern (map fichier, --lower, --check CI, JSON)
+- [ ] text-wrap-hard : coupe toutes les lignes dépassant une largeur fixe (CJK-aware via unicodedata, --indent continuation, --check CI, JSON)
+- [ ] csv-add-rownumber : ajoute une colonne de numérotation (start/step, colonne position, --check CI, JSON)
+- [ ] url-strip-tracking : retire les paramètres de tracking des URLs (utm_*, fbclid, gclid, listes custom, --check CI, JSON)
+- [ ] text-sort-natural : tri naturel des lignes avec nombres intégrés (v2 < v10, --numeric/--reverse, --unique, --check CI, JSON)
+
+## Vague 227 — CLI Tools (extraction typée JSON, sections texte, transposition CSV, diff query URL, miroir graphemes)
+- [x] json-values-by-type : extrait les valeurs JSON d'un type donné (string/number/bool/null, récursif, --check CI, JSON) ✓ 2026-08-01
+- [x] text-split-at-marker : découpe un texte en sections délimitées par un marker regex (header extrait, --index N, --count CI, JSON) ✓ 2026-08-01
+- [x] csv-transpose-cli : transpose un CSV (lignes ⇄ colonnes, --fill ragged, --strict, --dimensions CI, JSON) ✓ 2026-08-01
+- [x] url-query-diff : compare les query strings de deux URLs (params communs/ajoutés/retirés/modifiés, batch stdin, --diff-only CI, JSON) ✓ 2026-08-01
+- [x] text-mirror-pairs : retourne chaque ligne en miroir (grapheme-aware: accents, ZWJ emoji, drapeaux, --check-palindrome CI, JSON) ✓ 2026-08-01
 
 ## Vague 226 — CLI Tools (statistiques JSON, jointure lignes, taille répertoires, échappement URL, largeur CJK)
 - [x] json-stats-fields : statistiques numériques par champ d'une collection JSON/JSONL (min/max/mean/median/stdev, --check CI, JSON) ✓ 2026-08-01
