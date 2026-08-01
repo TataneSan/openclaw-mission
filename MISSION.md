@@ -331,20 +331,27 @@ Push automatique après chaque outil.
 
 ## Vague 296 — CLI Tools (ordre colonnes CSV, timestamps JSON, IP littérales URL, caractères contrôle)
 - [x] csv-column-order : réordonne les colonnes d'un CSV selon une liste (colonnes manquantes en fin, --check CI, JSON) ✓ 2026-08-01
-- [ ] json-path-exists : vérifie qu'un dot-path existe dans chaque document JSONL (--require PATHS, --check CI, JSON) — doublon, déjà publié (Vagues 273)
-- [ ] text-column-align : aligne les champs d'un texte en colonnes à largeur fixe (séparateur custom, --check CI, JSON) — doublon, déjà publié
+- [x] json-path-exists : vérifie qu'un dot-path existe dans chaque document JSONL (--require PATHS, --check CI, JSON) ✓ 2026-08-01 (déjà publié Vague 273)
+- [x] text-column-align : aligne les champs d'un texte en colonnes à largeur fixe (séparateur custom, --check CI, JSON) ✓ 2026-08-01 (déjà publié)
 - [x] url-extract-ip : liste les URLs utilisant une IP littérale au lieu d'un hostname (v4/v6, --check CI, JSON) ✓ 2026-08-01
-- [ ] file-permission-audit : rapport des fichiers avec permissions inhabituelles (world-writable, setuid, --check CI, JSON) — doublon, déjà publié (Vague 260)
+- [x] file-permission-audit : rapport des fichiers avec permissions inhabituelles (world-writable, setuid, --check CI, JSON) ✓ 2026-08-01 (déjà publié Vague 260)
 - [x] csv-count-empty-cells : rapport des cellules vides par colonne CSV (pourcentages, seuils --max-empty CI, JSON) ✓ 2026-08-01
 - [x] json-detect-timestamps : détecte et classe les valeurs timestamp d'un JSON/JSONL (iso8601/epoch s/ms/us, --require-format CI, JSON) ✓ 2026-08-01
 - [x] text-replace-non-printable : remplace/retire/échappe les caractères de contrôle non imprimables (modes replace/remove/escape, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 297 — CLI Tools (à définir)
-- [ ] csv-row-hash : ajoute une colonne hash par ligne CSV pour détecter les doublons de lignes entières (--check CI, JSON)
-- [ ] json-merge-lines : fusionne deux fichiers JSONL clé par clé (join inner/left, --check CI, JSON)
-- [ ] text-split-sentences : découpe un texte en phrases (ponctuation, abréviations basiques, --check CI, JSON)
-- [ ] url-normalize-port-default : retire les ports par défaut explicites (80/443, --check CI, JSON)
-- [ ] file-chdir-relative-paths : rend les chemins relatifs d'un manifeste par rapport à un nouveau dossier de base (--check CI, JSON)
+## Vague 297 — CLI Tools (hash lignes CSV, join JSONL, phrases, ports URL, rebase chemins)
+- [x] csv-row-hash : ajoute une colonne hash par ligne CSV pour détecter les doublons de lignes entières (--check CI, JSON) ✓ 2026-08-01
+- [x] json-merge-lines : fusionne deux fichiers JSONL clé par clé (join inner/left/right/full, --check CI, JSON) ✓ 2026-08-01
+- [x] text-split-sentences : découpe un texte en phrases (ponctuation, abréviations en/fr, --check CI, JSON) ✓ 2026-08-01
+- [x] url-normalize-port-default : retire les ports par défaut explicites (80/443/21..., --add-default inverse, --check CI, JSON) ✓ 2026-08-01
+- [x] file-chdir-relative-paths : rend les chemins relatifs d'un manifeste par rapport à un nouveau dossier de base (--check CI, JSON) ✓ 2026-08-01
+
+## Vague 298 — CLI Tools (à définir)
+- [ ] csv-column-fill-forward : propage la dernière valeur non vide vers le bas dans des colonnes CSV (groupes par clé, --check CI, JSON)
+- [ ] json-count-null-fields : compte les champs null par chemin dans un JSONL (top-N, --threshold CI, JSON)
+- [ ] text-truncate-middle : tronque les lignes en conservant début et fin avec ellipse (largeur max, --check CI, JSON)
+- [ ] url-detect-tracking-params : repère les paramètres de tracking (utm_*, fbclid, gclid...) et les liste ou les retire (--strip, --check CI, JSON)
+- [ ] file-recent-changes : liste les fichiers modifiés dans les N dernières minutes/heures d'une arborescence (--window, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
