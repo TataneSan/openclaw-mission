@@ -1527,3 +1527,10 @@ Push automatique après chaque outil.
 - [x] text-rot13 : applique le chiffrement ROT13 (ou ROT-n) ✓ 2026-08-01
 - [x] line-sort-unique : trie les lignes et supprime les doublons (sort -u) ✓ 2026-08-01
 - [x] text-strip-punctuation : retire la ponctuation d'un texte ✓ 2026-08-01
+
+## Vague 188 — CLI Tools (CSV & texte)
+- [x] csv-count-values : fréquence des valeurs d'une colonne CSV ✓ 2026-08-01
+- [x] csv-first-rows : garde les N premières lignes de données d'un CSV (head) ✓ 2026-08-01
+- [x] text-trail-space : supprime ou rapporte les espaces en fin de ligne ✓ 2026-08-01
+- [x] json-array-wrap : encapsule/normalise/unwrap une valeur JSON en array ✓ 2026-08-01
+- [x] text-double-space : convertit entre interligne simple et double ✓ 2026-08-01
