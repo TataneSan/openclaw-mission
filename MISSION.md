@@ -155,12 +155,19 @@ Push automatique après chaque outil.
 - [x] url-extract-scheme-report : rapport des schemes d'URLs (comptage, scheme manquant détecté, --check CI, JSON) ✓ 2026-08-01
 - [x] file-dir-depth-histogram : histogramme des profondeurs de répertoires d'une arborescence (--max-depth CI, JSON) ✓ 2026-08-01
 
-## Vague 269 — CLI Tools (à définir)
-- [ ] csv-header-case-convert : convertit les en-têtes d'un CSV en snake/camel/kebab (collision report, --check CI, JSON)
-- [ ] json-array-index-extract : extrait l'élément à l'index N de chaque tableau d'un JSONL (négatifs, --check CI, JSON)
-- [ ] text-word-wrap-suffix : wrap de texte avec suffixe de continuation custom sur chaque ligne coupée (--check CI, JSON)
-- [ ] url-host-port-mapping : rapport des combinaisons host:port uniques d'un flux d'URLs (défauts par scheme, --check CI, JSON)
-- [ ] file-hidden-detect : liste les fichiers et dossiers cachés (dotfiles, attributs) d'une arborescence (--check CI, JSON)
+## Vague 269 — CLI Tools (casse headers CSV, index tableaux JSON, wrap suffixe, host:port, fichiers cachés)
+- [x] csv-header-case-convert : convertit les en-têtes d'un CSV en snake/camel/kebab (collision report, --check CI, JSON) ✓ 2026-08-01
+- [x] json-array-index-extract : extrait l'élément à l'index N de chaque tableau d'un JSONL (négatifs, --check CI, JSON) ✓ 2026-08-01
+- [x] text-word-wrap-suffix : wrap de texte avec suffixe de continuation custom sur chaque ligne coupée (--check CI, JSON) ✓ 2026-08-01
+- [x] url-host-port-mapping : rapport des combinaisons host:port uniques d'un flux d'URLs (défauts par scheme, --check CI, JSON) ✓ 2026-08-01
+- [x] file-hidden-detect : liste les fichiers et dossiers cachés (dotfiles, attributs) d'une arborescence (--check CI, JSON) ✓ 2026-08-01
+
+## Vague 270 — CLI Tools (à définir)
+- [ ] csv-collapsed-dupe-rows : fusionne les lignes CSV dupliquées avec compteur (key cols, --check CI, JSON)
+- [ ] json-array-element-counts : rapport du nombre d'éléments par tableau d'un JSONL (histogramme, --check CI, JSON)
+- [ ] text-column-justify-right : aligne à droite les colonnes d'un tableau whitespace (width auto, --check CI, JSON)
+- [ ] url-extract-userinfo : extrait/rapporte la présence de userinfo dans des URLs (masquage, --check CI, JSON)
+- [ ] file-extension-counts-by-dir : compte les extensions par dossier immédiat d'une arborescence (--check CI, JSON)
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
