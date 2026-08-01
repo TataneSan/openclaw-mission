@@ -148,12 +148,19 @@ Push automatique après chaque outil.
 - [x] url-path-normalize-dots : résout les segments . et .. dans les paths d'URLs (RFC 3986 remove_dot_segments, --check CI, JSON) ✓ 2026-08-01
 - [x] file-oldest-newest-report : rapport des fichiers les plus anciens/récents par arborescence (top-N mtime, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 268 — CLI Tools (à définir)
-- [ ] csv-percentile-column : calcule les percentiles (P50/P90/P99) d'une colonne numérique CSV (interpolation linéaire, --check CI, JSON)
-- [ ] json-key-count-report : rapport du nombre de clés par objet d'un JSONL (min/max/mean/histogramme, --check CI, JSON)
-- [ ] text-strip-ansi-codes : retire les séquences d'échappement ANSI (couleurs, CSI) de chaque ligne (--check CI, JSON)
-- [ ] url-extract-scheme-report : rapport des schemes d'URLs (comptage, scheme manquant détecté, --check CI, JSON)
-- [ ] file-dir-depth-histogram : histogramme des profondeurs de répertoires d'une arborescence (--max-depth CI, JSON)
+## Vague 268 — CLI Tools (percentiles CSV, compte clés JSON, strip ANSI, schemes URL, profondeur dossiers)
+- [x] csv-percentile-column : calcule les percentiles (P50/P90/P99) d'une colonne numérique CSV (interpolation linéaire, --check CI, JSON) ✓ 2026-08-01
+- [x] json-key-count-report : rapport du nombre de clés par objet d'un JSONL (min/max/mean/histogramme, --check CI, JSON) ✓ 2026-08-01
+- [x] text-strip-ansi-codes : retire les séquences d'échappement ANSI (couleurs, CSI) de chaque ligne (--check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-scheme-report : rapport des schemes d'URLs (comptage, scheme manquant détecté, --check CI, JSON) ✓ 2026-08-01
+- [x] file-dir-depth-histogram : histogramme des profondeurs de répertoires d'une arborescence (--max-depth CI, JSON) ✓ 2026-08-01
+
+## Vague 269 — CLI Tools (à définir)
+- [ ] csv-header-case-convert : convertit les en-têtes d'un CSV en snake/camel/kebab (collision report, --check CI, JSON)
+- [ ] json-array-index-extract : extrait l'élément à l'index N de chaque tableau d'un JSONL (négatifs, --check CI, JSON)
+- [ ] text-word-wrap-suffix : wrap de texte avec suffixe de continuation custom sur chaque ligne coupée (--check CI, JSON)
+- [ ] url-host-port-mapping : rapport des combinaisons host:port uniques d'un flux d'URLs (défauts par scheme, --check CI, JSON)
+- [ ] file-hidden-detect : liste les fichiers et dossiers cachés (dotfiles, attributs) d'une arborescence (--check CI, JSON)
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
