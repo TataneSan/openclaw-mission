@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 215 — CLI Tools (jointure CSV, liens Markdown, schéma JSON, fréquences lignes, quotes CSV)
+- [x] csv-join : jointure relationnelle de deux CSV sur colonnes clés (inner/left/right/outer, clés composites, délimiteurs par fichier, --check CI, JSON) ✓ 2026-08-01
+- [x] text-markdown-links : extrait et valide les liens Markdown (inline, référence, autolinks, URLs brutes, --urls-only, --check CI, JSON) ✓ 2026-08-01
+- [x] json-schema-infer : infère un schéma JSON Schema 2020-12 depuis JSON/JSONL (types, required, formats, enum, bornes, --validate CI) ✓ 2026-08-01
+- [x] file-line-frequency : table de fréquences des lignes (top-N, trim/case, pourcentages, CSV/JSON, --max-share CI) ✓ 2026-08-01
+- [x] csv-quote-fix : normalise le style de quoting CSV (minimal/all/non-numeric/none, dialectes entrée, --check CI, stats JSON) ✓ 2026-08-01
+
 ## Vague 214 — CLI Tools (stopwords, records CSV, truncate, ménage fichiers, durées)
 - [x] text-stopword-remove : retire les stopwords d'un texte (listes en/fr embarquées, listes custom, --check CI, JSON) ✓ 2026-08-01
 - [x] csv-to-records : rend un CSV en blocs key: value (ligne unique --row, alignement, JSON, délimiteur custom) ✓ 2026-08-01
@@ -1619,6 +1626,14 @@ Push automatique après chaque outil.
 - [x] text-camel-case : convertit du texte/identifiants en camelCase ou PascalCase ✓ 2026-08-01
 - [x] csv-delimiter-detect : détecte le délimiteur d'un CSV (virgule, point-virgule, tab, pipe) ✓ 2026-08-01
 - [x] text-wrap-width : re-wrap les paragraphes d'un texte à une largeur fixe ✓ 2026-08-01
+
+## Vague 191 — CLI Tools (texte & env)
+- [x] text-line-length : rapport de longueur par ligne + stats (min/max/avg), lint --max/--min exit 2, JSON ✓ 2026-08-01
+- [x] text-extract-emails : extrait les adresses email d'un texte (unique, sort, count, domains, check) ✓ 2026-08-01
+- [x] text-extract-urls : extrait les URLs http/https/ftp (filtre scheme/host, hosts/schemes, check, JSON) ✓ 2026-08-01
+- [x] csv-row-sample : échantillonnage aléatoire de N lignes d'un CSV (seed reproductible, pourcentage, JSON) ✓ 2026-08-01
+- [x] text-hash-lines : hash de chaque ligne (md5/sha1/sha256...), dedup, dup-check exit 2, JSON ✓ 2026-08-01
+- [x] env-sort : trie les clés d'un .env en préservant commentaires et groupes (--check, --in-place) ✓ 2026-08-01
 
 ## Vague 188 — CLI Tools (CSV & texte)
 - [x] csv-count-values : fréquence des valeurs d'une colonne CSV ✓ 2026-08-01
