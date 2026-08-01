@@ -34,11 +34,18 @@ Push automatique après chaque outil.
 - [x] file-extension-mismatch : détecte les fichiers dont le magic number contredit l'extension (png/jpg/pdf/zip/gz, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 251 — CLI Tools (à définir)
-- [ ] csv-replace-values : remplace des valeurs exactes ou regex dans des colonnes CSV ciblées (mapping fichier, --dry-run CI, JSON)
-- [ ] json-array-flatten : aplatit les tableaux imbriqués d'un document JSON/JSONL à une profondeur donnée (--depth, --check CI, JSON)
-- [ ] text-number-words : convertit les nombres en toutes lettres et inversement (en/fr, plage, --check CI, JSON)
-- [ ] url-compare-parts : diff structurel de deux URLs (scheme/host/port/path/query/fragment, --same-host CI, JSON)
-- [ ] file-permission-report : rapport sur les bits de permission inhabituels d'une arborescence (world-writable, suid, --check CI, JSON)
+- [x] csv-replace-values : remplace des valeurs exactes ou regex dans des colonnes CSV ciblées (mapping fichier, --dry-run CI, JSON) ✓ 2026-08-01
+- [x] json-array-flatten : aplatit les tableaux imbriqués d'un document JSON/JSONL à une profondeur donnée (--depth, --check CI, JSON) ✓ 2026-08-01
+- [x] text-number-words : convertit les nombres en toutes lettres et inversement (en/fr, plage, --check CI, JSON) ✓ 2026-08-01
+- [x] url-compare-parts : diff structurel de deux URLs (scheme/host/port/path/query/fragment, --same-host CI, JSON) ✓ 2026-08-01
+- [x] file-permission-report : rapport sur les bits de permission inhabituels d'une arborescence (world-writable, suid, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 252 — CLI Tools (à définir)
+- [ ] csv-transpose-header-column : permute la première ligne (header) avec la première colonne (--check CI, JSON)
+- [ ] json-merge-arrays-zip : fusionne des tableaux JSONL par index en tuples [a,b] (--strict-len CI, JSON)
+- [ ] text-remove-empty-parens : retire les paires de parenthèses vides et espaces résiduels ((), [], {}, --check CI, JSON)
+- [ ] url-extract-file-extension : extrait l'extension de fichier du path d'URLs (stats par extension, --check CI, JSON)
+- [ ] file-naming-convention-lint : vérifie kebab/snake/camel case des noms de fichiers (--style, --fix rename, --check CI, JSON)
 
 ## Vague 249 — CLI Tools (à définir)
 - [x] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON) ✓ 2026-08-01
