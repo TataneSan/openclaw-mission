@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 210 — CLI Tools (émojis, phrases, IPv4, commentaires, palindromes)
+- [x] text-emoji-scan : détecte et rapporte les émojis d'un texte (codepoint, nom Unicode, catégorie, occurrences, --check CI, --strip, JSON) ✓ 2026-08-01
+- [x] text-sentence-split : découpe un texte en phrases (abréviations/décimales gérées, --stats, JSON, numérotation) ✓ 2026-08-01
+- [x] ip-to-integer : convertit IPv4 ⇆ entier 32 bits (hex, binaire, batch stdin, JSON) ✓ 2026-08-01
+- [x] text-strip-comments : retire les commentaires (#, //, /* */) en préservant les chaînes littérales (--check CI, styles, JSON) ✓ 2026-08-01
+- [x] text-palindrome-check : vérifie si des textes sont des palindromes (accents/ponctuation/casse ignorés, --check, JSON) ✓ 2026-08-01
+
 ## Vague 209 — CLI Tools (MAC, mots de passe, CSV colonnes, HTML, nombres)
 - [x] mac-vendor-lookup : identifie le fabricant d'une adresse MAC (base OUI embarquée, normalisation, JSON) ✓ 2026-08-01
 - [x] text-password-strength : évalue la robustesse d'un mot de passe (entropie, classes, motifs, JSON) ✓ 2026-08-01
