@@ -5,12 +5,19 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 209 — CLI Tools (MAC, mots de passe, CSV colonnes, HTML, nombres)
+- [ ] mac-vendor-lookup : identifie le fabricant d'une adresse MAC (base OUI embarquée, normalisation, JSON)
+- [ ] text-password-strength : évalue la robustesse d'un mot de passe (entropie, classes, motifs, JSON)
+- [ ] csv-pick-columns : projection de colonnes CSV par nom/index/range (exclude, ordre, --check CI)
+- [ ] text-html-escape : encode/décode les entités HTML (named/decimal/hex, --check roundtrip, JSON)
+- [ ] number-to-words : convertit des nombres en toutes lettres (fr/en, ordinals, JSON)
+
 ## Vague 208 — CLI Tools (CIDR, whitespace guillemets, CSV filtering, ROT, case)
-- [ ] ip-cidr-tools : calcules CIDR (network/broadcast/hosts, contains, split, JSON)
-- [ ] text-straight-quotes : convertit guillemets/apostrophes typographiques en ASCII (--check CI)
-- [ ] csv-filter-not-null : ne garde que les lignes sans cellules vides (colonnes ciblées, JSON)
-- [ ] text-split-camel : découpe camelCase/PascalCase en mots (snake/kebab/space, JSON)
-- [ ] csv-row-reverse : inverse l'ordre des lignes de données (header conservé, --check CI)
+- [x] ip-cidr-tools : calcules CIDR (network/broadcast/hosts, contains, split, JSON) ✓ 2026-08-01
+- [x] text-straight-quotes : convertit guillemets/apostrophes typographiques en ASCII (--check CI) ✓ 2026-08-01
+- [x] csv-filter-not-null : ne garde que les lignes sans cellules vides (colonnes ciblées, JSON) ✓ 2026-08-01
+- [x] text-split-camel : découpe camelCase/PascalCase en mots (snake/kebab/space, JSON) ✓ 2026-08-01
+- [x] csv-row-reverse : inverse l'ordre des lignes de données (header conservé, --check CI) ✓ 2026-08-01
 
 ## Vague 207 — CLI Tools (padding, diff CSV, unflatten, rot, invisible chars)
 - [x] text-pad-lines : pousse les lignes à une largeur cible (left/right/center, fill char, truncate, --check CI) ✓ 2026-08-01
