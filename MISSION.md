@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 194 — CLI Tools (texte, csv, fichiers, tri)
+- [x] text-column-align : aligne du texte délimité en colonnes monospacées (auto-détection, alignements, header, JSON) ✓ 2026-08-01
+- [x] csv-grep-rows : grep pour CSV avec conditions par colonne (regex, numériques, AND/OR, JSON, exit codes grep) ✓ 2026-08-01
+- [x] file-hash-watch : snapshot de hashes + détection added/modified/deleted (check, watch, CI-friendly) ✓ 2026-08-01
+- [x] text-sort-natural : tri naturel (versions, IPs, numérique, random seedé, --check) ✓ 2026-08-01
+- [x] file-bom-tool : détecte/ajoute/supprime les BOM Unicode (UTF-8/16/32, check CI, récursif) ✓ 2026-08-01
+
 ## Vague 185 — CLI Tools
 - [x] percent-change : calc des variations % (simple, série, chaînée) ✓ 2026-07-28
 - [x] list-dedup : supprime doublons de lignes préservant l'ordre (i/t/n/d) ✓ 2026-07-28
