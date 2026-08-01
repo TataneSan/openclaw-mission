@@ -5,12 +5,19 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
-## Vague 237 — CLI Tools (à définir)
-- [ ] csv-reorder-columns : réordonne les colonnes par liste de noms/indices (reste append/prepend, --check CI, JSON)
-- [ ] json-sort-keys-recursive : trie toutes les clés d'un JSON récursivement (fold case, --check CI, JSON)
-- [ ] text-collapse-runs : réduit les répétitions de caractères consécutifs (a.z, s_ -> az s_, char ciblé, --check CI, JSON)
-- [ ] url-strip-fragment : retire les fragments #... des URLs en flux (--keep-list, --check CI, JSON)
-- [ ] file-symlink-broken : liste les liens symboliques cassés d'une arborescence (excludes, --delete, --check CI, JSON)
+## Vague 238 — CLI Tools (à définir)
+- [ ] csv-column-stats : statistiques numériques par colonne CSV (min/max/mean/median, colonnes ciblées, --check CI, JSON)
+- [ ] json-diff-patch : génère un patch JSON (RFC 6902-like simplifié) entre deux documents (--apply, --check CI, JSON)
+- [ ] text-number-lines : numérote les lignes (start/step, largeur fixe, skip blank, --check CI, JSON)
+- [ ] url-add-params : ajoute/remplace des paramètres query dans des URLs en flux (k=v, --replace, --check CI, JSON)
+- [ ] file-hardlink-detect : liste les fichiers partageant le même inode dans une arborescence (--min-links, --check CI, JSON)
+
+## Vague 237 — CLI Tools (réordonnage colonnes CSV, tri clés JSON récursif, collapse répétitions, strip fragments URL, symlinks cassés)
+- [x] csv-reorder-columns : réordonne les colonnes par liste de noms/indices (reste append/prepend, --check CI, JSON) ✓ 2026-08-01
+- [x] json-sort-keys-recursive : trie toutes les clés d'un JSON récursivement (fold case, --check CI, JSON) ✓ 2026-08-01
+- [x] text-collapse-runs : réduit les répétitions de caractères consécutifs (classes ciblées, char unique, --max, --check CI, JSON) ✓ 2026-08-01
+- [x] url-strip-fragment : retire les fragments #... des URLs en flux (--keep-list, --check CI, JSON) ✓ 2026-08-01
+- [x] file-symlink-broken : liste les liens symboliques cassés d'une arborescence (excludes, --delete, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 236 — CLI Tools (quotage CSV, strip commentaires JSONC, swap de mots, dedupe params URL, fichiers vides)
 - [x] csv-quote-fields : force/retire les guillemets autour des champs CSV (minimal/all/non-numeric/none, --check CI, JSON) ✓ 2026-08-01
