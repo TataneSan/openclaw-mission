@@ -5,12 +5,19 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
-## Vague 230 — CLI Tools (à définir)
-- [ ] json-pretty-diff : diff structurel de deux documents JSON (chemins modifiés, added/removed/changed, --check CI, JSON)
-- [ ] text-dedupe-adjacent : supprime les lignes dupliquées consécutives (style uniq, --count, --ignore-case, --check CI, JSON)
-- [ ] csv-slice-rows : extrait une tranche de lignes CSV (start:stop:step style Python, négatifs, --check CI, JSON)
-- [ ] url-extract-domain : extrait schéma/host/port/path des URLs en champs tabulés (subdomain splitting, --check CI, JSON)
-- [ ] text-repeat-lines : répète chaque ligne N fois (N global ou champ préfixe, --interleave, --check CI, JSON)
+## Vague 231 — CLI Tools (à définir)
+- [ ] text-rot13-select : applique ROT13/Caesar seulement aux segments entre délimiteurs (--between quotes/brackets, --check CI, JSON)
+- [ ] csv-header-case : uniformise la casse des en-têtes CSV (snake/camel/kebab/upper, --dry-run, --check CI, JSON)
+- [ ] json-sort-array-by : trie un tableau JSON d'objets par champ (multi-clés, numérique, --check CI, JSON)
+- [ ] text-column-rotate : décale les colonnes whitespace vers la gauche/droite (--shift N, --check CI, JSON)
+- [ ] file-extension-report : rapport de fréquence d'extensions dans une arborescence (top-N, tailles, --threshold CI, JSON)
+
+## Vague 230 — CLI Tools (diff JSON structurel, dédupe adjacente, slice CSV, extraction domaine URL, répétition lignes)
+- [x] json-pretty-diff : diff structurel de deux documents JSON (chemins modifiés, added/removed/changed, --check CI, JSON) ✓ 2026-08-01
+- [x] text-dedupe-adjacent : supprime les lignes dupliquées consécutives (style uniq, --count, --ignore-case, --check CI, JSON) ✓ 2026-08-01
+- [x] csv-slice-rows : extrait une tranche de lignes CSV (start:stop:step style Python, négatifs, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-domain : extrait schéma/host/port/path des URLs en champs tabulés (subdomain splitting, --check CI, JSON) ✓ 2026-08-01
+- [x] text-repeat-lines : répète chaque ligne N fois (N global ou champ préfixe, --interleave, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 229 — CLI Tools (aplatissement JSON feuilles, sélection colonnes, dédupe CSV, normalisation URL, padding colonnes)
 - [x] json-flatten-leaf : aplatit un JSON imbriqué en paires chemin=valeur (feuilles seules, sep custom, --check CI, JSON) ✓ 2026-08-01
