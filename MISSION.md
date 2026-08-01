@@ -20,11 +20,18 @@ Push automatique après chaque outil.
 - [x] file-size-outliers : liste les fichiers dont la taille dévie de la médiane d'une arborescence (--factor CI, JSON) ✓ 2026-08-01
 
 ## Vague 245 — CLI Tools (à définir)
-- [ ] csv-count-distinct : compte les valeurs distinctes par colonne CSV (top-N, --check CI, JSON)
-- [ ] json-select-fields : garde seulement certains champs d'objets JSONL (dot-paths whitelist, --check CI, JSON)
-- [ ] text-align-columns : aligne des colonnes whitespace en tableau à largeur fixe (left/right, --check CI, JSON)
-- [ ] url-strip-query : retire tout ou partie de la query string des URLs (keep-list, --check CI, JSON)
-- [ ] file-line-count-report : rapport nombre de lignes par fichier d'une arborescence (total, moyenne, --check CI, JSON)
+- [x] csv-count-distinct : compte les valeurs distinctes par colonne CSV (top-N, --check CI, JSON) ✓ 2026-08-01
+- [x] json-select-fields : garde seulement certains champs d'objets JSONL (dot-paths whitelist, --check CI, JSON) ✓ 2026-08-01
+- [x] text-align-columns : aligne des colonnes whitespace en tableau à largeur fixe (left/right, --check CI, JSON) ✓ 2026-08-01
+- [x] url-strip-query : retire tout ou partie de la query string des URLs (keep-list, --check CI, JSON) ✓ 2026-08-01
+- [x] file-line-count-report : rapport nombre de lignes par fichier d'une arborescence (total, moyenne, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 246 — CLI Tools (à définir)
+- [ ] csv-normalize-nulls : uniformise les valeurs nulles d'un CSV (NA/N/A/null/"" -> "", --check CI, JSON)
+- [ ] json-wrap-objects-in : enveloppe des objets JSONL sous une clé donnée (--unwrap inverse, --check CI, JSON)
+- [ ] text-squeeze-blank-runs : réduit les runs de lignes vides à N max (style cat -s, --check CI, JSON)
+- [ ] url-extract-fragments : extrait les fragments #... des URLs (clé=valeur pairs, --unique CI, JSON)
+- [ ] file-mtime-snapshots : snapshot des mtimes d'un dossier + diff added/changed/deleted (--check CI, JSON)
 
 ## Vague 244 — CLI Tools (dédup lignes CSV, aplatissement JSON, wrap paragraphes, normalisation casse URL, lignes partagées entre fichiers)
 - [x] csv-dedupe-rows : supprime les lignes dupliquées d'un CSV (clés ciblées, keep first/last, --check CI, JSON) ✓ 2026-08-01
