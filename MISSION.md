@@ -613,11 +613,18 @@ Push automatique après chaque outil.
 - [x] file-executable-report : liste les fichiers exécutables d'une arborescence (shebang/ELF/bit x, --check CI, JSON) ✓ 2026-08-02
 
 ## Vague 336 — CSV/JSON/text/URL/file mix
-- [ ] csv-swap-columns : échange deux colonnes d'un CSV par nom ou index (--check CI, JSON)
-- [ ] json-type-coerce-strings : convertit les strings JSON "123"/"true"/"null" en types natifs (récursif, --check CI, JSON)
-- [ ] text-dedupe-adjacent-lines : supprime les lignes consécutives identiques (comme uniq, --ignore-case, --count, --check CI, JSON)
-- [ ] url-append-path-segment : ajoute un segment au path de chaque URL (join propre, trailing slash géré, --check CI, JSON)
-- [ ] file-broken-symlink-detect : liste les liens symboliques dont la cible n'existe pas (--check CI, JSON)
+- [x] csv-drop-trailing-commas : retire les virgules terminales en excès des lignes CSV (--check CI, JSON) ✓ 2026-08-02
+- [x] json-type-coerce-strings : convertit les strings JSON "123"/"true"/"null" en types natifs (récursif, --check CI, JSON) ✓ 2026-08-02
+- [x] text-reverse-words-line : inverse l'ordre des mots de chaque ligne (--min-len, --check CI, JSON) ✓ 2026-08-02
+- [x] url-ensure-scheme : garantit un scheme par défaut (https) aux URLs sans scheme (--check CI, JSON) ✓ 2026-08-02
+- [x] file-hardlink-count-report : rapport du nombre de liens durs par fichier (--min-links, --check CI, JSON) ✓ 2026-08-02
+
+## Vague 337 — CSV/JSON/text/URL/file mix
+- [ ] csv-quote-all-cells : force le quoting de toutes les cellules CSV (QUOTE_ALL, --minimal inverse, --check CI, JSON)
+- [ ] json-boolean-report : rapport des valeurs booléennes par dot-path dans un JSONL (ratio true/false, --check CI, JSON)
+- [ ] text-squeeze-spaces : écrase les espaces multiples en un seul (hors indentation, --keep-indent, --check CI, JSON)
+- [ ] url-lowercase-host-path-split : passe host en minuscules mais préserve la casse du path (--check CI, JSON)
+- [ ] file-atime-report : rapport des fichiers dont l'atime est postérieur au mtime (--check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
