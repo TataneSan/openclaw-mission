@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 218 — CLI Tools (lint JSON, escape CSV, path URL, blank lines, sharding CSV)
+- [x] json-required-keys : lint CI sur clés requises d'un JSON (dot-paths, indices, --non-empty, JSON) ✓ 2026-08-01
+- [x] text-csv-escape : échappe du texte libre en champ CSV RFC 4180 (quote double, --unescape, --check roundtrip) ✓ 2026-08-01
+- [x] url-path-clean : normalise des paths d'URL lexicalement (//, ., .., trailing, query/fragment préservés, --check CI) ✓ 2026-08-01
+- [x] text-blank-lines-report : rapport des lignes vides (runs, leading/trailing, limites CI --max-*, JSON) ✓ 2026-08-01
+- [x] csv-row-hash-select : sélection déterministe de lignes CSV par hash de clé (--mod/--bucket sharding, --fraction, md5/sha1/sha256) ✓ 2026-08-01
+
 ## Vague 217 — CLI Tools (stats .env, espaces, cellules CSV, IPv6, nulls JSON)
 - [x] env-count : compte variables/commentaires/lignes vides d'un .env (dupes, exported, --min CI, JSON) ✓ 2026-08-01
 - [x] text-space-normalize : réduit les runs d'espaces/tabs à un seul espace (indent préservé, trim trailing, --check CI, JSON) ✓ 2026-08-01
