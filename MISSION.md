@@ -1506,3 +1506,10 @@ Push automatique après chaque outil.
 - [x] number-format : formate des nombres (séparateurs milliers, décimales, notation scientifique, arrondi) ✓ 2026-07-28
 - [x] roman-numerals : convertisseur nombres ⇆ chiffres romains (1..3999, batch, JSON) ✓ 2026-07-28
 - [x] csv-max-min : valeurs min/max des colonnes numériques d'un CSV (fichier/stdin, JSON) ✓ 2026-07-28
+
+## Vague 185 — CLI Tools (utilitaires)
+- [x] csv-median : calcule la médiane des colonnes numériques d'un CSV ✓ 2026-08-01
+- [x] text-strip-html : retire les balises HTML d'un texte (entités décodées) ✓ 2026-08-01
+- [x] json-sort-keys : trie récursivement les clés d'un document JSON ✓ 2026-08-01
+- [x] file-line-diff-count : compte les lignes ajoutées/supprimées entre deux fichiers ✓ 2026-08-01
+- [x] text-capitalize-words : met en majuscule la première lettre de chaque mot ✓ 2026-08-01
