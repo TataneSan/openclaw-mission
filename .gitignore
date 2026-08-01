@@ -1,3 +1,6 @@
+# Independent tool repositories: the parent tracks published gitlinks only.
+tools/*/
+
 # Local runtime state
 runtime/
 archive/
