@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 216 — CLI Tools (diacritiques, délimiteur CSV, RFC 7386, timestamps, quoting shell)
+- [x] text-diacritic-fold : retire les accents/diacritiques du texte (Latin-1/A, ligatures, --check CI, JSON) ✓ 2026-08-01
+- [x] csv-detect-delimiter : détecte le séparateur d'un CSV (quote-aware, scoring, JSON report, exit 2) ✓ 2026-08-01
+- [x] json-rfc7386 : applique des JSON Merge Patches RFC 7386 (multi-patches, compact/indent, tests Appendix A) ✓ 2026-08-01
+- [x] ts-convert : convertit timestamps Unix ⇆ ISO 8601 (s/ms/µs/ns par magnitude, --layout custom, --tz) ✓ 2026-08-01
+- [x] shell-quote : échappe une chaîne pour POSIX sh / PowerShell / cmd.exe (anti-injection, stdin batch, JSON) ✓ 2026-08-01
+
 ## Vague 215 — CLI Tools (jointure CSV, liens Markdown, schéma JSON, fréquences lignes, quotes CSV)
 - [x] csv-join : jointure relationnelle de deux CSV sur colonnes clés (inner/left/right/outer, clés composites, délimiteurs par fichier, --check CI, JSON) ✓ 2026-08-01
 - [x] text-markdown-links : extrait et valide les liens Markdown (inline, référence, autolinks, URLs brutes, --urls-only, --check CI, JSON) ✓ 2026-08-01
