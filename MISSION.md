@@ -5,6 +5,20 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 221 — CLI Tools (indentation, colonnes CSV, timestamps texte, dupes JSON, padding CSV)
+- [ ] text-indent-detect : détecte le style d'indentation d'un fichier (tabs vs espaces, largeur, mixte, --require CI, JSON)
+- [ ] csv-swap-columns : échange ou réordonne des colonnes CSV par nom/index (--swap, --order, --check CI)
+- [ ] text-epoch-embed : remplace les timestamps Unix d'un texte par des dates ISO (--to-epoch inverse, --tz, --check CI, JSON)
+- [ ] json-dup-keys : détecte les clés dupliquées dans un objet JSON (object_pairs_hook, positions, --check CI)
+- [ ] csv-align-columns : réaligne la largeur des champs d'un CSV en sortie texte/table (markdown, unicode, --max-width)
+
+## Vague 220 — CLI Tools (quoting CSV, hyperliens OSC 8, query string, entourage lignes, stat git)
+- [x] csv-quote-all : force le quoting de toutes (ou certaines) cellules CSV (--all/--columns, --none inverse, --check CI) ✓ 2026-08-01
+- [x] text-hyperlink-wrap : encadre des URLs/texte en hyperliens OSC 8 de terminal (--strip inverse, --check CI, JSON) ✓ 2026-08-01
+- [x] json-to-querystring : convertit un objet JSON en query string URL (nested brackets, --sort, --decode inverse, --check CI) ✓ 2026-08-01
+- [x] text-surround-lines : encadre chaque ligne avec préfixe/suffixe (délimiteurs, --pattern, --check CI, JSON) ✓ 2026-08-01
+- [x] git-branch-age : classe les branches git locales par âge/activité (dernier commit, auteur, ahead/behind vs main, --stale CI, JSON) ✓ 2026-08-01
+
 ## Vague 219 — CLI Tools (largeurs lignes, colonnes CSV, JSON, query params, continuations)
 - [x] text-wide-quality : lint de largeur de lignes (distribution, percentiles, --limit CI, JSON, ignore-glob) ✓ 2026-08-01
 - [x] csv-column-prefix : préfixe/suffixe les noms de colonnes CSV (--prefix/--suffix/--only, dry-run, --check CI) ✓ 2026-08-01
