@@ -577,6 +577,13 @@ Push automatique après chaque outil.
 - [x] url-extract-auth-userinfo : extrait user/password éventuels des URLs et les rapporte séparément (--redact, --check CI, JSON) ✓ 2026-08-02
 - [x] file-broken-pipe-links : détecte les symlinks circulaires ou trop profonds d'une arborescence (--max-depth, --check CI, JSON) ✓ 2026-08-02
 
+## Vague 331 — CSV/JSON/text/URL/file mix
+- [x] csv-add-row-hash : ajoute une colonne hash de chaque ligne CSV (md5/sha256, --check CI, JSON) ✓ 2026-08-02
+- [x] json-extract-unique-paths : liste les chemins uniques d'un JSON/JSONL avec types (--check CI, JSON) ✓ 2026-08-02
+- [x] text-strip-leading-punct : retire la ponctuation en début de ligne (configurable, --check CI, JSON) ✓ 2026-08-02
+- [x] url-normalize-case-path : met les segments path d'URLs en kebab-case (--check CI, JSON) ✓ 2026-08-02
+- [x] file-deep-empty-dirs : détecte les dossiers vides récursivement (bottom-up, --prune, --check CI, JSON) ✓ 2026-08-02
+
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
 - [x] json-flatten-keys : aplatit un JSON en paires chemin=valeur (séparateur dot, arrays indexés, --check CI, JSON) ✓ 2026-08-01
