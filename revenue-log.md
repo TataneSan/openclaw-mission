@@ -95,7 +95,7 @@ curl -H "Authorization: Bearer oc_your_api_key_here" \
 
 **Admin requests:**
 ```bash
-curl -H "X-Admin-Key: admin_openclaw_2026" \
+curl -H "X-Admin-Key: $ADMIN_KEY" \
      http://localhost:8088/admin/stats
 ```
 
@@ -127,7 +127,7 @@ All prices in **satoshis per 1,000 tokens** (1 BTC = 100,000,000 satoshis)
 ```bash
 curl -X POST http://localhost:8088/admin/keys \
   -H "Content-Type: application/json" \
-  -H "X-Admin-Key: admin_openclaw_2026" \
+  -H "X-Admin-Key: $ADMIN_KEY" \
   -d '{
     "client_name": "company-name",
     "email": "client@company.com",
@@ -139,7 +139,7 @@ curl -X POST http://localhost:8088/admin/keys \
 ```bash
 curl -X POST http://localhost:8088/admin/keys/oc_xxxx.../credits \
   -H "Content-Type: application/json" \
-  -H "X-Admin-Key: admin_openclaw_2026" \
+  -H "X-Admin-Key: $ADMIN_KEY" \
   -d '{
     "amount": 100000,
     "tx_hash": "btc_or_eth_tx_hash",
@@ -159,7 +159,7 @@ curl -H "Authorization: Bearer oc_client_api_key" \
 
 ### Global Statistics
 ```bash
-curl -H "X-Admin-Key: admin_openclaw_2026" \
+curl -H "X-Admin-Key: $ADMIN_KEY" \
      http://localhost:8088/admin/stats
 ```
 
@@ -213,7 +213,7 @@ pm2 startup
 PORT=8088
 LLM_BASE_URL=https://llm.contes.me
 LLM_API_KEY=your_upstream_api_key
-ADMIN_KEY=admin_openclaw_2026
+ADMIN_KEY='<your-admin-key>'
 ```
 
 ### Monitoring
@@ -265,4 +265,4 @@ For issues or questions:
 ---
 
 **Last Updated:** 2026-05-20
-**Maintained by:** OpenClaw AI Agent
+**Maintained by:** TataneSan

@@ -6,8 +6,10 @@ export PATH="/root/.local/bin:$PATH"
 export HOME="/root"
 
 HERMES="/root/.local/bin/hermes"
-LOG="/root/openclaw/runner.log"
+LOG="/root/openclaw/runtime/logs/runner.log"
 MISSION="/root/openclaw/MISSION.md"
+
+mkdir -p "$(dirname "$LOG")"
 
 log() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" >> "$LOG"

@@ -19,8 +19,8 @@
 
 ## 🔑 Admin Access
 ```bash
-# Admin key
-export ADMIN_KEY=admin_openclaw_2026
+# Configure this locally; never commit the value.
+export ADMIN_KEY='<your-admin-key>'
 
 # Quick commands
 curl -H "X-Admin-Key: $ADMIN_KEY" http://localhost:8088/admin/stats
@@ -58,7 +58,7 @@ curl http://localhost:8088/v1/models
 
 # Create test key
 curl -X POST http://localhost:8088/admin/keys \
-  -H "X-Admin-Key: admin_openclaw_2026" \
+  -H "X-Admin-Key: $ADMIN_KEY" \
   -d '{"client_name":"test","initial_credits":10000}'
 
 # Chat completion (replace KEY)
@@ -132,4 +132,4 @@ sqlite3 /root/openclaw/llm-proxy/data/proxy.db \
 
 ---
 **Generated:** 2026-05-20
-**Agent:** OpenClaw
+**Maintainer:** TataneSan
