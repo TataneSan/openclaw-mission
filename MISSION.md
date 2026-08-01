@@ -367,12 +367,19 @@ Push automatique après chaque outil.
 - [x] url-canonicalize-query-encoding : ré-encode uniformément les valeurs query des URLs (percent-encoding minimal, --check CI, JSON) ✓ 2026-08-01
 - [x] file-permission-octal-report : liste les fichiers par mode octal exact d'une arborescence (histogramme, --allow CI, JSON) ✓ 2026-08-01
 
-## Vague 301 — CLI Tools (à faire)
-- [ ] csv-value-length-report : statistiques de longueur des cellules par colonne CSV (min/max/mean, --max-len CI, JSON)
-- [ ] json-invert-array-index : transforme {clé: [items]} en {item: [clés]} (inversion d'index, --check CI, JSON)
-- [ ] text-line-diff-ratio : ratio de similarité ligne-à-ligne entre deux fichiers (SequenceMatcher, --min-ratio CI, JSON)
-- [ ] url-sort-path-segments : trie les segments du path d'URLs alphabétiquement (premier ancré, --check CI, JSON)
-- [ ] file-extension-content-sniff : réduit le magic sniffing aux N premiers octets pour accélérer le scan (rapport, --check CI, JSON)
+## Vague 301 — CLI Tools (longueurs cellules CSV, inversion index JSON, similarité, tri segments URL, chaînes symlinks)
+- [x] csv-value-length-report : statistiques de longueur des cellules par colonne CSV (min/max/mean, --max-len CI, JSON) ✓ 2026-08-01
+- [x] json-invert-array-index : transforme {clé: [items]} en {item: [clés]} (inversion d'index, --require-items CI, JSON) ✓ 2026-08-01
+- [x] text-line-diff-ratio : ratio de similarité ligne-à-ligne entre deux fichiers (SequenceMatcher, --min-ratio CI, JSON) ✓ 2026-08-01
+- [x] url-sort-path-segments : trie les segments du path d'URLs alphabétiquement (premier ancré, --check CI, JSON) ✓ 2026-08-01
+- [x] file-symlink-chain-report : résout les chaînes de symlinks d'une arborescence (longueur, boucles, cibles cassées, --max-depth CI, JSON) ✓ 2026-08-01
+
+## Vague 302 — CLI Tools (à faire)
+- [ ] csv-column-fill-backward : propage la première valeur non vide vers le haut dans des colonnes CSV (groupes par clé, --check CI, JSON)
+- [ ] json-extract-path-values : extrait toutes les valeurs sous un dot-path incluant tableaux (wildcard *, --check CI, JSON)
+- [ ] text-count-char-runs : compte les runs d'un caractère donné dans chaque ligne (--char, --min-run CI, JSON)
+- [ ] url-normalize-segment-case : met les segments path d'URLs en minuscules sauf segments protégés (liste, --check CI, JSON)
+- [ ] file-same-content-as-stdin : liste les fichiers d'un dossier dont le contenu matche exactement stdin (hash, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
