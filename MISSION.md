@@ -308,12 +308,19 @@ Push automatique après chaque outil.
 - [x] url-extract-year-month : extrait /YYYY/ ou /YYYY/MM/ du path des URLs (stats par période, --check CI, JSON) ✓ 2026-08-01
 - [x] file-group-by-weekday : histogramme des fichiers par jour de semaine de mtime (--require DAYS CI, JSON) ✓ 2026-08-01
 
-## Vague 293 — CLI Tools (à faire)
-- [ ] csv-detect-date-column : identifie les colonnes contenant des dates (formats variés, score, --check CI, JSON)
-- [ ] json-average-path : moyenne arithmétique des valeurs numériques à un dot-path à travers JSONL (--check CI, JSON)
-- [ ] text-replace-smart-quotes : convertit guillemets/apostrophes typographiques en ASCII (“”‘’ -> ", --check CI, JSON)
-- [ ] url-extract-filename : extrait le segment filename final des URLs (avec/sans extension, --check CI, JSON)
-- [ ] file-path-length-report : rapport des chemins dépassant une longueur seuil (PATH_MAX, --max CI, JSON)
+## Vague 293 — CLI Tools (dates CSV, moyenne JSON, guillemets typo, filename URL, longueur chemins)
+- [x] csv-detect-date-column : identifie les colonnes contenant des dates (formats variés, score, --check CI, JSON) ✓ 2026-08-01
+- [x] json-average-path : moyenne arithmétique des valeurs numériques à un dot-path à travers JSONL (--check CI, JSON) ✓ 2026-08-01
+- [x] text-replace-smart-quotes : convertit guillemets/apostrophes typographiques en ASCII (“”‘’ -> ", --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-filename : extrait le segment filename final des URLs (avec/sans extension, --check CI, JSON) ✓ 2026-08-01
+- [x] file-path-length-report : rapport des chemins dépassant une longueur seuil (PATH_MAX, --max CI, JSON) ✓ 2026-08-01
+
+## Vague 294 — CLI Tools (à faire)
+- [ ] csv-column-type-report : rapport du type dominant par colonne CSV (int/float/date/string/bool, score, --check CI, JSON)
+- [ ] json-escape-strings : échappe les caractères spéciaux des valeurs string d'un JSONL (\n, \t, \uXXXX, --unescape, --check CI, JSON)
+- [ ] text-expand-tabs : convertit les tabulations en espaces (tabstop custom, --in-place, --check CI, JSON)
+- [ ] url-parse-jwt-segment : décode les segments JWT (header.payload) présents dans les URLs (base64url, --check CI, JSON)
+- [ ] file-mtime-set-from-name : applique le mtime depuis un timestamp présent dans le nom de fichier (regex, --dry-run, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
