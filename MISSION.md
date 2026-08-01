@@ -106,12 +106,19 @@ Push automatique après chaque outil.
 - [x] url-extract-default-creds-risk : détecte les URLs utilisant des credentials triviaux (admin:admin, root:root, --check CI, JSON) ✓ 2026-08-01
 - [x] file-permission-audit : rapport setuid/setgid/world-writable et sticky bits anormaux (--check CI, JSON) ✓ 2026-08-01
 
-## Vague 261 — CLI Tools (à définir)
-- [ ] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON)
-- [ ] json-hash-tree : construit un arbre de Merkle SHA-256 sur les chemins/valeurs d'un JSON (--verify CI, JSON)
-- [ ] text-fuzzy-dedupe : déduplique les lignes par similarité (threshold Jaccard/normalisation, --check CI, JSON)
-- [ ] url-extract-breadcrumb : décompose le path en breadcrumb key=value (segments positionnels, --check CI, JSON)
-- [ ] file-content-encoding-detect : rapport d'encodage (ascii/utf8/utf16/latin1 heuristic) par fichier (--check CI, JSON)
+## Vague 262 — CLI Tools (à définir)
+- [ ] csv-rolling-median : médiane glissante d'une colonne CSV (fenêtre N, --check CI, JSON)
+- [ ] json-path-rename-regex : renomme les chemins d'un JSON par regex capture groups (dry-run, --check CI, JSON)
+- [ ] text-indent-shift : décale l'indentation de tout un fichier (N espaces ±, tab-aware, --check CI, JSON)
+- [ ] url-extract-subpath-regex : extrait les segments de path matchant un regex par position (--check CI, JSON)
+- [ ] file-duplicate-content-groups : groupe les fichiers par contenu identique (hash complet, --min-size CI, JSON)
+
+## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
+- [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
+- [x] json-hash-tree : construit un arbre de Merkle SHA-256 sur les chemins/valeurs d'un JSON (--verify CI, JSON) ✓ 2026-08-01
+- [x] text-fuzzy-dedupe : déduplique les lignes par similarité (threshold Jaccard/normalisation, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-breadcrumb : décompose le path en breadcrumb key=value (segments positionnels, --check CI, JSON) ✓ 2026-08-01
+- [x] file-content-encoding-detect : rapport d'encodage (ascii/utf8/utf16/latin1 heuristic) par fichier (--check CI, JSON) ✓ 2026-08-01
 
 ## Vague 249 — CLI Tools (à définir)
 - [x] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON) ✓ 2026-08-01
