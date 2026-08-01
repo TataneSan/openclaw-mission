@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 212 — CLI Tools (acronymes, lignes, sous-réseaux, romains, voyelles)
+- [x] text-acronym-expand : scanne et étend les acronymes dans un texte (dictionnaire embarqué, dict custom, --expand/--mark, JSON, CI) ✓ 2026-08-01
+- [x] file-line-picker : extrait/supprime des lignes par numéro/range (1-based, négatifs, --drop, --check CI, JSON) ✓ 2026-08-01
+- [x] ip-subnet-planner : découpe un bloc CIDR IPv4 en sous-réseaux (--count/--prefix/--hosts, netmask, hostrange, JSON) ✓ 2026-08-01
+- [x] text-roman-numerals : convertit chiffres romains ⇆ entiers (1..3999, --check canonique, batch stdin, JSON) ✓ 2026-08-01
+- [x] text-vowel-count : compte voyelles/consonnes par ligne ou global (accents foldés, cyrillique, ratio, --require CI, JSON) ✓ 2026-08-01
+
 ## Vague 211 — CLI Tools (UUID, SemVer, Luhn, syllabes, n-grams)
 - [x] uuid-validate : valide et inspecte des UUID (toutes versions/variantes, formes canoniques/URN/braced, --extract, --check CI, JSON) ✓ 2026-08-01
 - [x] semver-sort : trie des versions avec précédence SemVer 2.0.0 complète (prereleases, --lenient, --unique, --check CI, JSON) ✓ 2026-08-01
