@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 200 — CLI Tools (CSV rows, levenshtein, JSON keys, gitignore, URL)
+- [x] csv-drop-rows : supprime les lignes CSV par conditions (eq/ne/regex/empty/gt/lt, AND/OR, invert, check CI) ✓ 2026-08-01
+- [x] text-levenshtein-distance : distance d'édition Levenshtein + ratio (paires stdin, --within CI, JSON) ✓ 2026-08-01
+- [x] json-pick-keys : projection de clés JSON/JSONL (dot paths, pick/omit, --require, compact) ✓ 2026-08-01
+- [x] file-gitignore-match : teste des chemins contre un .gitignore (glob/**/!/ancrage, exit codes grep) ✓ 2026-08-01
+- [x] url-parse-decompose : décompose des URLs (scheme/host/port/params, --get, --require, JSON) ✓ 2026-08-01
+
 ## Vague 199 — CLI Tools (CSV slices, redaction, fichiers vides, headers, base91)
 - [x] csv-slice : extraction de tranches CSV (ranges de lignes 1-based/-n:, colonnes nom/index, inversion, JSONL) ✓ 2026-08-01
 - [x] text-redact : masque données sensibles (email, IP, URL, CB, JWT, clés AWS, patterns custom, check CI) ✓ 2026-08-01
