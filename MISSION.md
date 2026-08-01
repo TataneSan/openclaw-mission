@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 211 — CLI Tools (UUID, SemVer, Luhn, syllabes, n-grams)
+- [x] uuid-validate : valide et inspecte des UUID (toutes versions/variantes, formes canoniques/URN/braced, --extract, --check CI, JSON) ✓ 2026-08-01
+- [x] semver-sort : trie des versions avec précédence SemVer 2.0.0 complète (prereleases, --lenient, --unique, --check CI, JSON) ✓ 2026-08-01
+- [x] luhn-check : valide et génère des chiffres de contrôle Luhn (cartes, IMEI, SIREN ; schémas détectés, --generate, masquage, JSON) ✓ 2026-08-01
+- [x] text-syllable-count : estime les syllabes en anglais par mot et par ligne (exceptions intégrées, --max/--exact poésie, JSON) ✓ 2026-08-01
+- [x] text-ngrams-cli : n-grammes caractères ou mots (fréquences, --unique, --require/--forbid CI, JSON, NUL) ✓ 2026-08-01
+
 ## Vague 210 — CLI Tools (émojis, phrases, IPv4, commentaires, palindromes)
 - [x] text-emoji-scan : détecte et rapporte les émojis d'un texte (codepoint, nom Unicode, catégorie, occurrences, --check CI, --strip, JSON) ✓ 2026-08-01
 - [x] text-sentence-split : découpe un texte en phrases (abréviations/décimales gérées, --stats, JSON, numérotation) ✓ 2026-08-01
