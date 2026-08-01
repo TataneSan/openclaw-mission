@@ -68,12 +68,19 @@ Push automatique après chaque outil.
 - [x] url-extract-subdomain : extrait le sous-domaine de chaque URL (co.uk/com.br/composite suffixes, --check CI, JSON) ✓ 2026-08-01
 - [x] file-timestamp-prefix : préfixe les fichiers de leur mtime YYYYMMDD-HHMMSS (idempotent, --dry-run/--apply/--check CI, JSON) ✓ 2026-08-01
 
-## Vague 256 — CLI Tools (à définir)
-- [ ] csv-split-by-column : éclate un CSV en un fichier par valeur de colonne clé (sortie dossier, --check CI, JSON)
-- [ ] json-count-deep : compte les noeuds d'un JSON par type et profondeur (histogramme, --check CI, JSON)
-- [ ] text-detect-chars : rapport des classes de caractères présentes (unicode categories, non-ASCII, --check ASCII CI, JSON)
-- [ ] url-normalize-query-empty : uniformise les paramètres query vides (a= vs a, --check CI, JSON)
-- [ ] file-ollvm-report : rapport sur les fichiers binaires ELF d'une arborescence (arch, linkage, --check CI, JSON)
+## Vague 256 — CLI Tools (CSV split par colonne, census JSON par profondeur, classes caractères, normalisation query vide, rapport ELF)
+- [x] csv-split-by-column : éclate un CSV en un fichier par valeur de colonne clé (sortie dossier, --check CI, JSON) ✓ 2026-08-01
+- [x] json-count-deep : compte les noeuds d'un JSON par type et profondeur (histogramme, --check CI, JSON) ✓ 2026-08-01
+- [x] text-detect-chars : rapport des classes de caractères présentes (unicode categories, non-ASCII, --check ASCII CI, JSON) ✓ 2026-08-01
+- [x] url-normalize-query-empty : uniformise les paramètres query vides (a= vs a, --check CI, JSON) ✓ 2026-08-01
+- [x] file-elf-report : rapport sur les binaires ELF d'une arborescence (arch, type, lien, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 257 — CLI Tools (à définir)
+- [ ] csv-column-correlation : corrélation de Pearson entre paires de colonnes numériques CSV (top-N, --check r² CI, JSON)
+- [ ] json-schema-infer : infère un JSON Schema simplifié depuis un JSONL (types, required, enums, --check conformité CI, JSON)
+- [ ] text-extract-emails : extrait et valide les adresses email d'un texte (dedup, domain-stats, --check CI, JSON)
+- [ ] url-extract-tld : extrait le TLD effectif respectant public-suffix-list embarquée (com.co.uk correct, --check CI, JSON)
+- [ ] file-cascade-permissions : vérifie que chaque parent d'un fichier est bien traversable par son owner (--check CI, JSON)
 
 ## Vague 249 — CLI Tools (à définir)
 - [x] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON) ✓ 2026-08-01
