@@ -127,12 +127,19 @@ Push automatique après chaque outil.
 - [x] url-detect-open-redirect-param : repère les paramètres contenant des URLs de redirection (url=, next=, redirect=, fragment SPA, multi-decode, --check CI, JSON) ✓ 2026-08-01
 - [x] file-permission-diff-manifest : compare les permissions actuelles d'une arborescence à un manifeste octal (--dump, --apply, relative/absolute, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 265 — CLI Tools (à définir)
-- [ ] csv-row-sort-by-numeric : trie un CSV par une colonne numérique (desc, stable, --check CI, JSON)
-- [ ] json-collect-by-path : agrège les valeurs d'un chemin donné à travers JSONL (stats, uniques, --check CI, JSON)
-- [ ] text-line-regex-replace-groups : substitution regex par groupes de capture sur chaque ligne (--count, --check CI, JSON)
-- [ ] url-replace-host-mapping : remplace hosts via fichier mapping old=new (multi-URLs, port préservé, --check CI, JSON)
-- [ ] file-hard-permission-restore : restaure les modes 0644/0755 standards récursivement (--exclude, --dry-run, --check CI, JSON)
+## Vague 265 — CLI Tools (tri numérique CSV, collecte chemin JSON, subst regex groupes, mapping host URL, restauration permissions)
+- [x] csv-row-sort-by-numeric : trie un CSV par une colonne numérique (desc, stable, --check CI, JSON) ✓ 2026-08-01
+- [x] json-collect-by-path : agrège les valeurs d'un chemin donné à travers JSONL (stats, uniques, --check CI, JSON) ✓ 2026-08-01
+- [x] text-line-regex-replace-groups : substitution regex par groupes de capture sur chaque ligne (--count, --check CI, JSON) ✓ 2026-08-01
+- [x] url-replace-host-mapping : remplace hosts via fichier mapping old=new (multi-URLs, port préservé, --check CI, JSON) ✓ 2026-08-01
+- [x] file-hard-permission-restore : restaure les modes 0644/0755 standards récursivement (--exclude, --dry-run, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 266 — CLI Tools (à définir)
+- [ ] csv-add-row-number : ajoute une colonne numéro de ligne à un CSV (start/step, header custom, --check séquence CI, JSON)
+- [ ] json-strip-null-fields : retire les clés à valeur null des objets JSONL (récursif, empty-dict prune, --check CI, JSON)
+- [ ] text-column-slice : extrait une tranche de colonnes caractères N:M par ligne (1-based, négatifs, --check width CI, JSON)
+- [ ] url-normalize-trailing-slash : uniformise le slash final des paths URL (add/remove, racine conservée, --check CI, JSON)
+- [ ] file-empty-dir-detect : liste les dossiers vides (ou récursivement vides) d'une arborescence (--prune option, --check CI, JSON)
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
