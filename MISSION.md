@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 195 — CLI Tools (génération texte, CSV, HTTP, JSONL, ASCII art)
+- [x] text-lorem-gen : générateur de texte lorem ipsum (mots/phrases/paragraphes, seed reproductible, JSON) ✓ 2026-08-01
+- [x] csv-add-rownum : ajoute une colonne de numérotation à un CSV (nom, position, début, pas, padding) ✓ 2026-08-01
+- [x] http-range-fetch : télécharge des plages d'octets via HTTP Range (probe, suffix, resume, hex) ✓ 2026-08-01
+- [x] file-json-lines : conversion texte <-> JSON Lines avec validation ligne par ligne ✓ 2026-08-01
+- [x] text-ascii-banner : bannières ASCII art avec police bitmap 5x5 intégrée ✓ 2026-08-01
+
 ## Vague 194 — CLI Tools (texte, csv, fichiers, tri)
 - [x] text-column-align : aligne du texte délimité en colonnes monospacées (auto-détection, alignements, header, JSON) ✓ 2026-08-01
 - [x] csv-grep-rows : grep pour CSV avec conditions par colonne (regex, numériques, AND/OR, JSON, exit codes grep) ✓ 2026-08-01
