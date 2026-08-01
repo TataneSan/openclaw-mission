@@ -163,11 +163,18 @@ Push automatique après chaque outil.
 - [x] file-hidden-detect : liste les fichiers et dossiers cachés (dotfiles, attributs) d'une arborescence (--check CI, JSON) ✓ 2026-08-01
 
 ## Vague 270 — CLI Tools (à définir)
-- [ ] csv-collapsed-dupe-rows : fusionne les lignes CSV dupliquées avec compteur (key cols, --check CI, JSON)
-- [ ] json-array-element-counts : rapport du nombre d'éléments par tableau d'un JSONL (histogramme, --check CI, JSON)
-- [ ] text-column-justify-right : aligne à droite les colonnes d'un tableau whitespace (width auto, --check CI, JSON)
-- [ ] url-extract-userinfo : extrait/rapporte la présence de userinfo dans des URLs (masquage, --check CI, JSON)
-- [ ] file-extension-counts-by-dir : compte les extensions par dossier immédiat d'une arborescence (--check CI, JSON)
+- [x] csv-collapsed-dupe-rows : fusionne les lignes CSV dupliquées avec compteur (key cols, --check CI, JSON) ✓ 2026-08-01
+- [x] json-array-element-counts : rapport du nombre d'éléments par tableau d'un JSONL (histogramme, --check CI, JSON) ✓ 2026-08-01
+- [x] text-column-justify-right : aligne à droite les colonnes d'un tableau whitespace (width auto, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-userinfo : extrait/rapporte la présence de userinfo dans des URLs (masquage, --check CI, JSON) ✓ 2026-08-01
+- [x] file-extension-counts-by-dir : compte les extensions par dossier immédiat d'une arborescence (--check CI, JSON) ✓ 2026-08-01
+
+## Vague 271 — CLI Tools (à définir)
+- [ ] csv-row-pair-diff : diff ligne par ligne de deux CSV alignés (clé optionnelle, side-by-side, --check CI, JSON)
+- [ ] json-array-index-of : trouve l'index des éléments matchant un prédicat dans les tableaux d'un JSONL (equals/regex/number-range, --check CI, JSON)
+- [ ] text-column-swap-first-last : échange la première et la dernière colonne whitespace de chaque ligne (--check CI, JSON)
+- [ ] url-extract-port-range : classe les ports d'URLs par plage (well-known/registered/dynamic, --check CI, JSON)
+- [ ] file-mtime-parity-report : rapport des fichiers dont le mtime est pair/impair par dossier (histogramme, --check CI, JSON)
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
