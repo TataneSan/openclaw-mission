@@ -360,12 +360,19 @@ Push automatique après chaque outil.
 - [x] url-extract-fragment-keys : éclate les fragments de type #k=v&k2=v2 en paires clé=valeur (SPA routes, --check CI, JSON) ✓ 2026-08-01
 - [x] file-age-buckets-report : répartit les fichiers d'une arborescence par tranche d'âge (<1h, <1j, <1sem, <1mois, plus, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 300 — CLI Tools (à faire)
-- [ ] csv-join-two-files : jointure de deux CSV sur une colonne clé (inner/left, --check CI, JSON)
-- [ ] json-normalize-unicode : applique une normalisation Unicode NFC/NFKC aux strings d'un JSON/JSONL (--check CI, JSON)
-- [ ] text-paragraph-split : découpe un texte en paragraphes (blocs séparés par lignes vides, indices, --check CI, JSON)
-- [ ] url-canonicalize-query-encoding : ré-encode uniformément les valeurs query des URLs (percent-encoding minimal, --check CI, JSON)
-- [ ] file-permission-octal-report : liste les fichiers par mode octal exact d'une arborescence (histogramme, --require-modes CI, JSON)
+## Vague 300 — CLI Tools (jointure CSV, Unicode JSON, paragraphes, encodage query, modes octaux)
+- [x] csv-join-two-files : jointure de deux CSV sur une colonne clé (inner/left/right/full, --require-matches CI, JSON) ✓ 2026-08-01
+- [x] json-normalize-unicode : applique une normalisation Unicode NFC/NFKC aux clés et valeurs string d'un JSON/JSONL (--check conformité CI, JSON) ✓ 2026-08-01
+- [x] text-paragraph-split : découpe un texte en paragraphes (blocs séparés par lignes vides, indices, --require RANGE CI, JSON) ✓ 2026-08-01
+- [x] url-canonicalize-query-encoding : ré-encode uniformément les valeurs query des URLs (percent-encoding minimal, --check CI, JSON) ✓ 2026-08-01
+- [x] file-permission-octal-report : liste les fichiers par mode octal exact d'une arborescence (histogramme, --allow CI, JSON) ✓ 2026-08-01
+
+## Vague 301 — CLI Tools (à faire)
+- [ ] csv-value-length-report : statistiques de longueur des cellules par colonne CSV (min/max/mean, --max-len CI, JSON)
+- [ ] json-invert-array-index : transforme {clé: [items]} en {item: [clés]} (inversion d'index, --check CI, JSON)
+- [ ] text-line-diff-ratio : ratio de similarité ligne-à-ligne entre deux fichiers (SequenceMatcher, --min-ratio CI, JSON)
+- [ ] url-sort-path-segments : trie les segments du path d'URLs alphabétiquement (premier ancré, --check CI, JSON)
+- [ ] file-extension-content-sniff : réduit le magic sniffing aux N premiers octets pour accélérer le scan (rapport, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
