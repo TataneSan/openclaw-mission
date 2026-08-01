@@ -19,12 +19,19 @@ Push automatique après chaque outil.
 - [x] url-extract-params : extrait les paramètres query d'URLs en clés/valeurs tabulées (--unique CI, JSON) ✓ 2026-08-01
 - [x] file-size-outliers : liste les fichiers dont la taille dévie de la médiane d'une arborescence (--factor CI, JSON) ✓ 2026-08-01
 
-## Vague 241 — CLI Tools (à définir)
-- [ ] csv-strip-bom : retire/pointe les BOM UTF-8/UTF-16 des fichiers CSV (--check CI, JSON)
-- [ ] json-wrap-array : enveloppe des objets JSONL dans un tableau JSON (--unwrap, --check CI, JSON)
-- [ ] text-line-histogram : histogramme de longueurs de lignes (buckets, --check CI, JSON)
-- [ ] url-strip-default-port : retire les ports par défaut des URLs (80/443/21..., --check CI, JSON)
-- [ ] file-age-buckets : répartit les fichiers par tranches d'âge (1h/1d/1w/1m, --check CI, JSON)
+## Vague 242 — CLI Tools (à définir)
+- [ ] csv-extract-column : extrait une seule colonne CSV en flux brut (index/nom, --check CI, JSON)
+- [ ] json-path-count : compte les occurrences de chaque chemin dot/crochet dans des objets JSONL (--check CI, JSON)
+- [ ] text-split-long-lines : coupe les lignes plus longues que N en segments (continuation \ ou indent, --check CI, JSON)
+- [ ] url-drop-scheme : passe des URLs https://vers scheme-relative ou path-only (--check CI, JSON)
+- [ ] file-content-etag : calcule un etag md5 par fichier et le compare à un manifeste (--check CI, JSON)
+
+## Vague 241 — CLI Tools (BOM CSV, wrap JSONL, histo longueurs, ports HTTP par défaut, âges de fichiers)
+- [x] csv-strip-bom : retire/pointe les BOM UTF-8/UTF-16 des fichiers CSV (--check CI, JSON) ✓ 2026-08-01
+- [x] json-wrap-array : enveloppe des objets JSONL dans un tableau JSON (--unwrap, --check CI, JSON) ✓ 2026-08-01
+- [x] text-line-histogram : histogramme de longueurs de lignes (buckets, --check CI, JSON) ✓ 2026-08-01
+- [x] url-strip-default-port : retire les ports par défaut des URLs (80/443/21..., --check CI, JSON) ✓ 2026-08-01
+- [x] file-age-buckets : répartit les fichiers par tranches d'âge (1h/1d/1w/1m, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 240 — CLI Tools (totaux CSV, renommage clés JSON, suffixes de lignes, tri paramètres URL, plus récents par dossier)
 - [x] csv-sum-columns : somme/moyenne par colonne numérique CSV (totaux ligne/footer, --check CI, JSON) ✓ 2026-08-01
