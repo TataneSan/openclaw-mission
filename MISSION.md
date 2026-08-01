@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 225 — CLI Tools (opérations SET, scoring, commentaires CSV, colonnes JSON, shuffle)
+- [x] text-set-ops : opérations ensemblistes sur fichiers de lignes (union/intersection/différence --a-only --b-only --xor via stdin, --check CI, JSON) ✓ 2026-08-01
+- [x] text-keyword-score : score la densité de mots-clés par ligne/document (pondérations mot:valeur, --top N, --threshold CI, JSON) ✓ 2026-08-01
+- [x] csv-strip-comments : retire les lignes commentées (# prefix custom) d'un fichier CSV (header préservé, --check CI, JSON) ✓ 2026-08-01
+- [x] json-pluck-columns : extrait une liste de champs clé/imbriqués (dot-paths) d'une liste d'objets JSON/JSONL (--keep-structure, CSV output, --check CI, JSON) ✓ 2026-08-01
+- [x] text-shuffle-lines : mélange aléatoirement les lignes d'un fichier/flux (seed reproductible, --sample N reservoir, --check CI, JSON) ✓ 2026-08-01
+
 ## Vague 224 — CLI Tools (rapport ANSI, dates CSV ISO, comptage JSON, collapse espaces, conversions hex)
 - [x] text-ansi-report : rapport sur les séquences ANSI présentes (couleurs SGR, curseur, styles, --check CI, JSON) ✓ 2026-08-01
 - [x] csv-date-normalize : normalise les dates d'une colonne CSV vers ISO 8601 (formats multiples, --check CI, JSON) ✓ 2026-08-01
