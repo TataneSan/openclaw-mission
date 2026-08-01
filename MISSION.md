@@ -287,12 +287,19 @@ Push automatique après chaque outil.
 - [x] url-swap-host-path-prefix : déplace le premier segment du path vers le host (a.b.com/p1 -> p1.a.b.com, --check CI, JSON) ✓ 2026-08-01
 - [x] file-count-by-hour-of-day : histogramme des fichiers par heure de mtime (0-23, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 290 — CLI Tools (à faire)
-- [ ] csv-drop-comment-rows : retire les lignes commençant par un préfixe commentaire (#, //, --prefix, --check CI, JSON)
-- [ ] json-round-numbers : arrondit tous les nombres flottants d'un JSON/JSONL à N décimales (int préservés, --check CI, JSON)
-- [ ] text-rstrip-blank-tail : supprime les lignes vides en fin de fichier (--head aussi, --check CI, JSON)
-- [ ] url-extract-query-value : extrait la valeur d'un paramètre query donné par URL (--all occurrences, --check CI, JSON)
-- [ ] file-symlink-target-report : rapport des cibles de symlinks (absolue/relative, existante/cassée, --check CI, JSON)
+## Vague 290 — CLI Tools (commentaires CSV, arrondi JSON, blanks finaux, valeur query, cibles symlinks)
+- [x] csv-drop-comment-rows : retire les lignes commençant par un préfixe commentaire (#, //, --prefix, --check CI, JSON) ✓ 2026-08-01
+- [x] json-round-numbers : arrondit tous les nombres flottants d'un JSON/JSONL à N décimales (int préservés, --check CI, JSON) ✓ 2026-08-01
+- [x] text-rstrip-blank-tail : supprime les lignes vides en fin de fichier (--head aussi, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-query-value : extrait la valeur d'un paramètre query donné par URL (--all occurrences, --check CI, JSON) ✓ 2026-08-01
+- [x] file-symlink-target-report : rapport des cibles de symlinks (absolue/relative, existante/cassée, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 291 — CLI Tools (à faire)
+- [ ] csv-quoted-cells-report : rapport des cellules CSV qui nécessitent des guillemets (--check CI, JSON)
+- [ ] json-unflatten-keys : reconstruit un JSON depuis des paires chemin=valeur (dot-paths, arrays indexés, --check CI, JSON)
+- [ ] text-visualize-whitespace : rend visibles espaces/tabs/fins de ligne (·, →, $, --check CI, JSON)
+- [ ] url-normalize-default-port : retire le port par défaut explicite des URLs (:80, :443, --check CI, JSON)
+- [ ] file-duplicate-dir-trees : détecte des sous-arbres de dossiers au contenu identique (hash manifeste, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
