@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 196 — CLI Tools (CSV, whitespace, line endings, similarité)
+- [x] csv-move-columns : déplace/réordonne les colonnes d'un CSV par nom (before/after, order, drop) ✓ 2026-08-01
+- [x] text-trailing-fix : détecte/corrige espaces en fin de ligne et lignes vides finales (CI check, JSON) ✓ 2026-08-01
+- [x] line-endings-cli : détecte/convertit les fins de ligne LF/CRLF/CR (mixed, check CI, récursif) ✓ 2026-08-01
+- [x] text-jaro-winkler : similarité Jaro / Jaro-Winkler (score, similar top-N, JSON) ✓ 2026-08-01
+- [x] csv-row-dedupe : supprime les lignes CSV dupliquées par colonnes clés (ordre préservé, keep-last, check) ✓ 2026-08-01
+
 ## Vague 195 — CLI Tools (génération texte, CSV, HTTP, JSONL, ASCII art)
 - [x] text-lorem-gen : générateur de texte lorem ipsum (mots/phrases/paragraphes, seed reproductible, JSON) ✓ 2026-08-01
 - [x] csv-add-rownum : ajoute une colonne de numérotation à un CSV (nom, position, début, pas, padding) ✓ 2026-08-01
