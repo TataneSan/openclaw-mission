@@ -5,12 +5,19 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
-## Vague 236 — CLI Tools (à définir)
-- [ ] csv-quote-fields : force/retraite les guillemets autour des champs CSV (style minimal/all/non-numeric, --check CI, JSON)
-- [ ] json-strip-comments : retire les commentaires //ligne et /*bloc*/ d'un JSONC vers JSON strict (strings préservées, --check CI, JSON)
-- [ ] text-swap-words : échange deux mots/token dans chaque ligne (regex, occurence N, --check CI, JSON)
-- [ ] url-dedupe-params : déduplique les paramètres répétés dans des URLs (keep first/last, --check CI, JSON)
-- [ ] file-empty-detect : liste les fichiers vides (0 octet) d'une arborescence (excludes, --delete, --check CI, JSON)
+## Vague 237 — CLI Tools (à définir)
+- [ ] csv-reorder-columns : réordonne les colonnes par liste de noms/indices (reste append/prepend, --check CI, JSON)
+- [ ] json-sort-keys-recursive : trie toutes les clés d'un JSON récursivement (fold case, --check CI, JSON)
+- [ ] text-collapse-runs : réduit les répétitions de caractères consécutifs (a.z, s_ -> az s_, char ciblé, --check CI, JSON)
+- [ ] url-strip-fragment : retire les fragments #... des URLs en flux (--keep-list, --check CI, JSON)
+- [ ] file-symlink-broken : liste les liens symboliques cassés d'une arborescence (excludes, --delete, --check CI, JSON)
+
+## Vague 236 — CLI Tools (quotage CSV, strip commentaires JSONC, swap de mots, dedupe params URL, fichiers vides)
+- [x] csv-quote-fields : force/retire les guillemets autour des champs CSV (minimal/all/non-numeric/none, --check CI, JSON) ✓ 2026-08-01
+- [x] json-strip-comments : retire les commentaires //ligne et /*bloc*/ d'un JSONC vers JSON strict (strings préservées, --validate, --check CI, JSON) ✓ 2026-08-01
+- [x] text-swap-words : échange deux mots/tokens dans chaque ligne (simultané, regex, occurrence N, --check CI, JSON) ✓ 2026-08-01
+- [x] url-dedupe-params : déduplique les paramètres répétés dans des URLs (keep first/last, --check CI, JSON) ✓ 2026-08-01
+- [x] file-empty-detect : liste les fichiers vides (0 octet) d'une arborescence (excludes, --delete, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 235 — CLI Tools (premières phrases, délimiteur CSV, clés JSON par défaut, conversion de casse, fichiers récents)
 - [x] text-first-sentences : garde les N premières phrases de chaque paragraphe (N global, --min-words CI, JSON) ✓ 2026-08-01
