@@ -19,12 +19,19 @@ Push automatique après chaque outil.
 - [x] url-extract-params : extrait les paramètres query d'URLs en clés/valeurs tabulées (--unique CI, JSON) ✓ 2026-08-01
 - [x] file-size-outliers : liste les fichiers dont la taille dévie de la médiane d'une arborescence (--factor CI, JSON) ✓ 2026-08-01
 
-## Vague 243 — CLI Tools (à définir)
-- [ ] csv-swap-columns : échange deux colonnes d'un CSV (noms/indices, --check CI, JSON)
-- [ ] json-extract-leaves : liste seulement les valeurs feuilles d'un JSON (skips clés intermédiaires, --check CI, JSON)
-- [ ] text-trim-lines : retire préfixe AND suffixe fixes des lignes (longueur ou chaîne, --check CI, JSON)
-- [ ] url-extract-tld : extrait TLD/domaine enregistré minimal (heuristique suffixe publique, --check CI, JSON)
-- [ ] file-bom-report : détecte les BOM dans une arborescence de fichiers texte (--types, --check CI, JSON)
+## Vague 244 — CLI Tools (à définir)
+- [ ] csv-dedupe-rows : supprime les lignes dupliquées d'un CSV (clés ciblées, keep first/last, --check CI, JSON)
+- [ ] json-flatten-paths : aplatit un JSON en paires chemin=valeur (sep custom, arrays indexées, --check CI, JSON)
+- [ ] text-para-wrap : reformate des paragraphes à largeur fixe (détection blocs vides, indent préservé, --check CI, JSON)
+- [ ] url-normalize-case : met en minuscules scheme+host des URLs en flux (path/query préservés, --check CI, JSON)
+- [ ] file-dupe-lines-across : détecte les lignes identiques partagées entre fichiers d'un dossier (--min-files CI, JSON)
+
+## Vague 243 — CLI Tools (swap colonnes CSV, feuilles JSON, trim pré/suffixe, TLD URLs, rapport BOM)
+- [x] csv-swap-columns : échange deux colonnes d'un CSV (noms/indices, --check CI, JSON) ✓ 2026-08-01
+- [x] json-extract-leaves : liste seulement les valeurs feuilles d'un JSON (skips clés intermédiaires, --check CI, JSON) ✓ 2026-08-01
+- [x] text-trim-lines : retire préfixe AND suffixe fixes des lignes (longueur ou chaîne, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-tld : extrait TLD/domaine enregistré minimal (heuristique suffixe publique, --check CI, JSON) ✓ 2026-08-01
+- [x] file-bom-report : détecte les BOM dans une arborescence de fichiers texte (--types, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 242 — CLI Tools (colonne CSV, compte-chemins JSON, split lignes longues, drop scheme URL, etags MD5 fichiers)
 - [x] csv-extract-column : extrait une seule colonne CSV en flux brut (index/nom, --check CI, JSON) ✓ 2026-08-01
