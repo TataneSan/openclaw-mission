@@ -452,11 +452,18 @@ Push automatique après chaque outil.
 - [x] file-count-by-size-range : histogramme des fichiers par tranche de taille (--ranges, --check CI, JSON) ✓ 2026-08-02
 
 ## Vague 313 — CSV/JSON/text/URL/file mix
-- [ ] csv-column-stats-summary : résumé statistique global par colonne CSV (count/empty/unique/top/mean, --check CI, JSON)
-- [ ] json-extract-top-level-keys : liste les clés racine d'un document JSON avec leurs types et cardinalités (--check CI, JSON)
-- [ ] text-suffix-common-strip : retire le suffixe commun à toutes les lignes (auto-detect, --check CI, JSON)
-- [ ] url-detect-static-assets : classe les URLs par type de ressource statique (css/js/img/font/doc, --check CI, JSON)
-- [ ] file-group-by-month-total : regroupe les fichiers par mois de mtime avec taille totale (--check CI, JSON)
+- [x] csv-column-stats-summary : résumé statistique global par colonne CSV (count/empty/unique/top/mean, --check CI, JSON) ✓ 2026-08-02
+- [x] json-extract-top-level-keys : liste les clés racine d'un document JSON avec leurs types et cardinalités (--check CI, JSON) ✓ 2026-08-02
+- [x] text-suffix-common-strip : retire le suffixe commun à toutes les lignes (auto-detect, --check CI, JSON) ✓ 2026-08-02
+- [x] url-detect-static-assets : classe les URLs par type de ressource statique (css/js/img/font/doc, --check CI, JSON) ✓ 2026-08-02
+- [x] file-group-by-month-total : regroupe les fichiers par mois de mtime avec taille totale (--check CI, JSON) ✓ 2026-08-02
+
+## Vague 314 — CSV/JSON/text/URL/file mix
+- [ ] csv-header-rename-sanitize : normalise les noms de colonnes CSV (lower_snake, strip accents, --check CI, JSON)
+- [ ] json-dedupe-array-by-key : déduplique les tableaux d'objets JSON par clé (--keep first/last, --check CI, JSON)
+- [ ] text-extract-urls-cli : extrait les URLs brutes d'un texte (http/https/ftp, dedup, --check CI, JSON)
+- [ ] url-sort-query-params-stable : trie les clés query en préservant les doublons (--check CI, JSON)
+- [ ] file-extension-case-normalize : uniformise la casse des extensions en minuscules (--apply, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
