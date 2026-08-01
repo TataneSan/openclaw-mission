@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 214 — CLI Tools (stopwords, records CSV, truncate, ménage fichiers, durées)
+- [x] text-stopword-remove : retire les stopwords d'un texte (listes en/fr embarquées, listes custom, --check CI, JSON) ✓ 2026-08-01
+- [x] csv-to-records : rend un CSV en blocs key: value (ligne unique --row, alignement, JSON, délimiteur custom) ✓ 2026-08-01
+- [x] text-smart-truncate : tronque un texte sur les bords de mots (ellipse, milieu, --whole, --check CI) ✓ 2026-08-01
+- [x] file-temp-cleanup : trouve/supprime les fichiers temporaires (globs, âge, taille, dry-run, JSON) ✓ 2026-08-01
+- [x] duration-humanize : convertit secondes ⇆ durées humaines (1h30m, ISO 8601, long, batch stdin) ✓ 2026-08-01
+
 ## Vague 213 — CLI Tools (Unicode, hash CSV, chemins, crochets, masquage IP)
 - [x] text-unicode-lookup : inspecte caractères Unicode (codepoint, nom officiel, catégorie, --search, JSON) ✓ 2026-08-01
 - [x] csv-add-hashcol : ajoute une colonne de hash à un CSV (md5/sha*, colonnes ciblées, --short, --check CI) ✓ 2026-08-01
