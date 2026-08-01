@@ -301,12 +301,19 @@ Push automatique après chaque outil.
 - [x] url-normalize-default-port : retire le port par défaut explicite des URLs (:80, :443, --check CI, JSON) ✓ 2026-08-01
 - [x] file-duplicate-dir-trees : détecte des sous-arbres de dossiers au contenu identique (hash manifeste, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 292 — CLI Tools (à faire)
-- [ ] csv-first-row-as-header : promeut la première ligne comme header si absent (hash first row, --check CI, JSON)
-- [ ] json-invert-mapping : inverse un objet clé->valeur en valeur->clés (arrays pour collisions, --check CI, JSON)
-- [ ] text-strip-line-numbers : retire une numérotation de début de ligne (N: ou N. ou N), --check CI, JSON)
-- [ ] url-extract-year-month : extrait /YYYY/ ou /YYYY/MM/ du path des URLs (stats par période, --check CI, JSON)
-- [ ] file-group-by-weekday : histogramme des fichiers par jour de semaine de mtime (--check CI, JSON)
+## Vague 292 — CLI Tools (header CSV, inversion JSON, strip numéros, période URL, jour semaine mtime)
+- [x] csv-first-row-as-header : promeut la première ligne comme header si absent (synthèse col_N, --check CI, JSON) ✓ 2026-08-01
+- [x] json-invert-mapping : inverse un objet clé->valeur en valeur->clés (arrays pour collisions, --check CI, JSON) ✓ 2026-08-01
+- [x] text-strip-line-numbers : retire une numérotation de début de ligne (N:, N., [N], --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-year-month : extrait /YYYY/ ou /YYYY/MM/ du path des URLs (stats par période, --check CI, JSON) ✓ 2026-08-01
+- [x] file-group-by-weekday : histogramme des fichiers par jour de semaine de mtime (--require DAYS CI, JSON) ✓ 2026-08-01
+
+## Vague 293 — CLI Tools (à faire)
+- [ ] csv-detect-date-column : identifie les colonnes contenant des dates (formats variés, score, --check CI, JSON)
+- [ ] json-average-path : moyenne arithmétique des valeurs numériques à un dot-path à travers JSONL (--check CI, JSON)
+- [ ] text-replace-smart-quotes : convertit guillemets/apostrophes typographiques en ASCII (“”‘’ -> ", --check CI, JSON)
+- [ ] url-extract-filename : extrait le segment filename final des URLs (avec/sans extension, --check CI, JSON)
+- [ ] file-path-length-report : rapport des chemins dépassant une longueur seuil (PATH_MAX, --max CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
