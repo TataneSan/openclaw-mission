@@ -141,12 +141,19 @@ Push automatique après chaque outil.
 - [x] url-normalize-trailing-slash : uniformise le slash final des paths URL (add/remove, racine conservée, --check CI, JSON) ✓ 2026-08-01
 - [x] file-empty-dir-detect : liste les dossiers vides (ou récursivement vides) d'une arborescence (--prune option, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 267 — CLI Tools (à définir)
-- [ ] csv-middle-rows : extrait les N lignes du milieu d'un CSV (ou tranche centrée %, --check CI, JSON)
-- [ ] json-key-case-convert : convertit les clés d'objets JSONL en snake_case/camelCase/kebab (récursif, collisions report, --check CI, JSON)
-- [ ] text-longest-common-prefix-lines : calcule le préfixe commun le plus long de toutes les lignes (--ignore-case, --check CI, JSON)
-- [ ] url-path-normalize-dots : résout les segments . et .. dans les paths d'URLs (RFC 3986 remove_dot_segments, --check CI, JSON)
-- [ ] file-oldest-newest-report : rapport des fichiers les plus anciens/récents par arborescence (top-N mtime, --check CI, JSON)
+## Vague 267 — CLI Tools (milieu CSV, casse clés JSON, préfixe commun, dots URL, anciens/récents fichiers)
+- [x] csv-middle-rows : extrait les N lignes du milieu d'un CSV (ou tranche centrée %, --check CI, JSON) ✓ 2026-08-01
+- [x] json-key-case-convert : convertit les clés d'objets JSONL en snake_case/camelCase/kebab (récursif, collisions report, --check CI, JSON) ✓ 2026-08-01
+- [x] text-longest-common-prefix-lines : calcule le préfixe commun le plus long de toutes les lignes (--ignore-case, --check CI, JSON) ✓ 2026-08-01
+- [x] url-path-normalize-dots : résout les segments . et .. dans les paths d'URLs (RFC 3986 remove_dot_segments, --check CI, JSON) ✓ 2026-08-01
+- [x] file-oldest-newest-report : rapport des fichiers les plus anciens/récents par arborescence (top-N mtime, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 268 — CLI Tools (à définir)
+- [ ] csv-percentile-column : calcule les percentiles (P50/P90/P99) d'une colonne numérique CSV (interpolation linéaire, --check CI, JSON)
+- [ ] json-key-count-report : rapport du nombre de clés par objet d'un JSONL (min/max/mean/histogramme, --check CI, JSON)
+- [ ] text-strip-ansi-codes : retire les séquences d'échappement ANSI (couleurs, CSI) de chaque ligne (--check CI, JSON)
+- [ ] url-extract-scheme-report : rapport des schemes d'URLs (comptage, scheme manquant détecté, --check CI, JSON)
+- [ ] file-dir-depth-histogram : histogramme des profondeurs de répertoires d'une arborescence (--max-depth CI, JSON)
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
