@@ -584,6 +584,20 @@ Push automatique après chaque outil.
 - [x] url-normalize-case-path : met les segments path d'URLs en kebab-case (--check CI, JSON) ✓ 2026-08-02
 - [x] file-deep-empty-dirs : détecte les dossiers vides récursivement (bottom-up, --prune, --check CI, JSON) ✓ 2026-08-02
 
+## Vague 332 — CSV/JSON/text/URL/file mix
+- [x] csv-row-select-pattern : sélectionne les lignes CSV dont une colonne matche un pattern glob (--check CI, JSON) ✓ 2026-08-02
+- [x] json-count-by-depth : compte les noeuds JSON par profondeur (histogramme, --check CI, JSON) ✓ 2026-08-02
+- [x] text-extract-between-markers : extrait le texte entre deux marqueurs début/fin (multi-bloc, --check CI, JSON) ✓ 2026-08-02
+- [x] url-replace-host-prefix : ajoute/remplace un préfixe de host dans les URLs (www., api., --check CI, JSON) ✓ 2026-08-02
+- [x] file-duplicate-names-report : rapport des noms de fichiers en double avec chemins complets (--check CI, JSON) ✓ 2026-08-02
+
+## Vague 333 — CSV/JSON/text/URL/file mix
+- [ ] csv-add-column-index : ajoute une colonne d'index 1-based à un CSV (--start, --check CI, JSON)
+- [ ] json-array-length-check : vérifie que tous les tableaux d'un chemin JSON ont la même longueur (--length, --check CI, JSON)
+- [ ] text-strip-inline-whitespace : réduit les whitespace internes multiples à un seul espace (--check CI, JSON)
+- [ ] url-extract-port-list : extrait et liste les ports uniques des URLs (--check CI, JSON)
+- [ ] file-large-files-report : rapport des fichiers dépassant une taille seuil (--min-size, --check CI, JSON)
+
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
 - [x] json-flatten-keys : aplatit un JSON en paires chemin=valeur (séparateur dot, arrays indexés, --check CI, JSON) ✓ 2026-08-01
