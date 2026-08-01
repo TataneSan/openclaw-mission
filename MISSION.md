@@ -41,11 +41,18 @@ Push automatique après chaque outil.
 - [x] file-permission-report : rapport sur les bits de permission inhabituels d'une arborescence (world-writable, suid, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 252 — CLI Tools (à définir)
-- [ ] csv-transpose-header-column : permute la première ligne (header) avec la première colonne (--check CI, JSON)
-- [ ] json-merge-arrays-zip : fusionne des tableaux JSONL par index en tuples [a,b] (--strict-len CI, JSON)
-- [ ] text-remove-empty-parens : retire les paires de parenthèses vides et espaces résiduels ((), [], {}, --check CI, JSON)
-- [ ] url-extract-file-extension : extrait l'extension de fichier du path d'URLs (stats par extension, --check CI, JSON)
-- [ ] file-naming-convention-lint : vérifie kebab/snake/camel case des noms de fichiers (--style, --fix rename, --check CI, JSON)
+- [x] csv-transpose-header-column : permute la première ligne (header) avec la première colonne (--check CI, JSON) ✓ 2026-08-01
+- [x] json-merge-arrays-zip : fusionne des tableaux JSONL par index en tuples [a,b] (--strict-len CI, JSON) ✓ 2026-08-01
+- [x] text-remove-empty-parens : retire les paires de parenthèses vides et espaces résiduels ((), [], {}, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-file-extension : extrait l'extension de fichier du path d'URLs (stats par extension, --check CI, JSON) ✓ 2026-08-01
+- [x] file-naming-convention-lint : vérifie kebab/snake/camel case des noms de fichiers (--style, --fix rename, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 253 — CLI Tools (à définir)
+- [ ] csv-fill-median : remplace les cellules vides des colonnes numériques par la médiane de la colonne (--require CI, JSON)
+- [ ] json-extract-comments : récupère les champs/notes de type "//" ou "comment_" dans un JSONL (--check CI, JSON)
+- [ ] text-dedupe-lines-global : supprime toutes les lignes dupliquées en gardant la 1re occurrence (whole-file, --check CI, JSON)
+- [ ] url-extract-port : extrait le port effectif des URLs (défaut par scheme, --check CI, JSON)
+- [ ] file-symlink-report : inventaire des symlinks d'une arborescence (target exists/missing, relative/absolute, --check CI, JSON)
 
 ## Vague 249 — CLI Tools (à définir)
 - [x] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON) ✓ 2026-08-01
