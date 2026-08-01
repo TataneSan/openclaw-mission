@@ -259,12 +259,19 @@ Push automatique après chaque outil.
 - [x] url-strip-index-files : retire les segments /index.html /default.aspx finaux des URLs (--check CI, JSON) ✓ 2026-08-01
 - [x] file-size-dupes-by-ext : liste les groupes de fichiers de même taille et même extension (candidats doublons, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 284 — CLI Tools (à faire)
-- [ ] csv-median-column : calcule la médiane d'une colonne numérique CSV (interpolation paire, --check bornes CI, JSON)
-- [ ] json-paths-as-table : rend tous les chemins feuilles d'un JSON en tableau colonnes séparées (orienté diff, --check CI, JSON)
-- [ ] text-strip-word-wrap : défait un word-wrap et rejoint les lignes en paragraphes (heuristique, --check CI, JSON)
-- [ ] url-extract-base-domain : extrait le domaine enregistré approximatif (eTLD+1 simple) de chaque URL (--check CI, JSON)
-- [ ] file-count-lines-per-ext : compte les lignes des fichiers texte par extension dans une arborescence (Exclure binaires, --check CI, JSON)
+## Vague 284 — CLI Tools (médiane CSV, chemins JSON en table, déwrap texte, domaine de base URL, lignes par extension)
+- [x] csv-median-column : calcule la médiane d'une colonne numérique CSV (interpolation paire, --check bornes CI, JSON) ✓ 2026-08-01
+- [x] json-paths-as-table : rend tous les chemins feuilles d'un JSON en tableau colonnes séparées (orienté diff, --check CI, JSON) ✓ 2026-08-01
+- [x] text-strip-word-wrap : défait un word-wrap et rejoint les lignes en paragraphes (heuristique, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-base-domain : extrait le domaine enregistré approximatif (eTLD+1 simple) de chaque URL (--check CI, JSON) ✓ 2026-08-01
+- [x] file-count-lines-per-ext : compte les lignes des fichiers texte par extension dans une arborescence (binaires exclus, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 285 — CLI Tools (à faire)
+- [ ] csv-row-number-filter : garde les lignes dont le numéro matche une expression (ranges 1-5,8, mod N, --check CI, JSON)
+- [ ] json-compare-arrays : compare deux tableaux JSONL élément par élément et rapporte les écarts (index, --check CI, JSON)
+- [ ] text-reorder-words : trie les mots de chaque ligne alphabétiquement (ignore-case, --check CI, JSON)
+- [ ] url-add-default-scheme : ajoute https:// aux URLs sans scheme (exceptions bare-IP, --check CI, JSON)
+- [ ] file-newest-oldest-per-ext : plus récent/plus ancien fichier par extension (mtime, --check CI, JSON)
 
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
