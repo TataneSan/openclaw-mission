@@ -599,11 +599,18 @@ Push automatique après chaque outil.
 - [x] file-large-files-report : rapport des fichiers dépassant une taille seuil (--min-size, --check CI, JSON) ✓ 2026-08-02
 
 ## Vague 334 — CSV/JSON/text/URL/file mix
-- [ ] csv-filter-empty-rows : retire les lignes entièrement vides d'un CSV (--check CI, JSON)
-- [ ] json-key-case-report : rapport des styles de casse des clés JSON (camel/snake/kebab, --check CI, JSON)
-- [ ] text-collapse-multiple-blank : réduit les lignes vides multiples à une seule (--max, --check CI, JSON)
-- [ ] url-query-add-param : ajoute un paramètre query à des URLs (--check CI, JSON)
-- [ ] file-permission-world-writable : liste les fichiers world-writable d'une arborescence (--check CI, JSON)
+- [x] csv-filter-empty-rows : retire les lignes entièrement vides d'un CSV (--check CI, JSON) ✓ 2026-08-02
+- [x] json-key-case-report : rapport des styles de casse des clés JSON (camel/snake/kebab, --check CI, JSON) ✓ 2026-08-02
+- [x] text-collapse-multiple-blank : réduit les lignes vides multiples à une seule (--max, --check CI, JSON) ✓ 2026-08-02
+- [x] url-query-add-param : ajoute un paramètre query à des URLs (--check CI, JSON) ✓ 2026-08-02
+- [x] file-permission-world-writable : liste les fichiers world-writable d'une arborescence (--check CI, JSON) ✓ 2026-08-02
+
+## Vague 335 — CSV/JSON/text/URL/file mix
+- [ ] csv-strip-empty-columns : retire les colonnes entièrement vides d'un CSV (--check CI, JSON)
+- [ ] json-array-dedupe : supprime les doublons des tableaux d'un JSONL (stable, --check CI, JSON)
+- [ ] text-first-n-lines-of-blocks : garde les N premières lignes de chaque bloc séparé par des lignes vides (--check CI, JSON)
+- [ ] url-extract-host : extrait le hostname de chaque URL (dedup, stats, --check CI, JSON)
+- [ ] file-executable-report : liste les fichiers exécutables d'une arborescence (shebang/ELF/bit x, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
