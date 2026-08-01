@@ -294,12 +294,19 @@ Push automatique après chaque outil.
 - [x] url-extract-query-value : extrait la valeur d'un paramètre query donné par URL (--all occurrences, --check CI, JSON) ✓ 2026-08-01
 - [x] file-symlink-target-report : rapport des cibles de symlinks (absolue/relative, existante/cassée, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 291 — CLI Tools (à faire)
-- [ ] csv-quoted-cells-report : rapport des cellules CSV qui nécessitent des guillemets (--check CI, JSON)
-- [ ] json-unflatten-keys : reconstruit un JSON depuis des paires chemin=valeur (dot-paths, arrays indexés, --check CI, JSON)
-- [ ] text-visualize-whitespace : rend visibles espaces/tabs/fins de ligne (·, →, $, --check CI, JSON)
-- [ ] url-normalize-default-port : retire le port par défaut explicite des URLs (:80, :443, --check CI, JSON)
-- [ ] file-duplicate-dir-trees : détecte des sous-arbres de dossiers au contenu identique (hash manifeste, --check CI, JSON)
+## Vague 291 — CLI Tools (guillemets CSV, unflatten JSON, whitespace visible, port défaut URL, sous-arbres dupliqués)
+- [x] csv-quoted-cells-report : rapport des cellules CSV qui nécessitent des guillemets (--check CI, JSON) ✓ 2026-08-01
+- [x] json-unflatten-keys : reconstruit un JSON depuis des paires chemin=valeur (dot-paths, arrays indexés, --check CI, JSON) ✓ 2026-08-01
+- [x] text-visualize-whitespace : rend visibles espaces/tabs/fins de ligne (·, →, $, --check CI, JSON) ✓ 2026-08-01
+- [x] url-normalize-default-port : retire le port par défaut explicite des URLs (:80, :443, --check CI, JSON) ✓ 2026-08-01
+- [x] file-duplicate-dir-trees : détecte des sous-arbres de dossiers au contenu identique (hash manifeste, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 292 — CLI Tools (à faire)
+- [ ] csv-first-row-as-header : promeut la première ligne comme header si absent (hash first row, --check CI, JSON)
+- [ ] json-invert-mapping : inverse un objet clé->valeur en valeur->clés (arrays pour collisions, --check CI, JSON)
+- [ ] text-strip-line-numbers : retire une numérotation de début de ligne (N: ou N. ou N), --check CI, JSON)
+- [ ] url-extract-year-month : extrait /YYYY/ ou /YYYY/MM/ du path des URLs (stats par période, --check CI, JSON)
+- [ ] file-group-by-weekday : histogramme des fichiers par jour de semaine de mtime (--check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
