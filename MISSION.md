@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 198 — CLI Tools (pivot CSV, Morse, JSON paths, query strings, git tags)
+- [x] csv-pivot-table : tableaux croisés depuis un CSV (sum/count/mean/min/max, totaux, tri, JSON) ✓ 2026-08-01
+- [x] text-morse-code : encode/décode le code Morse international (symboles custom, strict, JSON) ✓ 2026-08-01
+- [x] json-path-get : extraction de valeurs JSON par chemins dot/bracket (wildcards, index négatifs, --default) ✓ 2026-08-01
+- [x] http-query-build : construit des query strings URL (paires key=value, JSON, env, tri, encodage) ✓ 2026-08-01
+- [x] git-tag-list : liste et analyse les tags git (semver, dates, prereleases, gaps, JSON) ✓ 2026-08-01
+
 ## Vague 197 — CLI Tools (CSV mapping, templates, substr, JSON analytics, MAJ CSV)
 - [x] csv-rename-columns : renomme colonnes CSV en masse (map JSON, OLD=NEW, regex, --snake/--lower, dry-run) ✓ 2026-08-01
 - [x] text-expand-vars : expansion ${VAR}/${VAR:-default} depuis env/.env/JSON (strict, list, sortie fichier) ✓ 2026-08-01
