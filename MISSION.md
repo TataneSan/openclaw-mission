@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 197 — CLI Tools (CSV mapping, templates, substr, JSON analytics, MAJ CSV)
+- [x] csv-rename-columns : renomme colonnes CSV en masse (map JSON, OLD=NEW, regex, --snake/--lower, dry-run) ✓ 2026-08-01
+- [x] text-expand-vars : expansion ${VAR}/${VAR:-default} depuis env/.env/JSON (strict, list, sortie fichier) ✓ 2026-08-01
+- [x] text-substring-lines : extraction de sous-chaînes par slice, range 1-based, largeur, ou regex ✓ 2026-08-01
+- [x] json-tree-depth : analyse structure JSON/JSONL (profondeur max, nœuds, histogramme clés, --max-depth) ✓ 2026-08-01
+- [x] csv-update-rows : mise à jour ciblée de cellules CSV par condition (eq/regex, templating {col}, dry-run) ✓ 2026-08-01
+
 ## Vague 196 — CLI Tools (CSV, whitespace, line endings, similarité)
 - [x] csv-move-columns : déplace/réordonne les colonnes d'un CSV par nom (before/after, order, drop) ✓ 2026-08-01
 - [x] text-trailing-fix : détecte/corrige espaces en fin de ligne et lignes vides finales (CI check, JSON) ✓ 2026-08-01
