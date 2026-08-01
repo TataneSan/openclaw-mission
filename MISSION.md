@@ -315,12 +315,19 @@ Push automatique après chaque outil.
 - [x] url-extract-filename : extrait le segment filename final des URLs (avec/sans extension, --check CI, JSON) ✓ 2026-08-01
 - [x] file-path-length-report : rapport des chemins dépassant une longueur seuil (PATH_MAX, --max CI, JSON) ✓ 2026-08-01
 
-## Vague 294 — CLI Tools (à faire)
-- [ ] csv-column-type-report : rapport du type dominant par colonne CSV (int/float/date/string/bool, score, --check CI, JSON)
-- [ ] json-escape-strings : échappe les caractères spéciaux des valeurs string d'un JSONL (\n, \t, \uXXXX, --unescape, --check CI, JSON)
-- [ ] text-expand-tabs : convertit les tabulations en espaces (tabstop custom, --in-place, --check CI, JSON)
-- [ ] url-parse-jwt-segment : décode les segments JWT (header.payload) présents dans les URLs (base64url, --check CI, JSON)
-- [ ] file-mtime-set-from-name : applique le mtime depuis un timestamp présent dans le nom de fichier (regex, --dry-run, --check CI, JSON)
+## Vague 294 — CLI Tools (types colonnes CSV, échappement JSON, tabs, JWT URL, mtime par nom)
+- [x] csv-column-type-report : rapport du type dominant par colonne CSV (int/float/date/string/bool, score, --check CI, JSON) ✓ 2026-08-01
+- [x] json-escape-strings : échappe les caractères spéciaux des valeurs string d'un JSONL (\n, \t, \uXXXX, --unescape, --check CI, JSON) ✓ 2026-08-01
+- [x] text-expand-tabs : convertit les tabulations en espaces (tabstop custom, --in-place, --check CI, JSON) ✓ 2026-08-01
+- [x] url-parse-jwt-segment : décode les segments JWT (header.payload) présents dans les URLs (base64url, --check CI, JSON) ✓ 2026-08-01
+- [x] file-mtime-set-from-name : applique le mtime depuis un timestamp présent dans le nom de fichier (regex, --dry-run, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 295 — CLI Tools (à faire)
+- [ ] csv-column-unique-check : vérifie l'unicité des valeurs d'une ou plusieurs colonnes CSV (rapport doublons, --check CI, JSON)
+- [ ] json-count-by-type : compte les valeurs JSON par type (null/bool/number/string/array/object) à travers JSONL (--check CI, JSON)
+- [ ] text-prefix-common-strip : retire le préfixe commun à toutes les lignes (auto-detect, --check CI, JSON)
+- [ ] url-extract-auth-scheme : classe les URLs par schème d'auth (basic userinfo, bearer param, api_key query, --check CI, JSON)
+- [ ] file-content-null-bytes : détecte les fichiers contenant des octets NUL dans une arborescence (--check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
