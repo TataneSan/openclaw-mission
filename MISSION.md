@@ -184,11 +184,18 @@ Push automatique après chaque outil.
 - [x] file-size-histogram-log : histogramme log2 des tailles de fichiers d'une arborescence (buckets puissances de 2, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 273 — CLI Tools (à définir)
-- [ ] csv-row-bucket : assigne chaque ligne CSV à un bucket par valeur de colonne (labels, --check CI, JSON)
-- [ ] json-path-exists : teste si un dot-path existe dans des docs JSONL (--fail-if-missing CI, JSON)
-- [ ] text-dedupe-words-line : retire les mots dupliqués à l'intérieur de chaque ligne (ordre préservé, --check CI, JSON)
-- [ ] url-resolve-relative : résout les URLs relatives par rapport à une base (--base, --check CI, JSON)
-- [ ] file-mtime-shift : applique un décalage horaire aux mtimes d'une arborescence (±Nh, --dry-run, --check CI, JSON)
+- [x] csv-row-bucket : assigne chaque ligne CSV à un bucket par valeur de colonne (labels, --check CI, JSON) ✓ 2026-08-01
+- [x] json-path-exists : teste si un dot-path existe dans des docs JSONL (--fail-if-missing CI, JSON) ✓ 2026-08-01
+- [x] text-dedupe-words-line : retire les mots dupliqués à l'intérieur de chaque ligne (ordre préservé, --check CI, JSON) ✓ 2026-08-01
+- [x] url-resolve-relative : résout les URLs relatives par rapport à une base (--base, --check CI, JSON) ✓ 2026-08-01
+- [x] file-mtime-shift : applique un décalage horaire aux mtimes d'une arborescence (±Nh, --dry-run, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 274 — CLI Tools (à définir)
+- [ ] csv-strip-bom-rows : retire les U+FEFF BOM des cellules en début de ligne CSV (--check CI, JSON)
+- [ ] json-path-stats : statistiques par dot-path (type distribution, count, --check CI, JSON)
+- [ ] text-first-letters : extrait le premier caractère de chaque mot (acrostiche, --upper CI, JSON)
+- [ ] url-scheme-canonical : normalise scheme+host et retire le default port d'URLs (--check CI, JSON)
+- [ ] file-dupe-basename-groups : groupe les fichiers par basename partagé entre dossiers (--check CI, JSON)
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
