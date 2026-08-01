@@ -529,11 +529,18 @@ Push automatique après chaque outil.
 - [x] file-age-buckets : regroupe les fichiers par tranche d'âge (boundary custom, top N oldest, --check CI, JSON) ✓ 2026-08-02
 
 ## Vague 324 — CSV/JSON/text/URL/file mix
-- [ ] csv-normalize-whitespace : nettoie les espaces dans les cellules CSV (trim, collapse, --check CI, JSON)
-- [ ] json-array-shuffle : mélange les lignes d'un JSONL avec une seed déterministe (--check CI, JSON)
-- [ ] text-line-diff-count : compte les lignes ajoutées/supprimées/communes entre deux fichiers (--check CI, JSON)
-- [ ] url-extract-fragment : extrait le fragment (#...) des URLs (stats, --check CI, JSON)
-- [ ] file-permission-check : vérifie que les permissions des fichiers matchent un masque (--check CI, JSON)
+- [x] csv-normalize-whitespace : nettoie les espaces dans les cellules CSV (trim, collapse, colonnes ciblées, --check CI, JSON) ✓ 2026-08-02
+- [x] json-array-shuffle : mélange déterministe des lignes JSONL (--seed, --reverse undo, --check CI, JSON) ✓ 2026-08-02
+- [x] text-line-diff-count : compte lignes ajoutées/supprimées/communes entre deux fichiers (multiset, seuils CI, JSON) ✓ 2026-08-02
+- [x] url-extract-fragment : extrait le fragment (#...) des URLs (stats, top-N, --check CI, JSON) ✓ 2026-08-02
+- [x] file-permission-check : vérifie les permissions d'une arborescence (--expect/--max octal, --apply, CI, JSON) ✓ 2026-08-02
+
+## Vague 325 — CSV/JSON/text/URL/file mix
+- [ ] csv-median-column : calcule la médiane d'une colonne CSV (-c, percentiles, --check CI, JSON)
+- [ ] json-key-frequency : fréquence d'occurrence de chaque clé sur un JSONL (top-N, --check CI, JSON)
+- [ ] text-longest-line : affiche la plus longue ligne et son numéro (--top, --check CI, JSON)
+- [ ] url-swap-scheme : permute http/https des URLs (--check CI, JSON)
+- [ ] file-empty-dirs : liste les dossiers vides d'une arborescence (--prune, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
