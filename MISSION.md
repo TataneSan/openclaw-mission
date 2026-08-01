@@ -5,12 +5,19 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
-## Vague 232 — CLI Tools (à définir)
-- [ ] text-wrap-smart-indent : rewrap des paragraphes en préservant l'indentation de bloc (listes, quotes >, --check CI, JSON)
-- [ ] csv-fill-down : propage les valeurs vides depuis la ligne précédente (colonnes ciblées, --check CI, JSON)
-- [ ] json-pick-random : échantillonne N éléments d'un tableau JSON (seed, --check CI, JSON)
-- [ ] url-swap-host : remplace le host des URLs en flux (port conservé, mapping custom, --check CI, JSON)
-- [ ] text-regex-rename-files : renomme des fichiers via regex capture groups (dry-run, --check CI, JSON)
+## Vague 233 — CLI Tools (à définir)
+- [ ] text-sentence-split : découpe un texte en phrases (une par ligne, abréviations ignorées, --min-words CI, JSON)
+- [ ] csv-rename-columns : renomme des colonnes CSV via mapping old=new (regex possible, --check CI, JSON)
+- [ ] json-unflatten : reconstruit un JSON imbriqué depuis des paires chemin=valeur (sep custom, types auto, --check CI, JSON)
+- [ ] text-strip-ansi-blocks : supprime les blocs délimités par des séquences ANSI (couleurs, codes curseur, --keep-colors, --check CI, JSON)
+- [ ] file-dup-finder-hash : trouve les fichiers en double par hash (taille min, recursive, --delete interactive, --check CI, JSON)
+
+## Vague 232 — CLI Tools (rewrap indenté, fill-down CSV, échantillon JSON, swap host URL, renommage regex)
+- [x] text-wrap-smart-indent : rewrap des paragraphes en préservant l'indentation de bloc (listes, quotes >, --check CI, JSON) ✓ 2026-08-01
+- [x] csv-fill-down : propage les valeurs vides depuis la ligne précédente (colonnes ciblées, --check CI, JSON) ✓ 2026-08-01
+- [x] json-pick-random : échantillonne N éléments d'un tableau JSON (seed, --check CI, JSON) ✓ 2026-08-01
+- [x] url-swap-host : remplace le host des URLs en flux (port conservé, mapping custom, --check CI, JSON) ✓ 2026-08-01
+- [x] text-regex-rename-files : renomme des fichiers via regex capture groups (dry-run, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 231 — CLI Tools (cipher sélectif, casse en-têtes CSV, tri tableau JSON, rotation colonnes, rapport extensions)
 - [x] text-rot13-select : applique ROT13/Caesar seulement aux segments entre délimiteurs (--between quotes/brackets, --check CI, JSON) ✓ 2026-08-01
