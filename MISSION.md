@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 217 — CLI Tools (stats .env, espaces, cellules CSV, IPv6, nulls JSON)
+- [x] env-count : compte variables/commentaires/lignes vides d'un .env (dupes, exported, --min CI, JSON) ✓ 2026-08-01
+- [x] text-space-normalize : réduit les runs d'espaces/tabs à un seul espace (indent préservé, trim trailing, --check CI, JSON) ✓ 2026-08-01
+- [x] csv-cell-extract : extrait des cellules/plages rectangulaires d'un CSV (rows/cols 1-based, noms d'header, CSV/lines/JSON) ✓ 2026-08-01
+- [x] text-ipv6-expand : compresse/étend les adresses IPv6 dans du texte (ipaddress stdlib, --extract, --strict, --check CI, JSON) ✓ 2026-08-01
+- [x] json-strip-nulls : retire récursivement les valeurs null/vides d'un JSON (empty-strings/arrays/objects, JSONL, --check CI) ✓ 2026-08-01
+
 ## Vague 216 — CLI Tools (diacritiques, délimiteur CSV, RFC 7386, timestamps, quoting shell)
 - [x] text-diacritic-fold : retire les accents/diacritiques du texte (Latin-1/A, ligatures, --check CI, JSON) ✓ 2026-08-01
 - [x] csv-detect-delimiter : détecte le séparateur d'un CSV (quote-aware, scoring, JSON report, exit 2) ✓ 2026-08-01
