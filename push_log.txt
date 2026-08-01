@@ -1,0 +1,384 @@
+X Unable to add remote "origin"
+To github.com:TataneSan/access-log-parser.git
+ * [new branch]      main -> main
+[1/856] OK   access-log-parser (push only)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/analytics-api.git'
+[2/856] FAIL analytics-api
+X Unable to add remote "origin"
+To github.com:TataneSan/api-scaffold.git
+ * [new branch]      main -> main
+[3/856] OK   api-scaffold (push only)
+[4/856] SKIP arp-scan-cli (no git)
+X Unable to add remote "origin"
+To github.com:TataneSan/ascii-art-api.git
+ * [new branch]      main -> main
+[5/856] OK   ascii-art-api (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/auth-api.git
+ * [new branch]      main -> main
+[6/856] OK   auth-api (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/backup-cli.git
+ * [new branch]      main -> main
+[7/856] OK   backup-cli (push only)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/backup-verify.git'
+[8/856] FAIL backup-verify
+X Unable to add remote "origin"
+To github.com:TataneSan/base64-cli.git
+ * [new branch]      main -> main
+[9/856] OK   base64-cli (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/batch-api.git
+ * [new branch]      main -> main
+[10/856] OK   batch-api (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/batch-fetch.git
+ * [new branch]      main -> main
+[11/856] OK   batch-fetch (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/budget-cli.git
+ * [new branch]      main -> main
+[12/856] OK   budget-cli (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/byte-fmt.git
+ * [new branch]      main -> main
+[13/856] OK   byte-fmt (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/byte-size.git
+ * [new branch]      main -> main
+[14/856] OK   byte-size (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/cache-api.git
+ * [new branch]      main -> main
+[15/856] OK   cache-api (push only)
+[16/856] SKIP calc-cli (no git)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/calendar-cli.git'
+[17/856] FAIL calendar-cli
+X Unable to add remote "origin"
+To github.com:TataneSan/captcha-api.git
+ * [new branch]      main -> main
+[18/856] OK   captcha-api (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/cert-check.git
+ * [new branch]      main -> main
+[19/856] OK   cert-check (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/changelog-gen.git
+ * [new branch]      main -> main
+[20/856] OK   changelog-gen (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/char-encode.git
+ * [new branch]      main -> main
+[21/856] OK   char-encode (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/checklist-cli.git
+ * [new branch]      main -> main
+[22/856] OK   checklist-cli (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/chmod-cli.git
+ * [new branch]      main -> main
+[23/856] OK   chmod-cli (push only)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/chmod-visual.git'
+[24/856] FAIL chmod-visual
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/cli-bingo.git'
+[25/856] FAIL cli-bingo
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/cli-biography.git'
+[26/856] FAIL cli-biography
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/cli-bookmarks.git'
+[27/856] FAIL cli-bookmarks
+X Unable to add remote "origin"
+To github.com:TataneSan/cli-calendar.git
+ * [new branch]      main -> main
+[28/856] OK   cli-calendar (push only)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/cli-contacts.git'
+[29/856] FAIL cli-contacts
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/cli-cookbook.git'
+[30/856] FAIL cli-cookbook
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/cli-dice.git'
+[31/856] FAIL cli-dice
+X Unable to add remote "origin"
+To github.com:TataneSan/cli-dictionary.git
+ * [new branch]      main -> main
+[32/856] OK   cli-dictionary (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/cli-joke.git
+ * [new branch]      main -> main
+[33/856] OK   cli-joke (push only)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/cli-meditation.git'
+[34/856] FAIL cli-meditation
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/clipboard-history.git'
+[35/856] FAIL clipboard-history
+X Unable to add remote "origin"
+To github.com:TataneSan/cli-pomodoro.git
+ * [new branch]      main -> main
+[36/856] OK   cli-pomodoro (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/cli-trivia.git
+ * [new branch]      main -> main
+[37/856] OK   cli-trivia (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/cli-wishlist.git
+ * [new branch]      main -> main
+[38/856] OK   cli-wishlist (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/color-convert.git
+ * [new branch]      main -> main
+[39/856] OK   color-convert (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/color-palette.git
+ * [new branch]      main -> main
+[40/856] OK   color-palette (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/config-manager.git
+ * [new branch]      main -> main
+[41/856] OK   config-manager (push only)
+[42/856] SKIP config-validator (no git)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/conn-monitor.git'
+[43/856] FAIL conn-monitor
+X Unable to add remote "origin"
+To github.com:TataneSan/cookie-parser.git
+ * [new branch]      main -> main
+[44/856] OK   cookie-parser (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/cors-proxy.git
+ * [new branch]      main -> main
+[45/856] OK   cors-proxy (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/countdown-cli.git
+ * [new branch]      main -> main
+[46/856] OK   countdown-cli (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/counter-api.git
+ * [new branch]      main -> main
+[47/856] OK   counter-api (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/cpu-top.git
+ * [new branch]      main -> main
+[48/856] OK   cpu-top (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/cron-api.git
+ * [new branch]      main -> main
+[49/856] OK   cron-api (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/cron-parser.git
+ * [new branch]      main -> main
+[50/856] OK   cron-parser (push only)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/crontab-lint.git'
+[51/856] FAIL crontab-lint
+X Unable to add remote "origin"
+To github.com:TataneSan/crypto-price-bot.git
+ * [new branch]      main -> main
+[52/856] OK   crypto-price-bot (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-aggregate.git
+ * [new branch]      main -> main
+[53/856] OK   csv-aggregate (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-anonymize.git
+ * [new branch]      main -> main
+[54/856] OK   csv-anonymize (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-append.git
+ * [new branch]      main -> main
+[55/856] OK   csv-append (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-column-stats.git
+ * [new branch]      main -> main
+[56/856] OK   csv-column-stats (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-count.git
+ * [new branch]      main -> main
+[57/856] OK   csv-count (push only)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/csv-cut.git'
+[58/856] FAIL csv-cut
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-dedup.git
+ * [new branch]      main -> main
+[59/856] OK   csv-dedup (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-dedup-cli.git
+ * [new branch]      main -> main
+[60/856] OK   csv-dedup-cli (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-diff.git
+ * [new branch]      main -> main
+[61/856] OK   csv-diff (push only)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/csv-filter.git'
+[62/856] FAIL csv-filter
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/csv-format.git'
+[63/856] FAIL csv-format
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-head.git
+ * [new branch]      main -> main
+[64/856] OK   csv-head (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-header.git
+ * [new branch]      main -> main
+[65/856] OK   csv-header (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-join.git
+ * [new branch]      main -> main
+[66/856] OK   csv-join (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-merge.git
+ * [new branch]      main -> main
+[67/856] OK   csv-merge (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-pivot.git
+ * [new branch]      main -> main
+[68/856] OK   csv-pivot (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-query.git
+ * [new branch]      main -> main
+[69/856] OK   csv-query (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-sample.git
+ * [new branch]      main -> main
+[70/856] OK   csv-sample (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-schema-infer.git
+ * [new branch]      main -> main
+[71/856] OK   csv-schema-infer (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-sort.git
+ * [new branch]      main -> main
+[72/856] OK   csv-sort (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-split.git
+ * [new branch]      main -> main
+[73/856] OK   csv-split (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-stat.git
+ * [new branch]      main -> main
+[74/856] OK   csv-stat (push only)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/csv-statistics.git'
+[75/856] FAIL csv-statistics
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-bar-chart.git
+ * [new branch]      main -> main
+[76/856] OK   csv-to-bar-chart (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-chart.git
+ * [new branch]      main -> main
+[77/856] OK   csv-to-chart (push only)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/csv-to-chart-cli.git'
+[78/856] FAIL csv-to-chart-cli
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-chart-svg.git
+ * [new branch]      main -> main
+[79/856] OK   csv-to-chart-svg (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-delta.git
+ * [new branch]      main -> main
+[80/856] OK   csv-to-delta (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-env.git
+ * [new branch]      main -> main
+[81/856] OK   csv-to-env (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-geojson.git
+ * [new branch]      main -> main
+[82/856] OK   csv-to-geojson (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-graph.git
+ * [new branch]      main -> main
+[83/856] OK   csv-to-graph (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-graphviz.git
+ * [new branch]      main -> main
+[84/856] OK   csv-to-graphviz (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-html.git
+ * [new branch]      main -> main
+[85/856] OK   csv-to-html (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-ini.git
+ * [new branch]      main -> main
+[86/856] OK   csv-to-ini (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-json.git
+ * [new branch]      main -> main
+[87/856] OK   csv-to-json (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-jsonl.git
+ * [new branch]      main -> main
+[88/856] OK   csv-to-jsonl (push only)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/csv-to-json-nested.git'
+[89/856] FAIL csv-to-json-nested
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-json-schema.git
+ * [new branch]      main -> main
+[90/856] OK   csv-to-json-schema (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-latex.git
+ * [new branch]      main -> main
+[91/856] OK   csv-to-latex (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-markdown.git
+ * [new branch]      main -> main
+[92/856] OK   csv-to-markdown (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-markdown-table.git
+ * [new branch]      main -> main
+[93/856] OK   csv-to-markdown-table (push only)
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-mermaid.git
+ * [new branch]      main -> main
+[94/856] OK   csv-to-mermaid (push only)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/csv-to-mermaid-flow.git'
+[95/856] FAIL csv-to-mermaid-flow
+X Unable to add remote "origin"
+To github.com:TataneSan/csv-to-parquet.git
+ * [new branch]      main -> main
+[96/856] OK   csv-to-parquet (push only)
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/csv-to-pdf.git'
+[97/856] FAIL csv-to-pdf
+X Unable to add remote "origin"
+error: src refspec main does not match any
+error: failed to push some refs to 'github.com:TataneSan/csv-to-pie-chart.git'
+[98/856] FAIL csv-to-pie-chart
+X Unable to add remote "origin"

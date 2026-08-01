@@ -1,0 +1,47 @@
+OK   arp-scan-cli
+OK   config-validator created
+OK   cadenus-cli created
+OK   dir-size created
+OK   csv-lookup created
+OK   docker-compose-list created
+OK   calc-cli created
+OK   docker-image-size created
+OK   env-to-k8s-secret created
+OK   env-compare created
+OK   file-signature created
+OK   env-to-script created
+OK   git-branch-diff created
+OK   git-merge-conflicts created
+OK   git-merge-driver created
+OK   git-remote-list created
+OK   go-mod-check created
+OK   go-test-report created
+OK   go-build-check created
+OK   http-chunked-cli created
+OK   jsonl-filter created
+OK   ini-validate created
+OK   json-reformat created
+OK   json-to-k8s created
+OK   json-to-latex created
+OK   jwt-analyzer created
+OK   markdown-check created
+OK   markdown-footnote created
+OK   markdown-to-latex created
+OK   k8s-secret-gen created
+OK   markdown-mermaid-gen created
+OK   markdown-to-toml created
+OK   password-strength created
+OK   polybius-cli created
+OK   sql-formatter created
+OK   straddling-checkerboard-cli created
+OK   terminal-spinner created
+FAIL toml-to-k8s
+FAIL toml-to-protobuf
+FAIL toml-validator
+FAIL url-download
+FAIL vm-stats
+OK   text-similarity created
+FAIL xml-to-protobuf
+FAIL xml-to-typescript
+OK   toml-to-graphql created
+FAIL yaml-to-k8s
