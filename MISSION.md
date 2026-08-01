@@ -134,12 +134,19 @@ Push automatique après chaque outil.
 - [x] url-replace-host-mapping : remplace hosts via fichier mapping old=new (multi-URLs, port préservé, --check CI, JSON) ✓ 2026-08-01
 - [x] file-hard-permission-restore : restaure les modes 0644/0755 standards récursivement (--exclude, --dry-run, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 266 — CLI Tools (à définir)
-- [ ] csv-add-row-number : ajoute une colonne numéro de ligne à un CSV (start/step, header custom, --check séquence CI, JSON)
-- [ ] json-strip-null-fields : retire les clés à valeur null des objets JSONL (récursif, empty-dict prune, --check CI, JSON)
-- [ ] text-column-slice : extrait une tranche de colonnes caractères N:M par ligne (1-based, négatifs, --check width CI, JSON)
-- [ ] url-normalize-trailing-slash : uniformise le slash final des paths URL (add/remove, racine conservée, --check CI, JSON)
-- [ ] file-empty-dir-detect : liste les dossiers vides (ou récursivement vides) d'une arborescence (--prune option, --check CI, JSON)
+## Vague 266 — CLI Tools (numérotation CSV, strip nulls JSON, slice colonnes, slash final URL, dossiers vides)
+- [x] csv-add-row-number : ajoute une colonne numéro de ligne à un CSV (start/step, header custom, --check séquence CI, JSON) ✓ 2026-08-01
+- [x] json-strip-null-fields : retire les clés à valeur null des objets JSONL (récursif, empty-dict prune, --check CI, JSON) ✓ 2026-08-01
+- [x] text-column-slice : extrait une tranche de colonnes caractères N:M par ligne (1-based, négatifs, --check width CI, JSON) ✓ 2026-08-01
+- [x] url-normalize-trailing-slash : uniformise le slash final des paths URL (add/remove, racine conservée, --check CI, JSON) ✓ 2026-08-01
+- [x] file-empty-dir-detect : liste les dossiers vides (ou récursivement vides) d'une arborescence (--prune option, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 267 — CLI Tools (à définir)
+- [ ] csv-middle-rows : extrait les N lignes du milieu d'un CSV (ou tranche centrée %, --check CI, JSON)
+- [ ] json-key-case-convert : convertit les clés d'objets JSONL en snake_case/camelCase/kebab (récursif, collisions report, --check CI, JSON)
+- [ ] text-longest-common-prefix-lines : calcule le préfixe commun le plus long de toutes les lignes (--ignore-case, --check CI, JSON)
+- [ ] url-path-normalize-dots : résout les segments . et .. dans les paths d'URLs (RFC 3986 remove_dot_segments, --check CI, JSON)
+- [ ] file-oldest-newest-report : rapport des fichiers les plus anciens/récents par arborescence (top-N mtime, --check CI, JSON)
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
