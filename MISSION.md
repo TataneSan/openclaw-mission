@@ -120,12 +120,19 @@ Push automatique après chaque outil.
 - [x] url-extract-tracking-params : détecte/strip les paramètres de tracking (utm_*, *_clid, hsa_*, --extra, --check CI, JSON) ✓ 2026-08-01
 - [x] file-recent-changes-since : liste les fichiers modifiés depuis timestamp/fenêtre (--since ISO/ts, --within 6h, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 264 — CLI Tools (à définir)
-- [ ] csv-column-regex-extract : extrait les groupes de capture d'un regex appliqué à une colonne CSV en nouvelles colonnes (--check CI, JSON)
-- [ ] json-key-collision-report : détecte les clés qui changeraient après normalisation (case-fold/underscore, --check CI, JSON)
-- [ ] text-blank-run-histogram : histogramme des longueurs de runs de lignes vides consécutives (--max-run CI, JSON)
-- [ ] url-detect-open-redirect-param : repère les paramètres contenant des URLs de redirection (url=, next=, redirect=, --check CI, JSON)
-- [ ] file-permission-diff-manifest : compare les permissions actuelles d'une arborescence à un manifeste octal (--apply, --check CI, JSON)
+## Vague 264 — CLI Tools (regex capture CSV, collisions clés JSON, histogramme runs vides, open-redirect URL, diff permissions)
+- [x] csv-column-regex-extract : extrait les groupes de capture d'un regex appliqué à une colonne CSV en nouvelles colonnes (named groups, --only-matching, --check CI, JSON) ✓ 2026-08-01
+- [x] json-key-collision-report : détecte les clés qui changeraient après normalisation (casefold/underscore/snake/strip-punct, --check CI, JSON) ✓ 2026-08-01
+- [x] text-blank-run-histogram : histogramme des longueurs de runs de lignes vides consécutives (--whitespace-blank, --runs, --max-run CI, JSON) ✓ 2026-08-01
+- [x] url-detect-open-redirect-param : repère les paramètres contenant des URLs de redirection (url=, next=, redirect=, fragment SPA, multi-decode, --check CI, JSON) ✓ 2026-08-01
+- [x] file-permission-diff-manifest : compare les permissions actuelles d'une arborescence à un manifeste octal (--dump, --apply, relative/absolute, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 265 — CLI Tools (à définir)
+- [ ] csv-row-sort-by-numeric : trie un CSV par une colonne numérique (desc, stable, --check CI, JSON)
+- [ ] json-collect-by-path : agrège les valeurs d'un chemin donné à travers JSONL (stats, uniques, --check CI, JSON)
+- [ ] text-line-regex-replace-groups : substitution regex par groupes de capture sur chaque ligne (--count, --check CI, JSON)
+- [ ] url-replace-host-mapping : remplace hosts via fichier mapping old=new (multi-URLs, port préservé, --check CI, JSON)
+- [ ] file-hard-permission-restore : restaure les modes 0644/0755 standards récursivement (--exclude, --dry-run, --check CI, JSON)
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
 - [x] csv-row-filter-expr : filtre les lignes CSV par expression simple (=, !=, <, >, contains, --check-min CI, JSON) ✓ 2026-08-01
