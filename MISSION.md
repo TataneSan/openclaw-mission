@@ -218,12 +218,19 @@ Push automatique après chaque outil.
 - [x] url-extract-id-pattern : extrait des IDs numériques/uuid des segments path d'URLs (regex embarqué, --check CI, JSON) ✓ 2026-08-01
 - [x] file-magic-header-dump : dump hex des N premiers octets par fichier d'une arborescence (--bytes N, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 278 — CLI Tools (à définir)
-- [ ] csv-pivot-count : pivot simple CSV rows->cols avec compteurs (rows=colA, cols=colB, --check CI, JSON)
-- [ ] json-detect-conflicts : trouve les clés avec types différents à travers JSONL (--strict CI, JSON)
-- [ ] text-remove-diacritics : retire les accents/diacritiques unicode (NFKD strip, --check CI, JSON)
-- [ ] url-diff-batch : diff structurel en masse de paires d'URLs (ligne paire gauche/droite, --check CI, JSON)
-- [ ] file-permission-set-default : applique des umask par default (0644 files / 0755 dirs) sur une arborescence (--dry-run, --check CI, JSON)
+## Vague 278 — CLI Tools (pivot CSV, conflits types JSONL, accents, diff URLs en masse, permissions par défaut)
+- [x] csv-pivot-count : pivot simple CSV rows->cols avec compteurs (rows=colA, cols=colB, --check CI, JSON) ✓ 2026-08-01
+- [x] json-detect-conflicts : trouve les clés avec types différents à travers JSONL (--strict CI, JSON) ✓ 2026-08-01
+- [x] text-remove-diacritics : retire les accents/diacritiques unicode (NFKD strip, --check CI, JSON) ✓ 2026-08-01 (déjà publié Vague 186 — upgrade --check/ligatures/JSON)
+- [x] url-diff-batch : diff structurel en masse de paires d'URLs (ligne paire gauche/droite, --check CI, JSON) ✓ 2026-08-01
+- [x] file-permission-set-default : applique des umask par default (0644 files / 0755 dirs) sur une arborescence (--dry-run, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 279 — CLI Tools (à définir)
+- [ ] csv-pivot-sum : pivot CSV avec agrégation somme d'une colonne numérique (--sum-col, --check CI, JSON)
+- [ ] json-normalize-key-order : trie récursivement les clés d'objets JSON/JSONL (canonique, --check CI, JSON)
+- [ ] text-transliterate-ascii : translittération unicode->ASCII agressive (unidecode-like maison, --check CI, JSON)
+- [ ] url-path-join-normalize : joint et normalise des segments path d'URL (.., .,(//), --check CI, JSON)
+- [ ] file-dup-lines-across : détecte les lignes apparaissant dans plusieurs fichiers d'un dossier (--min-files CI, JSON)
 
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
