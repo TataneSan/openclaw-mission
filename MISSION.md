@@ -5,6 +5,21 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 208 — CLI Tools (CIDR, whitespace guillemets, CSV filtering, ROT, case)
+- [ ] ip-cidr-tools : calcules CIDR (network/broadcast/hosts, contains, split, JSON)
+- [ ] text-straight-quotes : convertit guillemets/apostrophes typographiques en ASCII (--check CI)
+- [ ] csv-filter-not-null : ne garde que les lignes sans cellules vides (colonnes ciblées, JSON)
+- [ ] text-split-camel : découpe camelCase/PascalCase en mots (snake/kebab/space, JSON)
+- [ ] csv-row-reverse : inverse l'ordre des lignes de données (header conservé, --check CI)
+
+## Vague 207 — CLI Tools (padding, diff CSV, unflatten, rot, invisible chars)
+- [x] text-pad-lines : pousse les lignes à une largeur cible (left/right/center, fill char, truncate, --check CI) ✓ 2026-08-01
+- [x] csv-diff-rows : compare deux CSV par colonnes clés (added/removed/changed, JSON, --exit-code CI) ✓ 2026-08-01
+- [x] json-unflatten : inverse de json-flatten (clés dotted + [idx], JSONL, --check CI) ✓ 2026-08-01
+- [x] text-rot-cipher : ROT13/ROT47/Caesar arbitraire (shift, digits, JSON) ✓ 2026-08-01
+- [x] text-invisible-chars : détecte/retire les caractères Unicode invisibles (Cf, bidi, ZWSP, BOM mid-text, --check CI) ✓ 2026-08-01
+- [x] csv-count-occurrences : tables de fréquences des valeurs de colonnes CSV (top-N, pourcentages, JSON/CSV) ✓ 2026-08-01
+
 ## Vague 206 — CLI Tools (tabs, regex CSV, sampling, ANSI, tally)
 - [x] text-expand-tabs : convertit tabs <-> espaces (expand/unexpand, tab size, --check CI) ✓ 2026-08-01
 - [x] csv-row-filter-regex : filtre les lignes CSV par regex sur une colonne (invert, count, exit codes grep) ✓ 2026-08-01
