@@ -5,12 +5,19 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
-## Vague 233 — CLI Tools (à définir)
-- [ ] text-sentence-split : découpe un texte en phrases (une par ligne, abréviations ignorées, --min-words CI, JSON)
-- [ ] csv-rename-columns : renomme des colonnes CSV via mapping old=new (regex possible, --check CI, JSON)
-- [ ] json-unflatten : reconstruit un JSON imbriqué depuis des paires chemin=valeur (sep custom, types auto, --check CI, JSON)
-- [ ] text-strip-ansi-blocks : supprime les blocs délimités par des séquences ANSI (couleurs, codes curseur, --keep-colors, --check CI, JSON)
-- [ ] file-dup-finder-hash : trouve les fichiers en double par hash (taille min, recursive, --delete interactive, --check CI, JSON)
+## Vague 234 — CLI Tools (à définir)
+- [ ] text-trim-trailing : retire les espaces/tabulations en fin de ligne (fichier ou stdin, --in-place, --check CI, JSON)
+- [ ] csv-pivot-simple : pivot léger CSV (lignes->colonnes sur clé/valeur, --check CI, JSON)
+- [ ] json-validate-schema-mini : valide un JSON contre un mini-schéma (types, required, enum, --check CI, JSON)
+- [ ] text-base64-lines : encode/décode chaque ligne en base64 (--decode, URL-safe, --check CI, JSON)
+- [ ] ip-cidr-expand : étend un CIDR en liste d'IPs ou le résume (limites, --count CI, JSON)
+
+## Vague 233 — CLI Tools (phrases, renommage colonnes CSV, JSON unflatten, strip ANSI, doublons hash)
+- [x] text-sentence-split : découpe un texte en phrases (une par ligne, abréviations ignorées, --min-words CI, JSON) ✓ 2026-08-01
+- [x] csv-rename-columns : rename les colonnes CSV via mapping old=new (regex possible, --check CI, JSON) ✓ 2026-08-01
+- [x] json-unflatten : reconstruit un JSON imbriqué depuis des paires chemin=valeur (sep custom, types auto, --check CI, JSON) ✓ 2026-08-01
+- [x] text-strip-ansi-blocks : supprime les blocs délimités par des séquences ANSI (couleurs, codes curseur, --keep-colors, --check CI, JSON) ✓ 2026-08-01
+- [x] file-dup-finder-hash : trouve les fichiers en double par hash (taille min, recursive, --delete interactive, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 232 — CLI Tools (rewrap indenté, fill-down CSV, échantillon JSON, swap host URL, renommage regex)
 - [x] text-wrap-smart-indent : rewrap des paragraphes en préservant l'indentation de bloc (listes, quotes >, --check CI, JSON) ✓ 2026-08-01
