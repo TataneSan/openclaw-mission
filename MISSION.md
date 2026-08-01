@@ -416,12 +416,19 @@ Push automatique après chaque outil.
 - [x] url-replace-path-segment : remplace le N-ième segment du path d'URLs en flux (1-based, négatifs, --check CI, JSON) ✓ 2026-08-01
 - [x] file-count-by-month : histogramme des fichiers par mois de mtime (YYYY-MM, --require PATTERN CI, JSON) ✓ 2026-08-01
 
-## Vague 308 — CLI Tools (à définir)
-- [ ] csv-add-age-days : ajoute une colonne âge en jours depuis une colonne date CSV (référence --as-of, --check CI, JSON)
-- [ ] json-coalesce-paths : fusionne plusieurs dot-paths alias en un seul canonique (--prefer first/last, --check CI, JSON)
-- [ ] text-collapse-consonant-runs : réduit les runs de consonnes répétées (>2) dans chaque mot (--keep N, --check CI, JSON)
-- [ ] url-query-sort-values : trie les valeurs multi-occurrences de chaque clé query (dedup optionnel, --check CI, JSON)
-- [ ] file-group-by-size-prefix : regroupe les fichiers par préfixe de taille lisible (K/M/G buckets, --check CI, JSON)
+## Vague 308 — CLI Tools (âge jour CSV, coalescence chemins JSON, runs consonnes, tri valeurs query URL, buckets taille)
+- [x] csv-add-age-days : ajoute une colonne âge en jours depuis une colonne date CSV (référence --as-of, --check CI, JSON) ✓ 2026-08-01
+- [x] json-coalesce-paths : fusionne plusieurs dot-paths alias en un seul canonique (--prefer first/last, --check CI, JSON) ✓ 2026-08-01
+- [x] text-collapse-consonant-runs : réduit les runs de consonnes répétées (>2) dans chaque mot (--keep N, --check CI, JSON) ✓ 2026-08-01
+- [x] url-query-sort-values : trie les valeurs multi-occurrences de chaque clé query (dedup optionnel, --check CI, JSON) ✓ 2026-08-01
+- [x] file-group-by-size-prefix : regroupe les fichiers par préfixe de taille lisible (K/M/G buckets, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 309 — CSV/JSON/text/URL/file mix
+- [ ] csv-numeric-format : reformate les colonnes numériques (décimales, séparateur milliers, --check CI, JSON)
+- [ ] json-flatten-to-csv : aplatit chaque objet JSONL en une ligne CSV (union des clés, --check CI, JSON)
+- [ ] text-average-line-length : rapport des longueurs de lignes (min/max/mean, --max-len CI, JSON)
+- [ ] url-drop-query-keys : retire des clés query spécifiques des URLs (keep-list inverse, --check CI, JSON)
+- [ ] file-snapshot-manifest : génère un manifeste chemin+taille+sha256 d'une arborescence (--check manifeste CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
