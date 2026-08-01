@@ -273,12 +273,19 @@ Push automatique après chaque outil.
 - [x] url-add-default-scheme : ajoute https:// aux URLs sans scheme (exceptions bare-IP, --check CI, JSON) ✓ 2026-08-01
 - [x] file-newest-oldest-per-ext : plus récent/plus ancien fichier par extension (mtime, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 288 — CLI Tools (à faire)
-- [ ] csv-remove-column : supprime une ou plusieurs colonnes d'un CSV (par nom ou index, --require CI, JSON)
-- [ ] json-sort-keys-deep : trie les clés de tous les objets d'un JSON/JSONL récursivement (arrays préservés, --check CI, JSON)
-- [ ] text-unique-words : extrait les mots uniques d'un texte (normalisation, tri, --check CI, JSON)
-- [ ] url-remove-query-param : retire des paramètres query ciblés des URLs (blacklist, keep-blank, --check CI, JSON)
-- [ ] file-recent-hours : liste les fichiers modifiés dans les N dernières heures (--hours, --check CI, JSON)
+## Vague 288 — CLI Tools (suppression CSV, tri clés JSON, mots uniques, strip query, fichiers récents)
+- [x] csv-remove-column : supprime une ou plusieurs colonnes d'un CSV (par nom ou index, --require CI, JSON) ✓ 2026-08-01
+- [x] json-sort-keys-deep : trie les clés de tous les objets d'un JSON/JSONL récursivement (arrays préservés, --check CI, JSON) ✓ 2026-08-01
+- [x] text-unique-words : extrait les mots uniques d'un texte (normalisation, tri, --check CI, JSON) ✓ 2026-08-01
+- [x] url-remove-query-param : retire des paramètres query ciblés des URLs (blacklist, keep-blank, --check CI, JSON) ✓ 2026-08-01
+- [x] file-recent-hours : liste les fichiers modifiés dans les N dernières heures (--hours, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 289 — CLI Tools (à faire)
+- [ ] csv-trim-cells : retire les espaces de début/fin de chaque cellule CSV (--inner collapse, --check CI, JSON)
+- [ ] json-renumber-array-field : réécrit un champ entier séquentiel dans les objets d'un JSONL (start/step, --check CI, JSON)
+- [ ] text-squeeze-repeats : réduit les répétitions consécutives d'un caractère à N occurrences (--char, --check CI, JSON)
+- [ ] url-swap-host-path-prefix : déplace le premier segment du path vers le host (a.b.com/p1 -> p1.a.b.com, --check CI, JSON)
+- [ ] file-count-by-hour-of-day : histogramme des fichiers par heure de mtime (0-23, --check CI, JSON)
 
 ## Vague 287 — CLI Tools (rename CSV, flatten JSON, tri par longueur, query k=v, plus anciens fichiers)
 - [x] csv-column-rename : renomme des colonnes CSV via mapping nom=nouveau (--require CI, JSON) ✓ 2026-08-01
