@@ -26,12 +26,19 @@ Push automatique après chaque outil.
 - [x] url-strip-query : retire tout ou partie de la query string des URLs (keep-list, --check CI, JSON) ✓ 2026-08-01
 - [x] file-line-count-report : rapport nombre de lignes par fichier d'une arborescence (total, moyenne, --check CI, JSON) ✓ 2026-08-01
 
+## Vague 250 — CLI Tools (à définir)
+- [ ] csv-sample-rows : échantillonne N lignes d'un CSV (seed, reservoir, --check CI, JSON)
+- [ ] json-extract-paths-matching : extrait les paires chemin=valeur dont le chemin matche un regex (--invert CI, JSON)
+- [ ] text-frequency-words : fréquence des mots d'un texte (top-N, min-length, stop-words fichier, --check CI, JSON)
+- [ ] url-detect-redirect-style : classe les URLs par style de redirection (?url=, /redirect/, shorteners, --check CI, JSON)
+- [ ] file-extension-mismatch : détecte les fichiers dont le magic number contredit l'extension (png/jpg/pdf/zip/gz, --check CI, JSON)
+
 ## Vague 249 — CLI Tools (à définir)
-- [ ] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON)
-- [ ] json-depth-report : rapport de profondeur max/moyenne des documents JSONL (histogramme, --max-depth CI, JSON)
-- [ ] text-wrap-after-delimiter : coupe les lignes après chaque occurrence d'un délimiteur (;, |, --keep-delim CI, JSON)
-- [ ] url-extract-credentials : détecte les credentials user:pass@ dans des URLs (masquage, --redact CI, JSON)
-- [ ] file-owner-report : rapport par propriétaire (uid/user) des fichiers d'une arborescence (counts, tailles, --check CI, JSON)
+- [x] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON) ✓ 2026-08-01
+- [x] json-depth-report : rapport de profondeur max/moyenne des documents JSONL (histogramme, --max-depth CI, JSON) ✓ 2026-08-01
+- [x] text-wrap-after-delimiter : coupe les lignes après chaque occurrence d'un délimiteur (;, |, --keep-delim CI, JSON) ✓ 2026-08-01
+- [x] url-extract-credentials : détecte les credentials user:pass@ dans des URLs (masquage, --redact CI, JSON) ✓ 2026-08-01
+- [x] file-owner-report : rapport par propriétaire (uid/user) des fichiers d'une arborescence (counts, tailles, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 248 — CLI Tools (à définir)
 - [x] csv-strict-width : vérifie que chaque ligne CSV a le même nombre de champs que le header (rapport écarts, --check CI, JSON) ✓ 2026-08-01
