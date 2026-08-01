@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 213 — CLI Tools (Unicode, hash CSV, chemins, crochets, masquage IP)
+- [x] text-unicode-lookup : inspecte caractères Unicode (codepoint, nom officiel, catégorie, --search, JSON) ✓ 2026-08-01
+- [x] csv-add-hashcol : ajoute une colonne de hash à un CSV (md5/sha*, colonnes ciblées, --short, --check CI) ✓ 2026-08-01
+- [x] file-path-normalize : normalise des chemins lexicalement (., .., //, séparateurs, --base, --check CI) ✓ 2026-08-01
+- [x] text-bracket-balance : vérifie l'équilibre des crochets/quotes (strings et commentaires ignorés, positions, JSON) ✓ 2026-08-01
+- [x] ip-masking : masque les IPv4/IPv6 dans les logs (octets/hash déterministe, CIDR conservés, --check CI) ✓ 2026-08-01
+
 ## Vague 212 — CLI Tools (acronymes, lignes, sous-réseaux, romains, voyelles)
 - [x] text-acronym-expand : scanne et étend les acronymes dans un texte (dictionnaire embarqué, dict custom, --expand/--mark, JSON, CI) ✓ 2026-08-01
 - [x] file-line-picker : extrait/supprime des lignes par numéro/range (1-based, négatifs, --drop, --check CI, JSON) ✓ 2026-08-01
