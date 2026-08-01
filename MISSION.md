@@ -5,12 +5,19 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
-## Vague 229 — CLI Tools (à définir)
-- [ ] json-flatten-leaf : aplatit un JSON imbriqué en paires chemin=valeur (feuilles seules, sep custom, --check CI, JSON)
-- [ ] text-column-select : sélectionne des colonnes whitespace-separated (comme cut -f, multi-ranges 1-3,5, --invert, --check CI, JSON)
-- [ ] csv-dedupe-rows : supprime les lignes dupliquées d'un CSV (clés colonnes subsets, keep first/last, --check CI, JSON)
-- [ ] url-normalize-cli : normalise des URLs (lowercase host, default ports, slash trailing, sort params, --check CI, JSON)
-- [ ] text-pad-columns : aligne des colonnes whitespace en padding (left/right/center par colonne, --min-width, --check CI, JSON)
+## Vague 230 — CLI Tools (à définir)
+- [ ] json-pretty-diff : diff structurel de deux documents JSON (chemins modifiés, added/removed/changed, --check CI, JSON)
+- [ ] text-dedupe-adjacent : supprime les lignes dupliquées consécutives (style uniq, --count, --ignore-case, --check CI, JSON)
+- [ ] csv-slice-rows : extrait une tranche de lignes CSV (start:stop:step style Python, négatifs, --check CI, JSON)
+- [ ] url-extract-domain : extrait schéma/host/port/path des URLs en champs tabulés (subdomain splitting, --check CI, JSON)
+- [ ] text-repeat-lines : répète chaque ligne N fois (N global ou champ préfixe, --interleave, --check CI, JSON)
+
+## Vague 229 — CLI Tools (aplatissement JSON feuilles, sélection colonnes, dédupe CSV, normalisation URL, padding colonnes)
+- [x] json-flatten-leaf : aplatit un JSON imbriqué en paires chemin=valeur (feuilles seules, sep custom, --check CI, JSON) ✓ 2026-08-01
+- [x] text-column-select : sélectionne des colonnes whitespace-separated (comme cut -f, multi-ranges 1-3,5, --invert, --check CI, JSON) ✓ 2026-08-01
+- [x] csv-dedupe-rows : supprime les lignes dupliquées d'un CSV (clés colonnes subsets, keep first/last, --check CI, JSON) ✓ 2026-08-01
+- [x] url-normalize-cli : normalise des URLs (lowercase host, default ports, slash trailing, sort params, --check CI, JSON) ✓ 2026-08-01
+- [x] text-pad-columns : aligne des colonnes whitespace en padding (left/right/center par colonne, --min-width, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 228 — CLI Tools (renommage clés JSON, wrap largeur, numérotation CSV, paramètres tracking URL, tri naturel)
 - [x] json-normalize-keys : renomme les clés JSON via map/regex/case (snake/camel/kebab, récursif, --preview, --check CI, JSON) ✓ 2026-08-01
