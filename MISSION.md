@@ -48,11 +48,18 @@ Push automatique après chaque outil.
 - [x] file-naming-convention-lint : vérifie kebab/snake/camel case des noms de fichiers (--style, --fix rename, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 253 — CLI Tools (à définir)
-- [ ] csv-fill-median : remplace les cellules vides des colonnes numériques par la médiane de la colonne (--require CI, JSON)
-- [ ] json-extract-comments : récupère les champs/notes de type "//" ou "comment_" dans un JSONL (--check CI, JSON)
-- [ ] text-dedupe-lines-global : supprime toutes les lignes dupliquées en gardant la 1re occurrence (whole-file, --check CI, JSON)
-- [ ] url-extract-port : extrait le port effectif des URLs (défaut par scheme, --check CI, JSON)
-- [ ] file-symlink-report : inventaire des symlinks d'une arborescence (target exists/missing, relative/absolute, --check CI, JSON)
+- [x] csv-fill-median : remplace les cellules vides des colonnes numériques par la médiane de la colonne (--require CI, JSON) ✓ 2026-08-01
+- [x] json-extract-comments : récupère les champs/notes de type "//" ou "comment_" dans un JSONL (--check CI, JSON) ✓ 2026-08-01
+- [x] text-dedupe-lines-global : supprime toutes les lignes dupliquées en gardant la 1re occurrence (whole-file, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-port : extrait le port effectif des URLs (défaut par scheme, --check CI, JSON) ✓ 2026-08-01
+- [x] file-symlink-report : inventaire des symlinks d'une arborescence (target exists/missing, relative/absolute, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 254 — CLI Tools (à définir)
+- [ ] csv-group-by-count : agrège un CSV par une colonne clé et compte les occurrences (top-N, --check CI, JSON)
+- [ ] json-extract-types : rapport des types JSON par chemin dans un JSONL (histogramme, --check CI, JSON)
+- [ ] text-repeat-pattern : détecte les motifs répétés consécutifs dans chaque ligne (N répétitions min, --check CI, JSON)
+- [ ] url-detect-language : heuristique de langue du contenu d'une URL par TLD/path (fr/en/..., --check CI, JSON)
+- [ ] file-hash-chain : chaîne de hash incrémentale par fichier (tri chemin, sha1 précédent+contenu, --check CI, JSON)
 
 ## Vague 249 — CLI Tools (à définir)
 - [x] csv-rename-columns-positional : renomme les colonnes CSV par position (1=newname, partial, --check CI, JSON) ✓ 2026-08-01
