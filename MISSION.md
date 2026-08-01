@@ -212,11 +212,18 @@ Push automatique après chaque outil.
 - [x] file-permission-classes : rapport des classes de permissions ugo par dossier (rwx histogramme, --check CI, JSON) ✓ 2026-08-01
 
 ## Vague 277 — CLI Tools (à définir)
-- [ ] csv-row-digest : calcule un hash par ligne CSV (colonnes choisies, algo md5/sha1/sha256, --check manifeste CI, JSON)
-- [ ] json-coalesce : remplace les valeurs null/vides à un dot-path par la première valeur par défaut fournie (--values-list, --check CI, JSON)
-- [ ] text-strip-html-tags : retire les balises HTML en gardant le texte (entités décodées, --check CI, JSON)
-- [ ] url-extract-id-pattern : extrait des IDs numériques/uuid des segments path d'URLs (regex embarqué, --check CI, JSON)
-- [ ] file-magic-header-dump : dump hex des N premiers octets par fichier d'une arborescence (--bytes N, --check CI, JSON)
+- [x] csv-row-digest : calcule un hash par ligne CSV (colonnes choisies, algo md5/sha1/sha256, --check manifeste CI, JSON) ✓ 2026-08-01
+- [x] json-coalesce : remplace les valeurs null/vides à un dot-path par la première valeur par défaut fournie (--values-list, --check CI, JSON) ✓ 2026-08-01
+- [x] text-strip-html-tags : retire les balises HTML en gardant le texte (entités décodées, --check CI, JSON) ✓ 2026-08-01
+- [x] url-extract-id-pattern : extrait des IDs numériques/uuid des segments path d'URLs (regex embarqué, --check CI, JSON) ✓ 2026-08-01
+- [x] file-magic-header-dump : dump hex des N premiers octets par fichier d'une arborescence (--bytes N, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 278 — CLI Tools (à définir)
+- [ ] csv-pivot-count : pivot simple CSV rows->cols avec compteurs (rows=colA, cols=colB, --check CI, JSON)
+- [ ] json-detect-conflicts : trouve les clés avec types différents à travers JSONL (--strict CI, JSON)
+- [ ] text-remove-diacritics : retire les accents/diacritiques unicode (NFKD strip, --check CI, JSON)
+- [ ] url-diff-batch : diff structurel en masse de paires d'URLs (ligne paire gauche/droite, --check CI, JSON)
+- [ ] file-permission-set-default : applique des umask par default (0644 files / 0755 dirs) sur une arborescence (--dry-run, --check CI, JSON)
 
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
