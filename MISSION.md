@@ -5,6 +5,13 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 224 — CLI Tools (validation YAML, stats CSV dates, nettoyage ANSI, comptage JSON, tranchage hex)
+- [ ] text-ansi-report : rapport sur les séquences ANSI présentes (couleurs SGR, curseur, styles, --check CI, JSON)
+- [ ] csv-date-normalize : normalise les dates d'une colonne CSV vers ISO 8601 (formats multiples, --check CI, JSON)
+- [ ] json-count-values : histogramme des valeurs d'un champ JSON/JSONL (top-N, --check CI, JSON)
+- [ ] text-collapse-space : remplace les runs d'espaces multiples par un séparateur custom (tab, --squeeze, --check CI, JSON)
+- [ ] hex-to-dec-cli : convertit hex <-> decimal/octet/bin pour flux ou args (prefix, padding, math LSB, --check CI, JSON)
+
 ## Vague 223 — CLI Tools (dédoublonnage JSON, entêtes CSV, wrapping URL, checksums texte, swapping colonnes TSV)
 - [x] json-array-dedupe : déduplique les éléments d'un tableau JSON (clé de comparaison, stable, JSONL, --check CI, JSON) ✓ 2026-08-01
 - [x] csv-drop-columns : supprime des colonnes CSV par nom/index (keep-list inverse, --check CI, JSON) ✓ 2026-08-01
