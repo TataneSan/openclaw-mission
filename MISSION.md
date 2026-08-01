@@ -266,12 +266,19 @@ Push automatique après chaque outil.
 - [x] url-extract-base-domain : extrait le domaine enregistré approximatif (eTLD+1 simple) de chaque URL (--check CI, JSON) ✓ 2026-08-01
 - [x] file-count-lines-per-ext : compte les lignes des fichiers texte par extension dans une arborescence (binaires exclus, --check CI, JSON) ✓ 2026-08-01
 
-## Vague 285 — CLI Tools (à faire)
-- [ ] csv-row-number-filter : garde les lignes dont le numéro matche une expression (ranges 1-5,8, mod N, --check CI, JSON)
-- [ ] json-compare-arrays : compare deux tableaux JSONL élément par élément et rapporte les écarts (index, --check CI, JSON)
-- [ ] text-reorder-words : trie les mots de chaque ligne alphabétiquement (ignore-case, --check CI, JSON)
-- [ ] url-add-default-scheme : ajoute https:// aux URLs sans scheme (exceptions bare-IP, --check CI, JSON)
-- [ ] file-newest-oldest-per-ext : plus récent/plus ancien fichier par extension (mtime, --check CI, JSON)
+## Vague 285 — CLI Tools (filtrage par numéro de ligne CSV, diff tableaux JSONL, tri mots, scheme par défaut URL, min/max mtime par extension)
+- [x] csv-row-number-filter : garde les lignes dont le numéro matche une expression (ranges 1-5,8, mod N, --check CI, JSON) ✓ 2026-08-01
+- [x] json-compare-arrays : compare deux tableaux JSONL élément par élément et rapporte les écarts (index, --check CI, JSON) ✓ 2026-08-01
+- [x] text-reorder-words : trie les mots de chaque ligne alphabétiquement (ignore-case, --check CI, JSON) ✓ 2026-08-01
+- [x] url-add-default-scheme : ajoute https:// aux URLs sans scheme (exceptions bare-IP, --check CI, JSON) ✓ 2026-08-01
+- [x] file-newest-oldest-per-ext : plus récent/plus ancien fichier par extension (mtime, --check CI, JSON) ✓ 2026-08-01
+
+## Vague 286 — CLI Tools (à faire)
+- [ ] csv-column-keep : garde seulement certaines colonnes d'un CSV (whitelist par nom ou index, --require CI, JSON)
+- [ ] json-unescape-strings : décode les séquences \n \t \uXXXX dans les valeurs string d'un JSONL (--check CI, JSON)
+- [ ] text-columns-to-lines : convertit un tableau whitespace en lignes clé=valeur (--kv, --check CI, JSON)
+- [ ] url-strip-www : retire le préfixe www. des hosts d'URLs (--check CI, JSON)
+- [ ] file-group-by-owner-size : regroupe les fichiers d'une arborescence par owner avec total de taille (--threshold CI, JSON)
 
 
 ## Vague 261 — CLI Tools (filtrage expr CSV, arbre Merkle JSON, dédup floue, breadcrumb URL, encodage fichiers)
