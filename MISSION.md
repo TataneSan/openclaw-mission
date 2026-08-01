@@ -1520,3 +1520,10 @@ Push automatique après chaque outil.
 - [x] json-keys-list : liste toutes les clés d'un document JSON (chemins dot) ✓ 2026-08-01
 - [x] text-nato-alphabet : épelle un texte avec l'alphabet phonétique OTAN ✓ 2026-08-01
 - [x] csv-sum-columns : somme des colonnes numériques d'un CSV ✓ 2026-08-01
+
+## Vague 187 — CLI Tools (texte & CSV)
+- [x] text-collapse-spaces : réduit les espaces multiples à un seul ✓ 2026-08-01
+- [x] csv-column-rename : renomme des colonnes dans un CSV (OLD=NEW) ✓ 2026-08-01
+- [x] text-rot13 : applique le chiffrement ROT13 (ou ROT-n) ✓ 2026-08-01
+- [x] line-sort-unique : trie les lignes et supprime les doublons (sort -u) ✓ 2026-08-01
+- [x] text-strip-punctuation : retire la ponctuation d'un texte ✓ 2026-08-01
