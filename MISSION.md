@@ -5,6 +5,14 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Vague 203 — CLI Tools (tri CSV, wrap texte, doublons fichiers, Soundex, transpose/md, title case)
+- [x] csv-sort-rows : trie les lignes CSV par colonnes (numérique, naturel, reverse, ignore-case, --check CI, JSON) ✓ 2026-08-01
+- [x] text-word-wrap : reformatage de paragraphes à largeur cible (indents, préfixe, --break-long, --check CI) ✓ 2026-08-01
+- [x] file-dup-detect : détecte les fichiers dupliqués par hash (pré-filtre taille+hash partiel, --delete, dry-run, NUL) ✓ 2026-08-01
+- [x] text-soundex : codes Soundex américains (accents foldés, --compare paires stdin, --check CI, JSON) ✓ 2026-08-01
+- [x] csv-transpose-md : transpose un CSV et/ou le rend en table Markdown (alignements, échappement pipes, JSON) ✓ 2026-08-01
+- [x] text-title-case : Title Case anglais AP/Chicago (mots mineurs, acronymes, composés à tiret, --check CI) ✓ 2026-08-01
+
 ## Vague 202 — CLI Tools (CSV fill, Damerau, MIME, JSON path, hexdump)
 - [x] csv-fill-blanks : remplit les cellules vides CSV (valeur globale, mapping par colonne, check CI, JSON) ✓ 2026-08-01
 - [x] text-damerau-levenshtein : distance Damerau-Levenshtein avec transpositions (stdin tab/comma, --max CI, JSON) ✓ 2026-08-01
