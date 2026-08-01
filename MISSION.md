@@ -5,6 +5,9 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
+## Outil publié — GPU Research
+- [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
+
 ## Vague 238 — CLI Tools (à définir)
 - [x] csv-column-stats : statistiques numériques par colonne CSV (min/max/mean/median, colonnes ciblées, --check CI, JSON) ✓ 2026-08-01
 - [x] json-diff-patch : génère un patch JSON (RFC 6902-like simplifié) entre deux documents (--apply, --check CI, JSON) ✓ 2026-08-01
