@@ -1513,3 +1513,10 @@ Push automatique après chaque outil.
 - [x] json-sort-keys : trie récursivement les clés d'un document JSON ✓ 2026-08-01
 - [x] file-line-diff-count : compte les lignes ajoutées/supprimées entre deux fichiers ✓ 2026-08-01
 - [x] text-capitalize-words : met en majuscule la première lettre de chaque mot ✓ 2026-08-01
+
+## Vague 186 — CLI Tools (utilitaires)
+- [x] csv-average : calcule la moyenne des colonnes numériques d'un CSV ✓ 2026-08-01
+- [x] text-remove-diacritics : retire les accents et diacritiques d'un texte ✓ 2026-08-01
+- [x] json-keys-list : liste toutes les clés d'un document JSON (chemins dot) ✓ 2026-08-01
+- [x] text-nato-alphabet : épelle un texte avec l'alphabet phonétique OTAN ✓ 2026-08-01
+- [x] csv-sum-columns : somme des colonnes numériques d'un CSV ✓ 2026-08-01
