@@ -5,12 +5,19 @@ Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
 Push automatique après chaque outil.
 
-## Vague 231 — CLI Tools (à définir)
-- [ ] text-rot13-select : applique ROT13/Caesar seulement aux segments entre délimiteurs (--between quotes/brackets, --check CI, JSON)
-- [ ] csv-header-case : uniformise la casse des en-têtes CSV (snake/camel/kebab/upper, --dry-run, --check CI, JSON)
-- [ ] json-sort-array-by : trie un tableau JSON d'objets par champ (multi-clés, numérique, --check CI, JSON)
-- [ ] text-column-rotate : décale les colonnes whitespace vers la gauche/droite (--shift N, --check CI, JSON)
-- [ ] file-extension-report : rapport de fréquence d'extensions dans une arborescence (top-N, tailles, --threshold CI, JSON)
+## Vague 232 — CLI Tools (à définir)
+- [ ] text-wrap-smart-indent : rewrap des paragraphes en préservant l'indentation de bloc (listes, quotes >, --check CI, JSON)
+- [ ] csv-fill-down : propage les valeurs vides depuis la ligne précédente (colonnes ciblées, --check CI, JSON)
+- [ ] json-pick-random : échantillonne N éléments d'un tableau JSON (seed, --check CI, JSON)
+- [ ] url-swap-host : remplace le host des URLs en flux (port conservé, mapping custom, --check CI, JSON)
+- [ ] text-regex-rename-files : renomme des fichiers via regex capture groups (dry-run, --check CI, JSON)
+
+## Vague 231 — CLI Tools (cipher sélectif, casse en-têtes CSV, tri tableau JSON, rotation colonnes, rapport extensions)
+- [x] text-rot13-select : applique ROT13/Caesar seulement aux segments entre délimiteurs (--between quotes/brackets, --check CI, JSON) ✓ 2026-08-01
+- [x] csv-header-case : uniformise la casse des en-têtes CSV (snake/camel/kebab/upper, --dry-run, --check CI, JSON) ✓ 2026-08-01
+- [x] json-sort-array-by : trie un tableau JSON d'objets par champ (multi-clés, numérique, --check CI, JSON) ✓ 2026-08-01
+- [x] text-column-rotate : décale les colonnes whitespace vers la gauche/droite (--shift N, --check CI, JSON) ✓ 2026-08-01
+- [x] file-extension-report : rapport de fréquence d'extensions dans une arborescence (top-N, tailles, --threshold CI, JSON) ✓ 2026-08-01
 
 ## Vague 230 — CLI Tools (diff JSON structurel, dédupe adjacente, slice CSV, extraction domaine URL, répétition lignes)
 - [x] json-pretty-diff : diff structurel de deux documents JSON (chemins modifiés, added/removed/changed, --check CI, JSON) ✓ 2026-08-01
