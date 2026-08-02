@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 521 — CLI Tools
+- [x] csv-column-math : calcule une expression arithmétique entre colonnes numériques (+,-,*,/,%,parenthèses, nombres 1 234,56) vers une nouvelle colonne (--round, --output-append, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] text-rot13-cipher : applique ROT13/ROT-N aux lettres (--digits ROT5, --unicode-latin étendu, preserve case, gates CI, --json) ✓ 2026-08-02
+- [x] json-array-dedupe : déduplique les éléments d'un array JSON (deep-equality, --stable, --count compte les occurrences, JSONL, gates CI, --json) ✓ 2026-08-02
+- [x] file-age-histogram : histogramme ASCII des âges de fichiers d'un arbre (buckets 1h/1d/1w/1m/1y custom, stats mean/median, gates CI, --json) ✓ 2026-08-02
+- [x] text-tabs-to-columns : formate des lignes délimitées (tabs/CSV-like) en colonnes alignées (--separator, --right-align-numbers, --max-width, gates CI, --json) ✓ 2026-08-02
+
 ## Vague 520 — CLI Tools
 - [x] csv-column-extract-regex : extrait un groupe de capture regex d'une colonne CSV vers une nouvelle colonne (--group N/nommé, --all-matches jointure, --no-match placeholder, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
 - [x] text-collapse-whitespace : réduit les runs d'espaces/tabulations internes à 1 (--all inclut indentation, --to-space convertit tabs, lignes vides, gates CI, --json) ✓ 2026-08-02
