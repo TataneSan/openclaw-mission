@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 548 — CLI Tools (texte extraire lignes par motif d'horodatage, CSV détecter colonnes constantes, JSON extraire sous-arbre par chemin, fichiers doublons par taille uniquement, texte compter caractères non-imprimables)
+- [ ] text-filter-timestamp-lines : garde les lignes contenant un horodatage (ISO/syslog/epoch, --format, --invert, gates CI, --json)
+- [ ] csv-constant-columns : détecte les colonnes CSV ayant une seule valeur distincte (délimiteur sniffé, --drop, gates CI, --json)
+- [ ] json-extract-subtree : extrait le sous-document à un chemin pointillé (indices arrays, --compact, gates CI, --json)
+- [ ] file-duplicate-sizes : groupe les fichiers partageant exactement la même taille (pré-filtre avant hash, --min-count, gates CI, --json)
+- [ ] text-control-char-report : inventaire des caractères de contrôle non-imprimables par fichier (codepoints, --require-clean, gates CI, --json)
+
 ## Vague 547 — CLI Tools (texte minuscules vers majuscules, CSV filtre valeurs longues, JSON compter arrays, fichiers permissions strictes, texte extraire URLs domaines)
-- [ ] text-shout-lines : met en majuscules les lignes dépassant un seuil de longueur (ou --all, gates CI, --json)
-- [ ] csv-filter-long-values : garde les lignes dont une colonne dépasse N caractères (délimiteur sniffé, gates CI, --json)
-- [ ] json-array-count : compte les arrays par chemin dans un JSON (récursif, total éléments, gates CI, --json)
-- [ ] file-permission-audit : liste les fichiers/dossiers avec des permissions world-writable ou trop ouvertes (gates CI, --json)
-- [ ] text-extract-domains : extrait les domaines uniques des URLs/emails d'un texte (tri, comptage, gates CI, --json)
+- [x] text-shout-lines : met en majuscules les lignes dépassant un seuil de longueur (ou --all, gates CI, --json) ✓ 2026-08-02
+- [x] csv-filter-long-values : garde les lignes dont une colonne dépasse N caractères (délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] json-array-count : compte les arrays par chemin dans un JSON (récursif, total éléments, gates CI, --json) ✓ 2026-08-02
+- [x] file-permission-audit : liste les fichiers/dossiers avec des permissions world-writable ou trop ouvertes (gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] text-extract-domains : extrait les domaines uniques des URLs/emails d'un texte (tri, comptage, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 546 — CLI Tools (texte compter émojis, CSV joindre deux fichiers sur une clé, JSON profondeur histogramme, fichiers plus gros que N Mo, texte extraire lignes sans voyelles)
 - [x] text-emoji-count : compte les émojis d'un texte (par émoji, top-N, gates CI, --json) ✓ 2026-08-02 (existant)
