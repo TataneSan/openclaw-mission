@@ -21,12 +21,19 @@
 - [x] file-future-mtime : liste les fichiers dont la mtime est dans le futur (--grace seconds, walk, gates CI, --json) ✓ 2026-08-02
 - [x] text-sort-by-length : trie les lignes par longueur (chars/words/bytes, asc/desc, --stable, ties alpha, gates CI, --json) ✓ 2026-08-01 (existant)
 
+## Vague 535 — CLI Tools (CSV valeur par ligne, JSON extraire valeurs chaînes, texte détecter fin de ligne, fichiers plus volumineux par dossier, texte majuscules par phrase)
+- [ ] csv-row-per-value : éclate un CSV en un fichier par valeur d'une colonne (group-by, --out-dir, délimiteur sniffé, gates CI, --json)
+- [ ] json-extract-string-values : extrait toutes les valeurs chaînes d'un JSON (récursif, --with-path, --unique, JSONL, gates CI, --json)
+- [ ] text-line-ending-detect : détecte le style de fin de ligne d'un fichier (LF/CRLF/CR, mixte, comptage, gates CI --require-style, --json)
+- [ ] file-largest-per-dir : trouve le plus gros fichier de chaque dossier d'un arbre (taille, --depth, gates CI, --json)
+- [ ] text-uppercase-sentences : met en majuscule la première lettre de chaque phrase (ponctuation .!?, --all-caps-first-word, gates CI, --json)
+
 ## Vague 534 — CLI Tools (CSV ligne la plus longue, JSON échapper clés, texte compter lignes vides consécutives, fichiers permissions exécutables, texte inverser mots par ligne)
-- [ ] csv-longest-row : trouve la ligne CSV avec le plus de colonnes / la valeur la plus longue (--by columns|chars|bytes, délimiteur sniffé, gates CI, --json)
-- [ ] json-escape-keys : échappe/assainit les clés JSON (slugify, remplace chars invalides, --mode slug|underscore|hex, gates CI, --json)
-- [ ] text-blank-run-report : rapporte les runs de lignes vides consécutives (longueur max, positions, --min-run, gates CI, --json)
-- [ ] file-executable-report : liste les fichiers exécutables (perm +x, shebang, extension .sh/.py, --fix chmod, gates CI, --json)
-- [ ] text-reverse-words-per-line : inverse l'ordre des mots de chaque ligne (--sep regex, preserve leading ws, gates CI, --json)
+- [x] csv-longest-row : trouve la ligne CSV avec le plus de colonnes / la valeur la plus longue (--by columns|chars|bytes, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] json-escape-keys : échappe/assainit les clés JSON (slugify, remplace chars invalides, --mode slug|underscore|hex, gates CI, --json) ✓ 2026-08-02
+- [x] text-blank-run-report : rapporte les runs de lignes vides consécutives (longueur max, positions, --min-run, gates CI, --json) ✓ 2026-08-02
+- [x] file-executable-report : liste les fichiers exécutables (perm +x, shebang, extension .sh/.py, --fix chmod, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] text-reverse-words-per-line : inverse l'ordre des mots de chaque ligne (--sep regex, preserve leading ws, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 530 — CLI Tools (CSV compter valeurs distinctes, JSON trier clés par profondeur, texte comptage mots par ligne, fichiers gros répertoires, texte wrap mots avec indentation)
 - [x] csv-distinct-count : compte les valeurs distinctes par colonne d'un CSV (délimiteur sniffé, --all-columns, --top, gates CI, --json) ✓ 2026-08-02
