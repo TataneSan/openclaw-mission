@@ -640,6 +640,13 @@ Push automatique après chaque outil.
 - [x] url-extract-path-extension-report : rapport par extension du path des URLs (counts, mime guess, --check CI, JSON) ✓ 2026-08-02
 - [x] file-same-content-links : détecte les fichiers identiques pouvant être remplacés par des hardlinks (--apply, --check CI, JSON) ✓ 2026-08-02
 
+## Vague 349 — CSV/JSON/text/URL/file mix
+- [x] csv-column-unique-values : distribution des valeurs uniques par colonne CSV (count, percent, --require-unique/--require-distinct, JSON) ✓ 2026-08-02
+- [x] json-values-length-report : stats de longueur des valeurs string par dot-path (min/max/mean/total, --min-len/--max-len/--require, JSON) ✓ 2026-08-02
+- [x] text-repeat-word-count : détecte les mots consécutifs répétés par ligne (--ignore-case/--min-length/whitelist, --check CI, JSON) ✓ 2026-08-02
+- [x] url-add-query-prefix : préfixe toutes les clés query d'URLs (--prefix/--separator/--exclude, --check CI, JSON) ✓ 2026-08-02
+- [x] file-empty-lines-report : compte les lignes vides/whitespace d'une arborescence (runs, --max-empty-per-file/--max-files, JSON) ✓ 2026-08-02
+
 ## Vague 348 — CSV/JSON/text/URL/file mix
 - [x] csv-value-replace-map : remplacement des valeurs CSV via mapping old=new (colonne cible, --strict/--check CI, JSON) ✓ 2026-08-02
 - [x] json-compact-spaces : normalise l'espacement JSON (compact/indent/séparateurs, --strip, --check CI, JSON) ✓ 2026-08-02
