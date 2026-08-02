@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 566 — CLI Tools (texte extraire adresses IPv4, CSV renommer colonnes via mapping, JSON injecter une clé à tous les objets racine, fichiers dossiers vides, texte swap deux caractères choisis)
+- [ ] text-extract-ipv4 : extrait les adresses IPv4 uniques d'un texte (--sort, --count, gates CI, --json)
+- [ ] csv-rename-columns : renomme des colonnes via mapping --map old=new (répétable, délimiteur sniffé, gates CI, --json)
+- [ ] json-add-key-all : ajoute une clé/valeur à chaque objet racine d'un JSON array ou JSONL (--key, --value typée, --if-absent, gates CI, --json)
+- [ ] file-empty-dirs : liste les dossiers vides (récursivement vides) d'un arbre (--depth min/max, --delete optionnel dry-run, gates CI, --json)
+- [ ] text-swap-chars : échange deux caractères donnés dans tout le texte (--first, --second, --check, --json)
+
 ## Vague 565 — CLI Tools (texte normaliser ponctuation espaces avant/après, CSV extraire sous-ensemble N lignes stratifiées par clé, JSON compter valeurs types par chemin rapide, fichiers mtime futur vs passé vs 24h, texte transformer cases par ligne alternée)
-- [ ] text-normalize-punct-space : normalise espaces autour de ponctuation (!?,;:) FR style (espace avant doubles, pas avant simples, gates CI, --json)
-- [ ] csv-stratified-sample : échantillonne N lignes par valeur d'une colonne clé (--column, --per-key N, --seed, délimiteur sniffé, gates CI, --json)
-- [ ] json-types-at-path : types vus à chaque chemin d'un JSON/JSONL (string/number/bool/null/array/object, gates CI, --json)
-- [ ] file-age-classes : classe fichiers par tranche d'âge (<1h, <1d, <7d, <30d, plus ancien, gates CI, --json)
-- [ ] text-alternate-case-lines : met en majuscules les lignes paires et minuscules les impaires (ou inverse, gates CI, --json)
+- [x] text-normalize-punct-space : normalise espaces autour de ponctuation (!?,;:) FR style (espace avant doubles, pas avant simples, gates CI, --json) ✓ 2026-08-03
+- [x] csv-stratified-sample : échantillonne N lignes par valeur d'une colonne clé (--column, --per-key N, --seed, délimiteur sniffé, gates CI, --json) ✓ 2026-08-03
+- [x] json-types-at-path : types vus à chaque chemin d'un JSON/JSONL (string/number/bool/null/array/object, gates CI, --json) ✓ 2026-08-03
+- [x] file-age-classes : classe fichiers par tranche d'âge (<1h, <1d, <7d, <30d, plus ancien, gates CI, --json) ✓ 2026-08-03
+- [x] text-alternate-case-lines : met en majuscules les lignes paires et minuscules les impaires (ou inverse, gates CI, --json) ✓ 2026-08-03
 
 ## Vague 564 — CLI Tools (texte trouver mots hors dictionnaire, CSV filtrer plages de valeurs numériques, JSON compter occurrences d'une valeur dans tous les chemins, fichiers taille totale et liste des dotfiles, texte inverser l'ordre des paragraphes)
 - [x] text-spell-outliers : mots non présents dans une wordlist de référence (typo candidates, --min-length, gates CI, --json) ✓ 2026-08-03
