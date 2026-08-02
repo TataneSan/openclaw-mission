@@ -1,7 +1,8 @@
 # OpenClaw — File d'attente des outils
 
-## Vague 398 — CLI Tools (score lisibilité texte)
+## Vague 398 — CLI Tools (score lisibilité texte, tri imports Python)
 - [x] text-readability-checker : score de lisibilité heuristique (Flesch Reading Ease, Flesch-Kincaid Grade, SMOG, stats phrases/mots/syllabes, --require-readability/--max-grade/--max-sentence-length/--complex-pct exit 2 CI, JSON) ✓ 2026-08-02
+- [x] py-import-sort-checker : audit/fix l'ordre des blocs d'imports Python top-level (__future__ d'abord, groupes stdlib < third-party < first-party < local, tri alpha insensible à la casse, --fix in-place, --first-party, ligne commentée = ancre, exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 397 — CLI Tools (audit quoting CSV, stats longueur mots, tri dotenv, valeurs vides YAML, escapes JSON, ENV Dockerfile, messages commit)
 - [x] csv-detect-quoted-fields : audit le quoting des champs CSV (re-lexing RFC 4180, cellules quoted/needs_quotes/unquoted_special, --require-quoted-columns, --check exit 2 CI, JSON) ✓ 2026-08-02
