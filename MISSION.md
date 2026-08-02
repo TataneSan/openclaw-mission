@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 495 — CLI Tools (guillemets, regex CSV, lorem ipsum, chemins JSON, dossiers vides)
+- [x] text-quote-wrap : wrap/unwrap/toggle guillemets par ligne (8 styles prédéfinis + custom, --escape, --skip-empty/--skip-wrapped/--strip, --in-place, --count, gates require-min/all-wrapped/changes exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-row-filter-regex : filtre lignes CSV par conditions regex COLUMN=REGEX (nom/index négatif, AND/--match-any, --invert/--ignore-case/--full-match, --all-columns-must-match, --no-header, sniff délimiteur+BOM, gates require-min/max/none exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-lorem-ipsum : génère du texte placeholder déterministe (--words/--sentences/--paragraphs, 3 vocabulaires classic/corporate/tech, --seed reproductible, --classic-opener, --wrap/--html/--count, gates require-min/max-words exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-path-rename : renomme clés JSON par chemins pointillés (indices tableaux, itérateurs items[], wildcard *, JSONL + --skip-invalid, ordre des clés préservé, détection conflits, gates require-renamed/no-missed/no-conflict exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-empty-dirs : repère/supprime dossiers vides (--files-only, --ignore-noise/.hidden, --prune cascading bottom-up + --dry-run, --max-depth, --count, gates require-none/min/max exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 494 — CLI Tools (CSV, timestamps, texte, env, JSONL)
 - [x] csv-row-shuffle : mélange les lignes d'un CSV (seed reproductible, --head/--tail gardés ligne par ligne, --no-header, --in-place, gates require-rows/identical exit 2 CI, --json) ✓ 2026-08-02
 - [x] text-timestamp-normalize : normalise les timestamps d'un texte (ISO/slash/Unix vers sortie formatée, --output-format strftime, --detect, gates require-min/max/none exit 2 CI, --json) ✓ 2026-08-02
