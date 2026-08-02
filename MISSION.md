@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 357 — CLI Tools (bases de stages Dockerfile, valeurs colonne CSV, merge tableaux JSON, trim gauche, valeurs query URL)
+- [x] dockerfile-extract-stage-base : extrait l'image de base de chaque stage FROM d'un Dockerfile (ARG expansés, --check-image/--require-stage CI, JSON) ✓ 2026-08-02
+- [x] csv-extract-column-values : imprime les valeurs d'une colonne CSV (nom ou index, --unique/--count, --require-min/max CI, JSON) ✓ 2026-08-02
+- [x] json-merge-arrays : concatène les tableaux racine de plusieurs documents JSON (mode JSONL, --path, --unique, --require-min CI) ✓ 2026-08-02
+- [x] text-trim-left : retire les espaces/caractères en tête de chaque ligne (--chars, --max, --check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-query-value : extrait la valeur d'un paramètre query d'URLs en batch (--all, --default, --require-match CI, JSON) ✓ 2026-08-02
+
 ## Vague 356 — CLI Tools (USER Dockerfile, comptage regex CSV, slice tableaux JSON, authority URL, lectures INI)
 - [x] dockerfile-extract-user : extrait le USER effectif par stage d'un Dockerfile (root implicite détecté, --check non-root CI, JSON) ✓ 2026-08-02
 - [x] csv-count-rows-matching : compte les lignes CSV dont les cellules matchent un regex (colonne ciblée, --invert, --print, --require CI, JSON) ✓ 2026-08-02
