@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 561 — CLI Tools (texte extraire lignes contenant seulement des lettres, CSV numéroter les doublons d'une colonne clé, JSON compter valeurs booléennes true par chemin top-level, fichiers taille médiane par extension, texte supprimer N premiers caractères de chaque ligne)
+- [ ] text-alpha-only-lines : extrait les lignes composées uniquement de lettres Unicode et espaces (--allow-space, --invert, gates CI, --json)
+- [ ] csv-dup-key-occurrences : numérote les occurrences d'une clé dupliquée dans une colonne (--column, --append-col, délimiteur sniffé, gates CI, --json)
+- [ ] json-true-count-per-key : compte les valeurs true par clé top-level dans des docs JSON/JSONL (gates CI, --json)
+- [ ] file-median-size-per-extension : taille médiane (et moyenne) par extension d'un arbre (top-N, gates CI, --json)
+- [ ] text-cut-first-chars : supprime les N premiers caractères de chaque ligne (--keep-short laisse intactes les lignes courtes, gates CI, --json)
+
 ## Vague 560 — CLI Tools (texte extraire lignes commençant par chiffre, CSV remplacer cellules vides par la valeur de la ligne précédente, JSON top valeurs les plus fréquentes à un chemin, fichiers plus gros fichier de chaque extension, texte compter occurrences de chaque mot d'une wordlist)
-- [ ] text-digit-leading-lines : extrait les lignes commençant par un chiffre (--invert, gates CI, --json)
-- [ ] csv-fill-down-empty : remplit les cellules vides avec la valeur de la ligne précédente par colonne (--columns, délimiteur sniffé, gates CI, --json)
-- [ ] json-top-values-at-path : top-N des valeurs les plus fréquentes à un chemin pointillé (JSONL, gates CI, --json)
-- [ ] file-largest-per-extension : le plus gros fichier par extension d'un arbre (top-N, gates CI, --json)
-- [ ] text-wordlist-count : fréquence d'occurrence de chaque mot d'une wordlist dans un texte (--ignore-case, --zero show absent, gates CI, --json)
+- [x] text-digit-leading-lines : extrait les lignes commençant par un chiffre (--invert, gates CI, --json) ✓ 2026-08-03
+- [x] csv-fill-down-empty : remplit les cellules vides avec la valeur de la ligne précédente par colonne (--columns, délimiteur sniffé, gates CI, --json) ✓ 2026-08-03
+- [x] json-top-values-at-path : top-N des valeurs les plus fréquentes à un chemin pointillé (JSONL, gates CI, --json) ✓ 2026-08-03
+- [x] file-largest-per-extension : le plus gros fichier par extension d'un arbre (top-N, gates CI, --json) ✓ 2026-08-03
+- [x] text-wordlist-count : fréquence d'occurrence de chaque mot d'une wordlist dans un texte (--ignore-case, --zero show absent, gates CI, --json) ✓ 2026-08-03
 
 ## Vague 559 — CLI Tools (texte supprimer lignes dupliquées non adjacentes en gardant dernière occurrence, CSV compter valeurs matchant regex par colonne, JSON extraire toutes les clés d'un niveau donné, fichiers plus récents vs plus anciens paires même stem, texte convertir espaces en tabs indentation)
 - [x] text-dedupe-keep-last : supprime les doublons en gardant la DERNIERE occurrence (ordre préservé, --ignore-case, gates CI, --json) ✓ 2026-08-03
