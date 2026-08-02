@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 463 — CLI Tools (remplissage CSV, classes de caractères, histo tailles fichiers, format JSON, wrap colonnes)
+- [x] csv-column-fill : remplit les cellules vides d'un CSV (mode down forward-fill / constant / static, --columns par nom ou index, --keep-leading-empty avec --value, délimiteur sniffé, --no-header, gates check/require-filled-min/require-empty exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-char-classify : compte les caractères par classe par ligne (alpha/digit/space/punct/other via str.is* et catégories Unicode P*, flag ascii par ligne, totaux fusionnés, --keep-newlines, gates require-ascii/class min/forbid-class/require-min-total exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-size-histogram : histogramme tailles de fichiers sous une arborescence (modes exponential puissances de 2 / log10 / linear --bucket-size, barres ASCII, filtre min/max-size, exclude-dir, symlinks non suivis, gates require-min/max-files/no-empty/total-gte/lte exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-format-cli : ré-indente/canonicalise documents JSON et JSONL (indent espaces ou tabs, --compact, --sort-keys récursif, --canonical RFC-style compact+sorted+UTF-8, --no-ensure-ascii, validation améliorée ligne/col, gates require-min/max-depth/min-keys/forbid-key exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-wrap-columns : coupe les lignes en dur à une largeur fixe (modes word (défaut) / any strict, expansion tabs avant wrap, préserve lignes vides et trailing-newline, --no-split-long, --check lint exit 2, gates require-max-line/lines-changed exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 462 — CLI Tools (pivot CSV, schéma JSON inféré, fréquences mots, ancres MD, hex batch, texte XML)
 - [x] csv-column-pivot : pivot long→large d'un CSV (groupe/colonne/valeur par nom ou index, agrégations sum/mean/min/max/count/first/last/list, --fill, sniff délimiteur, gates require-rows/max-pivot-cols exit 2, --json) ✓ 2026-08-02
 - [x] json-schema-guess : infère un JSON Schema draft 2020-12 depuis un document ou flux JSONL (types, min/max numeric, formats string date-time/date/uuid/email/uri/ipv4, required = clés présentes partout, types mixtes en array, --no-format, --compact, gates require-property/type exit 2) ✓ 2026-08-02
