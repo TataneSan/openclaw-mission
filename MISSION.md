@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 512 — CLI Tools (première ligne, largeur display, fusion JSON profonde, première ligne par dossier, préfixe stdin)
+- [x] text-first-line-only : n'affiche que la première ligne de chaque fichier/stdin (--number/--label, --skip-empty/--missing-string, --unique/--sort/--max-width/--pad/--count, gates require-min/max/non-empty/unique exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-width-detect : stats de largeur d'affichage des lignes (wcwidth-style CJK/combining/tabs, --chars codepoints, min/max/mean/median/mode, --show-longest/shortest, --over-width, histogramme ASCII, gates require-max/min/uniform/lines exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-merge-clone : fusion profonde de N documents JSON (fichiers/stdin/-e inline, stratégies arrays concat/replace/union/zip, scalaires right/left/error, --sort-keys/--compact/-o, gates require-key/type exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-first-line-each-dir : première ligne du premier fichier de chaque dossier (-r récursif, --pattern fnmatch, --hidden, --show-dir/--show-file, --missing-string/--skip-empty-file, gates require-min/all-have-file/non-empty exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-prepend-stdin : préfixe un flux stdin (ou fichiers -i) avec un header (--header/--header-file/--date, placeholders {n} {bytes} {date} {file}, --suffix, --no-newline-after-header, --require-change exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 511 — CLI Tools (normalisation guillemets, colonnes vides CSV, fusion de lignes, dédup adjacent, validation nombres CSV)
 - [x] text-normalize-quotes : normalise les guillemets Unicode (curly “”‘’, guillemets «»‹›, primes ″, fullwidth ＂) vers ascii/guillemets/remove, --strip-apostrophes, --report inventaire U+codepoints, --in-place, --check exit 2 CI, gates require-change/unchanged exit 2 CI, --json ✓ 2026-08-02
 - [x] csv-empty-columns : détecte/droppe les colonnes entièrement vides d'un CSV (marqueurs custom --empty-marker, délimiteur sniffé+BOM, --drop, --in-place, --check exit 2 CI, gates require-none-empty/require-empty-min exit 2 CI, --json) ✓ 2026-08-02
