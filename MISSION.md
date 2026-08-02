@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 496 — CLI Tools (fréquence caractères, permutation colonnes CSV, flatten JSON, diff exts, jours de semaine)
+- [x] text-char-frequency : fréquence des caractères d'un texte (catégories letters/digits/whitespace/punctuation, casefold, --top/min-count, codepoints + noms Unicode, gates require-min/max/char/min-count exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-column-permute : réordonne les colonnes d'un CSV (ordre noms/index négatifs, --reverse/--sort/--sort-desc, --keep-rest/--drop-rest/--strict, --no-header, sniff délimiteur, --in-place, gates require-pos/columns/rows exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-flatten-nested : aplatit JSON imbriqué en clés pointillées + indices tableaux key[i] (--unflatten round-trip, --separator, --array-style index/expand/skip, --max-depth, JSONL + --skip-invalid, gates require-key/min-keys/max-depth exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-ext-compare : compare les ensembles d'extensions entre 2 arborescences (only-A/only-B/shared, counts/sizes, --ignore-case/hidden/max-depth, gates require-identical/subset/no-only-b exit 2 CI, --json) ✓ 2026-08-02
+- [x] date-weekday : nom du jour de la semaine pour des dates (ISO/slash/dot/epoch, 6 locales, --offset, --name-only, ISO week + day-of-year, gates require/forbid-weekday/weekend/business-day/valid exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 495 — CLI Tools (guillemets, regex CSV, lorem ipsum, chemins JSON, dossiers vides)
 - [x] text-quote-wrap : wrap/unwrap/toggle guillemets par ligne (8 styles prédéfinis + custom, --escape, --skip-empty/--skip-wrapped/--strip, --in-place, --count, gates require-min/all-wrapped/changes exit 2 CI, --json) ✓ 2026-08-02
 - [x] csv-row-filter-regex : filtre lignes CSV par conditions regex COLUMN=REGEX (nom/index négatif, AND/--match-any, --invert/--ignore-case/--full-match, --all-columns-must-match, --no-header, sniff délimiteur+BOM, gates require-min/max/none exit 2 CI, --json) ✓ 2026-08-02
