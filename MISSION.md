@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 374 — CLI Tools (swap case mots, préfixes dotenv, FROM latest Dockerfile, pretty JSONL, longueurs clés dotenv)
+- [x] text-swap-case-words : inverse la casse de chaque mot par ligne (swapcase Unicode, espaces préservés, --skip-first, --check CI, --json) ✓ 2026-08-02
+- [x] env-prefix-check : vérifie que les clés d'un dotenv commencent par un préfixe autorisé (multi-préfixes, export-aware, violations listées, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-verify-no-latest : interdit FROM latest explicite/implicite (digest ok, multi-stages, continuations, --allow-arg pour ${BASE}, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-pretty-lines : pretty-print chaque ligne JSONL en document indenté (--indent/--sort-keys/--ascii, strict ou --skip-invalid) ✓ 2026-08-02
+- [x] env-key-lengths : rapporte la longueur de chaque clé d'un dotenv (--sort key/length, --require-max CI, longest/shortest, JSON) ✓ 2026-08-02
+
 ## Vague 373 — CLI Tools (reverse word order, vérification CMD exec JSON, longueur tableau JSON, présence clés dotenv, colonne TOTAL CSV)
 - [x] text-reverse-word-order : inverse l'ordre des mots de chaque ligne (indent préservée, --sep, --skip-first, --check CI, --json) ✓ 2026-08-02
 - [x] dockerfile-verify-cmd-json : vérifie que les CMD d'un Dockerfile utilisent la forme exec JSON (multi-stages, --final-only, --require-cmd, exit 2 shell form, JSON) ✓ 2026-08-02
