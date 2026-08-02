@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 560 — CLI Tools (texte extraire lignes commençant par chiffre, CSV remplacer cellules vides par la valeur de la ligne précédente, JSON top valeurs les plus fréquentes à un chemin, fichiers plus gros fichier de chaque extension, texte compter occurrences de chaque mot d'une wordlist)
+- [ ] text-digit-leading-lines : extrait les lignes commençant par un chiffre (--invert, gates CI, --json)
+- [ ] csv-fill-down-empty : remplit les cellules vides avec la valeur de la ligne précédente par colonne (--columns, délimiteur sniffé, gates CI, --json)
+- [ ] json-top-values-at-path : top-N des valeurs les plus fréquentes à un chemin pointillé (JSONL, gates CI, --json)
+- [ ] file-largest-per-extension : le plus gros fichier par extension d'un arbre (top-N, gates CI, --json)
+- [ ] text-wordlist-count : fréquence d'occurrence de chaque mot d'une wordlist dans un texte (--ignore-case, --zero show absent, gates CI, --json)
+
 ## Vague 559 — CLI Tools (texte supprimer lignes dupliquées non adjacentes en gardant dernière occurrence, CSV compter valeurs matchant regex par colonne, JSON extraire toutes les clés d'un niveau donné, fichiers plus récents vs plus anciens paires même stem, texte convertir espaces en tabs indentation)
-- [ ] text-dedupe-keep-last : supprime les doublons en gardant la DERNIERE occurrence (ordre préservé, --ignore-case, gates CI, --json)
-- [ ] csv-regex-match-count : compte les cellules matchant une regex par colonne (délimiteur sniffé, --columns, gates CI, --json)
-- [ ] json-keys-at-depth : liste les clés présentes à une profondeur exacte (--depth N, --unique, gates CI, --json)
-- [ ] file-stem-newest-oldest : paires de fichiers de même stem (extensions différentes) : plus récent vs plus ancien (--max-age-diff, gates CI, --json)
-- [ ] text-spaces-to-tabs : convertit l'indentation espaces en tabulations (--width N, --all aussi inline, gates CI, --json)
+- [x] text-dedupe-keep-last : supprime les doublons en gardant la DERNIERE occurrence (ordre préservé, --ignore-case, gates CI, --json) ✓ 2026-08-03
+- [x] csv-regex-match-count : compte les cellules matchant une regex par colonne (délimiteur sniffé, --columns, gates CI, --json) ✓ 2026-08-03
+- [x] json-keys-at-depth : liste les clés présentes à une profondeur exacte (--depth N, --unique, gates CI, --json) ✓ 2026-08-03
+- [x] file-stem-newest-oldest : paires de fichiers de même stem (extensions différentes) : plus récent vs plus ancien (--max-age-diff, gates CI, --json) ✓ 2026-08-03
+- [x] text-spaces-to-tabs : convertit l'indentation espaces en tabulations (--width N, --all aussi inline, gates CI, --json) ✓ 2026-08-03
 
 ## Vague 558 — CLI Tools (texte convertir tabs en espaces, CSV supprimer lignes contenant une valeur interdite, JSON compter clés par préfixe, fichiers doublons par hash MD5 des 4 premiers Ko, texte compter occurrences d'un motif regex)
 - [x] text-tabs-to-spaces : convertit les tabulations en espaces (--width N, --keep-leading seulement indentation, gates CI, --json) ✓ 2026-08-03 (existant)
