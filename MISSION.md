@@ -1,5 +1,11 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 569 — CLI Tools (CSV audit quoting, fichiers buckets de tailles, CSV vérifier ordre colonnes, fichiers doublons par taille+hash)
+- [x] csv-quote-report : audit du quoting d'un CSV (quoted/bare cells, séparateur embarqué, lignes incohérentes, gates CI, --json) ✓ 2026-08-03
+- [x] file-size-buckets : groupe les fichiers d'un arbre par tranche de taille (edges custom K/M/G, barres, gates max-files/max-bytes/require-bucket, --json) ✓ 2026-08-03
+- [x] csv-column-order-check : vérifie qu'un en-tête CSV correspond à un schéma attendu (strict/any-order/allow-extra, positions misplaced, gates CI, --json) ✓ 2026-08-03
+- [x] file-duplicate-content-size : détecte les doublons par taille puis sha256, rapporte les octets récupérables (gates require-none/max-wasted-bytes, --json) ✓ 2026-08-03
+
 ## Vague 568 — CLI Tools (texte rapport fins de ligne LF/CRLF/CR, fichiers histogramme extensions, CSV statistiques par colonne)
 - [x] text-line-ending-report : compte et normalise les fins de ligne (LF/CRLF/CR, --normalize avec --dry-run, gates require-style/forbid-mixed, --json) ✓ 2026-08-03
 - [x] file-extension-histogram : histogramme des extensions d'un arbre (count, bytes, barres ASCII, gates max-extensions/require-extension, --json) ✓ 2026-08-03
