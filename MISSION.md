@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 575 — CLI Tools (JSON limite longueur clés, fichiers newline EOF POSIX, JSON détection indentation, CSV concaténer colonnes, texte chiffre César)
+- [x] json-key-length-limit : liste les clés JSON dépassant une limite de longueur (chemins dot, JSONL, --check, gates require-max-count, --json) ✓ 2026-08-03
+- [x] file-newline-at-eof : vérifie/ajoute le newline final POSIX (--fix, --extensions, skip binaires/.git, --check CI, --json) ✓ 2026-08-03
+- [x] json-indent-detect : détecte le style d'indentation d'un JSON pretty (2/4 espaces ou tab, histogramme largeurs, gates require-style/require-width, --json) ✓ 2026-08-03
+- [x] csv-column-glue : concatène des colonnes CSV en une nouvelle (--sep, --name, --drop-sources, --skip-empty, gates require-rows, --json) ✓ 2026-08-03
+- [x] text-caesar-shift : chiffre de César ligne à ligne (ROT13 défaut, shift négatif, --digits, --brute, --require-contains) ✓ 2026-08-03
+
 ## Vague 574 — CLI Tools (CSV entrelacement lignes, CSV en-têtes styles de casse, texte caractères invisibles, fichiers histogramme longueurs noms, CSV moyenne glissante)
 - [x] csv-interleave-rows : entrelace les lignes de deux CSV (alterné ou --ratio A:B, headers vérifiés, gates require-rows/require-even, --json) ✓ 2026-08-03
 - [x] csv-kebab-headers : convertit les en-têtes CSV en kebab/snake/camel/pascal (--style, --check CI, --in-place, --json) ✓ 2026-08-03
