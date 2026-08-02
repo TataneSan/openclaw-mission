@@ -1,5 +1,19 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 396 — CLI Tools (comptage mots texte, header CSV, taille JSON, commentaire licence dotenv, quotes YAML)
+- [ ] text-count-distinct-words : compte les mots distincts d'un texte (fréquences, --ignore-case, --top, --min-length, --require-min/max exit 2 CI, JSON)
+- [ ] csv-check-header : exige des noms de colonnes spécifiques dans un header CSV (--require/--forbid colonnes, ordre --require-order exit 2 CI, JSON)
+- [ ] json-byte-size : calcule la taille en octets d'un JSON sérialisé (compact/indent, per-document JSONL, --require-max exit 2 CI, JSON)
+- [ ] env-license-header : exige une ligne de commentaire licence en tête d'un dotenv (--require SPdx|--set MIT, --check exit 2 CI, JSON)
+- [ ] yaml-quote-check : lint les scalars simples qui devraient être quotés (booleans YAML 1.1 implicites on/off/yes/no, --require-quoted, --check exit 2 CI, JSON)
+
+## Vague 395 — CLI Tools (whitespace texte, casse valeurs CSV, profondeur clés JSON, trailing comment dotenv, block scalar YAML)
+- [x] text-collapse-whitespace : compresse les espaces multiples des lignes (indent préservée par défaut, --collapse-leading, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-value-casing : lint la casse des valeurs d'une colonne CSV (7 styles, distribution, --require-style exit 2 CI, --list-violations, JSON) ✓ 2026-08-02
+- [x] json-deep-keys : liste les clés JSON à profondeur >= N (--min-depth, --max-results, --require-none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-trailing-comment : lint les commentaires de fin de ligne dotenv (espace avant # requis, --fix, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] yaml-block-scalar-check : vérifie la cohérence des block scalars (|/-, +/- chomping, --require-style literal|folded exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 394 — CLI Tools (largeur texte, champs CSV, entropie JSON, commentaires dotenv, retours chariot YAML)
 - [x] text-count-grapheme-width : largeur d'affichage par ligne (ASCII=1, large chars CJK/emoji=2, --require-max-width exit 2, JSON) ✓ 2026-08-02
 - [x] csv-extract-column : extrait une colonne CSV par nom/index (valeur brute, --unique, --sort, --count, JSON) ✓ 2026-08-02
