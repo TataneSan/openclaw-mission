@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 359 — CLI Tools (COPY Dockerfile, swap colonnes CSV, comptage tableaux JSON, indentation, lectures dotenv)
+- [x] dockerfile-extract-copy : liste les instructions COPY d'un Dockerfile par stage (flags --from/--chown, --forbid-from CI, JSON) ✓ 2026-08-02
+- [x] csv-swap-columns : permute deux colonnes d'un CSV (header inclus, noms ou indices, --no-header) ✓ 2026-08-02
+- [x] json-array-count-items : compte les éléments de tableaux JSON (document/JSONL, --path, --require-min/max CI) ✓ 2026-08-02
+- [x] text-indent-lines : indente chaque ligne (espaces/tabs/prefixe, --skip-first, --check CI, JSON) ✓ 2026-08-02
+- [x] env-get-value : lit des valeurs d'un fichier dotenv (batch ordonné, --default, --require-nonempty CI, --export, JSON) ✓ 2026-08-02
+
 ## Vague 358 — CLI Tools (WORKDIR Dockerfile, réordonnancement colonnes CSV, dédup tableaux JSON, suffixe commun, sections INI)
 - [x] dockerfile-extract-workdir : extrait le WORKDIR effectif par stage d'un Dockerfile (last-wins, --final-only, --require-workdir CI, JSON) ✓ 2026-08-02
 - [x] csv-reorder-columns : réordonne les colonnes d'un CSV (ordre voulu, --drop-rest, --check CI, JSON) ✓ 2026-08-02
