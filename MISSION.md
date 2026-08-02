@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 407 — CLI Tools (csv filtre lignes, text compte chiffres, json compact jsonl, env export shell, md titres)
+- [ ] csv-filter-rows : filtre les lignes CSV par expression sur colonne (--where col=val/col>val/regex, --invert, --require-min-rows exit 2 CI, JSON)
+- [ ] text-count-digits : compte les chiffres d'un texte (par caractère 0-9, total/par ligne, --require-min/max exit 2 CI, JSON)
+- [ ] json-lines-compact : compacte un JSON multi-lignes en JSONL ou inverse (--expand, --validate, --require-count exit 2 CI, JSON)
+- [ ] env-to-shell-export : convertit un dotenv en commandes export shell (quoting POSIX, --unset-empty, --prefix, --check exit 2 CI, JSON)
+- [ ] md-list-headings : liste les titres d'un markdown avec niveaux (atx + setext, --max-depth, --require-min exit 2 CI, JSON)
+
 ## Vague 406 — CLI Tools (rot13 cipher, csv renomme colonnes, json liste tailles, text palindromes, file mime type)
-- [ ] rot-cipher : chiffre/déchiffre par rotation César (--shift N, lettres seules, --brute-force les 25 clés, --check exit 2 CI, JSON)
-- [ ] csv-rename-columns : renomme des colonnes CSV selon un mapping (--map old=new,..., --require-mapped exit 2 CI, JSON)
-- [ ] json-key-lengths : liste les clés JSON avec leur profondeur et longueur (--max-depth, --require-max-key-length exit 2 CI, JSON)
-- [ ] text-find-palindromes : trouve les mots/phrases palindromes dans un texte (--min-length, --phrases, --require-min-found exit 2 CI, JSON)
-- [ ] file-detect-type : devine le type de fichier par signatures magiques (png/jpg/pdf/zip/gzip/..., multi-fichiers, --require-type exit 2 CI, JSON)
+- [x] rot-cipher : chiffre/déchiffre par rotation César (--shift N, lettres seules, --brute-force les 25 clés, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-rename-columns : renomme des colonnes CSV selon un mapping (--map old=new,..., --require-mapped exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-key-lengths : liste les clés JSON avec leur profondeur et longueur (--max-depth, --require-max-key-length exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-find-palindromes : trouve les mots/phrases palindromes dans un texte (--min-length, --phrases, --require-min-found exit 2 CI, JSON) ✓ 2026-08-02
+- [x] file-detect-type : devine le type de fichier par signatures magiques (png/jpg/pdf/zip/gzip/..., multi-fichiers, --require-type exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 405 — CLI Tools (hex dump, csv transpose, markdown liens, json aplati, texte mots uniques)
 - [x] hex-dump-view : hexdump canonique d'un fichier ou stdin (offset/hex/ascii, --length, --width, --skip, JSON) ✓ 2026-08-02
