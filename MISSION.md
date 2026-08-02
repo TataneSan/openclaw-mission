@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 434 — CLI Tools (texte couleurs hex CSS, json chemins booléens, années, masquage IPv4, grep CSV regex)
+- [x] text-extract-hex-colors : extrait les couleurs hex CSS d'un texte (#rgb/#rgba/#rrggbb/#rrggbbaa, expansion, --unique/--counts/--top, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-list-bool-paths : liste les chemins dot-path des valeurs booléennes d'un JSON (--true-only/--false-only, --require-true-min/--require-false-max/--require-none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-years : extrait les années YYYY d'un texte (frontières de mots, plage --min-year/--max-year, --unique/--counts/--sort/--top, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-mask-ipv4 : anonymise les IPv4 d'un texte (octets conservés, token/zero, skip private/loopback, --in-place, --check/--require-masks/--require-none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-keep-matching-rows : garde les lignes CSV dont une colonne matche des regex (OR/AND, --ignore-case/--full-match/--invert, --in-place, --check/--require-rows/--require-none exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 433 — CLI Tools (csv fusion colonnes fallback, json chemins iso8601, texte extrait FQDN, ROT5 digits, csv fusion clé première valeur non vide)
 - [x] csv-coalesce-columns : fusionne des colonnes CSV avec fallback première non vide (--merge NEW=COL1,COL2, --in-place, --check, --require-min-fills exit 2 CI, JSON) ✓ 2026-08-02
 - [x] json-list-iso8601-paths : liste les chemins dot-path des strings ISO 8601 (date/time/datetime, Z normalisé, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
