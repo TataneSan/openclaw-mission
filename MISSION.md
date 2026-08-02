@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 467 — CLI Tools (drop colonnes CSV, table fixed-width, comptage types JSON, ordinaux anglais, profondeur chemins)
+- [x] csv-except-columns : garde toutes les colonnes SAUF celles nommées/indexées (1-based/négatifs, globs --glob, --ignore-case, --keep-first N raccourci, délimiteur sniffé, gates check/require-remaining/require-dropped exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-to-fixed-width : rend un CSV en table texte alignée (largeurs display-width Unicode CJK×2/combinaison 0, numériques à droite par défaut/--all-left/--all-right, --separator-rule, --max-col-width ellipse …, gates --max-width/--require-rows exit 2 lint terminal, --json) ✓ 2026-08-02
+- [x] json-type-count : histogramme des types de valeurs JSON (object/array/string/integer/float/boolean/null + clés totales, JSONL auto-détecté/--jsonl, --paths profondeur max, gates require-type/require-min/require-max T N exit 2 CI, ex. interdire null, --json) ✓ 2026-08-02
+- [x] text-ordinal-numbers : cardinaux ⇆ ordinaux anglais (forms courtes 1st/21st/112th avec règle 11-13, forms longues first/twenty-first/one millionth, --parse inverse y compris hundred/thousand, batch args/file/stdin, gate --require-min exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-path-depth-report : profondeur d'imbrication des chemins (walk arborescence base auto, paths args/--file/stdin, --base explicite, --files-only/--dirs-only, --histogram barres, --list/--top N, paths hors base skippés comptés, gates require-max-depth/min-depth/min-paths exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 466 — CLI Tools (filtre lignes CSV, chart braille, shuffle clés JSON, case folding, inventaire dossiers)
 - [x] csv-row-matcher : filtre les lignes CSV par conditions sur colonnes (eq/ne/contains/regex/gt/ge/lt/le/empty/not-empty/in-set, colonnes nom/index, --match all/any, --invert, --ignore-case/--stripws, délimiteur sniffé, --check/--require-min/max/none exit 2 CI, --json) ✓ 2026-08-02
 - [x] text-braille-chart : rend des séries numériques en charts braille 2x4 dots (32 lignes de résolution par défaut, resample moyennant par colonne --width max 200, --extract depuis texte libre, échelle --min/--max, --stats, gates require-min-points/range/max exit 2 CI, --json) ✓ 2026-08-02
