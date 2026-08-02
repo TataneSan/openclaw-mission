@@ -619,12 +619,19 @@ Push automatique après chaque outil.
 - [x] url-ensure-scheme : garantit un scheme par défaut (https) aux URLs sans scheme (--check CI, JSON) ✓ 2026-08-02
 - [x] file-hardlink-count-report : rapport du nombre de liens durs par fichier (--min-links, --check CI, JSON) ✓ 2026-08-02
 
-## Vague 339 — CSV/JSON/text/URL/file mix (à définir)
-- [ ] csv-fill-random : remplit les cellules vides d'une colonne CSV par des valeurs aléatoires de la colonne (seed reproductible, --check CI, JSON)
-- [ ] json-merge-prefer-longer : fusionne deux JSONL en préférant la valeur la plus longue par clé (strings/arrays, --check CI, JSON)
-- [ ] text-strip-matching-prefix-lines : retire les lignes commençant par un préfixe donné (--invert, --check CI, JSON)
-- [ ] url-extract-ipv6 : repère les URLs utilisant une adresse IPv6 littérale ([::1], --check CI, JSON)
-- [ ] file-group-by-uid-gid : regroupe les fichiers d'une arborescence par couple uid:gid (counts, tailles, --check CI, JSON)
+## Vague 340 — CSV/JSON/text/URL/file mix (à définir)
+- [ ] csv-add-hash-column : ajoute une colonne de hash (md5/sha256) calculée sur les colonnes choisies de chaque ligne (--check CI, JSON)
+- [ ] json-extract-max-value : trouve la valeur maximale à un dot-path numérique à travers JSONL (--check CI, JSON)
+- [ ] text-blank-line-guard : vérifie qu'un fichier ne contient aucune ligne vide (--allow-trailing, --check CI, JSON)
+- [ ] url-extract-query-count : rapport du nombre de paramètres query par URL (stats, --threshold CI, JSON)
+- [ ] file-world-readable-report : rapport des fichiers lisibles par tout le monde (o+r) d'une arborescence (--check CI, JSON)
+
+## Vague 339 — CSV/JSON/text/URL/file mix
+- [x] csv-fill-random : remplit les cellules vides d'une colonne CSV par des valeurs aléatoires de la colonne (seed reproductible, --check CI, JSON) ✓ 2026-08-02
+- [x] json-merge-prefer-longer : fusionne deux JSONL en préférant la valeur la plus longue par clé (strings/arrays, --check CI, JSON) ✓ 2026-08-02
+- [x] text-strip-matching-prefix-lines : retire les lignes commençant par un préfixe donné (--invert, --check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-ipv6 : repère les URLs utilisant une adresse IPv6 littérale ([::1], --check CI, JSON) ✓ 2026-08-02
+- [x] file-group-by-uid-gid : regroupe les fichiers d'une arborescence par couple uid:gid (counts, tailles, --check CI, JSON) ✓ 2026-08-02
 
 ## Vague 338 — CSV/JSON/text/URL/file mix
 - [x] csv-escape-formula-prefix : préfixe les cellules CSV commençant par =, +, -, @ d'une apostrophe (anti formula-injection, --check CI, JSON) ✓ 2026-08-02
