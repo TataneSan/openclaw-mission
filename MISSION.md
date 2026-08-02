@@ -1,5 +1,13 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 510 — CLI Tools (substitution headers CSV, normalisation indentation, profondeur arborescence, stats blocs code Markdown, runs répétitifs)
+- [x] csv-header-substitute : substitution find/replace sur les headers CSV (regex ou --literal, s/P/R/ sed-style, multi-subs ordonnées, --ignore-case, sniff délimiteur+BOM, --rename-map, --in-place, --check exit 2 CI, gates require-min-renamed/unchanged/column exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-indent-width-normalize : normalise l'indentation à largeur fixe (--width N ou --tabs, --spaces-per-tab pour l'input, profondeur préservée, --report-mixed tabs+spaces, --in-place, --check exit 2 CI, gates require-changed-min/unchanged/no-mixed exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-nesting-depth : mesure la profondeur d'imbrication d'une arborescence (max/mean, histogramme ASCII, --list-deepest N, --files-only/--dirs-only, --exclude glob, --max-depth walk, hidden par défaut, gates require-max-depth/min-files/mean-le exit 2 CI, --json) ✓ 2026-08-02
+- [x] markdown-codeblock-stats : stats des blocs code fenced Markdown (``` et ~~~ CommonMark 3-space indent, par-langue blocks/lignes, unclosed fences, missing language tag, --list-langs/--list-blocks, --check exit 2, gates require-lang/min-blocks/no-unclosed/no-missing-lang/max-block-lines exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-max-run-length : plus long run d'un caractère répété (global ou --char C, --word-chars, --min-length, --top N, positions ligne:col, runs ne traversent pas les newlines, gates require-max/min/none exit 2 CI, --json) ✓ 2026-08-02
+
+
 ## Vague 509 — CLI Tools (tri naturel, diff JSON profond, swap paires colonnes CSV, padding nombres, normalisation tirets)
 - [x] text-natural-sort : trie les lignes en ordre naturel alphanumérique (file2 < file10, segments pointés façon versions 1.10 > 1.9, --decimals, --ignore-case Unicode casefold, --strip-accents, --unique, --blank-last, --check exit 2 CI, gates require-min/max/unique exit 2 CI, stdin, --json) ✓ 2026-08-02
 - [x] json-deep-equal : diff récursif de deux documents JSON avec chemins pointillés ($.a.b[2], kinds value/type-change/only-left/only-right/length/key-order, --ignore-key-order, --float-tolerance, --max-diffs, -q, gates require-max-diffs/different exit 2 CI, stdin, --json) ✓ 2026-08-02
