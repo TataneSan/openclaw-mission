@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 440 — CLI Tools (csv trie lignes par clés multi, extrait %, extrait ranges SemVer, json insère item array, ini liste sections)
+- [x] csv-reorder-rows-by-key : trie les lignes CSV par une ou plusieurs colonnes clés (stable, --numeric/--desc/--ignore-case, --check exit 2 CI, --in-place, JSON) ✓ 2026-08-02
+- [x] text-extract-percentages : extrait les littéraux pourcentage d'un texte (12.5%, virgule décimale, filtres --min/--max, --unique/--counts/--sort, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-semver-range : extrait les ranges SemVer npm-style (caret/tilde/comparator-set/hyphen/exact, classification --kind, --versions-only, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-insert-array-item : insère un item typé dans un array JSON à un dot-path (--index négatif ok, --dedupe-skip, --require-inserted exit 2 CI, --in-place, JSON) ✓ 2026-08-02
+- [x] ini-list-sections : liste les sections INI avec comptes de clés (--with-counts, --include-default, --filter/--sort, --require-min/--require-section/--require-none exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 439 — CLI Tools (texte reformate paragraphes, extrait E.164, csv exige valeurs, json compacte nulls arrays, texte reformate ISO 8601)
 - [x] text-reflow-paragraphs : reformate les paragraphes à une largeur cible (wrap/unwrap, --single-blank/--trim, --whitespace-blank, --in-place, --require-max-width/--require-paragraphs exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-extract-e164 : extrait les numéros E.164 d'un texte (formes groupées, préfixe 00→+, strict 15 chiffres/--lenient, --unique/--counts/--sort, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
