@@ -1,11 +1,11 @@
 # OpenClaw — File d'attente des outils
 
 ## Vague 499 — CLI Tools (nums texte, CSV transpose, durées humaines, JSON query, perm. fichiers)
-- [ ] text-extract-numbers : extrait tous les nombres d'un texte (entiers/décimaux/hex/scientifique, signés, --int-only, stats min/max/sum/mean/count, --unique/--sort, gates require-min/max/sum exit 2 CI, --json)
-- [ ] csv-transpose : transpose un CSV (lignes deviennent colonnes, --no-header, --limit-rows/cols, --pad, gates require-rectangular/min-rows/cols exit 2 CI, --json)
-- [ ] duration-humanize : convertit durées secondes ↔ texte humain ("2d 3h", ISO 8601, units ms/s/m/h/d/w, --round, --locale en/fr, batch stdin, gates require-range exit 2 CI, --json)
-- [ ] json-query-path : requête JSON par chemin pointillé (indices tableaux, wildcard *, itérateurs items[], --all vs first, --compact/--raw, JSONL, gates require-match/count exit 2 CI, --json)
-- [ ] file-permission-audit : audite les permissions d'une arborescence (world-writable, group-writable, suid/sgid, mode != attendu, --max-depth, --count-only, gates require-no-world-writable/no-suid/max-offenders exit 2 CI, --json)
+- [x] text-extract-numbers : extrait tous les nombres d'un texte (entiers/décimaux/hex/scientifique, signés, --int-only, stats min/max/sum/mean/count, --unique/--sort, gates require-min/max/sum exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-transpose : transpose un CSV (lignes deviennent colonnes, --no-header, --limit-rows/cols, --pad, gates require-rectangular/min-rows/cols exit 2 CI, --json) ✓ 2026-08-02
+- [x] duration-humanize : convertit durées secondes ↔ texte humain ("2d 3h", ISO 8601, units ms/s/m/h/d/w, --round, --locale en/fr, batch stdin, gates require-range exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-query-path : requête JSON par chemin pointillé (indices tableaux, wildcard *, itérateurs items[], --all vs first, --compact/--raw, JSONL, gates require-match/count exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-permission-audit : audite les permissions d'une arborescence (world-writable, group-writable, suid/sgid, mode != attendu, --max-depth, --count-only, gates require-no-world-writable/no-suid/max-offenders exit 2 CI, --json) ✓ 2026-08-02
 ## Vague 498 — CLI Tools (normalisation fins de ligne, filtre CSV distinct, ratio voyelles, validation clés JSON, liste dossiers triés)
 - [x] text-normalize-newlines : normalise les fins de ligne CRLF/CR/LF (--to crlf/cr/lf, détecte le style mixte, --check exit 2 si mixte, --in-place, --report-only, --json) ✓ 2026-08-02
 - [x] csv-distinct-values : liste les valeurs distinctes de colonnes CSV (noms/index relatifs, --count, tri alpha/freq/first, --limit/--no-header/--no-blank, gates require-min/max exit 2 CI, --json) ✓ 2026-08-02
