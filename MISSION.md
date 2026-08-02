@@ -1,11 +1,11 @@
 # OpenClaw — File d'attente des outils
 
-## Vague 518 — CLI Tools
-- [ ] csv-row-filter : filtre les lignes d'un CSV par condition sur une colonne (=, !=, ~ regex, > <, --all/--any, délimiteur sniffé, gates CI, --json)
-- [ ] text-reverse-lines-fields : inverse les champs de chaque ligne (séparateur espace/tab/custom, --rev-inline ou --rev-lines, gates CI, --json)
-- [ ] json-compare-keys : compare les clés de deux documents JSON (ajoutées/supprimées/communes, --recursive paths, --check exit 2, --json)
-- [ ] file-bom-detect : détecte la présence d'un BOM (utf8/utf16le/be) dans des fichiers (report, --strip, --require-none, --json)
-- [ ] text-ansi-color-map : inventaire des codes ANSI présents (couleurs/styles, occurrences, top N, --require-none exit 2 CI, --json)
+## Vague 518 — CLI Tools (filtre lignes CSV, inversion champs, comparaison clés JSON, BOM, inventaire ANSI)
+- [x] csv-row-filter : filtre les lignes d'un CSV par condition sur une colonne (=, !=, ~ regex, > <, *= contains, --all/--any, délimiteur sniffé, nombres 1 234,56, gates CI, --json) ✓ 2026-08-02
+- [x] text-reverse-lines-fields : inverse les champs de chaque ligne (séparateur whitespace/littéral/regex, --rev-lines tac, --rev-chars, --keep-leading/trailing, gates CI, --json) ✓ 2026-08-02
+- [x] json-compare-keys : compare les clés de deux documents JSON (ajoutées/supprimées/communes, --recursive chemins pointillés + indices tableaux, --check exit 2, gates CI, --json) ✓ 2026-08-02
+- [x] file-bom-detect : détecte les BOM (utf8/utf16le/be/utf32/utf7) dans des fichiers (walk récursif, --strip/--dry-run, --require-none exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-ansi-color-map : inventaire des codes ANSI présents (couleurs fg/bg/256/rgb, styles, reset, comptage + barres ASCII, top N, --require-none exit 2 CI, --json) ✓ 2026-08-02
 
 ## Vague 517 — CLI Tools (décalage colonnes CSV, ANSI strip, flatten arrays, résumé arborescence, strip commentaires)
 - [x] csv-column-shift : décale les valeurs d'une colonne vers le haut/bas de N lignes (wrap ou fill, --by-column, --check, gates CI, --json) ✓ 2026-08-02
