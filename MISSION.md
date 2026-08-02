@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 422 — CLI Tools (compte mots fréquents, csv header add, json empty objects, anonymize emails, csv row to lines)
+- [ ] text-word-frequency : fréquence des mots d'un texte (top N, --min-count, --check mot absent exit 2 CI, JSON)
+- [ ] csv-add-column : ajoute une colonne constante/calculée à un CSV (--name --value, --in-place, --check existe exit 2 CI, JSON)
+- [ ] json-list-empty-object-paths : liste les chemins vers les objets vides {} d'un JSON (dot-path, --require-none exit 2 CI, JSON)
+- [ ] text-mask-emails : masque les emails d'un texte (user@domain -> u***@d***.tld, --check exit 2 CI, JSON)
+- [ ] csv-rows-to-files : éclate chaque ligne d'un CSV en fichier séparé (template, --dry-run, --count exit 2 CI, JSON)
+
 ## Vague 421 — CLI Tools (lines strip prefix/suffix, csv header case, json paths empty arrays, slugify, csv transpose)
-- [ ] text-strip-prefix : retire un préfixe donné de chaque ligne (--suffix, --check exit 2 CI, JSON)
-- [ ] csv-header-case : normalise les en-têtes d'un CSV (lower/upper/snake/camel, --in-place, --check exit 2 CI, JSON)
-- [ ] json-list-empty-array-paths : liste les chemins vers les arrays vides d'un JSON (dot-path, --require-none exit 2 CI, JSON)
-- [ ] slugify-text : convertit un texte en slug URL-safe (lower, ascii, tirets, --max-len, --check exit 2 CI, JSON)
-- [ ] csv-transpose : transpose un CSV (lignes ↔ colonnes, --check carré exit 2 CI, JSON)
+- [x] text-strip-prefix : retire un préfixe donné (ou auto-commun) de chaque ligne (--boundary, --check exit 2 CI, JSON) ✓ 2026-08-02 (repo existant, ajout __main__ + support '-' stdin)
+- [x] csv-header-case : normalise les en-têtes d'un CSV (snake/camel/pascal/kebab/upper/title/lower, --only, --dry-run, --check exit 2 CI, JSON) ✓ 2026-08-02 (repo existant, fix args intermixed)
+- [x] json-list-empty-array-paths : liste les chemins vers les arrays vides d'un JSON (dot-path, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] slugify-text : convertit un texte en slug URL-safe (lower, ascii, tirets, --max-len, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-transpose : transpose un CSV (lignes ↔ colonnes, --strict, --require-square exit 2 CI, JSON) ✓ 2026-08-02 (repo existant, retrait binaire commité)
 
 ## Vague 420 — CLI Tools (texte compte mots par paragraphe, csv garde premières lignes par clé, json chemins floats, base64 décode strict, texte joindre lignes avec séparateur)
 - [x] text-words-per-paragraph : compte les mots par paragraphe d'un texte (blank-line separated, stats min/max/moyenne, --require-max exit 2 CI, JSON) ✓ 2026-08-02
