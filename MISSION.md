@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 389 — CLI Tools (index colonnes CSV, types JSON, lignes à tirets, couches Dockerfile, valeurs dotenv masquées)
+- [x] csv-column-index : mapping nom→index des colonnes CSV (0 et 1-based, --structs, --strict doublons exit 2, JSON) ✓ 2026-08-02
+- [x] json-value-types : distribution des types JSON récursivement (object/array/string/integer/float/boolean/null, JSONL, --require-type, --require-null-max-pct exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-hyphen-heavy-lines : lint typographique des lignes surchargées en tirets (--max-per-line, --unicode, --ignore-comments/separators, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-layer-count : estime les couches d'image par stage Dockerfile (FROM/RUN/COPY/ADD, --max-layers/--require-min exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-redact-values : masque les valeurs d'un .env en préservant clés/commentaires/quoting (--only-secrets, --keep-prefix, --hash sha256, --check exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 388 — CLI Tools (cellules vides CSV, min/max JSON par clé, voyelles texte, tags base Dockerfile, secrets dotenv)
 - [x] csv-count-null-cells : compte les cellules vides d'un CSV par colonne + total (--no-header, --delimiter, --require-max/--forbid-empty exit 2 CI, JSON) ✓ 2026-08-02
 - [x] json-min-max-key : min/max/somme/moyenne des valeurs numériques d'un chemin dot-path JSON (wildcard *, JSONL, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
