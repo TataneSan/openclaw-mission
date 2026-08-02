@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 447 — CLI Tools (extrait params query URL, extrait hashes git, extrait tailles fichiers, mots-nombres→digits, répète première ligne)
+- [x] text-extract-urls-params : extrait les paramètres query des URLs http(s) (clé=valeur dupliquées, percent-decode --no-decode, --key/--exclude-key répétables, --keys-only/--values-only/--counts, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-git-hashes : extrait les SHAs git (full 40 / abrégés 7-39 hex, filtre pure-digit, --full-only/--short-only, --prefix-match, --unique/--counts, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-file-sizes : extrait les tailles humaines (1.5 MB SI / 2 GiB IEC / 512K shell) en bytes (--human, --raw, --total, filtres --min/--max-bytes, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-number-words-to-digits : convertit les nombres en lettres anglaises en chiffres (twenty-one, a hundred, two million..., runs stoppés à la ponctuation, --list, --in-place, --check/--require-conversions exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-repeat-first-line : répète la première ligne (ou --line N / last) N fois (prepend/append/replace, --in-place, --check exit 2 CI, ligne hors-plage exit 2, JSON) ✓ 2026-08-02
+
 ## Vague 446 — CLI Tools (extrait MAC-48, extrait ports TCP/UDP, retire séquences ANSI, extrait entités HTML, inverse la casse)
 - [x] text-extract-mac48 : extrait les adresses MAC-48 (colon/hyphen/dotted Cisco, --normalize/--lowercase, --vendor-oui, filtres multicast/broadcast, --unique/--counts, gates exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-extract-port-numbers : extrait les ports TCP/UDP (8080/tcp, tcp/443, host:port, keyword port/listen/dport, filtres --proto/--well-known-only, --unique/--counts/--sort/--sum, gates exit 2 CI, JSON) ✓ 2026-08-02
