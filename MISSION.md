@@ -1,5 +1,11 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 498 — CLI Tools (normalisation fins de ligne, filtre CSV distinct, ratio voyelles, validation clés JSON, liste dossiers triés)
+- [x] text-normalize-newlines : normalise les fins de ligne CRLF/CR/LF (--to crlf/cr/lf, détecte le style mixte, --check exit 2 si mixte, --in-place, --report-only, --json) ✓ 2026-08-02
+- [x] csv-distinct-values : liste les valeurs distinctes de colonnes CSV (noms/index relatifs, --count, tri alpha/freq/first, --limit/--no-header/--no-blank, gates require-min/max exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-vowel-consonant-ratio : calcule le ratio voyelles/consonnes (par ligne ou global, lettres configurables, --ignore-case/--distinct-only, histogramme ASCII, --json, gates require-vowel-ratio/min/max exit 2 CI) ✓ 2026-08-02
+- [x] json-validate-keys : valide les clés d'un document JSON selon des patterns (required/optional/camel/snake/kebab/upper, warns clés interdites par regex, JSONL, gates require-valid/no-extra/min-keys exit 2 CI) ✓ 2026-08-02
+- [x] file-dirs-overview : liste les sous-dossiers d'un repertoire avec taille/compte fichiers (tri par taille/nom/count, --max-depth/--hidden, --apparent, --limit, --json, gates require-max-size/max-count exit 2 CI) ✓ 2026-08-02
 ## Vague 497 — CLI Tools (histogramme longueur mots, tranche lignes CSV, palindromes, merge dotenv, split phrases)
 - [x] text-word-length-histogram : histogramme des longueurs de mots (regex configurable, codepoints/bytes, ASCII bar chart, stats mean/median/mode/stdev, --distinct/--ignore-case, gates require-min-words/mean/mode/stdev exit 2 CI, --json) ✓ 2026-08-02
 - [x] csv-row-slice : extrait une tranche de lignes d'un CSV (1-based ranges, NEG relatif à la fin, --every N, --sample N --seed, --no-header, délimiteur sniffé, --in-place, gates require-rows/min/max exit 2 CI, --json) ✓ 2026-08-02
