@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 558 — CLI Tools (texte convertir tabs en espaces, CSV supprimer lignes contenant une valeur interdite, JSON compter clés par préfixe, fichiers doublons par hash MD5 des 4 premiers Ko, texte compter occurrences d'un motif regex)
+- [ ] text-tabs-to-spaces : convertit les tabulations en espaces (--width N, --keep-leading seulement indentation, gates CI, --json)
+- [ ] csv-filter-out-values : supprime les lignes dont une colonne vaut une valeur de la liste (délimiteur sniffé, gates CI, --json)
+- [ ] json-count-keys-by-prefix : compte les clés par préfixe/namespace (séparateur :, top-N, gates CI, --json)
+- [ ] file-same-prefix-hash : groupe les fichiers partageant le hash de leurs N premiers octets (--head-bytes, gates CI, --json)
+- [ ] text-regex-count : compte les occurrences d'un motif regex par ligne et total (--ignore-case, gates CI, --json)
+
 ## Vague 557 — CLI Tools (texte wrap lignes à N colonnes avec continuation, CSV compter cellules vides par colonne, JSON extraire valeurs numériques et stats min/max/moyenne, fichiers trouver noms contenant caractères non-ASCII, texte surligner lignes dépassant N caractères par numéro)
-- [ ] text-wrap-lines : replie les lignes longues à N colonnes (--indent continuation, --break-long-words, gates CI, --json)
-- [ ] csv-empty-cells : compte les cellules vides par colonne et par ligne (délimiteur sniffé, gates CI, --json)
-- [ ] json-numeric-stats : collecte toutes les valeurs numériques d'un JSON (min/max/moyenne/médiane, par chemin option, gates CI, --json)
-- [ ] file-non-ascii-names : liste les fichiers/dossiers dont le nom contient des caractères non-ASCII (gates CI, --json)
-- [ ] text-long-line-numbers : affiche les numéros et longueurs des lignes dépassant N caractères (gates CI, --json)
+- [x] text-wrap-lines : replie les lignes longues à N colonnes (--indent continuation, --break-long-words, gates CI, --json) ✓ 2026-08-03 (existant)
+- [x] csv-empty-cells : compte les cellules vides par colonne et par ligne (délimiteur sniffé, gates CI, --json) ✓ 2026-08-03
+- [x] json-numeric-stats : collecte toutes les valeurs numériques d'un JSON (min/max/moyenne/médiane, par chemin option, gates CI, --json) ✓ 2026-08-03
+- [x] file-non-ascii-names : liste les fichiers/dossiers dont le nom contient des caractères non-ASCII (gates CI, --json) ✓ 2026-08-03
+- [x] text-long-line-numbers : affiche les numéros et longueurs des lignes dépassant N caractères (gates CI, --json) ✓ 2026-08-03
 
 ## Vague 556 — CLI Tools (texte supprimer préfixe commun de toutes les lignes, CSV détecter colonnes monotones croissantes, JSON vérifier schéma minimal clés requises via JSONL, fichiers compter par profondeur de dossier, texte justifier à droite)
 - [x] text-strip-common-prefix : détecte et retire le préfixe commun de toutes les lignes (--min-len, gates CI, --json) ✓ 2026-08-03
