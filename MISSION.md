@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 363 — CLI Tools (comptage colonnes CSV, rapport types JSON, usernames URL, dequotage dotenv, lowercase lignes)
+- [x] csv-count-columns : compte les colonnes d'un CSV et détecte les lignes ragged (header/first row, --delimiter, --require-count/min/max, --check CI, JSON) ✓ 2026-08-02
+- [x] json-type-report : rapporte le type JSON du document ou de noeuds par dot-path (object/array/string/number/boolean/null, JSONL, --require-type/--forbid-type CI, JSON) ✓ 2026-08-02
+- [x] url-extract-username : extrait le username (userinfo) des URLs (--scan texte libre, --with-password, --unique comptes, --require-username/--forbid-password CI, JSON) ✓ 2026-08-02
+- [x] env-strip-quotes : retire les quotes entourant les valeurs dotenv (commentaires/export préservés, quotes non matchés conservés, --in-place, --check CI, JSON) ✓ 2026-08-02
+- [x] text-lowercase-lines : met chaque ligne en minuscules (Unicode lower/--fold casefold, --skip-first/--skip-matching/--only-matching, --check CI, JSON) ✓ 2026-08-02
+
 ## Vague 362 — CLI Tools (somme colonne CSV, extraction valeurs JSON, collapse lignes vides, hosts URL, unset dotenv)
 - [x] csv-sum-column : somme et agrégats d'une colonne numérique CSV (count/min/max/mean, --no-header, --require-min/max CI, JSON) ✓ 2026-08-02
 - [x] json-extract-values : extrait les valeurs d'une clé dans des objets JSON (JSON/JSONL, --path avec *, --unique/--count, --require-min/max CI, JSON) ✓ 2026-08-02
