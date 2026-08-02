@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 432 — CLI Tools (csv drop colonnes par plages, json garde clés listées, texte extrait IPv6 validées, collapse lignes vides à N max, ROT18)
+- [x] csv-drop-column-ranges : supprime des colonnes CSV par nom, index ou plages inclusives (A-B / A:B, négatifs, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-only-keys : ne garde que les clés racine listées d'un objet JSON (--require-all/--require-min exit 2 CI, --compact, JSON) ✓ 2026-08-02
+- [x] text-extract-ipv6 : extrait les adresses IPv6 d'un texte validées via ipaddress (compressed/expanded, fe80::/global filters, zone ids, --require-min exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-collapse-blank-runs-max : collapse les runs de lignes vides à N max (--n, --whitespace-blank, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] rot18-tool : applique ROT18 (ROT13 lettres + ROT5 digits) à un texte (auto-inverse, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 431 — CLI Tools (csv échange colonnes clé/valeur, json trie clés racine seulement, texte extrait EUI-64, compte points de code Unicode, base64url batch fichiers)
 - [x] csv-swap-key-value-columns : échange les colonnes clé et valeur d'un CSV clé→valeur (noms/indices, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
 - [x] json-sort-keys-shallow : trie uniquement les clés du niveau racine d'un objet JSON (objets imbriqués intacts, --reverse/--ignore-case, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
