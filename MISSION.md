@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 530 — CLI Tools (CSV compter valeurs distinctes, JSON trier clés par profondeur, texte comptage mots par ligne, fichiers gros répertoires, texte wrap mots avec indentation)
+- [ ] csv-distinct-count : compte les valeurs distinctes par colonne d'un CSV (délimiteur sniffé, --all-columns, --top, gates CI, --json)
+- [ ] json-key-depth-report : rapport de la profondeur de chaque clé JSON (récursif, histogramme, --max-depth, gates CI, --json)
+- [ ] text-words-per-line : rapporte le nombre de mots par ligne (min/max/avg, histogramme ASCII, gates CI, --json)
+- [ ] file-dirs-by-size : classe les sous-dossiers d'un arbre par taille cumulée (--top, --exclude, gates CI, --json)
+- [ ] text-wrap-keep-indent : wrap du texte en préservant l'indentation initiale (mots entiers, --width, gates CI, --json)
+
 ## Vague 529 — CLI Tools (CSV compter occurrences valeur, JSON extraire chemins clés, texte comptage mentions @user, fichiers vides, texte indent to JSON)
-- [ ] csv-value-count : compte les occurrences d'une valeur donnée dans une colonne CSV (délimiteur sniffé, --exact/--contains, gates CI, --json)
-- [ ] json-paths-list : liste tous les chemins clés d'un JSON (récursif, --depth, --type, gates CI, --json)
-- [ ] text-mention-count : compte les mentions @user d'un texte (Unicode, top-N, --group-by-domain, gates CI, --json)
-- [ ] file-empty-files-report : liste les fichiers vides (0 byte) d'une arborescence (--delete, --dry-run, gates CI, --json)
-- [ ] text-indent-to-json : convertit une arborescence indentée en JSON (2/4 espaces, tabs, gates CI, --json)
+- [x] csv-value-count : compte les occurrences d'une valeur donnée dans une colonne CSV (délimiteur sniffé, exact/contains, gates CI, --json) ✓ 2026-08-02
+- [x] json-paths-list : liste tous les chemins clés d'un JSON (récursif, depth, type, indices, gates CI, --json) ✓ 2026-08-02
+- [x] text-mention-count : compte les mentions @user d'un texte (Unicode, top-N, group-by-domain, gates CI, --json) ✓ 2026-08-02
+- [x] file-empty-files-report : liste les fichiers vides (0 byte) d'une arborescence (delete, dry-run, gates CI, --json) ✓ 2026-08-02
+- [x] text-indent-to-json : convertit une arborescence indentée en JSON (2/4 espaces, tabs, split-colon, wrap-root, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 528 — CLI Tools (CSV ajouter colonne numéro de ligne, JSON stringify profond, texte comptage hashtags, fichiers dotfiles, texte cassage camelCase)
 - [x] csv-add-row-number : ajoute une colonne numéro de ligne à un CSV (--start N, --name, --no-header, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
