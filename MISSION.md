@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 365 — CLI Tools (numérotation CSV, get valeur JSON, uppercase lignes, comptage instructions Dockerfile, title case)
+- [x] csv-add-line-number : ajoute une colonne de numérotation à un CSV (--start/--step, --end, --no-header, délimiteur custom) ✓ 2026-08-02
+- [x] json-get-value : lit une valeur à un dot-path JSON/JSONL (indices négatifs, --raw-string, --default, manquant = exit 2 CI) ✓ 2026-08-02
+- [x] text-uppercase-lines : met chaque ligne en majuscules (Unicode, --turkic i→İ, --skip-first/--only-matching, --check CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-count-instructions : compte les instructions d'un Dockerfile par type (-i KW, --require KW=N/--require-min CI, JSON) ✓ 2026-08-02
+- [x] text-title-case-lines : convertit chaque ligne en title case (petits mots anglais préservés, --all-words, --check CI, JSON) ✓ 2026-08-02
+
 ## Vague 364 — CLI Tools (min/max colonne CSV, set valeur JSON, mot de passe URL, comptage clés dotenv)
 - [x] csv-max-column : affiche le max d'une colonne numérique CSV (par nom/index, --all-rows, --require-min/max CI, JSON) ✓ 2026-08-02
 - [x] json-set-value : écrit une valeur à un dot-path dans un JSON/JSONL (création de segments, --jsonl, --check CI, compact/indent) ✓ 2026-08-02
