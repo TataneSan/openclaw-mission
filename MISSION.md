@@ -4005,6 +4005,9 @@ Push automatique après chaque outil.
 - [x] text-hash-lines : hash de chaque ligne (md5/sha1/sha256...), dedup, dup-check exit 2, JSON ✓ 2026-08-01
 - [x] env-sort : trie les clés d'un .env en préservant commentaires et groupes (--check, --in-place) ✓ 2026-08-01
 
+## Vague 192 — CLI Tools (JSON)
+- [x] json-flatten : aplatit un JSON en mapping chemin.pointé -> valeur (objets a.b, arrays a.0.b, --max-depth sous-arbres compacts, --truncate strings, --jsonl chemins préfixés par ligne, gates --require-path/--require-leaves exit 2, --json) ✓ 2026-08-03
+
 ## Vague 188 — CLI Tools (CSV & texte)
 - [x] csv-count-values : fréquence des valeurs d'une colonne CSV ✓ 2026-08-01
 - [x] csv-first-rows : garde les N premières lignes de données d'un CSV (head) ✓ 2026-08-01
