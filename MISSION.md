@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 428 — CLI Tools (csv compte valeurs par colonne, json chemins strings, texte mots les plus longs, détecte encodage BOM, texte lignes contenant nombre)
+- [ ] csv-value-counts : compte les occurrences de chaque valeur d'une colonne CSV (--col, --top, --require-max exit 2 CI, JSON)
+- [ ] json-list-string-paths : liste les chemins vers toutes les valeurs string d'un JSON (dot-path, --min-length, --require-min/max exit 2 CI, JSON)
+- [ ] text-longest-words : liste les mots les plus longs d'un texte (--top, --min-length, --require-min exit 2 CI, JSON)
+- [ ] detect-bom : détecte la présence d'un BOM (UTF-8/UTF-16LE/BE) dans un fichier (--require-none exit 2 CI, JSON)
+- [ ] text-lines-containing-number : garde les lignes contenant au moins un nombre (--invert, --require-min exit 2 CI, JSON)
+
 ## Vague 427 — CLI Tools (csv compte distincts, json chemins arrays, texte extraire URLs, hexdump octets, texte mots uniques)
-- [ ] csv-distinct-count : compte les valeurs distinctes par colonne d'un CSV (--col, --top, --require-max exit 2 CI, JSON)
-- [ ] json-list-array-paths : liste les chemins vers toutes les valeurs array d'un JSON (dot-path, --min-length, --require-min/max exit 2 CI, JSON)
-- [ ] text-extract-urls : extrait les URLs http(s) d'un texte (--unique, --domain, --require-min exit 2 CI, JSON)
-- [ ] text-to-hexdump : affiche un texte/fichier en hexdump classique (offsets, ascii, --width, --check exit 2 CI, JSON)
-- [ ] text-unique-words : liste les mots n'apparaissant qu'une seule fois (hapax, --top, --require-min exit 2 CI, JSON)
+- [x] csv-distinct-count : compte les valeurs distinctes par colonne d'un CSV (--col, --top, --require-max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-list-array-paths : liste les chemins vers toutes les valeurs array d'un JSON (dot-path, --min-length, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-urls : extrait les URLs http(s) d'un texte (--unique, --domain, --require-min exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-to-hexdump : affiche un texte/fichier en hexdump classique (offsets, ascii, --width, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-unique-words : liste les mots n'apparaissant qu'une seule fois (hapax, --top, --require-min exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 426 — CLI Tools (texte compte underscores, csv garde colonnes non constantes, json chemins objets, uuencode, texte lignes sans ponctuation finale)
 - [x] text-count-underscores : compte les underscores _ d'un texte (--per-line, --require-min/max, --check exit 2 CI, JSON) ✓ 2026-08-02
