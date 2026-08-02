@@ -1,5 +1,19 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 516 — CLI Tools
+- [ ] csv-column-duplicate : détecte les colonnes CSV en double (noms identiques ou contenus identiques, --drop/--check, délimiteur sniffé, gates CI, --json)
+- [ ] text-filter-by-length : garde les lignes dont la longueur est dans une plage (--min/--max/--exact, chars/words/bytes, invert -v, --g0-lineno, gates CI, --json)
+- [ ] json-array-index : extrait l'élément à l'index N d'un array JSON (négatifs, slicing N:M, --step, --all-indices, JSONL, gates CI, --json)
+- [ ] file-largest-smallest : liste les N plus gros/petits fichiers d'une arborescence (--sort size/mtime/atime, --ext, --exclude, --hidden, gates CI, --json)
+- [ ] text-replace-last : remplace la DERNIÈRE occurrence d'un pattern par ligne/fichier (regex ou littéral, -i, --all-last-in-file, --in-place, gates CI, --json)
+
+## Vague 515 — CLI Tools (échantillon lignes, colonnes CSV swap ordre, schéma JSON, échappement JSON, rapport extensions)
+- [x] text-random-sample-lines : échantillonne N lignes d'un texte (shuf -n, --seed reproductible, --percent, --preserve-order, --unique, --with-lineno, gates require-min/max/min-input exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-column-swap-order : réordonne les colonnes d'un CSV selon un nouvel ordre explicite (noms/indices, --drop-unlisted, délimiteur sniffé, --check, gates CI, --json) ✓ 2026-08-02
+- [x] json-check-schema : valide un JSON contre un mini-schéma (types, required, enum, min/max, pattern regex, chemins dot, exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-stringify-escape : échappe/déséchappe une chaîne en littéral JSON (encode/decode, batch lignes, --unicode-escapes, gates CI, --json) ✓ 2026-08-02
+- [x] file-ext-group-report : groupe les fichiers d'une arborescence par extension avec stats (count/bytes/avg, barres ASCII, --top, gates CI, --json) ✓ 2026-08-02
+
 ## Vague 514 — CLI Tools (fusion lignes séparateur, drop colonnes CSV, minify JSON, inversion lignes, compteur mots fichiers)
 - [x] text-join-stream : joint toutes les lignes d'un flux en une seule ligne avec séparateur (escapes \t \n, --skip-empty/--strip/--trailing-separator/--per-file/--no-newline, gates require-min/max/non-empty/max-bytes exit 2 CI, --json) ✓ 2026-08-02
 - [x] csv-column-drop : supprime des colonnes d'un CSV par nom ou index (négatifs -1, --keep inverse, délimiteur sniffé+BOM, --no-header, --in-place/-o, --check exit 2, gates require-min-cols/rows/dropped-min exit 2 CI, --json) ✓ 2026-08-02
