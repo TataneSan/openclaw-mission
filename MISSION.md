@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 376 — CLI Tools (duplication mots, CMD exec Dockerfile, min/max tableau JSON, strip commentaires dotenv, ligne min CSV)
+- [x] text-duplicate-words : duplique chaque mot par ligne (indent préservée, --in-place, --check CI, --json) ✓ 2026-08-02
+- [x] dockerfile-verify-no-shell-cmd : exige CMD forme exec JSON (multi-stages, --final-only, --require-cmd, exit 2 shell form, JSON) ✓ 2026-08-02
+- [x] json-array-max-min : min/max d'un tableau JSON de nombres (bool exclus, --require-min/--require-max CI, JSON) ✓ 2026-08-02
+- [x] env-strip-comments : retire les lignes # d'un dotenv (pairs et blancs préservés, --in-place, --check CI, JSON) ✓ 2026-08-02
+- [x] csv-min-row : affiche la ligne CSV au min d'une colonne numérique (nom/index 1-based, --no-header, --delimiter, --require-min/max CI, JSON) ✓ 2026-08-02
+
 ## Vague 375 — CLI Tools (répétition mots, ENTRYPOINT exec Dockerfile, profondeur JSON, doublons dotenv, ligne max CSV)
 - [x] text-repeat-words : répète chaque mot N fois par ligne (--sep, indentation préservée, --in-place, --check CI, --json) ✓ 2026-08-02
 - [x] dockerfile-verify-entrypoint-json : exige ENTRYPOINT forme exec JSON (multi-stages, --final-only, --require-entrypoint, exit 2 shell form, JSON) ✓ 2026-08-02
