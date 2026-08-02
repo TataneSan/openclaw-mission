@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 514 — CLI Tools (fusion lignes séparateur, drop colonnes CSV, minify JSON, inversion lignes, compteur mots fichiers)
+- [x] text-join-stream : joint toutes les lignes d'un flux en une seule ligne avec séparateur (escapes \t \n, --skip-empty/--strip/--trailing-separator/--per-file/--no-newline, gates require-min/max/non-empty/max-bytes exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-column-drop : supprime des colonnes d'un CSV par nom ou index (négatifs -1, --keep inverse, délimiteur sniffé+BOM, --no-header, --in-place/-o, --check exit 2, gates require-min-cols/rows/dropped-min exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-minify-tool : minifie du JSON (fichiers/stdin, --sort-keys, --jsonl + --skip-invalid, --in-place/-o, --check lint exit 2, rapport bytes sauvés, gates require-min-saving/max-bytes/valid exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-line-reverser : inverse l'ordre des lignes (tac) et/ou les caractères (rev) (--unique + --ignore-case, --skip-empty, --no-restore-order, --per-file, gates require-min/max/first/last exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-word-counter-tool : compte lignes/mots/chars/octets façon wc (multi-fichiers, -r récursif + --max-depth/--exclude/--ext/--include-hidden, colonnes -l/-w/-c/-m, --human, --sort/--reverse, --total-only, gates require-min-files/lines/max-lines/max-bytes/non-empty exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 513 — CLI Tools (N-ième mot, tail CSV, fichiers modifiés depuis, blank conditionnel, renommage clés JSON)
 - [x] text-nth-word : extrait le N-ième mot de chaque ligne (positions 1-based + négatifs, multi-positions 1,-1, séparateur littéral/regex, --missing-string/--skip-missing, préfixe origin multi-fichiers, gates require-min/all-present/max-blank exit 2 CI, --json) ✓ 2026-08-02
 - [x] csv-tail-rows : affiche les N dernières lignes data d'un CSV (header préservé, délimiteur sniffé+BOM, --no-header/--all, --output-delimiter, --count, cellules multi-lignes, gates require-min/max-rows/columns/check exit 2 CI, --json) ✓ 2026-08-02
