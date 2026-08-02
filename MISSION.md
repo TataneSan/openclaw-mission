@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 531 — CLI Tools (CSV compter lignes par colonne, JSON merge profond, texte extraire initiales, fichiers noms invalides, texte strip lignes matchées)
+- [ ] csv-row-count-per-value : compte les lignes regroupées par valeur d'une colonne CSV (group-by, délimiteur sniffé, top-N, gates CI, --json)
+- [ ] json-deep-merge : fusion profonde de deux documents JSON (objets récursifs, arrays concat/replace, gates CI, --json)
+- [ ] text-extract-initials : extrait les initiales de chaque ligne (première lettre de chaque mot, Unicode, gates CI, --json)
+- [ ] file-invalid-names : détecte les noms de fichiers invalides (chars interdits Windows, réservés, trailing dot/space, gates CI, --json)
+- [ ] text-strip-when : retire/supprime les lignes qui matchent une condition (regex, contains, prefix, invert, gates CI, --json)
+
 ## Vague 530 — CLI Tools (CSV compter valeurs distinctes, JSON trier clés par profondeur, texte comptage mots par ligne, fichiers gros répertoires, texte wrap mots avec indentation)
-- [ ] csv-distinct-count : compte les valeurs distinctes par colonne d'un CSV (délimiteur sniffé, --all-columns, --top, gates CI, --json)
-- [ ] json-key-depth-report : rapport de la profondeur de chaque clé JSON (récursif, histogramme, --max-depth, gates CI, --json)
-- [ ] text-words-per-line : rapporte le nombre de mots par ligne (min/max/avg, histogramme ASCII, gates CI, --json)
-- [ ] file-dirs-by-size : classe les sous-dossiers d'un arbre par taille cumulée (--top, --exclude, gates CI, --json)
-- [ ] text-wrap-keep-indent : wrap du texte en préservant l'indentation initiale (mots entiers, --width, gates CI, --json)
+- [x] csv-distinct-count : compte les valeurs distinctes par colonne d'un CSV (délimiteur sniffé, --all-columns, --top, gates CI, --json) ✓ 2026-08-02
+- [x] json-key-depth-report : rapport de la profondeur de chaque clé JSON (récursif, histogramme, --max-depth, gates CI, --json) ✓ 2026-08-02
+- [x] text-words-per-line : rapporte le nombre de mots par ligne (min/max/avg, histogramme ASCII, gates CI, --json) ✓ 2026-08-02
+- [x] file-dirs-by-size : classe les sous-dossiers d'un arbre par taille cumulée (--top, --exclude, gates CI, --json) ✓ 2026-08-02
+- [x] text-wrap-keep-indent : wrap du texte en préservant l'indentation initiale (mots entiers, --width, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 529 — CLI Tools (CSV compter occurrences valeur, JSON extraire chemins clés, texte comptage mentions @user, fichiers vides, texte indent to JSON)
 - [x] csv-value-count : compte les occurrences d'une valeur donnée dans une colonne CSV (délimiteur sniffé, exact/contains, gates CI, --json) ✓ 2026-08-02
