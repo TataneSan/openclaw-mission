@@ -619,12 +619,19 @@ Push automatique après chaque outil.
 - [x] url-ensure-scheme : garantit un scheme par défaut (https) aux URLs sans scheme (--check CI, JSON) ✓ 2026-08-02
 - [x] file-hardlink-count-report : rapport du nombre de liens durs par fichier (--min-links, --check CI, JSON) ✓ 2026-08-02
 
-## Vague 341 — CSV/JSON/text/URL/file mix (à définir)
-- [ ] csv-detect-header : détecte si la première ligne d'un CSV est un header réel (--check CI, JSON)
-- [ ] json-count-numeric-paths : compte les chemins numériques dans un JSONL (--min-value CI, JSON)
-- [ ] text-extract-ipv4 : extrait les adresses IPv4 d'un texte (validation stricte, --check CI, JSON)
-- [ ] url-extract-scheme-report : rapport des schemes d'URLs (comptage, --require http/https CI, JSON)
-- [ ] file-sticky-bit-detect : liste les dossiers avec sticky bit inhabituel (hors /tmp, --check CI, JSON)
+## Vague 341 — CSV/JSON/text/URL/file mix
+- [x] csv-detect-header : détecte si la première ligne d'un CSV est un header réel (--check CI, JSON) ✓ 2026-08-02
+- [x] json-count-numeric-paths : compte les chemins numériques dans un JSONL (--min-value CI, JSON) ✓ 2026-08-02
+- [x] text-extract-ipv4 : extrait les adresses IPv4 d'un texte (validation stricte, --check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-scheme-report : rapport des schemes d'URLs (comptage, --require http/https CI, JSON) ✓ 2026-08-02
+- [x] file-sticky-bit-detect : liste les dossiers avec sticky bit inhabituel (hors /tmp, --check CI, JSON) ✓ 2026-08-02
+
+## Vague 342 — CSV/JSON/text/URL/file mix (à définir)
+- [ ] csv-max-column-length : rapport de la longueur max par colonne CSV (--threshold CI, JSON)
+- [ ] json-detect-timestamp-formats : détecte les formats de dates/timestamps en valeurs JSON (iso/unix/ms, --check CI, JSON)
+- [ ] text-split-sentences : découpe un texte en phrases (abbr-aware, --min-words, --check CI, JSON)
+- [ ] url-extract-fragment-report : rapport des fragments #section d'URLs (dedup, counts, --check CI, JSON)
+- [ ] file-mtime-future-detect : liste les fichiers dont le mtime est dans le futur (--tolerance CI, JSON)
 
 ## Vague 340 — CSV/JSON/text/URL/file mix
 - [x] csv-add-hash-column : ajoute une colonne de hash (md5/sha256) calculée sur les colonnes choisies de chaque ligne (--check CI, JSON) ✓ 2026-08-02
