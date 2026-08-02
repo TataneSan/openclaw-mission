@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 525 — CLI Tools (CSV filtre lignes vide, comptage mots JSON, normalisation espaces JSON, rapport taille fichiers par extension, suppression doublons texte)
+- [ ] csv-drop-empty-columns : supprime les colonnes entièrement vides d'un CSV (toutes cellules blanches, --trim, délimiteur sniffé, gates CI, --json)
+- [ ] json-word-count : compte les mots contenus dans toutes les chaînes d'un JSON (récursif, par chemin, top-N, gates CI, --json)
+- [ ] json-normalize-space : normalise les espaces dans les chaînes JSON (collapse, strip, trim, récursif, gates CI, --json)
+- [ ] file-size-by-extension : rapport taille totale/moyenne par extension (barres ASCII, --top, gates CI, --json)
+- [ ] text-dedupe-non-adjacent : supprime les doublons non-adjacents en préservant l'ordre first-seen (Unicode casefold, --strip, gates CI, --json)
+
 ## Vague 524 — CLI Tools (drop lignes vides CSV, comptage caractères répétés, merge JSON shallow, doublons hash fichiers eslint, mise en minus first)
-- [ ] csv-drop-blank-rows : supprime les lignes entièrement vides d'un CSV (toutes cellules blanches, --trim, délimiteur sniffé, gates CI, --json)
-- [ ] text-count-char-runs : compte les runs de caractères répétés par ligne (aaa => a:1 run de 3, histogramme, gates CI --max-run, --json)
-- [ ] json-shallow-merge : fusion shallow de N objets JSON (clés de droite écrasent, --append-arrays, gates CI --require-key, --json)
-- [ ] file-name-length-report : rapport sur la longueur des noms de fichiers d'un arbre (min/max/avg, trop longs >N, gates CI --max-name-len exit 2, --json)
-- [ ] text-uppercase-first : met en majuscule la première lettre de chaque ligne (preserve reste, --all-caps-first-word, gates CI, --json)
+- [x] csv-drop-blank-rows : supprime les lignes entièrement vides d'un CSV (toutes cellules blanches, --trim, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] text-count-char-runs : compte les runs de caractères répétés par ligne (aaa => a:1 run de 3, histogramme, gates CI --max-run, --json) ✓ 2026-08-02 (existant)
+- [x] json-shallow-merge : fusion shallow de N objets JSON (clés de droite écrasent, --append-arrays, gates CI --require-key, --json) ✓ 2026-08-02
+- [x] file-name-length-report : rapport sur la longueur des noms de fichiers d'un arbre (min/max/avg, trop longs >N, gates CI --max-name-len exit 2, --json) ✓ 2026-08-02
+- [x] text-uppercase-first : met en majuscule la première lettre de chaque ligne (preserve reste, --all-caps-first-word, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 523 — CLI Tools (wrap CSV, rotation lignes, inversion objets JSON, doublons fichiers, indentation texte)
 - [x] csv-column-wrap-text : re-wrap les valeurs texte d'une colonne CSV à largeur fixe (mots entiers, cellules multi-lignes, --width, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
