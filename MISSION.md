@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 465 — CLI Tools (stats CSV, entropie texte, flatten JSON, anagrammes, expansion CIDR)
+- [x] csv-column-stats : stats descriptives des colonnes numériques CSV (count/sum/min/max/mean/médiane, quartiles Q1/Q3 interp. linéaire, variance+stdev pop/échantillon, délimiteur sniffé, colonnes nom/index, --no-header, gates --min/--max/--require-mean exit 2, --json) ✓ 2026-08-02
+- [x] text-entropy-meter : entropie de Shannon d'un texte (global ou --by-line avec min/mean/max, modes chars/--bytes UTF-8, --max-theoretical alphabet observé, redondance, args positionnels multi-strings, gates --require-min/--require-max exit 2, --json) ✓ 2026-08-02
+- [x] json-flatten-paths : aplatit JSON en paires path=value (styles dot/bracket, tableaux [N], objets/tableaux vides préservés, --types, --separator, JSONL auto/--jsonl, null exclus par défaut/--include-null, gates --require-path/--require-min/--require-max exit 2, --json) ✓ 2026-08-02
+- [x] text-anagram-find : détecte et groupe les anagrammes (normalisation case/NFD accents/non-lettres, args positionnels mots si fichier inexistant, --pairs A B exit 2 sur non-anagramme, --min-length/--min-size/--all, tri size/key/alpha, gates require-min/max-groups/require-group exit 2, --json) ✓ 2026-08-02
+- [x] ip-cidr-expand : développe CIDR IPv4/IPv6 en listes d'adresses (strict=False host-bits, --exclude-hosts réseau+broadcast IPv4 hors /31 //32, --max cap sécurité 65536 défaut, --limit tronqué, --count-only/--sum, --file avec # commentaires, gates require-total/min-total/max-total exit 2, --json) ✓ 2026-08-02
+
 ## Vague 464 — CLI Tools (base32 batch, JSONL pretty, comptage voyelles, positions tokens, normalisation EOL)
 - [x] text-base32-decode : decode/encode base32 RFC 4648 en batch (args/--file/--stdin, padding toléré ou --require-padding, --allow-lower, UTF-8 ou fallback hex, --unique, gates --require-min/--require-none-failed exit 2/1, --json) ✓ 2026-08-02
 - [x] json-lines-pretty : pretty-print/compact/lint de flux JSONL (indent espaces/tabs, --compact, --sort-keys, lignes vides tolérées, --skip-invalid, lint --check exit 2, gates require-valid-min/none-invalid/line exit 2 CI, --json) ✓ 2026-08-02
