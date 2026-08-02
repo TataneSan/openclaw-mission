@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 410 — CLI Tools (csv dédup lignes, texte acronymes, json profondeur moyenne, uuid génère/valide, texte censures e-mail)
+- [ ] csv-dedupe-rows : supprime les lignes dupliquées d'un CSV (--key cols partielles, --keep first/last, --require-max-dupes exit 2 CI, JSON)
+- [ ] text-extract-acronyms : extrait les acronymes ALL-CAPS d'un texte (--min-length, avec comptes, --require-min exit 2 CI, JSON)
+- [ ] json-avg-depth : profondeur moyenne/max des feuilles d'un JSON (par branche, --require-max-depth exit 2 CI, JSON)
+- [ ] uuid-tool : génère/valide des UUID (v4 aléatoire, v5 nommé, --count, --validate, --namespace, exit 2 CI, JSON)
+- [ ] text-redact-emails : masque les adresses e-mail dans un texte (--domain-only, --keep-first, --require-redactions exit 2 CI, JSON)
+
 ## Vague 409 — CLI Tools (texte lignes plus longues, csv lignes jointes, json trie clés, base32 encode, texte compte ponctuation)
-- [ ] text-longest-lines : extrait les N lignes les plus longues d'un texte (--top, --min-length, --require-max-length exit 2 CI, JSON)
-- [ ] csv-join-rows : joint les lignes CSV consécutives partageant une clé (--key, --agg concat/first/last par colonne, --require-joins exit 2 CI, JSON)
-- [ ] json-sort-keys : trie récursivement les clés d'un JSON (--reverse, --locale, --check exit 2 CI si déjà différent, JSON)
-- [ ] base32-tool : encode/décode base32/base32hex (RFC 4648, --decode, --no-padding, --check exit 2 CI, JSON)
-- [ ] text-count-punctuation : compte les signes de ponctuation par type (.,;:!?…, --require-min/max exit 2 CI, JSON)
+- [x] text-longest-lines : extrait les N lignes les plus longues d'un texte (--top, --min-length, --require-max-length exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-join-rows : joint les lignes CSV consécutives partageant une clé (--key, --agg concat/first/last par colonne, --require-joins exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-sort-keys : trie récursivement les clés d'un JSON (--reverse, --locale, --check exit 2 CI si déjà différent, JSON) ✓ 2026-08-02
+- [x] base32-tool : encode/décode base32/base32hex (RFC 4648, --decode, --no-padding, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-count-punctuation : compte les signes de ponctuation par type (.,;:!?…, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 408 — CLI Tools (csv somme colonnes, text compte majuscules, json extraire tableau, yaml compter docs, hex decode stdin)
 - [x] csv-sum-column : somme numérique des colonnes choisies (count/sum/avg, --columns, --require-sum-min/max exit 2 CI, JSON) ✓ 2026-08-02
