@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 420 — CLI Tools (texte compte mots par paragraphe, csv garde premières lignes par clé, json chemins floats, base64 décode strict, texte joindre lignes avec séparateur)
+- [ ] text-words-per-paragraph : compte les mots par paragraphe d'un texte (blank-line separated, stats min/max/moyenne, --require-max exit 2 CI, JSON)
+- [ ] csv-first-row-per-key : garde la première ligne de chaque valeur de clé dans un CSV (group-by first, --require-min-groups exit 2 CI, JSON)
+- [ ] json-list-float-paths : liste les chemins vers les valeurs float d'un JSON (dot-path, ints exclus, --require-min/max/none exit 2 CI, JSON)
+- [ ] base64-decode-strict : décode base64 avec validation stricte (alphabet, padding, --check exit 2 CI, JSON)
+- [ ] text-join-lines : joint toutes les lignes d'un texte avec un séparateur (--sep, --strip, --check exit 2 CI, JSON)
+
 ## Vague 419 — CLI Tools (texte compte parenthèses ouvrantes, csv supprime lignes dupliquées consécutives, json chemins entiers, base32hex encode, texte swap première/dernière ligne)
-- [ ] text-count-open-parens : compte les parenthèses ouvrantes ( dans un texte (--close, --balance, --require-min/max, --check exit 2 CI, JSON)
-- [ ] csv-dedupe-adjacent-rows : supprime les lignes dupliquées consécutives d'un CSV (uniq, --count, --check exit 2 CI, JSON)
-- [ ] json-list-integer-paths : liste les chemins vers les valeurs entières d'un JSON (dot-path, bool exclus, --require-min/max/none exit 2 CI, JSON)
-- [ ] base32hex-tool : encode/décode base32hex (RFC 4648 extended hex alphabet, --no-pad, --decode, --check exit 2 CI, JSON)
-- [ ] text-swap-first-last-line : permute la première et la dernière ligne d'un texte (--in-place, --check exit 2 CI, JSON)
+- [x] text-count-open-parens : compte les parenthèses ouvrantes ( dans un texte (--close, --balance, --require-min/max, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-dedupe-adjacent-rows : supprime les lignes dupliquées consécutives d'un CSV (uniq, --count, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-list-integer-paths : liste les chemins vers les valeurs entières d'un JSON (dot-path, bool exclus, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] base32hex-tool : encode/décode base32hex (RFC 4648 extended hex alphabet, --no-pad, --decode, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-swap-first-last-line : permute la première et la dernière ligne d'un texte (--in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 418 — CLI Tools (texte compte chevrons, csv drop lignes vides, json chemins number, base85, texte reverse ordre lignes)
 - [x] text-count-angles : compte les chevrons < et > dans un texte (--pair-check, --require-min/max, --check exit 2 CI, JSON) ✓ 2026-08-02
