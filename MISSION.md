@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 418 — CLI Tools (texte compte chevrons, csv drop lignes vides, json chemins number, base85, texte reverse ordre lignes)
+- [ ] text-count-angles : compte les chevrons < et > dans un texte (--pair-check, --require-min/max, --check exit 2 CI, JSON)
+- [ ] csv-drop-empty-rows : supprime les lignes entièrement vides d'un CSV (toutes cellules vides, --check exit 2 CI, JSON)
+- [ ] json-list-number-paths : liste les chemins vers les valeurs number d'un JSON (dot-path, ints vs floats, --require-min/max exit 2 CI, JSON)
+- [ ] base85-tool : encode/décode base85 (RFC 1924 alphabet, --decode, --check exit 2 CI, JSON)
+- [ ] text-reverse-lines : inverse l'ordre des lignes d'un texte (tac, --in-place, --check exit 2 CI, JSON)
+
 ## Vague 417 — CLI Tools (texte compte dièses, csv strip colonnes vides, json chemins false, base16, texte dédup lignes gardant ordre)
-- [ ] text-count-hashes : compte les dièses # dans un texte (--per-line, --require-min/max, --check exit 2 CI, JSON)
-- [ ] csv-strip-empty-columns : supprime les colonnes entièrement vides d'un CSV (toutes lignes vides, --check exit 2 CI, JSON)
-- [ ] json-list-false-paths : liste les chemins vers les valeurs false d'un JSON (dot-path, --require-none exit 2 CI, JSON)
-- [ ] base16-tool : encode/décode base16 hex (RFC 4648, --upper, --no-0x, --check exit 2 CI, JSON)
-- [ ] text-dedupe-lines : supprime les lignes dupliquées en gardant la première occurrence (ordre stable, --in-place, --check exit 2 CI, JSON)
+- [x] text-count-hashes : compte les dièses # dans un texte (--per-line, --require-min/max, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-strip-empty-columns : supprime les colonnes entièrement vides d'un CSV (toutes lignes vides, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-list-false-paths : liste les chemins vers les valeurs false d'un JSON (dot-path, --require-none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] base16-tool : encode/décode base16 hex (RFC 4648, --upper, --no-0x, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-dedupe-lines : supprime les lignes dupliquées en gardant la première occurrence (ordre stable, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 416 — CLI Tools (texte compte astérisques, csv trim colonnes vides droite, json chemins booléens true, url base64, texte squeeze lignes consécutives identiques)
 - [x] text-count-asterisks : compte les astérisques * dans un texte (--per-line, --require-min/max, --check exit 2 CI, JSON) ✓ 2026-08-02
