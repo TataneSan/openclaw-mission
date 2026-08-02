@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 513 — CLI Tools (N-ième mot, tail CSV, fichiers modifiés depuis, blank conditionnel, renommage clés JSON)
+- [x] text-nth-word : extrait le N-ième mot de chaque ligne (positions 1-based + négatifs, multi-positions 1,-1, séparateur littéral/regex, --missing-string/--skip-missing, préfixe origin multi-fichiers, gates require-min/all-present/max-blank exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-tail-rows : affiche les N dernières lignes data d'un CSV (header préservé, délimiteur sniffé+BOM, --no-header/--all, --output-delimiter, --count, cellules multi-lignes, gates require-min/max-rows/columns/check exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-changed-since : liste les fichiers modifiés depuis un timestamp ISO/unix, une durée 2h/7d, ou un fichier de référence (--older, --ext/--hidden/--max-depth/--include-dirs, --ages/--sort/--count, gates require-min/max/none watchdog exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-blank-if : blanchit/remplace/supprime les lignes matchant regex/littéral (-v invert, -i casefold, --keep-blank/--squeeze, --in-place, gates require-min-affected/check exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-keys-rename : renomme récursivement les clés JSON (--map old=new/--map-file, --prefix/--suffix, styles snake/camel/pascal/kebab/upper/lower, JSONL, ordre préservé, --top-level, --in-place, gates check/require-min-renamed/forbid-collisions exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 512 — CLI Tools (première ligne, largeur display, fusion JSON profonde, première ligne par dossier, préfixe stdin)
 - [x] text-first-line-only : n'affiche que la première ligne de chaque fichier/stdin (--number/--label, --skip-empty/--missing-string, --unique/--sort/--max-width/--pad/--count, gates require-min/max/non-empty/unique exit 2 CI, --json) ✓ 2026-08-02
 - [x] text-width-detect : stats de largeur d'affichage des lignes (wcwidth-style CJK/combining/tabs, --chars codepoints, min/max/mean/median/mode, --show-longest/shortest, --over-width, histogramme ASCII, gates require-max/min/uniform/lines exit 2 CI, --json) ✓ 2026-08-02
