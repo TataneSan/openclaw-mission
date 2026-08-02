@@ -15,11 +15,18 @@
 - [x] text-number-lines : numérote les lignes d'un texte (--start N, --format, --skip-blank, --width, gates CI, --json) ✓ 2026-08-01 (existant)
 
 ## Vague 533 — CLI Tools (CSV extraire colonne unique lignes, JSON compter nulls, texte fréquence paires lettres, fichiers mtime futur, texte trier par longueur)
-- [ ] csv-column-unique-rows : garde seulement les lignes dont la valeur d'une colonne est unique (ou dupliquée avec --duplicates, délimiteur sniffé, gates CI, --json)
-- [ ] json-null-count : compte les valeurs null par chemin dans des documents JSON (récursif, JSONL, barres ASCII, gates CI, --json)
-- [ ] text-bigram-frequency : fréquence des paires de lettres adjacentes (Unicode, top-N, --min-count, gates CI, --json)
-- [ ] file-future-mtime : liste les fichiers dont la mtime est dans le futur (--grace seconds, walk, gates CI, --json)
-- [ ] text-sort-by-length : trie les lignes par longueur (chars/words/bytes, asc/desc, --stable, ties alpha, gates CI, --json)
+- [x] csv-column-unique-rows : garde seulement les lignes dont la valeur d'une colonne est unique (ou dupliquée avec --duplicates, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] json-null-count : compte les valeurs null par chemin dans des documents JSON (récursif, JSONL, barres ASCII, gates CI, --json) ✓ 2026-08-02
+- [x] text-bigram-frequency : fréquence des paires de lettres adjacentes (Unicode, top-N, --min-count, gates CI, --json) ✓ 2026-08-02
+- [x] file-future-mtime : liste les fichiers dont la mtime est dans le futur (--grace seconds, walk, gates CI, --json) ✓ 2026-08-02
+- [x] text-sort-by-length : trie les lignes par longueur (chars/words/bytes, asc/desc, --stable, ties alpha, gates CI, --json) ✓ 2026-08-01 (existant)
+
+## Vague 534 — CLI Tools (CSV ligne la plus longue, JSON échapper clés, texte compter lignes vides consécutives, fichiers permissions exécutables, texte inverser mots par ligne)
+- [ ] csv-longest-row : trouve la ligne CSV avec le plus de colonnes / la valeur la plus longue (--by columns|chars|bytes, délimiteur sniffé, gates CI, --json)
+- [ ] json-escape-keys : échappe/assainit les clés JSON (slugify, remplace chars invalides, --mode slug|underscore|hex, gates CI, --json)
+- [ ] text-blank-run-report : rapporte les runs de lignes vides consécutives (longueur max, positions, --min-run, gates CI, --json)
+- [ ] file-executable-report : liste les fichiers exécutables (perm +x, shebang, extension .sh/.py, --fix chmod, gates CI, --json)
+- [ ] text-reverse-words-per-line : inverse l'ordre des mots de chaque ligne (--sep regex, preserve leading ws, gates CI, --json)
 
 ## Vague 530 — CLI Tools (CSV compter valeurs distinctes, JSON trier clés par profondeur, texte comptage mots par ligne, fichiers gros répertoires, texte wrap mots avec indentation)
 - [x] csv-distinct-count : compte les valeurs distinctes par colonne d'un CSV (délimiteur sniffé, --all-columns, --top, gates CI, --json) ✓ 2026-08-02
