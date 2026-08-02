@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 433 — CLI Tools (csv fusion colonnes fallback, json chemins iso8601, texte extrait FQDN, ROT5 digits, csv fusion clé première valeur non vide)
+- [x] csv-coalesce-columns : fusionne des colonnes CSV avec fallback première non vide (--merge NEW=COL1,COL2, --in-place, --check, --require-min-fills exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-list-iso8601-paths : liste les chemins dot-path des strings ISO 8601 (date/time/datetime, Z normalisé, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-fqdn : extrait les FQDN d'un texte (--unique, --top, --public-suffix-verify allowlist TLD, --require-min/domain/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-rot5 : applique ROT5 aux chiffres d'un texte (auto-inverse, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-first-nonempty-per-key : fusionne les lignes CSV par clé gardant la première valeur non vide par colonne (--in-place, --check/--require-min-groups/--require-all-filled exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 432 — CLI Tools (csv drop colonnes par plages, json garde clés listées, texte extrait IPv6 validées, collapse lignes vides à N max, ROT18)
 - [x] csv-drop-column-ranges : supprime des colonnes CSV par nom, index ou plages inclusives (A-B / A:B, négatifs, --check exit 2 CI, JSON) ✓ 2026-08-02
 - [x] json-only-keys : ne garde que les clés racine listées d'un objet JSON (--require-all/--require-min exit 2 CI, --compact, JSON) ✓ 2026-08-02
