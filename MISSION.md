@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 563 — CLI Tools (texte garder lignes contenant deux termes, CSV ajouter colonne longueur de valeur, JSON supprimer les clés qui commencent par un préfixe, fichiers diff entre deux arbres basé sur hash, texte collapse lignes avec séparateur custom)
+- [ ] text-match-all-terms : garde lignes contenant TOUS les termes (-t TERM multiple, --any inverse, -i, gates CI, --json)
+- [ ] csv-add-value-length : ajoute une colonne avec la longueur en chars d'une autre colonne (délimiteur sniffé, gates CI, --json)
+- [ ] json-strip-prefix-keys : supprime les clés commençant par un préfixe donné (récursif, --prefix repeat, gates CI, --json)
+- [ ] file-hash-diff : diff de deux arbres basé sur hash sha256 des fichiers (added/removed/changed, gates CI, --json)
+- [ ] text-join-with-sep : joint groupes de N lignes avec séparateur custom (--every N, --sep, gates CI, --json)
+
 ## Vague 562 — CLI Tools (texte garder N lignes au hasard, CSV remplacer les cellules correspondant à une regex, JSON extraire les noms de toutes les arrays, fichiers timeline mtime par heure, texte rechercher motif avec contexte ±N lignes)
-- [ ] text-random-keep : garde N lignes au hasard (--seed reproductible, --preserve-order, gates CI, --json)
-- [ ] csv-regex-replace : remplace les cellules matchant une regex par une valeur (--columns, délimiteur sniffé, gates CI, --json)
-- [ ] json-array-names : liste tous les chemins menant à un array dans un JSON (récursif, gates CI, --json)
-- [ ] file-mtime-per-hour : timeline des fichiers modifiés par heure (histogramme, gates CI, --json)
-- [ ] text-grep-context : affiche les lignes matchant un motif avec ±N lignes de contexte (--before/--after, --line-numbers, gates CI, --json)
+- [x] text-random-keep : garde N lignes au hasard (--seed reproductible, --preserve-order, gates CI, --json) ✓ 2026-08-03
+- [x] csv-regex-replace : remplace les cellules matchant une regex par une valeur (--columns, délimiteur sniffé, gates CI, --json) ✓ 2026-08-03
+- [x] json-array-names : liste tous les chemins menant à un array dans un JSON (récursif, gates CI, --json) ✓ 2026-08-03
+- [x] file-mtime-per-hour : timeline des fichiers modifiés par heure (histogramme, gates CI, --json) ✓ 2026-08-03
+- [x] text-grep-context : affiche les lignes matchant un motif avec ±N lignes de contexte (--before/--after, --line-numbers, gates CI, --json) ✓ 2026-08-03
 
 ## Vague 561 — CLI Tools (texte extraire lignes contenant seulement des lettres, CSV numéroter les doublons d'une colonne clé, JSON compter valeurs booléennes true par chemin top-level, fichiers taille médiane par extension, texte supprimer N premiers caractères de chaque ligne)
 - [x] text-alpha-only-lines : extrait les lignes composées uniquement de lettres Unicode et espaces (--allow-space, --invert, gates CI, --json) ✓ 2026-08-03
