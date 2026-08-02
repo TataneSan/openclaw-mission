@@ -1,5 +1,19 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 524 — CLI Tools (drop lignes vides CSV, comptage caractères répétés, merge JSON shallow, doublons hash fichiers eslint, mise en minus first)
+- [ ] csv-drop-blank-rows : supprime les lignes entièrement vides d'un CSV (toutes cellules blanches, --trim, délimiteur sniffé, gates CI, --json)
+- [ ] text-count-char-runs : compte les runs de caractères répétés par ligne (aaa => a:1 run de 3, histogramme, gates CI --max-run, --json)
+- [ ] json-shallow-merge : fusion shallow de N objets JSON (clés de droite écrasent, --append-arrays, gates CI --require-key, --json)
+- [ ] file-name-length-report : rapport sur la longueur des noms de fichiers d'un arbre (min/max/avg, trop longs >N, gates CI --max-name-len exit 2, --json)
+- [ ] text-uppercase-first : met en majuscule la première lettre de chaque ligne (preserve reste, --all-caps-first-word, gates CI, --json)
+
+## Vague 523 — CLI Tools (wrap CSV, rotation lignes, inversion objets JSON, doublons fichiers, indentation texte)
+- [x] csv-column-wrap-text : re-wrap les valeurs texte d'une colonne CSV à largeur fixe (mots entiers, cellules multi-lignes, --width, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] text-rotate-lines : rotation circulaire des lignes (up/down/reverse, --positions N, --wrap, gates CI, --json) ✓ 2026-08-02
+- [x] json-object-sort-by-value : trie les clés d'un objet JSON par valeur (numérique/lexicographique, asc/desc, top-N, récursif, JSONL, gates CI, --json) ✓ 2026-08-02
+- [x] file-dup-basename-report : détecte les basenames en double dans une arborescence (chemins distincts même nom, --min-count, gates CI, --json) ✓ 2026-08-02
+- [x] text-indent-detect : détecte le style d'indentation d'un fichier (tabs vs espaces N, dominant, cohérence, gates CI --require-style, --json) ✓ 2026-08-02 (existant)
+
 ## Vague 522 — CLI Tools
 - [x] csv-column-round : arrondit les valeurs numériques d'une colonne CSV (--places N, --mode half-up/floor/ceil/trunc, nombres 1 234,56, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
 - [x] text-swap-line-pairs : échange des paires de lignes (--offset N paires 1-indexées, --every-N bloc, --with-pair A:B, gates CI, --json) ✓ 2026-08-02
