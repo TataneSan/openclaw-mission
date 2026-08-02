@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 522 — CLI Tools
+- [x] csv-column-round : arrondit les valeurs numériques d'une colonne CSV (--places N, --mode half-up/floor/ceil/trunc, nombres 1 234,56, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] text-swap-line-pairs : échange des paires de lignes (--offset N paires 1-indexées, --every-N bloc, --with-pair A:B, gates CI, --json) ✓ 2026-08-02
+- [x] json-object-strip-falsy : retire les clés dont la valeur est falsy (false/null/0/""/[]/{}, --keep-zero, --keep-false, --keep-empty-string, récursif, JSONL, gates CI, --json) ✓ 2026-08-02
+- [x] file-extension-case-report : rapport sur la casse des extensions d'une arborescence (upper/lower/mixed par extension, --normalize renomme en minuscules, --dry-run, gates CI, --json) ✓ 2026-08-02
+- [x] text-first-char-class : classe chaque ligne par le type de son premier caractère non-blanc (letter/digit/punct/space/emoji/none, --only-class, comptage + barres ASCII, gates CI, --json) ✓ 2026-08-02
+
 ## Vague 521 — CLI Tools
 - [x] csv-column-math : calcule une expression arithmétique entre colonnes numériques (+,-,*,/,%,parenthèses, nombres 1 234,56) vers une nouvelle colonne (--round, --output-append, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
 - [x] text-rot13-cipher : applique ROT13/ROT-N aux lettres (--digits ROT5, --unicode-latin étendu, preserve case, gates CI, --json) ✓ 2026-08-02
