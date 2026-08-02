@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 574 — CLI Tools (CSV entrelacement lignes, CSV en-têtes styles de casse, texte caractères invisibles, fichiers histogramme longueurs noms, CSV moyenne glissante)
+- [x] csv-interleave-rows : entrelace les lignes de deux CSV (alterné ou --ratio A:B, headers vérifiés, gates require-rows/require-even, --json) ✓ 2026-08-03
+- [x] csv-kebab-headers : convertit les en-têtes CSV en kebab/snake/camel/pascal (--style, --check CI, --in-place, --json) ✓ 2026-08-03
+- [x] text-zero-width : détecte et retire les caractères Unicode invisibles (ZWSP/ZWJ/BOM/soft hyphen, --strip, --check CI, --json) ✓ 2026-08-03
+- [x] file-suffix-length : histogramme des longueurs de noms de fichiers (--extension stem only, --top, gates max-length/require-max-count, --json) ✓ 2026-08-03
+- [x] csv-rolling-average : colonne moyenne glissante sur fenêtre N (--require-full-window, --ndigits, gates require-rows, --json) ✓ 2026-08-03
+
 ## Vague 573 — CLI Tools (CSV remplir cellules vides constante, texte profondeur imbrication crochets, JSON échelle numérique, fichiers classement taille dossiers, texte fréquences tokens)
 - [x] csv-constant-fill : remplit les cellules vides d'une colonne CSV avec une constante (--all, --in-place, gates require-fills/require-none, --json) ✓ 2026-08-03
 - [x] text-bracket-depth : profondeur d'imbrication des crochets (),[],{},<> par ligne (unmatched/unclosed, --only, --ignore-strings, gates max-depth/require-balanced, --json) ✓ 2026-08-03
