@@ -4076,6 +4076,13 @@ Push automatique après chaque outil.
 - [x] text-hash-lines : hash de chaque ligne (md5/sha1/sha256...), dedup, dup-check exit 2, JSON ✓ 2026-08-01
 - [x] env-sort : trie les clés d'un .env en préservant commentaires et groupes (--check, --in-place) ✓ 2026-08-01
 
+## Vague 580 — CLI Tools (env, texte, JSON)
+- [x] env-keys-only : liste les noms de variables d'un .env (export toléré, --strict exit 2, JSON) ✓ 2026-08-03
+- [x] line-dedup-keep-order : déduplique les lignes en préservant l'ordre des premières occurrences (ignore-case, --count, --check exit 2, JSON) ✓ 2026-08-03
+- [x] json-key-count : compte les clés d'un document JSON (total, par chemin, --path, --max lint exit 2, --sort, JSON) ✓ 2026-08-03
+- [x] text-remove-comments : retire les lignes de commentaires et commentaires inline (#, //, -- marqueur custom, guillemets préservés, --check exit 2, JSON) ✓ 2026-08-03
+- [x] line-pad-width : pad/tronque chaque ligne à une largeur fixe (left/right/center, fill custom, --truncate, --check exit 2, JSON) ✓ 2026-08-03
+
 ## Vague 188 — CLI Tools (CSV & texte)
 - [x] csv-count-values : fréquence des valeurs d'une colonne CSV ✓ 2026-08-01
 - [x] csv-first-rows : garde les N premières lignes de données d'un CSV (head) ✓ 2026-08-01
