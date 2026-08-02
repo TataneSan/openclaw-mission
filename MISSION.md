@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 430 — CLI Tools (csv trie lignes par colonne, json supprime clés vides, texte extrait adresses IP, détecte CRLF/LF mixte, texte lignes avec exactement N mots)
+- [ ] csv-sort-rows : trie les lignes d'un CSV par colonne (--col, --numeric, --desc, --in-place, --check exit 2 CI si pas trié, JSON)
+- [ ] json-prune-empty : supprime les clés dont la valeur est null, "", [] ou {} d'un JSON (--recursive, --require-none exit 2 CI, JSON)
+- [ ] text-extract-ipv4 : extrait les adresses IPv4 d'un texte (--unique, --private-only, --require-min exit 2 CI, JSON)
+- [ ] text-line-ending-check : détecte les fins de ligne LF/CRLF/mixtes d'un fichier (--require-lf/--require-crlf exit 2 CI, JSON)
+- [ ] text-lines-word-count-exact : garde les lignes ayant exactement N mots (--n, --require-min exit 2 CI, JSON)
+
 ## Vague 429 — CLI Tools (csv supprime colonnes dupliquées, json compte clés par chemin, texte lignes les plus longues, base58check décode, texte mots en minuscules seulement)
-- [ ] csv-drop-duplicate-columns : supprime les colonnes au contenu identique d'un CSV (toutes lignes, --keep-first, --check exit 2 CI, JSON)
-- [ ] json-count-keys : compte le nombre de clés objets par chemin d'un JSON (dot-path, --top, --require-max exit 2 CI, JSON)
-- [ ] text-longest-lines : affiche les lignes les plus longues d'un texte (--top, --min-length, --require-max exit 2 CI, JSON)
-- [ ] base58check-tool : encode/décode base58check (version byte + checksum double-SHA256, --decode, --check exit 2 CI, JSON)
-- [ ] text-lowercase-only-words : garde les lignes ne contenant que des mots en minuscules (--invert, --require-min exit 2 CI, JSON)
+- [x] csv-drop-duplicate-columns : supprime les colonnes au contenu identique d'un CSV (toutes lignes, --keep-first, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-count-keys : compte le nombre de clés objets par chemin d'un JSON (dot-path, --top, --require-max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-longest-lines : affiche les lignes les plus longues d'un texte (--top, --min-length, --require-max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] base58check-tool : encode/décode base58check (version byte + checksum double-SHA256, --decode, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-lowercase-only-words : garde les lignes ne contenant que des mots en minuscules (--invert, --require-min exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 428 — CLI Tools (csv compte valeurs par colonne, json chemins strings, texte mots les plus longs, détecte encodage BOM, texte lignes contenant nombre)
 - [x] csv-value-counts : compte les occurrences de chaque valeur d'une colonne CSV (--col, --top, --require-max exit 2 CI, JSON) ✓ 2026-08-02
