@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 552 — CLI Tools (texte compter lignes vides consécutives, CSV ajouter colonne rang, JSON extraire types distincts, fichiers récemment modifiés par extension, texte trouver mots avec consonnes doubles répétées)
+- [ ] text-blank-run-count : compte les runs de lignes vides consécutives (--min N, --max, gates CI, --json)
+- [ ] csv-add-rank : ajoute une colonne rang calculée sur une colonne numérique (--dense, --reverse, délimiteur sniffé, gates CI, --json)
+- [ ] json-type-report : inventaire des types JSON distincts par chemin (string/number/bool/null/object/array, gates CI, --json)
+- [ ] file-recent-by-extension : fichiers modifiés dans N jours groupés par extension (compte, bytes, gates CI, --json)
+- [ ] text-double-consonant-words : trouve les mots contenant une consonne doublée (--min-len, lang hints, gates CI, --json)
+
 ## Vague 551 — CLI Tools (texte strip lignes de commentaires, CSV dédupliquer lignes par clé, JSON convertir types strings en natifs, fichiers plus petits récents, texte masquer adresses email)
-- [ ] text-strip-comments : supprime les lignes de commentaires d'un fichier (# ;; //, --keep-shebang, gates CI, --json)
-- [ ] csv-dedupe-by-key : déduplique les lignes par valeur d'une colonne clé (first/last, délimiteur sniffé, gates CI, --json)
-- [ ] json-coerce-types : convertit les strings JSON "123"/"true"/"null" en types natifs (récursif, --keys, gates CI, --json)
-- [ ] file-smallest-recent : liste les plus petits fichiers modifiés dans les N derniers jours (complémentaire, gates CI, --json)
-- [ ] text-mask-emails : masque les adresses email d'un texte (partie locale tronquée, domaine préservé, --strict, gates CI, --json)
+- [x] text-strip-comments : supprime les lignes de commentaires d'un fichier (# ;; //, --keep-shebang, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] csv-dedupe-by-key : déduplique les lignes par valeur d'une colonne clé (first/last, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] json-coerce-types : convertit les strings JSON "123"/"true"/"null" en types natifs (récursif, --keys, gates CI, --json) ✓ 2026-08-02
+- [x] file-smallest-recent : liste les plus petits fichiers modifiés dans les N derniers jours (complémentaire, gates CI, --json) ✓ 2026-08-02
+- [x] text-mask-emails : masque les adresses email d'un texte (partie locale tronquée, domaine préservé, --strict, gates CI, --json) ✓ 2026-08-02 (existant)
 
 ## Vague 550 — CLI Tools (texte convertir palillons camel→snake, CSV ajouter hash de ligne, JSON compter objets vides, fichiers plus grands par mtime récente, texte extraire paires clé=valeur)
 - [x] text-screaming-to-lower : convertit SCREAMING_SNAKE_CASE en minuscules (option title/kebab, gates CI, --json) ✓ 2026-08-02
