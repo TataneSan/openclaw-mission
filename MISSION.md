@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 426 — CLI Tools (texte compte underscores, csv garde colonnes non constantes, json chemins objets, uuencode, texte lignes sans ponctuation finale)
+- [ ] text-count-underscores : compte les underscores _ d'un texte (--per-line, --require-min/max, --check exit 2 CI, JSON)
+- [ ] csv-drop-constant-columns : supprime les colonnes ayant une seule valeur distincte (--constant-seuil N valeurs distinctes, --check exit 2 CI, JSON)
+- [ ] json-list-object-paths : liste les chemins vers toutes les valeurs objet d'un JSON (dot-path, --min-keys, --require-min/max exit 2 CI, JSON)
+- [ ] uuencode-tool : encode/décode en uuencode (format historique usenet, --decode, --strict, --check exit 2 CI, JSON)
+- [ ] text-find-no-final-punct : liste les lignes ne finissant pas par un signe de ponctuation (.!?:;…), (--per-paragraph, --require-none exit 2 CI, JSON)
+
 ## Vague 425 — CLI Tools (csv wide en long, json supprime chemin, texte extraits mentions, csv garde colonnes non vides, texte lignes avec longueur)
-- [ ] csv-to-long : dépivote un CSV large en long (valeurs pivots en lignes, --key --pivot-cols, --drop-empty, --require-rows exit 2 CI, JSON)
-- [ ] json-delete-path : supprime la valeur à un chemin dot-path d'un JSON (--path, clé ou index, --require-exists exit 2 CI, JSON)
-- [ ] text-extract-mentions : extrait les @mentions d'un texte (--unique, comptes, --require-min exit 2 CI, JSON)
-- [ ] csv-nonempty-columns : garde uniquement les colonnes ayant au moins une valeur non vide (--min-nonempty, --check exit 2 CI, JSON)
-- [ ] text-line-lengths : affiche la longueur de chaque ligne d'un texte (--top, min/max/avg, --require-max exit 2 CI, JSON)
+- [x] csv-to-long : dépivote un CSV large en long (valeurs pivots en lignes, --key --pivot-cols, --drop-empty, --require-rows exit 2 CI, JSON) ✓ 2026-08-02 (repo existant, support --key multi-colonnes)
+- [x] json-delete-path : supprime la valeur à un chemin dot-path d'un JSON (--path, clé ou index, --require-exists exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-mentions : extrait les @mentions d'un texte (--unique, comptes, --require-min exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-nonempty-columns : garde uniquement les colonnes ayant au moins une valeur non vide (--min-nonempty, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-line-lengths : affiche la longueur de chaque ligne d'un texte (--top, min/max/avg, --require-max exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 424 — CLI Tools (diff deux textes, csv compte cellules vides, json remplace valeur, texte extraits hashtags, csv pivot long en large)
 - [x] text-diff-lines : diff unifié ligne à ligne entre deux textes (contexte N, --check exit 2 CI si différent, JSON) ✓ 2026-08-02
