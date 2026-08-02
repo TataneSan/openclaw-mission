@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 547 — CLI Tools (texte minuscules vers majuscules, CSV filtre valeurs longues, JSON compter arrays, fichiers permissions strictes, texte extraire URLs domaines)
+- [ ] text-shout-lines : met en majuscules les lignes dépassant un seuil de longueur (ou --all, gates CI, --json)
+- [ ] csv-filter-long-values : garde les lignes dont une colonne dépasse N caractères (délimiteur sniffé, gates CI, --json)
+- [ ] json-array-count : compte les arrays par chemin dans un JSON (récursif, total éléments, gates CI, --json)
+- [ ] file-permission-audit : liste les fichiers/dossiers avec des permissions world-writable ou trop ouvertes (gates CI, --json)
+- [ ] text-extract-domains : extrait les domaines uniques des URLs/emails d'un texte (tri, comptage, gates CI, --json)
+
 ## Vague 546 — CLI Tools (texte compter émojis, CSV joindre deux fichiers sur une clé, JSON profondeur histogramme, fichiers plus gros que N Mo, texte extraire lignes sans voyelles)
-- [ ] text-emoji-count : compte les émojis d'un texte (par émoji, top-N, gates CI, --json)
-- [ ] csv-join : jointure de deux CSV sur une colonne clé (inner/left, délimiteur sniffé, gates CI, --json)
-- [ ] json-depth-histogram : histogramme des profondeurs de clés d'un JSON (barres, gates CI, --json)
-- [ ] file-larger-than : liste les fichiers plus gros que N octets (unités K/M/G, --top, gates CI, --json)
-- [ ] text-vowel-less-lines : extrait les lignes sans voyelles (aeiouy option, gates CI, --json)
+- [x] text-emoji-count : compte les émojis d'un texte (par émoji, top-N, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] csv-join : jointure de deux CSV sur une colonne clé (inner/left, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] json-depth-histogram : histogramme des profondeurs de clés d'un JSON (barres, gates CI, --json) ✓ 2026-08-02
+- [x] file-larger-than : liste les fichiers plus gros que N octets (unités K/M/G, --top, gates CI, --json) ✓ 2026-08-02
+- [x] text-vowel-less-lines : extrait les lignes sans voyelles (aeiouy option, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 545 — CLI Tools (texte inverser caractères par ligne, CSV extraire dernières N lignes, JSON liste clés triées par nom, fichiers doublons par nom dans l'arbre, texte ratio lignes commentées)
 - [x] text-reverse-chars : inverse les caractères de chaque ligne (préserve indentation option, gates CI, --json) ✓ 2026-08-02 (existant)
