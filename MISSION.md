@@ -627,11 +627,26 @@ Push automatique après chaque outil.
 - [x] file-sticky-bit-detect : liste les dossiers avec sticky bit inhabituel (hors /tmp, --check CI, JSON) ✓ 2026-08-02
 
 ## Vague 342 — CSV/JSON/text/URL/file mix (à définir)
-- [ ] csv-max-column-length : rapport de la longueur max par colonne CSV (--threshold CI, JSON)
-- [ ] json-detect-timestamp-formats : détecte les formats de dates/timestamps en valeurs JSON (iso/unix/ms, --check CI, JSON)
-- [ ] text-split-sentences : découpe un texte en phrases (abbr-aware, --min-words, --check CI, JSON)
-- [ ] url-extract-fragment-report : rapport des fragments #section d'URLs (dedup, counts, --check CI, JSON)
-- [ ] file-mtime-future-detect : liste les fichiers dont le mtime est dans le futur (--tolerance CI, JSON)
+- [x] csv-max-column-length : rapport de la longueur max par colonne CSV (--threshold CI, JSON) ✓ 2026-08-02
+- [x] json-detect-timestamp-formats : détecte les formats de dates/timestamps en valeurs JSON (iso/unix/ms, --check CI, JSON) ✓ 2026-08-02
+- [x] text-split-sentences : découpe un texte en phrases (abbr-aware, --min-words, --check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-fragment-report : rapport des fragments #section d'URLs (dedup, counts, --check CI, JSON) ✓ 2026-08-02
+- [x] file-mtime-future-detect : liste les fichiers dont le mtime est dans le futur (--tolerance CI, JSON) ✓ 2026-08-02
+
+## Vague 343 — CSV/JSON/text/URL/file mix (à définir)
+- [x] csv-quote-all-fields : re-quote toutes les cellules d'un CSV (guillemets uniformes, --minimal, --check CI, JSON) ✓ 2026-08-02
+- [x] json-count-by-key-length : rapport des longueurs de clés JSON par profondeur (histogramme, --max CI, JSON) ✓ 2026-08-02
+- [x] text-wrap-indent-preserve : wrap de texte qui conserve l'indentation initiale (--width, --check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-path-extension-report : rapport par extension du path des URLs (counts, mime guess, --check CI, JSON) ✓ 2026-08-02
+- [x] file-same-content-links : détecte les fichiers identiques pouvant être remplacés par des hardlinks (--apply, --check CI, JSON) ✓ 2026-08-02
+
+## Vague 344 — CSV/JSON/text/URL/file mix (à définir)
+- [x] csv-trim-cells : retire les espaces débuts/fins des cellules CSV (déjà publié) ✓ 2026-08-02
+- [x] csv-non-numeric-report : rapport des valeurs non numériques par colonne CSV (--threshold CI, JSON) ✓ 2026-08-02
+- [x] json-array-unique-report : rapport des tableaux JSONL avec doublons d'éléments (--count CI, JSON) ✓ 2026-08-02
+- [x] text-hyphenate-count : rapport des mots avec tirets vs sans par ligne (histogramme, --check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-default-port-clean : retire le port par défaut des URLs (80/443 normalisés, --check CI, JSON) ✓ 2026-08-02
+- [x] file-shebang-detect : liste les scripts exécutables avec shebang + type (python/bash/node, --check CI, JSON) ✓ 2026-08-02
 
 ## Vague 340 — CSV/JSON/text/URL/file mix
 - [x] csv-add-hash-column : ajoute une colonne de hash (md5/sha256) calculée sur les colonnes choisies de chaque ligne (--check CI, JSON) ✓ 2026-08-02
