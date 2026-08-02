@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 576 — CLI Tools (JSON somme numérique profonde, CSV troncature de cellules, env quotes normalisation, texte dédent indenté, extensions de fichiers)
+- [x] json-numeric-deep-sum : somme récursive des nombres d'un JSON (jsonl, --parse-strings, paths dot, gates require-sum/min-max/count/path, --json) ✓ 2026-08-03
+- [x] csv-cell-truncate : tronque les cellules CSV à N caractères (marqueur dans la limite, colonnes ciblées, gates require-clipped/unchanged/--check) ✓ 2026-08-03
+- [x] env-unquote-values : retire/normalise les quotes des valeurs .env (styles single/double/none, échappements, --check, gates require-count/style) ✓ 2026-08-03
+- [x] text-indent-strip : retire l'indentation commune/niveaux d'un texte (dedent, tabs, --width, gates require-common/changed) ✓ 2026-08-03
+- [x] file-extension-normalize : normalise les extensions de fichiers (lowercase, aliases jpeg→jpg, collisions safe, --apply/--check) ✓ 2026-08-03
+
 ## Vague 575 — CLI Tools (JSON limite longueur clés, fichiers newline EOF POSIX, JSON détection indentation, CSV concaténer colonnes, texte chiffre César)
 - [x] json-key-length-limit : liste les clés JSON dépassant une limite de longueur (chemins dot, JSONL, --check, gates require-max-count, --json) ✓ 2026-08-03
 - [x] file-newline-at-eof : vérifie/ajoute le newline final POSIX (--fix, --extensions, skip binaires/.git, --check CI, --json) ✓ 2026-08-03
