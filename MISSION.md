@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 573 — CLI Tools (CSV remplir cellules vides constante, texte profondeur imbrication crochets, JSON échelle numérique, fichiers classement taille dossiers, texte fréquences tokens)
+- [x] csv-constant-fill : remplit les cellules vides d'une colonne CSV avec une constante (--all, --in-place, gates require-fills/require-none, --json) ✓ 2026-08-03
+- [x] text-bracket-depth : profondeur d'imbrication des crochets (),[],{},<> par ligne (unmatched/unclosed, --only, --ignore-strings, gates max-depth/require-balanced, --json) ✓ 2026-08-03
+- [x] json-numeric-scale : échelle les valeurs numériques d'un JSON/JSONL (--factor, --path avec *, --ndigits, --in-place, gates require-scaled/require-none) ✓ 2026-08-03
+- [x] file-dir-size-rank : classe les dossiers d'un arbre par taille totale (barres, --depth, --top, gates max-dirs/require-total, --json) ✓ 2026-08-03
+- [x] text-token-tally : fréquences de tokens mots/char/bigrams par ligne et global (histogramme, --top/--min-count, gates require-token/max-unique, --json) ✓ 2026-08-03
+
 ## Vague 572 — CLI Tools (chemins longueur limite, JSON flip booléens, fichiers JSON collisions casse clés, CSV préfixer colonne, fichiers locks obsolètes)
 - [x] file-path-length-limit : détecte chemins/noms dépassant MAX_PATH/NAME_MAX (--relative, --bytes, gates, --json) ✓ 2026-08-03
 - [x] json-key-case-audit : collisions de clés JSON insensibles à la casse (exact-fold/normalized, global/per-object, --json) ✓ 2026-08-03
