@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
 ## Vague 531 — CLI Tools (CSV compter lignes par colonne, JSON merge profond, texte extraire initiales, fichiers noms invalides, texte strip lignes matchées)
-- [ ] csv-row-count-per-value : compte les lignes regroupées par valeur d'une colonne CSV (group-by, délimiteur sniffé, top-N, gates CI, --json)
-- [ ] json-deep-merge : fusion profonde de deux documents JSON (objets récursifs, arrays concat/replace, gates CI, --json)
-- [ ] text-extract-initials : extrait les initiales de chaque ligne (première lettre de chaque mot, Unicode, gates CI, --json)
-- [ ] file-invalid-names : détecte les noms de fichiers invalides (chars interdits Windows, réservés, trailing dot/space, gates CI, --json)
-- [ ] text-strip-when : retire/supprime les lignes qui matchent une condition (regex, contains, prefix, invert, gates CI, --json)
+- [x] csv-row-count-per-value : compte les lignes regroupées par valeur d'une colonne CSV (group-by, délimiteur sniffé, top-N, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] json-deep-merge : fusion profonde de deux documents JSON (objets récursifs, arrays concat/replace, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] text-extract-initials : extrait les initiales de chaque ligne (première lettre de chaque mot, Unicode, gates CI, --json) ✓ 2026-08-02
+- [x] file-invalid-names : détecte les noms de fichiers invalides (chars interdits Windows, réservés, trailing dot/space, gates CI, --json) ✓ 2026-08-02
+- [x] text-strip-when : retire/supprime les lignes qui matchent une condition (regex, contains, prefix, invert, gates CI, --json) ✓ 2026-08-02
+
+## Vague 532 — CLI Tools (CSV checksum colonne, JSON aplatir paires, texte censurer mots, fichiers noms dupliqués case-insensitive, texte numéroter lignes)
+- [ ] csv-add-checksum : ajoute une colonne hash (md5/sha1/sha256) calculée sur d'autres colonnes (délimiteur sniffé, --columns, gates CI, --json)
+- [ ] json-flatten-pairs : aplatit un objet JSON en paires chemin=valeur (séparateur custom, --unflatten reverse, JSONL, gates CI, --json)
+- [ ] text-redact-words : masque une liste de mots dans un texte (word list fichier, --mask char, --partial, -i, gates CI, --json)
+- [ ] file-case-dup-names : détecte les noms qui ne diffèrent que par la casse dans un arbre (conflits Windows/macOS, gates CI, --json)
+- [ ] text-number-lines : numérote les lignes d'un texte (--start N, --format, --skip-blank, --width, gates CI, --json)
 
 ## Vague 530 — CLI Tools (CSV compter valeurs distinctes, JSON trier clés par profondeur, texte comptage mots par ligne, fichiers gros répertoires, texte wrap mots avec indentation)
 - [x] csv-distinct-count : compte les valeurs distinctes par colonne d'un CSV (délimiteur sniffé, --all-columns, --top, gates CI, --json) ✓ 2026-08-02
