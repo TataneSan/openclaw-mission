@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 423 — CLI Tools (texte compte voyelles par ligne, csv supprime lignes selon pattern, json chemins strings max, rot47, texte titres capitalisés)
+- [ ] text-vowels-per-line : compte les voyelles par ligne d'un texte (min/max/avg, --require-max exit 2 CI, JSON)
+- [ ] csv-drop-matching-rows : supprime les lignes CSV dont une colonne matche un pattern (--col --pattern regex, --invert, --check exit 2 CI, JSON)
+- [ ] json-list-long-string-paths : liste les chemins des strings de longueur >= N (dot-path, --min-length, --require-none exit 2 CI, JSON)
+- [ ] rot47-tool : applique ROT47 à un texte (printables ASCII, --in-place, --check exit 2 CI, JSON)
+- [ ] text-title-case : transforme un texte en Title Case (small words list, --sentence-style, --check exit 2 CI, JSON)
+
 ## Vague 422 — CLI Tools (compte mots fréquents, csv header add, json empty objects, anonymize emails, csv row to lines)
-- [ ] text-word-frequency : fréquence des mots d'un texte (top N, --min-count, --check mot absent exit 2 CI, JSON)
-- [ ] csv-add-column : ajoute une colonne constante/calculée à un CSV (--name --value, --in-place, --check existe exit 2 CI, JSON)
-- [ ] json-list-empty-object-paths : liste les chemins vers les objets vides {} d'un JSON (dot-path, --require-none exit 2 CI, JSON)
-- [ ] text-mask-emails : masque les emails d'un texte (user@domain -> u***@d***.tld, --check exit 2 CI, JSON)
-- [ ] csv-rows-to-files : éclate chaque ligne d'un CSV en fichier séparé (template, --dry-run, --count exit 2 CI, JSON)
+- [x] text-word-frequency : fréquence des mots d'un texte (top N, --min-count, --check mot absent exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-add-column : ajoute une colonne constante/calculée à un CSV (--name --value, --in-place, --check existe exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-list-empty-object-paths : liste les chemins vers les objets vides {} d'un JSON (dot-path, --require-none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-mask-emails : masque les emails d'un texte (user@domain -> u***@d***.tld, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-rows-to-files : éclate chaque ligne d'un CSV en fichier séparé (template, --dry-run, --count exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 421 — CLI Tools (lines strip prefix/suffix, csv header case, json paths empty arrays, slugify, csv transpose)
 - [x] text-strip-prefix : retire un préfixe donné (ou auto-commun) de chaque ligne (--boundary, --check exit 2 CI, JSON) ✓ 2026-08-02 (repo existant, ajout __main__ + support '-' stdin)
