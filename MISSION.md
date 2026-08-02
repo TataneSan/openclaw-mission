@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 406 — CLI Tools (rot13 cipher, csv renomme colonnes, json liste tailles, text palindromes, file mime type)
+- [ ] rot-cipher : chiffre/déchiffre par rotation César (--shift N, lettres seules, --brute-force les 25 clés, --check exit 2 CI, JSON)
+- [ ] csv-rename-columns : renomme des colonnes CSV selon un mapping (--map old=new,..., --require-mapped exit 2 CI, JSON)
+- [ ] json-key-lengths : liste les clés JSON avec leur profondeur et longueur (--max-depth, --require-max-key-length exit 2 CI, JSON)
+- [ ] text-find-palindromes : trouve les mots/phrases palindromes dans un texte (--min-length, --phrases, --require-min-found exit 2 CI, JSON)
+- [ ] file-detect-type : devine le type de fichier par signatures magiques (png/jpg/pdf/zip/gzip/..., multi-fichiers, --require-type exit 2 CI, JSON)
+
 ## Vague 405 — CLI Tools (hex dump, csv transpose, markdown liens, json aplati, texte mots uniques)
-- [ ] hex-dump-view : hexdump canonique d'un fichier ou stdin (offset/hex/ascii, --length, --width, --skip, JSON)
-- [ ] csv-transpose : transpose un CSV (lignes <-> colonnes, --max-cells garde-fou, --check carré exit 2 CI, JSON)
-- [ ] md-extract-links : extrait les liens d'un markdown (inline, référence, autolinks, --unique, --require-no-broken-anchor exit 2 CI, JSON)
-- [ ] json-flatten-keys : aplati un JSON imbriqué en clés pointées (a.b.c, tableaux [i], --unflatten inverse, --check exit 2 CI, JSON)
-- [ ] text-unique-words : liste les mots uniques d'un texte avec fréquences (--min-length, --top, --require-min-unique exit 2 CI, JSON)
+- [x] hex-dump-view : hexdump canonique d'un fichier ou stdin (offset/hex/ascii, --length, --width, --skip, JSON) ✓ 2026-08-02
+- [x] csv-transpose : transpose un CSV (lignes <-> colonnes, --max-cells garde-fou, --check carré exit 2 CI, JSON) ✓ 2026-08-02
+- [x] md-extract-links : extrait les liens d'un markdown (inline, référence, autolinks, --unique, --require-no-broken-anchor exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-flatten-keys : aplati un JSON imbriqué en clés pointées (a.b.c, tableaux [i], --unflatten inverse, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-unique-words : liste les mots uniques d'un texte avec fréquences (--min-length, --top, --require-min-unique exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 404 — CLI Tools (compte lignes code, base64 batch, csv stat colonne, env diff, text voyelles)
 - [x] code-line-count : compte lignes totales/code/commentaires/blank par langage (table intégrée py/js/go/c/..., multi-fichiers, --require-max-lines exit 2 CI, JSON) ✓ 2026-08-02
