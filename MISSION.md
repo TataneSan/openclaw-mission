@@ -21,12 +21,19 @@
 - [x] file-future-mtime : liste les fichiers dont la mtime est dans le futur (--grace seconds, walk, gates CI, --json) ✓ 2026-08-02
 - [x] text-sort-by-length : trie les lignes par longueur (chars/words/bytes, asc/desc, --stable, ties alpha, gates CI, --json) ✓ 2026-08-01 (existant)
 
+## Vague 536 — CLI Tools (CSV pivot simple, JSON profondeur max, texte compter chars distincts, fichiers extension manquante shebang, texte supprimer accents)
+- [ ] csv-pivot-count : pivot table de comptage entre deux colonnes (lignes x colonnes, délimiteur sniffé, gates CI, --json)
+- [ ] json-max-depth : calcule la profondeur maximale d'un document JSON (récursif, JSONL, gates CI --max-depth, --json)
+- [ ] text-distinct-chars : compte les caractères distincts d'un texte (Unicode, classes letters/digits/punct, gates CI, --json)
+- [ ] file-shebang-audit : vérifie que les scripts exécutables ont un shebang (walk, --require-shebang gate, --json)
+- [ ] text-strip-accents : supprime les accents/diacritiques d'un texte (NFD decomposition, preserve æ/œ option, gates CI, --json)
+
 ## Vague 535 — CLI Tools (CSV valeur par ligne, JSON extraire valeurs chaînes, texte détecter fin de ligne, fichiers plus volumineux par dossier, texte majuscules par phrase)
-- [ ] csv-row-per-value : éclate un CSV en un fichier par valeur d'une colonne (group-by, --out-dir, délimiteur sniffé, gates CI, --json)
-- [ ] json-extract-string-values : extrait toutes les valeurs chaînes d'un JSON (récursif, --with-path, --unique, JSONL, gates CI, --json)
-- [ ] text-line-ending-detect : détecte le style de fin de ligne d'un fichier (LF/CRLF/CR, mixte, comptage, gates CI --require-style, --json)
-- [ ] file-largest-per-dir : trouve le plus gros fichier de chaque dossier d'un arbre (taille, --depth, gates CI, --json)
-- [ ] text-uppercase-sentences : met en majuscule la première lettre de chaque phrase (ponctuation .!?, --all-caps-first-word, gates CI, --json)
+- [x] csv-row-per-value : éclate un CSV en un fichier par valeur d'une colonne (group-by, --out-dir, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] json-extract-string-values : extrait toutes les valeurs chaînes d'un JSON (récursif, --with-path, --unique, JSONL, gates CI, --json) ✓ 2026-08-02
+- [x] text-line-ending-detect : détecte le style de fin de ligne d'un fichier (LF/CRLF/CR, mixte, comptage, gates CI --require-style, --json) ✓ 2026-08-02
+- [x] file-largest-per-dir : trouve le plus gros fichier de chaque dossier d'un arbre (taille, --depth, gates CI, --json) ✓ 2026-08-02
+- [x] text-uppercase-sentences : met en majuscule la première lettre de chaque phrase (ponctuation .!?, --all-caps-first-word, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 534 — CLI Tools (CSV ligne la plus longue, JSON échapper clés, texte compter lignes vides consécutives, fichiers permissions exécutables, texte inverser mots par ligne)
 - [x] csv-longest-row : trouve la ligne CSV avec le plus de colonnes / la valeur la plus longue (--by columns|chars|bytes, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
