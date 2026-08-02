@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 353 — CLI Tools (trim cellules CSV, champ fixe JSON, lignes répétées, slash final URL, ENV Dockerfile)
+- [x] csv-trim-cells : retire les espaces début/fin des cellules d'un CSV (colonnes ciblées, --report, --check CI, JSON) ✓ 2026-08-02 (repo pré-existant, contenu synchronisé)
+- [x] json-append-field : ajoute une clé fixe k=v à chaque objet JSON d'un flux JSONL (types auto, --overwrite, --check CI, JSON) ✓ 2026-08-02
+- [x] text-repeat-line-report : rapport des lignes identiques répétées consécutivement (--ignore-case, --min-repeats, --check CI, JSON) ✓ 2026-08-02
+- [x] url-strip-trailing-slash : retire le slash final des paths d'URLs (racine conservée, --strip-root, --check CI, JSON) — Go ✓ 2026-08-02
+- [x] dockerfile-extract-env : extrait les variables ENV définies dans un Dockerfile (valeurs, stage, redéfinitions, --check CI, JSON) — Go ✓ 2026-08-02
+
 ## Vague 352 — CLI Tools (lignes vides CSV, champ index JSON, compte mots, ancre URL, stages Dockerfile)
 - [x] csv-count-empty-rows : rapport lignes vides et cellules vides d'un CSV (par colonne, --check CI, JSON) ✓ 2026-08-02
 - [x] json-add-index-field : ajoute un champ index auto-incrémenté à chaque objet d'un array JSON ou flux JSONL (--start/--step, fallback JSONL, --check CI, JSON) ✓ 2026-08-02
