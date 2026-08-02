@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 476 — CLI Tools (mots en fin de ligne, écart-type CSV, préfixes, répertoires récents, lignes longues)
+- [x] text-last-words : extrait les N derniers mots de chaque ligne (séparateur regex, join custom, keep-empty, word counts, gates require-min-words/all-match exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-column-deviation : écart-type / variance / coefficient de variation des colonnes numériques d'un CSV (population ou échantillon, min-numeric, sélection --columns, gates require-column/max-stddev/max-cv exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-prefix-match : filtre lignes par préfixe(s) (invert, ignore-case Unicode casefold, strip, count-only, line-numbers, gates require-min/max/prefix exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-recent-dirs : classe répertoires par date de modification la plus récente (récursif/depth, human age, max/min age, tri newest/oldest/files/path, gates require-min/require-fresh exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-large-lines : repère fichiers avec lignes dépassant un seuil (88 cps défaut, bytes ou codepoints, ext/exclude globs, skip binaires sniffés, gates require-zero/max-offenders exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 475 — CLI Tools (base36, détection de casse, cellules vides CSV, extensions fichiers, nombres JSON, niveaux d'indentation)
 - [x] base36-encode : encode/décode Base36 en batch (entiers et texte codepoints, --upper, --text, gates require-min/none-failed exit 2 CI, args/file/stdin, --json) ✓ 2026-08-02
 - [x] text-case-detect : détecte la convention de casse (snake/SCREAMING/camel/Pascal/kebab/dot/flat/FLAT/Title/spaced/mixed/numeric), gates require-style/uniform/no-mixed exit 2 CI, --json ✓ 2026-08-02
