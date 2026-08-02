@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 388 — CLI Tools (cellules vides CSV, min/max JSON par clé, voyelles texte, tags base Dockerfile, secrets dotenv)
+- [x] csv-count-null-cells : compte les cellules vides d'un CSV par colonne + total (--no-header, --delimiter, --require-max/--forbid-empty exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-min-max-key : min/max/somme/moyenne des valeurs numériques d'un chemin dot-path JSON (wildcard *, JSONL, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-count-vowels : compte voyelles/consonnes d'un texte (accents via NFD, --y-is-vowel, --ascii-only, ratio, --require-ratio-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-base-tag-check : exige des base images épinglées (pas de tag manquant/:latest, --require-digest sha256, --forbid-pattern, multi-stage, registry ports, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-detect-secrets : détecte les secrets probables dans les .env sans jamais afficher les valeurs (formats AWS/GitHub/Slack/JWT/PEM, entropie Shannon, placeholders ignorés, exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 387 — CLI Tools (transposition CSV, strings vides JSON, acronymes texte, dotenv→ConfigMap, EXPOSE interdit)
 - [x] csv-transpose-rows : transpose lignes/colonnes d'un CSV (pad rows courtes, --delimiter, --check square exit 2 CI, JSON) ✓ 2026-08-02
 - [x] json-count-empty-strings : compte les strings vides récursivement (--whitespace, --list-paths dot-paths, JSONL, --require-max/--require-zero exit 2 CI, JSON) ✓ 2026-08-02
