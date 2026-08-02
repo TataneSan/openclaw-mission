@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 377 — CLI Tools (capitalisation phrases, apt-get cleanup Dockerfile, clés par préfixe JSON, dotenv→shell, swap 1re/dernière colonne CSV)
+- [x] text-capitalize-sentences : majuscule en début de phrase (. ! ? préservés, --in-place, --check CI, --json) ✓ 2026-08-02
+- [x] dockerfile-check-run-apt-get-clean : exige cleanup après apt-get install (rm lists ou apt-get clean, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-count-keys-by-prefix : compte les clés JSON par préfixe récursivement (objets+arrays, --require-min/max CI, JSON) ✓ 2026-08-02
+- [x] env-to-shell : convertit dotenv en lignes export shell (échappement valeurs, --prefix, JSON) ✓ 2026-08-02
+- [x] csv-swap-first-last : permute 1re et dernière colonnes d'un CSV (header inclus, --delimiter, --no-header, JSON) ✓ 2026-08-02
+
 ## Vague 376 — CLI Tools (duplication mots, CMD exec Dockerfile, min/max tableau JSON, strip commentaires dotenv, ligne min CSV)
 - [x] text-duplicate-words : duplique chaque mot par ligne (indent préservée, --in-place, --check CI, --json) ✓ 2026-08-02
 - [x] dockerfile-verify-no-shell-cmd : exige CMD forme exec JSON (multi-stages, --final-only, --require-cmd, exit 2 shell form, JSON) ✓ 2026-08-02
