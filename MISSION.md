@@ -21,12 +21,19 @@
 - [x] file-future-mtime : liste les fichiers dont la mtime est dans le futur (--grace seconds, walk, gates CI, --json) ✓ 2026-08-02
 - [x] text-sort-by-length : trie les lignes par longueur (chars/words/bytes, asc/desc, --stable, ties alpha, gates CI, --json) ✓ 2026-08-01 (existant)
 
+## Vague 537 — CLI Tools (CSV moyenne colonne, JSON compter booléens, texte compter mots uniques par ligne, fichiers taille 0 par extension, texte intervertir lignes paires/impaires)
+- [ ] csv-column-average : calcule min/max/moyenne/médiane d'une colonne numérique (nombres 1 234,56, délimiteur sniffé, gates CI, --json)
+- [ ] json-bool-count : compte les true/false par chemin dans des documents JSON (récursif, JSONL, gates CI, --json)
+- [ ] text-unique-words-per-line : rapporte le nombre de mots uniques par ligne (casefold, ratio, gates CI, --json)
+- [ ] file-empty-by-extension : liste les fichiers de 0 octet regroupés par extension (walk, --delete, --dry-run, gates CI, --json)
+- [ ] text-interleave-lines : intercale les lignes de deux fichiers (alterné, --ratio 2:1, prefix, gates CI, --json)
+
 ## Vague 536 — CLI Tools (CSV pivot simple, JSON profondeur max, texte compter chars distincts, fichiers extension manquante shebang, texte supprimer accents)
-- [ ] csv-pivot-count : pivot table de comptage entre deux colonnes (lignes x colonnes, délimiteur sniffé, gates CI, --json)
-- [ ] json-max-depth : calcule la profondeur maximale d'un document JSON (récursif, JSONL, gates CI --max-depth, --json)
-- [ ] text-distinct-chars : compte les caractères distincts d'un texte (Unicode, classes letters/digits/punct, gates CI, --json)
-- [ ] file-shebang-audit : vérifie que les scripts exécutables ont un shebang (walk, --require-shebang gate, --json)
-- [ ] text-strip-accents : supprime les accents/diacritiques d'un texte (NFD decomposition, preserve æ/œ option, gates CI, --json)
+- [x] csv-pivot-count : pivot table de comptage entre deux colonnes (lignes x colonnes, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] json-max-depth : calcule la profondeur maximale d'un document JSON (récursif, JSONL, gates CI --max-depth, --json) ✓ 2026-08-02 (existant)
+- [x] text-distinct-chars : compte les caractères distincts d'un texte (Unicode, classes letters/digits/punct, gates CI, --json) ✓ 2026-08-02
+- [x] file-shebang-audit : vérifie que les scripts exécutables ont un shebang (walk, --require-shebang gate, --json) ✓ 2026-08-02
+- [x] text-strip-accents : supprime les accents/diacritiques d'un texte (NFD decomposition, preserve æ/œ option, gates CI, --json) ✓ 2026-08-02 (existant)
 
 ## Vague 535 — CLI Tools (CSV valeur par ligne, JSON extraire valeurs chaînes, texte détecter fin de ligne, fichiers plus volumineux par dossier, texte majuscules par phrase)
 - [x] csv-row-per-value : éclate un CSV en un fichier par valeur d'une colonne (group-by, --out-dir, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
