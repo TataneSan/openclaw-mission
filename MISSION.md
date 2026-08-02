@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 493 — CLI Tools (CSV, texte, JSON, fichiers, durées)
+- [x] csv-stat-profile : profil statistique complet des colonnes CSV (numériques: min/max/mean/median/stddev; texte: uniques, longueur moy; vides) ✓ 2026-08-02
+- [x] text-frequency-words : fréquence des mots d'un texte (normalisation, stop-words, top N, --json) ✓ 2026-08-02
+- [x] json-patch-keys : renomme des clés dans un JSON récursivement (OLD=NEW, aplatis chemins dot) ✓ 2026-08-02
+- [x] file-dupe-hash : détecte les fichiers dupliqués par hash (md5/sha1/sha256, rapports groupés, --json) ✓ 2026-08-02
+- [x] duration-between : calcule la durée entre deux dates/timestamps (unités, human, --json) ✓ 2026-08-02
+
 ## Vague 492 — CLI Tools (JSONL, texte, fichiers, CSV, base58)
 - [x] jsonl-schema-report : rapport de schéma d'un JSONL (clés, types observés, présence, --unique-values, --skip-invalid/--max-lines, gates require-key/lines/no-invalid exit 2 CI, --json) ✓ 2026-08-02
 - [x] text-column-align : aligne colonnes de texte délimité (séparateur regex, output-separator, right-align-numbers, --strict, min-width, gates require-columns/uniform exit 2 CI, --json) ✓ 2026-08-02
