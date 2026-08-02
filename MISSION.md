@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 520 — CLI Tools
+- [x] csv-column-extract-regex : extrait un groupe de capture regex d'une colonne CSV vers une nouvelle colonne (--group N/nommé, --all-matches jointure, --no-match placeholder, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] text-collapse-whitespace : réduit les runs d'espaces/tabulations internes à 1 (--all inclut indentation, --to-space convertit tabs, lignes vides, gates CI, --json) ✓ 2026-08-02
+- [x] json-object-invert : inverse clés et valeurs d'un objet JSON (--values-mode first/last/list en cas de doublons, JSONL, gates CI, --json) ✓ 2026-08-02
+- [x] file-hardlink-report : inventaire des groupes de hardlinks (inode partagé) d'une arborescence (--min-links, --exclude, gates CI, --json) ✓ 2026-08-02
+- [x] text-line-shuffle-words : mélange les mots de chaque ligne (--seed reproductible, --per-line-seed dérivé, --keep-first/--keep-last mots fixes, gates CI, --json) ✓ 2026-08-02
+
 ## Vague 519 — CLI Tools
 - [x] csv-column-combine : fusionne N colonnes d'un CSV en une seule (séparateur custom, nom explicite, --drop-sources, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
 - [x] text-truncate-middle : tronque les lignes longues au milieu (marqueur ... custom, largeur CJK-aware, --keep-start/--keep-end, gates CI, --json) ✓ 2026-08-02
