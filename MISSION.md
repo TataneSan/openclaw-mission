@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 455 — CLI Tools (similarité Jaccard/Dice, sparklines Unicode, tri IPv4, nearest xterm-256, valeurs lettres mots)
+- [x] text-jaccard-similarity : coefficients Jaccard / Dice-Sorensen / overlap entre textes (tokens mots/n-grammes mots ou caractères --chars --n, mode paire/--pairs toutes lignes triées, --min-similarity filtrage, gates require-min/max-similarity exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-sparkline : rend des séries numériques en sparklines Unicode ▁▂▃▄▅▆▇█ (--min/--max échelle, --width sous-échantillonnage moyennes, --extract numéraux dans texte libre, --stats, gates require-range/max-under/min-over exit 2 CI, JSON) ✓ 2026-08-02
+- [x] ipv4-sort : trie les lignes par IPv4 octet-aware (9<10 contrairement à sort lexico, CIDR triés réseau puis préfixe croissant, lignes sans IP droppables/défaut début, --unique/--strict/--check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] ansi-nearest-color : mappe couleurs RGB/hex vers index xterm-256 le plus proche (palette 256 complète, distance redmean pondérée, fragments SGR 38;5;N/48;5;N, gates require-max-delta/index exit 2 CI, JSON) ✓ 2026-08-02
+- [x] word-letter-value : score les mots par positions alphabétiques A=1..Z=26 (somme/produit/racine numérique, --breakdown, --anagram-value groupes même multiset, --pair-sum S, gates require-sum/min/max/root exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 454 — CLI Tools (factorisation entiers, interleave lignes, notation A1 Excel, contraste WCAG, semaines ISO)
 - [x] int-factor-tools : factorisation premiers + gcd/lcm/diviseurs/totient (Miller-Rabin déterministe <2^64, batch stdin/--numbers, gates --require-prime-min/coprime/no-composites exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-interleave-lines : entrelace N fichiers ligne-à-ligne round-robin (--group K par bloc, --skip-empty) et inverse --split N vers stdout ou --out-dir/lane-N.txt (gates require-equal-lanes/lines exit 2 CI, JSON) ✓ 2026-08-02
