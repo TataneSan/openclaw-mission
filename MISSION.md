@@ -1,5 +1,14 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 397 — CLI Tools (audit quoting CSV, stats longueur mots, tri dotenv, valeurs vides YAML, escapes JSON, ENV Dockerfile, messages commit)
+- [x] csv-detect-quoted-fields : audit le quoting des champs CSV (re-lexing RFC 4180, cellules quoted/needs_quotes/unquoted_special, --require-quoted-columns, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-median-word-length : distribution des longueurs de mots (min/max/mean/median/mode, histogramme ASCII, Unicode, --require-median/mean-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-lex-sort : vérifie/applique l'ordre alphabétique des entrées dotenv (commentaires attachés aux entrées, --ignore-case, --fix/--in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] yaml-empty-values : lint les valeurs de mapping vides (key: sans valeur, block-aware, --include-explicit-null, --allow, --check/--require-max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-string-escape-audit : audit les séquences d'échappement des strings JSON (unicode/simple/invalid, JSONL, --verbose, --require-max-unicode/--require-no-invalid exit 2 CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-lint-env-spaces : lint les espaces vs '=' dans ENV Dockerfile (forme legacy dépréciée, continuations, --fix/--in-place, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] git-commit-msg-lint : lint les messages de commit (largeur sujet/corps, conventional commits --require-conventional/--types, impératif, ligne 2 vide, hook commit-msg, exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 396 — CLI Tools (comptage mots texte, header CSV, taille JSON, commentaire licence dotenv, quotes YAML)
 - [x] text-count-distinct-words : compte les mots distincts d'un texte (fréquences, --ignore-case, --top, --min-length, lexical diversity, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
 - [x] csv-check-header : exige/interdit des colonnes dans un header CSV (--require/--forbid, ordre --require-order, doublons, count exact, exit 2 CI, JSON) ✓ 2026-08-02
