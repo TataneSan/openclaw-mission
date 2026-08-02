@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 404 — CLI Tools (compte lignes code, base64 batch, csv stat colonne, env diff, text voyelles)
+- [ ] code-line-count : compte lignes totales/code/commentaires/blank par langage (table intégrée py/js/go/c/..., multi-fichiers, --require-max-lines exit 2 CI, JSON)
+- [ ] base64-batch : encode/décode base64/base64url de fichiers ou stdin (--decode, --url-safe, --wrap N, --check exit 2 CI, JSON)
+- [ ] csv-column-stats : stats numériques d'une colonne CSV (count/min/max/sum/mean/median/stdev, --column, --require-min-mean exit 2 CI, JSON)
+- [ ] env-diff-keys : compare deux fichiers .env (clés ajoutées/supprimées/modifiées, valeurs masquées, --require-identical-keys exit 2 CI, JSON)
+- [ ] text-vowel-ratio : ratio voyelles/consonnes d'un texte (par ligne et global, --require-min-ratio/--require-max-ratio exit 2 CI, JSON)
+
 ## Vague 403 — CLI Tools (comptage phrases texte, extraction URL, validation colonnes CSV, forme JSON canonique, trim lignes)
-- [ ] text-sentence-count : compte les phrases d'un texte (découpage heuristique . ! ?, stats mots/par phrase, --require-min/max exit 2 CI, JSON)
-- [ ] url-extract-domain : extrait host + domaine effectif (édicule TLD simple) des URLs en flux (--unique, --require-domain/--forbid-domain exit 2 CI, JSON)
-- [ ] csv-validate-columns : valide l'header CSV contre un schéma attendu (--require-cols, --forbid-cols, --order, --allow-extra, exit 2 CI, JSON)
-- [ ] json-canonical-form : écrit JSON en forme canonique (clés triées récursivement, floats normalisés, --compact, RFC 8785-like lite, --check exit 2 CI, JSON)
-- [ ] text-trim-lines : trim chaque ligne (gauche/droite/--both, chars custom, --collapse, --in-place, --check exit 2 CI, JSON)
+- [x] text-sentence-count : compte les phrases d'un texte (découpage heuristique . ! ?, stats mots/par phrase, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] url-extract-domain : extrait host + domaine effectif (édicule TLD simple) des URLs en flux (--unique, --require-domain/--forbid-domain exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-validate-columns : valide l'header CSV contre un schéma attendu (--require-cols, --forbid-cols, --order, --allow-extra, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-canonical-form : écrit JSON en forme canonique (clés triées récursivement, floats normalisés, --compact, RFC 8785-like lite, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-trim-lines : trim chaque ligne (gauche/droite/--both, chars custom, --collapse, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 402 — CLI Tools (comptage modifiés git, slug texte, top valeurs CSV, validation JSON, wrap texte)
 - [x] git-diff-stat-names : liste les fichiers modifiés entre deux refs git (+/- par fichier depuis git diff --numstat, --require-max-files/--require-max-changes exit 2 CI, JSON) ✓ 2026-08-02
