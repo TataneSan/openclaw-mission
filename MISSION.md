@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 565 — CLI Tools (texte normaliser ponctuation espaces avant/après, CSV extraire sous-ensemble N lignes stratifiées par clé, JSON compter valeurs types par chemin rapide, fichiers mtime futur vs passé vs 24h, texte transformer cases par ligne alternée)
+- [ ] text-normalize-punct-space : normalise espaces autour de ponctuation (!?,;:) FR style (espace avant doubles, pas avant simples, gates CI, --json)
+- [ ] csv-stratified-sample : échantillonne N lignes par valeur d'une colonne clé (--column, --per-key N, --seed, délimiteur sniffé, gates CI, --json)
+- [ ] json-types-at-path : types vus à chaque chemin d'un JSON/JSONL (string/number/bool/null/array/object, gates CI, --json)
+- [ ] file-age-classes : classe fichiers par tranche d'âge (<1h, <1d, <7d, <30d, plus ancien, gates CI, --json)
+- [ ] text-alternate-case-lines : met en majuscules les lignes paires et minuscules les impaires (ou inverse, gates CI, --json)
+
 ## Vague 564 — CLI Tools (texte trouver mots hors dictionnaire, CSV filtrer plages de valeurs numériques, JSON compter occurrences d'une valeur dans tous les chemins, fichiers taille totale et liste des dotfiles, texte inverser l'ordre des paragraphes)
-- [ ] text-spell-outliers : mots non présents dans une wordlist de référence (typo candidates, --min-length, gates CI, --json)
-- [ ] csv-numeric-range-filter : garde lignes dont colonne numérique entre MIN et MAX (--min/--max ouverts, nombres 1 234,56, gates CI, --json)
-- [ ] json-value-match-paths : liste les chemins ayant exactement une valeur donnée (récursif, JSONL, gates CI, --json)
-- [ ] file-dotfiles-report : inventaire des dotfiles d'un arbre (count, bytes, par type, gates CI, --json)
-- [ ] text-reverse-paragraphs : inverse l'ordre des paragraphes (séparés par lignes vides, gates CI, --json)
+- [x] text-spell-outliers : mots non présents dans une wordlist de référence (typo candidates, --min-length, gates CI, --json) ✓ 2026-08-03
+- [x] csv-numeric-range-filter : garde lignes dont colonne numérique entre MIN et MAX (--min/--max ouverts, nombres 1 234,56, gates CI, --json) ✓ 2026-08-03
+- [x] json-value-match-paths : liste les chemins ayant exactement une valeur donnée (récursif, JSONL, gates CI, --json) ✓ 2026-08-03
+- [x] file-dotfiles-report : inventaire des dotfiles d'un arbre (count, bytes, par type, gates CI, --json) ✓ 2026-08-03
+- [x] text-reverse-paragraphs : inverse l'ordre des paragraphes (séparés par lignes vides, gates CI, --json) ✓ 2026-08-03
 
 ## Vague 563 — CLI Tools (texte garder lignes contenant deux termes, CSV ajouter colonne longueur de valeur, JSON supprimer les clés qui commencent par un préfixe, fichiers diff entre deux arbres basé sur hash, texte collapse lignes avec séparateur custom)
 - [x] text-match-all-terms : garde lignes contenant TOUS les termes (-t TERM multiple, --any inverse, -i, gates CI, --json) ✓ 2026-08-03
