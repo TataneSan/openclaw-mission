@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 361 — CLI Tools (ARG Dockerfile, suppression colonnes CSV, comptage clés JSON, squeeze espaces, schemes URL)
+- [x] dockerfile-extract-arg : liste les ARG d'un Dockerfile (scope global + par stage, défauts, --names-only, --require-arg/--forbid-arg CI, JSON) ✓ 2026-08-02
+- [x] csv-delete-columns : supprime des colonnes d'un CSV (noms/indices, --no-header, --require-absent CI, JSON) ✓ 2026-08-02
+- [x] json-count-keys : compte les clés d'objets JSON récursivement (JSONL, --path avec *, --per-document, --require-min/max CI, JSON) ✓ 2026-08-02
+- [x] text-squeeze-spaces : réduit les répétitions d'espaces/tabs à un seul espace (indent préservée, --no-keep-indent, --strip-eol, --check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-scheme : extrait le scheme des URLs (lowercase, --scan texte libre, --unique/--count, --require-scheme/--forbid-scheme CI, JSON) ✓ 2026-08-02
+
 ## Vague 360 — CLI Tools (EXPOSE Dockerfile, garder colonnes CSV, clés objets JSON, reformatage lignes, ports URL)
 - [x] dockerfile-extract-expose : liste les ports EXPOSE d'un Dockerfile par stage (protocole tcp/udp, --forbid-udp/--require-port CI, JSON) ✓ 2026-08-02
 - [x] csv-keep-columns : ne garde que certaines colonnes d'un CSV (noms/indices, --drop inverse, --require-column CI, JSON) ✓ 2026-08-02
