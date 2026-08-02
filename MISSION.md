@@ -1,5 +1,10 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 568 — CLI Tools (texte rapport fins de ligne LF/CRLF/CR, fichiers histogramme extensions, CSV statistiques par colonne)
+- [x] text-line-ending-report : compte et normalise les fins de ligne (LF/CRLF/CR, --normalize avec --dry-run, gates require-style/forbid-mixed, --json) ✓ 2026-08-03
+- [x] file-extension-histogram : histogramme des extensions d'un arbre (count, bytes, barres ASCII, gates max-extensions/require-extension, --json) ✓ 2026-08-03
+- [x] csv-stats-summary : stats par colonne d'un CSV (numeric min/max/mean/median, text top value, gates require-numeric/max-empty-ratio, --json) ✓ 2026-08-03
+
 ## Vague 567 — CLI Tools (JSON convertisseur JSON<->YAML avec gates, CSV charger dans SQLite avec types inférés)
 - [x] json-yaml-convert : conversion bidirectionnelle JSON<->YAML (auto-detect, JSONL, gates require-keys/require-type/max-depth, --json) ✓ 2026-08-03
 - [x] csv-to-sqlite : charge un CSV en table SQLite (délimiteur sniffé, types INTEGER/REAL/TEXT inférés, gates require-rows/require-columns, --json) ✓ 2026-08-03
