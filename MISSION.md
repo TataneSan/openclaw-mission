@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 411 — CLI Tools (texte squeeze lignes vides, csv colonnes select, json longueur chemin, texte swap casse, hex encode)
+- [ ] text-squeeze-blank-lines : compresse les séries de lignes vides en une seule (--max, --in-place, --check exit 2 CI, JSON)
+- [ ] csv-select-columns : sélectionne/réordonne des colonnes d'un CSV (--columns, --exclude, --require-cols exit 2 CI, JSON)
+- [ ] json-path-value-length : longueur des strings à un chemin dot-path JSON (wildcard *, min/max/avg, --require-max exit 2 CI, JSON)
+- [ ] text-swap-case : inverse la casse d'un texte (tout ou --words-only, --in-place, --check exit 2 CI, JSON)
+- [ ] hex-encode-binary : encode binaire/stdin en hex (--upper, --0x-prefix, alignement --group, --check exit 2 CI, JSON)
+
 ## Vague 410 — CLI Tools (csv dédup lignes, texte acronymes, json profondeur moyenne, uuid génère/valide, texte censures e-mail)
-- [ ] csv-dedupe-rows : supprime les lignes dupliquées d'un CSV (--key cols partielles, --keep first/last, --require-max-dupes exit 2 CI, JSON)
-- [ ] text-extract-acronyms : extrait les acronymes ALL-CAPS d'un texte (--min-length, avec comptes, --require-min exit 2 CI, JSON)
-- [ ] json-avg-depth : profondeur moyenne/max des feuilles d'un JSON (par branche, --require-max-depth exit 2 CI, JSON)
-- [ ] uuid-tool : génère/valide des UUID (v4 aléatoire, v5 nommé, --count, --validate, --namespace, exit 2 CI, JSON)
-- [ ] text-redact-emails : masque les adresses e-mail dans un texte (--domain-only, --keep-first, --require-redactions exit 2 CI, JSON)
+- [x] csv-dedupe-rows : supprime les lignes dupliquées d'un CSV (--key cols partielles, --keep first/last, --require-max-dupes exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-acronyms : extrait les acronymes ALL-CAPS d'un texte (--min-length, avec comptes, --require-min exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-avg-depth : profondeur moyenne/max des feuilles d'un JSON (par branche, --require-max-depth exit 2 CI, JSON) ✓ 2026-08-02
+- [x] uuid-tool : génère/valide des UUID (v4 aléatoire, v5 nommé, --count, --validate, --namespace, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-redact-emails : masque les adresses e-mail dans un texte (--domain-only, --keep-first, --require-redactions exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 409 — CLI Tools (texte lignes plus longues, csv lignes jointes, json trie clés, base32 encode, texte compte ponctuation)
 - [x] text-longest-lines : extrait les N lignes les plus longues d'un texte (--top, --min-length, --require-max-length exit 2 CI, JSON) ✓ 2026-08-02
