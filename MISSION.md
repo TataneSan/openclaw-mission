@@ -8,6 +8,14 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 367 — CLI Tools (ADD Dockerfile, STOPSIGNAL Dockerfile, ONBUILD Dockerfile, inversion JSON, snake→kebab, valeurs dotenv)
+- [x] dockerfile-extract-add : liste les ADD d'un Dockerfile par stage (flags --checksum/--chown, exec/shell form, --flags-only, --forbid-add/--require-add/--forbid-remote/--forbid-checksum-missing CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-extract-stopsignal : extrait le STOPSIGNAL effectif par stage (last-wins, défaut SIGTERM, noms/numéros, --final-only, --require-signal/--forbid-default/--forbid-invalid CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-extract-onbuild : liste les triggers ONBUILD par stage (détection triggers invalides FROM/ONBUILD/MAINTAINER, --keywords-only, --forbid-chaining CI, JSON) ✓ 2026-08-02
+- [x] json-invert-key-values : inverse un objet JSON plat (clés↔valeurs, politiques de collision error/first/last, JSONL, --require-colision-free CI, compact/indent) ✓ 2026-08-02
+- [x] text-snake-to-kebab : convertit snake_case en kebab-case par ligne (mode token/whole-line, --lower, filtres regex, --in-place, --check CI, JSON) ✓ 2026-08-02
+- [x] env-list-values : liste les valeurs d'un dotenv (export/quotes, --pairs, --mask/--mask-full, --sort/--unique, --require-value/--forbid-empty/min/max CI, JSON) ✓ 2026-08-02
+
 ## Vague 366 — CLI Tools (moyenne colonne CSV, delete valeur JSON, swap case lignes, HEALTHCHECK Dockerfile, listing clés dotenv)
 - [x] csv-mean-column : moyenne arithmétique d'une colonne numérique CSV (nom/index, délimiteur custom/échappements, --all-rows, --decimals, --require-min/max CI, JSON) ✓ 2026-08-02
 - [x] json-delete-value : supprime la valeur à un dot-path JSON/JSONL (indices négatifs, auto-detect JSONL, --compact/--in-place, --require-present CI, JSON) ✓ 2026-08-02
