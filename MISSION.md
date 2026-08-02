@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 559 — CLI Tools (texte supprimer lignes dupliquées non adjacentes en gardant dernière occurrence, CSV compter valeurs matchant regex par colonne, JSON extraire toutes les clés d'un niveau donné, fichiers plus récents vs plus anciens paires même stem, texte convertir espaces en tabs indentation)
+- [ ] text-dedupe-keep-last : supprime les doublons en gardant la DERNIERE occurrence (ordre préservé, --ignore-case, gates CI, --json)
+- [ ] csv-regex-match-count : compte les cellules matchant une regex par colonne (délimiteur sniffé, --columns, gates CI, --json)
+- [ ] json-keys-at-depth : liste les clés présentes à une profondeur exacte (--depth N, --unique, gates CI, --json)
+- [ ] file-stem-newest-oldest : paires de fichiers de même stem (extensions différentes) : plus récent vs plus ancien (--max-age-diff, gates CI, --json)
+- [ ] text-spaces-to-tabs : convertit l'indentation espaces en tabulations (--width N, --all aussi inline, gates CI, --json)
+
 ## Vague 558 — CLI Tools (texte convertir tabs en espaces, CSV supprimer lignes contenant une valeur interdite, JSON compter clés par préfixe, fichiers doublons par hash MD5 des 4 premiers Ko, texte compter occurrences d'un motif regex)
-- [ ] text-tabs-to-spaces : convertit les tabulations en espaces (--width N, --keep-leading seulement indentation, gates CI, --json)
-- [ ] csv-filter-out-values : supprime les lignes dont une colonne vaut une valeur de la liste (délimiteur sniffé, gates CI, --json)
-- [ ] json-count-keys-by-prefix : compte les clés par préfixe/namespace (séparateur :, top-N, gates CI, --json)
-- [ ] file-same-prefix-hash : groupe les fichiers partageant le hash de leurs N premiers octets (--head-bytes, gates CI, --json)
-- [ ] text-regex-count : compte les occurrences d'un motif regex par ligne et total (--ignore-case, gates CI, --json)
+- [x] text-tabs-to-spaces : convertit les tabulations en espaces (--width N, --keep-leading seulement indentation, gates CI, --json) ✓ 2026-08-03 (existant)
+- [x] csv-filter-out-values : supprime les lignes dont une colonne vaut une valeur de la liste (délimiteur sniffé, gates CI, --json) ✓ 2026-08-03 (existant)
+- [x] json-count-keys-by-prefix : compte les clés par préfixe/namespace (séparateur :, top-N, gates CI, --json) ✓ 2026-08-03 (existant)
+- [x] file-same-prefix-hash : groupe les fichiers partageant le hash de leurs N premiers octets (--head-bytes, gates CI, --json) ✓ 2026-08-03 (existant)
+- [x] text-regex-count : compte les occurrences d'un motif regex par ligne et total (--ignore-case, gates CI, --json) ✓ 2026-08-03 (existant)
 
 ## Vague 557 — CLI Tools (texte wrap lignes à N colonnes avec continuation, CSV compter cellules vides par colonne, JSON extraire valeurs numériques et stats min/max/moyenne, fichiers trouver noms contenant caractères non-ASCII, texte surligner lignes dépassant N caractères par numéro)
 - [x] text-wrap-lines : replie les lignes longues à N colonnes (--indent continuation, --break-long-words, gates CI, --json) ✓ 2026-08-03 (existant)
