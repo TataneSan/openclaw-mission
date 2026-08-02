@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 442 — CLI Tools (csv mapping header→index, supprime lignes congruence, extrait accolades équilibrées, profil whitespace, fenêtres contexte grep)
+- [x] csv-header-index-map : mappe les en-têtes CSV vers leurs indices colonnes (1-based/--zero-based, --invert, --delimiter, --only/--require-column répétables exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-delete-nth-line : supprime les lignes par congruence (i-offset) mod n (--every/--offset, --list, --in-place, --keep-blank, --check/--require-drops exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-braces : extrait les segments entre accolades équilibrées (pile réelle, --innermost/--outermost, --strip/--with-delim/--lines, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-whitespace-profile : profile le whitespace d'un texte (indent espaces/tabs/mixte, trailing, vides, stats largeurs, --require-indent-unit/no-tabs/no-trailing/max-mixed exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-window-lines : fenêtres de contexte glissantes autour de matchs regex (-B/-A/-C, fusion fenêtres, -n/-i/-v, --require-matches/none exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 441 — CLI Tools (csv garde colonnes par plages, garde lignes congruence, extrait parenthèses équilibrées, expansion ~ utilisateurs, compte caractères par ligne)
 - [x] csv-slice-columns : garde un sous-ensemble de colonnes CSV par noms et/ou plages d'indices 1-based (négatifs, A-B / A:B, --invert, --require-columns/--check exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-keep-nth-line : garde les lignes par congruence (i-offset) mod n (--every/--offset, --sample, --invert, --require-matches/--check exit 2 CI, JSON) ✓ 2026-08-02
