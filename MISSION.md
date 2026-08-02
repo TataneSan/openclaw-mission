@@ -21,12 +21,19 @@
 - [x] file-future-mtime : liste les fichiers dont la mtime est dans le futur (--grace seconds, walk, gates CI, --json) ✓ 2026-08-02
 - [x] text-sort-by-length : trie les lignes par longueur (chars/words/bytes, asc/desc, --stable, ties alpha, gates CI, --json) ✓ 2026-08-01 (existant)
 
+## Vague 538 — CLI Tools (CSV transposer, JSON lister types par chemin, texte suggestion de kebab-case, fichiers arborescence texte, texte compter voyelles)
+- [ ] csv-transpose : transpose un CSV (lignes <-> colonnes, --no-header, délimiteur sniffé, gates CI, --json)
+- [ ] json-type-per-path : liste le type de chaque valeur par chemin (récursif, JSONL, histogramme, gates CI, --json)
+- [ ] text-to-kebab-case : convertit un texte en kebab-case (mots, Unicode, --preview, gates CI, --json)
+- [ ] file-tree-view : affiche l'arborescence ASCII d'un dossier (├── └──, --depth, --exclude, gates CI, --json)
+- [ ] text-vowel-count : compte voyelles/consonnes d'un texte (Unicode, par ligne ou total, gates CI, --json)
+
 ## Vague 537 — CLI Tools (CSV moyenne colonne, JSON compter booléens, texte compter mots uniques par ligne, fichiers taille 0 par extension, texte intervertir lignes paires/impaires)
-- [ ] csv-column-average : calcule min/max/moyenne/médiane d'une colonne numérique (nombres 1 234,56, délimiteur sniffé, gates CI, --json)
-- [ ] json-bool-count : compte les true/false par chemin dans des documents JSON (récursif, JSONL, gates CI, --json)
-- [ ] text-unique-words-per-line : rapporte le nombre de mots uniques par ligne (casefold, ratio, gates CI, --json)
-- [ ] file-empty-by-extension : liste les fichiers de 0 octet regroupés par extension (walk, --delete, --dry-run, gates CI, --json)
-- [ ] text-interleave-lines : intercale les lignes de deux fichiers (alterné, --ratio 2:1, prefix, gates CI, --json)
+- [x] csv-column-average : calcule min/max/moyenne/médiane d'une colonne numérique (nombres 1 234,56, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] json-bool-count : compte les true/false par chemin dans des documents JSON (récursif, JSONL, gates CI, --json) ✓ 2026-08-02
+- [x] text-unique-words-per-line : rapporte le nombre de mots uniques par ligne (casefold, ratio, gates CI, --json) ✓ 2026-08-02
+- [x] file-empty-by-extension : liste les fichiers de 0 octet regroupés par extension (walk, --delete, --dry-run, gates CI, --json) ✓ 2026-08-02
+- [x] text-interleave-lines : intercale les lignes de deux fichiers (alterné, --ratio 2:1, prefix, gates CI, --json) ✓ 2026-08-02 (existant)
 
 ## Vague 536 — CLI Tools (CSV pivot simple, JSON profondeur max, texte compter chars distincts, fichiers extension manquante shebang, texte supprimer accents)
 - [x] csv-pivot-count : pivot table de comptage entre deux colonnes (lignes x colonnes, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
