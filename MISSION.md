@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 526 — CLI Tools (CSV garder colonnes, extraire URLs texte, JSON count valeurs par clé, fichiers plus récents par extension, swap case texte)
+- [ ] csv-keep-columns : garde seulement les colonnes listées d'un CSV (noms/indices négatifs, --strict, --no-header, délimiteur sniffé, gates CI, --json)
+- [ ] text-extract-urls : extrait les URLs d'un texte (http/https/ftp, --unique, --sort, --domain-only, gates CI, --json)
+- [ ] json-value-frequencies : fréquence des valeurs d'une clé à travers des documents JSON (chemins dot, JSONL, top-N, gates CI, --json)
+- [ ] file-newest-per-extension : trouve le fichier le plus récent pour chaque extension d'un arbre (barres, gates CI, --json)
+- [ ] text-swap-case : inverse la casse de chaque caractère alphabétique (Unicode aware, --words-only, gates CI, --json)
+
 ## Vague 525 — CLI Tools (CSV filtre lignes vide, comptage mots JSON, normalisation espaces JSON, rapport taille fichiers par extension, suppression doublons texte)
-- [ ] csv-drop-empty-columns : supprime les colonnes entièrement vides d'un CSV (toutes cellules blanches, --trim, délimiteur sniffé, gates CI, --json)
-- [ ] json-word-count : compte les mots contenus dans toutes les chaînes d'un JSON (récursif, par chemin, top-N, gates CI, --json)
-- [ ] json-normalize-space : normalise les espaces dans les chaînes JSON (collapse, strip, trim, récursif, gates CI, --json)
-- [ ] file-size-by-extension : rapport taille totale/moyenne par extension (barres ASCII, --top, gates CI, --json)
-- [ ] text-dedupe-non-adjacent : supprime les doublons non-adjacents en préservant l'ordre first-seen (Unicode casefold, --strip, gates CI, --json)
+- [x] csv-drop-empty-columns : supprime les colonnes entièrement vides d'un CSV (toutes cellules blanches, --trim, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] json-word-count : compte les mots contenus dans toutes les chaînes d'un JSON (récursif, par chemin, top-N, gates CI, --json) ✓ 2026-08-02
+- [x] json-normalize-space : normalise les espaces dans les chaînes JSON (collapse, strip, trim, récursif, gates CI, --json) ✓ 2026-08-02
+- [x] file-size-by-extension : rapport taille totale/moyenne par extension (barres ASCII, --top, gates CI, --json) ✓ 2026-08-02
+- [x] text-dedupe-non-adjacent : supprime les doublons non-adjacents en préservant l'ordre first-seen (Unicode casefold, --strip, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 524 — CLI Tools (drop lignes vides CSV, comptage caractères répétés, merge JSON shallow, doublons hash fichiers eslint, mise en minus first)
 - [x] csv-drop-blank-rows : supprime les lignes entièrement vides d'un CSV (toutes cellules blanches, --trim, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
