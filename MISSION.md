@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 352 — CLI Tools (lignes vides CSV, champ index JSON, compte mots, ancre URL, stages Dockerfile)
+- [x] csv-count-empty-rows : rapport lignes vides et cellules vides d'un CSV (par colonne, --check CI, JSON) ✓ 2026-08-02
+- [x] json-add-index-field : ajoute un champ index auto-incrémenté à chaque objet d'un array JSON ou flux JSONL (--start/--step, fallback JSONL, --check CI, JSON) ✓ 2026-08-02
+- [x] text-word-count-report : compte les mots par ligne et au total (stats min/max/moyenne, histogramme, --top, --check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-anchor : extrait le fragment (ancre) des URLs d'un flux ou texte libre (--scan, --unique, stats top ancres, --check CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-parse-stages : parse les stages d'un Dockerfile multi-stage (base, COPY --from, EXPOSE, ENTRYPOINT, --check-stages CI, JSON) — Go ✓ 2026-08-02
+
 ## Vague 238 — CLI Tools (à définir)
 - [x] csv-column-stats : statistiques numériques par colonne CSV (min/max/mean/median, colonnes ciblées, --check CI, JSON) ✓ 2026-08-01
 - [x] json-diff-patch : génère un patch JSON (RFC 6902-like simplifié) entre deux documents (--apply, --check CI, JSON) ✓ 2026-08-01
