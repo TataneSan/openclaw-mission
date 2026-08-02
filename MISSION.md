@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 450 — CLI Tools (fichiers vides, renommage séquentiel, hash multi-algos CSV, inventaire Unicode, bench lecture disque)
+- [x] file-zero-byte-report : rapporte les fichiers de 0 octet dans une arborescence (filtres regex, --skip-dir, --delete/--dry-run, gates --require-none/min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] file-rename-sequential : renomme des fichiers en séquence numérotée (prefix/suffix/digits/start/step, tri name/mtime, dry-run par défaut, renommage 2 phases anti-collision, --check/--require-renames exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-multihash : hash les lignes/colonnes d'un CSV en multi-algorithmes (md5/sha1/sha256/blake2b, --columns, --key-column, --whole-file, --check-duplicate-rows exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-unicode-name-report : inventaire Unicode des caractères d'un texte (codepoint/nom/catégorie/combining, --summary, tris, gates --require-ascii/--require-category/--forbid-category exit 2 CI, JSON) ✓ 2026-08-02
+- [x] file-read-speed : mesure le débit de lecture de fichiers (sequential/lines/random, --chunk-size/--runs/--seed, cache-drop hint, --min-mbps exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 449 — CLI Tools (JSON union, indentation audit, dotenv→TypeScript, CSV⇄JSONL round-trip, comptage commentaires)
 - [x] json-array-merge-union : fusionne des arrays JSON en union stable dédupliquée (par identité ou --key dot-path, JSONL, gates CI, --stats/--json) ✓ 2026-08-02
 - [x] text-space-indent-check : audite l'indentation d'un texte (tabs / mix / largeur impaire, --require-uniform, --json, exit 2 CI) ✓ 2026-08-02
