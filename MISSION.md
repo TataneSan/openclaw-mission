@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 354 — CLI Tools (premières lignes CSV, nombres JSON, chomp lignes vides, casse path URL, CMD Dockerfile)
+- [x] csv-remove-first-rows : retire les N premières lignes de données d'un CSV (header conservé, --no-header, --check CI, JSON) ✓ 2026-08-02
+- [x] json-normalize-numbers : normalise les floats d'un JSON/JSONL (round --decimals, --strip-trailing 2.0→2, auto-detect JSONL, --check CI, JSON) ✓ 2026-08-02
+- [x] text-chomp-lines : retire les lignes vides finales d'un texte (--keep N, --no-newline, --in-place, --check CI, JSON) ✓ 2026-08-02
+- [x] url-normalize-path-case : met le path des URLs en minuscules (query/fragment préservés, --scan texte libre, --check CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-extract-cmd : extrait le CMD effectif par stage d'un Dockerfile (formes exec/shell, last-CMD-wins, continuations, --check CI, JSON) ✓ 2026-08-02
+
 ## Vague 353 — CLI Tools (trim cellules CSV, champ fixe JSON, lignes répétées, slash final URL, ENV Dockerfile)
 - [x] csv-trim-cells : retire les espaces début/fin des cellules d'un CSV (colonnes ciblées, --report, --check CI, JSON) ✓ 2026-08-02 (repo pré-existant, contenu synchronisé)
 - [x] json-append-field : ajoute une clé fixe k=v à chaque objet JSON d'un flux JSONL (types auto, --overwrite, --check CI, JSON) ✓ 2026-08-02
