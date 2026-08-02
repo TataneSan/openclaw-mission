@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 546 — CLI Tools (texte compter émojis, CSV joindre deux fichiers sur une clé, JSON profondeur histogramme, fichiers plus gros que N Mo, texte extraire lignes sans voyelles)
+- [ ] text-emoji-count : compte les émojis d'un texte (par émoji, top-N, gates CI, --json)
+- [ ] csv-join : jointure de deux CSV sur une colonne clé (inner/left, délimiteur sniffé, gates CI, --json)
+- [ ] json-depth-histogram : histogramme des profondeurs de clés d'un JSON (barres, gates CI, --json)
+- [ ] file-larger-than : liste les fichiers plus gros que N octets (unités K/M/G, --top, gates CI, --json)
+- [ ] text-vowel-less-lines : extrait les lignes sans voyelles (aeiouy option, gates CI, --json)
+
 ## Vague 545 — CLI Tools (texte inverser caractères par ligne, CSV extraire dernières N lignes, JSON liste clés triées par nom, fichiers doublons par nom dans l'arbre, texte ratio lignes commentées)
-- [ ] text-reverse-chars : inverse les caractères de chaque ligne (préserve indentation option, gates CI, --json)
-- [ ] csv-tail-rows : extrait les N dernières lignes d'un CSV (--keep-header, délimiteur sniffé, gates CI, --json)
-- [ ] json-keys-sorted : liste toutes les clés d'un JSON triées alphabétiquement (récursif, comptage d'occurrence, gates CI, --json)
-- [ ] file-duplicate-basenames : détecte les fichiers partageant le même nom dans l'arbre (groupes, gates CI, --json)
-- [ ] text-comment-ratio : rapporte le ratio de lignes commentées (#, //, /* * détection simple, gates CI, --json)
+- [x] text-reverse-chars : inverse les caractères de chaque ligne (préserve indentation option, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] csv-tail-rows : extrait les N dernières lignes d'un CSV (--keep-header, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] json-keys-sorted : liste toutes les clés d'un JSON triées alphabétiquement (récursif, comptage d'occurrence, gates CI, --json) ✓ 2026-08-02
+- [x] file-duplicate-basenames : détecte les fichiers partageant le même nom dans l'arbre (groupes, gates CI, --json) ✓ 2026-08-02
+- [x] text-comment-ratio : rapporte le ratio de lignes commentées (#, //, /* */ blocks, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 544 — CLI Tools (texte extraire URLs uniques, CSV rajouter numéro de ligne, JSON compter valeurs distinctes d'une clé, fichiers taille totale par extension, texte collapse espaces multiples)
 - [x] text-extract-urls : extrait les URLs http(s) d'un texte (domaine, --unique, --sort, gates CI, --json) ✓ 2026-08-02 (existant)
