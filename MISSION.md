@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 383 — CLI Tools (comptage types JSON, doublons CSV, HEALTHCHECK requis, strip markdown, validation clés dotenv)
+- [x] json-count-type-values : compte les valeurs d'un type JSON récursivement (mode all, JSONL, --require-min/max CI, JSON) ✓ 2026-08-02
+- [x] csv-detect-duplicate-rows : détecte les lignes dupliquées d'un CSV (--columns nom/index, --ignore-case/--trim, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-check-healthcheck : exige un HEALTHCHECK par stage (--all-stages, --forbid-none, --require-cmd, --max-interval/timeout, --min-retries, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-strip-markdown : retire la syntaxe Markdown (titres, liens, emphase, listes, code, blockquote, HR, --keep-urls, --strip-html, --in-place, --check CI, JSON) ✓ 2026-08-02
+- [x] env-validate-keys : valide les noms de clés dotenv (format, conventions upper/lower-snake/camel, préfixes, doublons, valeurs jamais affichées, exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 382 — CLI Tools (dédoublonnage JSON, tri JSON, inversion CSV, ADD interdit Dockerfile, COPY best practices Dockerfile)
 - [x] json-dedupe-array : déduplique un tableau JSON en préservant l'ordre d'apparition (comparaison par forme canonique, JSONL, --sort, --check exit 2 CI, JSON) ✓ 2026-08-02
 - [x] json-sort-array : trie les items d'un tableau JSON (ordre naturel, --key dot-path, --reverse, JSONL, --check exit 2 CI, JSON) ✓ 2026-08-02
