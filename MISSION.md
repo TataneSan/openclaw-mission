@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 527 — CLI Tools (CSV renverser colonnes, JSON compter clés par type, texte extraire emails, fichiers sans extension, texte longueur moyenne phrase)
+- [ ] csv-reverse-column-order : inverse l'ordre des colonnes d'un CSV (--no-header, délimiteur sniffé, gates CI, --json)
+- [ ] json-key-type-count : compte les clés par type de valeur (string/number/bool/null/object/array, récursif, JSONL, gates CI, --json)
+- [ ] text-extract-emails : extrait les adresses email d'un texte (RC 5322 simplifiée, --unique, --sort, --domain-only, gates CI, --json)
+- [ ] file-no-extension-report : liste les fichiers sans extension d'un arbre (détecte shebang/MIME approx, --counts, gates CI, --json)
+- [ ] text-avg-sentence-length : calcule la longueur moyenne des phrases (mots/paragraphe, histogramme, gates CI, --json)
+
 ## Vague 526 — CLI Tools (CSV garder colonnes, extraire URLs texte, JSON count valeurs par clé, fichiers plus récents par extension, swap case texte)
-- [ ] csv-keep-columns : garde seulement les colonnes listées d'un CSV (noms/indices négatifs, --strict, --no-header, délimiteur sniffé, gates CI, --json)
-- [ ] text-extract-urls : extrait les URLs d'un texte (http/https/ftp, --unique, --sort, --domain-only, gates CI, --json)
-- [ ] json-value-frequencies : fréquence des valeurs d'une clé à travers des documents JSON (chemins dot, JSONL, top-N, gates CI, --json)
-- [ ] file-newest-per-extension : trouve le fichier le plus récent pour chaque extension d'un arbre (barres, gates CI, --json)
-- [ ] text-swap-case : inverse la casse de chaque caractère alphabétique (Unicode aware, --words-only, gates CI, --json)
+- [x] csv-keep-columns : garde seulement les colonnes listées d'un CSV (noms/indices négatifs, --strict, --no-header, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] text-extract-urls : extrait les URLs d'un texte (http/https/ftp, --unique, --sort, --domain-only, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] json-value-frequencies : fréquence des valeurs d'une clé à travers des documents JSON (chemins dot, JSONL, top-N, gates CI, --json) ✓ 2026-08-02
+- [x] file-newest-per-extension : trouve le fichier le plus récent pour chaque extension d'un arbre (barres, gates CI, --json) ✓ 2026-08-02
+- [x] text-swap-case : inverse la casse de chaque caractère alphabétique (Unicode aware, --words-only, gates CI, --json) ✓ 2026-08-02 (existant)
 
 ## Vague 525 — CLI Tools (CSV filtre lignes vide, comptage mots JSON, normalisation espaces JSON, rapport taille fichiers par extension, suppression doublons texte)
 - [x] csv-drop-empty-columns : supprime les colonnes entièrement vides d'un CSV (toutes cellules blanches, --trim, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
