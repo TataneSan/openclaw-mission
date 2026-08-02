@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 529 — CLI Tools (CSV compter occurrences valeur, JSON extraire chemins clés, texte comptage mentions @user, fichiers vides, texte indent to JSON)
+- [ ] csv-value-count : compte les occurrences d'une valeur donnée dans une colonne CSV (délimiteur sniffé, --exact/--contains, gates CI, --json)
+- [ ] json-paths-list : liste tous les chemins clés d'un JSON (récursif, --depth, --type, gates CI, --json)
+- [ ] text-mention-count : compte les mentions @user d'un texte (Unicode, top-N, --group-by-domain, gates CI, --json)
+- [ ] file-empty-files-report : liste les fichiers vides (0 byte) d'une arborescence (--delete, --dry-run, gates CI, --json)
+- [ ] text-indent-to-json : convertit une arborescence indentée en JSON (2/4 espaces, tabs, gates CI, --json)
+
 ## Vague 528 — CLI Tools (CSV ajouter colonne numéro de ligne, JSON stringify profond, texte comptage hashtags, fichiers dotfiles, texte cassage camelCase)
-- [ ] csv-add-row-number : ajoute une colonne numéro de ligne à un CSV (--start N, --name, --no-header, délimiteur sniffé, gates CI, --json)
-- [ ] json-stringify-values : convertit toutes les valeurs non-chaînes en chaînes (récursif, --only-types, gates CI, --json)
-- [ ] text-hashtag-count : compte les hashtags #tag d'un texte (Unicode, top-N, --min-count, gates CI, --json)
-- [ ] file-dotfile-report : rapport sur les dotfiles/dotdirs d'une arborescence (par type, taille, gates CI, --json)
-- [ ] text-camel-to-snake : convertit camelCase/PascalCase en snake_case (acronymes, digits, gates CI, --json)
+- [x] csv-add-row-number : ajoute une colonne numéro de ligne à un CSV (--start N, --name, --no-header, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] json-stringify-values : convertit toutes les valeurs non-chaînes en chaînes (récursif, --only-types, gates CI, --json) ✓ 2026-08-02
+- [x] text-hashtag-count : compte les hashtags #tag d'un texte (Unicode, top-N, --min-count, gates CI, --json) ✓ 2026-08-02
+- [x] file-dotfile-report : rapport sur les dotfiles/dotdirs d'une arborescence (par type, taille, gates CI, --json) ✓ 2026-08-02
+- [x] text-camel-to-snake : convertit camelCase/PascalCase en snake_case (acronymes, digits, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 527 — CLI Tools (CSV renverser colonnes, JSON compter clés par type, texte extraire emails, fichiers sans extension, texte longueur moyenne phrase)
 - [x] csv-reverse-column-order : inverse l'ordre des colonnes d'un CSV (--no-header, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
