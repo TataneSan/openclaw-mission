@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 437 — CLI Tools (texte extrait SemVer, texte extrait IBAN mod-97, validateur cron 5 champs, fusion profonde JSON, score force mot de passe)
+- [x] text-extract-semver : extrait les versions SemVer 2.0.0 d'un texte (pré-release/build, --unique/--counts/--sort précédence, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-iban : extrait et valide les IBAN ISO 13616 (mod-97, longueurs pays registre, formes espacées, --country, --with-invalid, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] cron-validate : valide des expressions cron 5 champs ligne par ligne (plages/listes/pas, noms JAN..DEC MON..SUN, --describe, --require-min/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-deep-merge : fusionne profondément plusieurs JSON (objets récursifs, stratégies arrays replace/concat/union, --check exit 2 CI, --compact, -o) ✓ 2026-08-02
+- [x] password-strength : score la force de mots de passe 0-100 (heuristique locale, --min-score exit 2 CI, --feedback, --file/stdin, JSON) ✓ 2026-08-02
+
 ## Vague 436 — CLI Tools (texte extrait hostnames RFC1034, data URIs décodées, Accept-Language q-values, templates URI RFC6570, codes SWIFT/BIC ISO9362)
 - [x] text-extract-hostnames : extrait les hostnames RFC 1034/1035 d'un texte (filtre --tld, --lowercase, --apex, --unique/--counts, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-extract-data-uri : extrait et décode les data: URIs RFC 2397 (base64/percent, --mime-filter, --decode brut, --require-max-bytes/min/max/none exit 2 CI, JSON) ✓ 2026-08-02
