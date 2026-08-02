@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 392 — CLI Tools (rotation CSV, nulls JSON, tabs→espaces, casse clés dotenv, commentaires YAML)
+- [x] csv-rotate-columns : décale les colonnes d'un CSV vers la gauche/droite (header compris ou --keep-header, --left N/--right N, --delimiter, --check --reference exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-count-null : compte les valeurs null récursivement (--path dot-path avec wildcard *, JSONL, --list-paths, --require-max/--require-zero exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-tabs-to-spaces : convertit les tabulations en espaces avec vrais tab stops (--width N, --leading-only, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-key-casing : lint la casse des clés dotenv (7 styles, whitelist exacte/préfixe/regex, --require-max-violations tolérance CI, --list-styles, valeurs jamais affichées, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] yaml-strip-comments : retire les commentaires d'un YAML en préservant les # dans les strings (quoting simple/double avec échappements '' et \", séparation whitespace requise, --keep-blank, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 391 — CLI Tools (BOM texte, checksum lignes CSV, casse clés JSON, ARG avant FROM, trim valeurs dotenv)
 - [x] text-detect-bom : détecte et strip les BOM (UTF-8/16/32 LE/BE, UTF-7), multi-fichiers/stdin, --require-none/--require ENCODING exit 2 CI, --strip in-place, JSON ✓ 2026-08-02
 - [x] csv-row-checksum : calcule et vérifie un checksum par ligne CSV (tous algos hashlib, --exclude colonnes volatiles, --standalone, --check-column anti-tampering exit 2 CI, JSON) ✓ 2026-08-02
