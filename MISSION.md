@@ -1,5 +1,8 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 398 — CLI Tools (score lisibilité texte)
+- [x] text-readability-checker : score de lisibilité heuristique (Flesch Reading Ease, Flesch-Kincaid Grade, SMOG, stats phrases/mots/syllabes, --require-readability/--max-grade/--max-sentence-length/--complex-pct exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 397 — CLI Tools (audit quoting CSV, stats longueur mots, tri dotenv, valeurs vides YAML, escapes JSON, ENV Dockerfile, messages commit)
 - [x] csv-detect-quoted-fields : audit le quoting des champs CSV (re-lexing RFC 4180, cellules quoted/needs_quotes/unquoted_special, --require-quoted-columns, --check exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-median-word-length : distribution des longueurs de mots (min/max/mean/median/mode, histogramme ASCII, Unicode, --require-median/mean-min/max exit 2 CI, JSON) ✓ 2026-08-02
