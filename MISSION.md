@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 557 — CLI Tools (texte wrap lignes à N colonnes avec continuation, CSV compter cellules vides par colonne, JSON extraire valeurs numériques et stats min/max/moyenne, fichiers trouver noms contenant caractères non-ASCII, texte surligner lignes dépassant N caractères par numéro)
+- [ ] text-wrap-lines : replie les lignes longues à N colonnes (--indent continuation, --break-long-words, gates CI, --json)
+- [ ] csv-empty-cells : compte les cellules vides par colonne et par ligne (délimiteur sniffé, gates CI, --json)
+- [ ] json-numeric-stats : collecte toutes les valeurs numériques d'un JSON (min/max/moyenne/médiane, par chemin option, gates CI, --json)
+- [ ] file-non-ascii-names : liste les fichiers/dossiers dont le nom contient des caractères non-ASCII (gates CI, --json)
+- [ ] text-long-line-numbers : affiche les numéros et longueurs des lignes dépassant N caractères (gates CI, --json)
+
 ## Vague 556 — CLI Tools (texte supprimer préfixe commun de toutes les lignes, CSV détecter colonnes monotones croissantes, JSON vérifier schéma minimal clés requises via JSONL, fichiers compter par profondeur de dossier, texte justifier à droite)
-- [ ] text-strip-common-prefix : détecte et retire le préfixe commun de toutes les lignes (--min-len, gates CI, --json)
-- [ ] csv-monotonic-columns : détecte les colonnes numériques strictement/non strictement monotones (délimiteur sniffé, gates CI, --json)
-- [ ] json-required-keys : vérifie que chaque objet JSON/JSONL possède les clés requises (chemin array, gates CI, --json)
-- [ ] file-count-by-depth : compte les fichiers par profondeur relative dans l'arbre (barres, gates CI, --json)
-- [ ] text-right-justify : justifie chaque ligne à droite sur la largeur max (ou --width, gates CI, --json)
+- [x] text-strip-common-prefix : détecte et retire le préfixe commun de toutes les lignes (--min-len, gates CI, --json) ✓ 2026-08-03
+- [x] csv-monotonic-columns : détecte les colonnes numériques strictement/non strictement monotones (délimiteur sniffé, gates CI, --json) ✓ 2026-08-03
+- [x] json-required-keys : vérifie que chaque objet JSON/JSONL possède les clés requises (chemin array, gates CI, --json) ✓ 2026-08-03 (existant)
+- [x] file-count-by-depth : compte les fichiers par profondeur relative dans l'arbre (barres, gates CI, --json) ✓ 2026-08-03
+- [x] text-right-justify : justifie chaque ligne à droite sur la largeur max (ou --width, gates CI, --json) ✓ 2026-08-03
 
 ## Vague 555 — CLI Tools (texte compter mots par ligne, CSV transposer lignes/colonnes, JSON strip clés à valeur null, fichiers extensions sans fichier associé dans l'arbre, texte extraire hashtags)
 - [x] text-words-per-line : compte les mots de chaque ligne (min/max gates, --histogram, gates CI, --json) ✓ 2026-08-03 (existant)
