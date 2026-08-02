@@ -1,5 +1,10 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 507 — CLI Tools (titres Markdown, JSONL pretty-print, noms fichiers dupliqués)
+- [x] markdown-heading-extract : extrait les titres Markdown ATX et Setext (niveau, ligne, style, skip code fences, --tree hiérarchique, --list, gates require-min/max/level/text exit 2 CI, stdin, --json) ✓ 2026-08-02
+- [x] jsonl-pretty-print : pretty-print JSONL (indent custom, --compact, --color ANSI, --sort-keys, --keys filtres dot paths, --line-prefix, --skip-invalid/--stop-on-error, gates require-min/max/key exit 2 CI, --json summary) ✓ 2026-08-02
+- [x] file-dup-name-report : repère fichiers de même nom dans une arborescence (--ignore-case, --include-hidden, --max-depth, --min-count, tri count/name/size, gates require-none/min-groups/max-groups exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 506 — CLI Tools (rank CSV, répéter texte, tri .env, bannière ASCII, buckets tailles, numéros ligne)
 - [x] csv-column-rank : ajoute une colonne rang par ordre d'une colonne numérique (dense/competition/ordinal/fractional, --top N, parsing nombres 1 234,56 et 1,234.56, gates require-min-rows/top-value/no-ties/distinct-min exit 2 CI, --json) ✓ 2026-08-02
 - [x] text-repeat-string : répète une chaîne N fois (placeholders {n} {r} {rev} {p}, --start/--step/--reverse, --join/--separator custom, --max-size sécurité, gates require-min/max/line-count exit 2 CI, --json) ✓ 2026-08-02
