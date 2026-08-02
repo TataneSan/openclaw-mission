@@ -1,11 +1,25 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 554 — CLI Tools (texte extraire lignes contenant uniquement des chiffres, CSV supprimer colonnes dupliquées par contenu, JSON compter clés dupliquées via JSONL, fichiers hardlinks pointant même inode, texte ratio chiffres/lettres)
+- [ ] text-digit-only-lines : extrait les lignes composées uniquement de chiffres/espaces (séparateurs optionnels, gates CI, --json)
+- [ ] csv-drop-duplicate-columns : supprime les colonnes dont le contenu est identique à une colonne précédente (délimiteur sniffé, gates CI, --json)
+- [ ] json-key-frequency : fréquence d'apparition de chaque nom de clé à travers un JSON/JSONL (récursif, top-N, gates CI, --json)
+- [ ] file-hardlink-groups : groupe les fichiers par inode partagé (hardlinks, --min-links, gates CI, --json)
+- [ ] text-digit-letter-ratio : rapporte le ratio chiffres/lettres par ligne et global (gates CI, --json)
+
+## Vague 553 — CLI Tools (texte extraire hex colors, CSV remplacer valeurs NaN, JSON remonter clés imbriquées, fichiers symlinks pointant vers un préfixe, texte compter nombres par ligne)
+- [x] text-extract-hex-colors : extrait les codes couleur #RGB/#RRGGBB(#RRGGBBAA) d'un texte (--normalize, --unique, gates CI, --json) ✓ 2026-08-02
+- [x] csv-replace-nan : remplace les sentinelles NaN/NA/null/'-' d'un CSV par une valeur vide ou custom (--columns, gates CI, --json) ✓ 2026-08-02
+- [x] json-flip-key-path : aplati toutes les clés en chemins puis reconstruit un doc plat (mapping chemin->valeur, gates CI, --json) ✓ 2026-08-02
+- [x] file-symlinks-to-prefix : liste les symlinks dont la cible commence par un préfixe donné (gates CI, --json) ✓ 2026-08-02
+- [x] text-count-numbers-per-line : compte les nombres (entiers/décimaux) de chaque ligne (--sum, gates CI, --json) ✓ 2026-08-02
+
 ## Vague 552 — CLI Tools (texte compter lignes vides consécutives, CSV ajouter colonne rang, JSON extraire types distincts, fichiers récemment modifiés par extension, texte trouver mots avec consonnes doubles répétées)
-- [ ] text-blank-run-count : compte les runs de lignes vides consécutives (--min N, --max, gates CI, --json)
-- [ ] csv-add-rank : ajoute une colonne rang calculée sur une colonne numérique (--dense, --reverse, délimiteur sniffé, gates CI, --json)
-- [ ] json-type-report : inventaire des types JSON distincts par chemin (string/number/bool/null/object/array, gates CI, --json)
-- [ ] file-recent-by-extension : fichiers modifiés dans N jours groupés par extension (compte, bytes, gates CI, --json)
-- [ ] text-double-consonant-words : trouve les mots contenant une consonne doublée (--min-len, lang hints, gates CI, --json)
+- [x] text-blank-run-count : compte les runs de lignes vides consécutives (--min N, --max, gates CI, --json) ✓ 2026-08-02
+- [x] csv-add-rank : ajoute une colonne rang calculée sur une colonne numérique (--dense, --reverse, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] json-type-report : inventaire des types JSON distincts par chemin (string/number/bool/null/object/array, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] file-recent-by-extension : fichiers modifiés dans N jours groupés par extension (compte, bytes, gates CI, --json) ✓ 2026-08-02
+- [x] text-double-consonant-words : trouve les mots contenant une consonne doublée (--min-len, lang hints, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 551 — CLI Tools (texte strip lignes de commentaires, CSV dédupliquer lignes par clé, JSON convertir types strings en natifs, fichiers plus petits récents, texte masquer adresses email)
 - [x] text-strip-comments : supprime les lignes de commentaires d'un fichier (# ;; //, --keep-shebang, gates CI, --json) ✓ 2026-08-02 (existant)
