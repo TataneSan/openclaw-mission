@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 355 — CLI Tools (colonne CSV, minify JSON stream, padding lignes, ENTRYPOINT Dockerfile, remotes git)
+- [x] csv-append-column : ajoute une colonne à un CSV (valeur constante ou template {field}, --overwrite, --check CI, JSON) ✓ 2026-08-02
+- [x] json-minify-stream : minifie des documents JSON en une ligne chacun (mode JSONL, --sort-keys, --ascii, --check CI, JSON) ✓ 2026-08-02
+- [x] text-pad-right : pousse chaque ligne à une largeur cible (right/left/center, --fill, --truncate, --check CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-extract-entrypoint : extrait l'ENTRYPOINT effectif par stage d'un Dockerfile (formes exec/shell, continuations, --check CI, JSON) ✓ 2026-08-02
+- [x] git-remote-normalize : normalise les URLs de remotes git entre formes canoniques SSH/HTTPS (stdin/args/--repo, --check CI, JSON) ✓ 2026-08-02
+
 ## Vague 354 — CLI Tools (premières lignes CSV, nombres JSON, chomp lignes vides, casse path URL, CMD Dockerfile)
 - [x] csv-remove-first-rows : retire les N premières lignes de données d'un CSV (header conservé, --no-header, --check CI, JSON) ✓ 2026-08-02
 - [x] json-normalize-numbers : normalise les floats d'un JSON/JSONL (round --decimals, --strip-trailing 2.0→2, auto-detect JSONL, --check CI, JSON) ✓ 2026-08-02
