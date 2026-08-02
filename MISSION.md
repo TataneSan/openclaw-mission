@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 541 — CLI Tools (texte extraire lignes entre marqueurs, CSV pivot simple, JSON compter objets par clé, fichiers symlinks cassés, texte extraire lignes top longueur)
+- [ ] text-lines-between : extrait les lignes entre deux marqueurs (regex/literal, --include-markers, occurrences multiples, gates CI, --json)
+- [ ] csv-pivot : pivot simple d'un CSV (clé lignes × clé colonnes → valeur d'agrégat count/sum, délimiteur sniffé, gates CI, --json)
+- [ ] json-count-by-key : compte la fréquence des valeurs d'une clé dans un array JSON (JSONL, top-N, gates CI, --json)
+- [ ] file-broken-symlinks : liste les liens symboliques cassés dans un arbre (cible abs/rel, gates CI, --json)
+- [ ] text-longest-lines : affiche les N lignes les plus longues (chars/bytes, --min-length gate CI, --json)
+
 ## Vague 540 — CLI Tools (texte extraire hashtags, CSV extraire colonne vers lignes, JSON compter strings vides, fichiers doublons par contenu, texte extraire initiales majuscules)
-- [ ] text-extract-hashtags : extrait les hashtags #d'un texte (Unicode, --unique, --sort, count, gates CI, --json)
-- [ ] csv-column-to-lines : extrait les valeurs d'une colonne CSV en lignes brutes (skip-empty, --unique, --sort, gates CI, --json)
-- [ ] json-empty-string-count : compte les chaînes vides par chemin dans des documents JSON (récursif, JSONL, gates CI, --json)
-- [ ] file-content-dupes : détecte les fichiers au contenu dupliqué dans un arbre (par hash, --min-size, gates CI, --json)
-- [ ] text-extract-caps-words : extrait les mots entièrement en majuscules (≥2 chars, Unicode, --unique, gates CI, --json)
+- [x] text-extract-hashtags : extrait les hashtags #d'un texte (Unicode, --unique, --sort, count, gates CI, --json) ✓ 2026-08-02
+- [x] csv-column-to-lines : extrait les valeurs d'une colonne CSV en lignes brutes (skip-empty, --unique, --sort, gates CI, --json) ✓ 2026-08-02
+- [x] json-empty-string-count : compte les chaînes vides par chemin dans des documents JSON (récursif, JSONL, gates CI, --json) ✓ 2026-08-02
+- [x] file-content-dupes : détecte les fichiers au contenu dupliqué dans un arbre (par hash, --min-size, gates CI, --json) ✓ 2026-08-02
+- [x] text-extract-caps-words : extrait les mots entièrement en majuscules (≥2 chars, Unicode, --unique, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 531 — CLI Tools (CSV compter lignes par colonne, JSON merge profond, texte extraire initiales, fichiers noms invalides, texte strip lignes matchées)
 - [x] csv-row-count-per-value : compte les lignes regroupées par valeur d'une colonne CSV (group-by, délimiteur sniffé, top-N, gates CI, --json) ✓ 2026-08-02 (existant)
