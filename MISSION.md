@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 364 — CLI Tools (min/max colonne CSV, set valeur JSON, mot de passe URL, comptage clés dotenv)
+- [x] csv-max-column : affiche le max d'une colonne numérique CSV (par nom/index, --all-rows, --require-min/max CI, JSON) ✓ 2026-08-02
+- [x] json-set-value : écrit une valeur à un dot-path dans un JSON/JSONL (création de segments, --jsonl, --check CI, compact/indent) ✓ 2026-08-02
+- [x] url-extract-password : extrait le mot de passe (userinfo) des URLs (--scan, --mask, --unique, --require-password/--forbid-password CI, JSON) ✓ 2026-08-02
+- [x] env-count-keys : compte les clés d'un dotenv (export/comments, doublons, --names, --require-min/max/--forbid-duplicates CI, JSON) ✓ 2026-08-02
+- [x] csv-min-column : affiche le min d'une colonne numérique CSV (par nom/index, --all-rows, --require-min/max CI, JSON) ✓ 2026-08-02
+
 ## Vague 363 — CLI Tools (comptage colonnes CSV, rapport types JSON, usernames URL, dequotage dotenv, lowercase lignes)
 - [x] csv-count-columns : compte les colonnes d'un CSV et détecte les lignes ragged (header/first row, --delimiter, --require-count/min/max, --check CI, JSON) ✓ 2026-08-02
 - [x] json-type-report : rapporte le type JSON du document ou de noeuds par dot-path (object/array/string/number/boolean/null, JSONL, --require-type/--forbid-type CI, JSON) ✓ 2026-08-02
