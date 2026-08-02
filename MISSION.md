@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
-## Vague 517 — CLI Tools
-- [ ] csv-column-shift : décale les valeurs d'une colonne vers le haut/bas de N lignes (wrap ou fill, --by-column, --check, gates CI, --json)
-- [ ] text-strip-ansi : retire les séquences d'échappement ANSI (couleurs, styles, --keep-reset, --report, gates CI, --json)
-- [ ] json-array-flatten : aplatit récursivement les arrays imbriqués (--depth N, --preserve-null-objects, JSONL, gates CI, --json)
-- [ ] file-tree-summary : résumé arborescence (dirs/files/bytes/profondeur max, --depth, --per-level, barres ASCII, gates CI, --json)
-- [ ] text-comment-strip : retire les commentaires de code (#, //, /* */, ;-) selon un langage, strings préservées, gates CI, --json)
+## Vague 518 — CLI Tools
+- [ ] csv-row-filter : filtre les lignes d'un CSV par condition sur une colonne (=, !=, ~ regex, > <, --all/--any, délimiteur sniffé, gates CI, --json)
+- [ ] text-reverse-lines-fields : inverse les champs de chaque ligne (séparateur espace/tab/custom, --rev-inline ou --rev-lines, gates CI, --json)
+- [ ] json-compare-keys : compare les clés de deux documents JSON (ajoutées/supprimées/communes, --recursive paths, --check exit 2, --json)
+- [ ] file-bom-detect : détecte la présence d'un BOM (utf8/utf16le/be) dans des fichiers (report, --strip, --require-none, --json)
+- [ ] text-ansi-color-map : inventaire des codes ANSI présents (couleurs/styles, occurrences, top N, --require-none exit 2 CI, --json)
+
+## Vague 517 — CLI Tools (décalage colonnes CSV, ANSI strip, flatten arrays, résumé arborescence, strip commentaires)
+- [x] csv-column-shift : décale les valeurs d'une colonne vers le haut/bas de N lignes (wrap ou fill, --by-column, --check, gates CI, --json) ✓ 2026-08-02
+- [x] text-strip-ansi : retire les séquences d'échappement ANSI (couleurs, styles, --keep-reset, --report, gates CI, --json) ✓ 2026-08-02
+- [x] json-array-flatten : aplatit récursivement les arrays imbriqués (--depth N, JSONL, gates CI, --json) ✓ 2026-08-02
+- [x] file-tree-summary : résumé arborescence (dirs/files/bytes/profondeur max, --depth, --per-level, barres ASCII, gates CI, --json) ✓ 2026-08-02
+- [x] text-comment-strip : retire les commentaires de code (#, //, /* */, ;, --) selon un langage, strings préservées, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 516 — CLI Tools (doublons colonnes CSV, filtre longueur, index arrays JSON, plus gros/petits fichiers, remplacement dernier)
 - [x] csv-column-duplicate : détecte les colonnes CSV en double (noms identiques ou contenus identiques, --drop/--check, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
