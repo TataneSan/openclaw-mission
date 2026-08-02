@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 387 — CLI Tools (transposition CSV, strings vides JSON, acronymes texte, dotenv→ConfigMap, EXPOSE interdit)
+- [x] csv-transpose-rows : transpose lignes/colonnes d'un CSV (pad rows courtes, --delimiter, --check square exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-count-empty-strings : compte les strings vides récursivement (--whitespace, --list-paths dot-paths, JSONL, --require-max/--require-zero exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-count-uppercase-words : compte les mots tout-majuscules/acronymes (--min-length, --include-single, --list fréquences, --unique, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-to-k8s-configmap : génère un manifest ConfigMap/Secret depuis dotenv (quoting YAML, base64 --as-secret, labels/annotations, validation noms exit 2, JSON) ✓ 2026-08-02
+- [x] dockerfile-verify-no-expose : interdit/restreint les EXPOSE d'un Dockerfile (--allow PORT/PROTO, --allow-env, --final-only, continuations, exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 386 — CLI Tools (remplissage CSV vide, somme récursive JSON, strip chiffres, commentaires Dockerfile, dotenv→properties)
 - [x] csv-fill-missing : remplit les cellules vides d'un CSV (--fill valeur fixe, --ffill forward-fill, --empty-as-zero, colonnes nom/index, --skip-rows regex, --check exit 2 CI, JSON) ✓ 2026-08-02
 - [x] json-sum-numbers : somme récursive des nombres d'un JSON/JSONL (bool exclus, --path dot-path avec *, --require-min/max exit 2 CI, --count, --int, JSON) ✓ 2026-08-02
