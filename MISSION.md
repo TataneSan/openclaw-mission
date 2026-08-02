@@ -619,12 +619,19 @@ Push automatique après chaque outil.
 - [x] url-ensure-scheme : garantit un scheme par défaut (https) aux URLs sans scheme (--check CI, JSON) ✓ 2026-08-02
 - [x] file-hardlink-count-report : rapport du nombre de liens durs par fichier (--min-links, --check CI, JSON) ✓ 2026-08-02
 
+## Vague 339 — CSV/JSON/text/URL/file mix (à définir)
+- [ ] csv-fill-random : remplit les cellules vides d'une colonne CSV par des valeurs aléatoires de la colonne (seed reproductible, --check CI, JSON)
+- [ ] json-merge-prefer-longer : fusionne deux JSONL en préférant la valeur la plus longue par clé (strings/arrays, --check CI, JSON)
+- [ ] text-strip-matching-prefix-lines : retire les lignes commençant par un préfixe donné (--invert, --check CI, JSON)
+- [ ] url-extract-ipv6 : repère les URLs utilisant une adresse IPv6 littérale ([::1], --check CI, JSON)
+- [ ] file-group-by-uid-gid : regroupe les fichiers d'une arborescence par couple uid:gid (counts, tailles, --check CI, JSON)
+
 ## Vague 338 — CSV/JSON/text/URL/file mix
-- [ ] csv-escape-formula-prefix : préfixe les cellules CSV commençant par =, +, -, @ d'une apostrophe (anti formula-injection, --check CI, JSON)
-- [ ] json-unwrap-single-element : déplie les objets JSON à une seule clé en leur valeur directe (récursif, --check CI, JSON)
-- [ ] text-collapse-blank-runs : écrase les runs de lignes vides consécutives en une seule (--max N, --check CI, JSON)
-- [ ] url-extract-tld-domain : extrait le registered domain (tld+1) d'URLs (public suffix embarqué, --check CI, JSON)
-- [ ] file-utf8-validity-check : vérifie que chaque fichier texte d'une arborescence est UTF-8 valide (rapport, --check CI, JSON)
+- [x] csv-escape-formula-prefix : préfixe les cellules CSV commençant par =, +, -, @ d'une apostrophe (anti formula-injection, --check CI, JSON) ✓ 2026-08-02
+- [x] json-unwrap-single-element : déplie les objets JSON à une seule clé en leur valeur directe (récursif, --check CI, JSON) ✓ 2026-08-02
+- [x] text-collapse-blank-runs : écrase les runs de lignes vides consécutives en une seule (--max N, --check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-tld-domain : extrait le registered domain (tld+1) d'URLs (public suffix embarqué, --check CI, JSON) ✓ 2026-08-02
+- [x] file-utf8-validity-check : vérifie que chaque fichier texte d'une arborescence est UTF-8 valide (rapport, --check CI, JSON) ✓ 2026-08-02
 
 ## Vague 337 — CSV/JSON/text/URL/file mix
 - [x] csv-quote-all-cells : force le quoting de toutes les cellules CSV (QUOTE_ALL, --minimal inverse, --check CI, JSON) ✓ 2026-08-02
