@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 494 — CLI Tools (CSV, timestamps, texte, env, JSONL)
+- [x] csv-row-shuffle : mélange les lignes d'un CSV (seed reproductible, --head/--tail gardés ligne par ligne, --no-header, --in-place, gates require-rows/identical exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-timestamp-normalize : normalise les timestamps d'un texte (ISO/slash/Unix vers sortie formatée, --output-format strftime, --detect, gates require-min/max/none exit 2 CI, --json) ✓ 2026-08-02
+- [x] env-var-report : rapport sur les variables d'environnement (filtres include/exclude globs, tri name/value/length, --keys-only/--values-only, --mask-sensitive, gates require-present/require-absent exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-trailing-whitespace-lint : lint des espaces de fin de ligne (fichiers args/walk, --in-place, --skip-binary, sortie rapport, gates require-clean/max-offenders exit 2 CI, --json) ✓ 2026-08-02
+- [x] jsonl-select-keys : extrait/sélectionne des clés d'un JSONL (chemins dot, --drop, --skip-invalid, --include-line, gates require-keys/lines exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 493 — CLI Tools (CSV, texte, JSON, fichiers, durées)
 - [x] csv-stat-profile : profil statistique complet des colonnes CSV (numériques: min/max/mean/median/stddev; texte: uniques, longueur moy; vides) ✓ 2026-08-02
 - [x] text-frequency-words : fréquence des mots d'un texte (normalisation, stop-words, top N, --json) ✓ 2026-08-02
