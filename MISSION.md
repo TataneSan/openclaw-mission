@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 431 — CLI Tools (csv échange colonnes clé/valeur, json trie clés racine seulement, texte extrait EUI-64, compte points de code Unicode, base64url batch fichiers)
+- [x] csv-swap-key-value-columns : échange les colonnes clé et valeur d'un CSV clé→valeur (noms/indices, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-sort-keys-shallow : trie uniquement les clés du niveau racine d'un objet JSON (objets imbriqués intacts, --reverse/--ignore-case, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-mac-eui64 : extrait les identifiants EUI-64 d'un texte (--also-mac48, --normalize, --require-min exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-count-codepoints : compte les points de code Unicode d'un texte (--graphemes, --categories, --per-line, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] base64url-file-tool : encode/décode base64url en batch fichiers/arborescences (--out-dir miroir, --recursive, --check round-trip exit 2 CI, --dry-run, JSON) ✓ 2026-08-02
+
 ## Vague 430 — CLI Tools (csv trie lignes par colonne, json supprime clés vides, texte extrait adresses IP, détecte CRLF/LF mixte, texte lignes avec exactement N mots)
 - [x] csv-sort-rows : trie les lignes d'un CSV par colonne (--col, --numeric, --desc, --in-place, --check exit 2 CI si pas trié, JSON) ✓ 2026-08-02
 - [x] json-prune-empty : supprime les clés dont la valeur est null, "", [] ou {} d'un JSON (--recursive, --require-none exit 2 CI, JSON) ✓ 2026-08-02
