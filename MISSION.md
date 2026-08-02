@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 570 — CLI Tools (CSV aperçu structural, texte tri par longueur, JSON aplatissement)
+- [x] csv-preview-shape : aperçu structurel d'un CSV (délimiteur sniffé, nb lignes/colonnes, 3 premières lignes tronquées, gates require-rows/require-columns, --json) ✓ 2026-08-03
+- [x] text-sort-length : trie les lignes par longueur (croissant/--reverse, --tie-alpha, --unique, gates require-sorted/require-max-length, --json) ✓ 2026-08-03
+- [x] json-flatten : aplatit un JSON en mapping chemin.pointé -> valeur (objets a.b, arrays a.0.b, --max-depth, --truncate, JSONL chemins préfixés, gates require-path/require-leaves, --json) ✓ 2026-08-03
+- [x] file-symlink-audit : audite les liens symboliques d'un arbre (broken/absolu-vs-relatif/boucles/hors-arbre, --follow, --max-depth, gates require-no-broken/require-no-outside, --json) ✓ 2026-08-03
+- [x] text-uniq-prefix : plus court préfixe unique par ligne (--min-len, --suffix, --show-line, doublons (dup), gates require-distinct/require-max-prefix-len, --json) ✓ 2026-08-03
+
 ## Vague 569 — CLI Tools (CSV audit quoting, fichiers buckets de tailles, CSV vérifier ordre colonnes, fichiers doublons par taille+hash)
 - [x] csv-quote-report : audit du quoting d'un CSV (quoted/bare cells, séparateur embarqué, lignes incohérentes, gates CI, --json) ✓ 2026-08-03
 - [x] file-size-buckets : groupe les fichiers d'un arbre par tranche de taille (edges custom K/M/G, barres, gates max-files/max-bytes/require-bucket, --json) ✓ 2026-08-03
@@ -4004,9 +4011,6 @@ Push automatique après chaque outil.
 - [x] csv-row-sample : échantillonnage aléatoire de N lignes d'un CSV (seed reproductible, pourcentage, JSON) ✓ 2026-08-01
 - [x] text-hash-lines : hash de chaque ligne (md5/sha1/sha256...), dedup, dup-check exit 2, JSON ✓ 2026-08-01
 - [x] env-sort : trie les clés d'un .env en préservant commentaires et groupes (--check, --in-place) ✓ 2026-08-01
-
-## Vague 192 — CLI Tools (JSON)
-- [x] json-flatten : aplatit un JSON en mapping chemin.pointé -> valeur (objets a.b, arrays a.0.b, --max-depth sous-arbres compacts, --truncate strings, --jsonl chemins préfixés par ligne, gates --require-path/--require-leaves exit 2, --json) ✓ 2026-08-03
 
 ## Vague 188 — CLI Tools (CSV & texte)
 - [x] csv-count-values : fréquence des valeurs d'une colonne CSV ✓ 2026-08-01
