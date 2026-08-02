@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 444 — CLI Tools (csv supprime colonne par index, wrap conserve indentation, compte phrases, quoted-printable, extrait entiers)
+- [x] csv-remove-column-by-index : supprime une colonne CSV par index (1-based/--zero-based, négatifs, --dry-run, --require-name/min-cols exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-wrap-indent : wrap chaque ligne à une largeur cible en préservant l'indentation (continuation indentée, --break-long, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-count-sentences : compte les phrases d'un texte (abréviations Mr./e.g., décimales, initiales, --list, --min-words, --require-min/max/exact exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-quoted-printable : encode/décode les lignes en quoted-printable (=XX hex UTF-8, espaces trailing, --encode-wsp, --require-encoded/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-integers : extrait les entiers décimaux/hex/octal/binaire d'un texte (0x/0o/0b, signes, --hex/--oct/--bin, --unique/--counts/--sort, filtres --min/--max, --sum, gates exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 443 — CLI Tools (tabs→espaces indentation, escape strings JSON, extrait key=value, ajoute colonne numéros, profondeur d'indentation)
 - [x] text-space-indent-migrate : convertit les tabs d'indentation en espaces (--width, --inner, --in-place, --check exit 2 CI, gates require-conversions/none, JSON) ✓ 2026-08-02
 - [x] json-string-escape : échappe/déséchappe les caractères spéciaux des strings d'un JSON (récursif, \n \t \uXXXX décodeur manuel, --require-changes/unchanged exit 2 CI, JSON) ✓ 2026-08-02
