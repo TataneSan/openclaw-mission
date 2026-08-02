@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 466 — CLI Tools (filtre lignes CSV, chart braille, shuffle clés JSON, case folding, inventaire dossiers)
+- [x] csv-row-matcher : filtre les lignes CSV par conditions sur colonnes (eq/ne/contains/regex/gt/ge/lt/le/empty/not-empty/in-set, colonnes nom/index, --match all/any, --invert, --ignore-case/--stripws, délimiteur sniffé, --check/--require-min/max/none exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-braille-chart : rend des séries numériques en charts braille 2x4 dots (32 lignes de résolution par défaut, resample moyennant par colonne --width max 200, --extract depuis texte libre, échelle --min/--max, --stats, gates require-min-points/range/max exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-keys-shuffle : mélange/trie/inverse l'ordre des clés JSON (seed reproductible, --top-level, --reverse/--sort, JSONL --jsonl, --check exit 2 si ordre modifié, gate --require-key exit 2, --compact, --json) ✓ 2026-08-02
+- [x] text-fold-case : Unicode case folding pour matching insensible à la casse (str.casefold: Straße↔STRASSE, sigma final, ligatures, --compare A B exit 0/2, --normalize NFC..NFKD, --lower, --unique/--sort, --in-place, gates check/require-changes/require-none-changed exit 2 CI, --json) ✓ 2026-08-02
+- [x] dir-entry-filter : inventaire et filtre d'entrées de répertoires (types f/d/l, globs --pattern/--exclude, --ext, tailles min/max-unités, âge --days/--older-than, --depth, hidden, tris name/size/mtime/path, --relative/--limit, gates require-min/max/none exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 465 — CLI Tools (stats CSV, entropie texte, flatten JSON, anagrammes, expansion CIDR)
 - [x] csv-column-stats : stats descriptives des colonnes numériques CSV (count/sum/min/max/mean/médiane, quartiles Q1/Q3 interp. linéaire, variance+stdev pop/échantillon, délimiteur sniffé, colonnes nom/index, --no-header, gates --min/--max/--require-mean exit 2, --json) ✓ 2026-08-02
 - [x] text-entropy-meter : entropie de Shannon d'un texte (global ou --by-line avec min/mean/max, modes chars/--bytes UTF-8, --max-theoretical alphabet observé, redondance, args positionnels multi-strings, gates --require-min/--require-max exit 2, --json) ✓ 2026-08-02
