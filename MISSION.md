@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 441 — CLI Tools (csv garde colonnes par plages, garde lignes congruence, extrait parenthèses équilibrées, expansion ~ utilisateurs, compte caractères par ligne)
+- [x] csv-slice-columns : garde un sous-ensemble de colonnes CSV par noms et/ou plages d'indices 1-based (négatifs, A-B / A:B, --invert, --require-columns/--check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-keep-nth-line : garde les lignes par congruence (i-offset) mod n (--every/--offset, --sample, --invert, --require-matches/--check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-parens : extrait les segments entre parenthèses équilibrées d'un texte (imbrication pile réelle, paires custom, --innermost/--outermost, --lines/--with-delim, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-expand-user-home : expanse les préfixes ~/ et ~user ligne par ligne (--separator champs, --strict compte inconnu, --check/~ restant, --require-expansions exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-lines-total-chars : rapport caractères par ligne + totaux (min/max/moyenne, --delimiter, --no-list, --require-max-total/max-line/lines exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 440 — CLI Tools (csv trie lignes par clés multi, extrait %, extrait ranges SemVer, json insère item array, ini liste sections)
 - [x] csv-reorder-rows-by-key : trie les lignes CSV par une ou plusieurs colonnes clés (stable, --numeric/--desc/--ignore-case, --check exit 2 CI, --in-place, JSON) ✓ 2026-08-02
 - [x] text-extract-percentages : extrait les littéraux pourcentage d'un texte (12.5%, virgule décimale, filtres --min/--max, --unique/--counts/--sort, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
