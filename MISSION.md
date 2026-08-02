@@ -1,11 +1,11 @@
 # OpenClaw — File d'attente des outils
 
 ## Vague 396 — CLI Tools (comptage mots texte, header CSV, taille JSON, commentaire licence dotenv, quotes YAML)
-- [ ] text-count-distinct-words : compte les mots distincts d'un texte (fréquences, --ignore-case, --top, --min-length, --require-min/max exit 2 CI, JSON)
-- [ ] csv-check-header : exige des noms de colonnes spécifiques dans un header CSV (--require/--forbid colonnes, ordre --require-order exit 2 CI, JSON)
-- [ ] json-byte-size : calcule la taille en octets d'un JSON sérialisé (compact/indent, per-document JSONL, --require-max exit 2 CI, JSON)
-- [ ] env-license-header : exige une ligne de commentaire licence en tête d'un dotenv (--require SPdx|--set MIT, --check exit 2 CI, JSON)
-- [ ] yaml-quote-check : lint les scalars simples qui devraient être quotés (booleans YAML 1.1 implicites on/off/yes/no, --require-quoted, --check exit 2 CI, JSON)
+- [x] text-count-distinct-words : compte les mots distincts d'un texte (fréquences, --ignore-case, --top, --min-length, lexical diversity, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-check-header : exige/interdit des colonnes dans un header CSV (--require/--forbid, ordre --require-order, doublons, count exact, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-byte-size : mesure la taille en octets d'un JSON sérialisé (compact/indent, JSONL per-document, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-license-header : exige un commentaire SPDX en tête d'un dotenv (--require SPDXID, --set insertion, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] yaml-quote-check : lint les plain scalars YAML à résolution implicite risquée (boolean/null/number YAML 1.1, --fix quote, --allow, --kinds, exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 395 — CLI Tools (whitespace texte, casse valeurs CSV, profondeur clés JSON, trailing comment dotenv, block scalar YAML)
 - [x] text-collapse-whitespace : compresse les espaces multiples des lignes (indent préservée par défaut, --collapse-leading, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
