@@ -640,6 +640,13 @@ Push automatique après chaque outil.
 - [x] url-extract-path-extension-report : rapport par extension du path des URLs (counts, mime guess, --check CI, JSON) ✓ 2026-08-02
 - [x] file-same-content-links : détecte les fichiers identiques pouvant être remplacés par des hardlinks (--apply, --check CI, JSON) ✓ 2026-08-02
 
+## Vague 350 — CSV/JSON/text/URL/file mix
+- [x] csv-remove-empty-rows : retire les lignes CSV 100% vides/whitespace (--strip, --keep-header, --check CI, JSON) ✓ 2026-08-02
+- [x] json-add-uuid-field : ajoute un UUID déterministe par doc basé sur SHA-256 canonique (key custom, --overwrite, --check CI, JSON) ✓ 2026-08-02
+- [x] text-trailing-newline-report : détecte/normalise newline final (ok/no_newline/multi_newline/empty, --fix, --check CI, JSON) ✓ 2026-08-02
+- [x] url-strip-index-file : retire les trailing index.html/default.aspx (--extra custom, --check CI, JSON) ✓ 2026-08-02
+- [x] file-charset-detect-report : heuristique charset per fichier (utf-8/16/32/ascii/latin-1/binary, --require-charset CI, JSON) ✓ 2026-08-02
+
 ## Vague 349 — CSV/JSON/text/URL/file mix
 - [x] csv-column-unique-values : distribution des valeurs uniques par colonne CSV (count, percent, --require-unique/--require-distinct, JSON) ✓ 2026-08-02
 - [x] json-values-length-report : stats de longueur des valeurs string par dot-path (min/max/mean/total, --min-len/--max-len/--require, JSON) ✓ 2026-08-02
