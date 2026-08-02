@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 439 — CLI Tools (texte reformate paragraphes, extrait E.164, csv exige valeurs, json compacte nulls arrays, texte reformate ISO 8601)
+- [x] text-reflow-paragraphs : reformate les paragraphes à une largeur cible (wrap/unwrap, --single-blank/--trim, --whitespace-blank, --in-place, --require-max-width/--require-paragraphs exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-e164 : extrait les numéros E.164 d'un texte (formes groupées, préfixe 00→+, strict 15 chiffres/--lenient, --unique/--counts/--sort, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-require-values : exige des valeurs non vides dans des colonnes CSV (gate avec liste violations colonne+ligne, --drop nettoie, --stripws, --require-max-violations exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-array-compact : supprime les éléments null des arrays JSON (--recursive, --empty-strings/--empty-containers, --drop-empty-arrays, --compact, --in-place, --require-removed/--require-none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-format-iso8601 : parse et reformate dates/heures/datetimes ISO 8601 ligne par ligne (--tz-utc suffixe Z, --format strftime, --strict, --require-min/--require-none-invalid exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 438 — CLI Tools (texte dédup mots par ligne, parse URI/URL, compte paragraphes, extraction e-mails, rapport lignes vides)
 - [x] text-dedupe-words : supprime les mots en double de chaque ligne (première occurrence conservée, --ignore-case, --in-place, --check/--require-collapses exit 2 CI, JSON) ✓ 2026-08-02
 - [x] uri-parse : parse des URIs/URLs en composants (scheme/host/port/user/path/query/fragment, --decode, --query éclaté, --require-scheme/--require-absolute exit 2 CI, JSON) ✓ 2026-08-02
