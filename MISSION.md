@@ -1,5 +1,13 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 475 — CLI Tools (base36, détection de casse, cellules vides CSV, extensions fichiers, nombres JSON, niveaux d'indentation)
+- [x] base36-encode : encode/décode Base36 en batch (entiers et texte codepoints, --upper, --text, gates require-min/none-failed exit 2 CI, args/file/stdin, --json) ✓ 2026-08-02
+- [x] text-case-detect : détecte la convention de casse (snake/SCREAMING/camel/Pascal/kebab/dot/flat/FLAT/Title/spaced/mixed/numeric), gates require-style/uniform/no-mixed exit 2 CI, --json ✓ 2026-08-02
+- [x] csv-blank-cells-report : rapport des cellules vides d'un CSV (par colonne, colonnes entièrement vides, coordonnées, délimiteur sniffé, gates no-blanks/max-blanks/max-ratio/no-blank-column exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-extension-count : compte les fichiers par extension (tailles totales/moyennes, (none), globs include/exclude, hidden, tri count/size/name, --top, gates require-extension/min-files/max-extensions exit 2 CI, --human, --json) ✓ 2026-08-02
+- [x] json-number-range : extrait les valeurs numériques d'un JSON/JSONL avec chemins pointillés ($.a.c[0]) et stats (count/min/max/sum/mean), --include-bool/--integers-only/--path, gates require-min/max/min-count/max-count exit 2 CI, --json ✓ 2026-08-02
+- [x] text-indent-levels : rapport des niveaux d'indentation (largeur, spaces/tabs/mixed, détection d'unité par mode, histogramme ASCII, liste anomalies, gates require-max-level/no-mixed/multiple exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 474 — CLI Tools (hex batch, en-têtes CSV, préfixe de lignes, strip null JSON, fichiers par âge)
 - [x] base16-encode : encode/décode hexadécimal Base16 en batch (styles compact/spaced/colon/dash/0x/\\x, --upper, --group-by N, --lenient tolère séparateurs, --file binaire, --unique, gates require-min/none-failed/identical exit 2 CI, --json) ✓ 2026-08-02
 - [x] csv-header-extract : extrait et transforme les en-têtes CSV (sélection par nom/index négatif, --rename OLD=NEW, --dedup, --one-per-line, --count, délimiteur sniffé, gates require-column/min/identical exit 2 CI, --json) ✓ 2026-08-02
