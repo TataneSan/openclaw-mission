@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 497 — CLI Tools (histogramme longueur mots, tranche lignes CSV, palindromes, merge dotenv, split phrases)
+- [x] text-word-length-histogram : histogramme des longueurs de mots (regex configurable, codepoints/bytes, ASCII bar chart, stats mean/median/mode/stdev, --distinct/--ignore-case, gates require-min-words/mean/mode/stdev exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-row-slice : extrait une tranche de lignes d'un CSV (1-based ranges, NEG relatif à la fin, --every N, --sample N --seed, --no-header, délimiteur sniffé, --in-place, gates require-rows/min/max exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-palindrome-check : vérifie si des lignes sont des palindromes (strict/loose, Unicode casefold, strip punctuation/espaces, --longest, gates require-min/all/none exit 2 CI, --json) ✓ 2026-08-02
+- [x] env-file-merge : merge plusieurs .env avec priorité (--override/--keep-first, --remove-prefix, --sort, --export-shell, --diff-only, détection clés dupliquées/conflits, gates require-key/no-conflict exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-sentence-split : découpe un texte en phrases (reflown, abbréviations EN/FR, décimales, initiales, --no-reflow, --abbr, --check --min-words exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 496 — CLI Tools (fréquence caractères, permutation colonnes CSV, flatten JSON, diff exts, jours de semaine)
 - [x] text-char-frequency : fréquence des caractères d'un texte (catégories letters/digits/whitespace/punctuation, casefold, --top/min-count, codepoints + noms Unicode, gates require-min/max/char/min-count exit 2 CI, --json) ✓ 2026-08-02
 - [x] csv-column-permute : réordonne les colonnes d'un CSV (ordre noms/index négatifs, --reverse/--sort/--sort-desc, --keep-rest/--drop-rest/--strict, --no-header, sniff délimiteur, --in-place, gates require-pos/columns/rows exit 2 CI, --json) ✓ 2026-08-02
