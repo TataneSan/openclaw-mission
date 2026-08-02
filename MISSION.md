@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 386 — CLI Tools (remplissage CSV vide, somme récursive JSON, strip chiffres, commentaires Dockerfile, dotenv→properties)
+- [x] csv-fill-missing : remplit les cellules vides d'un CSV (--fill valeur fixe, --ffill forward-fill, --empty-as-zero, colonnes nom/index, --skip-rows regex, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-sum-numbers : somme récursive des nombres d'un JSON/JSONL (bool exclus, --path dot-path avec *, --require-min/max exit 2 CI, --count, --int, JSON) ✓ 2026-08-02
+- [x] text-strip-digits : retire les chiffres d'un texte (ASCII + Unicode Nd, --replace, --skip-first, --only-matching, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-check-comment : lint des commentaires Dockerfile (--require-header, --forbid-todo TODO/FIXME/HACK, --style, --allow-marker, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-to-properties : convertit dotenv en .properties Java (échappement = : # !, comments, --sort, --prefix, --lowercase-keys, export-aware, JSON) ✓ 2026-08-02
+
 ## Vague 385 — CLI Tools (lignes CSV vides, valeurs non vides dotenv, ENTRYPOINTs Dockerfile, longueur max strings JSON, lignes non vides texte)
 - [x] csv-remove-comma-only-rows : retire les lignes CSV dont toutes les cellules sont vides (header préservé, --no-header, --delimiter, --keep-empty-rows, --in-place, --check exit 2 CI, --require-max, JSON)
 - [x] env-count-non-empty : compte les entrées dotenv à valeur non vide (export-aware, quotes, --names sans révéler les valeurs, --require-min/max, --forbid-empty exit 2 CI, JSON)
