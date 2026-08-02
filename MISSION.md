@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 405 — CLI Tools (hex dump, csv transpose, markdown liens, json aplati, texte mots uniques)
+- [ ] hex-dump-view : hexdump canonique d'un fichier ou stdin (offset/hex/ascii, --length, --width, --skip, JSON)
+- [ ] csv-transpose : transpose un CSV (lignes <-> colonnes, --max-cells garde-fou, --check carré exit 2 CI, JSON)
+- [ ] md-extract-links : extrait les liens d'un markdown (inline, référence, autolinks, --unique, --require-no-broken-anchor exit 2 CI, JSON)
+- [ ] json-flatten-keys : aplati un JSON imbriqué en clés pointées (a.b.c, tableaux [i], --unflatten inverse, --check exit 2 CI, JSON)
+- [ ] text-unique-words : liste les mots uniques d'un texte avec fréquences (--min-length, --top, --require-min-unique exit 2 CI, JSON)
+
 ## Vague 404 — CLI Tools (compte lignes code, base64 batch, csv stat colonne, env diff, text voyelles)
-- [ ] code-line-count : compte lignes totales/code/commentaires/blank par langage (table intégrée py/js/go/c/..., multi-fichiers, --require-max-lines exit 2 CI, JSON)
-- [ ] base64-batch : encode/décode base64/base64url de fichiers ou stdin (--decode, --url-safe, --wrap N, --check exit 2 CI, JSON)
-- [ ] csv-column-stats : stats numériques d'une colonne CSV (count/min/max/sum/mean/median/stdev, --column, --require-min-mean exit 2 CI, JSON)
-- [ ] env-diff-keys : compare deux fichiers .env (clés ajoutées/supprimées/modifiées, valeurs masquées, --require-identical-keys exit 2 CI, JSON)
-- [ ] text-vowel-ratio : ratio voyelles/consonnes d'un texte (par ligne et global, --require-min-ratio/--require-max-ratio exit 2 CI, JSON)
+- [x] code-line-count : compte lignes totales/code/commentaires/blank par langage (table intégrée py/js/go/c/..., multi-fichiers, --require-max-lines exit 2 CI, JSON) ✓ 2026-08-02
+- [x] base64-batch : encode/décode base64/base64url de fichiers ou stdin (--decode, --url-safe, --wrap N, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-column-stats : stats numériques d'une colonne CSV (count/min/max/sum/mean/median/stdev, --column, --require-min-mean exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-diff-keys : compare deux fichiers .env (clés ajoutées/supprimées/modifiées, valeurs masquées, --require-identical-keys exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-vowel-ratio : ratio voyelles/consonnes d'un texte (par ligne et global, --require-min-ratio/--require-max-ratio exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 403 — CLI Tools (comptage phrases texte, extraction URL, validation colonnes CSV, forme JSON canonique, trim lignes)
 - [x] text-sentence-count : compte les phrases d'un texte (découpage heuristique . ! ?, stats mots/par phrase, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
