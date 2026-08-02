@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 449 — CLI Tools (JSON union, indentation audit, dotenv→TypeScript, CSV⇄JSONL round-trip, comptage commentaires)
+- [x] json-array-merge-union : fusionne des arrays JSON en union stable dédupliquée (par identité ou --key dot-path, JSONL, gates CI, --stats/--json) ✓ 2026-08-02
+- [x] text-space-indent-check : audite l'indentation d'un texte (tabs / mix / largeur impaire, --require-uniform, --json, exit 2 CI) ✓ 2026-08-02
+- [x] env-generate-ts : génère un fichier .d.ts typé depuis un .env (quotes, export, gates --forbid-empty / --forbid-duplicates / --require-min, --json) ✓ 2026-08-02
+- [x] csv-jsonl-roundtrip : convertit CSV ⇄ JSONL avec map de types réversible (inférence int/float/bool, --map-out / --map pour round-trip identique, gates CI) ✓ 2026-08-02
+- [x] file-comment-lines-count : compte les lignes de commentaires par extension dans un arbre (#, //, /* */, --, REM, <!-- -->, --per-file, --top, --ext, --require-comments, JSON) ✓ 2026-08-02
+
 ## Vague 448 — CLI Tools (extrait coordonnées GPS, extrait numéros téléphone, extrait expressions temporelles, extrait couleurs CSS, extrait références packages)
 - [x] text-extract-coordinates : extrait les coordonnées GPS (paires décimales, DMS compact, latitudes seules avec hémisphère, validation plages, --pairs-only/--lat-only/--decimal-only/--dms-only, --precision, --unique/--counts/--sort, gates exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-extract-phone-numbers : extrait les numéros de téléphone (E.164, 00CC international, US groupé, FR groupé, extensions xNNN, normalisation E.164, --unique/--counts/--with-extension, gates exit 2 CI, JSON) ✓ 2026-08-02
