@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 468 — CLI Tools (morse, JSON Pointer, diff JSONL, lignes vides, MinHash)
+- [x] text-to-morse-code : encode/décode morse international (A-Z 0-9 ponctuation, séparateur mots /, --decode/--lower, --ignore-unknown, batch args/file/stdin, gates require-min-words/require-all-decoded exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-pointer-get : résout des pointers RFC 6901 sur JSON/JSONL (échappements ~0 ~1, indices tableaux, --jsonl multi-lignes, --values-only, échec pointer = exit 2, gates require-resolved/require-all-resolved/require-eq PTR VALUE exit 2 CI, --json) ✓ 2026-08-02
+- [x] jsonl-key-diff : diff structure clés entre 2 streams JSONL (only-A/only-B/shared, --values join sur --key champ ou n° ligne, exit 2 sur différence, --exit-zero, gate require-identical exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-empty-line-report : localise lignes vides/whitespace dans fichiers (comptes, ratio, runs consécutifs, walk arborescence --ext, --list/--runs, blank-only strict, gates require-no-blanks/max-ratio/max-run exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-min-hash-sim : similarité approximative MinHash entre lignes/documents (shingles mots/caractères --n, k permutations --perms, --compare A vs B, --threshold/--top, gates require-max-sim/min-pairs exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 467 — CLI Tools (drop colonnes CSV, table fixed-width, comptage types JSON, ordinaux anglais, profondeur chemins)
 - [x] csv-except-columns : garde toutes les colonnes SAUF celles nommées/indexées (1-based/négatifs, globs --glob, --ignore-case, --keep-first N raccourci, délimiteur sniffé, gates check/require-remaining/require-dropped exit 2 CI, --json) ✓ 2026-08-02
 - [x] csv-to-fixed-width : rend un CSV en table texte alignée (largeurs display-width Unicode CJK×2/combinaison 0, numériques à droite par défaut/--all-left/--all-right, --separator-rule, --max-col-width ellipse …, gates --max-width/--require-rows exit 2 lint terminal, --json) ✓ 2026-08-02
