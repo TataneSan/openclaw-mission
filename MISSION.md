@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 457 — CLI Tools (audit permissions POSIX, vendor OUI MAC, CSV diff, iTunes playlists, montants de devises)
+- [x] file-perms-report : audit des bits de permission POSIX (symboliques+octal, setuid/setgid/sticky, world-writable WW, filtres --world-writable/--special-only/--mode/--pattern, --counts, gates require-none-world-writable/special/max/min exit 2 CI, JSON) ✓ 2026-08-02
+- [x] mac-vendor-lookup : extrait MAC-48 (colon/hyphen/dotted Cisco, --bare optionnel) et résout le vendor via table OUI embarquée ~1200 entrées (Apple, Cisco, Dell, Huawei, Intel, Raspberry, VMware, Espressif, Netgear, TP-Link, Belkin, Xiaomi, Samsung, Google, Amazon, Sony, LG...), --lookup unique, flag locally-administered, --unknown, gates require-vendor/all-known/min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-diff : compare deux CSV clé→lignes (délimiteur sniffé, --key répétable, --ignore-column/--ignore-case, --no-header, --kind added/removed/changed, --summary, sortie -/+/~ champ-level, exit 2 sur diff par défaut, --exit-zero, gates require-identical/min/max-changes, JSON) ✓ 2026-08-02
+- [x] itunes-playlist-parse : parse Library.xml iTunes/Music.app (plistlib stdlib, --list-playlists, --playlist NAME ou plus grande réelle, --all-tracks, formats table/csv/json/m3u, --fields sélecteur, --sort name/artist/play_count/rating/date_added/duration_ms, file:// décodé URL, ratings ★, durations h:mm:ss, --stats, gates require-min/max-tracks/playlist/none-missing exit 2 CI) ✓ 2026-08-02
+- [x] currency-amount-extract : extrait montants de devises ($ pré/suffixe, codes ISO, 60+ monnaies dont BTC/ETH, séparateurs US 1,234.56 / EU 1.234,56 / FR 1 234,56 / CH 1'234.56, multiplicateurs k/M/mm/bn/b/t, --bare opt-in, --assume, --sum par devise, --amounts-only/--codes-only, --table, gates require-min/max/none/currency/sum-gte/single-currency exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 456 — CLI Tools (extrait checkboxes Markdown, parse ssh_config, shift headings Markdown, longueur octets UTF-8, audit longueur clés JSON)
 - [x] markdown-checkbox-extract : extrait items checkbox Markdown (- [ ] / - [x], bullets - * + et numérotés, niveaux d'indentation, ratio done, listes --pending/--done/--all, gates require-done-ratio/min/no-pending exit 2 CI, JSON) ✓ 2026-08-02
 - [x] ssh-config-parse : parse ssh_config (options globales, blocks Host, Include, shlex) et résout les options effectives par alias avec glob, --names-only, gates require-min-hosts/host exit 2 CI, JSON) ✓ 2026-08-02
