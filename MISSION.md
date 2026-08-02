@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 555 — CLI Tools (texte compter mots par ligne, CSV transposer lignes/colonnes, JSON strip clés à valeur null, fichiers extensions sans fichier associé dans l'arbre, texte extraire hashtags)
+- [ ] text-words-per-line : compte les mots de chaque ligne (min/max gates, --histogram, gates CI, --json)
+- [ ] csv-transpose : transpose un CSV (lignes↔colonnes, délimiteur sniffé, gates CI, --json)
+- [ ] json-strip-nulls : supprime récursivement les clés dont la valeur est null (option --empty aussi {} et [], gates CI, --json)
+- [ ] file-unused-extensions : liste les extensions déclarées dans une liste mais absentes de l'arbre (gates CI, --json)
+- [ ] text-extract-hashtags : extrait les #hashtags d'un texte (--unique, tri par fréquence, gates CI, --json)
+
 ## Vague 554 — CLI Tools (texte extraire lignes contenant uniquement des chiffres, CSV supprimer colonnes dupliquées par contenu, JSON compter clés dupliquées via JSONL, fichiers hardlinks pointant même inode, texte ratio chiffres/lettres)
-- [ ] text-digit-only-lines : extrait les lignes composées uniquement de chiffres/espaces (séparateurs optionnels, gates CI, --json)
-- [ ] csv-drop-duplicate-columns : supprime les colonnes dont le contenu est identique à une colonne précédente (délimiteur sniffé, gates CI, --json)
-- [ ] json-key-frequency : fréquence d'apparition de chaque nom de clé à travers un JSON/JSONL (récursif, top-N, gates CI, --json)
-- [ ] file-hardlink-groups : groupe les fichiers par inode partagé (hardlinks, --min-links, gates CI, --json)
-- [ ] text-digit-letter-ratio : rapporte le ratio chiffres/lettres par ligne et global (gates CI, --json)
+- [x] text-digit-only-lines : extrait les lignes composées uniquement de chiffres/espaces (séparateurs optionnels, gates CI, --json) ✓ 2026-08-03 (existant)
+- [x] csv-drop-duplicate-columns : supprime les colonnes dont le contenu est identique à une colonne précédente (délimiteur sniffé, gates CI, --json) ✓ 2026-08-03 (existant)
+- [x] json-key-frequency : fréquence d'apparition de chaque nom de clé à travers un JSON/JSONL (récursif, top-N, gates CI, --json) ✓ 2026-08-03 (existant)
+- [x] file-hardlink-groups : groupe les fichiers par inode partagé (hardlinks, --min-links, gates CI, --json) ✓ 2026-08-03
+- [x] text-digit-letter-ratio : rapporte le ratio chiffres/lettres par ligne et global (gates CI, --json) ✓ 2026-08-03
 
 ## Vague 553 — CLI Tools (texte extraire hex colors, CSV remplacer valeurs NaN, JSON remonter clés imbriquées, fichiers symlinks pointant vers un préfixe, texte compter nombres par ligne)
 - [x] text-extract-hex-colors : extrait les codes couleur #RGB/#RRGGBB(#RRGGBBAA) d'un texte (--normalize, --unique, gates CI, --json) ✓ 2026-08-02
