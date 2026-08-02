@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 492 — CLI Tools (JSONL, texte, fichiers, CSV, base58)
+- [x] jsonl-schema-report : rapport de schéma d'un JSONL (clés, types observés, présence, --unique-values, --skip-invalid/--max-lines, gates require-key/lines/no-invalid exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-column-align : aligne colonnes de texte délimité (séparateur regex, output-separator, right-align-numbers, --strict, min-width, gates require-columns/uniform exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-size-histogram : histogramme ASCII des tailles de fichiers (buckets par défaut 0 B→>1 GiB ou --buckets custom, recursive/depth, dry-count, gates require-min-files/max-total exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-pivot : pivot long→wide sur CSV (multi-index, aggfuncs sum/count/mean/min/max/first/last, --fill, sorts, --no-header positions, délimiteur sniffé, gates require-rows/columns exit 2 CI, --json) ✓ 2026-08-02
+- [x] base58-encode : encode/décode Base58 alphabet Bitcoin en batch (texte UTF-8 ou --hex, --raw, leading zeros, args/file/stdin, gates require-min/none-failed exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 476 — CLI Tools (mots en fin de ligne, écart-type CSV, préfixes, répertoires récents, lignes longues)
 - [x] text-last-words : extrait les N derniers mots de chaque ligne (séparateur regex, join custom, keep-empty, word counts, gates require-min-words/all-match exit 2 CI, --json) ✓ 2026-08-02
 - [x] csv-column-deviation : écart-type / variance / coefficient de variation des colonnes numériques d'un CSV (population ou échantillon, min-numeric, sélection --columns, gates require-column/max-stddev/max-cv exit 2 CI, --json) ✓ 2026-08-02
