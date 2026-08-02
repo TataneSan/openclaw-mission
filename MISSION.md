@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 390 — CLI Tools (valeurs uniques CSV, clés dupliquées JSON, comptage emojis, volumes Dockerfile, délimiteur CSV sniffé)
+- [x] csv-unique-values : liste les valeurs uniques d'une colonne CSV avec occurrences (--ignore-case, --trim, --require-min/max-unique, --require-max-frequency, --check-dominated PCT exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-lint-duplicate-keys : détecte les clés d'objet JSON dupliquées que json.loads masque silencieusement (JSON+JSONL, --skip-invalid, --require-max tolérance CI, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-emoji-count : compte les caractères emoji d'un texte (emoji/ZWJ/keycap/VS16, by-kind et by-category Unicode, --list codepoints+noms, --unique, --require-max/--require-zero exit 2 CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-check-volume : lint VOLUME Dockerfile (forms shell+JSON, --forbid-volume/--require-volume, --allow-path/--forbid-path/--forbid-prefix, --forbid-variable, --require-absolute, --final-only, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-sniff-delimiter : détecte le délimiteur le plus probable d'un CSV (scoring consistency×columns×rows, --candidates, --check exit 2 CI, --require-min-columns/consistency, JSON) ✓ 2026-08-02
+
 ## Vague 389 — CLI Tools (index colonnes CSV, types JSON, lignes à tirets, couches Dockerfile, valeurs dotenv masquées)
 - [x] csv-column-index : mapping nom→index des colonnes CSV (0 et 1-based, --structs, --strict doublons exit 2, JSON) ✓ 2026-08-02
 - [x] json-value-types : distribution des types JSON récursivement (object/array/string/integer/float/boolean/null, JSONL, --require-type, --require-null-max-pct exit 2 CI, JSON) ✓ 2026-08-02
