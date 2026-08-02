@@ -640,6 +640,14 @@ Push automatique après chaque outil.
 - [x] url-extract-path-extension-report : rapport par extension du path des URLs (counts, mime guess, --check CI, JSON) ✓ 2026-08-02
 - [x] file-same-content-links : détecte les fichiers identiques pouvant être remplacés par des hardlinks (--apply, --check CI, JSON) ✓ 2026-08-02
 
+## Vague 348 — CSV/JSON/text/URL/file mix
+- [x] csv-value-replace-map : remplacement des valeurs CSV via mapping old=new (colonne cible, --strict/--check CI, JSON) ✓ 2026-08-02
+- [x] json-compact-spaces : normalise l'espacement JSON (compact/indent/séparateurs, --strip, --check CI, JSON) ✓ 2026-08-02
+- [x] text-delete-blank-prefix : retire/compte/enforce l'absence de lignes vides en tête (--max-keep, --in-place, --check CI, JSON) ✓ 2026-08-02
+- [x] url-strip-www-host : normalise les hosts URL en retirant/ajoutant www. (port/creds/IPv6 préservés, --check CI, JSON) ✓ 2026-08-02
+- [x] text-sort-by-number : tri numérique de lignes via préfixe/field/regex (desc, unique, --check CI, JSON) ✓ 2026-08-02
+- [x] file-owner-group-report : histogramme owner:group d'une arborescence (--only/--forbid/--require, --check CI, JSON) ✓ 2026-08-02
+
 ## Vague 347 — CSV/JSON/text/URL/file mix
 - [x] csv-row-window-shift : décale une colonne CSV de N lignes lag/lead (--fill, --require CI, JSON) ✓ 2026-08-02
 - [x] json-count-null-paths : compte les null par dot-path dans JSONL (taux global, --max-null-rate CI, JSON) ✓ 2026-08-02
