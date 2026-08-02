@@ -1,5 +1,13 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 461 — CLI Tools (comparaison hash, surlignage ANSI, blocs entropie, collisions noms, escape CSV, extensions manquantes)
+- [x] file-hash-compare : compare deux fichiers ou arborescences par hash de contenu (md5/sha1/sha256/blake2b, symlinks ignorés, rapport same/differ/only-A/only-B, exit 2 sur diff, --json, --exit-zero) ✓ 2026-08-02
+- [x] text-highlight : surligne les matchs regex/littéraux dans du texte avec couleurs ANSI (16 noms + code 0-255, --fixed, -i, --max N, --count, --check exit 2 lint) ✓ 2026-08-02
+- [x] file-block-report : rapport par blocs de taille fixe (fill %, bytes distincts, entropie de Shannon) pour détecter régions sparse/padding/chiffré (--block-size, --limit, gates --max-blocks/--require-entropy-max/--min-fill-avg exit 2, --json) ✓ 2026-08-02
+- [x] filename-collision : détecte collisions de noms sous normalisation (case fold, NFC/NFD/NFKC, cmf=NFC+fold) par dossier (--include-dirs, exit 2 sur collision, --json, --exit-zero) ✓ 2026-08-02
+- [x] csv-row-escape : escape/unescape des lignes comme champ CSV unique (auto-quote delim/quote/newline, round-trip, --delimiter/--quote custom, --check exit 2, --json) ✓ 2026-08-02
+- [x] file-extension-missing-report : liste les fichiers sans extension dans une arborescence (dotfiles comptés comme sans extension, symlinks ignorés, gates --require-none/--max/--min exit 2, --json) ✓ 2026-08-02
+
 ## Vague 460 — CLI Tools (vérification gitignore, retrait de quotes, normalisation quoting CSV, glob→regex, somme des tailles disque)
 - [x] gitignore-check : évalue si des chemins seraient ignorés par un fichier .gitignore (sémantique git : glob * ? [cls], **/ segments, dir-only trailed /, ! negation règle tardive gagne, / anchored, # commentaires, args/--file/stdin, --list/--ignored-only/--not-ignored-only, --json, gates require-min/max/none exit 2 CI) ✓ 2026-08-02
 - [x] text-unquote : retire les paires de quotes simples/doubles/backticks autour des lignes (mismatched/unterminated conservés, kind filtrable, --allow-escaped, --delimiter mode champs, --stripws, --check exit 2, --in-place, --json, gates require-stripped/none exit 2 CI) ✓ 2026-08-02
