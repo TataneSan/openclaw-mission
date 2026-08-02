@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 448 — CLI Tools (extrait coordonnées GPS, extrait numéros téléphone, extrait expressions temporelles, extrait couleurs CSS, extrait références packages)
+- [x] text-extract-coordinates : extrait les coordonnées GPS (paires décimales, DMS compact, latitudes seules avec hémisphère, validation plages, --pairs-only/--lat-only/--decimal-only/--dms-only, --precision, --unique/--counts/--sort, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-phone-numbers : extrait les numéros de téléphone (E.164, 00CC international, US groupé, FR groupé, extensions xNNN, normalisation E.164, --unique/--counts/--with-extension, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-time-expressions : extrait les expressions temporelles (horloge 24h/12h validées, durées composées 1h30m sommées en secondes, périodes ISO 8601 PT...P, intervalles, filtre --kind répétable, --unique/--counts, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-css-colors : extrait les couleurs CSS (hex 3/4/6/8 chiffres normalisés, rgb/hsl/hwb/lab/lch/oklab/oklch/color(), 148 nommées CSS4, --kind répétable, --normalize, --no-named, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-package-refs : extrait les références de packages (npm@scope, pip=extras>=, cargo="", gem~>, archives .tar.gz, Docker :tag/@sha256, --kind répétable, --names-only/--format, gates exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 447 — CLI Tools (extrait params query URL, extrait hashes git, extrait tailles fichiers, mots-nombres→digits, répète première ligne)
 - [x] text-extract-urls-params : extrait les paramètres query des URLs http(s) (clé=valeur dupliquées, percent-decode --no-decode, --key/--exclude-key répétables, --keys-only/--values-only/--counts, gates exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-extract-git-hashes : extrait les SHAs git (full 40 / abrégés 7-39 hex, filtre pure-digit, --full-only/--short-only, --prefix-match, --unique/--counts, gates exit 2 CI, JSON) ✓ 2026-08-02
