@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 403 — CLI Tools (comptage phrases texte, extraction URL, validation colonnes CSV, forme JSON canonique, trim lignes)
+- [ ] text-sentence-count : compte les phrases d'un texte (découpage heuristique . ! ?, stats mots/par phrase, --require-min/max exit 2 CI, JSON)
+- [ ] url-extract-domain : extrait host + domaine effectif (édicule TLD simple) des URLs en flux (--unique, --require-domain/--forbid-domain exit 2 CI, JSON)
+- [ ] csv-validate-columns : valide l'header CSV contre un schéma attendu (--require-cols, --forbid-cols, --order, --allow-extra, exit 2 CI, JSON)
+- [ ] json-canonical-form : écrit JSON en forme canonique (clés triées récursivement, floats normalisés, --compact, RFC 8785-like lite, --check exit 2 CI, JSON)
+- [ ] text-trim-lines : trim chaque ligne (gauche/droite/--both, chars custom, --collapse, --in-place, --check exit 2 CI, JSON)
+
 ## Vague 402 — CLI Tools (comptage modifiés git, slug texte, top valeurs CSV, validation JSON, wrap texte)
-- [ ] git-diff-stat-names : liste les fichiers modifiés entre deux refs git (+/- par fichier depuis git diff --numstat, --require-max-files/--require-max-changes exit 2 CI, JSON)
-- [ ] text-slugify : convertit du texte en slug URL-safe (translittération ASCII, lowercase, --separator, --max-length, --require-slug exit 2 CI, JSON)
-- [ ] csv-top-values : top-N des valeurs d'une colonne CSV avec fréquences (--column, --top, --min-count, --require-min-frequency exit 2 CI, JSON)
-- [ ] json-check-valid : valide la syntaxe JSON/JSONL de fichiers (multi-fichiers, --require-valid exit 2 CI si un fichier invalide, rapport ligne/colonne erreur, JSON)
-- [ ] text-wrap-width : formate du texte à une largeur cible (word wrap, --width, --no-break-long-words, --require-max-line-length exit 2 CI, JSON)
+- [x] git-diff-stat-names : liste les fichiers modifiés entre deux refs git (+/- par fichier depuis git diff --numstat, --require-max-files/--require-max-changes exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-slugify : convertit du texte en slug URL-safe (translittération ASCII, lowercase, --separator, --max-length, --require-slug exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-top-values : top-N des valeurs d'une colonne CSV avec fréquences (--column, --top, --min-count, --require-min-frequency exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-check-valid : valide la syntaxe JSON/JSONL de fichiers (multi-fichiers, --require-valid exit 2 CI si un fichier invalide, rapport ligne/colonne erreur, JSON) ✓ 2026-08-02
+- [x] text-wrap-width : formate du texte à une largeur cible (word wrap, --width, --no-break-long-words, --require-max-line-length exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 401 — CLI Tools (valideur JSON Schema complet, diff YAML, stats mots parlés, template env, format durée)
 - [x] json-schema-validator : valide un JSON contre un JSON Schema complet (draft 7+, types, formats, $ref locales, additionalProperties, patternProperties, oneOf/anyOf/allOf, exit 2 CI, JSON) ✓ 2026-08-02
