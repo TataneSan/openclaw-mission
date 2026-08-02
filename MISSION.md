@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 551 — CLI Tools (texte strip lignes de commentaires, CSV dédupliquer lignes par clé, JSON convertir types strings en natifs, fichiers plus petits récents, texte masquer adresses email)
+- [ ] text-strip-comments : supprime les lignes de commentaires d'un fichier (# ;; //, --keep-shebang, gates CI, --json)
+- [ ] csv-dedupe-by-key : déduplique les lignes par valeur d'une colonne clé (first/last, délimiteur sniffé, gates CI, --json)
+- [ ] json-coerce-types : convertit les strings JSON "123"/"true"/"null" en types natifs (récursif, --keys, gates CI, --json)
+- [ ] file-smallest-recent : liste les plus petits fichiers modifiés dans les N derniers jours (complémentaire, gates CI, --json)
+- [ ] text-mask-emails : masque les adresses email d'un texte (partie locale tronquée, domaine préservé, --strict, gates CI, --json)
+
 ## Vague 550 — CLI Tools (texte convertir palillons camel→snake, CSV ajouter hash de ligne, JSON compter objets vides, fichiers plus grands par mtime récente, texte extraire paires clé=valeur)
-- [ ] text-screaming-to-lower : convertit SCREAMING_SNAKE_CASE en minuscules (option title/kebab, gates CI, --json)
-- [ ] csv-row-hash : ajoute une colonne hash sha256 de la ligne entière (délimiteur sniffé, --columns pour subset, gates CI, --json)
-- [ ] json-empty-object-count : compte les objets {} et arrays [] vides par chemin (récursif, JSONL, gates CI, --json)
-- [ ] file-largest-recent : liste les fichiers les plus volumineux modifiés dans les N derniers jours (--days, --top, gates CI, --json)
-- [ ] text-extract-kv-pairs : extrait les paires clé=valeur d'un texte libre (séparateurs = et :, --unique-keys, gates CI, --json)
+- [x] text-screaming-to-lower : convertit SCREAMING_SNAKE_CASE en minuscules (option title/kebab, gates CI, --json) ✓ 2026-08-02
+- [x] csv-row-hash : ajoute une colonne hash sha256 de la ligne entière (délimiteur sniffé, --columns pour subset, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] json-empty-object-count : compte les objets {} et arrays [] vides par chemin (récursif, JSONL, gates CI, --json) ✓ 2026-08-02
+- [x] file-largest-recent : liste les fichiers les plus volumineux modifiés dans les N derniers jours (--days, --top, gates CI, --json) ✓ 2026-08-02
+- [x] text-extract-kv-pairs : extrait les paires clé=valeur d'un texte libre (séparateurs = et :, --unique-keys, gates CI, --json) ✓ 2026-08-02 (existant)
 
 ## Vague 549 — CLI Tools (texte supprimer lignes trop courtes, CSV remplir cellules numériques manquantes par moyenne, JSON renverser l'ordre des arrays, fichiers inventaire owners/groupes, texte compter caractères par bloc Unicode)
 - [x] text-min-length-filter : supprime les lignes plus courtes que N caractères (--keep-blank, --invert, gates CI, --json) ✓ 2026-08-02
