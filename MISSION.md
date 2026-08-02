@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 511 — CLI Tools (normalisation guillemets, colonnes vides CSV, fusion de lignes, dédup adjacent, validation nombres CSV)
+- [x] text-normalize-quotes : normalise les guillemets Unicode (curly “”‘’, guillemets «»‹›, primes ″, fullwidth ＂) vers ascii/guillemets/remove, --strip-apostrophes, --report inventaire U+codepoints, --in-place, --check exit 2 CI, gates require-change/unchanged exit 2 CI, --json ✓ 2026-08-02
+- [x] csv-empty-columns : détecte/droppe les colonnes entièrement vides d'un CSV (marqueurs custom --empty-marker, délimiteur sniffé+BOM, --drop, --in-place, --check exit 2 CI, gates require-none-empty/require-empty-min exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-merge-lines : fusionne des lignes consécutives en groupes (--every N, --until-blank paragraphes, --separator custom avec escapes \t \n, --drop-remainder, --strip/--skip-empty, --check exit 2 CI, gate require-groups-min exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-dedupe-lines-adjacent : supprime les doublons adjacents façon uniq (-i casefold Unicode, --strip, --count préfixe runs, --repeated/-d, --unique/-u, --in-place, --check exit 2 CI, gates require-dupes-min/require-clean exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-validate-numbers : valide que des colonnes CSV sont numériques (formats 1 234,56 et 1,234.56, suffixe %, --columns noms/index négatifs, --integer, --min/--max, --allow-empty, délimiteur sniffé+BOM, erreurs listées raison, exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 510 — CLI Tools (substitution headers CSV, normalisation indentation, profondeur arborescence, stats blocs code Markdown, runs répétitifs)
 - [x] csv-header-substitute : substitution find/replace sur les headers CSV (regex ou --literal, s/P/R/ sed-style, multi-subs ordonnées, --ignore-case, sniff délimiteur+BOM, --rename-map, --in-place, --check exit 2 CI, gates require-min-renamed/unchanged/column exit 2 CI, --json) ✓ 2026-08-02
 - [x] text-indent-width-normalize : normalise l'indentation à largeur fixe (--width N ou --tabs, --spaces-per-tab pour l'input, profondeur préservée, --report-mixed tabs+spaces, --in-place, --check exit 2 CI, gates require-changed-min/unchanged/no-mixed exit 2 CI, --json) ✓ 2026-08-02
