@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 391 — CLI Tools (BOM texte, checksum lignes CSV, casse clés JSON, ARG avant FROM, trim valeurs dotenv)
+- [x] text-detect-bom : détecte et strip les BOM (UTF-8/16/32 LE/BE, UTF-7), multi-fichiers/stdin, --require-none/--require ENCODING exit 2 CI, --strip in-place, JSON ✓ 2026-08-02
+- [x] csv-row-checksum : calcule et vérifie un checksum par ligne CSV (tous algos hashlib, --exclude colonnes volatiles, --standalone, --check-column anti-tampering exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-key-casing : lint la convention de casse des clés JSON (snake/camel/kebab/pascal/upper/lower, whitelist exacte/préfixe/regex, --require-max-violations tolérance CI, --list-styles, JSON) ✓ 2026-08-02
+- [x] dockerfile-arg-before-from : exige que tout ARG référencé dans un FROM soit déclaré avant le premier FROM (règle BuildKit, $VAR/${VAR}, --allow, multi-stages, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-trim-values : trimme l'espace autour des valeurs dotenv brutes (quotés préservés sauf --include-quoted, --collapse-inner, --check exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 390 — CLI Tools (valeurs uniques CSV, clés dupliquées JSON, comptage emojis, volumes Dockerfile, délimiteur CSV sniffé)
 - [x] csv-unique-values : liste les valeurs uniques d'une colonne CSV avec occurrences (--ignore-case, --trim, --require-min/max-unique, --require-max-frequency, --check-dominated PCT exit 2 CI, JSON) ✓ 2026-08-02
 - [x] json-lint-duplicate-keys : détecte les clés d'objet JSON dupliquées que json.loads masque silencieusement (JSON+JSONL, --skip-invalid, --require-max tolérance CI, exit 2 CI, JSON) ✓ 2026-08-02
