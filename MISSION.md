@@ -1,5 +1,19 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 402 — CLI Tools (comptage modifiés git, slug texte, top valeurs CSV, validation JSON, wrap texte)
+- [ ] git-diff-stat-names : liste les fichiers modifiés entre deux refs git (+/- par fichier depuis git diff --numstat, --require-max-files/--require-max-changes exit 2 CI, JSON)
+- [ ] text-slugify : convertit du texte en slug URL-safe (translittération ASCII, lowercase, --separator, --max-length, --require-slug exit 2 CI, JSON)
+- [ ] csv-top-values : top-N des valeurs d'une colonne CSV avec fréquences (--column, --top, --min-count, --require-min-frequency exit 2 CI, JSON)
+- [ ] json-check-valid : valide la syntaxe JSON/JSONL de fichiers (multi-fichiers, --require-valid exit 2 CI si un fichier invalide, rapport ligne/colonne erreur, JSON)
+- [ ] text-wrap-width : formate du texte à une largeur cible (word wrap, --width, --no-break-long-words, --require-max-line-length exit 2 CI, JSON)
+
+## Vague 401 — CLI Tools (valideur JSON Schema complet, diff YAML, stats mots parlés, template env, format durée)
+- [x] json-schema-validator : valide un JSON contre un JSON Schema complet (draft 7+, types, formats, $ref locales, additionalProperties, patternProperties, oneOf/anyOf/allOf, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] yaml-diff-tool : compare deux fichiers YAML et affiche les différences (structure-aware, --ignore-order lists, --show-values, exit 2 CI si différent, JSON) ✓ 2026-08-02
+- [x] text-speaking-time : estime le temps de lecture/parole d'un texte (mots par minute configurable, stats pauses/ponctuation, --require-min/max-time exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-template-generator : génère un fichier .env.example depuis un .env (valeurs masquées, --keep-comments, --sort, --require-keys, JSON) ✓ 2026-08-02
+- [x] text-format-duration : convertit des durées entre formats (secondes ↔ "1h 23m 45s" ↔ "83:45", parse/format, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 400 — CLI Tools (anagrammes texte, validation INI, profondeur YAML, stats lignes shell, merge CSV)
 - [x] text-anagram-finder : trouve les anagrammes dans un texte (normalisation Unicode casefold, groupes de mots anagrammes, --min-length/--max-group-size, --require-anagrams exit 2 CI, JSON) ✓ 2026-08-02
 - [x] ini-validate-syntax : valide la syntaxe d'un fichier INI (sections, clés=valeurs, commentaires, doublons section/clé, --allow-no-value, --require-sections, exit 2 CI, JSON) ✓ 2026-08-02
