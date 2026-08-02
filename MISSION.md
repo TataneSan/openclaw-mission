@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 385 — CLI Tools (lignes CSV vides, valeurs non vides dotenv, ENTRYPOINTs Dockerfile, longueur max strings JSON, lignes non vides texte)
+- [x] csv-remove-comma-only-rows : retire les lignes CSV dont toutes les cellules sont vides (header préservé, --no-header, --delimiter, --keep-empty-rows, --in-place, --check exit 2 CI, --require-max, JSON)
+- [x] env-count-non-empty : compte les entrées dotenv à valeur non vide (export-aware, quotes, --names sans révéler les valeurs, --require-min/max, --forbid-empty exit 2 CI, JSON)
+- [x] dockerfile-entrypoint-count : compte les ENTRYPOINT par stage d'un Dockerfile (--final-only, form exec/shell, --require-entrypoint, --forbid-multiple, --require-form, continuations, exit 2 CI, JSON)
+- [x] json-string-length-max : min/max des longueurs de strings JSON récursivement (--path dot-path, JSONL, --include-keys, --show-longest, --ignore-empty, --require-min/max-len exit 2 CI, JSON)
+- [x] text-count-non-empty-lines : compte les lignes non vides de fichiers texte (modes non-empty/non-blank, multi-fichiers + TOTAL, --percent, --sort, --require-min/max, --aggregate, JSON)
+
 ## RÈGLE
 Chaque outil = son propre repo Git sur github.com/TataneSan.
 JAMAIS mentionner IA/agent dans le code ou les commits.
