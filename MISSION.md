@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 412 — CLI Tools (texte mots par ligne, csv ligne aléatoire, json liste strings, base64 url encode, texte compte mots répétés)
+- [ ] text-words-per-line : compte les mots par ligne d'un texte (min/max/avg, --require-max exit 2 CI, JSON)
+- [ ] csv-random-row : tire une ligne aléatoire d'un CSV (--count, --seed reproductible, --fields colonnes, --require-min-rows exit 2 CI, JSON)
+- [ ] json-list-strings : extrait toutes les strings d'un JSON récursivement (--path dot-path wildcard, --unique, --min-length, --require-max exit 2 CI, JSON)
+- [ ] base64url-tool : encode/décode base64url RFC 4648 (sans padding --no-pad, --decode, --check exit 2 CI, JSON)
+- [ ] text-repeated-words : détecte les mots répétés consécutifs ("the the", --ignore-case, --require-none exit 2 CI, JSON)
+
 ## Vague 411 — CLI Tools (texte squeeze lignes vides, csv colonnes select, json longueur chemin, texte swap casse, hex encode)
-- [ ] text-squeeze-blank-lines : compresse les séries de lignes vides en une seule (--max, --in-place, --check exit 2 CI, JSON)
-- [ ] csv-select-columns : sélectionne/réordonne des colonnes d'un CSV (--columns, --exclude, --require-cols exit 2 CI, JSON)
-- [ ] json-path-value-length : longueur des strings à un chemin dot-path JSON (wildcard *, min/max/avg, --require-max exit 2 CI, JSON)
-- [ ] text-swap-case : inverse la casse d'un texte (tout ou --words-only, --in-place, --check exit 2 CI, JSON)
-- [ ] hex-encode-binary : encode binaire/stdin en hex (--upper, --0x-prefix, alignement --group, --check exit 2 CI, JSON)
+- [x] text-squeeze-blank-lines : compresse les séries de lignes vides en une seule (--max, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-select-columns : sélectionne/réordonne des colonnes d'un CSV (--columns, --exclude, --require-cols exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-path-value-length : longueur des strings à un chemin dot-path JSON (wildcard *, min/max/avg, --require-max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-swap-case : inverse la casse d'un texte (tout ou --words-only, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] hex-encode-binary : encode binaire/stdin en hex (--upper, --0x-prefix, alignement --group, --check exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 410 — CLI Tools (csv dédup lignes, texte acronymes, json profondeur moyenne, uuid génère/valide, texte censures e-mail)
 - [x] csv-dedupe-rows : supprime les lignes dupliquées d'un CSV (--key cols partielles, --keep first/last, --require-max-dupes exit 2 CI, JSON) ✓ 2026-08-02
