@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 544 — CLI Tools (texte extraire URLs uniques, CSV rajouter numéro de ligne, JSON compter valeurs distinctes d'une clé, fichiers taille totale par extension, texte collapse espaces multiples)
+- [ ] text-extract-urls : extrait les URLs http(s) d'un texte (domaine, --unique, --sort, gates CI, --json)
+- [ ] csv-add-rownum : ajoute une colonne numéro de ligne à un CSV (--start N, nom colonne, délimiteur sniffé, gates CI, --json)
+- [ ] json-distinct-values : compte les valeurs distinctes d'une clé dans un array JSON (top-N, gates CI, --json)
+- [ ] file-size-by-extension : rapporte la taille totale et le compte par extension d'un arbre (barres, gates CI, --json)
+- [ ] text-collapse-spaces : collapse les runs d'espaces en un seul (préserve indentation option, tabs, gates CI, --json)
+
 ## Vague 543 — CLI Tools (texte compter lignes par préfixe, CSV remplacer valeur par mapping, JSON éclater objets en fichiers, fichiers plus récents dans chaque sous-dossier, texte supprimer lignes dupliquées en gardant l'ordre)
-- [ ] text-count-by-prefix : compte les lignes regroupées par préfixe (N chars ou jusqu'à séparateur, top-N, gates CI, --json)
-- [ ] csv-map-values : remplace les valeurs d'une colonne via un fichier de mapping clé=valeur (--strict, délimiteur sniffé, gates CI, --json)
-- [ ] json-split-objects : éclate un array JSON d'objets en fichiers individuels (nom par clé, --out-dir, gates CI, --json)
-- [ ] file-newest-per-dir : trouve le fichier le plus récent de chaque sous-dossier (mtime, --depth, gates CI, --json)
-- [ ] text-dedupe-lines : supprime les lignes dupliquées en préservant l'ordre (case-insensitive option, blank handling, gates CI, --json)
+- [x] text-count-by-prefix : compte les lignes regroupées par préfixe (N chars ou jusqu'à séparateur, top-N, gates CI, --json) ✓ 2026-08-02
+- [x] csv-map-values : remplace les valeurs d'une colonne via un fichier de mapping clé=valeur (--strict, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] json-split-objects : éclate un array JSON d'objets en fichiers individuels (nom par clé, --out-dir, gates CI, --json) ✓ 2026-08-02
+- [x] file-newest-per-dir : trouve le fichier le plus récent de chaque sous-dossier (mtime, --depth, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] text-dedupe-lines : supprime les lignes dupliquées en préservant l'ordre (case-insensitive option, blank handling, gates CI, --json) ✓ 2026-08-02 (existant)
 
 ## Vague 542 — CLI Tools (texte extraire adresses IPv4, CSV vers lignes clé=valeur, JSON compter profondeur par chemin, fichiers plus anciens que N jours, texte extraire mots répétés consécutifs)
 - [x] text-extract-ipv4 : extrait les adresses IPv4 d'un texte (valides 0-255, --unique, --sort, gates CI, --json) ✓ 2026-08-02 (existant)
