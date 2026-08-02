@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 384 — CLI Tools (comptage caractères texte, aplatissement JSON, labels Dockerfile, CMDs Dockerfile, suppression lignes vides)
+- [x] text-count-chars : compte caractères/mots/lignes d'un texte (multi-fichiers, agrégat, --mode total/no-whitespace/no-newlines, --only, --require-min/max CI, JSON) ✓ 2026-08-02
+- [x] json-flatten-array : aplatit récursivement les tableaux JSON imbriqués (--max-depth, --require-array, --require-length-min/max, JSONL, --compact, JSON) ✓ 2026-08-02
+- [x] dockerfile-check-label : exige/interdit des LABEL dans un Dockerfile (multi-stages, --final-only, forms key=value et legacy key value, continuations, --list, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-cmd-count : compte les CMD par stage d'un Dockerfile (form exec/shell, --final-only, --require-cmd, --forbid-multiple, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-remove-empty-lines : retire les lignes vides d'un texte (whitespace-only, --keep-one, --in-place, --check exit 2 CI, --require-max, JSON) ✓ 2026-08-02
+
 ## Vague 383 — CLI Tools (comptage types JSON, doublons CSV, HEALTHCHECK requis, strip markdown, validation clés dotenv)
 - [x] json-count-type-values : compte les valeurs d'un type JSON récursivement (mode all, JSONL, --require-min/max CI, JSON) ✓ 2026-08-02
 - [x] csv-detect-duplicate-rows : détecte les lignes dupliquées d'un CSV (--columns nom/index, --ignore-case/--trim, --check exit 2 CI, JSON) ✓ 2026-08-02
