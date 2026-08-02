@@ -1,5 +1,11 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 500 — CLI Tools (mots uniques texte, colonnes CSV swap, padding texte, JSON set-value, symlinks cassés)
+- [x] text-unique-words : liste les mots uniques d'un texte (ordre first-seen/alpha/freq, --count, casefold, min-length, gates require-min/max-distinct exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-swap-columns : échange/deplace deux colonnes d'un CSV par nom ou index (--move A B, index négatifs, --no-header, --in-place, gates require-columns/rows exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-pad-lines : pad des lignes à gauche/droite/centre à une largeur (--width, --char, --side, display-width CJK, --skip-empty, gates require-min-change/no-change exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-set-value : écrit une valeur dans un JSON par chemin pointillé (création d'objets intermédiaires, indices tableaux, types auto int/float/bool/null, JSONL, --check exit 2, --json) ✓ 2026-08-02
+- [x] file-broken-symlinks : repère les liens symboliques cassés dans une arborescence (--delete + --dry-run, --follow-dirs, gates require-none/min/max exit 2 CI, --json) ✓ 2026-08-02
 ## Vague 499 — CLI Tools (nums texte, CSV transpose, durées humaines, JSON query, perm. fichiers)
 - [x] text-extract-numbers : extrait tous les nombres d'un texte (entiers/décimaux/hex/scientifique, signés, --int-only, stats min/max/sum/mean/count, --unique/--sort, gates require-min/max/sum exit 2 CI, --json) ✓ 2026-08-02
 - [x] csv-transpose : transpose un CSV (lignes deviennent colonnes, --no-header, --limit-rows/cols, --pad, gates require-rectangular/min-rows/cols exit 2 CI, --json) ✓ 2026-08-02
