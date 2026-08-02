@@ -640,6 +640,13 @@ Push automatique après chaque outil.
 - [x] url-extract-path-extension-report : rapport par extension du path des URLs (counts, mime guess, --check CI, JSON) ✓ 2026-08-02
 - [x] file-same-content-links : détecte les fichiers identiques pouvant être remplacés par des hardlinks (--apply, --check CI, JSON) ✓ 2026-08-02
 
+## Vague 347 — CSV/JSON/text/URL/file mix
+- [x] csv-row-window-shift : décale une colonne CSV de N lignes lag/lead (--fill, --require CI, JSON) ✓ 2026-08-02
+- [x] json-count-null-paths : compte les null par dot-path dans JSONL (taux global, --max-null-rate CI, JSON) ✓ 2026-08-02
+- [x] text-sentence-length-report : mots par phrase + distribution (abbr-aware, --max-words lint CI, JSON) ✓ 2026-08-02
+- [x] url-query-value-length : stats de longueur des valeurs query par paramètre (--max-length CI, JSON) ✓ 2026-08-02
+- [x] file-atime-older-than-mtime : fichiers écrits jamais relus (atime < mtime, --tolerance, --check CI, JSON) ✓ 2026-08-02
+
 ## Vague 346 — CSV/JSON/text/URL/file mix
 - [x] csv-row-ordinal-rank : colonne de rang ordinal dense/compétition (--desc, --dense, --require CI, JSON) ✓ 2026-08-02
 - [x] json-merge-prefer-newer : fusionne deux JSONL en gardant le record au timestamp le plus récent (-k, -t, --require-match CI, JSON) ✓ 2026-08-02
