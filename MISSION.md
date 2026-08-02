@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 528 — CLI Tools (CSV ajouter colonne numéro de ligne, JSON stringify profond, texte comptage hashtags, fichiers dotfiles, texte cassage camelCase)
+- [ ] csv-add-row-number : ajoute une colonne numéro de ligne à un CSV (--start N, --name, --no-header, délimiteur sniffé, gates CI, --json)
+- [ ] json-stringify-values : convertit toutes les valeurs non-chaînes en chaînes (récursif, --only-types, gates CI, --json)
+- [ ] text-hashtag-count : compte les hashtags #tag d'un texte (Unicode, top-N, --min-count, gates CI, --json)
+- [ ] file-dotfile-report : rapport sur les dotfiles/dotdirs d'une arborescence (par type, taille, gates CI, --json)
+- [ ] text-camel-to-snake : convertit camelCase/PascalCase en snake_case (acronymes, digits, gates CI, --json)
+
 ## Vague 527 — CLI Tools (CSV renverser colonnes, JSON compter clés par type, texte extraire emails, fichiers sans extension, texte longueur moyenne phrase)
-- [ ] csv-reverse-column-order : inverse l'ordre des colonnes d'un CSV (--no-header, délimiteur sniffé, gates CI, --json)
-- [ ] json-key-type-count : compte les clés par type de valeur (string/number/bool/null/object/array, récursif, JSONL, gates CI, --json)
-- [ ] text-extract-emails : extrait les adresses email d'un texte (RC 5322 simplifiée, --unique, --sort, --domain-only, gates CI, --json)
-- [ ] file-no-extension-report : liste les fichiers sans extension d'un arbre (détecte shebang/MIME approx, --counts, gates CI, --json)
-- [ ] text-avg-sentence-length : calcule la longueur moyenne des phrases (mots/paragraphe, histogramme, gates CI, --json)
+- [x] csv-reverse-column-order : inverse l'ordre des colonnes d'un CSV (--no-header, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] json-key-type-count : compte les clés par type de valeur (string/number/bool/null/object/array, récursif, JSONL, gates CI, --json) ✓ 2026-08-02
+- [x] text-extract-emails : extrait les adresses email d'un texte (RC 5322 simplifiée, --unique, --sort, --domain-only, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] file-no-extension-report : liste les fichiers sans extension d'un arbre (détecte shebang/MIME approx, --counts, gates CI, --json) ✓ 2026-08-02
+- [x] text-avg-sentence-length : calcule la longueur moyenne des phrases (mots/paragraphe, histogramme, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 526 — CLI Tools (CSV garder colonnes, extraire URLs texte, JSON count valeurs par clé, fichiers plus récents par extension, swap case texte)
 - [x] csv-keep-columns : garde seulement les colonnes listées d'un CSV (noms/indices négatifs, --strict, --no-header, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
