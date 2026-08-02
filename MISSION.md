@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 505 — CLI Tools (Base62, colonnes caractères, comparaison tailles arbres, forward-fill CSV, pourcentages CSV)
+- [x] base62-encode : encode/décode Base62 (0-9A-Za-z) entiers/hex/texte UTF-8 (args/file/stdin, --check/--require-min/--require-none-failed exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-column-cut : extrait colonnes caractères style cut -c (1-4,7,10-, -3 derniers N, --output-delimiter, gates check/require-min-chars/require-any-changed exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-size-compare : compare tailles fichiers entre 2 arbres (only-A/only-B/identical/grown/shrunk, --max-depth/ext/exclude/hidden, tri delta/path/size, --tolerance, gates require-identical/max-grown/max-shrunk/max-only-b/max-total-delta exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-forward-fill : forward-fill des cellules vides CSV (sélection --columns, --group-by reset carry, --empty marqueurs custom, délimiteur sniffé, --in-place, gates require-filled-min/require-no-empty exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-percent-column : convertit colonne numérique en pourcentages (nombres 1 234,56 et 1,234.56, --append <col>_pct, --suffix %, --base custom, --decimals, gates require-sum-100/max-pct/min-rows exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 504 — CLI Tools (blank lines squeeze, fichiers anciens, UUID batch, moyennes CSV, classification IP)
 - [x] text-squeeze-blank : réduit les lignes vides consécutives (--max N, --max-start/end, whitespace-only, --check exit 2 CI, --in-place, gates require-removed-min/unchanged/max-blank-run, --json) ✓ 2026-08-02
 - [x] file-oldest : liste les fichiers les plus anciens d'une arborescence (tri mtime, âges humains, --max-depth/ext/hidden/relative, gates require-min/max/fresh 7d/stale 30d exit 2 CI, --json) ✓ 2026-08-02
