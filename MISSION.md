@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 362 — CLI Tools (somme colonne CSV, extraction valeurs JSON, collapse lignes vides, hosts URL, unset dotenv)
+- [x] csv-sum-column : somme et agrégats d'une colonne numérique CSV (count/min/max/mean, --no-header, --require-min/max CI, JSON) ✓ 2026-08-02
+- [x] json-extract-values : extrait les valeurs d'une clé dans des objets JSON (JSON/JSONL, --path avec *, --unique/--count, --require-min/max CI, JSON) ✓ 2026-08-02
+- [x] text-collapse-blank-lines : réduit les suites de lignes vides à N max (--keep, --strip-blanks, --in-place, --check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-host : extrait le hostname des URLs (bare hosts, --scan texte libre, --unique fréquences, --check/--forbid-host/--allow CI, JSON) ✓ 2026-08-02
+- [x] env-unset-keys : retire des clés d'un dotenv (batch positionnel/--key/--keys-file, --in-place, --check, --require-absent CI, JSON) ✓ 2026-08-02
+
 ## Vague 361 — CLI Tools (ARG Dockerfile, suppression colonnes CSV, comptage clés JSON, squeeze espaces, schemes URL)
 - [x] dockerfile-extract-arg : liste les ARG d'un Dockerfile (scope global + par stage, défauts, --names-only, --require-arg/--forbid-arg CI, JSON) ✓ 2026-08-02
 - [x] csv-delete-columns : supprime des colonnes d'un CSV (noms/indices, --no-header, --require-absent CI, JSON) ✓ 2026-08-02
