@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 378 — CLI Tools (tri mots par ligne, comptage stages Dockerfile, filtre tableau JSON, dotenv→JSON, suppression dernières lignes CSV)
+- [x] text-sort-words-line : trie les mots par ordre alphabétique dans chaque ligne (--reverse, indent préservée, --in-place, --check CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-count-stages : compte les stages FROM d'un Dockerfile (alias, --names, --require-min/max CI, JSON) ✓ 2026-08-02
+- [x] json-filter-array-by-value : filtre les objets d'un tableau JSON par valeur de champ (dot-path, --number, exit 2 sans match) ✓ 2026-08-02
+- [x] env-to-json : convertit dotenv en objet JSON (types inférés int/float/bool/null, --raw, --compact) ✓ 2026-08-02 (repo pré-existant, hybride Go+Python)
+- [x] csv-remove-last-rows : retire les N dernières lignes d'un CSV (header préservé, --delimiter, --no-header, JSON) ✓ 2026-08-02
+
 ## Vague 377 — CLI Tools (capitalisation phrases, apt-get cleanup Dockerfile, clés par préfixe JSON, dotenv→shell, swap 1re/dernière colonne CSV)
 - [x] text-capitalize-sentences : majuscule en début de phrase (. ! ? préservés, --in-place, --check CI, --json) ✓ 2026-08-02
 - [x] dockerfile-check-run-apt-get-clean : exige cleanup après apt-get install (rm lists ou apt-get clean, exit 2 CI, JSON) ✓ 2026-08-02
