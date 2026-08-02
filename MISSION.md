@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 545 — CLI Tools (texte inverser caractères par ligne, CSV extraire dernières N lignes, JSON liste clés triées par nom, fichiers doublons par nom dans l'arbre, texte ratio lignes commentées)
+- [ ] text-reverse-chars : inverse les caractères de chaque ligne (préserve indentation option, gates CI, --json)
+- [ ] csv-tail-rows : extrait les N dernières lignes d'un CSV (--keep-header, délimiteur sniffé, gates CI, --json)
+- [ ] json-keys-sorted : liste toutes les clés d'un JSON triées alphabétiquement (récursif, comptage d'occurrence, gates CI, --json)
+- [ ] file-duplicate-basenames : détecte les fichiers partageant le même nom dans l'arbre (groupes, gates CI, --json)
+- [ ] text-comment-ratio : rapporte le ratio de lignes commentées (#, //, /* * détection simple, gates CI, --json)
+
 ## Vague 544 — CLI Tools (texte extraire URLs uniques, CSV rajouter numéro de ligne, JSON compter valeurs distinctes d'une clé, fichiers taille totale par extension, texte collapse espaces multiples)
-- [ ] text-extract-urls : extrait les URLs http(s) d'un texte (domaine, --unique, --sort, gates CI, --json)
-- [ ] csv-add-rownum : ajoute une colonne numéro de ligne à un CSV (--start N, nom colonne, délimiteur sniffé, gates CI, --json)
-- [ ] json-distinct-values : compte les valeurs distinctes d'une clé dans un array JSON (top-N, gates CI, --json)
-- [ ] file-size-by-extension : rapporte la taille totale et le compte par extension d'un arbre (barres, gates CI, --json)
-- [ ] text-collapse-spaces : collapse les runs d'espaces en un seul (préserve indentation option, tabs, gates CI, --json)
+- [x] text-extract-urls : extrait les URLs http(s) d'un texte (domaine, --unique, --sort, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] csv-add-rownum : ajoute une colonne numéro de ligne à un CSV (--start N, nom colonne, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] json-distinct-values : compte les valeurs distinctes d'une clé dans un array JSON (top-N, gates CI, --json) ✓ 2026-08-02
+- [x] file-size-by-extension : rapporte la taille totale et le compte par extension d'un arbre (barres, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] text-collapse-spaces : collapse les runs d'espaces en un seul (préserve indentation option, tabs, gates CI, --json) ✓ 2026-08-02 (existant)
 
 ## Vague 543 — CLI Tools (texte compter lignes par préfixe, CSV remplacer valeur par mapping, JSON éclater objets en fichiers, fichiers plus récents dans chaque sous-dossier, texte supprimer lignes dupliquées en gardant l'ordre)
 - [x] text-count-by-prefix : compte les lignes regroupées par préfixe (N chars ou jusqu'à séparateur, top-N, gates CI, --json) ✓ 2026-08-02
