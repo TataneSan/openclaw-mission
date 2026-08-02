@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 415 — CLI Tools (texte compte backticks, csv strip colonne vide gauche, json chemins strings vides, rot13, texte trim chaque ligne)
+- [ ] text-count-backticks : compte les backticks ` dans un texte (--require-min/max, --check exit 2 CI, JSON)
+- [ ] csv-strip-left-empty : supprime les colonnes vides en tête d'un CSV (leading empty columns, --all-empty exit 2 CI, JSON)
+- [ ] json-list-empty-string-paths : liste les chemins vers les strings vides d'un JSON (dot-path, --require-none exit 2 CI, JSON)
+- [ ] rot13-tool : applique ROT13 à un texte (lettres seules, --check exit 2 CI, JSON)
+- [ ] text-rstrip-lines : retire l'espace/tab de fin de chaque ligne (--in-place, --check exit 2 CI, JSON)
+
 ## Vague 414 — CLI Tools (texte compte tildes, csv supprime colonne, json liste valeurs null, base58 encode, texte lignes indentées)
-- [ ] text-count-tildes : compte les tildes ~ dans un texte (--require-min/max, --check exit 2 CI, JSON)
-- [ ] csv-drop-column : supprime une colonne d'un CSV (par nom ou index, --keep autres, --check exit 2 CI, JSON)
-- [ ] json-list-null-paths : liste les chemins vers les valeurs null d'un JSON (dot-path, --require-none exit 2 CI, JSON)
-- [ ] base58-tool : encode/décode base58 (Bitcoin alphabet, --decode, --check exit 2 CI, JSON)
-- [ ] text-indent-lines : indente les lignes d'un texte (N espaces, --tabs, --in-place, --check exit 2 CI, JSON)
+- [x] text-count-tildes : compte les tildes ~ dans un texte (--require-min/max, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-drop-column : supprime une colonne d'un CSV (par nom ou index, --keep autres, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-list-null-paths : liste les chemins vers les valeurs null d'un JSON (dot-path, --require-none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] base58-tool : encode/décode base58 (Bitcoin alphabet, --decode, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-indent-lines : indente les lignes d'un texte (N espaces, --tabs, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02 (repo existant, ajout --in-place)
 
 ## Vague 413 — CLI Tools (texte lignes TRI, csv compte par clé, json clés par type, hexdump inverse, texte phrase la plus longue)
 - [x] text-sort-lines : trie les lignes d'un texte (--numeric, --reverse, --unique, --locale-like casefold, --check exit 2 CI, JSON) ✓ 2026-08-02
