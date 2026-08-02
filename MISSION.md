@@ -21,12 +21,19 @@
 - [x] file-future-mtime : liste les fichiers dont la mtime est dans le futur (--grace seconds, walk, gates CI, --json) ✓ 2026-08-02
 - [x] text-sort-by-length : trie les lignes par longueur (chars/words/bytes, asc/desc, --stable, ties alpha, gates CI, --json) ✓ 2026-08-01 (existant)
 
+## Vague 539 — CLI Tools (CSV détecter doublons complets de lignes, JSON vérifier clés requises, texte ratio majuscules, fichiers extensions inconnues, texte extraire nombres)
+- [ ] csv-dupe-row-report : détecte les lignes CSV entièrement dupliquées (toutes colonnes, délimiteur sniffé, gates CI, --json)
+- [ ] json-require-keys : vérifie qu'un document JSON contient des clés requises (chemins pointillés, --strict, gates CI, --json)
+- [ ] text-uppercase-ratio : rapporte le ratio de caractères majuscules (global/par ligne, gates CI --max-ratio, --json)
+- [ ] file-extension-inventory : inventaire des extensions d'un arbre (comptage, taille cumulée, barres, gates CI, --json)
+- [ ] text-extract-numbers : extrait tous les nombres d'un texte (entiers/décimaux/négatifs, --unique, --sort, sum, gates CI, --json)
+
 ## Vague 538 — CLI Tools (CSV transposer, JSON lister types par chemin, texte suggestion de kebab-case, fichiers arborescence texte, texte compter voyelles)
-- [ ] csv-transpose : transpose un CSV (lignes <-> colonnes, --no-header, délimiteur sniffé, gates CI, --json)
-- [ ] json-type-per-path : liste le type de chaque valeur par chemin (récursif, JSONL, histogramme, gates CI, --json)
-- [ ] text-to-kebab-case : convertit un texte en kebab-case (mots, Unicode, --preview, gates CI, --json)
-- [ ] file-tree-view : affiche l'arborescence ASCII d'un dossier (├── └──, --depth, --exclude, gates CI, --json)
-- [ ] text-vowel-count : compte voyelles/consonnes d'un texte (Unicode, par ligne ou total, gates CI, --json)
+- [x] csv-transpose : transpose un CSV (lignes <-> colonnes, --no-header, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant, Go)
+- [x] json-type-per-path : liste le type de chaque valeur par chemin (récursif, JSONL, histogramme, gates CI, --json) ✓ 2026-08-02
+- [x] text-to-kebab-case : convertit un texte en kebab-case (mots, Unicode, --preview, gates CI, --json) ✓ 2026-08-02
+- [x] file-tree-view : affiche l'arborescence ASCII d'un dossier (├── └──, --depth, --exclude, gates CI, --json) ✓ 2026-08-02
+- [x] text-vowel-count : compte voyelles/consonnes d'un texte (Unicode, par ligne ou total, gates CI, --json) ✓ 2026-08-02 (existant)
 
 ## Vague 537 — CLI Tools (CSV moyenne colonne, JSON compter booléens, texte compter mots uniques par ligne, fichiers taille 0 par extension, texte intervertir lignes paires/impaires)
 - [x] csv-column-average : calcule min/max/moyenne/médiane d'une colonne numérique (nombres 1 234,56, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
