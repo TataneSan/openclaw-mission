@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 473 — CLI Tools (whitespace, JSON, CSV, MIME, dedup)
+- [x] text-normalize-space : normalise les espaces dans un texte (collapse espaces/tabs, strip trailing/leading, squeeze lignes vides configurable, line-endings lf/crlf/cr, --check exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-compact-expand : compacte ou reformate du JSON (indent configurable, --sort-keys, --ascii, --check exit 2 CI, --json, stdin/fichier) ✓ 2026-08-02
+- [x] csv-rows-report : compte les lignes de données d'un CSV et détecte les lignes irrégulières (--no-header, gates --min/--max/--exact/--require-uniform exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-type-mime : identifie les types MIME par extension et signatures binaires (PNG/JPEG/GIF/ZIP/PDF/GZIP/ELF/XML/JSON/texte, --no-signature, --check-known exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-dedup-lines : déduplique les lignes en préservant l'ordre de première occurrence (Unicode casefold --ignore-case, --strip, --remove-blank, --check exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 472 — CLI Tools (validation codes identitaires nationaux)
 - [x] siret-check : valide les SIREN (9 digits) / SIRET (14 digits) FR avec Luhn + règle spéciale La Poste (SIREN 356000xxx, somme chiffres multiple de 5), --complete calcule le check digit, --format groupement lisible, --check/--require-valid/--require-min-valid/--require-all-siret exit 2 CI, --invalid-only, --json ✓ 2026-08-02
 - [x] fr-nir-check : valide les NIR FR (13 digits + clé 2 chiffres, mod-97, département 2A/2B → 19/18, premier chiffre 1/2/7/8, mois 01-99), --compute-key, --check/--require-valid/--require-min-valid exit 2 CI, batch args/file/stdin, --json ✓ 2026-08-02
