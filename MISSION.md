@@ -1,11 +1,11 @@
 # OpenClaw — File d'attente des outils
 
 ## Vague 394 — CLI Tools (largeur texte, champs CSV, entropie JSON, commentaires dotenv, retours chariot YAML)
-- [ ] text-count-grapheme-width : largeur d'affichage par ligne (ASCII=1, large chars CJK/emoji=2, --require-max-width exit 2, JSON)
-- [ ] csv-extract-column : extrait une colonne CSV par nom/index (valeur brute, --unique, --sort, --count, JSON)
-- [ ] json-entropy-shannon : entropie de Shannon des strings/bytes d'un JSON (--require-min/max exit 2 CI, JSON)
-- [ ] env-comment-style : lint le style des commentaires dotenv (require space après #, --fix, --check exit 2 CI, JSON)
-- [ ] yaml-normalize-eol : détecte et normalise les fins de ligne d'un YAML (CRLF/LF/CR mixtes, --to lf|crlf, --in-place, --check exit 2 CI, JSON)
+- [x] text-count-grapheme-width : largeur d'affichage par ligne (ASCII=1, large chars CJK/emoji=2, --require-max-width exit 2, JSON) ✓ 2026-08-02
+- [x] csv-extract-column : extrait une colonne CSV par nom/index (valeur brute, --unique, --sort, --count, JSON) ✓ 2026-08-02
+- [x] json-entropy-shannon : entropie de Shannon des strings/bytes d'un JSON (--require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-comment-style : lint le style des commentaires dotenv (require space après #, --fix, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] yaml-normalize-eol : détecte et normalise les fins de ligne d'un YAML (CRLF/LF/CR mixtes, --to lf|crlf, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 393 — CLI Tools (contrôle texte, profondeur JSON, longueur valeurs CSV, trailing whitespace dotenv, directives YAML)
 - [x] text-strip-control-chars : retire les caractères de contrôle ASCII (C0 sauf tab/lf/cr configurable via --keep, DEL+C1, --replace, --list codepoints, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
