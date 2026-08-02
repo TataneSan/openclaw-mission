@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 452 — CLI Tools (extrait base64, doublons par hash, liens Markdown, conversion de casse, profil statistique)
+- [x] text-extract-base64 : extrait et décode les blobs base64/base64url d'un texte (preview texte/flag binaire, --min-len 8, --decode/--raw-out DIR, --unique/--counts, gates --require-min/max/none/text exit 2 CI, JSON) ✓ 2026-08-02
+- [x] file-duplicate-report : groupe les fichiers dupliqués par hash de contenu (sha256/sha1/md5/blake2b, pré-bucketing par taille, bytes gaspillés triés, --delete-extras/--dry-run, --min-size/--skip-dir, gates --require-none/max-wasted/min-groups exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-markdown-links : extrait liens/images/références Markdown (inline avec titres, images, refs résolues via définitions, autolinks, mailto, refs non résolues flaggées, --kind/--targets-only, gates --require-no-unresolved/--require-host exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-case-convert : convertit les identifiants entre kebab/snake/camel/pascal/screaming/dot (split frontières camel/Pascal, modes ligne/--tokens, --detect, --in-place, --check/--require-change exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-stat-profile : statistiques complètes d'un texte (lignes/mots/unicité/richesse vocab, classes de caractères Unicode, moyennes lignes/mots, top-N mots, --keys, gates --require-min/max-words/max-line-length/min-richness exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 451 — CLI Tools (extrait CIDR IPv4/IPv6, chiffres romains, morse, décode JWT, inventaire symlinks)
 - [x] text-extract-cidr : extrait et valide les blocs CIDR IPv4/IPv6 d'un texte (réseau/broadcast/taille via ipaddress, host-bits flaggés, --version 4|6, --unique/--counts/--sort value, --strict-network/--require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-roman-numerals : extrait les chiffres romains d'un texte et les convertit (paires soustractives validées, formes malformées rejetées, --convert N vers romain, --min/--max, --unique/--counts/--sort, gates --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
