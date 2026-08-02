@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 417 — CLI Tools (texte compte dièses, csv strip colonnes vides, json chemins false, base16, texte dédup lignes gardant ordre)
+- [ ] text-count-hashes : compte les dièses # dans un texte (--per-line, --require-min/max, --check exit 2 CI, JSON)
+- [ ] csv-strip-empty-columns : supprime les colonnes entièrement vides d'un CSV (toutes lignes vides, --check exit 2 CI, JSON)
+- [ ] json-list-false-paths : liste les chemins vers les valeurs false d'un JSON (dot-path, --require-none exit 2 CI, JSON)
+- [ ] base16-tool : encode/décode base16 hex (RFC 4648, --upper, --no-0x, --check exit 2 CI, JSON)
+- [ ] text-dedupe-lines : supprime les lignes dupliquées en gardant la première occurrence (ordre stable, --in-place, --check exit 2 CI, JSON)
+
 ## Vague 416 — CLI Tools (texte compte astérisques, csv trim colonnes vides droite, json chemins booléens true, url base64, texte squeeze lignes consécutives identiques)
-- [ ] text-count-asterisks : compte les astérisques * dans un texte (--per-line, --require-min/max, --check exit 2 CI, JSON)
-- [ ] csv-strip-right-empty : supprime les colonnes vides en queue d'un CSV (trailing empty columns, --all-empty exit 2 CI, JSON)
-- [ ] json-list-true-paths : liste les chemins vers les valeurs true d'un JSON (dot-path, --require-none exit 2 CI, JSON)
-- [ ] base64-tool : encode/décode base64 standard (RFC 4648, --wrap, --no-pad, --check exit 2 CI, JSON)
-- [ ] text-squeeze-repeat-lines : supprime les lignes consécutives identiques en gardant la 1re (--count, --in-place, --check exit 2 CI, JSON)
+- [x] text-count-asterisks : compte les astérisques * dans un texte (--per-line, --require-min/max, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-strip-right-empty : supprime les colonnes vides en queue d'un CSV (trailing empty columns, --all-empty exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-list-true-paths : liste les chemins vers les valeurs true d'un JSON (dot-path, --require-none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] base64-tool : encode/décode base64 standard (RFC 4648, --wrap, --no-pad, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-squeeze-repeat-lines : supprime les lignes consécutives identiques en gardant la 1re (--count, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 415 — CLI Tools (texte compte backticks, csv strip colonne vide gauche, json chemins strings vides, rot13, texte trim chaque ligne)
 - [x] text-count-backticks : compte les backticks ` dans un texte (--require-min/max, --require-balanced, --check exit 2 CI, JSON) ✓ 2026-08-02
