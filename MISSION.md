@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 436 — CLI Tools (texte extrait hostnames RFC1034, data URIs décodées, Accept-Language q-values, templates URI RFC6570, codes SWIFT/BIC ISO9362)
+- [x] text-extract-hostnames : extrait les hostnames RFC 1034/1035 d'un texte (filtre --tld, --lowercase, --apex, --unique/--counts, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-data-uri : extrait et décode les data: URIs RFC 2397 (base64/percent, --mime-filter, --decode brut, --require-max-bytes/min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] accept-language-parse : parse les en-têtes Accept-Language (q-values triées, best-match RFC 4647 avec fallback préfixe, --supported/--default, --strict, --require-match exit 2 CI, JSON) ✓ 2026-08-02
+- [x] uri-template-expand : expanse les templates URI RFC 6570 ({var}/{+var}/{#}/{.}/{/}/{;}/{?}/{&}, percent-encoding, --var/--vars-json, --list-vars, --require-vars exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-swift-bic : extrait et valide les codes SWIFT/BIC ISO 9362 (structure banque/pays/lieu/agence, pays ISO 3166-1 vérifié, --country/--parts, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 435 — CLI Tools (texte extrait UUIDs, csv remplissage vers le haut, résumé codes ANSI, texte extrait ISBN validés, texte extrait IMEI Luhn)
 - [x] text-extract-uuids : extrait les UUID d'un texte (filtre --version-filter 1-5, --normalize, --unique/--counts, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
 - [x] csv-fill-up : remplit les cellules CSV vides avec la valeur de la ligne du dessous (--columns nom/index, --in-place, --require-fills/--require-none exit 2 CI, JSON) ✓ 2026-08-02
