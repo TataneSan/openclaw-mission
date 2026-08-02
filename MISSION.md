@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 502 — CLI Tools (CSV stats, text wrap, JSON get, file recent, env diff)
+- [x] csv-column-mode : calcule la valeur la plus fréquente par colonne CSV (mode, counts, top-N, --all-columns, gates require-min-frequency exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-wrap-width : wrap du texte à une largeur donnée (--width, --indent, --break-words, --skip-blank, gates require-lines/max-wrapped exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-get-value : lit une valeur JSON par chemin pointillé (indices tableaux, wildcard, --all vs first, --compact, --raw, JSONL, gates require-match/count exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-recent : liste les fichiers modifiés dans les N dernières heures/jours (--within 24h, --older-than, --ext, --hidden, gates require-min/max exit 2 CI, --json) ✓ 2026-08-02
+- [x] env-diff : compare deux fichiers .env (only-left/only-right/changed, --mask-values, --shell-export, gates require-identical/no-conflicts exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 501 — CLI Tools (trim CSV, BOM, accents, colonnes median, stem fichiers)
 - [x] csv-trim-fields : strip espaces/tabulations dans les cellules CSV (--all-columns ou --columns noms/index, --no-header, --in-place, gates require-trimmed-min/unchanged exit 2 CI, --json) ✓ 2026-08-02
 - [x] text-remove-bom : retire le BOM UTF-8 (EF BB BF) et optionnellement UTF-16/32 des fichiers texte (batch, --check exit 2 si BOM présent, --in-place, --json) ✓ 2026-08-02
