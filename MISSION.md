@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 501 — CLI Tools (trim CSV, BOM, accents, colonnes median, stem fichiers)
+- [x] csv-trim-fields : strip espaces/tabulations dans les cellules CSV (--all-columns ou --columns noms/index, --no-header, --in-place, gates require-trimmed-min/unchanged exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-remove-bom : retire le BOM UTF-8 (EF BB BF) et optionnellement UTF-16/32 des fichiers texte (batch, --check exit 2 si BOM présent, --in-place, --json) ✓ 2026-08-02
+- [x] text-strip-accents : retire les accents (NFD decompose + filtre Mn, --keep-chars custom, --check exit 2 si accents présents, --in-place, --json) ✓ 2026-08-02
+- [x] csv-column-median : calcule la médiane (et quartiles) des colonnes numériques (sélection --columns, --no-header, gates require-column/min/max exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-stem-batch : batch rename via pattern {stem}{ext} (--prefix/--suffix/--replace/--regex/--lower/--upper, --dry-run, gates require-renamed-min/none exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 500 — CLI Tools (mots uniques texte, colonnes CSV swap, padding texte, JSON set-value, symlinks cassés)
 - [x] text-unique-words : liste les mots uniques d'un texte (ordre first-seen/alpha/freq, --count, casefold, min-length, gates require-min/max-distinct exit 2 CI, --json) ✓ 2026-08-02
 - [x] csv-swap-columns : échange/deplace deux colonnes d'un CSV par nom ou index (--move A B, index négatifs, --no-header, --in-place, gates require-columns/rows exit 2 CI, --json) ✓ 2026-08-02
