@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 445 — CLI Tools (extrait flottants, run-length encode, arrondit floats JSON, extrait hash hex, retire commentaires C)
+- [x] text-extract-floats : extrait les littéraux flottants d'un texte (décimaux/exposants/inf/nan, --precision, --unique/--counts/--sort, filtres min/max, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-run-length : run-length encode/décode un texte (tokens Nx{char} par ligne, --min-run/--all, --decode, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-round-floats : arrondit récursivement les floats d'un JSON à N décimales (--drop-float vers int, --in-place, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-hashes : extrait les empreintes hex d'un texte (md5/sha1/sha224/sha256/sha384/sha512, kind long-hex, --kind filtre répétable, --lowercase/--unique/--counts, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-strip-c-comments : retire les commentaires C/C++ // et /* */ (chaînes préservées, --keep-lines, --in-place, --check/--require-removed exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 444 — CLI Tools (csv supprime colonne par index, wrap conserve indentation, compte phrases, quoted-printable, extrait entiers)
 - [x] csv-remove-column-by-index : supprime une colonne CSV par index (1-based/--zero-based, négatifs, --dry-run, --require-name/min-cols exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-wrap-indent : wrap chaque ligne à une largeur cible en préservant l'indentation (continuation indentée, --break-long, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
