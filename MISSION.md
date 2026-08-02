@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 550 — CLI Tools (texte convertir palillons camel→snake, CSV ajouter hash de ligne, JSON compter objets vides, fichiers plus grands par mtime récente, texte extraire paires clé=valeur)
+- [ ] text-screaming-to-lower : convertit SCREAMING_SNAKE_CASE en minuscules (option title/kebab, gates CI, --json)
+- [ ] csv-row-hash : ajoute une colonne hash sha256 de la ligne entière (délimiteur sniffé, --columns pour subset, gates CI, --json)
+- [ ] json-empty-object-count : compte les objets {} et arrays [] vides par chemin (récursif, JSONL, gates CI, --json)
+- [ ] file-largest-recent : liste les fichiers les plus volumineux modifiés dans les N derniers jours (--days, --top, gates CI, --json)
+- [ ] text-extract-kv-pairs : extrait les paires clé=valeur d'un texte libre (séparateurs = et :, --unique-keys, gates CI, --json)
+
 ## Vague 549 — CLI Tools (texte supprimer lignes trop courtes, CSV remplir cellules numériques manquantes par moyenne, JSON renverser l'ordre des arrays, fichiers inventaire owners/groupes, texte compter caractères par bloc Unicode)
-- [ ] text-min-length-filter : supprime les lignes plus courtes que N caractères (--keep-blank, --invert, gates CI, --json)
-- [ ] csv-fill-numeric-mean : remplit les cellules vides d'une colonne numérique par la moyenne de la colonne (délimiteur sniffé, gates CI, --json)
-- [ ] json-array-reverse : inverse l'ordre des éléments de tous les arrays d'un JSON (ou chemin ciblé, JSONL, gates CI, --json)
-- [ ] file-owner-group-report : inventaire des propriétaires (uid/user) et groupes d'une arborescence (comptage, gates CI, --json)
-- [ ] text-unicode-block-count : compte les caractères par bloc Unicode (Latin, Cyrillic, CJK…, top-N, gates CI, --json)
+- [x] text-min-length-filter : supprime les lignes plus courtes que N caractères (--keep-blank, --invert, gates CI, --json) ✓ 2026-08-02
+- [x] csv-fill-numeric-mean : remplit les cellules vides d'une colonne numérique par la moyenne de la colonne (délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] json-array-reverse : inverse l'ordre des éléments de tous les arrays d'un JSON (ou chemin ciblé, JSONL, gates CI, --json) ✓ 2026-08-02
+- [x] file-owner-group-report : inventaire des propriétaires (uid/user) et groupes d'une arborescence (comptage, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] text-unicode-block-count : compte les caractères par bloc Unicode (Latin, Cyrillic, CJK…, top-N, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 548 — CLI Tools (texte extraire lignes par motif d'horodatage, CSV détecter colonnes constantes, JSON extraire sous-arbre par chemin, fichiers doublons par taille uniquement, texte compter caractères non-imprimables)
 - [x] text-filter-timestamp-lines : garde les lignes contenant un horodatage (ISO/syslog/epoch, --format, --invert, gates CI, --json) ✓ 2026-08-02
