@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 503 — CLI Tools (CSV filter, url encode, json keys list, file hash, retry cmd)
+- [x] csv-filter-numeric : filtre lignes CSV par conditions numériques (COLUMN>5, COLUMN<=10, --and/or, --no-header, --invert, gates require-min/max/none exit 2 CI, --json) ✓ 2026-08-02
+- [x] url-encode-batch : encode/décode URL en batch (percent-encoding, --decode, --safe, --query, gates require-min/none-failed exit 2 CI, args/file/stdin, --json) ✓ 2026-08-02
+- [x] json-keys-list : liste les clés d'un JSON récursivement (chemins dot, --depth N, --sort, types, --count, gates require-key/no-extra exit 2 CI, JSONL, --json) ✓ 2026-08-02
+- [x] file-hash-tree : hash SHA256 récursif d'une arborescence + manifest stable pour comparaison (--out, --exclude glob, --algo, --compare autre-manifest signale exit 2 diff, --json) ✓ 2026-08-02
+- [x] cmd-retry : exécute une commande avec retries + backoff exponentiel (--times, --delay, --max-delay, --on-exit codes, --jitter, --timeout, exit de la commande persistant si échec final) ✓ 2026-08-02
+
 ## Vague 502 — CLI Tools (CSV stats, text wrap, JSON get, file recent, env diff)
 - [x] csv-column-mode : calcule la valeur la plus fréquente par colonne CSV (mode, counts, top-N, --all-columns, gates require-min-frequency exit 2 CI, --json) ✓ 2026-08-02
 - [x] text-wrap-width : wrap du texte à une largeur donnée (--width, --indent, --break-words, --skip-blank, gates require-lines/max-wrapped exit 2 CI, --json) ✓ 2026-08-02
