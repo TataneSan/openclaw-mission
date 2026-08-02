@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 373 — CLI Tools (reverse word order, vérification CMD exec JSON, longueur tableau JSON, présence clés dotenv, colonne TOTAL CSV)
+- [x] text-reverse-word-order : inverse l'ordre des mots de chaque ligne (indent préservée, --sep, --skip-first, --check CI, --json) ✓ 2026-08-02
+- [x] dockerfile-verify-cmd-json : vérifie que les CMD d'un Dockerfile utilisent la forme exec JSON (multi-stages, --final-only, --require-cmd, exit 2 shell form, JSON) ✓ 2026-08-02
+- [x] json-count-array-length : compte les items d'un tableau JSON/JSONL (dot-path avec indices, --require-min/--require-max CI, JSON) ✓ 2026-08-02
+- [x] env-check-key : vérifie la présence de clés dans un dotenv (--require-non-empty, --match REGEX, jamais d'impression des valeurs, doublons, JSON) ✓ 2026-08-02
+- [x] csv-row-total : ajoute une colonne TOTAL sommant les colonnes numériques par ligne (--columns, --delimiter, --no-header, --name, --empty-as-zero, JSON) ✓ 2026-08-02
+
 ## Vague 372 — CLI Tools (suppression dernier mot, ENTRYPOINT Dockerfile, minification canonique JSON, masquage valeurs dotenv, colonne N CSV)
 - [x] text-delete-last-word : supprime le dernier mot de chaque ligne (indent/trail préservés, --skip-first/--only-matching/--skip-blank, --in-place, --check CI, JSON) ✓ 2026-08-02
 - [x] dockerfile-extract-entrypoint-json : extrait l'ENTRYPOINT per stage d'un Dockerfile (exec/JSON vs shell, --final-only, --command-only, --require-entrypoint/--require-exec-form/--forbid-shell-form CI, JSON) ✓ 2026-08-02
