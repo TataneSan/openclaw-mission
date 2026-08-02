@@ -1,5 +1,19 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 394 — CLI Tools (largeur texte, champs CSV, entropie JSON, commentaires dotenv, retours chariot YAML)
+- [ ] text-count-grapheme-width : largeur d'affichage par ligne (ASCII=1, large chars CJK/emoji=2, --require-max-width exit 2, JSON)
+- [ ] csv-extract-column : extrait une colonne CSV par nom/index (valeur brute, --unique, --sort, --count, JSON)
+- [ ] json-entropy-shannon : entropie de Shannon des strings/bytes d'un JSON (--require-min/max exit 2 CI, JSON)
+- [ ] env-comment-style : lint le style des commentaires dotenv (require space après #, --fix, --check exit 2 CI, JSON)
+- [ ] yaml-normalize-eol : détecte et normalise les fins de ligne d'un YAML (CRLF/LF/CR mixtes, --to lf|crlf, --in-place, --check exit 2 CI, JSON)
+
+## Vague 393 — CLI Tools (contrôle texte, profondeur JSON, longueur valeurs CSV, trailing whitespace dotenv, directives YAML)
+- [x] text-strip-control-chars : retire les caractères de contrôle ASCII (C0 sauf tab/lf/cr configurable via --keep, DEL+C1, --replace, --list codepoints, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-max-depth : profondeur maximale d'imbrication d'un JSON (--require-max-depth/--require-min-depth exit 2 CI, JSONL, --show-path pointe la feuille la plus profonde, JSON) ✓ 2026-08-02
+- [x] csv-value-max-length : longueur max des valeurs par colonne CSV (--columns nom/index, --require-max-len exit 2 CI, --truncate + --ellipsis, JSON) ✓ 2026-08-02
+- [x] env-strip-trailing-space : retire l'espace/tab de fin de ligne d'un .env (quotés préservés, --check exit 2 CI, --in-place, JSON) ✓ 2026-08-02
+- [x] yaml-lint-directives : valide les directives d'un YAML (%YAML version, %TAG, document markers ---/..., --require-version exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 392 — CLI Tools (rotation CSV, nulls JSON, tabs→espaces, casse clés dotenv, commentaires YAML)
 - [x] csv-rotate-columns : décale les colonnes d'un CSV vers la gauche/droite (header compris ou --keep-header, --left N/--right N, --delimiter, --check --reference exit 2 CI, JSON) ✓ 2026-08-02
 - [x] json-count-null : compte les valeurs null récursivement (--path dot-path avec wildcard *, JSONL, --list-paths, --require-max/--require-zero exit 2 CI, JSON) ✓ 2026-08-02
