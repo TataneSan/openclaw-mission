@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 429 — CLI Tools (csv supprime colonnes dupliquées, json compte clés par chemin, texte lignes les plus longues, base58check décode, texte mots en minuscules seulement)
+- [ ] csv-drop-duplicate-columns : supprime les colonnes au contenu identique d'un CSV (toutes lignes, --keep-first, --check exit 2 CI, JSON)
+- [ ] json-count-keys : compte le nombre de clés objets par chemin d'un JSON (dot-path, --top, --require-max exit 2 CI, JSON)
+- [ ] text-longest-lines : affiche les lignes les plus longues d'un texte (--top, --min-length, --require-max exit 2 CI, JSON)
+- [ ] base58check-tool : encode/décode base58check (version byte + checksum double-SHA256, --decode, --check exit 2 CI, JSON)
+- [ ] text-lowercase-only-words : garde les lignes ne contenant que des mots en minuscules (--invert, --require-min exit 2 CI, JSON)
+
 ## Vague 428 — CLI Tools (csv compte valeurs par colonne, json chemins strings, texte mots les plus longs, détecte encodage BOM, texte lignes contenant nombre)
-- [ ] csv-value-counts : compte les occurrences de chaque valeur d'une colonne CSV (--col, --top, --require-max exit 2 CI, JSON)
-- [ ] json-list-string-paths : liste les chemins vers toutes les valeurs string d'un JSON (dot-path, --min-length, --require-min/max exit 2 CI, JSON)
-- [ ] text-longest-words : liste les mots les plus longs d'un texte (--top, --min-length, --require-min exit 2 CI, JSON)
-- [ ] detect-bom : détecte la présence d'un BOM (UTF-8/UTF-16LE/BE) dans un fichier (--require-none exit 2 CI, JSON)
-- [ ] text-lines-containing-number : garde les lignes contenant au moins un nombre (--invert, --require-min exit 2 CI, JSON)
+- [x] csv-value-counts : compte les occurrences de chaque valeur d'une colonne CSV (--col, --top, --require-max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-list-string-paths : liste les chemins vers toutes les valeurs string d'un JSON (dot-path, --min-length, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-longest-words : liste les mots les plus longs d'un texte (--top, --min-length, --require-min exit 2 CI, JSON) ✓ 2026-08-02
+- [x] detect-bom : détecte la présence d'un BOM (UTF-8/UTF-16LE/BE) dans un fichier (--require-none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-lines-containing-number : garde les lignes contenant au moins un nombre (--invert, --require-min exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 427 — CLI Tools (csv compte distincts, json chemins arrays, texte extraire URLs, hexdump octets, texte mots uniques)
 - [x] csv-distinct-count : compte les valeurs distinctes par colonne d'un CSV (--col, --top, --require-max exit 2 CI, JSON) ✓ 2026-08-02
