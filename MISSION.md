@@ -619,12 +619,19 @@ Push automatique après chaque outil.
 - [x] url-ensure-scheme : garantit un scheme par défaut (https) aux URLs sans scheme (--check CI, JSON) ✓ 2026-08-02
 - [x] file-hardlink-count-report : rapport du nombre de liens durs par fichier (--min-links, --check CI, JSON) ✓ 2026-08-02
 
-## Vague 340 — CSV/JSON/text/URL/file mix (à définir)
-- [ ] csv-add-hash-column : ajoute une colonne de hash (md5/sha256) calculée sur les colonnes choisies de chaque ligne (--check CI, JSON)
-- [ ] json-extract-max-value : trouve la valeur maximale à un dot-path numérique à travers JSONL (--check CI, JSON)
-- [ ] text-blank-line-guard : vérifie qu'un fichier ne contient aucune ligne vide (--allow-trailing, --check CI, JSON)
-- [ ] url-extract-query-count : rapport du nombre de paramètres query par URL (stats, --threshold CI, JSON)
-- [ ] file-world-readable-report : rapport des fichiers lisibles par tout le monde (o+r) d'une arborescence (--check CI, JSON)
+## Vague 341 — CSV/JSON/text/URL/file mix (à définir)
+- [ ] csv-detect-header : détecte si la première ligne d'un CSV est un header réel (--check CI, JSON)
+- [ ] json-count-numeric-paths : compte les chemins numériques dans un JSONL (--min-value CI, JSON)
+- [ ] text-extract-ipv4 : extrait les adresses IPv4 d'un texte (validation stricte, --check CI, JSON)
+- [ ] url-extract-scheme-report : rapport des schemes d'URLs (comptage, --require http/https CI, JSON)
+- [ ] file-sticky-bit-detect : liste les dossiers avec sticky bit inhabituel (hors /tmp, --check CI, JSON)
+
+## Vague 340 — CSV/JSON/text/URL/file mix
+- [x] csv-add-hash-column : ajoute une colonne de hash (md5/sha256) calculée sur les colonnes choisies de chaque ligne (--check CI, JSON) ✓ 2026-08-02
+- [x] json-extract-max-value : trouve la valeur maximale à un dot-path numérique à travers JSONL (--check CI, JSON) ✓ 2026-08-02
+- [x] text-blank-line-guard : vérifie qu'un fichier ne contient aucune ligne vide (--allow-trailing, --check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-query-count : rapport du nombre de paramètres query par URL (stats, --threshold CI, JSON) ✓ 2026-08-02
+- [x] file-world-readable-report : rapport des fichiers lisibles par tout le monde (o+r) d'une arborescence (--check CI, JSON) ✓ 2026-08-02
 
 ## Vague 339 — CSV/JSON/text/URL/file mix
 - [x] csv-fill-random : remplit les cellules vides d'une colonne CSV par des valeurs aléatoires de la colonne (seed reproductible, --check CI, JSON) ✓ 2026-08-02
