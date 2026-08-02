@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 460 — CLI Tools (vérification gitignore, retrait de quotes, normalisation quoting CSV, glob→regex, somme des tailles disque)
+- [x] gitignore-check : évalue si des chemins seraient ignorés par un fichier .gitignore (sémantique git : glob * ? [cls], **/ segments, dir-only trailed /, ! negation règle tardive gagne, / anchored, # commentaires, args/--file/stdin, --list/--ignored-only/--not-ignored-only, --json, gates require-min/max/none exit 2 CI) ✓ 2026-08-02
+- [x] text-unquote : retire les paires de quotes simples/doubles/backticks autour des lignes (mismatched/unterminated conservés, kind filtrable, --allow-escaped, --delimiter mode champs, --stripws, --check exit 2, --in-place, --json, gates require-stripped/none exit 2 CI) ✓ 2026-08-02
+- [x] csv-escape : normalise le quoting des champs CSV (styles minimal RFC 4180/all/non-numeric coercit nombre/none avec --unsafe-replacement, délimiteur sniffé, --check exit 2, --in-place, --json, gates require-unsafe-max/unchanged exit 2 CI) ✓ 2026-08-02
+- [x] path-to-regex : convertit un glob path-style en regex équivalente (* non-séparateur, ** segment multi-niveaux incluant zéro, ? un char, [classes], {a,b} alternance, \ escape, anchoré par défaut/--no-anchor, --separator, --test MATCH/NO-MATCH, --json, gates require-match-min/no-match exit 2 CI) ✓ 2026-08-02
+- [x] file-size-total : somme les tailles de fichiers et dossiers récursivement (symlinks non suivis, args/--file/stdin, --human, --no-list/--summary, --json, gates require-min/max-bytes exit 2 CI, --ignore-missing) ✓ 2026-08-02
+
 ## Vague 459 — CLI Tools (cron expressions, versions semver, fins de ligne, slugs URL, subnets IPv4)
 - [x] cron-expression-parse : parse et valide les cron 5 champs (*, N, A-B, A-B/S, */S, N/S, listes, noms jan-dec/sun-sat, 0/7=dimanche, OR sémantique dom+dow) + macros @hourly/@daily/@weekly/@monthly/@yearly/@annually/@midnight, expansion compacte par champ, description texte, --next N occurrences futures (--start ISO), batch args/--file/stdin avec # commentaires, gates require-min/valid/next exit 2 CI, --strict, JSON ✓ 2026-08-02
 - [x] text-extract-semantic-versions : extrait versions semver 2.0.0 strictes (préfixe v, prerelease/build, leading-zeros rejetés, pas d'embed alphanum), --allow-partial 1.2→1.2.0, tri precedence semver complet (numeric<alpha, release>pre), --range '>=a,<b' multi-tokens, --unique/--counts/--sort/--latest-only/--stats, gates require-min/max/none/version/latest exit 2 CI, JSON ✓ 2026-08-02
