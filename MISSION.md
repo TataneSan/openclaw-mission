@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 416 — CLI Tools (texte compte astérisques, csv trim colonnes vides droite, json chemins booléens true, url base64, texte squeeze lignes consécutives identiques)
+- [ ] text-count-asterisks : compte les astérisques * dans un texte (--per-line, --require-min/max, --check exit 2 CI, JSON)
+- [ ] csv-strip-right-empty : supprime les colonnes vides en queue d'un CSV (trailing empty columns, --all-empty exit 2 CI, JSON)
+- [ ] json-list-true-paths : liste les chemins vers les valeurs true d'un JSON (dot-path, --require-none exit 2 CI, JSON)
+- [ ] base64-tool : encode/décode base64 standard (RFC 4648, --wrap, --no-pad, --check exit 2 CI, JSON)
+- [ ] text-squeeze-repeat-lines : supprime les lignes consécutives identiques en gardant la 1re (--count, --in-place, --check exit 2 CI, JSON)
+
 ## Vague 415 — CLI Tools (texte compte backticks, csv strip colonne vide gauche, json chemins strings vides, rot13, texte trim chaque ligne)
-- [ ] text-count-backticks : compte les backticks ` dans un texte (--require-min/max, --check exit 2 CI, JSON)
-- [ ] csv-strip-left-empty : supprime les colonnes vides en tête d'un CSV (leading empty columns, --all-empty exit 2 CI, JSON)
-- [ ] json-list-empty-string-paths : liste les chemins vers les strings vides d'un JSON (dot-path, --require-none exit 2 CI, JSON)
-- [ ] rot13-tool : applique ROT13 à un texte (lettres seules, --check exit 2 CI, JSON)
-- [ ] text-rstrip-lines : retire l'espace/tab de fin de chaque ligne (--in-place, --check exit 2 CI, JSON)
+- [x] text-count-backticks : compte les backticks ` dans un texte (--require-min/max, --require-balanced, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-strip-left-empty : supprime les colonnes vides en tête d'un CSV (leading empty columns, --max-strip, --check/--all-empty exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-list-empty-string-paths : liste les chemins vers les strings vides d'un JSON (dot-path, --whitespace, --require-none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] rot13-tool : applique ROT13 à un texte (lettres seules, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-rstrip-lines : retire l'espace/tab de fin de chaque ligne (LF/CRLF préservés, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 414 — CLI Tools (texte compte tildes, csv supprime colonne, json liste valeurs null, base58 encode, texte lignes indentées)
 - [x] text-count-tildes : compte les tildes ~ dans un texte (--require-min/max, --check exit 2 CI, JSON) ✓ 2026-08-02
