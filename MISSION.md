@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 579 — CLI Tools (rapport indentation mixte, CSV numéro de ligne d'une valeur, JSON pretty/compact toggle, compter segments d'URL, .env valeurs partagées)
+- [x] text-mixed-indent-report : détecte l'indentation tabs/espaces/mixte (per-file, sample lignes, --fix tab|space avec --tab-width, gate --style, --json) ✓ 2026-08-03
+- [x] csv-row-number-of-value : numéro(s) de ligne d'une valeur dans un CSV (--column nom/index, --first/--last/--all, --contains/--regex, --require-absent, --json) ✓ 2026-08-03
+- [x] json-pretty-compact-toggle : bascule JSON entre pretty et compact (auto-détection, --indent N/tab, --sort-keys, JSONL, --check pretty|compact, --json) ✓ 2026-08-03
+- [x] url-path-segment-count : compte les segments de path d'URLs (args/--file/stdin, --min/--max filtre, --stats, gates require-count/require-uniform, --json) ✓ 2026-08-03
+- [x] env-same-value-report : détecte les clés .env partageant la même valeur (multi-fichiers, masquage, --min-keys, gates require-none/max-groups, --json) ✓ 2026-08-03
+
 ## Vague 578 — CLI Tools (audit commentaires .env, rapport caractères box-drawing, CSV supprimer header, JSON échantillonner arrays, fréquences première colonne CSV)
 - [x] env-comment-style : audit/normalise les commentaires d'un .env (full-line/inline, densité, --normalize/--dry-run, gates require-min-comments/require-none, --json) ✓ 2026-08-03
 - [x] text-box-drawing-report : rapport des caractères Unicode box-drawing (U+2500-U+257F, noms, per-line, --to-ascii, gates require-none/present/max-total, --json) ✓ 2026-08-03
