@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 372 — CLI Tools (suppression dernier mot, ENTRYPOINT Dockerfile, minification canonique JSON, masquage valeurs dotenv, colonne N CSV)
+- [x] text-delete-last-word : supprime le dernier mot de chaque ligne (indent/trail préservés, --skip-first/--only-matching/--skip-blank, --in-place, --check CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-extract-entrypoint-json : extrait l'ENTRYPOINT per stage d'un Dockerfile (exec/JSON vs shell, --final-only, --command-only, --require-entrypoint/--require-exec-form/--forbid-shell-form CI, JSON) ✓ 2026-08-02
+- [x] json-minify-clone : réécrit JSON/JSONL en forme minifiée canonique (--sort-keys, --ascii, --in-place/-o, --check CI, --require-object/--require-array, rapport octets JSON) ✓ 2026-08-02
+- [x] env-mask-values : masque les valeurs de clés données d'un dotenv (quotes + commentaires préservés, --unmask, --check CI, --require-present/--require-masked, JSON) ✓ 2026-08-02
+- [x] csv-nth-column : imprime les valeurs de la colonne N d'un CSV (nom/1-based index, --no-header, --delimiter, --unique/--count, --require-min/max/value/non-empty CI, JSON) ✓ 2026-08-02
+
 ## Vague 371 — CLI Tools (swap 1er/dernier mot, RUN longs Dockerfile, delete nulls JSON, tri clés dotenv, comptage remplissage colonne CSV)
 - [x] text-swap-first-last-word : permute le premier et dernier mot de chaque ligne (indent/trail préservés, --min-words, --skip-first, --check CI, JSON) ✓ 2026-08-02
 - [x] dockerfile-extract-run-long : liste les RUN d'un Dockerfile dépassant un seuil (chars/lignes physiques, comptage &&, --all, --require-none-long/max-len/max-chained CI, JSON) ✓ 2026-08-02
