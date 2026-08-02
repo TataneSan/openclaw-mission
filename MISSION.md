@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 472 — CLI Tools (validation codes identitaires nationaux)
+- [x] siret-check : valide les SIREN (9 digits) / SIRET (14 digits) FR avec Luhn + règle spéciale La Poste (SIREN 356000xxx, somme chiffres multiple de 5), --complete calcule le check digit, --format groupement lisible, --check/--require-valid/--require-min-valid/--require-all-siret exit 2 CI, --invalid-only, --json ✓ 2026-08-02
+- [x] fr-nir-check : valide les NIR FR (13 digits + clé 2 chiffres, mod-97, département 2A/2B → 19/18, premier chiffre 1/2/7/8, mois 01-99), --compute-key, --check/--require-valid/--require-min-valid exit 2 CI, batch args/file/stdin, --json ✓ 2026-08-02
+- [x] cep-check : valide les CEP brésiliens (8 digits, format NNNNN-NNN) avec mapping vers UF/état selon plages Correios (AC/AL/AM/AP/BA/CE/DF/ES/GO/MA/MT/MS/MG/PA/PB/PR/PE/PI/RJ/RN/RS/RO/RR/SC/SE/SP/TO), --state gate exit 2, --format, --check/--require-valid/--require-min-valid exit 2 CI, --json ✓ 2026-08-02
+- [x] kr-rrn-check : valide les RRN coréens (주민등록번호, YYMMDD-GXXXXXX, 13 digits, mod-11 pondération 2..7 8 9 2..5, codes 7e chiffre siècle/sexe/étranger, date calendaire), --complete calcule check digit, --check/--require-valid exit 2 CI, --json ✓ 2026-08-02
+- [x] us-ssn-validate : valide les SSN US AAA-GG-SSSS (area 001-665/667-899 valides, 666/900-999 réservés, group 01-99, serial 0001-9999, tous-idem rejeté, 987-65-4320 exclu), --format, --mask serial, --check/--require-valid/--require-min-valid exit 2 CI, --json ✓ 2026-08-02
+
 ## Vague 471 — CLI Tools (validation ISBN, IPv6 RFC 5952, barcodes GS1, NanoID, portabilité fichiers)
 - [x] isbn-validate : valide les check digits ISBN-10 (mod-11) / ISBN-13 (mod-10 GS1), tolère tirets/espaces, --convert-10-to-13 (préfixe 978), --check/--require-valid/--require-min-valid/--require-all-isbn13 exit 2 CI, --invalid-only, --json, batch args/file/stdin ✓ 2026-08-02
 - [x] ipv6-compress : normalise IPv6 en forme compressée RFC 5952 / expand 8 groupes / canonical (IPv4 embarqué ::ffff:192.0.2.1, /prefix réseau host-bits reset, mixte-case), --check exit 2 lint, --require-all-valid/--require-min-changes, --json ✓ 2026-08-02
