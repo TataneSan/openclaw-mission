@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 375 — CLI Tools (répétition mots, ENTRYPOINT exec Dockerfile, profondeur JSON, doublons dotenv, ligne max CSV)
+- [x] text-repeat-words : répète chaque mot N fois par ligne (--sep, indentation préservée, --in-place, --check CI, --json) ✓ 2026-08-02
+- [x] dockerfile-verify-entrypoint-json : exige ENTRYPOINT forme exec JSON (multi-stages, --final-only, --require-entrypoint, exit 2 shell form, JSON) ✓ 2026-08-02
+- [x] json-count-object-depth : profondeur max d'imbrication JSON/JSONL (objets+arrays, --require-min/--require-max CI, JSON) ✓ 2026-08-02
+- [x] env-check-duplicates : détecte les clés KEY= dupliquées d'un dotenv (lignes rapportées, export-aware, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-max-row : affiche la ligne CSV au max d'une colonne numérique (nom/index 1-based, --no-header, --delimiter, --require-min/max CI, JSON) ✓ 2026-08-02
+
 ## Vague 374 — CLI Tools (swap case mots, préfixes dotenv, FROM latest Dockerfile, pretty JSONL, longueurs clés dotenv)
 - [x] text-swap-case-words : inverse la casse de chaque mot par ligne (swapcase Unicode, espaces préservés, --skip-first, --check CI, --json) ✓ 2026-08-02
 - [x] env-prefix-check : vérifie que les clés d'un dotenv commencent par un préfixe autorisé (multi-préfixes, export-aware, violations listées, exit 2 CI, JSON) ✓ 2026-08-02
