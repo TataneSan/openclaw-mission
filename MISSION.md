@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 571 — CLI Tools (texte comparaison fréquences, arbre quotas de taille, substitution env, acronymes, collisions casse)
+- [x] text-frequency-compare : compare fréquences de mots entre deux textes (overlap Jaccard, similarité cosinus, top terms, gates require-similar/min-common, --json) ✓ 2026-08-03
+- [x] file-tree-size-limit : mesure un arbre et fait respecter des limites de taille/fichiers (top N plus gros, --exclude, gates max-total/max-files/max-file-size, --json) ✓ 2026-08-03
+- [x] env-substitute : expanse ${VAR} et ${VAR:-défaut} depuis l'env (env-files, --set, --strict, --require-set, --list-vars JSON) ✓ 2026-08-03
+- [x] text-acronym-extract : extrait les acronymes (NASA, HTTP, GDPR...) avec occurrences et définitions "Nom Expandé (ACR)" (camelCase, fillwords, gates CI, --json) ✓ 2026-08-03
+- [x] file-case-collisions : détecte les collisions de noms insensibles à la casse (README.md vs readme.md, --include-dirs, --max-groups, --json) ✓ 2026-08-03
+
 ## Vague 570 — CLI Tools (CSV aperçu structural, texte tri par longueur, JSON aplatissement)
 - [x] csv-preview-shape : aperçu structurel d'un CSV (délimiteur sniffé, nb lignes/colonnes, 3 premières lignes tronquées, gates require-rows/require-columns, --json) ✓ 2026-08-03
 - [x] text-sort-length : trie les lignes par longueur (croissant/--reverse, --tie-alpha, --unique, gates require-sorted/require-max-length, --json) ✓ 2026-08-03
