@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 424 — CLI Tools (diff deux textes, csv compte cellules vides, json remplace valeur, texte extraits hashtags, csv pivot long en large)
+- [ ] text-diff-lines : diff unifié ligne à ligne entre deux textes (contexte N, --check exit 2 CI si différent, JSON)
+- [ ] csv-count-empty-cells : compte les cellules vides par colonne d'un CSV (--total, --require-max exit 2 CI, JSON)
+- [ ] json-set-value : remplace la valeur à un chemin dot-path d'un JSON (--path --value typé, --require-exists exit 2 CI, JSON)
+- [ ] text-extract-hashtags : extrait les #hashtags d'un texte (--unique, comptes, --require-min exit 2 CI, JSON)
+- [ ] csv-to-wide : pivote un CSV long en large (clé/pivot/valeur, --agg first/sum/count, --require-keys exit 2 CI, JSON)
+
 ## Vague 423 — CLI Tools (texte compte voyelles par ligne, csv supprime lignes selon pattern, json chemins strings max, rot47, texte titres capitalisés)
-- [ ] text-vowels-per-line : compte les voyelles par ligne d'un texte (min/max/avg, --require-max exit 2 CI, JSON)
-- [ ] csv-drop-matching-rows : supprime les lignes CSV dont une colonne matche un pattern (--col --pattern regex, --invert, --check exit 2 CI, JSON)
-- [ ] json-list-long-string-paths : liste les chemins des strings de longueur >= N (dot-path, --min-length, --require-none exit 2 CI, JSON)
-- [ ] rot47-tool : applique ROT47 à un texte (printables ASCII, --in-place, --check exit 2 CI, JSON)
-- [ ] text-title-case : transforme un texte en Title Case (small words list, --sentence-style, --check exit 2 CI, JSON)
+- [x] text-vowels-per-line : compte les voyelles par ligne d'un texte (min/max/avg, --require-max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-drop-matching-rows : supprime les lignes CSV dont une colonne matche un pattern (--col --pattern regex, --invert, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-list-long-string-paths : liste les chemins des strings de longueur >= N (dot-path, --min-length, --require-none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] rot47-tool : applique ROT47 à un texte (printables ASCII, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-title-case : transforme un texte en Title Case (small words list, --sentence-style, --check exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 422 — CLI Tools (compte mots fréquents, csv header add, json empty objects, anonymize emails, csv row to lines)
 - [x] text-word-frequency : fréquence des mots d'un texte (top N, --min-count, --check mot absent exit 2 CI, JSON) ✓ 2026-08-02
