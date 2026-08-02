@@ -1,11 +1,25 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 543 — CLI Tools (texte compter lignes par préfixe, CSV remplacer valeur par mapping, JSON éclater objets en fichiers, fichiers plus récents dans chaque sous-dossier, texte supprimer lignes dupliquées en gardant l'ordre)
+- [ ] text-count-by-prefix : compte les lignes regroupées par préfixe (N chars ou jusqu'à séparateur, top-N, gates CI, --json)
+- [ ] csv-map-values : remplace les valeurs d'une colonne via un fichier de mapping clé=valeur (--strict, délimiteur sniffé, gates CI, --json)
+- [ ] json-split-objects : éclate un array JSON d'objets en fichiers individuels (nom par clé, --out-dir, gates CI, --json)
+- [ ] file-newest-per-dir : trouve le fichier le plus récent de chaque sous-dossier (mtime, --depth, gates CI, --json)
+- [ ] text-dedupe-lines : supprime les lignes dupliquées en préservant l'ordre (case-insensitive option, blank handling, gates CI, --json)
+
+## Vague 542 — CLI Tools (texte extraire adresses IPv4, CSV vers lignes clé=valeur, JSON compter profondeur par chemin, fichiers plus anciens que N jours, texte extraire mots répétés consécutifs)
+- [x] text-extract-ipv4 : extrait les adresses IPv4 d'un texte (valides 0-255, --unique, --sort, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] csv-to-kv-lines : convertit un CSV en lignes clé=valeur par enregistrement (séparateur, préfixe ligne, gates CI, --json) ✓ 2026-08-02
+- [x] json-depth-per-path : rapporte la profondeur de chaque chemin feuille d'un document JSON (max gate CI, --json) ✓ 2026-08-02
+- [x] file-older-than : liste les fichiers plus anciens que N jours (mtime/ctime/atime, --newer inverse, gates CI, --json) ✓ 2026-08-02
+- [x] text-repeated-words : détecte les mots répétés consécutivement (case-insensitive option, gates CI, --json) ✓ 2026-08-02 (existant)
+
 ## Vague 541 — CLI Tools (texte extraire lignes entre marqueurs, CSV pivot simple, JSON compter objets par clé, fichiers symlinks cassés, texte extraire lignes top longueur)
-- [ ] text-lines-between : extrait les lignes entre deux marqueurs (regex/literal, --include-markers, occurrences multiples, gates CI, --json)
-- [ ] csv-pivot : pivot simple d'un CSV (clé lignes × clé colonnes → valeur d'agrégat count/sum, délimiteur sniffé, gates CI, --json)
-- [ ] json-count-by-key : compte la fréquence des valeurs d'une clé dans un array JSON (JSONL, top-N, gates CI, --json)
-- [ ] file-broken-symlinks : liste les liens symboliques cassés dans un arbre (cible abs/rel, gates CI, --json)
-- [ ] text-longest-lines : affiche les N lignes les plus longues (chars/bytes, --min-length gate CI, --json)
+- [x] text-lines-between : extrait les lignes entre deux marqueurs (regex/literal, --include-markers, occurrences multiples, gates CI, --json) ✓ 2026-08-02
+- [x] csv-pivot : pivot simple d'un CSV (clé lignes × clé colonnes → valeur d'agrégat count/sum, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] json-count-by-key : compte la fréquence des valeurs d'une clé dans un array JSON (JSONL, top-N, gates CI, --json) ✓ 2026-08-02
+- [x] file-broken-symlinks : liste les liens symboliques cassés dans un arbre (cible abs/rel, gates CI, --json) ✓ 2026-08-02 (existant)
+- [x] text-longest-lines : affiche les N lignes les plus longues (chars/bytes, --min-length gate CI, --json) ✓ 2026-08-02 (existant)
 
 ## Vague 540 — CLI Tools (texte extraire hashtags, CSV extraire colonne vers lignes, JSON compter strings vides, fichiers doublons par contenu, texte extraire initiales majuscules)
 - [x] text-extract-hashtags : extrait les hashtags #d'un texte (Unicode, --unique, --sort, count, gates CI, --json) ✓ 2026-08-02
