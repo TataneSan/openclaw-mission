@@ -8,6 +8,14 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 368 — CLI Tools (répétition premier mot, MAINTAINER Dockerfile, append dotenv, 1re/dernière colonne CSV, tags FROM)
+- [x] text-repeat-first-word : répète le premier mot de chaque ligne N fois (prepend/append, --sep, --skip-first, --check CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-extract-maintainer : extrait les MAINTAINER et LABEL maintainer= par stage (--values-only, --include-labels, --require/--forbid-maintainer CI, JSON) ✓ 2026-08-02
+- [x] env-append-line : ajoute des KEY=VALUE à un dotenv (idempotent --no-clobber/--update, --export, --stdin-pairs, --dry-run, --require-present CI, JSON) ✓ 2026-08-02
+- [x] csv-last-column : imprime les valeurs de la dernière colonne CSV (header-aware, délimiteur custom, --unique/--count, --require-min/max/value CI, JSON) ✓ 2026-08-02
+- [x] csv-first-column : imprime les valeurs de la première colonne CSV (header-aware, délimiteur custom, --unique/--count, --require-min/max/value CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-extract-from-tag : extrait name/tag/digest des FROM par stage (latest implicite, registry:port, ARG détecté, --require-pin/--require-digest/--forbid-latest CI, JSON) ✓ 2026-08-02
+
 ## Vague 367 — CLI Tools (ADD Dockerfile, STOPSIGNAL Dockerfile, ONBUILD Dockerfile, inversion JSON, snake→kebab, valeurs dotenv)
 - [x] dockerfile-extract-add : liste les ADD d'un Dockerfile par stage (flags --checksum/--chown, exec/shell form, --flags-only, --forbid-add/--require-add/--forbid-remote/--forbid-checksum-missing CI, JSON) ✓ 2026-08-02
 - [x] dockerfile-extract-stopsignal : extrait le STOPSIGNAL effectif par stage (last-wins, défaut SIGTERM, noms/numéros, --final-only, --require-signal/--forbid-default/--forbid-invalid CI, JSON) ✓ 2026-08-02
