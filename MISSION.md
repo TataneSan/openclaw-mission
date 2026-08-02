@@ -1,5 +1,14 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 462 — CLI Tools (pivot CSV, schéma JSON inféré, fréquences mots, ancres MD, hex batch, texte XML)
+- [x] csv-column-pivot : pivot long→large d'un CSV (groupe/colonne/valeur par nom ou index, agrégations sum/mean/min/max/count/first/last/list, --fill, sniff délimiteur, gates require-rows/max-pivot-cols exit 2, --json) ✓ 2026-08-02
+- [x] json-schema-guess : infère un JSON Schema draft 2020-12 depuis un document ou flux JSONL (types, min/max numeric, formats string date-time/date/uuid/email/uri/ipv4, required = clés présentes partout, types mixtes en array, --no-format, --compact, gates require-property/type exit 2) ✓ 2026-08-02
+- [x] text-word-frequency-csv : histogramme de fréquence des mots en CSV (tokenization Unicode, stop words EN embarqués + fichier custom, --min-len/--keep-case/--top/--sort, rank/word/count/share, gates require-min-words/max-distinct/top exit 2, --json) ✓ 2026-08-02
+- [x] md-anchor-check : vérifie que les liens #anchor Markdown pointent vers un titre réel (anchors style GitHub, doublons -1/-2, liens cross-fichiers, fences ignorées, ref-defs, %20, exit 2 sur anchor cassé, --json) ✓ 2026-08-02
+- [x] text-url-decode-batch : percent-decode/encode en batch URLs/strings (args/--file/stdin, --plus, --components scheme/host/path/query, --change-only, --safe encoder, gates check/require-decoded-min exit 2, --json) ✓ 2026-08-02
+- [x] xml-plaintext-extract : extrait le texte brut de documents XML/HTML (script/style skip, entités résolues, --one-line/--separator, --lenient tag-stripping fallback, --check well-formed, --require-min-text exit 2, --json) ✓ 2026-08-02
+- [x] text-hex-decode : decode/encode hex en batch (styles spaced/compact/0x/\xNN tolérés, UTF-8 ou escapes \xNN, --raw, --encode formats spaced/compact/c/python/0x, --lenient, gates require-text/min-decoded exit 2, --json) ✓ 2026-08-02
+
 ## Vague 461 — CLI Tools (comparaison hash, surlignage ANSI, blocs entropie, collisions noms, escape CSV, extensions manquantes)
 - [x] file-hash-compare : compare deux fichiers ou arborescences par hash de contenu (md5/sha1/sha256/blake2b, symlinks ignorés, rapport same/differ/only-A/only-B, exit 2 sur diff, --json, --exit-zero) ✓ 2026-08-02
 - [x] text-highlight : surligne les matchs regex/littéraux dans du texte avec couleurs ANSI (16 noms + code 0-255, --fixed, -i, --max N, --count, --check exit 2 lint) ✓ 2026-08-02
