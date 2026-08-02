@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 409 — CLI Tools (texte lignes plus longues, csv lignes jointes, json trie clés, base32 encode, texte compte ponctuation)
+- [ ] text-longest-lines : extrait les N lignes les plus longues d'un texte (--top, --min-length, --require-max-length exit 2 CI, JSON)
+- [ ] csv-join-rows : joint les lignes CSV consécutives partageant une clé (--key, --agg concat/first/last par colonne, --require-joins exit 2 CI, JSON)
+- [ ] json-sort-keys : trie récursivement les clés d'un JSON (--reverse, --locale, --check exit 2 CI si déjà différent, JSON)
+- [ ] base32-tool : encode/décode base32/base32hex (RFC 4648, --decode, --no-padding, --check exit 2 CI, JSON)
+- [ ] text-count-punctuation : compte les signes de ponctuation par type (.,;:!?…, --require-min/max exit 2 CI, JSON)
+
 ## Vague 408 — CLI Tools (csv somme colonnes, text compte majuscules, json extraire tableau, yaml compter docs, hex decode stdin)
-- [ ] csv-sum-column : somme numérique des colonnes choisies (count/sum/avg, --columns, --require-sum-min/max exit 2 CI, JSON)
-- [ ] text-capitalized-count : compte les mots capitalisés d'un texte (--min-length, --ignore-sentence-start, --require-min/max exit 2 CI, JSON)
-- [ ] json-extract-array : extrait un tableau JSON par chemin pointé (a.b.c, wildcard *, --require-length-min/max exit 2 CI, JSON)
-- [ ] yaml-count-documents : compte les documents d'un YAML multi-doc (---/... markers, --require-min/max exit 2 CI, JSON)
-- [ ] hex-to-binary : décode du hex (espaces/0x tolérés) en binaire sur stdout (decode strict --strict, --require-bytes exit 2 CI, JSON report)
+- [x] csv-sum-column : somme numérique des colonnes choisies (count/sum/avg, --columns, --require-sum-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-capitalized-count : compte les mots capitalisés d'un texte (--min-length, --ignore-sentence-start, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-extract-array : extrait un tableau JSON par chemin pointé (a.b.c, wildcard *, --require-length-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] yaml-count-documents : compte les documents d'un YAML multi-doc (---/... markers, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] hex-to-binary : décode du hex (espaces/0x tolérés) en binaire sur stdout (decode strict --strict, --require-bytes exit 2 CI, JSON report) ✓ 2026-08-02
 
 ## Vague 407 — CLI Tools (csv filtre lignes, text compte chiffres, json compact jsonl, env export shell, md titres)
 - [x] csv-filter-rows : filtre les lignes CSV par expression sur colonne (--where col=val/col>val/regex, --invert, --require-min-rows exit 2 CI, JSON) ✓ 2026-08-02
