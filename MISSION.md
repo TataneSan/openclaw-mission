@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 454 — CLI Tools (factorisation entiers, interleave lignes, notation A1 Excel, contraste WCAG, semaines ISO)
+- [x] int-factor-tools : factorisation premiers + gcd/lcm/diviseurs/totient (Miller-Rabin déterministe <2^64, batch stdin/--numbers, gates --require-prime-min/coprime/no-composites exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-interleave-lines : entrelace N fichiers ligne-à-ligne round-robin (--group K par bloc, --skip-empty) et inverse --split N vers stdout ou --out-dir/lane-N.txt (gates require-equal-lanes/lines exit 2 CI, JSON) ✓ 2026-08-02
+- [x] excel-a1-notation : convertit références A1 ⇆ indices (lettres↔index XXE=XFD, ranges A1:C10 normalisés width/height/cells, markers absolus $, gates require-max-col/min exit 2 CI, JSON) ✓ 2026-08-02
+- [x] color-contrast-ratio : ratio de contraste WCAG 2.x entre couleurs (hex 3/4/6/8, rgb()/rgba(), 16 nommées CSS, verdicts AA/AAA normal+large, multi-paires, gates --require/aa/aaa exit 2 CI, JSON) ✓ 2026-08-02
+- [x] iso-week-date : dates calendaires ⇆ semaines ISO 8601 (to-week avec métadonnées, to-date YYYY-Www[-D] expansion 7 jours, forme compacte, années 53 semaines, gates require-week/min exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 453 — CLI Tools (fréquence d'octets, expansion ranges IPv4, CSV→dotenv, jours ouvrés, valeurs JSON par chemin)
 - [x] text-byte-frequency-stats : histogramme des occurrences de chaque octet (classes control/printable/extended, barres ASCII, --top/--ascii-only/--no-list, gates --require-ascii/min-distinct/max-distinct exit 2 CI, JSON) ✓ 2026-08-02
 - [x] ipv4-range-expand : expand ranges IPv4 en adresses (CIDR, a-b forme courte, wildcard suffixe, /32 implicite, --summary/--all/--count-only/--strict, gates --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
