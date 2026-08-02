@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 414 — CLI Tools (texte compte tildes, csv supprime colonne, json liste valeurs null, base58 encode, texte lignes indentées)
+- [ ] text-count-tildes : compte les tildes ~ dans un texte (--require-min/max, --check exit 2 CI, JSON)
+- [ ] csv-drop-column : supprime une colonne d'un CSV (par nom ou index, --keep autres, --check exit 2 CI, JSON)
+- [ ] json-list-null-paths : liste les chemins vers les valeurs null d'un JSON (dot-path, --require-none exit 2 CI, JSON)
+- [ ] base58-tool : encode/décode base58 (Bitcoin alphabet, --decode, --check exit 2 CI, JSON)
+- [ ] text-indent-lines : indente les lignes d'un texte (N espaces, --tabs, --in-place, --check exit 2 CI, JSON)
+
 ## Vague 413 — CLI Tools (texte lignes TRI, csv compte par clé, json clés par type, hexdump inverse, texte phrase la plus longue)
-- [ ] text-sort-lines : trie les lignes d'un texte (--numeric, --reverse, --unique, --locale-like casefold, --check exit 2 CI, JSON)
-- [ ] csv-count-by-key : compte les lignes par valeur de clé (group-by, --top, --min-count, --require-max-groups exit 2 CI, JSON)
-- [ ] json-keys-by-type : liste les clés menant à chaque type JSON (string/number/bool/null/array/object, --require-only-types exit 2 CI, JSON)
-- [ ] hex-to-binary-file : décode un texte hex en fichier binaire (--strict, --offset, --check round-trip exit 2 CI, JSON)
-- [ ] text-longest-sentence : extrait la phrase la plus longue d'un texte (split .!?, --top, --require-max-words exit 2 CI, JSON)
+- [x] text-sort-lines : trie les lignes d'un texte (--numeric, --reverse, --unique, --locale-like casefold, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-count-by-key : compte les lignes par valeur de clé (group-by, --top, --min-count, --require-max-groups exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-keys-by-type : liste les clés menant à chaque type JSON (string/number/bool/null/array/object, --require-only-types exit 2 CI, JSON) ✓ 2026-08-02
+- [x] hex-to-binary-file : décode un texte hex en fichier binaire (--strict, --offset, --check round-trip exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-longest-sentence : extrait la phrase la plus longue d'un texte (split .!?, --top, --require-max-words exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 412 — CLI Tools (texte mots par ligne, csv ligne aléatoire, json liste strings, base64 url encode, texte compte mots répétés)
 - [x] text-words-per-line : compte les mots par ligne d'un texte (min/max/avg, --require-max exit 2 CI, JSON) ✓ 2026-08-02
