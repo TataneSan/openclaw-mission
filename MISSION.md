@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 435 — CLI Tools (texte extrait UUIDs, csv remplissage vers le haut, résumé codes ANSI, texte extrait ISBN validés, texte extrait IMEI Luhn)
+- [x] text-extract-uuids : extrait les UUID d'un texte (filtre --version-filter 1-5, --normalize, --unique/--counts, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-fill-up : remplit les cellules CSV vides avec la valeur de la ligne du dessous (--columns nom/index, --in-place, --require-fills/--require-none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-ansi-summary : résume les séquences d'échappement ANSI d'un texte (comptes par séquence, décodage SGR en noms lisibles, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-isbn : extrait et valide les ISBN-10/13 d'un texte (checksum mod-11/mod-10, --type, --invalid, --counts, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-imei : extrait et valide les IMEI 15 chiffres d'un texte (Luhn, formes groupées, --tac, --invalid, --counts, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 434 — CLI Tools (texte couleurs hex CSS, json chemins booléens, années, masquage IPv4, grep CSV regex)
 - [x] text-extract-hex-colors : extrait les couleurs hex CSS d'un texte (#rgb/#rgba/#rrggbb/#rrggbbaa, expansion, --unique/--counts/--top, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
 - [x] json-list-bool-paths : liste les chemins dot-path des valeurs booléennes d'un JSON (--true-only/--false-only, --require-true-min/--require-false-max/--require-none exit 2 CI, JSON) ✓ 2026-08-02
