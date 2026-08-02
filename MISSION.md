@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 381 — CLI Tools (padding lignes CSV, strip ANSI, WORKDIR non-root Dockerfile, valeurs longues dotenv, USER non-root Dockerfile)
+- [x] csv-pad-rows : normalise les lignes courtes d'un CSV à la largeur attendue (fill custom, --drop, --pad-to, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-strip-ansi : retire les séquences d'échappement ANSI (CSI/OSC/ESC) d'un texte (--check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-workdir-check : exige un WORKDIR absolu non-root dans chaque stage (variables ok, --all-stages, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-find-long-lines : détecte les valeurs dotenv dépassant un seuil de longueur (valeurs jamais affichées, --names-only, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-check-user : exige un USER non-root dans chaque stage Dockerfile (root/0/0:0 interdits, uid>=1000 ok, --all-stages, exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 380 — CLI Tools (underscore→espace, chaînage RUN Dockerfile, comptage booléens JSON, dotenv→Dockerfile, colonnes vides CSV)
 - [x] text-underscore-to-space : remplace _ par des espaces (--in-place, --check CI, --json) ✓ 2026-08-02
 - [x] dockerfile-run-one-layer : détecte les RUN consécutifs à chaîner (3+ par défaut, --strict 2+, exit 2 CI, JSON) ✓ 2026-08-02
