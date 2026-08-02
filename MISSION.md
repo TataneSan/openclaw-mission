@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 564 — CLI Tools (texte trouver mots hors dictionnaire, CSV filtrer plages de valeurs numériques, JSON compter occurrences d'une valeur dans tous les chemins, fichiers taille totale et liste des dotfiles, texte inverser l'ordre des paragraphes)
+- [ ] text-spell-outliers : mots non présents dans une wordlist de référence (typo candidates, --min-length, gates CI, --json)
+- [ ] csv-numeric-range-filter : garde lignes dont colonne numérique entre MIN et MAX (--min/--max ouverts, nombres 1 234,56, gates CI, --json)
+- [ ] json-value-match-paths : liste les chemins ayant exactement une valeur donnée (récursif, JSONL, gates CI, --json)
+- [ ] file-dotfiles-report : inventaire des dotfiles d'un arbre (count, bytes, par type, gates CI, --json)
+- [ ] text-reverse-paragraphs : inverse l'ordre des paragraphes (séparés par lignes vides, gates CI, --json)
+
 ## Vague 563 — CLI Tools (texte garder lignes contenant deux termes, CSV ajouter colonne longueur de valeur, JSON supprimer les clés qui commencent par un préfixe, fichiers diff entre deux arbres basé sur hash, texte collapse lignes avec séparateur custom)
-- [ ] text-match-all-terms : garde lignes contenant TOUS les termes (-t TERM multiple, --any inverse, -i, gates CI, --json)
-- [ ] csv-add-value-length : ajoute une colonne avec la longueur en chars d'une autre colonne (délimiteur sniffé, gates CI, --json)
-- [ ] json-strip-prefix-keys : supprime les clés commençant par un préfixe donné (récursif, --prefix repeat, gates CI, --json)
-- [ ] file-hash-diff : diff de deux arbres basé sur hash sha256 des fichiers (added/removed/changed, gates CI, --json)
-- [ ] text-join-with-sep : joint groupes de N lignes avec séparateur custom (--every N, --sep, gates CI, --json)
+- [x] text-match-all-terms : garde lignes contenant TOUS les termes (-t TERM multiple, --any inverse, -i, gates CI, --json) ✓ 2026-08-03
+- [x] csv-add-value-length : ajoute une colonne avec la longueur en chars d'une autre colonne (délimiteur sniffé, gates CI, --json) ✓ 2026-08-03
+- [x] json-strip-prefix-keys : supprime les clés commençant par un préfixe donné (récursif, --prefix repeat, gates CI, --json) ✓ 2026-08-03
+- [x] file-hash-diff : diff de deux arbres basé sur hash sha256 des fichiers (added/removed/changed, gates CI, --json) ✓ 2026-08-03
+- [x] text-join-with-sep : joint groupes de N lignes avec séparateur custom (--every N, --sep, gates CI, --json) ✓ 2026-08-03
 
 ## Vague 562 — CLI Tools (texte garder N lignes au hasard, CSV remplacer les cellules correspondant à une regex, JSON extraire les noms de toutes les arrays, fichiers timeline mtime par heure, texte rechercher motif avec contexte ±N lignes)
 - [x] text-random-keep : garde N lignes au hasard (--seed reproductible, --preserve-order, gates CI, --json) ✓ 2026-08-03
