@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 474 — CLI Tools (hex batch, en-têtes CSV, préfixe de lignes, strip null JSON, fichiers par âge)
+- [x] base16-encode : encode/décode hexadécimal Base16 en batch (styles compact/spaced/colon/dash/0x/\\x, --upper, --group-by N, --lenient tolère séparateurs, --file binaire, --unique, gates require-min/none-failed/identical exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-header-extract : extrait et transforme les en-têtes CSV (sélection par nom/index négatif, --rename OLD=NEW, --dedup, --one-per-line, --count, délimiteur sniffé, gates require-column/min/identical exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-lead-char : ajoute/retire préfixe et suffixe par ligne (placeholder {n} numéro de ligne + --start, --strip-prefix/--strip-suffix, --skip-empty, --in-place, gates require-changed-min/unchanged/n-used exit 2 CI, --json) ✓ 2026-08-02
+- [x] json-null-strip : supprime clés null (et vides "" [] {} via --strip-all-empty) d'un JSON récursivement (--max-depth, --compact/--sort-keys, --jsonl + --skip-invalid, --check idempotence, gates require-removed-min/unchanged exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-newest-oldest : classe les fichiers les plus récents/anciens d'une arborescence (mtime/ctime/atime, -n par côté, --glob/--exclude/--ext/--depth, --include-dirs, --iso ou âges humains, --relative, gates require-min-count/newest-max-age/no-empty exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 473 — CLI Tools (whitespace, JSON, CSV, MIME, dedup)
 - [x] text-normalize-space : normalise les espaces dans un texte (collapse espaces/tabs, strip trailing/leading, squeeze lignes vides configurable, line-endings lf/crlf/cr, --check exit 2 CI, --json) ✓ 2026-08-02
 - [x] json-compact-expand : compacte ou reformate du JSON (indent configurable, --sort-keys, --ascii, --check exit 2 CI, --json, stdin/fichier) ✓ 2026-08-02
