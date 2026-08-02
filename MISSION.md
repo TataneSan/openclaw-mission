@@ -1,5 +1,11 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 577 — CLI Tools (CSV garder les lignes dupliquées, fichiers scan NUL bytes, JSON histogramme types de valeurs, texte centrer les lignes)
+- [x] csv-keep-duplicate-rows : garde les lignes CSV dont la clé (colonne(s) ou ligne entière) apparait >1 fois (--first-only/--last-only, --count, gates require-duplicates/require-none, --json) ✓ 2026-08-03
+- [x] file-nul-byte-scan : détecte les NUL bytes (\x00) dans les fichiers d'un arbre (offsets, --extensions, --strip, --require-none CI, --json) ✓ 2026-08-03
+- [x] json-value-type-histogram : histogramme des types de valeurs d'un JSON/JSONL (strings/numbers/booleans/nulls/objects/arrays, --by-depth/--by-key, barres ASCII, gates require-total/require-type, --json) ✓ 2026-08-03
+- [x] text-center-lines : centre les lignes d'un texte sur une largeur donnée (--char custom, --truncate, --check CI, --json) ✓ 2026-08-03
+
 ## Vague 576 — CLI Tools (JSON somme numérique profonde, CSV troncature de cellules, env quotes normalisation, texte dédent indenté, extensions de fichiers)
 - [x] json-numeric-deep-sum : somme récursive des nombres d'un JSON (jsonl, --parse-strings, paths dot, gates require-sum/min-max/count/path, --json) ✓ 2026-08-03
 - [x] csv-cell-truncate : tronque les cellules CSV à N caractères (marqueur dans la limite, colonnes ciblées, gates require-clipped/unchanged/--check) ✓ 2026-08-03
