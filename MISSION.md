@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 469 — CLI Tools (base58, versions UUID, temps de lecture, tables Markdown, résumé réseaux)
+- [x] base58-encode : encode/décode base58 alphabet Bitcoin en batch (bytes ou entiers --integer, --per-line multi-entrées, préfixe zéro -> '1', --check round-trip, gates require-min/failmax exit 2 CI, --json) ✓ 2026-08-02
+- [x] uuid-version-report : classifie et valide les UUIDs (versions 1-8, variantes RFC 4122/NCS/Microsoft/réservée, nil/max, --decode extrait timestamp v1/v7, batch args/file/stdin, --check exit 2 sur invalide, gates require-all-valid/min-valid/forbid-version exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-reading-time : estime temps de lecture d'un texte (WPM configurable 200 défaut, comptage mots Unicode/apostrophes, poids --figure/--code, plafond images --max-figure, --raw sans images/code, stats chars/words/sentences, gates require-max-minutes/min exit 2 CI, --json) ✓ 2026-08-02
+- [x] markdown-table-format : normalise et aligne les tables pipe Markdown (largeurs display Unicode, padding, séparateur régénéré avec marqueurs :-- :-: --:, --colon-style, exit 2 si déjà normalisée en mode --check, fences ignorées, --in-place, gates require-min-tables exit 2 CI, --json) ✓ 2026-08-02
+- [x] ip-network-summary : résumé d'un réseau IPv4/IPv6 (wildcard inverse, ip_class A/B/C/D/E, scopes is_private/global/loopback/link_local/multicast/reserved selon stdlib, hostmask, sous-réseaux --split N, agrégation --aggregate de réseaux adjacents, gates require-private/public/none-conflicting exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 468 — CLI Tools (morse, JSON Pointer, diff JSONL, lignes vides, MinHash)
 - [x] text-to-morse-code : encode/décode morse international (A-Z 0-9 ponctuation, séparateur mots /, --decode/--lower, --ignore-unknown, batch args/file/stdin, gates require-min-words/require-all-decoded exit 2 CI, --json) ✓ 2026-08-02
 - [x] json-pointer-get : résout des pointers RFC 6901 sur JSON/JSONL (échappements ~0 ~1, indices tableaux, --jsonl multi-lignes, --values-only, échec pointer = exit 2, gates require-resolved/require-all-resolved/require-eq PTR VALUE exit 2 CI, --json) ✓ 2026-08-02
