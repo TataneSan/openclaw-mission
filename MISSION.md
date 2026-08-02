@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
-## Vague 516 — CLI Tools
-- [ ] csv-column-duplicate : détecte les colonnes CSV en double (noms identiques ou contenus identiques, --drop/--check, délimiteur sniffé, gates CI, --json)
-- [ ] text-filter-by-length : garde les lignes dont la longueur est dans une plage (--min/--max/--exact, chars/words/bytes, invert -v, --g0-lineno, gates CI, --json)
-- [ ] json-array-index : extrait l'élément à l'index N d'un array JSON (négatifs, slicing N:M, --step, --all-indices, JSONL, gates CI, --json)
-- [ ] file-largest-smallest : liste les N plus gros/petits fichiers d'une arborescence (--sort size/mtime/atime, --ext, --exclude, --hidden, gates CI, --json)
-- [ ] text-replace-last : remplace la DERNIÈRE occurrence d'un pattern par ligne/fichier (regex ou littéral, -i, --all-last-in-file, --in-place, gates CI, --json)
+## Vague 517 — CLI Tools
+- [ ] csv-column-shift : décale les valeurs d'une colonne vers le haut/bas de N lignes (wrap ou fill, --by-column, --check, gates CI, --json)
+- [ ] text-strip-ansi : retire les séquences d'échappement ANSI (couleurs, styles, --keep-reset, --report, gates CI, --json)
+- [ ] json-array-flatten : aplatit récursivement les arrays imbriqués (--depth N, --preserve-null-objects, JSONL, gates CI, --json)
+- [ ] file-tree-summary : résumé arborescence (dirs/files/bytes/profondeur max, --depth, --per-level, barres ASCII, gates CI, --json)
+- [ ] text-comment-strip : retire les commentaires de code (#, //, /* */, ;-) selon un langage, strings préservées, gates CI, --json)
+
+## Vague 516 — CLI Tools (doublons colonnes CSV, filtre longueur, index arrays JSON, plus gros/petits fichiers, remplacement dernier)
+- [x] csv-column-duplicate : détecte les colonnes CSV en double (noms identiques ou contenus identiques, --drop/--check, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] text-filter-by-length : garde les lignes dont la longueur est dans une plage (--min/--max/--exact, chars/words/bytes, invert -v, --with-lineno, gates CI, --json) ✓ 2026-08-02
+- [x] json-array-index : extrait l'élément à l'index N d'un array JSON (négatifs, slicing N:M, --step, --indices, JSONL, gates CI, --json) ✓ 2026-08-02
+- [x] file-largest-smallest : liste les N plus gros/petits fichiers d'une arborescence (--sort size/mtime/atime, --ext, --exclude, --hidden, gates CI, --json) ✓ 2026-08-02
+- [x] text-replace-last : remplace la DERNIÈRE occurrence d'un pattern par ligne/fichier (regex ou littéral, -i, --file-wide, --in-place, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 515 — CLI Tools (échantillon lignes, colonnes CSV swap ordre, schéma JSON, échappement JSON, rapport extensions)
 - [x] text-random-sample-lines : échantillonne N lignes d'un texte (shuf -n, --seed reproductible, --percent, --preserve-order, --unique, --with-lineno, gates require-min/max/min-input exit 2 CI, --json) ✓ 2026-08-02
