@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 425 — CLI Tools (csv wide en long, json supprime chemin, texte extraits mentions, csv garde colonnes non vides, texte lignes avec longueur)
+- [ ] csv-to-long : dépivote un CSV large en long (valeurs pivots en lignes, --key --pivot-cols, --drop-empty, --require-rows exit 2 CI, JSON)
+- [ ] json-delete-path : supprime la valeur à un chemin dot-path d'un JSON (--path, clé ou index, --require-exists exit 2 CI, JSON)
+- [ ] text-extract-mentions : extrait les @mentions d'un texte (--unique, comptes, --require-min exit 2 CI, JSON)
+- [ ] csv-nonempty-columns : garde uniquement les colonnes ayant au moins une valeur non vide (--min-nonempty, --check exit 2 CI, JSON)
+- [ ] text-line-lengths : affiche la longueur de chaque ligne d'un texte (--top, min/max/avg, --require-max exit 2 CI, JSON)
+
 ## Vague 424 — CLI Tools (diff deux textes, csv compte cellules vides, json remplace valeur, texte extraits hashtags, csv pivot long en large)
-- [ ] text-diff-lines : diff unifié ligne à ligne entre deux textes (contexte N, --check exit 2 CI si différent, JSON)
-- [ ] csv-count-empty-cells : compte les cellules vides par colonne d'un CSV (--total, --require-max exit 2 CI, JSON)
-- [ ] json-set-value : remplace la valeur à un chemin dot-path d'un JSON (--path --value typé, --require-exists exit 2 CI, JSON)
-- [ ] text-extract-hashtags : extrait les #hashtags d'un texte (--unique, comptes, --require-min exit 2 CI, JSON)
-- [ ] csv-to-wide : pivote un CSV long en large (clé/pivot/valeur, --agg first/sum/count, --require-keys exit 2 CI, JSON)
+- [x] text-diff-lines : diff unifié ligne à ligne entre deux textes (contexte N, --check exit 2 CI si différent, JSON) ✓ 2026-08-02
+- [x] csv-count-empty-cells : compte les cellules vides par colonne d'un CSV (--total, --require-max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-set-value : remplace la valeur à un chemin dot-path d'un JSON (--path --value typé, --require-exists exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-hashtags : extrait les #hashtags d'un texte (--unique, comptes, --require-min exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-to-wide : pivote un CSV long en large (clé/pivot/valeur, --agg first/sum/count, --require-keys exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 423 — CLI Tools (texte compte voyelles par ligne, csv supprime lignes selon pattern, json chemins strings max, rot47, texte titres capitalisés)
 - [x] text-vowels-per-line : compte les voyelles par ligne d'un texte (min/max/avg, --require-max exit 2 CI, JSON) ✓ 2026-08-02
