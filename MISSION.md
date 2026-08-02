@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 358 — CLI Tools (WORKDIR Dockerfile, réordonnancement colonnes CSV, dédup tableaux JSON, suffixe commun, sections INI)
+- [x] dockerfile-extract-workdir : extrait le WORKDIR effectif par stage d'un Dockerfile (last-wins, --final-only, --require-workdir CI, JSON) ✓ 2026-08-02
+- [x] csv-reorder-columns : réordonne les colonnes d'un CSV (ordre voulu, --drop-rest, --check CI, JSON) ✓ 2026-08-02
+- [x] json-array-unique : déduplique les tableaux JSON en gardant les 1res occurrences (JSONL, --path, --sort, --check CI) ✓ 2026-08-02
+- [x] text-strip-suffix : retire un suffixe fixe ou auto-détecté commun de chaque ligne (--ignore-case, --repeat, --check CI, JSON) ✓ 2026-08-02
+- [x] ini-section-list : liste les sections d'un INI (compteurs de clés, --require/--forbid CI, JSON) ✓ 2026-08-02
+
 ## Vague 357 — CLI Tools (bases de stages Dockerfile, valeurs colonne CSV, merge tableaux JSON, trim gauche, valeurs query URL)
 - [x] dockerfile-extract-stage-base : extrait l'image de base de chaque stage FROM d'un Dockerfile (ARG expansés, --check-image/--require-stage CI, JSON) ✓ 2026-08-02
 - [x] csv-extract-column-values : imprime les valeurs d'une colonne CSV (nom ou index, --unique/--count, --require-min/max CI, JSON) ✓ 2026-08-02
