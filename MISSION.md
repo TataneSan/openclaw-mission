@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 556 — CLI Tools (texte supprimer préfixe commun de toutes les lignes, CSV détecter colonnes monotones croissantes, JSON vérifier schéma minimal clés requises via JSONL, fichiers compter par profondeur de dossier, texte justifier à droite)
+- [ ] text-strip-common-prefix : détecte et retire le préfixe commun de toutes les lignes (--min-len, gates CI, --json)
+- [ ] csv-monotonic-columns : détecte les colonnes numériques strictement/non strictement monotones (délimiteur sniffé, gates CI, --json)
+- [ ] json-required-keys : vérifie que chaque objet JSON/JSONL possède les clés requises (chemin array, gates CI, --json)
+- [ ] file-count-by-depth : compte les fichiers par profondeur relative dans l'arbre (barres, gates CI, --json)
+- [ ] text-right-justify : justifie chaque ligne à droite sur la largeur max (ou --width, gates CI, --json)
+
 ## Vague 555 — CLI Tools (texte compter mots par ligne, CSV transposer lignes/colonnes, JSON strip clés à valeur null, fichiers extensions sans fichier associé dans l'arbre, texte extraire hashtags)
-- [ ] text-words-per-line : compte les mots de chaque ligne (min/max gates, --histogram, gates CI, --json)
-- [ ] csv-transpose : transpose un CSV (lignes↔colonnes, délimiteur sniffé, gates CI, --json)
-- [ ] json-strip-nulls : supprime récursivement les clés dont la valeur est null (option --empty aussi {} et [], gates CI, --json)
-- [ ] file-unused-extensions : liste les extensions déclarées dans une liste mais absentes de l'arbre (gates CI, --json)
-- [ ] text-extract-hashtags : extrait les #hashtags d'un texte (--unique, tri par fréquence, gates CI, --json)
+- [x] text-words-per-line : compte les mots de chaque ligne (min/max gates, --histogram, gates CI, --json) ✓ 2026-08-03 (existant)
+- [x] csv-transpose : transpose un CSV (lignes↔colonnes, délimiteur sniffé, gates CI, --json) ✓ 2026-08-03 (existant)
+- [x] json-strip-nulls : supprime récursivement les clés dont la valeur est null (option --empty aussi {} et [], gates CI, --json) ✓ 2026-08-03 (existant)
+- [x] file-unused-extensions : liste les extensions déclarées dans une liste mais absentes de l'arbre (gates CI, --json) ✓ 2026-08-03
+- [x] text-extract-hashtags : extrait les #hashtags d'un texte (--unique, tri par fréquence, gates CI, --json) ✓ 2026-08-03 (existant)
 
 ## Vague 554 — CLI Tools (texte extraire lignes contenant uniquement des chiffres, CSV supprimer colonnes dupliquées par contenu, JSON compter clés dupliquées via JSONL, fichiers hardlinks pointant même inode, texte ratio chiffres/lettres)
 - [x] text-digit-only-lines : extrait les lignes composées uniquement de chiffres/espaces (séparateurs optionnels, gates CI, --json) ✓ 2026-08-03 (existant)
