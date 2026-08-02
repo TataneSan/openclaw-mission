@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 471 — CLI Tools (validation ISBN, IPv6 RFC 5952, barcodes GS1, NanoID, portabilité fichiers)
+- [x] isbn-validate : valide les check digits ISBN-10 (mod-11) / ISBN-13 (mod-10 GS1), tolère tirets/espaces, --convert-10-to-13 (préfixe 978), --check/--require-valid/--require-min-valid/--require-all-isbn13 exit 2 CI, --invalid-only, --json, batch args/file/stdin ✓ 2026-08-02
+- [x] ipv6-compress : normalise IPv6 en forme compressée RFC 5952 / expand 8 groupes / canonical (IPv4 embarqué ::ffff:192.0.2.1, /prefix réseau host-bits reset, mixte-case), --check exit 2 lint, --require-all-valid/--require-min-changes, --json ✓ 2026-08-02
+- [x] ean13-check : valide EAN-13 / UPC-A / EAN-8 (mod-10 poids 1/3 alternés), --complete calcule le check digit manquant 7/11/12 digits, --check/--require-valid/--require-min-valid exit 2 CI, --invalid-only, --json ✓ 2026-08-02
+- [x] nanoid-gen : génère des IDs NanoID (secrets.SystemRandom, alphabet A-Za-z0-9_- taille 21 default, presets url/numeric/hex/lowercase/uppercase/no-lookalike, custom alphabet, --size/--count, --seed reproductible test only, sampling rejection pour uniformité, --collision-check/--require-min-unique/--require-length exit 2, --json) ✓ 2026-08-02
+- [x] filename-portability-check : audit portabilité fichiers Windows/macOS/Linux (chars illégaux <>:"/\|?*, noms réservés CON/PRN/AUX/NUL/COM1-9/LPT1-9 + extension, trailing dot/space, leading space, ctrl chars U+0000-1F/7F, >255 octets, NFC/NFD mismatch, collisions case-fold + NFC entre noms, --no-unicode/--no-collisions, --max-issues N, --json) ✓ 2026-08-02
+
 ## Vague 470 — CLI Tools (fan-out JSONL, stripes ANSI, justification CSV, intersection lignes, translittération)
 - [x] json-lines-burst : partitionne un flux JSONL par clé (chemins pointillés, sanitise les noms de fichiers, seau null, --max-files 512 sécurité, --dry-run, --skip-invalid, gates require-min-lines/files exit 2 CI, --json) ✓ 2026-08-02
 - [x] text-ansi-stripe : alterne les couleurs ANSI par ligne/groupes (16 couleurs fg/bg 90-97/100-107, --cycle N, --skip-empty, --no-reset, --check codes existants exit 2, --json) ✓ 2026-08-02
