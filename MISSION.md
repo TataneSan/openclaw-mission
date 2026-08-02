@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 451 — CLI Tools (extrait CIDR IPv4/IPv6, chiffres romains, morse, décode JWT, inventaire symlinks)
+- [x] text-extract-cidr : extrait et valide les blocs CIDR IPv4/IPv6 d'un texte (réseau/broadcast/taille via ipaddress, host-bits flaggés, --version 4|6, --unique/--counts/--sort value, --strict-network/--require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-roman-numerals : extrait les chiffres romains d'un texte et les convertit (paires soustractives validées, formes malformées rejetées, --convert N vers romain, --min/--max, --unique/--counts/--sort, gates --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] morse-tool : encode/décode le morse international (lettres/chiffres/ponctuation, séparateurs --char-sep/--word-sep, glyphes Unicode alternatifs décodés, --lowercase, --check round-trip, --strict/--require-encoded/--require-decoded exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-jwt : extrait et décode les JWT d'un texte sans vérification de signature (header/payload claims, statut expiration --now, --claims/--header-only, --unique/--counts, gates --require-min/max/none/valid/--fail-on-expired exit 2 CI, JSON) ✓ 2026-08-02
+- [x] file-symlink-report : inventorie les symlinks d'une arborescence sans les suivre (flags BROKEN/ABS/CHAIN, filtres --broken-only/--abs-only, --unlink-broken, gates --require-none/no-broken/no-absolute/max exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 450 — CLI Tools (fichiers vides, renommage séquentiel, hash multi-algos CSV, inventaire Unicode, bench lecture disque)
 - [x] file-zero-byte-report : rapporte les fichiers de 0 octet dans une arborescence (filtres regex, --skip-dir, --delete/--dry-run, gates --require-none/min/max exit 2 CI, JSON) ✓ 2026-08-02
 - [x] file-rename-sequential : renomme des fichiers en séquence numérotée (prefix/suffix/digits/start/step, tri name/mtime, dry-run par défaut, renommage 2 phases anti-collision, --check/--require-renames exit 2 CI, JSON) ✓ 2026-08-02
