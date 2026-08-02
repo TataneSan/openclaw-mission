@@ -640,6 +640,13 @@ Push automatique après chaque outil.
 - [x] url-extract-path-extension-report : rapport par extension du path des URLs (counts, mime guess, --check CI, JSON) ✓ 2026-08-02
 - [x] file-same-content-links : détecte les fichiers identiques pouvant être remplacés par des hardlinks (--apply, --check CI, JSON) ✓ 2026-08-02
 
+## Vague 345 — CSV/JSON/text/URL/file mix
+- [x] csv-keep-unique-rows : garde uniquement les lignes dont la clé est unique (--require CI, JSON) ✓ 2026-08-02
+- [x] json-insert-index-field : insère un champ index monotone dans JSONL/tableau (--check, --overwrite CI, JSON) ✓ 2026-08-02
+- [x] text-syllable-estimate : estime les syllabes par mot/ligne + Flesch (en/fr, --max lint CI, JSON) ✓ 2026-08-02
+- [x] url-fragment-append : ajoute/remplace le fragment #section des URLs (--keep-existing, --check CI, JSON) ✓ 2026-08-02
+- [x] file-disk-usage-report : rapport blocs alloués vs taille logique, détection sparse (--check CI, JSON) ✓ 2026-08-02
+
 ## Vague 344 — CSV/JSON/text/URL/file mix (à définir)
 - [x] csv-trim-cells : retire les espaces débuts/fins des cellules CSV (déjà publié) ✓ 2026-08-02
 - [x] csv-non-numeric-report : rapport des valeurs non numériques par colonne CSV (--threshold CI, JSON) ✓ 2026-08-02
