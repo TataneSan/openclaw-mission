@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 438 — CLI Tools (texte dédup mots par ligne, parse URI/URL, compte paragraphes, extraction e-mails, rapport lignes vides)
+- [x] text-dedupe-words : supprime les mots en double de chaque ligne (première occurrence conservée, --ignore-case, --in-place, --check/--require-collapses exit 2 CI, JSON) ✓ 2026-08-02
+- [x] uri-parse : parse des URIs/URLs en composants (scheme/host/port/user/path/query/fragment, --decode, --query éclaté, --require-scheme/--require-absolute exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-count-paragraphs : compte les paragraphes d'un texte (runs de lignes non vides, --whitespace-blank, --list/--words, --require-min/max/exact exit 2 CI, JSON) ✓ 2026-08-02 (repo existant, réécriture CLI propre)
+- [x] text-extract-emails : extrait les adresses e-mail d'un texte (--unique/--counts/--sort, --domain/--exclude-domain, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02 (repo existant, réécriture CLI propre)
+- [x] text-blank-line-report : rapport des lignes vides et runs de lignes vides (positions 1-based, --whitespace-blank, --list, --require-max-run/max-total/none exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 437 — CLI Tools (texte extrait SemVer, texte extrait IBAN mod-97, validateur cron 5 champs, fusion profonde JSON, score force mot de passe)
 - [x] text-extract-semver : extrait les versions SemVer 2.0.0 d'un texte (pré-release/build, --unique/--counts/--sort précédence, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-extract-iban : extrait et valide les IBAN ISO 13616 (mod-97, longueurs pays registre, formes espacées, --country, --with-invalid, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
