@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 380 — CLI Tools (underscore→espace, chaînage RUN Dockerfile, comptage booléens JSON, dotenv→Dockerfile, colonnes vides CSV)
+- [x] text-underscore-to-space : remplace _ par des espaces (--in-place, --check CI, --json) ✓ 2026-08-02
+- [x] dockerfile-run-one-layer : détecte les RUN consécutifs à chaîner (3+ par défaut, --strict 2+, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-boolean-count : compte les true/false récursivement (--require-true-min/--require-false-max CI, JSON) ✓ 2026-08-02
+- [x] env-to-dockerfile : convertit dotenv en instructions ENV Dockerfile (échappement backslash/quotes, séparateur =/espace, JSON) ✓ 2026-08-02
+- [x] csv-detect-empty-columns : détecte les colonnes entièrement vides d'un CSV (header, --no-header, --check exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 379 — CLI Tools (extraction emails, contraintes EXPOSE Dockerfile, merge unique tableaux JSON, valeurs vides dotenv, types colonnes CSV)
 - [x] text-email-extract : extrait les adresses email d'un texte (dédoublonnage case-insensitive, --count fréquences, exit 2 sans match, JSON) ✓ 2026-08-02
 - [x] dockerfile-expose-check : vérifie les ports EXPOSE d'un Dockerfile (--require-port/--forbid-port/--forbid-udp, continuations, exit 2 CI, JSON) ✓ 2026-08-02
