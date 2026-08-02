@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 464 — CLI Tools (base32 batch, JSONL pretty, comptage voyelles, positions tokens, normalisation EOL)
+- [x] text-base32-decode : decode/encode base32 RFC 4648 en batch (args/--file/--stdin, padding toléré ou --require-padding, --allow-lower, UTF-8 ou fallback hex, --unique, gates --require-min/--require-none-failed exit 2/1, --json) ✓ 2026-08-02
+- [x] json-lines-pretty : pretty-print/compact/lint de flux JSONL (indent espaces/tabs, --compact, --sort-keys, lignes vides tolérées, --skip-invalid, lint --check exit 2, gates require-valid-min/none-invalid/line exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-vowel-consonant-count : compte voyelles/consonnes/chiffres/espaces/autres par ligne + totaux (mode --extended voyelles accentuées via NFD, ratio voyelles/lettres, --no-list, gates require-min-vowels/consonants/words/vowel-ratio exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-token-position : liste les tokens avec leur position ligne/colonne (regex custom /--words/--numbers, 1-based par défaut/--zero-based, --unique première occurrence, --values-only, gates require-min-tokens/require-token répétable exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-eol-normalize : normalise les fins de ligne CSV/texte vers LF ou CRLF (détection lf/crlf/cr/mixed/none, --in-place multi-fichiers ou stdout, --ensure-final-newline, binaires rejetés/--binary-safe, lint --check exit 2, gates require-none-changed/changed-min exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 463 — CLI Tools (remplissage CSV, classes de caractères, histo tailles fichiers, format JSON, wrap colonnes)
 - [x] csv-column-fill : remplit les cellules vides d'un CSV (mode down forward-fill / constant / static, --columns par nom ou index, --keep-leading-empty avec --value, délimiteur sniffé, --no-header, gates check/require-filled-min/require-empty exit 2 CI, --json) ✓ 2026-08-02
 - [x] text-char-classify : compte les caractères par classe par ligne (alpha/digit/space/punct/other via str.is* et catégories Unicode P*, flag ascii par ligne, totaux fusionnés, --keep-newlines, gates require-ascii/class min/forbid-class/require-min-total exit 2 CI, --json) ✓ 2026-08-02
