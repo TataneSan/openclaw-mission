@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 371 — CLI Tools (swap 1er/dernier mot, RUN longs Dockerfile, delete nulls JSON, tri clés dotenv, comptage remplissage colonne CSV)
+- [x] text-swap-first-last-word : permute le premier et dernier mot de chaque ligne (indent/trail préservés, --min-words, --skip-first, --check CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-extract-run-long : liste les RUN d'un Dockerfile dépassant un seuil (chars/lignes physiques, comptage &&, --all, --require-none-long/max-len/max-chained CI, JSON) ✓ 2026-08-02
+- [x] json-delete-nulls : supprime les clés null des objets JSON/JSONL récursivement (--no-recursive, --prune-empty, tableaux préservés, --require-removed/--require-none CI, JSON) ✓ 2026-08-02
+- [x] env-sort-keys : trie les pairs KEY=VALUE d'un dotenv (blocs par commentaires/blancs préservés, --group-comments, --reverse, --in-place, --check CI, JSON) ✓ 2026-08-02
+- [x] csv-count-filled-column : compte les cellules non vides d'une colonne CSV (nom/index 1-based, --print-empty, --require-min/max/all-filled CI, JSON) ✓ 2026-08-02
+
 ## Vague 370 — CLI Tools (suppression premier mot, COPY --from Dockerfile, insert champ JSON à un path, delete clé dotenv, 3e colonne CSV)
 - [x] text-delete-first-word : supprime le premier mot de chaque ligne (indent préservée, --skip-first, --only-matching, --check CI, JSON) ✓ 2026-08-02
 - [x] dockerfile-extract-copy-from : liste les COPY --from d'un Dockerfile par stage (refs stage/image/numeric, --refs-only, --require/from/forbid-from/--require-stage-ref/--forbid-image-ref/--require-resolved CI, JSON) ✓ 2026-08-02
