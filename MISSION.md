@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 443 — CLI Tools (tabs→espaces indentation, escape strings JSON, extrait key=value, ajoute colonne numéros, profondeur d'indentation)
+- [x] text-space-indent-migrate : convertit les tabs d'indentation en espaces (--width, --inner, --in-place, --check exit 2 CI, gates require-conversions/none, JSON) ✓ 2026-08-02
+- [x] json-string-escape : échappe/déséchappe les caractères spéciaux des strings d'un JSON (récursif, \n \t \uXXXX décodeur manuel, --require-changes/unchanged exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-kv-pairs : extrait les paires key=value d'un texte (séparateur custom, valeurs quotes, --pairs à plat, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-add-line-numbers : ajoute une colonne numéro de ligne aux rows CSV (--start/--step, front/--end, --skip-empty, --no-header, --check/--require-rows exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-indent-depth : rapporte la profondeur d'indentation par ligne (unités tab/--width espaces, remainder, --stats, --strict/--require-max-depth exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 442 — CLI Tools (csv mapping header→index, supprime lignes congruence, extrait accolades équilibrées, profil whitespace, fenêtres contexte grep)
 - [x] csv-header-index-map : mappe les en-têtes CSV vers leurs indices colonnes (1-based/--zero-based, --invert, --delimiter, --only/--require-column répétables exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-delete-nth-line : supprime les lignes par congruence (i-offset) mod n (--every/--offset, --list, --in-place, --keep-blank, --check/--require-drops exit 2 CI, JSON) ✓ 2026-08-02
