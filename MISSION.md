@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 369 — CLI Tools (répétition dernier mot, LABEL Dockerfile, prepend dotenv, 2e colonne CSV, VOLUME Dockerfile)
+- [x] text-repeat-last-word : répète le dernier mot de chaque ligne N fois (prepend/append, --sep, --skip-first, --check CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-extract-label : extrait les LABEL d'un Dockerfile par stage (multi-pairs, quotes, legacy form, --names-only/--values-for, --require-label/--forbid-label/--require-value CI, JSON) ✓ 2026-08-02
+- [x] env-prepend-line : prépend des KEY=VALUE en tête d'un dotenv (ordre préservé, --after-comments, --no-clobber/--update, --export, --stdin-pairs, --dry-run, --require-present CI, JSON) ✓ 2026-08-02
+- [x] csv-second-column : imprime les valeurs de la 2e colonne CSV (header-aware, délimiteur custom, short rows skippés, --unique/--count, --require-min/max/value CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-extract-volume : extrait les VOLUME d'un Dockerfile par stage (formes JSON/shell, continuations, --paths-only, --final-only, --require-volume/--forbid-volume CI, JSON) ✓ 2026-08-02
+
 ## Vague 368 — CLI Tools (répétition premier mot, MAINTAINER Dockerfile, append dotenv, 1re/dernière colonne CSV, tags FROM)
 - [x] text-repeat-first-word : répète le premier mot de chaque ligne N fois (prepend/append, --sep, --skip-first, --check CI, JSON) ✓ 2026-08-02
 - [x] dockerfile-extract-maintainer : extrait les MAINTAINER et LABEL maintainer= par stage (--values-only, --include-labels, --require/--forbid-maintainer CI, JSON) ✓ 2026-08-02
