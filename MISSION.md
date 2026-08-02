@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 458 — CLI Tools (arborescence disque par groupe, explication de regex, diff/merge INI, DNS forward/reverse, distance de Levenshtein)
+- [x] file-tree-size-report : audit espace disque d'une arborescence (groupes ext/dir, compte/total/mean/min/max human, filtres --ext/--no-ext/--skip-dir/--hidden/--min-size/--max-size, --largest N/--empty, symlinks ignorés, gates require-files-min/max/under-bytes/empty-zero/no-empty-sets/groups-min exit 2 CI, JSON) ✓ 2026-08-02
+- [x] regex-explain-parse : explique une regex en langage clair (AST own-parser: littéraux, classes, ancres, quantifieurs {m,n}, groupes nommés/lookahead/flags inline, alternance) + matching de strings de test (spans, groupes capturés, -i/-m, --strings-file -, --max-matches), gates require-match-min/max/all/none/groups-min exit 2 CI, JSON ✓ 2026-08-02
+- [x] ini-diff-merge : diff et merge INI section→clé (configparser sans interpolation, +/-/~ champ-level, --keep-case, modes --merge theirs/ours/add-missing, stdin '-', gates check/require-identical/min/max-changes/no-removed/section exit 2 CI, JSON) ✓ 2026-08-02
+- [x] ip-hostname-resolve : résolution DNS forward A/AAAA et reverse PTR (auto-détection ipaddress, cibles CLI/--file/-, --family any/ipv4/ipv6, --timeout, --unique, elapsed ms, gates require-all/min/max-failed/none-failed exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-levenshtein-distance : distance de Levenshtein strings/fichiers/paires TSV (DP O(min) mémoire, ratio similarité, préfixe/suffixe communs, --trace opérations difflib, gates require-max-distance/min-similarity/identical/different exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 457 — CLI Tools (audit permissions POSIX, vendor OUI MAC, CSV diff, iTunes playlists, montants de devises)
 - [x] file-perms-report : audit des bits de permission POSIX (symboliques+octal, setuid/setgid/sticky, world-writable WW, filtres --world-writable/--special-only/--mode/--pattern, --counts, gates require-none-world-writable/special/max/min exit 2 CI, JSON) ✓ 2026-08-02
 - [x] mac-vendor-lookup : extrait MAC-48 (colon/hyphen/dotted Cisco, --bare optionnel) et résout le vendor via table OUI embarquée ~1200 entrées (Apple, Cisco, Dell, Huawei, Intel, Raspberry, VMware, Espressif, Netgear, TP-Link, Belkin, Xiaomi, Samsung, Google, Amazon, Sony, LG...), --lookup unique, flag locally-administered, --unknown, gates require-vendor/all-known/min/max/none exit 2 CI, JSON) ✓ 2026-08-02
