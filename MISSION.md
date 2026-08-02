@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 470 — CLI Tools (fan-out JSONL, stripes ANSI, justification CSV, intersection lignes, translittération)
+- [x] json-lines-burst : partitionne un flux JSONL par clé (chemins pointillés, sanitise les noms de fichiers, seau null, --max-files 512 sécurité, --dry-run, --skip-invalid, gates require-min-lines/files exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-ansi-stripe : alterne les couleurs ANSI par ligne/groupes (16 couleurs fg/bg 90-97/100-107, --cycle N, --skip-empty, --no-reset, --check codes existants exit 2, --json) ✓ 2026-08-02
+- [x] csv-row-justify : justifie les champs d'un CSV (auto numériques à droite/texte à gauche, sniff délimiteur, display width CJK, --columns nom/index, --char custom, --check idempotent exit 2, gates require-min-rows, --json) ✓ 2026-08-02
+- [x] file-line-intersection : opérations ensemblistes sur lignes (intersection défaut/union/difference A-B, 2+ fichiers, casefold Unicode + first-seen order, --strip/--ignore-case/--count-only, gates require-min/max exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-unidecode-lite : translittération Unicode → ASCII locale (NFKD + overrides FR/DE/ES/PL/CZ/Nordic/GR : ß→ss, ł→l, ø→o, œ→oe, €→EUR, --strict remplace ? --replacement, --char-map custom, --check exit 2 non-ASCII, --json) ✓ 2026-08-02
+
 ## Vague 469 — CLI Tools (base58, versions UUID, temps de lecture, tables Markdown, résumé réseaux)
 - [x] base58-encode : encode/décode base58 alphabet Bitcoin en batch (bytes ou entiers --integer, --per-line multi-entrées, préfixe zéro -> '1', --check round-trip, gates require-min/failmax exit 2 CI, --json) ✓ 2026-08-02
 - [x] uuid-version-report : classifie et valide les UUIDs (versions 1-8, variantes RFC 4122/NCS/Microsoft/réservée, nil/max, --decode extrait timestamp v1/v7, batch args/file/stdin, --check exit 2 sur invalide, gates require-all-valid/min-valid/forbid-version exit 2 CI, --json) ✓ 2026-08-02
