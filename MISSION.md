@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 456 — CLI Tools (extrait checkboxes Markdown, parse ssh_config, shift headings Markdown, longueur octets UTF-8, audit longueur clés JSON)
+- [x] markdown-checkbox-extract : extrait items checkbox Markdown (- [ ] / - [x], bullets - * + et numérotés, niveaux d'indentation, ratio done, listes --pending/--done/--all, gates require-done-ratio/min/no-pending exit 2 CI, JSON) ✓ 2026-08-02
+- [x] ssh-config-parse : parse ssh_config (options globales, blocks Host, Include, shlex) et résout les options effectives par alias avec glob, --names-only, gates require-min-hosts/host exit 2 CI, JSON) ✓ 2026-08-02
+- [x] markdown-heading-shift : décale les niveaux de titres ATX (# ⇆ ######, --delta ±N, clamp par défaut/--no-clamp/--strict, fences code préservées, --in-place, gates require-shifted/no-clamped exit 2 CI, JSON) ✓ 2026-08-02
+- [x] utf8-byte-length : rapporte octets vs caractères UTF-8 par ligne (classes 1-4 octets/char, flag multibyte, --summary/--strings, gates require-max-bytes/ascii exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-key-length-audit : audit des longueurs de clés JSON (récursif objets+arrays, stats min/max/moyenne chars+bytes, --sort/--top/--paths, gates require-max/min/count exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 455 — CLI Tools (similarité Jaccard/Dice, sparklines Unicode, tri IPv4, nearest xterm-256, valeurs lettres mots)
 - [x] text-jaccard-similarity : coefficients Jaccard / Dice-Sorensen / overlap entre textes (tokens mots/n-grammes mots ou caractères --chars --n, mode paire/--pairs toutes lignes triées, --min-similarity filtrage, gates require-min/max-similarity exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-sparkline : rend des séries numériques en sparklines Unicode ▁▂▃▄▅▆▇█ (--min/--max échelle, --width sous-échantillonnage moyennes, --extract numéraux dans texte libre, --stats, gates require-range/max-under/min-over exit 2 CI, JSON) ✓ 2026-08-02
