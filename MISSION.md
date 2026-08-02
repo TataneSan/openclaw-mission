@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 453 — CLI Tools (fréquence d'octets, expansion ranges IPv4, CSV→dotenv, jours ouvrés, valeurs JSON par chemin)
+- [x] text-byte-frequency-stats : histogramme des occurrences de chaque octet (classes control/printable/extended, barres ASCII, --top/--ascii-only/--no-list, gates --require-ascii/min-distinct/max-distinct exit 2 CI, JSON) ✓ 2026-08-02
+- [x] ipv4-range-expand : expand ranges IPv4 en adresses (CIDR, a-b forme courte, wildcard suffixe, /32 implicite, --summary/--all/--count-only/--strict, gates --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-columns-from-csv : convertit les colonnes d'un CSV en variables dotenv (header normalisé UPPER_SNAKE, prefixe row ROWn_, quoting shell POSIX, --no-row-prefix/--row N/--skip-empty, gates --require-min-rows/column exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-business-days-count : compte les jours ouvrés (lun-ven) entre les dates extraites d'un texte (ISO + slash ambigu DD/MM fall-back MM/DD, fichier --holidays ISO, --exclusive [start,end[ , --all-pairs, --sum, gates --require-min-days/min-pairs exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-extract-path-values : extrait les valeurs d'un JSON/JSONL à des dot-paths (indices numériques, wildcard `*` sur objets/listes, filtres --type, --unique/--counts/--paths, --strict JSONL, gates --require-min/max/count exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 452 — CLI Tools (extrait base64, doublons par hash, liens Markdown, conversion de casse, profil statistique)
 - [x] text-extract-base64 : extrait et décode les blobs base64/base64url d'un texte (preview texte/flag binaire, --min-len 8, --decode/--raw-out DIR, --unique/--counts, gates --require-min/max/none/text exit 2 CI, JSON) ✓ 2026-08-02
 - [x] file-duplicate-report : groupe les fichiers dupliqués par hash de contenu (sha256/sha1/md5/blake2b, pré-bucketing par taille, bytes gaspillés triés, --delete-extras/--dry-run, --min-size/--skip-dir, gates --require-none/max-wasted/min-groups exit 2 CI, JSON) ✓ 2026-08-02
