@@ -1,5 +1,10 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 508 — CLI Tools (slugify batch, largeur lignes CSV, audit extensions fichiers)
+- [x] text-slugify-batch : convertit chaînes en slugs URL-friendly (translit ASCII accents, --separator custom, --no-lowercase, --max-length truncation, --remove-stopwords EN, --line-prefix, gates require-min/max/empty exit 2 CI, stdin, --json) ✓ 2026-08-02
+- [x] csv-row-width-check : rapporte le nombre de colonnes par ligne CSV (délimiteur sniffé, --no-header, expected = header ou mode, listes mismatches ligne:colonnes, gates require-consistent/min-cols/max-cols/min-rows exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-extension-audit : audit extensions d'une arborescence (count/size/avg par ext, --include-hidden, --max-depth, --top N, fichiers sans extension, exécutables détectés, suspicious exec avec ext text/doc, gates require-max-files/max-ext/no-suspicious/ext exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 507 — CLI Tools (titres Markdown, JSONL pretty-print, noms fichiers dupliqués)
 - [x] markdown-heading-extract : extrait les titres Markdown ATX et Setext (niveau, ligne, style, skip code fences, --tree hiérarchique, --list, gates require-min/max/level/text exit 2 CI, stdin, --json) ✓ 2026-08-02
 - [x] jsonl-pretty-print : pretty-print JSONL (indent custom, --compact, --color ANSI, --sort-keys, --keys filtres dot paths, --line-prefix, --skip-invalid/--stop-on-error, gates require-min/max/key exit 2 CI, --json summary) ✓ 2026-08-02
