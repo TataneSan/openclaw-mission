@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 540 — CLI Tools (texte extraire hashtags, CSV extraire colonne vers lignes, JSON compter strings vides, fichiers doublons par contenu, texte extraire initiales majuscules)
+- [ ] text-extract-hashtags : extrait les hashtags #d'un texte (Unicode, --unique, --sort, count, gates CI, --json)
+- [ ] csv-column-to-lines : extrait les valeurs d'une colonne CSV en lignes brutes (skip-empty, --unique, --sort, gates CI, --json)
+- [ ] json-empty-string-count : compte les chaînes vides par chemin dans des documents JSON (récursif, JSONL, gates CI, --json)
+- [ ] file-content-dupes : détecte les fichiers au contenu dupliqué dans un arbre (par hash, --min-size, gates CI, --json)
+- [ ] text-extract-caps-words : extrait les mots entièrement en majuscules (≥2 chars, Unicode, --unique, gates CI, --json)
+
 ## Vague 531 — CLI Tools (CSV compter lignes par colonne, JSON merge profond, texte extraire initiales, fichiers noms invalides, texte strip lignes matchées)
 - [x] csv-row-count-per-value : compte les lignes regroupées par valeur d'une colonne CSV (group-by, délimiteur sniffé, top-N, gates CI, --json) ✓ 2026-08-02 (existant)
 - [x] json-deep-merge : fusion profonde de deux documents JSON (objets récursifs, arrays concat/replace, gates CI, --json) ✓ 2026-08-02 (existant)
@@ -22,11 +29,11 @@
 - [x] text-sort-by-length : trie les lignes par longueur (chars/words/bytes, asc/desc, --stable, ties alpha, gates CI, --json) ✓ 2026-08-01 (existant)
 
 ## Vague 539 — CLI Tools (CSV détecter doublons complets de lignes, JSON vérifier clés requises, texte ratio majuscules, fichiers extensions inconnues, texte extraire nombres)
-- [ ] csv-dupe-row-report : détecte les lignes CSV entièrement dupliquées (toutes colonnes, délimiteur sniffé, gates CI, --json)
-- [ ] json-require-keys : vérifie qu'un document JSON contient des clés requises (chemins pointillés, --strict, gates CI, --json)
-- [ ] text-uppercase-ratio : rapporte le ratio de caractères majuscules (global/par ligne, gates CI --max-ratio, --json)
-- [ ] file-extension-inventory : inventaire des extensions d'un arbre (comptage, taille cumulée, barres, gates CI, --json)
-- [ ] text-extract-numbers : extrait tous les nombres d'un texte (entiers/décimaux/négatifs, --unique, --sort, sum, gates CI, --json)
+- [x] csv-dupe-row-report : détecte les lignes CSV entièrement dupliquées (toutes colonnes, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02
+- [x] json-require-keys : vérifie qu'un document JSON contient des clés requises (chemins pointillés, --strict, gates CI, --json) ✓ 2026-08-02
+- [x] text-uppercase-ratio : rapporte le ratio de caractères majuscules (global/par ligne, gates CI --max-ratio, --json) ✓ 2026-08-02
+- [x] file-extension-inventory : inventaire des extensions d'un arbre (comptage, taille cumulée, barres, gates CI, --json) ✓ 2026-08-02
+- [x] text-extract-numbers : extrait tous les nombres d'un texte (entiers/décimaux/négatifs, --unique, --sort, sum, gates CI, --json) ✓ 2026-08-02 (existant)
 
 ## Vague 538 — CLI Tools (CSV transposer, JSON lister types par chemin, texte suggestion de kebab-case, fichiers arborescence texte, texte compter voyelles)
 - [x] csv-transpose : transpose un CSV (lignes <-> colonnes, --no-header, délimiteur sniffé, gates CI, --json) ✓ 2026-08-02 (existant, Go)
