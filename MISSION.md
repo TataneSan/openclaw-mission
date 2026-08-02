@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 446 — CLI Tools (extrait MAC-48, extrait ports TCP/UDP, retire séquences ANSI, extrait entités HTML, inverse la casse)
+- [x] text-extract-mac48 : extrait les adresses MAC-48 (colon/hyphen/dotted Cisco, --normalize/--lowercase, --vendor-oui, filtres multicast/broadcast, --unique/--counts, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-extract-port-numbers : extrait les ports TCP/UDP (8080/tcp, tcp/443, host:port, keyword port/listen/dport, filtres --proto/--well-known-only, --unique/--counts/--sort/--sum, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-strip-ansi-sequences : retire les séquences ANSI (CSI/OSC/DCS/SGR/C1, --in-place, --check/--require-none/--require-removed exit 2 CI, --stats, JSON) ✓ 2026-08-02
+- [x] text-extract-html-entities : extrait les entités HTML (&amp;/&#233;/&#xE9;, table HTML5, --kind répétable, --decode, --allow-unknown, --unique/--counts, gates exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-swapcase : inverse la casse de chaque lettre (swap Unicode, alternating spongebob, random --seed, --ascii, --in-place, --check/--require-changes exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 445 — CLI Tools (extrait flottants, run-length encode, arrondit floats JSON, extrait hash hex, retire commentaires C)
 - [x] text-extract-floats : extrait les littéraux flottants d'un texte (décimaux/exposants/inf/nan, --precision, --unique/--counts/--sort, filtres min/max, gates exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-run-length : run-length encode/décode un texte (tokens Nx{char} par ligne, --min-run/--all, --decode, gates exit 2 CI, JSON) ✓ 2026-08-02
