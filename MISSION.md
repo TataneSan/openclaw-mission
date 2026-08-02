@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 421 — CLI Tools (lines strip prefix/suffix, csv header case, json paths empty arrays, slugify, csv transpose)
+- [ ] text-strip-prefix : retire un préfixe donné de chaque ligne (--suffix, --check exit 2 CI, JSON)
+- [ ] csv-header-case : normalise les en-têtes d'un CSV (lower/upper/snake/camel, --in-place, --check exit 2 CI, JSON)
+- [ ] json-list-empty-array-paths : liste les chemins vers les arrays vides d'un JSON (dot-path, --require-none exit 2 CI, JSON)
+- [ ] slugify-text : convertit un texte en slug URL-safe (lower, ascii, tirets, --max-len, --check exit 2 CI, JSON)
+- [ ] csv-transpose : transpose un CSV (lignes ↔ colonnes, --check carré exit 2 CI, JSON)
+
 ## Vague 420 — CLI Tools (texte compte mots par paragraphe, csv garde premières lignes par clé, json chemins floats, base64 décode strict, texte joindre lignes avec séparateur)
-- [ ] text-words-per-paragraph : compte les mots par paragraphe d'un texte (blank-line separated, stats min/max/moyenne, --require-max exit 2 CI, JSON)
-- [ ] csv-first-row-per-key : garde la première ligne de chaque valeur de clé dans un CSV (group-by first, --require-min-groups exit 2 CI, JSON)
-- [ ] json-list-float-paths : liste les chemins vers les valeurs float d'un JSON (dot-path, ints exclus, --require-min/max/none exit 2 CI, JSON)
-- [ ] base64-decode-strict : décode base64 avec validation stricte (alphabet, padding, --check exit 2 CI, JSON)
-- [ ] text-join-lines : joint toutes les lignes d'un texte avec un séparateur (--sep, --strip, --check exit 2 CI, JSON)
+- [x] text-words-per-paragraph : compte les mots par paragraphe d'un texte (blank-line separated, stats min/max/moyenne, --require-max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-first-row-per-key : garde la première ligne de chaque valeur de clé dans un CSV (group-by first, --require-min-groups exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-list-float-paths : liste les chemins vers les valeurs float d'un JSON (dot-path, ints exclus, --require-min/max/none exit 2 CI, JSON) ✓ 2026-08-02
+- [x] base64-decode-strict : décode base64 avec validation stricte (alphabet, padding, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-join-lines : joint toutes les lignes d'un texte avec un séparateur (--sep, --strip, --check exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 419 — CLI Tools (texte compte parenthèses ouvrantes, csv supprime lignes dupliquées consécutives, json chemins entiers, base32hex encode, texte swap première/dernière ligne)
 - [x] text-count-open-parens : compte les parenthèses ouvrantes ( dans un texte (--close, --balance, --require-min/max, --check exit 2 CI, JSON) ✓ 2026-08-02
