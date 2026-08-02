@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 400 — CLI Tools (anagrammes texte, validation INI, profondeur YAML, stats lignes shell, merge CSV)
+- [x] text-anagram-finder : trouve les anagrammes dans un texte (normalisation Unicode casefold, groupes de mots anagrammes, --min-length/--max-group-size, --require-anagrams exit 2 CI, JSON) ✓ 2026-08-02
+- [x] ini-validate-syntax : valide la syntaxe d'un fichier INI (sections, clés=valeurs, commentaires, doublons section/clé, --allow-no-value, --require-sections, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] yaml-max-depth : profondeur maximale d'imbrication d'un YAML (mapping/sequences, --require-max-depth exit 2 CI, --show-path, JSON) ✓ 2026-08-02
+- [x] shell-line-length : lint la longueur des lignes de scripts shell (--max-len, --ignore-comments, --ignore-heredoc, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-merge-files : fusionne plusieurs CSV avec header identique (--check-headers, dédupe --unique, --sort colonne, JSON) ✓ 2026-08-02
+
 ## Vague 399 — CLI Tools (palindromes, audit quoting shell, catégories Unicode, split CSV, paragraphes)
 - [x] text-palindrome-checker : détecte lignes palindromes et mots palindromes (normalisation Unicode casefold, --min-length/--max-results, --require-palindromes exit 2 CI, JSON) ✓ 2026-08-02
 - [x] shell-quote-audit : lint les dangers de quoting shell ($VAR, $(...), backticks, $@ et $*, heredoc/comment-aware, --only/--skip, --check exit 2 CI, JSON) ✓ 2026-08-02
