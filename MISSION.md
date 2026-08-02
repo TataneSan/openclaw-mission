@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 382 — CLI Tools (dédoublonnage JSON, tri JSON, inversion CSV, ADD interdit Dockerfile, COPY best practices Dockerfile)
+- [x] json-dedupe-array : déduplique un tableau JSON en préservant l'ordre d'apparition (comparaison par forme canonique, JSONL, --sort, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-sort-array : trie les items d'un tableau JSON (ordre naturel, --key dot-path, --reverse, JSONL, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-reverse-rows : inverse l'ordre des lignes d'un CSV en gardant le header (délimiteur custom, --no-header, --check + --reference CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-add-check : interdit ADD en faveur de COPY (URL/archive/local, --allow-url/--allow-archive, continuations, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-copy-check : règles COPY Dockerfile (--require-copy, --forbid-copy-dot, --forbid-wildcard, --require-trailing-slash, exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 381 — CLI Tools (padding lignes CSV, strip ANSI, WORKDIR non-root Dockerfile, valeurs longues dotenv, USER non-root Dockerfile)
 - [x] csv-pad-rows : normalise les lignes courtes d'un CSV à la largeur attendue (fill custom, --drop, --pad-to, --check exit 2 CI, JSON) ✓ 2026-08-02
 - [x] text-strip-ansi : retire les séquences d'échappement ANSI (CSI/OSC/ESC) d'un texte (--check exit 2 CI, JSON) ✓ 2026-08-02
