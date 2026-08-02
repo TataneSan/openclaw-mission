@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 366 — CLI Tools (moyenne colonne CSV, delete valeur JSON, swap case lignes, HEALTHCHECK Dockerfile, listing clés dotenv)
+- [x] csv-mean-column : moyenne arithmétique d'une colonne numérique CSV (nom/index, délimiteur custom/échappements, --all-rows, --decimals, --require-min/max CI, JSON) ✓ 2026-08-02
+- [x] json-delete-value : supprime la valeur à un dot-path JSON/JSONL (indices négatifs, auto-detect JSONL, --compact/--in-place, --require-present CI, JSON) ✓ 2026-08-02
+- [x] text-swap-case-lines : inverse la casse de chaque lettre par ligne (Unicode swapcase, --only-letters ASCII, --skip-first, --in-place, --check CI, JSON) ✓ 2026-08-02
+- [x] dockerfile-extract-healthcheck : extrait les HEALTHCHECK d'un Dockerfile (flags, exec/shell form, NONE, continuations, --last-only, --require-healthcheck/--require-timeout/--forbid-none CI, JSON) ✓ 2026-08-02
+- [x] env-list-keys : liste les clés d'un dotenv (export/bare keys, --with-markers, --unique/--sort/--count, --require-key/min/max CI, JSON) ✓ 2026-08-02 (repo pré-existant, contenu synchronisé)
+
 ## Vague 365 — CLI Tools (numérotation CSV, get valeur JSON, uppercase lignes, comptage instructions Dockerfile, title case)
 - [x] csv-add-line-number : ajoute une colonne de numérotation à un CSV (--start/--step, --end, --no-header, délimiteur custom) ✓ 2026-08-02
 - [x] json-get-value : lit une valeur à un dot-path JSON/JSONL (indices négatifs, --raw-string, --default, manquant = exit 2 CI) ✓ 2026-08-02
