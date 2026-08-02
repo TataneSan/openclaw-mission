@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 379 — CLI Tools (extraction emails, contraintes EXPOSE Dockerfile, merge unique tableaux JSON, valeurs vides dotenv, types colonnes CSV)
+- [x] text-email-extract : extrait les adresses email d'un texte (dédoublonnage case-insensitive, --count fréquences, exit 2 sans match, JSON) ✓ 2026-08-02
+- [x] dockerfile-expose-check : vérifie les ports EXPOSE d'un Dockerfile (--require-port/--forbid-port/--forbid-udp, continuations, exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-merge-arrays-unique : concatène des tableaux JSON et déduplique (1re occurrence gardée, --sort, stdin via -) ✓ 2026-08-02
+- [x] env-list-empty-values : liste les clés vides d'un dotenv (KEY= et KEY="", export-aware, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-column-types : infère le type de chaque colonne CSV (integer/float/boolean/string/mixed, null-aware, JSON) ✓ 2026-08-02
+
 ## Vague 378 — CLI Tools (tri mots par ligne, comptage stages Dockerfile, filtre tableau JSON, dotenv→JSON, suppression dernières lignes CSV)
 - [x] text-sort-words-line : trie les mots par ordre alphabétique dans chaque ligne (--reverse, indent préservée, --in-place, --check CI, JSON) ✓ 2026-08-02
 - [x] dockerfile-count-stages : compte les stages FROM d'un Dockerfile (alias, --names, --require-min/max CI, JSON) ✓ 2026-08-02
