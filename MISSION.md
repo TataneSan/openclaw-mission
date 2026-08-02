@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 408 — CLI Tools (csv somme colonnes, text compte majuscules, json extraire tableau, yaml compter docs, hex decode stdin)
+- [ ] csv-sum-column : somme numérique des colonnes choisies (count/sum/avg, --columns, --require-sum-min/max exit 2 CI, JSON)
+- [ ] text-capitalized-count : compte les mots capitalisés d'un texte (--min-length, --ignore-sentence-start, --require-min/max exit 2 CI, JSON)
+- [ ] json-extract-array : extrait un tableau JSON par chemin pointé (a.b.c, wildcard *, --require-length-min/max exit 2 CI, JSON)
+- [ ] yaml-count-documents : compte les documents d'un YAML multi-doc (---/... markers, --require-min/max exit 2 CI, JSON)
+- [ ] hex-to-binary : décode du hex (espaces/0x tolérés) en binaire sur stdout (decode strict --strict, --require-bytes exit 2 CI, JSON report)
+
 ## Vague 407 — CLI Tools (csv filtre lignes, text compte chiffres, json compact jsonl, env export shell, md titres)
-- [ ] csv-filter-rows : filtre les lignes CSV par expression sur colonne (--where col=val/col>val/regex, --invert, --require-min-rows exit 2 CI, JSON)
-- [ ] text-count-digits : compte les chiffres d'un texte (par caractère 0-9, total/par ligne, --require-min/max exit 2 CI, JSON)
-- [ ] json-lines-compact : compacte un JSON multi-lignes en JSONL ou inverse (--expand, --validate, --require-count exit 2 CI, JSON)
-- [ ] env-to-shell-export : convertit un dotenv en commandes export shell (quoting POSIX, --unset-empty, --prefix, --check exit 2 CI, JSON)
-- [ ] md-list-headings : liste les titres d'un markdown avec niveaux (atx + setext, --max-depth, --require-min exit 2 CI, JSON)
+- [x] csv-filter-rows : filtre les lignes CSV par expression sur colonne (--where col=val/col>val/regex, --invert, --require-min-rows exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-count-digits : compte les chiffres d'un texte (par caractère 0-9, total/par ligne, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-lines-compact : compacte un JSON multi-lignes en JSONL ou inverse (--expand, --validate, --require-count exit 2 CI, JSON) ✓ 2026-08-02
+- [x] env-to-shell-export : convertit un dotenv en commandes export shell (quoting POSIX, --unset-empty, --prefix, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] md-list-headings : liste les titres d'un markdown avec niveaux (atx + setext, --max-depth, --toc, --require-min exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 406 — CLI Tools (rot13 cipher, csv renomme colonnes, json liste tailles, text palindromes, file mime type)
 - [x] rot-cipher : chiffre/déchiffre par rotation César (--shift N, lettres seules, --brute-force les 25 clés, --check exit 2 CI, JSON) ✓ 2026-08-02
