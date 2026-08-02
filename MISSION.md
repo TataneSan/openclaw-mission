@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 578 — CLI Tools (audit commentaires .env, rapport caractères box-drawing, CSV supprimer header, JSON échantillonner arrays, fréquences première colonne CSV)
+- [x] env-comment-style : audit/normalise les commentaires d'un .env (full-line/inline, densité, --normalize/--dry-run, gates require-min-comments/require-none, --json) ✓ 2026-08-03
+- [x] text-box-drawing-report : rapport des caractères Unicode box-drawing (U+2500-U+257F, noms, per-line, --to-ascii, gates require-none/present/max-total, --json) ✓ 2026-08-03
+- [x] csv-drop-header : supprime/ré-injecte l'en-tête d'un CSV (--keep-header/--add-header, --no-header, gates require-header/require-unchanged, --json) ✓ 2026-08-03
+- [x] json-first-of-each-array : remplace chaque array d'un JSON/JSONL par ses N premiers éléments (--keep, --compact, gates require-sampled/require-unchanged, --json) ✓ 2026-08-03
+- [x] csv-first-column-frequencies : table de fréquences des valeurs d'une colonne CSV (pourcentages + cumul, barres ASCII, --top, gates require-distinct/max-distinct/require-value, --json) ✓ 2026-08-03
+
 ## Vague 577 — CLI Tools (CSV garder les lignes dupliquées, fichiers scan NUL bytes, JSON histogramme types de valeurs, texte centrer les lignes)
 - [x] csv-keep-duplicate-rows : garde les lignes CSV dont la clé (colonne(s) ou ligne entière) apparait >1 fois (--first-only/--last-only, --count, gates require-duplicates/require-none, --json) ✓ 2026-08-03
 - [x] file-nul-byte-scan : détecte les NUL bytes (\x00) dans les fichiers d'un arbre (offsets, --extensions, --strip, --require-none CI, --json) ✓ 2026-08-03
