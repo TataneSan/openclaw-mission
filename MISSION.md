@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 509 — CLI Tools (tri naturel, diff JSON profond, swap paires colonnes CSV, padding nombres, normalisation tirets)
+- [x] text-natural-sort : trie les lignes en ordre naturel alphanumérique (file2 < file10, segments pointés façon versions 1.10 > 1.9, --decimals, --ignore-case Unicode casefold, --strip-accents, --unique, --blank-last, --check exit 2 CI, gates require-min/max/unique exit 2 CI, stdin, --json) ✓ 2026-08-02
+- [x] json-deep-equal : diff récursif de deux documents JSON avec chemins pointillés ($.a.b[2], kinds value/type-change/only-left/only-right/length/key-order, --ignore-key-order, --float-tolerance, --max-diffs, -q, gates require-max-diffs/different exit 2 CI, stdin, --json) ✓ 2026-08-02
+- [x] csv-swap-column-pairs : échange plusieurs paires de colonnes CSV en un passage (noms ou indices 1-based/négatifs, paires disjointes validées, délimiteur sniffé + BOM, --ignore-case, --in-place, --check exit 2, gates require-min-rows/cols exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-pad-numbers : padde les nombres d'un texte à largeur fixe (item1 → item001, largeur auto = max observée ou --width, --unpad inverse, --keep-zeros, --decimals partie entière, --in-place, --check exit 2, gates require-min-changes/unchanged exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-normalize-dashes : normalise 11 tirets Unicode (en/em dash, minus, figure dash, soft/non-breaking hyphen, fullwidth…) vers hyphen/en/em/minus/figure/remove, --ranges pour plages numériques 2019–2024, --keep-soft-hyphens, --report inventaire, --in-place, --check exit 2, gates require-min-changes/unchanged exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 508 — CLI Tools (slugify batch, largeur lignes CSV, audit extensions fichiers)
 - [x] text-slugify-batch : convertit chaînes en slugs URL-friendly (translit ASCII accents, --separator custom, --no-lowercase, --max-length truncation, --remove-stopwords EN, --line-prefix, gates require-min/max/empty exit 2 CI, stdin, --json) ✓ 2026-08-02
 - [x] csv-row-width-check : rapporte le nombre de colonnes par ligne CSV (délimiteur sniffé, --no-header, expected = header ou mode, listes mismatches ligne:colonnes, gates require-consistent/min-cols/max-cols/min-rows exit 2 CI, --json) ✓ 2026-08-02
