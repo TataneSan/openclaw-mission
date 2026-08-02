@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 419 — CLI Tools (texte compte parenthèses ouvrantes, csv supprime lignes dupliquées consécutives, json chemins entiers, base32hex encode, texte swap première/dernière ligne)
+- [ ] text-count-open-parens : compte les parenthèses ouvrantes ( dans un texte (--close, --balance, --require-min/max, --check exit 2 CI, JSON)
+- [ ] csv-dedupe-adjacent-rows : supprime les lignes dupliquées consécutives d'un CSV (uniq, --count, --check exit 2 CI, JSON)
+- [ ] json-list-integer-paths : liste les chemins vers les valeurs entières d'un JSON (dot-path, bool exclus, --require-min/max/none exit 2 CI, JSON)
+- [ ] base32hex-tool : encode/décode base32hex (RFC 4648 extended hex alphabet, --no-pad, --decode, --check exit 2 CI, JSON)
+- [ ] text-swap-first-last-line : permute la première et la dernière ligne d'un texte (--in-place, --check exit 2 CI, JSON)
+
 ## Vague 418 — CLI Tools (texte compte chevrons, csv drop lignes vides, json chemins number, base85, texte reverse ordre lignes)
-- [ ] text-count-angles : compte les chevrons < et > dans un texte (--pair-check, --require-min/max, --check exit 2 CI, JSON)
-- [ ] csv-drop-empty-rows : supprime les lignes entièrement vides d'un CSV (toutes cellules vides, --check exit 2 CI, JSON)
-- [ ] json-list-number-paths : liste les chemins vers les valeurs number d'un JSON (dot-path, ints vs floats, --require-min/max exit 2 CI, JSON)
-- [ ] base85-tool : encode/décode base85 (RFC 1924 alphabet, --decode, --check exit 2 CI, JSON)
-- [ ] text-reverse-lines : inverse l'ordre des lignes d'un texte (tac, --in-place, --check exit 2 CI, JSON)
+- [x] text-count-angles : compte les chevrons < et > dans un texte (--pair-check, --require-min/max, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-drop-empty-rows : supprime les lignes entièrement vides d'un CSV (toutes cellules vides, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] json-list-number-paths : liste les chemins vers les valeurs number d'un JSON (dot-path, ints vs floats, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] base85-tool : encode/décode base85 (RFC 1924 alphabet, --decode, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-reverse-lines : inverse l'ordre des lignes d'un texte (tac, --in-place, --check exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 417 — CLI Tools (texte compte dièses, csv strip colonnes vides, json chemins false, base16, texte dédup lignes gardant ordre)
 - [x] text-count-hashes : compte les dièses # dans un texte (--per-line, --require-min/max, --check exit 2 CI, JSON) ✓ 2026-08-02
