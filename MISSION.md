@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 562 — CLI Tools (texte garder N lignes au hasard, CSV remplacer les cellules correspondant à une regex, JSON extraire les noms de toutes les arrays, fichiers timeline mtime par heure, texte rechercher motif avec contexte ±N lignes)
+- [ ] text-random-keep : garde N lignes au hasard (--seed reproductible, --preserve-order, gates CI, --json)
+- [ ] csv-regex-replace : remplace les cellules matchant une regex par une valeur (--columns, délimiteur sniffé, gates CI, --json)
+- [ ] json-array-names : liste tous les chemins menant à un array dans un JSON (récursif, gates CI, --json)
+- [ ] file-mtime-per-hour : timeline des fichiers modifiés par heure (histogramme, gates CI, --json)
+- [ ] text-grep-context : affiche les lignes matchant un motif avec ±N lignes de contexte (--before/--after, --line-numbers, gates CI, --json)
+
 ## Vague 561 — CLI Tools (texte extraire lignes contenant seulement des lettres, CSV numéroter les doublons d'une colonne clé, JSON compter valeurs booléennes true par chemin top-level, fichiers taille médiane par extension, texte supprimer N premiers caractères de chaque ligne)
-- [ ] text-alpha-only-lines : extrait les lignes composées uniquement de lettres Unicode et espaces (--allow-space, --invert, gates CI, --json)
-- [ ] csv-dup-key-occurrences : numérote les occurrences d'une clé dupliquée dans une colonne (--column, --append-col, délimiteur sniffé, gates CI, --json)
-- [ ] json-true-count-per-key : compte les valeurs true par clé top-level dans des docs JSON/JSONL (gates CI, --json)
-- [ ] file-median-size-per-extension : taille médiane (et moyenne) par extension d'un arbre (top-N, gates CI, --json)
-- [ ] text-cut-first-chars : supprime les N premiers caractères de chaque ligne (--keep-short laisse intactes les lignes courtes, gates CI, --json)
+- [x] text-alpha-only-lines : extrait les lignes composées uniquement de lettres Unicode et espaces (--allow-space, --invert, gates CI, --json) ✓ 2026-08-03
+- [x] csv-dup-key-occurrences : numérote les occurrences d'une clé dupliquée dans une colonne (--column, --append-col, délimiteur sniffé, gates CI, --json) ✓ 2026-08-03
+- [x] json-true-count-per-key : compte les valeurs true par clé top-level dans des docs JSON/JSONL (gates CI, --json) ✓ 2026-08-03
+- [x] file-median-size-per-extension : taille médiane (et moyenne) par extension d'un arbre (top-N, gates CI, --json) ✓ 2026-08-03
+- [x] text-cut-first-chars : supprime les N premiers caractères de chaque ligne (--keep-short laisse intactes les lignes courtes, gates CI, --json) ✓ 2026-08-03
 
 ## Vague 560 — CLI Tools (texte extraire lignes commençant par chiffre, CSV remplacer cellules vides par la valeur de la ligne précédente, JSON top valeurs les plus fréquentes à un chemin, fichiers plus gros fichier de chaque extension, texte compter occurrences de chaque mot d'une wordlist)
 - [x] text-digit-leading-lines : extrait les lignes commençant par un chiffre (--invert, gates CI, --json) ✓ 2026-08-03
