@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 399 — CLI Tools (palindromes, audit quoting shell, catégories Unicode, split CSV, paragraphes)
+- [x] text-palindrome-checker : détecte lignes palindromes et mots palindromes (normalisation Unicode casefold, --min-length/--max-results, --require-palindromes exit 2 CI, JSON) ✓ 2026-08-02
+- [x] shell-quote-audit : lint les dangers de quoting shell ($VAR, $(...), backticks, $@ et $*, heredoc/comment-aware, --only/--skip, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-unicode-category : compte les catégories générales Unicode (par cat Lu/Ll/Nd/... + groupes letters/numbers/...), --show-category avec codepoints, --require-ascii/--max-non-ascii-pct/--min-letters-pct exit 2 CI, JSON ✓ 2026-08-02
+- [x] csv-split-file : découpe un CSV en N chunks en préservant le header (--rows-per-chunk ou --num-chunks, stdin/out-dir/prefix/digits, JSON) ✓ 2026-08-02
+- [x] text-paragraph-count : compte les paragraphes (runs de lignes non-blanc, --blank-run, stats mots/chars par paragraphe, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+
 ## Vague 398 — CLI Tools (score lisibilité texte, tri imports Python, pièges shell, validation JSON)
 - [x] text-readability-checker : score de lisibilité heuristique (Flesch Reading Ease, Flesch-Kincaid Grade, SMOG, stats phrases/mots/syllabes, --require-readability/--max-grade/--max-sentence-length/--complex-pct exit 2 CI, JSON) ✓ 2026-08-02
 - [x] py-import-sort-checker : audit/fix l'ordre des blocs d'imports Python top-level (__future__ d'abord, groupes stdlib < third-party < first-party < local, tri alpha insensible à la casse, --fix in-place, --first-party, ligne commentée = ancre, exit 2 CI, JSON) ✓ 2026-08-02
