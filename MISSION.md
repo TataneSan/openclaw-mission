@@ -1,5 +1,13 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 506 — CLI Tools (rank CSV, répéter texte, tri .env, bannière ASCII, buckets tailles, numéros ligne)
+- [x] csv-column-rank : ajoute une colonne rang par ordre d'une colonne numérique (dense/competition/ordinal/fractional, --top N, parsing nombres 1 234,56 et 1,234.56, gates require-min-rows/top-value/no-ties/distinct-min exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-repeat-string : répète une chaîne N fois (placeholders {n} {r} {rev} {p}, --start/--step/--reverse, --join/--separator custom, --max-size sécurité, gates require-min/max/line-count exit 2 CI, --json) ✓ 2026-08-02
+- [x] env-sort-file : trie/normalise un .env par clé (reverse, --export, dedup keep-first/last, lower/upper keys, sort-lengths, --in-place, --check lint exit 2, gates require-min-keys/no-duplicates/require-key/absent exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-banner : wrappe du texte dans une bannière ASCII (8 styles single/double/rounded/bold/ascii/hash/star/minimal, align left/center/right, --pad/--fill/--width/--margin, CJK-aware, --list-styles, gates require-height/width/min-width exit 2 CI, --json) ✓ 2026-08-02
+- [x] file-size-buckets-report : groupe les fichiers d'un arbre en buckets de tailles (defaults 0 B→>1 GiB, --bounds custom, ASCII bar chart, --top N, --list-bucket, gates require-min-files/total-under/no-empty exit 2 CI, --json) ✓ 2026-08-02
+- [x] text-line-numbers : préfixe les lignes avec numéros tab/plain/dotted/bracket/paren/colon/pipe, --format custom {n}/{N}, --start/--step/--width/--auto-width, --blank-skip/--blank-empty, --strip idempotent, gates require-lines/min/max exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 505 — CLI Tools (Base62, colonnes caractères, comparaison tailles arbres, forward-fill CSV, pourcentages CSV)
 - [x] base62-encode : encode/décode Base62 (0-9A-Za-z) entiers/hex/texte UTF-8 (args/file/stdin, --check/--require-min/--require-none-failed exit 2 CI, --json) ✓ 2026-08-02
 - [x] text-column-cut : extrait colonnes caractères style cut -c (1-4,7,10-, -3 derniers N, --output-delimiter, gates check/require-min-chars/require-any-changed exit 2 CI, --json) ✓ 2026-08-02
