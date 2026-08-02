@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 360 — CLI Tools (EXPOSE Dockerfile, garder colonnes CSV, clés objets JSON, reformatage lignes, ports URL)
+- [x] dockerfile-extract-expose : liste les ports EXPOSE d'un Dockerfile par stage (protocole tcp/udp, --forbid-udp/--require-port CI, JSON) ✓ 2026-08-02
+- [x] csv-keep-columns : ne garde que certaines colonnes d'un CSV (noms/indices, --drop inverse, --require-column CI, JSON) ✓ 2026-08-02
+- [x] json-object-keys-list : liste les clés des objets JSON (document/JSONL, --path avec *, --require-key/--forbid-key CI, JSON) ✓ 2026-08-02
+- [x] text-wrap-lines : reformate les lignes longues à une largeur cible (indentation préservée, --join, --check CI, JSON) ✓ 2026-08-02
+- [x] url-extract-port : extrait le port effectif des URLs (défauts 30+ schemes, --require-range/--forbid-port CI, JSON) ✓ 2026-08-02
+
 ## Vague 359 — CLI Tools (COPY Dockerfile, swap colonnes CSV, comptage tableaux JSON, indentation, lectures dotenv)
 - [x] dockerfile-extract-copy : liste les instructions COPY d'un Dockerfile par stage (flags --from/--chown, --forbid-from CI, JSON) ✓ 2026-08-02
 - [x] csv-swap-columns : permute deux colonnes d'un CSV (header inclus, noms ou indices, --no-header) ✓ 2026-08-02
