@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 549 — CLI Tools (texte supprimer lignes trop courtes, CSV remplir cellules numériques manquantes par moyenne, JSON renverser l'ordre des arrays, fichiers inventaire owners/groupes, texte compter caractères par bloc Unicode)
+- [ ] text-min-length-filter : supprime les lignes plus courtes que N caractères (--keep-blank, --invert, gates CI, --json)
+- [ ] csv-fill-numeric-mean : remplit les cellules vides d'une colonne numérique par la moyenne de la colonne (délimiteur sniffé, gates CI, --json)
+- [ ] json-array-reverse : inverse l'ordre des éléments de tous les arrays d'un JSON (ou chemin ciblé, JSONL, gates CI, --json)
+- [ ] file-owner-group-report : inventaire des propriétaires (uid/user) et groupes d'une arborescence (comptage, gates CI, --json)
+- [ ] text-unicode-block-count : compte les caractères par bloc Unicode (Latin, Cyrillic, CJK…, top-N, gates CI, --json)
+
 ## Vague 548 — CLI Tools (texte extraire lignes par motif d'horodatage, CSV détecter colonnes constantes, JSON extraire sous-arbre par chemin, fichiers doublons par taille uniquement, texte compter caractères non-imprimables)
-- [ ] text-filter-timestamp-lines : garde les lignes contenant un horodatage (ISO/syslog/epoch, --format, --invert, gates CI, --json)
-- [ ] csv-constant-columns : détecte les colonnes CSV ayant une seule valeur distincte (délimiteur sniffé, --drop, gates CI, --json)
-- [ ] json-extract-subtree : extrait le sous-document à un chemin pointillé (indices arrays, --compact, gates CI, --json)
-- [ ] file-duplicate-sizes : groupe les fichiers partageant exactement la même taille (pré-filtre avant hash, --min-count, gates CI, --json)
-- [ ] text-control-char-report : inventaire des caractères de contrôle non-imprimables par fichier (codepoints, --require-clean, gates CI, --json)
+- [x] text-filter-timestamp-lines : garde les lignes contenant un horodatage (ISO/syslog/epoch, --format, --invert, gates CI, --json) ✓ 2026-08-02
+- [x] csv-constant-columns : détecte les colonnes CSV ayant une seule valeur distincte (délimiteur sniffé, --drop, gates CI, --json) ✓ 2026-08-02
+- [x] json-extract-subtree : extrait le sous-document à un chemin pointillé (indices arrays, --compact, gates CI, --json) ✓ 2026-08-02
+- [x] file-duplicate-sizes : groupe les fichiers partageant exactement la même taille (pré-filtre avant hash, --min-count, gates CI, --json) ✓ 2026-08-02
+- [x] text-control-char-report : inventaire des caractères de contrôle non-imprimables par fichier (codepoints, --require-clean, gates CI, --json) ✓ 2026-08-02
 
 ## Vague 547 — CLI Tools (texte minuscules vers majuscules, CSV filtre valeurs longues, JSON compter arrays, fichiers permissions strictes, texte extraire URLs domaines)
 - [x] text-shout-lines : met en majuscules les lignes dépassant un seuil de longueur (ou --all, gates CI, --json) ✓ 2026-08-02
