@@ -1,5 +1,14 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 572 — CLI Tools (chemins longueur limite, JSON flip booléens, fichiers JSON collisions casse clés, CSV préfixer colonne, fichiers locks obsolètes)
+- [x] file-path-length-limit : détecte chemins/noms dépassant MAX_PATH/NAME_MAX (--relative, --bytes, gates, --json) ✓ 2026-08-03
+- [x] json-key-case-audit : collisions de clés JSON insensibles à la casse (exact-fold/normalized, global/per-object, --json) ✓ 2026-08-03
+- [x] file-readonly-report : inventaire fichiers read-only (readonly-all/owner-readonly, gates max-count/max-bytes, --json) ✓ 2026-08-03
+- [x] json-bool-flip : transforme les booléens JSON/JSONL (!, =true/false, true->false, --path, --coerce-strings, --require-flips) ✓ 2026-08-03
+- [x] file-lock-audit : locks/pid/tmp obsolètes (stale, pid-dead via /proc, --include-empty, gates, --json) ✓ 2026-08-03
+- [x] csv-prepend-column : ajoute une colonne en tête (constante, rownum, hash, copy, --at-end, gates, --json) ✓ 2026-08-03
+- [x] csv-add-check-digit : chiffre de contrôle Luhn/Verhoeff/Damm (add ou --verify, gates, --json) ✓ 2026-08-03
+
 ## Vague 571 — CLI Tools (texte comparaison fréquences, arbre quotas de taille, substitution env, acronymes, collisions casse)
 - [x] text-frequency-compare : compare fréquences de mots entre deux textes (overlap Jaccard, similarité cosinus, top terms, gates require-similar/min-common, --json) ✓ 2026-08-03
 - [x] file-tree-size-limit : mesure un arbre et fait respecter des limites de taille/fichiers (top N plus gros, --exclude, gates max-total/max-files/max-file-size, --json) ✓ 2026-08-03
