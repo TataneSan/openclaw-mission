@@ -1,5 +1,12 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 504 — CLI Tools (blank lines squeeze, fichiers anciens, UUID batch, moyennes CSV, classification IP)
+- [x] text-squeeze-blank : réduit les lignes vides consécutives (--max N, --max-start/end, whitespace-only, --check exit 2 CI, --in-place, gates require-removed-min/unchanged/max-blank-run, --json) ✓ 2026-08-02
+- [x] file-oldest : liste les fichiers les plus anciens d'une arborescence (tri mtime, âges humains, --max-depth/ext/hidden/relative, gates require-min/max/fresh 7d/stale 30d exit 2 CI, --json) ✓ 2026-08-02
+- [x] uuid-batch : génère des UUID en batch (v4 aléatoires, v7 RFC 9562 monotones, v5/v3 name-based, namespaces dns/url/oid/x500, --upper/--no-dashes/styles, gates require-min/unique/version exit 2 CI, --json) ✓ 2026-08-02
+- [x] csv-avg-column : moyenne (+sum/min/max/stddev) des colonnes numériques d'un CSV (sélection nom/index, délimiteur sniffé, nombres style 1 234,56, gates require-min/max/numeric/no-empty exit 2 CI, --json) ✓ 2026-08-02
+- [x] ip-classify : classifie des IP v4/v6 (public/private/loopback/link-local/multicast/reserved/cgnat/documentation/ula, args/fichiers/stdin, --scan logs, --summary, gates require-all-private/no-private/ipv4-only exit 2 CI, --json) ✓ 2026-08-02
+
 ## Vague 503 — CLI Tools (CSV filter, url encode, json keys list, file hash, retry cmd)
 - [x] csv-filter-numeric : filtre lignes CSV par conditions numériques (COLUMN>5, COLUMN<=10, --and/or, --no-header, --invert, gates require-min/max/none exit 2 CI, --json) ✓ 2026-08-02
 - [x] url-encode-batch : encode/décode URL en batch (percent-encoding, --decode, --safe, --query, gates require-min/none-failed exit 2 CI, args/file/stdin, --json) ✓ 2026-08-02
