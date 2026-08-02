@@ -8,6 +8,13 @@ Push automatique après chaque outil.
 ## Outil publié — GPU Research
 - [x] modal-research-arena : orchestration d'expériences reproductibles avec planification de coût, budgets verrouillés, exécution locale déterministe et backend Modal distant opt-in ✓ 2026-08-01
 
+## Vague 356 — CLI Tools (USER Dockerfile, comptage regex CSV, slice tableaux JSON, authority URL, lectures INI)
+- [x] dockerfile-extract-user : extrait le USER effectif par stage d'un Dockerfile (root implicite détecté, --check non-root CI, JSON) ✓ 2026-08-02
+- [x] csv-count-rows-matching : compte les lignes CSV dont les cellules matchent un regex (colonne ciblée, --invert, --print, --require CI, JSON) ✓ 2026-08-02
+- [x] json-array-slice : tranche les tableaux de docs JSON/JSONL (start/stop/step, indices négatifs, --path dot-path, --check CI, JSON) ✓ 2026-08-02
+- [x] url-parse-authority : éclate des URLs en user/host/port effectif (défauts par scheme, --scan, --fields, --json, --check CI) ✓ 2026-08-02
+- [x] ini-get-value : lit des valeurs INI par section.key (batch stdin, --default, --fallback-section, --strict CI, JSON) ✓ 2026-08-02
+
 ## Vague 355 — CLI Tools (colonne CSV, minify JSON stream, padding lignes, ENTRYPOINT Dockerfile, remotes git)
 - [x] csv-append-column : ajoute une colonne à un CSV (valeur constante ou template {field}, --overwrite, --check CI, JSON) ✓ 2026-08-02
 - [x] json-minify-stream : minifie des documents JSON en une ligne chacun (mode JSONL, --sort-keys, --ascii, --check CI, JSON) ✓ 2026-08-02
