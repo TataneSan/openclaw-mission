@@ -1,11 +1,18 @@
 # OpenClaw — File d'attente des outils
 
+## Vague 427 — CLI Tools (csv compte distincts, json chemins arrays, texte extraire URLs, hexdump octets, texte mots uniques)
+- [ ] csv-distinct-count : compte les valeurs distinctes par colonne d'un CSV (--col, --top, --require-max exit 2 CI, JSON)
+- [ ] json-list-array-paths : liste les chemins vers toutes les valeurs array d'un JSON (dot-path, --min-length, --require-min/max exit 2 CI, JSON)
+- [ ] text-extract-urls : extrait les URLs http(s) d'un texte (--unique, --domain, --require-min exit 2 CI, JSON)
+- [ ] text-to-hexdump : affiche un texte/fichier en hexdump classique (offsets, ascii, --width, --check exit 2 CI, JSON)
+- [ ] text-unique-words : liste les mots n'apparaissant qu'une seule fois (hapax, --top, --require-min exit 2 CI, JSON)
+
 ## Vague 426 — CLI Tools (texte compte underscores, csv garde colonnes non constantes, json chemins objets, uuencode, texte lignes sans ponctuation finale)
-- [ ] text-count-underscores : compte les underscores _ d'un texte (--per-line, --require-min/max, --check exit 2 CI, JSON)
-- [ ] csv-drop-constant-columns : supprime les colonnes ayant une seule valeur distincte (--constant-seuil N valeurs distinctes, --check exit 2 CI, JSON)
-- [ ] json-list-object-paths : liste les chemins vers toutes les valeurs objet d'un JSON (dot-path, --min-keys, --require-min/max exit 2 CI, JSON)
-- [ ] uuencode-tool : encode/décode en uuencode (format historique usenet, --decode, --strict, --check exit 2 CI, JSON)
-- [ ] text-find-no-final-punct : liste les lignes ne finissant pas par un signe de ponctuation (.!?:;…), (--per-paragraph, --require-none exit 2 CI, JSON)
+- [x] text-count-underscores : compte les underscores _ d'un texte (--per-line, --require-min/max, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] csv-drop-constant-columns : supprime les colonnes ayant une seule valeur distincte (--constant-seuil N valeurs distinctes, --check exit 2 CI, JSON) ✓ 2026-08-02 (repo existant, ajout alias --max-distinct et --stripws pour compat)
+- [x] json-list-object-paths : liste les chemins vers toutes les valeurs objet d'un JSON (dot-path, --min-keys, --require-min/max exit 2 CI, JSON) ✓ 2026-08-02
+- [x] uuencode-tool : encode/décode en uuencode (format historique usenet, --decode, --strict, --check exit 2 CI, JSON) ✓ 2026-08-02
+- [x] text-find-no-final-punct : liste les lignes ne finissant pas par un signe de ponctuation (.!?:;…), (--per-paragraph, --require-none exit 2 CI, JSON) ✓ 2026-08-02
 
 ## Vague 425 — CLI Tools (csv wide en long, json supprime chemin, texte extraits mentions, csv garde colonnes non vides, texte lignes avec longueur)
 - [x] csv-to-long : dépivote un CSV large en long (valeurs pivots en lignes, --key --pivot-cols, --drop-empty, --require-rows exit 2 CI, JSON) ✓ 2026-08-02 (repo existant, support --key multi-colonnes)
